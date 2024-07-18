@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,8 +22,35 @@ namespace SincronizadorGPS50
         public static string Sage50SelectedCompanyGroupName { get; set; } = "";
         public static string Sage50SelectedCompanyGroupCode { get; set; } = "";
         public static string Sage50SelectedCompanyGroupMainCode { get; set; } = "";
-        
-        
-        
+
+        // ConnectToGestprojectDatabase
+        // ConnectToGestprojectDatabase
+        // ConnectToGestprojectDatabase
+        // ConnectToGestprojectDatabase
+        // ConnectToGestprojectDatabase
+
+        public static string WindowsIdentityDomainName { get; set; } = "";
+        public static string WindowsIdentityUserName { get; set; } = "";
+        public static List<string> GestprojectVersionNames { get; set; } = new List<string>();
+        public static string GestprojectVersionName { get; set; } = "";
+        public static string GestprojectConnectionString { get; set; } = "";
+        public static SqlConnection GestprojectSQLConnection { get; set; } = null;
+        public static List<int> GestprojectClientIdList { get; set; } = new List<int>();
+        public static List<int> GestprojectProviderIdList { get; set; } = new List<int>();
+        public static List<GestprojectClient> GestprojectClientClassList { get; set; } = new List<GestprojectClient>();
+        internal static List<GestprojectClient> GestprojectSynchronizableClientClassList { get; set; } = new List<GestprojectClient>();
+        public static DataTable GestprojectClientsTable { get; set; } = null;
+
+
+
+
+
+
+        public static List<Sage50Client> Sage50ClientClassList { get; set; } = new List<Sage50Client>();
+        public static List<string> Sage50CIFList { get; set; } = new List<string>();
+
+
+
+
     }
 }

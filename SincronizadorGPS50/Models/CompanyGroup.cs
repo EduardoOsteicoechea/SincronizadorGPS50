@@ -11,5 +11,6 @@ namespace SincronizadorGPS50
         public string CompanyCode { get; set; }
         public string CompanyName { get; set; }
         public string CompanyMainCode { get; set; }
+        public string CompanyGuidId { get; set; }
     }
 }

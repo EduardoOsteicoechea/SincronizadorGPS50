@@ -31,9 +31,9 @@ C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sin
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Semaforo verde.png
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Vista preliminar.png
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Warning.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\SincronizadorGPS50.exe.config
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\SincronizadorGPS50.exe
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\SincronizadorGPS50.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\SincronizadorGPS50.1.0.0.exe.config
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\SincronizadorGPS50.1.0.0.exe
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\SincronizadorGPS50.1.0.0.pdb
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Infragistics4.Documents.Core.v18.2.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Infragistics4.Documents.Excel.v18.2.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Infragistics4.Documents.IO.v18.2.dll
@@ -106,6 +106,7 @@ C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sin
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\sage.ew.images.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\sage.ew.lic.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\sage.ew.reports.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\DotNetZip.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Newtonsoft.Json.dll
@@ -161,6 +162,7 @@ C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sin
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage.Query.Engine.Model.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage.Reporting.Services.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage.Xml.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage.O365Auth.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage.ES.Repository.Aspects.Trace.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage.ES.Repository.Aspects.Cache.dll
@@ -182,8 +184,6 @@ C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sin
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage.CloudId.OnPremise.Authorization.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\IdentityModel.OidcClient.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Auth0.OidcClient.dll
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\SecureBlackbox.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage.ES.ERP.SignXAdES.Interface.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\SecureBlackbox.XML.dll
@@ -299,8 +299,8 @@ C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sin
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\sage.ew.lic.XmlSerializers.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.csproj.AssemblyReference.cache
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.csproj.SuggestedBindingRedirects.cache
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.exe.config
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.1.0.0.exe.config
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.csproj.CoreCompileInputs.cache
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\Sincroni.CD52A0EA.Up2Date
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.exe
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.1.0.0.exe
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.1.0.0.pdb
