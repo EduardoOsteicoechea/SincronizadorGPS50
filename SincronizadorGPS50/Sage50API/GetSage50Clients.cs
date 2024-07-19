@@ -12,11 +12,11 @@ namespace SincronizadorGPS50
     {
         public GetSage50Clients()
         {
-            string sqlCommandString = $"SELECT codigo, cif, nombre, nombre2, direccion, codpost, poblacion, provincia, pais, email, http, guid_id FROM {DB.SQLDatabase("gestion","clientes")}";
+            string getSage50ClientSQLQuery = $"SELECT codigo, cif, nombre, nombre2, direccion, codpost, poblacion, provincia, pais, email, http, guid_id FROM {DB.SQLDatabase("gestion","clientes")}";
 
             DataTable sage50ClientsDataTable = new DataTable();
 
-            DB.SQLExec(sqlCommandString, ref sage50ClientsDataTable);
+            DB.SQLExec(getSage50ClientSQLQuery, ref sage50ClientsDataTable);
 
             DataHolder.Sage50ClientClassList.Clear();
 
@@ -37,8 +37,8 @@ namespace SincronizadorGPS50
                 sage50Client.GUID_ID = sage50ClientsDataTable.Rows[i].ItemArray[11].ToString().Trim();
 
                 DataHolder.Sage50ClientClassList.Add(sage50Client);
-
-                //PrintClassProperties.Print(sage50Client);
+                DataHolder.Sage50ClientCodeList.Add(sage50Client.CODIGO);
+                DataHolder.Sage50ClientGUID_IDList.Add(sage50Client.GUID_ID);
             };
         }
     }

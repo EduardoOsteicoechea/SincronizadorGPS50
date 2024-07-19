@@ -15,10 +15,8 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.ClientDataTable = new UltraGrid();
             ClientsUIHolder.ClientDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
 
-            new ConnectToGestprojectDatabase();
-            GestprojectClientsActions.GetGestProjectClientsAndProviders();
-            GestprojectClientsActions.GetGestprojectClients();
-            ClientsUIHolder.ClientDataTable.DataSource = DataHolder.GestprojectClientsTable;
+            new CreateSynchronizationTable();
+            ClientsUIHolder.ClientDataTable.DataSource = DataHolder.ClientsSynchronizationTable;
 
             ClientsUIHolder.CenterRow.ClientArea.Controls.Add(ClientsUIHolder.ClientDataTable);
         }

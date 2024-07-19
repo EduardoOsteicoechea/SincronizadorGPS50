@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SincronizadorGPS50</RootNamespace>
-    <AssemblyName>SincronizadorGPS50.1.0.0</AssemblyName>
+    <AssemblyName>SincronizadorGPS50.1.0.2</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -360,14 +360,24 @@
     <Compile Include="DataHolders\DataHolder.cs" />
     <Compile Include="DataHolders\StyleHolder.cs" />
     <Compile Include="DataHolders\UIHolder.cs" />
+    <Compile Include="GestprojectAPI\AddAccountableSubacountValueToClient.cs" />
+    <Compile Include="GestprojectAPI\CheckIfGestprojectClientIsSynchronized.cs" />
+    <Compile Include="GestprojectAPI\CheckIfSage50SynchronizationTableExists.cs" />
     <Compile Include="GestprojectAPI\ConnectToGestprojectDatabase.cs" />
     <Compile Include="GestprojectAPI\GestprojectClientsActions.cs" />
+    <Compile Include="GestprojectAPI\GetGestprojectClients.cs" />
+    <Compile Include="GestprojectAPI\GetGestprojectParticipants.cs" />
+    <Compile Include="GestprojectAPI\RegisterNewSage50Client.cs" />
+    <Compile Include="GestprojectAPI\ValidateOrCreateSage50SincronizationTable.cs" />
+    <Compile Include="GestprojectAPI\WriteSingleRecordInNewClientsSincronizationTable.cs" />
     <Compile Include="Models\Clients.cs" />
     <Compile Include="Models\ClientSyncronizationStateTable.cs" />
     <Compile Include="Models\CompanyGroup.cs" />
+    <Compile Include="Models\SynchronizedClient.cs" />
     <Compile Include="Sage50API\BaseMaster.cs" />
     <Compile Include="Sage50API\clsDatos.cs" />
     <Compile Include="Sage50API\clsEntidades.cs" />
+    <Compile Include="Sage50API\CreateSage50Customer.cs" />
     <Compile Include="Sage50API\CreateSage50MissingClients.cs" />
     <Compile Include="Sage50API\Customer.cs" />
     <Compile Include="Sage50API\GetSage50Clients.cs" />
@@ -377,6 +387,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workflows\Clients\CenterRowUI.cs" />
     <Compile Include="Workflows\Clients\ClientsTabPageUI.cs" />
+    <Compile Include="Workflows\Clients\CreateSincronizationTable.cs" />
+    <Compile Include="Workflows\Clients\CreateSynchronizationTable.cs" />
+    <Compile Include="Workflows\Clients\GetExistingSage50ClientsLastCodeValue.cs" />
+    <Compile Include="Workflows\Clients\MakeSincronizationTableGoballyAvailable.cs" />
+    <Compile Include="Workflows\Clients\AddRowToClientsSincronizationTable.cs" />
     <Compile Include="Workflows\InitialWindow\GenerateMainTabControl.cs" />
     <Compile Include="Workflows\InitialWindow\GenerateMainWindow.cs" />
     <Compile Include="Workflows\InitialWindow\GenerateTabs.cs" />
