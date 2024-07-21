@@ -14,6 +14,9 @@ namespace SincronizadorGPS50.Workflows.Clients
         {
             ClientsUIHolder.ClientDataTable = new UltraGrid();
             ClientsUIHolder.ClientDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            ClientsUIHolder.ClientDataTable.ShowColumnChooser();
+            ClientsUIHolder.ClientDataTable.AllowDrop = true;
+
 
             new CreateSynchronizationTable();
             ClientsUIHolder.ClientDataTable.DataSource = DataHolder.ClientsSynchronizationTable;
