@@ -14,9 +14,9 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.TableLayoutPanel = new TableLayoutPanel();
             ClientsUIHolder.TableLayoutPanel.ColumnCount = 1;
             ClientsUIHolder.TableLayoutPanel.RowCount = 3;
-            ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 87.50f));
-            ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
+            ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             ClientsUIHolder.TableLayoutPanel.Dock = DockStyle.Fill;
 
             ClientsUIHolder.MainPanel.ClientArea.Controls.Add(ClientsUIHolder.TableLayoutPanel);
@@ -35,6 +35,8 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.TopRow, 0, 0);
 
+            new TopRowUI();
+
             // CenterRow
             // CenterRow
             // CenterRow
@@ -45,8 +47,6 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.CenterRow.Height = StyleHolder.CenterRowHeight;
             ClientsUIHolder.CenterRow.Dock = System.Windows.Forms.DockStyle.Fill;
             ClientsUIHolder.CenterRow.Appearance.BackColor = StyleHolder.c_white;
-
-            ClientsUIHolder.CenterRow.ClientArea.Controls.Add(ClientsUIHolder.CenterRowTableLayoutPanel);
 
             ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.CenterRow, 0, 1);
 

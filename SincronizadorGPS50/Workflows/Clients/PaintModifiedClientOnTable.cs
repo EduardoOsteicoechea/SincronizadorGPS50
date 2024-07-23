@@ -1,35 +1,30 @@
-﻿using System.Data;
+﻿using SincronizadorGPS50.GestprojectAPI;
+using System.Data;
 using System.Reflection;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
-    internal class AddRowToClientsSincronizationTable
+    internal class PaintModifiedClientOnTable
     {
-        internal AddRowToClientsSincronizationTable
+        internal PaintModifiedClientOnTable
         (
             DataTable sincronizationTable,
-            bool sage50ClientIsAlreadySincronized,
             GestprojectClient gestprojectClient,
-            string Sage50CurrentClientCode,
-            string Sage50ClientGUID_ID
-        ) 
+            string errorComment
+        )
         {
+
+            int synchronizationId = new GetGestprojectClientSynchronizationId(gestprojectClient).Value;
             DataRow row = sincronizationTable.NewRow();
             PropertyInfo[] sincronizationTableProperties = typeof(ClientSyncronizationStateTable).GetProperties();
             foreach(PropertyInfo prop in sincronizationTableProperties)
             {
-                if(sage50ClientIsAlreadySincronized)
-                {
-                    row[0] = "Sincronizado";
-                }
-                else
-                {
-                    row[0] = "No Sincronizado";
-                };
-                row[1] = sincronizationTable.Rows.Count;
+                row[0] = "Desactualizado";
+                //row[1] = sincronizationTable.Rows.Count;
+                row[1] = synchronizationId;
                 row[2] = gestprojectClient.PAR_ID;
-                row[3] = Sage50CurrentClientCode;
-                row[4] = Sage50ClientGUID_ID;
+                row[3] = gestprojectClient.sage50_client_code;
+                row[4] = gestprojectClient.sage50_guid_id;
                 row[5] = gestprojectClient.PAR_NOMBRE;
                 row[6] = gestprojectClient.PAR_NOMBRE_COMERCIAL;
                 row[7] = gestprojectClient.PAR_CIF_NIF;
@@ -38,7 +33,8 @@ namespace SincronizadorGPS50.Workflows.Clients
                 row[10] = gestprojectClient.PAR_LOCALIDAD_1;
                 row[11] = gestprojectClient.PAR_PROVINCIA_1;
                 row[12] = gestprojectClient.PAR_PAIS_1;
-                row[13] = DataHolder.Sage50LocalTerminalPath;
+                row[13] = gestprojectClient.sage50_instance_terminal;
+                row[14] = errorComment;
             };
             sincronizationTable.Rows.Add(row);
         }

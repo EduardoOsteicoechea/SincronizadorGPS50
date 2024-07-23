@@ -18,6 +18,10 @@ namespace SincronizadorGPS50
         public string PAR_LOCALIDAD_1 { get; set; }
         public string PAR_PROVINCIA_1 { get; set; }
         public string PAR_PAIS_1 { get; set; }
+        public string synchronization_status { get; set; } = "";
+        public string sage50_client_code { get; set; } = "";
+        public string sage50_guid_id { get; set; } = "";
+        public string sage50_instance_terminal { get; set; } = "";
     }
     public class Sage50Client
     {

@@ -1,21 +1,24 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Reflection;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
-    internal class CreateClientsSincronizationTable
+    internal class CreateTableControl
     {
         internal DataTable Table { get; set; }
-        public CreateClientsSincronizationTable() 
+        public CreateTableControl() 
         {
             Table = new DataTable();
             PropertyInfo[] SincronizationTableProperties = typeof(ClientSyncronizationStateTable).GetProperties();
 
             for(int i = 0; i < SincronizationTableProperties.Length; i++)
             {
+                if(i > SincronizationTableProperties.Length-1)
+                {
+                    Table.Columns[i].MaxLength = 200;
+                };
                 PropertyInfo property = SincronizationTableProperties[i];
-                Table.Columns.Add(property.Name, Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType);
+                Table.Columns.Add(property.Name, System.Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType);
             };
         }
     }

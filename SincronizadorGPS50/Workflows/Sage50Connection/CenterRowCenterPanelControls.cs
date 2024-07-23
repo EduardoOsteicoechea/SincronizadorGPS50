@@ -77,7 +77,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI
 
             UIHolder.CenterRowCenterPanelLocalInstanceTextBox = new UltraTextEditor();
             UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Text = "C:\\Sage50_11\\Sage50Term";
+            UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Text = "C:\\Sage50_12\\Sage50Term";
 
             // Username
             // Username

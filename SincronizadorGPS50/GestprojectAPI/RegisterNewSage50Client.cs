@@ -17,9 +17,11 @@ namespace SincronizadorGPS50.GestprojectAPI
             string Sage50CurrentClientCode,
             string Sage50ClientId,
             string sage50InstanceTernimalFolderPath
-        ) 
+        )
         {
-            string sqlString = $"INSERT INTO INT_SAGE_SINC_CLIENTE (gestproject_id, sage50_code, sage50_guid_id, sage50_instance_terminal) VALUES ({gestProjectClientId}, '{Sage50CurrentClientCode}', '{Sage50ClientId}', '{sage50InstanceTernimalFolderPath}');";
+            string synchronizationStatus = "Nunca ha sido sincronizado";
+
+            string sqlString = $"INSERT INTO INT_SAGE_SINC_CLIENTE (gestproject_id, synchronization_status, sage50_code, sage50_guid_id, sage50_instance_terminal) VALUES ({gestProjectClientId}, '{synchronizationStatus}', '{Sage50CurrentClientCode}', '{Sage50ClientId}', '{sage50InstanceTernimalFolderPath}');";
 
             using(SqlCommand SQLCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection))
             {

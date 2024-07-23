@@ -15,9 +15,9 @@ namespace SincronizadorGPS50
             UIHolder.Sage50ConnectionTableLayoutPanel = new TableLayoutPanel();
             UIHolder.Sage50ConnectionTableLayoutPanel.ColumnCount = 1;
             UIHolder.Sage50ConnectionTableLayoutPanel.RowCount = 3;
-            UIHolder.Sage50ConnectionTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            UIHolder.Sage50ConnectionTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             UIHolder.Sage50ConnectionTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 87.50f));
-            UIHolder.Sage50ConnectionTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
+            UIHolder.Sage50ConnectionTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             UIHolder.Sage50ConnectionTableLayoutPanel.Dock = DockStyle.Fill;
 
             UIHolder.MainTabControlMainPanel.ClientArea.Controls.Add(UIHolder.Sage50ConnectionTableLayoutPanel);

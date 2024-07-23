@@ -11,9 +11,9 @@ namespace SincronizadorGPS50
         public string Estado { get; set; }
         public int Id { get; set; }
         public int Id_Gestproject { get; set; }
-        public string Cuenta_Contable { get; set; }
-        public string Guid_Sage50 { get; set; }
+        //public string Cuenta_Contable { get; set; }
         public string Subcuenta_Contable { get; set; }
+        public string Guid_Sage50 { get; set; }
         public string Nombre { get; set; }
         public string Nombre_Comercial { get; set; }
         public string CIF_NIF { get; set; }
@@ -23,5 +23,6 @@ namespace SincronizadorGPS50
         public string Provincia { get; set; }
         public string Pais { get; set; }
         public string Sage50LocalInstance { get; set; }
+        public string Comentarios { get; set; }
     }
 }

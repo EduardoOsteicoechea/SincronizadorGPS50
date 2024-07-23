@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectAPI
 {
-    internal class CheckIfSage50SynchronizationTableExists
+    internal class CheckIfTableExistsOnGestproject
     {
         internal bool Exists { get; set; } = false;
-        internal CheckIfSage50SynchronizationTableExists() 
+        internal CheckIfTableExistsOnGestproject(string tableName)
         {
-            string checkIfSage50SincronizationTableExistsSQLQuery = "SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE \"TABLE_NAME\" = 'INT_SAGE_SINC_CLIENTE'";
+            string checkIfSage50SincronizationTableExistsSQLQuery = $"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE \"TABLE_NAME\" = '{tableName}'";
 
             using(
                 SqlCommand checkIfSage50SincronizationTableExistsSQLCommand =
@@ -30,7 +30,7 @@ namespace SincronizadorGPS50.GestprojectAPI
                 }
                 else
                 {
-                    MessageBox.Show("La búsqueda de la tabla \"INT_SAGE_SINC_CLIENTE\" retornó un valor nulo.");
+                    MessageBox.Show($"La búsqueda de la tabla \"{tableName}\" retornó un valor nulo.");
                 };
             };
         }
