@@ -15,6 +15,7 @@ namespace SincronizadorGPS50.Workflows.Clients
 {
     internal class TopRowUI
     {
+        internal string MainMessage => "Visualize el estado actual de sus clientes respecto a la información de Sage50. Renderizado el " + DateTime.UtcNow.ToShortDateString().ToString() + " en el horario " + DateTime.Now.TimeOfDay.ToString();
         //Infragistics.Win.UltraWinGrid.ColumnStyle
         //Infragistics.Win.UltraWinGrid.ColumnStyle
         //Infragistics.Win.UltraWinGrid.ColumnStyle
@@ -35,7 +36,7 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.TopRowTableLayoutPanel.Dock = DockStyle.Fill;
 
             ClientsUIHolder.TopRowMainInstructionLabel = new UltraLabel();
-            ClientsUIHolder.TopRowMainInstructionLabel.Text = "Visualize el estado actual de sus clientes respecto a la información de Sage50. Renderizado en " + DateTime.UtcNow.ToShortDateString().ToString() + " en el horario " + DateTime.Now.TimeOfDay.ToString();
+            ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
             ClientsUIHolder.TopRowMainInstructionLabel.Dock = DockStyle.Fill;
             ClientsUIHolder.TopRowMainInstructionLabel.Appearance.TextVAlign = VAlign.Middle;
 
@@ -70,12 +71,20 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             new CenterRowUI();
 
-            ClientsUIHolder.TopRowMainInstructionLabel.Text = "Visualize el estado actual de sus clientes respecto a la información de Sage50. Renderizado en " + DateTime.UtcNow.ToShortDateString().ToString() + " a las" + DateTime.Now.TimeOfDay.ToString();
+            ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
         }
 
-        private void TopRowSynchronizeClientsButton_Click(object sender, System.EventArgs e)
+        private async void TopRowSynchronizeClientsButton_Click(object sender, System.EventArgs e)
         {
-        
+            new RemoveClientsSynchronizationTable();
+
+            await Task.Delay(1000);
+
+            new SynchronizeClients();
+
+            new CenterRowUI();
+
+            ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
         }
 
         internal void ChangeMainMessageText(object control, string newText) 

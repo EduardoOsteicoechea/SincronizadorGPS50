@@ -1,10 +1,5 @@
 ﻿using sage.ew.db;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50.Sage50API
@@ -13,40 +8,35 @@ namespace SincronizadorGPS50.Sage50API
     {
         internal string ClientCode { get; set; } = "";
         internal string GUID_ID { get; set; } = "";
-        internal CreateSage50Customer(
-            GestprojectClient gestprojectClient,
-            bool isSynchronized,
-            ref int existingSage50ClientCounter
-        )
+        internal CreateSage50Customer( GestprojectClient gestprojectClient, int nextAvailableClientCode )
         {
             Customer customer = new Customer();
             clsEntityCustomer clsEntityCustomerInstance = new clsEntityCustomer();
 
-            if(existingSage50ClientCounter < 10)
+            if(nextAvailableClientCode < 10)
             {
-                clsEntityCustomerInstance.codigo = "4300000" + existingSage50ClientCounter;
+                clsEntityCustomerInstance.codigo = "4300000" + nextAvailableClientCode;
                 ClientCode = clsEntityCustomerInstance.codigo;
             }
-            else if(existingSage50ClientCounter < 100)
+            else if(nextAvailableClientCode < 100)
             {
-                clsEntityCustomerInstance.codigo = "430000" + existingSage50ClientCounter;
+                clsEntityCustomerInstance.codigo = "430000" + nextAvailableClientCode;
                 ClientCode = clsEntityCustomerInstance.codigo;
             }
-            else if(existingSage50ClientCounter < 1000)
+            else if(nextAvailableClientCode < 1000)
             {
-                clsEntityCustomerInstance.codigo = "43000" + existingSage50ClientCounter;
+                clsEntityCustomerInstance.codigo = "43000" + nextAvailableClientCode;
                 ClientCode = clsEntityCustomerInstance.codigo;
             }
-            else if(existingSage50ClientCounter < 10000)
+            else if(nextAvailableClientCode < 10000)
             {
-                clsEntityCustomerInstance.codigo = "4300" + existingSage50ClientCounter;
+                clsEntityCustomerInstance.codigo = "4300" + nextAvailableClientCode;
                 ClientCode = clsEntityCustomerInstance.codigo;
             }
             else
             {
                 MessageBox.Show("Sage50 admite un máximo de 9999 clientes por grupo de empresas y su base de clientes de Gestproject supera éste límite.");
             };
-
             clsEntityCustomerInstance.pais = gestprojectClient.PAR_CP_1;
             clsEntityCustomerInstance.nombre = gestprojectClient.PAR_NOMBRE;
             clsEntityCustomerInstance.cif = gestprojectClient.PAR_CIF_NIF;
@@ -56,21 +46,14 @@ namespace SincronizadorGPS50.Sage50API
 
             customer._Create(clsEntityCustomerInstance);
 
-            // Get new Sage50Client guid_id
-            // Get new Sage50Client guid_id
-            // Get new Sage50Client guid_id
-            // Get new Sage50Client guid_id
-            // Get new Sage50Client guid_id
+            string getSage50ClientSQLQuery = @"
+                SELECT guid_id FROM " + DB.SQLDatabase("gestion","clientes") + " WHERE codigo = '" + ClientCode + "';";
 
-            string Sage50NewClientSQLQuery = $"SELECT guid_id FROM {DB.SQLDatabase("gestion","clientes")} WHERE \"codigo\"={ClientCode}";
+            DataTable sage50ClientsDataTable = new DataTable();
 
-            DataTable Sage50NewClientDataTable = new DataTable();
+            DB.SQLExec(getSage50ClientSQLQuery, ref sage50ClientsDataTable);
 
-            DB.SQLExec(Sage50NewClientSQLQuery, ref Sage50NewClientDataTable);
-
-            GUID_ID = Sage50NewClientDataTable.Rows[0].ItemArray[0].ToString().Trim();
-
-            existingSage50ClientCounter++;
+            GUID_ID = sage50ClientsDataTable.Rows[0].ItemArray[0].ToString().Trim();
         }           
     }
 }

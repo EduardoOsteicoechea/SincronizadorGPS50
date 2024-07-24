@@ -30,7 +30,9 @@ namespace SincronizadorGPS50.GestprojectAPI
                 synchronization_status VARCHAR(MAX), 
                 sage50_client_code VARCHAR(MAX), 
                 sage50_guid_id VARCHAR(MAX), 
-                sage50_instance_terminal VARCHAR(MAX)
+                sage50_instance VARCHAR(MAX),
+                comments VARCHAR(MAX),
+                last_record DATETIME DEFAULT GETDATE() NOT NULL
             )
             ;";
 

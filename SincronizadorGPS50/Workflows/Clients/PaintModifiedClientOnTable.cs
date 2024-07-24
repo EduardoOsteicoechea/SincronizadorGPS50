@@ -33,7 +33,7 @@ namespace SincronizadorGPS50.Workflows.Clients
                 row[10] = gestprojectClient.PAR_LOCALIDAD_1;
                 row[11] = gestprojectClient.PAR_PROVINCIA_1;
                 row[12] = gestprojectClient.PAR_PAIS_1;
-                row[13] = gestprojectClient.sage50_instance_terminal;
+                row[13] = gestprojectClient.sage50_instance;
                 row[14] = errorComment;
             };
             sincronizationTable.Rows.Add(row);

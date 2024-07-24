@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Data.SqlClient;
 namespace SincronizadorGPS50.GestprojectAPI
 {
-    internal class AddAccountableSubacountValueToClient
+    internal class RecordSage50ClientCodeInGestproject
     {
-        internal AddAccountableSubacountValueToClient(int gestprojectClientid, string sage50ClientCode) 
+        internal RecordSage50ClientCodeInGestproject(int gestprojectClientid, string sage50ClientCode)
         {
             string tableName = "PARTICIPANTE";
             string sqlString = $"UPDATE {tableName} SET PAR_SUBCTA_CONTABLE = {sage50ClientCode} WHERE PAR_ID = {gestprojectClientid};";

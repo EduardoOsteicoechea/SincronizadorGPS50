@@ -1,18 +1,35 @@
 ﻿using sage.ew.db;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SincronizadorGPS50
 {
     internal class GetSage50Clients
     {
+        internal List<Sage50Client> Sage50ClientClassList {  get; set; } = new List<Sage50Client>();
+        internal List<string> Sage50ClientCodeList {  get; set; } = new List<string>();
+        internal List<string> Sage50ClientGUID_IDList {  get; set; } = new List<string>();
+        internal int LastClientCodeValue {  get; set; }
+        internal int NextClientCodeAvailable {  get; set; }
+
         public GetSage50Clients()
         {
-            string getSage50ClientSQLQuery = $"SELECT codigo, cif, nombre, nombre2, direccion, codpost, poblacion, provincia, pais, email, http, guid_id FROM {DB.SQLDatabase("gestion","clientes")}";
+            string getSage50ClientSQLQuery = @"
+                SELECT 
+                    codigo, 
+                    cif, 
+                    nombre, 
+                    nombre2, 
+                    direccion, 
+                    codpost, 
+                    poblacion, 
+                    provincia, 
+                    pais, 
+                    email, 
+                    http, 
+                    guid_id 
+                FROM " + $"{DB.SQLDatabase("gestion","clientes")}";
 
             DataTable sage50ClientsDataTable = new DataTable();
 
@@ -39,7 +56,23 @@ namespace SincronizadorGPS50
                 DataHolder.Sage50ClientClassList.Add(sage50Client);
                 DataHolder.Sage50ClientCodeList.Add(sage50Client.CODIGO);
                 DataHolder.Sage50ClientGUID_IDList.Add(sage50Client.GUID_ID);
+
+                Sage50ClientClassList.Add(sage50Client);
+                Sage50ClientCodeList.Add(sage50Client.CODIGO);
+                Sage50ClientGUID_IDList.Add(sage50Client.GUID_ID);
             };
+
+            int Sage50HigestCodeNumber = Sage50ClientClassList.First().CODIGO_NUMERO;
+            for(int i = 0; i < Sage50ClientClassList.Count; i++)
+            {
+                if(Sage50ClientClassList[i].CODIGO_NUMERO > Sage50HigestCodeNumber)
+                {
+                    Sage50HigestCodeNumber = Sage50ClientClassList[i].CODIGO_NUMERO;
+                }
+            };
+
+            LastClientCodeValue = Sage50HigestCodeNumber;
+            NextClientCodeAvailable = Sage50HigestCodeNumber + 1;
         }
     }
 }

@@ -44,19 +44,7 @@ namespace SincronizadorGPS50.GestprojectAPI
                     string database_synchronization_status = (string)reader.GetValue(11);
                     string database_sage50_client_code = (string)reader.GetValue(12);
                     string database_sage50_guid_id = (string)reader.GetValue(13);
-                    string database_sage50_instance_terminal = (string)reader.GetValue(14);
-
-                    //MessageBox.Show("" + 
-                    //"client.synchronization_status: " + client.synchronization_status + "\n" +
-                    //"client.sage50_client_code: " + client.sage50_client_code + "\n" +
-                    //"client.sage50_guid_id: " + client.sage50_guid_id + "\n" +
-                    //"client.sage50_instance_terminal: " + client.sage50_instance_terminal + "\n\n" +
-
-                    //"database_synchronization_status: " + database_synchronization_status + "\n" +
-                    //"database_sage50_client_code: " + database_sage50_client_code + "\n" +
-                    //"database_sage50_guid_id: " + database_sage50_guid_id + "\n" +
-                    //"database_sage50_instance_terminal: " + database_sage50_instance_terminal + "\n"
-                    //);
+                    string database_sage50_instance = (string)reader.GetValue(14);
 
                     List<string> clientFields = new List<string>
                     {
@@ -73,7 +61,7 @@ namespace SincronizadorGPS50.GestprojectAPI
                         client.synchronization_status,
                         client.sage50_client_code,
                         client.sage50_guid_id,
-                        client.sage50_instance_terminal
+                        client.sage50_instance
                     };
 
                     List<string> databaseFields = new List<string>
@@ -91,7 +79,7 @@ namespace SincronizadorGPS50.GestprojectAPI
                         database_synchronization_status,
                         database_sage50_client_code,
                         database_sage50_guid_id,
-                        database_sage50_instance_terminal
+                        database_sage50_instance
                     };
 
                     List<string> fieldNames = new List<string>
@@ -109,7 +97,7 @@ namespace SincronizadorGPS50.GestprojectAPI
                         "synchronization_status",
                         "sage50_client_code",
                         "sage50_guid_id",
-                        "sage50_instance_terminal"
+                        "sage50_instance"
                     };
 
                     int ClientErrorQuantity = 0;

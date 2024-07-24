@@ -13,9 +13,10 @@
 
 //namespace SincronizadorGPS50.Workflows.Clients
 //{
-//    internal class CreateSynchronizationTable
+//    internal class SynchronizeClients
 //    {
-//        public CreateSynchronizationTable()
+//        internal DataTable Table { get; set; } = null;
+//        public SynchronizeClients()
 //        {
 //            new ConnectToGestprojectDatabase();
 
@@ -25,20 +26,24 @@
 
 //            new GetGestprojectClients();
 
-//            new GetSage50Clients();       
+//            Table = new CreateTableControl().Table;
 
-//            DataTable sincronizationTable = new CreateTableControl().Table;
+//            bool Sage50SincronizationTableExists = new CheckIfTableExistsOnGestproject("INT_SAGE_SINC_CLIENTE").Exists;
 
-//            bool Sage50SincronizationTableExists = new CheckIfSage50SynchronizationTableExists().Exists;
+//            bool GestprojectSynchronizationImageTableExists = new CheckIfTableExistsOnGestproject("INT_SAGE_SINC_CLIENTE_IMAGEN").Exists;
 
-//            if(!Sage50SincronizationTableExists) 
+//            if(!Sage50SincronizationTableExists)
 //            {
-//                new CreateSage50SincronizationTable();
+//                new CreateGestprojectSage50SynchronizationTable();
 //            };
 
-//            bool Sage50SincronizationTableWasJustCreated = !Sage50SincronizationTableExists;
+//            if(!GestprojectSynchronizationImageTableExists)
+//            {
+//                new CreateGestprojectSynchronizationImageTable();
+//            };
 
-//            int ExistingSage50ClientCounter = new GetExistingSage50ClientsLastCodeValue().NextValue;
+//            bool Sage50SynchronizationTableWasJustCreated = !Sage50SincronizationTableExists;
+//            bool GestprojectSynchronizationImageTableWasJustCreated = !Sage50SincronizationTableExists;
 
 //            for(int i = 0; i < DataHolder.GestprojectClientClassList.Count; i++)
 //            {

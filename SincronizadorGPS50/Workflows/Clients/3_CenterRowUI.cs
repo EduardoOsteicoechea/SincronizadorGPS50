@@ -1,14 +1,5 @@
-﻿using Infragistics.Win;
-using Infragistics.Win.Misc;
-using Infragistics.Win.UltraWinEditors;
-using Infragistics.Win.UltraWinGrid;
-using Infragistics.Win.UltraWinSchedule;
-using sage.ew.db;
-using SincronizadorGPS50.GestprojectAPI;
+﻿using Infragistics.Win.UltraWinGrid;
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Windows.Forms;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {

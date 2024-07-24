@@ -9,15 +9,14 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectAPI
 {
-    internal class RegisterClientAsDesynchronized
+    internal class UpdateClientSynchronizationStatus
     {
-        public RegisterClientAsDesynchronized
+        public UpdateClientSynchronizationStatus
         (
-            GestprojectClient client
+            GestprojectClient client, 
+            string synchronizationStatus
         )
         {
-            string synchronizationStatus = "Desincronizado";
-
             string sqlString = $"UPDATE INT_SAGE_SINC_CLIENTE_IMAGEN SET synchronization_status='{synchronizationStatus}';";
 
             using(SqlCommand SQLCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection))

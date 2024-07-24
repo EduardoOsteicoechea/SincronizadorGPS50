@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectAPI
 {
-    internal class IsGestprojectClientRegistered
+    internal class CheckIfGestprojectClientWasRegistered
     {
         internal bool ItIs {  get; set; } = false;
-        internal IsGestprojectClientRegistered(GestprojectClient client) 
+        internal CheckIfGestprojectClientWasRegistered(GestprojectClient client) 
         {
-            string sqlString = $"SELECT id FROM INT_SAGE_SINC_CLIENTE WHERE gestproject_id={client.PAR_ID};";
+            string sqlString = $"SELECT * FROM INT_SAGE_SINC_CLIENTE_IMAGEN WHERE PAR_ID={client.PAR_ID};";
 
             SqlCommand sqlCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection);
 
@@ -21,9 +21,8 @@ namespace SincronizadorGPS50.GestprojectAPI
             {
                 while(reader.Read())
                 {
-                    if((int)reader.GetValue(0) != -1)
+                    if((int)reader.GetValue(0) == client.PAR_ID || (int)reader.GetValue(0) != null)
                     {
-                        client.synchronization_table_id = (int)reader.GetValue(0);
                         ItIs = true;
                         break;
                     }

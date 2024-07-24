@@ -21,7 +21,10 @@ namespace SincronizadorGPS50
         public string synchronization_status { get; set; } = "";
         public string sage50_client_code { get; set; } = "";
         public string sage50_guid_id { get; set; } = "";
-        public string sage50_instance_terminal { get; set; } = "";
+        public string sage50_instance { get; set; } = "";
+        public string comments { get; set; } = "";
+        public DateTime last_record { get; set; } = DateTime.Now;
+        public int synchronization_table_id { get; set; }
     }
     public class Sage50Client
     {
