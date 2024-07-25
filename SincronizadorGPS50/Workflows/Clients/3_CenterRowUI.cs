@@ -1,10 +1,16 @@
 ﻿using Infragistics.Win.UltraWinGrid;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
     internal class CenterRowUI
     {
+        internal List<UltraGridRow> UltraGridRowList {  get; set; } = new List<UltraGridRow>();
+        internal List<int> GestprojectClientIdList {  get; set; } = new List<int>();
         internal CenterRowUI() 
         {
             ClientsUIHolder.ClientDataTable = new UltraGrid();
@@ -16,35 +22,43 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.ClientDataTable.DataSource = synchronizationTable;
 
             ClientsUIHolder.CenterRow.ClientArea.Controls.Add(ClientsUIHolder.ClientDataTable);
+
+            ClientsUIHolder.ClientDataTable.ClickCell += ClientDataTable_ClickCell;
+        }
+
+        private void ClientDataTable_ClickCell(object sender, ClickCellEventArgs e)
+        {
+            UltraGrid ultraGrid = sender as UltraGrid;
+            UltraGridRow ultraGridRow = ultraGrid.ActiveRow;
+            UltraGridRowList.Add(ultraGridRow);
+            
+            if((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
+            {
+                if(UltraGridRowList.Count > 1)
+                {
+                    UltraGridRow previousIndex = UltraGridRowList[UltraGridRowList.Count - 2];
+                    int selectedIndex1 = previousIndex.Index;
+                    int selectedIndex2 = ultraGridRow.Index;
+                    int MaxIndex = Math.Max(selectedIndex1, selectedIndex2);
+                    int MinIndex = Math.Min(selectedIndex1, selectedIndex2);
+                    int indexesDifference = MaxIndex - MinIndex;
+
+                    for(global::System.Int32 i = MinIndex; i < MaxIndex; i++)
+                    {
+                        ultraGrid.Rows[i].Selected = true;
+                        UltraGridRowList.Add(ultraGrid.Rows[i]);
+                    };
+                };
+            };
+
+            foreach (var item in UltraGridRowList)
+            {
+                item.Selected = true;
+                GestprojectClientIdList.Add((int)item.Cells[2].Value);
+                DataHolder.ListOfSelectedClientIdInTable.Add((int)item.Cells[2].Value);
+            };
+
+            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = true;
         }
     }
 }
-
-
-
-
-
-//ClientsUIHolder.ClientDataTable.Rows.ColumnFilters = new ColumnFiltersCollection();
-
-//UltraGridBand band = ClientsUIHolder.ClientDataTable.DisplayLayout.Bands[0];
-//band.Override.AllowRowFiltering = DefaultableBoolean.True;
-//band.Columns[1].AllowRowFiltering = DefaultableBoolean.False;
-//band.Override.RowFilterMode = RowFilterMode.AllRowsInBand;
-//band.ColumnFilters["id"].FilterConditions.Clear();
-//band.ColumnFilters["id"].FilterConditions.Add(FilterComparisionOperator.GreaterThan, 5);
-//band.ColumnFilters["id"].FilterConditions.Add(FilterComparisionOperator.LessThan, 10);
-//band.ColumnFilters["id"].LogicalOperator = FilterLogicalOperator.And;
-
-
-//string TopRowRefreshTableButtonImagePath = Application.StartupPath + @"\Media\Image\Refrescar 02.png";
-//Image TopRowRefreshTableButtonImage = null;
-//if(File.Exists(TopRowRefreshTableButtonImagePath))
-//{
-//    TopRowRefreshTableButtonImage = Image.FromFile(TopRowRefreshTableButtonImagePath);
-//};
-
-//UltraPictureBox aa = new UltraPictureBox();
-//aa.Image = ;
-//ClientsUIHolder.ClientDataTable.Rows[0].Cells[0].EditorComponent = ;
-//ClientsUIHolder.ClientDataTable.Rows[0].Cells[0].IsInEditMode = false;
-//ClientsUIHolder.ClientDataTable.Rows[0].Cells[0].Appearance.Image = TopRowRefreshTableButtonImage;

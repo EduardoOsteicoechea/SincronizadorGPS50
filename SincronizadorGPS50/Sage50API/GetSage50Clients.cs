@@ -53,9 +53,9 @@ namespace SincronizadorGPS50
                 sage50Client.HTTP = sage50ClientsDataTable.Rows[i].ItemArray[10].ToString().Trim();
                 sage50Client.GUID_ID = sage50ClientsDataTable.Rows[i].ItemArray[11].ToString().Trim();
 
-                DataHolder.Sage50ClientClassList.Add(sage50Client);
-                DataHolder.Sage50ClientCodeList.Add(sage50Client.CODIGO);
-                DataHolder.Sage50ClientGUID_IDList.Add(sage50Client.GUID_ID);
+                //DataHolder.Sage50ClientClassList.Add(sage50Client);
+                //DataHolder.Sage50ClientCodeList.Add(sage50Client.CODIGO);
+                //DataHolder.Sage50ClientGUID_IDList.Add(sage50Client.GUID_ID);
 
                 Sage50ClientClassList.Add(sage50Client);
                 Sage50ClientCodeList.Add(sage50Client.CODIGO);
@@ -71,8 +71,16 @@ namespace SincronizadorGPS50
                 }
             };
 
-            LastClientCodeValue = Sage50HigestCodeNumber;
-            NextClientCodeAvailable = Sage50HigestCodeNumber + 1;
+            if(Sage50ClientClassList.Count > 0)
+            {
+                LastClientCodeValue = Sage50HigestCodeNumber;
+                NextClientCodeAvailable = Sage50HigestCodeNumber + 1;
+            }
+            else
+            {
+                LastClientCodeValue = 1;
+                NextClientCodeAvailable = 2;
+            };
         }
     }
 }

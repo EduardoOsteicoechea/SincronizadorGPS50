@@ -119,6 +119,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI
             UIHolder.CenterRowCenterPanelValidateUserDataButton.Text = "Verificar Datos";
             var ValidateUserDataButtonEventHandler = new Sage50ConnectionActions();
             UIHolder.CenterRowCenterPanelValidateUserDataButton.Click += new EventHandler(ValidateUserDataButtonEventHandler.VeryfyUserData);
+            UIHolder.CenterRowCenterPanelValidateUserDataButton.Focus();
 
             UIHolder.CenterRowCenterPanelSesionDataValidationLabel = new UltraLabel();
             UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Dock = DockStyle.Fill;

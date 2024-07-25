@@ -52,6 +52,8 @@ namespace SincronizadorGPS50
         public static List<string> Sage50CIFList { get; set; } = new List<string>();
         public static DataTable ClientsSynchronizationTable { get; set; } = null;
 
+        public static List<int> ListOfSelectedClientIdInTable { get; set; } = new List<int>();
+
 
 
 

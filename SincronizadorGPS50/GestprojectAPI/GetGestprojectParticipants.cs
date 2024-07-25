@@ -11,6 +11,9 @@ namespace SincronizadorGPS50.GestprojectAPI
     {
         internal GetGestprojectParticipants() 
         {
+            DataHolder.GestprojectClientIdList.Clear();
+            DataHolder.GestprojectProviderIdList.Clear();
+
             string getGestprojectParticipantTypesSQLString = "SELECT * FROM PAR_TPA";
 
             SqlCommand getGestprojectParticipantTypesSQLCommand = new SqlCommand(getGestprojectParticipantTypesSQLString, DataHolder.GestprojectSQLConnection);

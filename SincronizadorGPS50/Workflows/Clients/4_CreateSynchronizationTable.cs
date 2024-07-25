@@ -37,9 +37,13 @@ namespace SincronizadorGPS50.Workflows.Clients
                         gestprojectClient,
                         SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
                     );
+
+                    new PopulateGestprojectClientSynchronizationData(gestprojectClient);
+
                     new AddClientToSyncronizationUITable(
                         gestprojectClient,
-                        Table
+                        Table,
+                        SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
                     );
                 }
                 else
@@ -48,6 +52,8 @@ namespace SincronizadorGPS50.Workflows.Clients
 
                     if(GestprojectClientWasRegistered)
                     {
+                        new PopulateGestprojectClientSynchronizationData(gestprojectClient);
+
                         bool GestprojectClientWasSynchronized = new CheckIfGestprojectClientWasSynchronized(gestprojectClient).ItIs;
 
                         if(!GestprojectClientWasSynchronized)
@@ -56,9 +62,13 @@ namespace SincronizadorGPS50.Workflows.Clients
                                 gestprojectClient,
                                 SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
                             );
+
+                            new PopulateGestprojectClientSynchronizationData(gestprojectClient);
+
                             new AddClientToSyncronizationUITable(
                                 gestprojectClient,
-                                Table
+                                Table,
+                                SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
                             );
                         }
                         else
@@ -71,9 +81,13 @@ namespace SincronizadorGPS50.Workflows.Clients
                                     gestprojectClient,
                                     SynchronizationStatusOptions.Sincronizado
                                 );
+
+                                new PopulateGestprojectClientSynchronizationData(gestprojectClient);
+
                                 new AddClientToSyncronizationUITable(
                                     gestprojectClient,
-                                    Table
+                                    Table,
+                                    SynchronizationStatusOptions.Sincronizado
                                 );
                             }
                             else
@@ -82,9 +96,13 @@ namespace SincronizadorGPS50.Workflows.Clients
                                     gestprojectClient,
                                     SynchronizationStatusOptions.Desincronizado
                                 );
+
+                                new PopulateGestprojectClientSynchronizationData(gestprojectClient);
+
                                 new AddClientToSyncronizationUITable(
                                     gestprojectClient,
                                     Table,
+                                    "",
                                     isGestprojectClientSynchronized.Comment
                                 );
                             };
@@ -96,9 +114,13 @@ namespace SincronizadorGPS50.Workflows.Clients
                             gestprojectClient,
                             SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
                         );
+
+                        new PopulateGestprojectClientSynchronizationData(gestprojectClient);
+
                         new AddClientToSyncronizationUITable(
-                                gestprojectClient,
-                            Table
+                            gestprojectClient,
+                            Table,
+                            SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
                         );
                     };
                 };

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectAPI
 {
@@ -73,6 +74,12 @@ namespace SincronizadorGPS50.GestprojectAPI
 
                             for(global::System.Int32 i = 0; i < SynchronizationTableFieldsNames.Count; i++)
                             {
+                                //MessageBox.Show(
+                                //    SynchronizationTableFieldsNames[i] + ": " + "\n" +
+                                //    GestprojectClientData[i] + "\n" +
+                                //    Sage50ClientData[i]
+                                //);
+
                                 SynchronizationStatusDictionary.Add(SynchronizationTableFieldsNames[i], GestprojectClientData[i] == Sage50ClientData[i]);
                                 if(GestprojectClientData[i] != Sage50ClientData[i])
                                 {
@@ -82,11 +89,12 @@ namespace SincronizadorGPS50.GestprojectAPI
 
                             if(ClientErrorQuantity > 0)
                             {
-                                Comment = "Identificamos " + ClientErrorQuantity + " errores en este cliente. Estos son los campos afectados: \n";
+                                Comment += "Identificamos " + ClientErrorQuantity + " errores en este cliente. Estos son los campos afectados: \n";
 
                                 for(global::System.Int32 i = 0; i < SynchronizationStatusDictionary.Count; i++)
                                 {
-                                    string errorMessage = SynchronizationStatusDictionary.ElementAt(i).Key + $"(su valor en Sage50 es: {Sage50ClientData[i]})";
+                                    string errorMessage = SynchronizationStatusDictionary.ElementAt(i).Key + $" (su valor en Sage50 es: {Sage50ClientData[i]})";
+
                                     if(!SynchronizationStatusDictionary.ElementAt(i).Value && i > SynchronizationStatusDictionary.Count - 1)
                                     {
                                         Comment += errorMessage + ".";

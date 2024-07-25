@@ -16,23 +16,14 @@ namespace SincronizadorGPS50.Workflows.Clients
     internal class TopRowUI
     {
         internal string MainMessage => "Visualize el estado actual de sus clientes respecto a la información de Sage50. Renderizado el " + DateTime.UtcNow.ToShortDateString().ToString() + " en el horario " + DateTime.Now.TimeOfDay.ToString();
-        //Infragistics.Win.UltraWinGrid.ColumnStyle
-        //Infragistics.Win.UltraWinGrid.ColumnStyle
-        //Infragistics.Win.UltraWinGrid.ColumnStyle
-        //Infragistics.Win.UltraWinGrid.ColumnStyle
-        //Infragistics.Win.UltraWinGrid.ColumnStyle
-        //Infragistics.Win.UltraWinGrid.ColumnStyle
-        //Infragistics.Win.UltraWinGrid.ColumnStyle
-        //Infragistics.Win.UltraWinGrid.ColumnStyle
-        //Infragistics.Win.UltraWinGrid.ColumnStyle // This is the key
         internal TopRowUI()
         {
             ClientsUIHolder.TopRowTableLayoutPanel = new TableLayoutPanel();
             ClientsUIHolder.TopRowTableLayoutPanel.ColumnCount = 3;
             ClientsUIHolder.TopRowTableLayoutPanel.RowCount = 1;
             ClientsUIHolder.TopRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 84f));
-            ClientsUIHolder.TopRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Absolute, 110));
-            ClientsUIHolder.TopRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Absolute, 110));
+            ClientsUIHolder.TopRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Absolute, 150));
+            ClientsUIHolder.TopRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Absolute, 150));
             ClientsUIHolder.TopRowTableLayoutPanel.Dock = DockStyle.Fill;
 
             ClientsUIHolder.TopRowMainInstructionLabel = new UltraLabel();
@@ -50,9 +41,10 @@ namespace SincronizadorGPS50.Workflows.Clients
 
 
             ClientsUIHolder.TopRowSynchronizeClientsButton = new UltraButton();
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Text = "Sincronizar";
+            ClientsUIHolder.TopRowSynchronizeClientsButton.Text = "Sincronizar selección";
             ClientsUIHolder.TopRowSynchronizeClientsButton.Dock = DockStyle.Fill;
             ClientsUIHolder.TopRowSynchronizeClientsButton.Click += TopRowSynchronizeClientsButton_Click;
+            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
 
 
 
@@ -66,25 +58,24 @@ namespace SincronizadorGPS50.Workflows.Clients
         private async void TopRowRefreshTableButton_Click(object sender, System.EventArgs e)
         {
             new RemoveClientsSynchronizationTable();
-
-            await Task.Delay(1000);
-
+            await Task.Delay(100);
             new CenterRowUI();
-
             ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
         }
 
         private async void TopRowSynchronizeClientsButton_Click(object sender, System.EventArgs e)
         {
+            DataHolder.GestprojectSQLConnection.Open();
+            GetSelectedClientsInUITable selectedClientsInUITable = new GetSelectedClientsInUITable(DataHolder.ListOfSelectedClientIdInTable);
+            DataHolder.GestprojectSQLConnection.Close();
+
             new RemoveClientsSynchronizationTable();
-
-            await Task.Delay(1000);
-
-            new SynchronizeClients();
-
+            await Task.Delay(0);
+            new SynchronizeClients(selectedClientsInUITable.Clients);
             new CenterRowUI();
-
             ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
+
+            DataHolder.ListOfSelectedClientIdInTable.Clear();
         }
 
         internal void ChangeMainMessageText(object control, string newText) 

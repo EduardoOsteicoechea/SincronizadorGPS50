@@ -26,6 +26,12 @@ namespace SincronizadorGPS50
         internal static UltraButton TopRowRefreshTableButton { get; set; } = null;
         internal static UltraButton TopRowSynchronizeClientsButton { get; set; } = null;
 
+        internal static TableLayoutPanel BottomRowTableLayoutPanel { get; set; } = null;
+        internal static UltraLabel BottomRowMainInstructionLabel { get; set; } = null;
+        internal static UltraButton BottomRowRefreshTableButton { get; set; } = null;
+        internal static UltraButton BottomRowSynchronizeClientsButton { get; set; } = null;
+
+
 
     }
 }

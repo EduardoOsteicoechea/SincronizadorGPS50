@@ -17,13 +17,6 @@ namespace SincronizadorGPS50.GestprojectAPI
             string synchronizationStatus
         )
         {
-            string sqlString = $"UPDATE INT_SAGE_SINC_CLIENTE_IMAGEN SET synchronization_status='{synchronizationStatus}';";
-
-            using(SqlCommand SQLCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection))
-            {
-                SQLCommand.ExecuteNonQuery();
-            };
-
             string sqlString2 = $"UPDATE INT_SAGE_SINC_CLIENTE SET synchronization_status='{synchronizationStatus}';";
 
             using(SqlCommand SQLCommand = new SqlCommand(sqlString2, DataHolder.GestprojectSQLConnection))

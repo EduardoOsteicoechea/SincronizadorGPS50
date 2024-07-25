@@ -5,9 +5,9 @@
 
 //namespace SincronizadorGPS50.Workflows.Clients
 //{
-//    internal class SynchronizeClients
+//    internal class SynchronizeAllClients
 //    {
-//        public SynchronizeClients()
+//        public SynchronizeAllClients()
 //        {
 //            new ConnectToGestprojectDatabase();
 

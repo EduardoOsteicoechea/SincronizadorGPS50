@@ -63,6 +63,13 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.BottomRow.Appearance.BackColor = StyleHolder.c_transparent;
 
             ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.BottomRow, 0, 2);
+
+            new BottomRowUI();
+
+            //Customer customer = new Customer();
+            //clsEntityCustomer clsEntityCustomerInstance = new clsEntityCustomer();
+            //clsEntityCustomerInstance.codigo = "43000002";
+            //customer._Create(clsEntityCustomerInstance);
         }
     }
 }

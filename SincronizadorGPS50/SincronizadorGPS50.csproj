@@ -384,6 +384,7 @@
     <Compile Include="GestprojectAPI\UpdateClient - Copy.cs" />
     <Compile Include="GestprojectAPI\UpdateClient.cs" />
     <Compile Include="GestprojectAPI\RegisterClient.cs" />
+    <Compile Include="GestprojectAPI\UpdateClientSynchronizationStatus - Copy.cs" />
     <Compile Include="GestprojectAPI\UpdateClientSynchronizationStatus.cs" />
     <Compile Include="GestprojectAPI\CreateGestprojectSage50SynchronizationTable.cs" />
     <Compile Include="GestprojectAPI\WriteSingleRecordInNewClientsSincronizationTable.cs" />
@@ -403,10 +404,14 @@
     <Compile Include="Setup\LinkSage50.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workflows\Clients\7_SynchronizeAllClients .cs" />
+    <Compile Include="Workflows\Clients\6_BottomRowUI.cs" />
     <Compile Include="Workflows\Clients\4_CreateSynchronizationTable - Copy.cs" />
-    <Compile Include="Workflows\Clients\5_SynchronizeClients - Copy.cs" />
+    <Compile Include="Workflows\Clients\5_SynchronizeAllClients - Copy.cs" />
     <Compile Include="Workflows\Clients\AddClientToSyncronizationUITable - Copy.cs" />
     <Compile Include="Workflows\Clients\AddClientToSyncronizationUITable.cs" />
+    <Compile Include="Workflows\Clients\GetSelectedClientsInUITable.cs" />
+    <Compile Include="Workflows\Clients\PopulateGestprojectClientSynchronizationData.cs" />
     <Compile Include="Workflows\Clients\RemoveClientsSynchronizationTable.cs" />
     <Compile Include="Workflows\Clients\2_TopRowUI.cs" />
     <Compile Include="Workflows\Clients\PaintSynchronizedClientOnTable.cs" />

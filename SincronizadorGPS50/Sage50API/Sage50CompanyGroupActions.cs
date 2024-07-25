@@ -54,6 +54,8 @@ namespace SincronizadorGPS50.Sage50API
                 CompanyGroupsOperator._CambiarGrupo(selectedCompanyGroup.CompanyCode, "", true);
 
                 UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelConnectButton, 0, 16);
+
+                UIHolder.CenterRowCenterPanelConnectButton.Focus();
             };
         }
 

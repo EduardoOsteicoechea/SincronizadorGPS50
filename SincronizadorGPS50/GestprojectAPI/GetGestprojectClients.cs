@@ -11,6 +11,8 @@ namespace SincronizadorGPS50.GestprojectAPI
     {
         internal GetGestprojectClients() 
         {
+            DataHolder.GestprojectClientClassList.Clear();
+
             string sqlString = "SELECT PAR_ID, PAR_SUBCTA_CONTABLE, PAR_NOMBRE, PAR_NOMBRE_COMERCIAL, PAR_CIF_NIF, PAR_DIRECCION_1, PAR_CP_1, PAR_LOCALIDAD_1, PAR_PROVINCIA_1, PAR_PAIS_1 FROM PARTICIPANTE;";
 
             SqlCommand sqlCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection);
