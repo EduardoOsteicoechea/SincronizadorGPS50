@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\sage50api\\createsage50customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\sage50api\\createsage50customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\workflows\\clients\\3_centerrowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\workflows\\clients\\3_centerrowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\workflows\\clients\\3_refreshsynchronizationtable - copy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\workflows\\clients\\3_refreshsynchronizationtable - copy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\workflows\\clients\\2_toprowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\workflows\\clients\\2_toprowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreateSage50Customer.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Sage50API\\CreateSage50Customer.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\Sage50API\\CreateSage50Customer.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Sage50API\\CreateSage50Customer.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\Sage50API\\CreateSage50Customer.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAAADwAAAAPAAAA",
+              "DocumentIndex": 1,
+              "Title": "3_RefreshSynchronizationTable - Copy.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Clients\\3_RefreshSynchronizationTable - Copy.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\Workflows\\Clients\\3_RefreshSynchronizationTable - Copy.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Clients\\3_RefreshSynchronizationTable - Copy.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\Workflows\\Clients\\3_RefreshSynchronizationTable - Copy.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAwA8AAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T20:17:41.349Z",
+              "WhenOpened": "2024-07-25T21:38:09.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "3_CenterRowUI.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Clients\\3_CenterRowUI.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\Workflows\\Clients\\3_CenterRowUI.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Clients\\3_CenterRowUI.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\Workflows\\Clients\\3_CenterRowUI.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAwD4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T21:33:08.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "2_TopRowUI.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Clients\\2_TopRowUI.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\Workflows\\Clients\\2_TopRowUI.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Clients\\2_TopRowUI.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\Workflows\\Clients\\2_TopRowUI.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAcwEoAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T21:22:50.113Z",
               "EditorCaption": ""
             }
           ]

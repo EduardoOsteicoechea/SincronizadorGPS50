@@ -404,10 +404,14 @@
     <Compile Include="Setup\LinkSage50.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workflows\Clients\3_RefreshSynchronizationTable - Copy.cs" />
+    <Compile Include="Workflows\Clients\3_RefreshSynchronizationTable.cs" />
+    <Compile Include="Workflows\Clients\3_FreshSynchronizationTable.cs" />
     <Compile Include="Workflows\Clients\7_SynchronizeAllClients .cs" />
     <Compile Include="Workflows\Clients\6_BottomRowUI.cs" />
     <Compile Include="Workflows\Clients\4_CreateSynchronizationTable - Copy.cs" />
     <Compile Include="Workflows\Clients\5_SynchronizeAllClients - Copy.cs" />
+    <Compile Include="Workflows\Clients\8_CreateSynchronizationTableDelegate.cs" />
     <Compile Include="Workflows\Clients\AddClientToSyncronizationUITable - Copy.cs" />
     <Compile Include="Workflows\Clients\AddClientToSyncronizationUITable.cs" />
     <Compile Include="Workflows\Clients\GetSelectedClientsInUITable.cs" />

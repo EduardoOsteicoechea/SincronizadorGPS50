@@ -10,7 +10,7 @@ namespace SincronizadorGPS50.Workflows.Clients
     internal class GetSelectedClientsInUITable
     {
         internal List<GestprojectClient> Clients {  get; set; } = new List<GestprojectClient>();
-        internal GetSelectedClientsInUITable(List<int> gestProjectIdList) 
+        internal GetSelectedClientsInUITable(List<int> gestProjectIdList)
         {
             for (int i = 0; i < gestProjectIdList.Count; i++)
             {

@@ -10,14 +10,15 @@ namespace SincronizadorGPS50.Workflows.Clients
     internal class CenterRowUI
     {
         internal List<UltraGridRow> UltraGridRowList {  get; set; } = new List<UltraGridRow>();
-        internal List<int> GestprojectClientIdList {  get; set; } = new List<int>();
-        internal CenterRowUI() 
+        internal List<int> GestprojectClientIdList {  get; set; } = new List<int>(); 
+        internal CenterRowUI(CreateSynchronizationTableDelegate createTableDelegate) 
         {
             ClientsUIHolder.ClientDataTable = new UltraGrid();
 
             ClientsUIHolder.ClientDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
 
-            DataTable synchronizationTable = new CreateSynchronizationTable().Table;
+            //DataTable synchronizationTable = new CreateSynchronizationTable().Table; ///////////////////////////
+            DataTable synchronizationTable = createTableDelegate();
 
             ClientsUIHolder.ClientDataTable.DataSource = synchronizationTable;
 
@@ -41,7 +42,6 @@ namespace SincronizadorGPS50.Workflows.Clients
                     int selectedIndex2 = ultraGridRow.Index;
                     int MaxIndex = Math.Max(selectedIndex1, selectedIndex2);
                     int MinIndex = Math.Min(selectedIndex1, selectedIndex2);
-                    int indexesDifference = MaxIndex - MinIndex;
 
                     for(global::System.Int32 i = MinIndex; i < MaxIndex; i++)
                     {
@@ -50,6 +50,9 @@ namespace SincronizadorGPS50.Workflows.Clients
                     };
                 };
             };
+
+            DataHolder.ListOfSelectedClientIdInTable.Clear(); ///////////////////////////////////////////
+            UltraGridRowList.Distinct(); ///////////////////////////////////////
 
             foreach (var item in UltraGridRowList)
             {

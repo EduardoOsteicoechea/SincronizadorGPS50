@@ -64,7 +64,7 @@ namespace SincronizadorGPS50.Workflows.Clients
             new RemoveClientsSynchronizationTable();
             await Task.Delay(0);
             new SynchronizeAllClients();
-            new CenterRowUI();
+            new CenterRowUI(() => new RefreshSynchronizationTable().Create());
             ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
         }
 

@@ -47,44 +47,6 @@ namespace SincronizadorGPS50.Sage50API
             clsEntityCustomerInstance.provincia = gestprojectClient.PAR_PROVINCIA_1;
             clsEntityCustomerInstance.tipo_iva = "03";
 
-            //customer._Create(clsEntityCustomerInstance);
-
-            //Customer customer = new Customer();
-            //clsEntityCustomer clsEntityCustomerInstance = new clsEntityCustomer();
-
-            //if(nextAvailableClientCode < 10)
-            //{
-            //    clsEntityCustomerInstance.codigo = "4300000" + nextAvailableClientCode;
-            //    ClientCode = clsEntityCustomerInstance.codigo;
-            //}
-            //else if(nextAvailableClientCode < 100)
-            //{
-            //    clsEntityCustomerInstance.codigo = "430000" + nextAvailableClientCode;
-            //    ClientCode = clsEntityCustomerInstance.codigo;
-            //}
-            //else if(nextAvailableClientCode < 1000)
-            //{
-            //    clsEntityCustomerInstance.codigo = "43000" + nextAvailableClientCode;
-            //    ClientCode = clsEntityCustomerInstance.codigo;
-            //}
-            //else if(nextAvailableClientCode < 10000)
-            //{
-            //    clsEntityCustomerInstance.codigo = "4300" + nextAvailableClientCode;
-            //    ClientCode = clsEntityCustomerInstance.codigo;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Sage50 admite un máximo de 9999 clientes por grupo de empresas y su base de clientes de Gestproject supera éste límite.");
-            //};
-
-            ////clsEntityCustomerInstance.pais = gestprojectClient.PAR_PAIS_1.Replace("-", " ").Replace("ñ", "n");
-            ////clsEntityCustomerInstance.poblacion = gestprojectClient.PAR_LOCALIDAD_1;
-            ////clsEntityCustomerInstance.codpos = gestprojectClient.PAR_CP_1;
-            ////clsEntityCustomerInstance.cif = gestprojectClient.PAR_CIF_NIF;
-            ////clsEntityCustomerInstance.direccion = gestprojectClient.PAR_DIRECCION_1.Replace(",", " ");
-            ////clsEntityCustomerInstance.provincia = gestprojectClient.PAR_PROVINCIA_1.Replace(",", " ");
-            ////clsEntityCustomerInstance.tipo_iva = "03";
-
             if(customer._Create(clsEntityCustomerInstance))
             {
                 string getSage50ClientSQLQuery = @"

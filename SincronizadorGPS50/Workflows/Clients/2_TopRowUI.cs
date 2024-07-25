@@ -58,8 +58,8 @@ namespace SincronizadorGPS50.Workflows.Clients
         private async void TopRowRefreshTableButton_Click(object sender, System.EventArgs e)
         {
             new RemoveClientsSynchronizationTable();
-            await Task.Delay(100);
-            new CenterRowUI();
+            await Task.Delay(0);
+            new CenterRowUI(()=> new FreshSynchronizationTable().Create());
             ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
         }
 
@@ -72,7 +72,7 @@ namespace SincronizadorGPS50.Workflows.Clients
             new RemoveClientsSynchronizationTable();
             await Task.Delay(0);
             new SynchronizeClients(selectedClientsInUITable.Clients);
-            new CenterRowUI();
+            new CenterRowUI(() => new PartialSynchronizationTable().Create(selectedClientsInUITable.Clients));
             ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
 
             DataHolder.ListOfSelectedClientIdInTable.Clear();

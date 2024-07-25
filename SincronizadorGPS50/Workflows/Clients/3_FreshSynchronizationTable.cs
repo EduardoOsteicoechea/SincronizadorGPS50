@@ -3,10 +3,10 @@ using System.Data;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
-    internal class CreateSynchronizationTable
+    internal class FreshSynchronizationTable
     {
         internal DataTable Table { get; set; } = null;
-        public CreateSynchronizationTable()
+        public DataTable Create()
         {
             new ConnectToGestprojectDatabase();
 
@@ -37,7 +37,7 @@ namespace SincronizadorGPS50.Workflows.Clients
                 {
                     new RegisterClient(
                         gestprojectClient,
-                        SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
+                        gestprojectClient.synchronization_status
                     );
 
                     new PopulateGestprojectClientSynchronizationData(gestprojectClient);
@@ -45,7 +45,7 @@ namespace SincronizadorGPS50.Workflows.Clients
                     new AddClientToSyncronizationUITable(
                         gestprojectClient,
                         Table,
-                        SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
+                        gestprojectClient.synchronization_status
                     );
                 }
                 else
@@ -70,7 +70,7 @@ namespace SincronizadorGPS50.Workflows.Clients
                             new AddClientToSyncronizationUITable(
                                 gestprojectClient,
                                 Table,
-                                SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
+                                gestprojectClient.synchronization_status
                             );
                         }
                         else
@@ -81,7 +81,7 @@ namespace SincronizadorGPS50.Workflows.Clients
                             {
                                 new UpdateClientSynchronizationStatus(
                                     gestprojectClient,
-                                    SynchronizationStatusOptions.Sincronizado
+                                    gestprojectClient.synchronization_status
                                 );
 
                                 new PopulateGestprojectClientSynchronizationData(gestprojectClient);
@@ -89,14 +89,14 @@ namespace SincronizadorGPS50.Workflows.Clients
                                 new AddClientToSyncronizationUITable(
                                     gestprojectClient,
                                     Table,
-                                    SynchronizationStatusOptions.Sincronizado
+                                    gestprojectClient.synchronization_status
                                 );
                             }
                             else
                             {
                                 new UpdateClientSynchronizationStatus(
                                     gestprojectClient,
-                                    SynchronizationStatusOptions.Desincronizado
+                                    gestprojectClient.synchronization_status
                                 );
 
                                 new PopulateGestprojectClientSynchronizationData(gestprojectClient);
@@ -104,7 +104,7 @@ namespace SincronizadorGPS50.Workflows.Clients
                                 new AddClientToSyncronizationUITable(
                                     gestprojectClient,
                                     Table,
-                                    "",
+                                    gestprojectClient.synchronization_status,
                                     isGestprojectClientSynchronized.Comment
                                 );
                             };
@@ -128,9 +128,9 @@ namespace SincronizadorGPS50.Workflows.Clients
                 };
             };
 
-            new MakeSynchronizationTableGoballyAvailable(Table);
-
             DataHolder.GestprojectSQLConnection.Close();
+
+            return Table;
         }
     }
 }
