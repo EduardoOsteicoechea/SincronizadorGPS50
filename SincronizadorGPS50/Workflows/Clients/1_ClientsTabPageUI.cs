@@ -1,5 +1,4 @@
 ﻿using Infragistics.Win.Misc;
-using System;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50.Workflows.Clients
@@ -8,6 +7,10 @@ namespace SincronizadorGPS50.Workflows.Clients
     {
         internal ClientsTabPageUI()
         {
+            ////////////////////////////////////////
+            // ClientsTab Rows Container
+            ////////////////////////////////////////
+            
             ClientsUIHolder.MainPanel = new UltraPanel();
             ClientsUIHolder.MainPanel.Dock = DockStyle.Fill; 
 
@@ -23,11 +26,9 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             UIHolder.ClientsTab.TabPage.Controls.Add(ClientsUIHolder.MainPanel);
 
-            // TopRow;
-            // TopRow;
-            // TopRow;
-            // TopRow;
-            // TopRow;
+            ////////////////////////////////////////
+            // Clients TopRow
+            ////////////////////////////////////////
 
             ClientsUIHolder.TopRow = new UltraPanel();
             ClientsUIHolder.TopRow.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -37,11 +38,9 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             new TopRowUI();
 
-            // CenterRow
-            // CenterRow
-            // CenterRow
-            // CenterRow
-            // CenterRow
+            ////////////////////////////////////////
+            // Clients CenterRow
+            ////////////////////////////////////////
 
             ClientsUIHolder.CenterRow = new UltraPanel();
             ClientsUIHolder.CenterRow.Height = StyleHolder.CenterRowHeight;
@@ -50,13 +49,11 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.CenterRow, 0, 1);
 
-            new CenterRowUI(()=> new FreshSynchronizationTable().Create());
+            new CenterRowUI(SynchronizationTable.Create);
 
-            // BottomRow
-            // BottomRow
-            // BottomRow
-            // BottomRow
-            // BottomRow
+            ////////////////////////////////////////
+            // Clients BottomRow
+            ////////////////////////////////////////
 
             ClientsUIHolder.BottomRow = new UltraPanel();
             ClientsUIHolder.BottomRow.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -65,11 +62,6 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.BottomRow, 0, 2);
 
             new BottomRowUI();
-
-            //Customer customer = new Customer();
-            //clsEntityCustomer clsEntityCustomerInstance = new clsEntityCustomer();
-            //clsEntityCustomerInstance.codigo = "43000002";
-            //customer._Create(clsEntityCustomerInstance);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectAPI
 {
@@ -7,21 +8,37 @@ namespace SincronizadorGPS50.GestprojectAPI
     {
         public RegisterClient( GestprojectClient client, string synchronizationStatus ) 
         {
-            string sqlString2 = @"
-                INSERT INTO 
-                    INT_SAGE_SINC_CLIENTE 
-                    (
-                        synchronization_status, 
-                        gestproject_id, 
-                        sage50_code, 
-                        sage50_guid_id, 
-                        sage50_instance
-                    ) 
-                VALUES " + $"('{synchronizationStatus}', {client.PAR_ID}, '{client.sage50_client_code}', '{client.sage50_guid_id}', '{client.sage50_instance}');";
-
-            using(SqlCommand SQLCommand = new SqlCommand(sqlString2, DataHolder.GestprojectSQLConnection))
+            using(System.Data.SqlClient.SqlConnection connection = GestprojectDatabase.Connect())
             {
-                SQLCommand.ExecuteNonQuery();
+                try
+                {
+                    connection.Open();
+
+                    string sqlString = @"
+                    INSERT INTO 
+                        INT_SAGE_SINC_CLIENTE 
+                        (
+                            synchronization_status, 
+                            gestproject_id, 
+                            sage50_code, 
+                            sage50_guid_id, 
+                            sage50_instance
+                        ) 
+                    VALUES " + $"('{synchronizationStatus}', {client.PAR_ID}, '{client.sage50_client_code}', '{client.sage50_guid_id}', '{client.sage50_instance}');";
+
+                    using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
+                    {
+                        sqlCommand.ExecuteNonQuery();
+                    };
+                }
+                catch(SqlException ex)
+                {
+                    MessageBox.Show($"Error during data retrieval: \n\n{ex.Message}");
+                }
+                finally
+                {
+                    connection.Close();
+                };
             };
         }
     }

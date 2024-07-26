@@ -17,11 +17,29 @@ namespace SincronizadorGPS50.GestprojectAPI
             string synchronizationStatus
         )
         {
-            string sqlString2 = $"UPDATE INT_SAGE_SINC_CLIENTE SET synchronization_status='{synchronizationStatus}';";
-
-            using(SqlCommand SQLCommand = new SqlCommand(sqlString2, DataHolder.GestprojectSQLConnection))
+            using(System.Data.SqlClient.SqlConnection connection = GestprojectDatabase.Connect())
             {
-                SQLCommand.ExecuteNonQuery();
+                try
+                {
+                    connection.Open();
+
+                    string sqlString = $"UPDATE INT_SAGE_SINC_CLIENTE SET synchronization_status='{synchronizationStatus}';";
+
+                    client.synchronization_status = synchronizationStatus;
+
+                    using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
+                    {
+                        sqlCommand.ExecuteNonQuery();
+                    };
+                }
+                catch(SqlException ex)
+                {
+                    MessageBox.Show($"Error during data retrieval: \n\n{ex.Message}");
+                }
+                finally
+                {
+                    connection.Close();
+                };
             };
         }
     }

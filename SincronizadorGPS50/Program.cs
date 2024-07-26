@@ -1,5 +1,8 @@
-﻿using SincronizadorGPS50.Workflows.Clients;
+﻿using sage.ew.db;
+using SincronizadorGPS50.GestprojectAPI;
+using SincronizadorGPS50.Workflows.Clients;
 using System;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
@@ -14,7 +17,10 @@ namespace SincronizadorGPS50
             // Sage50Connection workflow
             new GenerateSage50ConnectionTabPageUI();
 
-            // EndWorkflow
+            // Used After ClientsTabUI workflow is initialized
+            new ConnectToGestprojectDatabase();
+
+            // Display initial window
             UIHolder.MainWindow.ShowDialog();
         }
     }

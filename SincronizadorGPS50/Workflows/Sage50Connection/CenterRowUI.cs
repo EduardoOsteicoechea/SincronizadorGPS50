@@ -12,8 +12,6 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI
             //LeftPanel
             //LeftPanel
             //LeftPanel
-            //LeftPanel
-            //LeftPanel
 
             UIHolder.Sage50ConnectionCenterRowLeftPanel = new UltraPanel();
             UIHolder.Sage50ConnectionCenterRowLeftPanel.Dock = System.Windows.Forms.DockStyle.Fill;

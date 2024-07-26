@@ -3,18 +3,16 @@ using System.Data;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
-    internal class RefreshSynchronizationTable
+    internal static class RefreshSynchronizationTable
     {
-        internal DataTable Table { get; set; } = null;
-        public DataTable Create()
+        internal static DataTable Table { get; set; } = null;
+        public static DataTable Create()
         {
-            new ConnectToGestprojectDatabase();
-
-            DataHolder.GestprojectSQLConnection.Open();
-
-            new GetGestprojectParticipants();
-
-            new GetGestprojectClients();
+            using(System.Data.SqlClient.SqlConnection connection = GestprojectDatabase.Connect()) 
+            {
+            
+            };
+                new GetGestprojectClients();
 
             Table = new CreateTableControl().Table;
 
@@ -30,8 +28,6 @@ namespace SincronizadorGPS50.Workflows.Clients
                     gestprojectClient.synchronization_status
                 );
             };
-
-            DataHolder.GestprojectSQLConnection.Close();
 
             return Table;
         }

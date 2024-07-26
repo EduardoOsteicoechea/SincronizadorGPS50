@@ -13,24 +13,34 @@ namespace SincronizadorGPS50.GestprojectAPI
         internal bool Exists { get; set; } = false;
         internal CheckIfTableExistsOnGestproject(string tableName)
         {
-            string checkIfSage50SincronizationTableExistsSQLQuery = $"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE \"TABLE_NAME\" = '{tableName}'";
-
-            using(
-                SqlCommand checkIfSage50SincronizationTableExistsSQLCommand =
-                new SqlCommand(
-                    checkIfSage50SincronizationTableExistsSQLQuery,
-                    DataHolder.GestprojectSQLConnection
-                )
-            )
+            using(System.Data.SqlClient.SqlConnection connection = GestprojectDatabase.Connect())
             {
-                int? Sage50SincronizationTableCount = (int)checkIfSage50SincronizationTableExistsSQLCommand.ExecuteScalar();
-                if(Sage50SincronizationTableCount != null)
+                try
                 {
-                    Exists = Sage50SincronizationTableCount > 0;
+                    connection.Open();
+
+                    string sqlString = $"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE \"TABLE_NAME\" = '{tableName}'";
+
+                    using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
+                    {
+                        int? Sage50SincronizationTableCount = (int)sqlCommand.ExecuteScalar();
+                        if(Sage50SincronizationTableCount != null)
+                        {
+                            Exists = Sage50SincronizationTableCount > 0;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"La búsqueda de la tabla \"{tableName}\" retornó un valor nulo.");
+                        };
+                    };
                 }
-                else
+                catch(SqlException ex)
                 {
-                    MessageBox.Show($"La búsqueda de la tabla \"{tableName}\" retornó un valor nulo.");
+                    MessageBox.Show($"Error during data retrieval: \n\n{ex.Message}");
+                }
+                finally
+                {
+                    connection.Close();
                 };
             };
         }

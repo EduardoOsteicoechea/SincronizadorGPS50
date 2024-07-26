@@ -11,7 +11,7 @@ namespace SincronizadorGPS50.Workflows.Clients
     {
         public SynchronizeClients(List<GestprojectClient> selectedGestprojectClients)
         {
-            DataHolder.GestprojectSQLConnection.Open();
+            //DataHolder.GestprojectSQLConnection.Open();
 
             GetSage50Clients sage50Clients = new GetSage50Clients();
 
@@ -78,7 +78,7 @@ namespace SincronizadorGPS50.Workflows.Clients
                 };                
             };
 
-            DataHolder.GestprojectSQLConnection.Close();
+            //DataHolder.GestprojectSQLConnection.Close();
         }
     }
 }

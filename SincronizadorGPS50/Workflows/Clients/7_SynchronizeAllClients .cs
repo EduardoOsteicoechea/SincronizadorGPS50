@@ -17,9 +17,12 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             GetRegisteredClients registeredClients = new GetRegisteredClients();
 
-            for(int i = 0; i < registeredClients.RegisteredClientsList.Count; i++)
+            //for(int i = 0; i < registeredClients.RegisteredClientsList.Count; i++)
+            //{
+            //    GestprojectClient registeredClient = registeredClients.RegisteredClientsList[i];
+            for(int i = 0; i < DataHolder.GestprojectClientClassList.Count; i++)
             {
-                GestprojectClient registeredClient = registeredClients.RegisteredClientsList[i];
+                GestprojectClient registeredClient = DataHolder.GestprojectClientClassList[i];
 
                 new PopulateGestprojectClientSynchronizationData(registeredClient);
 

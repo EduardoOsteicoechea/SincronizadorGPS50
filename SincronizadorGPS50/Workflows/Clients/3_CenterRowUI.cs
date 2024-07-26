@@ -1,4 +1,5 @@
-﻿using Infragistics.Win.UltraWinGrid;
+﻿using Infragistics.Win;
+using Infragistics.Win.UltraWinGrid;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,6 +19,8 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.ClientDataTable.DisplayLayout.Override.FilterUIProvider = new ColumnsFilter();
             ClientsUIHolder.ClientDataTable.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
             ClientsUIHolder.ClientDataTable.AfterRowFilterChanged += ClientDataTable_AfterRowFilterChanged;
+            ClientsUIHolder.ClientDataTable.DisplayLayout.Override.AllowUpdate = DefaultableBoolean.False;
+            ClientsUIHolder.ClientDataTable.DisplayLayout.Bands[0].Override.AllowUpdate = DefaultableBoolean.False;
 
             ClientsUIHolder.ClientDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
 

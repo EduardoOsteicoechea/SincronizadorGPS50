@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectAPI
 {
@@ -12,19 +13,36 @@ namespace SincronizadorGPS50.GestprojectAPI
         internal bool ItIs {  get; set; } = false;
         internal CheckIfGestprojectClientWasSynchronized(GestprojectClient client) 
         {
-            string sqlString = $"SELECT sage50_guid_id FROM INT_SAGE_SINC_CLIENTE WHERE gestproject_id={client.PAR_ID};";
-
-            SqlCommand sqlCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection);
-
-            using(SqlDataReader reader = sqlCommand.ExecuteReader())
+            using(System.Data.SqlClient.SqlConnection connection = GestprojectDatabase.Connect())
             {
-                while(reader.Read())
+                try
                 {
-                    if((string)reader.GetValue(0) != "" && (string)reader.GetValue(0) != null)
+                    connection.Open();
+
+                    string sqlString = $"SELECT sage50_guid_id FROM INT_SAGE_SINC_CLIENTE WHERE gestproject_id={client.PAR_ID};";
+
+                    using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
                     {
-                        ItIs = true;
-                        break;
-                    }
+                        using(SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while(reader.Read())
+                            {
+                                if((string)reader.GetValue(0) != "" && (string)reader.GetValue(0) != null)
+                                {
+                                    ItIs = true;
+                                    break;
+                                }
+                            };
+                        };
+                    };
+                }
+                catch(SqlException ex)
+                {
+                    MessageBox.Show($"Error during data retrieval: \n\n{ex.Message}");
+                }
+                finally
+                {
+                    connection.Close();
                 };
             };
         }

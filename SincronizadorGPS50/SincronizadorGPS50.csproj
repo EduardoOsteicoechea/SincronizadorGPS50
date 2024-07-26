@@ -363,6 +363,7 @@
     <Compile Include="DataHolders\DataHolder.cs" />
     <Compile Include="DataHolders\StyleHolder.cs" />
     <Compile Include="DataHolders\UIHolder.cs" />
+    <Compile Include="GestprojectAPI\1_ConnectToGestprojectDatabase .cs" />
     <Compile Include="GestprojectAPI\IsGestprojectClientSynchronized.cs" />
     <Compile Include="GestprojectAPI\IsGestprojectClientRegistered.cs" />
     <Compile Include="GestprojectAPI\GetRegisteredClients.cs" />
@@ -404,12 +405,19 @@
     <Compile Include="Setup\LinkSage50.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workflows\Clients\1_ClientsTabPageUI - Copy.cs" />
+    <Compile Include="Workflows\Clients\2_BottomRowSynchronizeAllButtonEvents.cs" />
+    <Compile Include="Workflows\Clients\2_TopRowRefreshTableButtonEvents - Copy %282%29.cs" />
+    <Compile Include="Workflows\Clients\2_BottomRowSynchronizeFilteredButtonEvents.cs" />
+    <Compile Include="Workflows\Clients\2_TopRowSinchronizeSelectedButtonEvents.cs" />
+    <Compile Include="Workflows\Clients\2_TopRowUI - Copy.cs" />
     <Compile Include="Workflows\Clients\3_ColumnsFilter.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Workflows\Clients\2_RefreshSynchronizationTable.cs" />
     <Compile Include="Workflows\Clients\FilteredSynchronizationTable.cs" />
     <Compile Include="Workflows\Clients\3_SelectiveSynchronizationTable.cs" />
-    <Compile Include="Workflows\Clients\3_RefreshSynchronizationTable.cs" />
+    <Compile Include="Workflows\Clients\2_SynchronizationTable.cs" />
     <Compile Include="Workflows\Clients\3_FreshSynchronizationTable.cs" />
     <Compile Include="Workflows\Clients\3_TableUISynchronizationActions.cs" />
     <Compile Include="Workflows\Clients\7_SynchronizeAllClients .cs" />
@@ -419,6 +427,7 @@
     <Compile Include="Workflows\Clients\8_CreateSynchronizationTableDelegate.cs" />
     <Compile Include="Workflows\Clients\AddClientToSyncronizationUITable - Copy.cs" />
     <Compile Include="Workflows\Clients\AddClientToSyncronizationUITable.cs" />
+    <Compile Include="Workflows\Clients\2_GestprojectClients.cs" />
     <Compile Include="Workflows\Clients\GetSelectedClientsInUITable.cs" />
     <Compile Include="Workflows\Clients\PopulateGestprojectClientSynchronizationData.cs" />
     <Compile Include="Workflows\Clients\RemoveClientsSynchronizationTable.cs" />
@@ -435,6 +444,7 @@
     <Compile Include="Workflows\Clients\GetExistingSage50ClientsLastCodeValue.cs" />
     <Compile Include="Workflows\Clients\MakeSincronizationTableGoballyAvailable.cs" />
     <Compile Include="Workflows\Clients\SyncronizationStatusOptions.cs" />
+    <Compile Include="Workflows\Clients\2_TopRowRefreshTableButtonEvents.cs" />
     <Compile Include="Workflows\Clients\UpdateRegisteredClientModelData.cs" />
     <Compile Include="Workflows\InitialWindow\GenerateMainTabControl.cs" />
     <Compile Include="Workflows\InitialWindow\GenerateMainWindow.cs" />

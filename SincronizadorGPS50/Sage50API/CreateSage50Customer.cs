@@ -40,12 +40,15 @@ namespace SincronizadorGPS50.Sage50API
             {
                 MessageBox.Show("Sage50 admite un máximo de 9999 clientes por grupo de empresas y su base de clientes de Gestproject supera éste límite.");
             };
-            clsEntityCustomerInstance.pais = gestprojectClient.PAR_CP_1;
+            clsEntityCustomerInstance.pais = gestprojectClient.PAR_PAIS_1; ///////////// Generate Validatos
+            //clsEntityCustomerInstance.pais = gestprojectClient.PAR_CP_1;
             clsEntityCustomerInstance.nombre = gestprojectClient.PAR_NOMBRE;
             clsEntityCustomerInstance.cif = gestprojectClient.PAR_CIF_NIF;
             clsEntityCustomerInstance.direccion = gestprojectClient.PAR_DIRECCION_1;
             clsEntityCustomerInstance.provincia = gestprojectClient.PAR_PROVINCIA_1;
             clsEntityCustomerInstance.tipo_iva = "03";
+
+            clsEntityCustomerInstance.codpos = gestprojectClient.PAR_CP_1; ////////////////// Generate Validation
 
             if(customer._Create(clsEntityCustomerInstance))
             {

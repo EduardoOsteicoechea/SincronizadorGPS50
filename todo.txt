@@ -1,0 +1,37 @@
+Acreditar:
+
+<a href="https://www.flaticon.com/free-icons/restart" title="restart icons">Restart icons created by berkahicon - Flaticon</a>
+
+
+
+
+
+
+Añadir:
+-Chequeo de conformidad entre Gestproject  Sage50 antes de cada acción
+
+-Consulta de sobreescritura en Sage50 en caso de solicitud de sincronización
+
+-Informe de 2 tipos de error luego de chequeo de conformidad e intento de sincronización
+
+-Depuración de elementos de proyecto
+
+- En caso de desincronización
+	-Imprimir diferencia en comentarios: campo y el valor en Sage
+	2 tipos de errores:
+		-Rechazado por sage
+		-Diferencia entre extremos
+Sincronizar
+	-Buscar diferencias
+	-Preguntar si desea sobrescribir diferencias en Sage50 (usando el método update de clases de negocio)
+
+
+
+
+
+
+
+
+
+
+

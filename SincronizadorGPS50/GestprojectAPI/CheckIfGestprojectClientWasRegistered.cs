@@ -11,22 +11,39 @@ namespace SincronizadorGPS50.GestprojectAPI
     internal class IsGestprojectClientRegistered
     {
         internal bool ItIs {  get; set; } = false;
-        internal IsGestprojectClientRegistered(GestprojectClient client) 
+        internal IsGestprojectClientRegistered(GestprojectClient client)
         {
-            string sqlString = $"SELECT id FROM INT_SAGE_SINC_CLIENTE WHERE gestproject_id={client.PAR_ID};";
-
-            SqlCommand sqlCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection);
-
-            using(SqlDataReader reader = sqlCommand.ExecuteReader())
+            using(System.Data.SqlClient.SqlConnection connection = GestprojectDatabase.Connect())
             {
-                while(reader.Read())
+                try
                 {
-                    if((int)reader.GetValue(0) != -1)
+                    connection.Open();
+
+                    string sqlString = $"SELECT id FROM INT_SAGE_SINC_CLIENTE WHERE gestproject_id={client.PAR_ID};";
+
+                    using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
                     {
-                        client.synchronization_table_id = (int)reader.GetValue(0);
-                        ItIs = true;
-                        break;
-                    }
+                        using(SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while(reader.Read())
+                            {
+                                if((int)reader.GetValue(0) != -1)
+                                {
+                                    client.synchronization_table_id = (int)reader.GetValue(0);
+                                    ItIs = true;
+                                    break;
+                                }
+                            };
+                        };
+                    };
+                }
+                catch(SqlException ex)
+                {
+                    MessageBox.Show($"Error during data retrieval: \n\n{ex.Message}");
+                }
+                finally
+                {
+                    connection.Close();
                 };
             };
         }

@@ -13,29 +13,38 @@ namespace SincronizadorGPS50.GestprojectAPI
     {
         internal CreateGestprojectSage50SynchronizationTable() 
         {
-            string sqlString = @"
-                CREATE TABLE 
-                    INT_SAGE_SINC_CLIENTE 
-                    (
-                        id INT PRIMARY KEY IDENTITY(1,1), 
-                        synchronization_status VARCHAR(MAX), 
-                        gestproject_id INT, 
-                        sage50_code VARCHAR(MAX), 
-                        sage50_guid_id VARCHAR(MAX), 
-                        sage50_instance VARCHAR(MAX),
-                        last_record DATETIME DEFAULT GETDATE() NOT NULL
-                    )
-                ;";
-
-            using(SqlCommand SQLCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection))
+            using(System.Data.SqlClient.SqlConnection connection = GestprojectDatabase.Connect())
             {
-                if(SQLCommand.ExecuteNonQuery() > 0)
+                try
                 {
-                    //MessageBox.Show("Se creó la tabla INT_SAGE_SINC_CLIENTE exitosamente.");
+                    connection.Open();
+
+                    string sqlString = @"
+                    CREATE TABLE 
+                        INT_SAGE_SINC_CLIENTE 
+                        (
+                            id INT PRIMARY KEY IDENTITY(1,1), 
+                            synchronization_status VARCHAR(MAX), 
+                            gestproject_id INT, 
+                            sage50_code VARCHAR(MAX), 
+                            sage50_guid_id VARCHAR(MAX), 
+                            sage50_instance VARCHAR(MAX),
+                            last_record DATETIME DEFAULT GETDATE() NOT NULL
+                        )
+                    ;";
+
+                    using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
+                    {
+                        sqlCommand.ExecuteNonQuery();
+                    };
                 }
-                else
+                catch(SqlException ex)
                 {
-                    //MessageBox.Show("No se logró crear la tabla INT_SAGE_SINC_CLIENTE.");
+                    MessageBox.Show($"Error during data retrieval: \n\n{ex.Message}");
+                }
+                finally
+                {
+                    connection.Close();
                 };
             };
         }
