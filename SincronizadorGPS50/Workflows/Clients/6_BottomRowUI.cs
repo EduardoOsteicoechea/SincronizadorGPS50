@@ -19,11 +19,12 @@ namespace SincronizadorGPS50.Workflows.Clients
         internal BottomRowUI()
         {
             ClientsUIHolder.BottomRowTableLayoutPanel = new TableLayoutPanel();
-            ClientsUIHolder.BottomRowTableLayoutPanel.ColumnCount = 3;
+            ClientsUIHolder.BottomRowTableLayoutPanel.ColumnCount = 4;
             ClientsUIHolder.BottomRowTableLayoutPanel.RowCount = 1;
             ClientsUIHolder.BottomRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 84f));
-            ClientsUIHolder.BottomRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Absolute, 110));
-            ClientsUIHolder.BottomRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Absolute, 110));
+            ClientsUIHolder.BottomRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Absolute, 150));
+            ClientsUIHolder.BottomRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Absolute, 150));
+            ClientsUIHolder.BottomRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Absolute, 150));
             ClientsUIHolder.BottomRowTableLayoutPanel.Dock = DockStyle.Fill;
 
             ClientsUIHolder.BottomRowMainInstructionLabel = new UltraLabel();
@@ -32,29 +33,59 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.BottomRowMainInstructionLabel.Appearance.TextVAlign = VAlign.Middle;
 
 
+            ClientsUIHolder.BottomRowSynchronizeFilteredButton = new UltraButton();
+            ClientsUIHolder.BottomRowSynchronizeFilteredButton.Text = "Sincronizar filtrados";
+            ClientsUIHolder.BottomRowSynchronizeFilteredButton.Dock = DockStyle.Fill;
+            ClientsUIHolder.BottomRowSynchronizeFilteredButton.Click += BottomRowSynchronizeFilteredButton_Click;
+            ClientsUIHolder.BottomRowSynchronizeFilteredButton.Enabled = false;
+            ;
 
-            ClientsUIHolder.BottomRowRefreshTableButton = new UltraButton();
-            ClientsUIHolder.BottomRowRefreshTableButton.Text = "Sincronizar todo";
-            ClientsUIHolder.BottomRowRefreshTableButton.Dock = DockStyle.Fill;
-            ClientsUIHolder.BottomRowRefreshTableButton.Click += BottomRowRefreshTableButton_Click;
+            ClientsUIHolder.BottomRowSynchronizeAllButton = new UltraButton();
+            ClientsUIHolder.BottomRowSynchronizeAllButton.Text = "Sincronizar todo";
+            ClientsUIHolder.BottomRowSynchronizeAllButton.Dock = DockStyle.Fill;
+            ClientsUIHolder.BottomRowSynchronizeAllButton.Click += BottomRowSynchronizeAllButton_Click;
 
-
-
-            ClientsUIHolder.BottomRowSynchronizeClientsButton = new UltraButton();
-            ClientsUIHolder.BottomRowSynchronizeClientsButton.Text = "Salir";
-            ClientsUIHolder.BottomRowSynchronizeClientsButton.Dock = DockStyle.Fill;
-            ClientsUIHolder.BottomRowSynchronizeClientsButton.Click += BottomRowSynchronizeClientsButton_Click;
+            ClientsUIHolder.BottomRowCloseButton = new UltraButton();
+            ClientsUIHolder.BottomRowCloseButton.Text = "Salir";
+            ClientsUIHolder.BottomRowCloseButton.Dock = DockStyle.Fill;
+            ClientsUIHolder.BottomRowCloseButton.Click += BottomRowCloseButton_Click;
 
 
 
             ClientsUIHolder.BottomRow.ClientArea.Controls.Add(ClientsUIHolder.BottomRowTableLayoutPanel);
-
             ClientsUIHolder.BottomRowTableLayoutPanel.Controls.Add(ClientsUIHolder.BottomRowMainInstructionLabel, 0, 0);
-            ClientsUIHolder.BottomRowTableLayoutPanel.Controls.Add(ClientsUIHolder.BottomRowRefreshTableButton, 1, 0);
-            ClientsUIHolder.BottomRowTableLayoutPanel.Controls.Add(ClientsUIHolder.BottomRowSynchronizeClientsButton, 2, 0);
+            ClientsUIHolder.BottomRowTableLayoutPanel.Controls.Add(ClientsUIHolder.BottomRowSynchronizeFilteredButton, 1, 0);
+            ClientsUIHolder.BottomRowTableLayoutPanel.Controls.Add(ClientsUIHolder.BottomRowSynchronizeAllButton, 2, 0);
+            ClientsUIHolder.BottomRowTableLayoutPanel.Controls.Add(ClientsUIHolder.BottomRowCloseButton, 3, 0);
         }
 
-        private async void BottomRowRefreshTableButton_Click(object sender, System.EventArgs e)
+        internal void ChangeMainMessageText(object control, string newText)
+        {
+            ClientsUIHolder.BottomRowMainInstructionLabel.Text = newText;
+        }
+
+        private void BottomRowSynchronizeFilteredButton_Click(object sender, EventArgs e)
+        {
+            TableUISynchronizationActions.CollectFilteredInTableUI(ClientsUIHolder.ClientDataTable);
+
+            DataHolder.GestprojectSQLConnection.Open();
+            GetSelectedClientsInUITable selectedClientsInUITable = new GetSelectedClientsInUITable(DataHolder.ListOfSelectedClientIdInTable);
+            DataHolder.GestprojectSQLConnection.Close();
+
+            new RemoveClientsSynchronizationTable();
+
+            new SynchronizeClients(selectedClientsInUITable.Clients);
+
+            new CenterRowUI(() => new FilteredSynchronizationTable().Create(selectedClientsInUITable.Clients));
+
+            ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
+
+            DataHolder.ListOfSelectedClientIdInTable.Clear();
+
+            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
+        }
+
+        private void BottomRowSynchronizeAllButton_Click(object sender, System.EventArgs e)
         {
             DataHolder.GestprojectSQLConnection.Open();
             new GetGestprojectParticipants();
@@ -62,20 +93,16 @@ namespace SincronizadorGPS50.Workflows.Clients
             DataHolder.GestprojectSQLConnection.Close();
 
             new RemoveClientsSynchronizationTable();
-            await Task.Delay(0);
             new SynchronizeAllClients();
             new CenterRowUI(() => new RefreshSynchronizationTable().Create());
             ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
+
+            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
         }
 
-        private async void BottomRowSynchronizeClientsButton_Click(object sender, System.EventArgs e)
+        private void BottomRowCloseButton_Click(object sender, System.EventArgs e)
         {
             UIHolder.MainWindow.Close();
-        }
-
-        internal void ChangeMainMessageText(object control, string newText)
-        {
-            ClientsUIHolder.BottomRowMainInstructionLabel.Text = newText;
         }
     }
 }

@@ -22,6 +22,7 @@ namespace SincronizadorGPS50.Workflows.Clients
                 {
                     client.synchronization_table_id = (int)reader.GetValue(0);
                     client.synchronization_status = (string)reader.GetValue(1);
+                    client.PAR_SUBCTA_CONTABLE = (string)reader.GetValue(2);
                     client.sage50_client_code = (string)reader.GetValue(2);
                     client.sage50_guid_id = (string)reader.GetValue(3);
                 };

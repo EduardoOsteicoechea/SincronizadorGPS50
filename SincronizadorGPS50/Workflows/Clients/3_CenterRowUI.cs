@@ -9,59 +9,32 @@ namespace SincronizadorGPS50.Workflows.Clients
 {
     internal class CenterRowUI
     {
-        internal List<UltraGridRow> UltraGridRowList {  get; set; } = new List<UltraGridRow>();
-        internal List<int> GestprojectClientIdList {  get; set; } = new List<int>(); 
-        internal CenterRowUI(CreateSynchronizationTableDelegate createTableDelegate) 
+        internal List<UltraGridRow> UltraGridRowList { get; set; } = new List<UltraGridRow>();
+        internal List<int> GestprojectClientIdList { get; set; } = new List<int>();
+        internal CenterRowUI(CreateSynchronizationTableDelegate createTableDelegate)
         {
             ClientsUIHolder.ClientDataTable = new UltraGrid();
 
+            ClientsUIHolder.ClientDataTable.DisplayLayout.Override.FilterUIProvider = new ColumnsFilter();
+            ClientsUIHolder.ClientDataTable.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            ClientsUIHolder.ClientDataTable.AfterRowFilterChanged += ClientDataTable_AfterRowFilterChanged;
+
             ClientsUIHolder.ClientDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
 
-            //DataTable synchronizationTable = new CreateSynchronizationTable().Table; ///////////////////////////
             DataTable synchronizationTable = createTableDelegate();
 
             ClientsUIHolder.ClientDataTable.DataSource = synchronizationTable;
 
             ClientsUIHolder.CenterRow.ClientArea.Controls.Add(ClientsUIHolder.ClientDataTable);
 
-            ClientsUIHolder.ClientDataTable.ClickCell += ClientDataTable_ClickCell;
+            ClientsUIHolder.ClientDataTable.ClickCell += TableUISynchronizationActions.Set;
         }
 
-        private void ClientDataTable_ClickCell(object sender, ClickCellEventArgs e)
+        private void ClientDataTable_AfterRowFilterChanged(object sender, AfterRowFilterChangedEventArgs e) 
         {
-            UltraGrid ultraGrid = sender as UltraGrid;
-            UltraGridRow ultraGridRow = ultraGrid.ActiveRow;
-            UltraGridRowList.Add(ultraGridRow);
-            
-            if((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
-            {
-                if(UltraGridRowList.Count > 1)
-                {
-                    UltraGridRow previousIndex = UltraGridRowList[UltraGridRowList.Count - 2];
-                    int selectedIndex1 = previousIndex.Index;
-                    int selectedIndex2 = ultraGridRow.Index;
-                    int MaxIndex = Math.Max(selectedIndex1, selectedIndex2);
-                    int MinIndex = Math.Min(selectedIndex1, selectedIndex2);
-
-                    for(global::System.Int32 i = MinIndex; i < MaxIndex; i++)
-                    {
-                        ultraGrid.Rows[i].Selected = true;
-                        UltraGridRowList.Add(ultraGrid.Rows[i]);
-                    };
-                };
-            };
-
-            DataHolder.ListOfSelectedClientIdInTable.Clear(); ///////////////////////////////////////////
-            UltraGridRowList.Distinct(); ///////////////////////////////////////
-
-            foreach (var item in UltraGridRowList)
-            {
-                item.Selected = true;
-                GestprojectClientIdList.Add((int)item.Cells[2].Value);
-                DataHolder.ListOfSelectedClientIdInTable.Add((int)item.Cells[2].Value);
-            };
-
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = true;
+            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
+            ClientsUIHolder.BottomRowSynchronizeFilteredButton.Enabled = true;
+            TableUISynchronizationActions.DeselectRows(ClientsUIHolder.ClientDataTable);
         }
     }
 }

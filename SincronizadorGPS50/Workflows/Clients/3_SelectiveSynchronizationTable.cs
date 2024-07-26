@@ -4,7 +4,7 @@ using System.Data;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
-    internal class PartialSynchronizationTable
+    internal class SelectiveSynchronizationTable
     {
         internal DataTable Table { get; set; } = null;
         public DataTable Create(List<GestprojectClient> clientList)
@@ -14,11 +14,11 @@ namespace SincronizadorGPS50.Workflows.Clients
             Table = new CreateTableControl().Table;
 
             DataHolder.GestprojectClientClassList.Clear();
+
             new GetGestprojectClients();
 
             for(int i = 0; i < DataHolder.GestprojectClientClassList.Count; i++)
             {
-                //GestprojectClient synchronizedClient = clientList[i];
                 GestprojectClient client = DataHolder.GestprojectClientClassList[i];
 
                 for (global::System.Int32 j = 0; j < clientList.Count; j++)
@@ -32,7 +32,6 @@ namespace SincronizadorGPS50.Workflows.Clients
                     };
                 };
 
-                //new PopulateGestprojectClientSynchronizationData(synchronizedClient);
                 new PopulateGestprojectClientSynchronizationData(client);
 
                 new AddClientToSyncronizationUITable(

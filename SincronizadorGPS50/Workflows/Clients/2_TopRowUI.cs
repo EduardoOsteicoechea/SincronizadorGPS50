@@ -59,23 +59,31 @@ namespace SincronizadorGPS50.Workflows.Clients
         {
             new RemoveClientsSynchronizationTable();
             await Task.Delay(0);
-            new CenterRowUI(()=> new FreshSynchronizationTable().Create());
+            //new CenterRowUI(()=> new FreshSynchronizationTable().Create());
+            new CenterRowUI(()=> new RefreshSynchronizationTable().Create());
             ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
+
+            ClientsUIHolder.BottomRowSynchronizeFilteredButton.Enabled = false;
+            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
         }
 
         private async void TopRowSynchronizeClientsButton_Click(object sender, System.EventArgs e)
         {
             DataHolder.GestprojectSQLConnection.Open();
+            TableUISynchronizationActions.CollectCurrentlySelected(ClientsUIHolder.ClientDataTable);
             GetSelectedClientsInUITable selectedClientsInUITable = new GetSelectedClientsInUITable(DataHolder.ListOfSelectedClientIdInTable);
             DataHolder.GestprojectSQLConnection.Close();
 
             new RemoveClientsSynchronizationTable();
-            await Task.Delay(0);
+
             new SynchronizeClients(selectedClientsInUITable.Clients);
-            new CenterRowUI(() => new PartialSynchronizationTable().Create(selectedClientsInUITable.Clients));
+            new CenterRowUI(() => new SelectiveSynchronizationTable().Create(selectedClientsInUITable.Clients));
             ClientsUIHolder.TopRowMainInstructionLabel.Text = MainMessage;
 
             DataHolder.ListOfSelectedClientIdInTable.Clear();
+
+            ClientsUIHolder.BottomRowSynchronizeFilteredButton.Enabled = false;
+            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
         }
 
         internal void ChangeMainMessageText(object control, string newText) 
