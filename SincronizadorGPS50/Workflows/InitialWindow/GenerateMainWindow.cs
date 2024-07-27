@@ -14,7 +14,6 @@ namespace SincronizadorGPS50
             UIHolder.MainWindow.Text = "SincronizadorGPS50";
             UIHolder.MainWindow.WindowState = FormWindowState.Maximized;
             UIHolder.MainWindow.SizeGripStyle = SizeGripStyle.Hide;
-            //UIHolder.MainWindow.BackColor = StyleHolder.c_white;
 
             string mainWindowIconPath = Application.StartupPath + @"\Media\Image\appicon.ico";
             if(File.Exists(mainWindowIconPath))

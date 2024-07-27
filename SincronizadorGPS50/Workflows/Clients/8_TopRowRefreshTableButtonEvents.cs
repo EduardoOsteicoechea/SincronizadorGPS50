@@ -8,8 +8,10 @@ namespace SincronizadorGPS50.Workflows.Clients
 {
     internal static class TopRowRefreshTableButtonEvents
     {
-        internal static void Click(object sender, System.EventArgs e) 
+        internal static void Click(object sender, System.EventArgs e)
         {
+            Infragistics.Win.AppStyling.StyleManager.Load(System.Windows.Forms.Application.StartupPath + "\\Resources\\Styles\\Excel2013 - White.isl");
+
             new RemoveClientsSynchronizationTable();
 
             new CenterRowUI(SynchronizationTable.Refresh);

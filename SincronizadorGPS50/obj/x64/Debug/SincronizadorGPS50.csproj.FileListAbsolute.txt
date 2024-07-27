@@ -304,3 +304,42 @@ C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sin
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.1.0.2.exe.config
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.1.0.2.exe
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.1.0.2.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Aero.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Chameleon.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Claymation.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Excel2013 - Dark Gray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Excel2013 - Light Gray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Excel2013 - White.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\GrapeTomato.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\IG.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\LucidDream.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Metro.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\ModClay.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Nautilus.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\NoirModerne.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Office2007Black.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Office2007Blue.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Office2007Silver.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Office2010Black.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Office2010Blue.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Office2010Silver.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Office2013 - Dark Gray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Office2013 - Light Gray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Office2013 - White.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Outlook2013 - Dark Gray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Outlook2013 - LightGray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Outlook2013 - White.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Pear.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\RedPlanet.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\RubberBlack.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Trendy.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\VS2008.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\VS2010.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\VS2013 - Blue.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\VS2013 - Dark.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\VS2013 - Light.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Windows7.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Windows8-DarkGray-Blue.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Windows8-DarkGray-Green.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Windows8-DarkGray-Pink.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Resources\Styles\Windows8-DarkGray-Yellow.isl
