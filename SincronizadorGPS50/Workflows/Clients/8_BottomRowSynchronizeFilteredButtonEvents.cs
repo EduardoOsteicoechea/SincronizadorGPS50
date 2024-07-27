@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
-    internal static class BottomRowSynchronizeAllButtonEvents
+    internal static class BottomRowSynchronizeFilteredButtonEvents
     {
-        internal static void Click(object sender, System.EventArgs e)
+        internal static void Click(object sender, System.EventArgs e) 
         {
-            TableUISynchronizationActions.CollectFilteredInTableUI(ClientsUIHolder.ClientDataTable);
+            SynchronizationTableUIActions.CollectFilteredInTableUI(ClientsUIHolder.ClientDataTable);
 
             GetSelectedClientsInUITable selectedClientsInUITable = new GetSelectedClientsInUITable(DataHolder.ListOfSelectedClientIdInTable);
 

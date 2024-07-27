@@ -1,10 +1,7 @@
 ﻿using Infragistics.Win;
 using Infragistics.Win.UltraWinGrid;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Windows.Forms;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
@@ -12,7 +9,7 @@ namespace SincronizadorGPS50.Workflows.Clients
     {
         internal List<UltraGridRow> UltraGridRowList { get; set; } = new List<UltraGridRow>();
         internal List<int> GestprojectClientIdList { get; set; } = new List<int>();
-        internal CenterRowUI(CreateSynchronizationTableDelegate createTableDelegate)
+        internal CenterRowUI(SynchronizationTableDelegate createTableDelegate)
         {
             ClientsUIHolder.ClientDataTable = new UltraGrid();
 
@@ -30,14 +27,14 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             ClientsUIHolder.CenterRow.ClientArea.Controls.Add(ClientsUIHolder.ClientDataTable);
 
-            ClientsUIHolder.ClientDataTable.ClickCell += TableUISynchronizationActions.Set;
+            ClientsUIHolder.ClientDataTable.ClickCell += SynchronizationTableUIActions.Set;
         }
 
         private void ClientDataTable_AfterRowFilterChanged(object sender, AfterRowFilterChangedEventArgs e) 
         {
             ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
             ClientsUIHolder.BottomRowSynchronizeFilteredButton.Enabled = true;
-            TableUISynchronizationActions.DeselectRows(ClientsUIHolder.ClientDataTable);
+            SynchronizationTableUIActions.DeselectRows(ClientsUIHolder.ClientDataTable);
         }
     }
 }

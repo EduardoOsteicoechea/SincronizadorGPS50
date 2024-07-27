@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\gestprojectapi\\updateclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\gestprojectapi\\updateclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\gestprojectapi\\recordsage50clientcodeingestproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\gestprojectapi\\recordsage50clientcodeingestproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\workflows\\clients\\5_synchronizeclients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\workflows\\clients\\5_synchronizeclients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UpdateClient.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\GestprojectAPI\\UpdateClient.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\GestprojectAPI\\UpdateClient.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\GestprojectAPI\\UpdateClient.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\GestprojectAPI\\UpdateClient.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB0AAAAnAAAA",
+              "Title": "5_SynchronizeClients.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Clients\\5_SynchronizeClients.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\Workflows\\Clients\\5_SynchronizeClients.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Clients\\5_SynchronizeClients.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\Workflows\\Clients\\5_SynchronizeClients.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T22:07:36.373Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RecordSage50ClientCodeInGestproject.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\GestprojectAPI\\RecordSage50ClientCodeInGestproject.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\GestprojectAPI\\RecordSage50ClientCodeInGestproject.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\GestprojectAPI\\RecordSage50ClientCodeInGestproject.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\GestprojectAPI\\RecordSage50ClientCodeInGestproject.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAUwAcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T22:06:19.504Z",
+              "WhenOpened": "2024-07-27T09:34:45.8Z",
               "EditorCaption": ""
             }
           ]

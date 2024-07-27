@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
-    internal class AddClientToSyncronizationUITable
+    internal class AddClientToSynchronizationUITable
     {
-        internal AddClientToSyncronizationUITable
+        internal AddClientToSynchronizationUITable
         (
             GestprojectClient gestprojectClient,
             DataTable sincronizationTable,

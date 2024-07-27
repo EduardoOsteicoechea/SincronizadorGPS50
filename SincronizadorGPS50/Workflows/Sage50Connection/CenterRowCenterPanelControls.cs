@@ -10,8 +10,6 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI
 {
     internal class CenterRowCenterPanelControls
     {
-        //internal int panelWidth {  get; set; } = UIHolder.Sage50ConnectionCenterRowCenterPanel.Width;
-        internal int VariableHeight {  get; set; } = 30;
         internal CenterRowCenterPanelControls() 
         {
             // ConnectionState
@@ -21,7 +19,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI
             // ConnectionState
 
             UIHolder.CenterRowCenterPanelStateLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelStateLabel.Location = new System.Drawing.Point(0, VariableHeight);
+            //UIHolder.CenterRowCenterPanelStateLabel.Location = new System.Drawing.Point(0, VariableHeight);
             UIHolder.CenterRowCenterPanelStateLabel.Text = "Estado de la conexión";
             UIHolder.CenterRowCenterPanelStateLabel.Dock = DockStyle.Fill;
             UIHolder.CenterRowCenterPanelStateLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
@@ -29,7 +27,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI
             UIHolder.CenterRowCenterPanelStateLabel.Margin = new Padding(0, 10, 0, 0);
 
             UIHolder.CenterRowCenterPanelStateStateMessageLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelStateStateMessageLabel.Location = new System.Drawing.Point(0, VariableHeight);
+            //UIHolder.CenterRowCenterPanelStateStateMessageLabel.Location = new System.Drawing.Point(0, VariableHeight);
             UIHolder.CenterRowCenterPanelStateStateMessageLabel.Text = "Desconectado";
             UIHolder.CenterRowCenterPanelStateStateMessageLabel.Dock = DockStyle.Fill;
             UIHolder.CenterRowCenterPanelStateStateMessageLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
@@ -45,7 +43,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI
             UIHolder.CenterRowCenterPanelStateIcon1 = new UltraPictureBox();
             UIHolder.CenterRowCenterPanelStateIcon1.Dock = DockStyle.Fill;
             UIHolder.CenterRowCenterPanelStateIcon1.Image = CenterRowCenterPanelStateIcon1Image;
-            UIHolder.CenterRowCenterPanelStateIcon1.Location = new System.Drawing.Point(0, VariableHeight);
+            //UIHolder.CenterRowCenterPanelStateIcon1.Location = new System.Drawing.Point(0, VariableHeight);
             UIHolder.CenterRowCenterPanelStateIcon1.Height = 20;
             UIHolder.CenterRowCenterPanelStateIcon1.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             UIHolder.CenterRowCenterPanelStateIcon1.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;

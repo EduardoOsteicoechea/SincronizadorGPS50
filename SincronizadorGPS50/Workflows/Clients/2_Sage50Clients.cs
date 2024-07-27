@@ -35,8 +35,6 @@ namespace SincronizadorGPS50
 
             DB.SQLExec(getSage50ClientSQLQuery, ref sage50ClientsDataTable);
 
-            DataHolder.Sage50ClientClassList.Clear();
-
             for(int i = 0; i < sage50ClientsDataTable.Rows.Count; i++)
             {
                 Sage50Client sage50Client = new Sage50Client();
@@ -52,10 +50,6 @@ namespace SincronizadorGPS50
                 sage50Client.EMAIL = sage50ClientsDataTable.Rows[i].ItemArray[9].ToString().Trim();
                 sage50Client.HTTP = sage50ClientsDataTable.Rows[i].ItemArray[10].ToString().Trim();
                 sage50Client.GUID_ID = sage50ClientsDataTable.Rows[i].ItemArray[11].ToString().Trim();
-
-                //DataHolder.Sage50ClientClassList.Add(sage50Client);
-                //DataHolder.Sage50ClientCodeList.Add(sage50Client.CODIGO);
-                //DataHolder.Sage50ClientGUID_IDList.Add(sage50Client.GUID_ID);
 
                 Sage50ClientClassList.Add(sage50Client);
                 Sage50ClientCodeList.Add(sage50Client.CODIGO);

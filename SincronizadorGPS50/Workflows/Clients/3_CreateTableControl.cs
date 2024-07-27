@@ -9,7 +9,7 @@ namespace SincronizadorGPS50.Workflows.Clients
         public CreateTableControl() 
         {
             Table = new DataTable();
-            PropertyInfo[] SincronizationTableProperties = typeof(ClientSyncronizationStateTable).GetProperties();
+            PropertyInfo[] SincronizationTableProperties = typeof(ClientsSynchronizationTable).GetProperties();
 
             for(int i = 0; i < SincronizationTableProperties.Length; i++)
             {

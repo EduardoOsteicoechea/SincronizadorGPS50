@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
-    public delegate DataTable CreateSynchronizationTableDelegate();
+    internal class _9_Error_models
+    {
+    }
 }

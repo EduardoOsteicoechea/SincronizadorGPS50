@@ -148,7 +148,7 @@ namespace SincronizadorGPS50.GestprojectAPI
             // CreateSincronizationTable
 
             DataTable table = new DataTable();
-            PropertyInfo[] properties = typeof(ClientSyncronizationStateTable).GetProperties();
+            PropertyInfo[] properties = typeof(ClientsSynchronizationTable).GetProperties();
 
             for(int i = 0; i < properties.Length; i++)
             {

@@ -1,17 +1,11 @@
 ﻿using Infragistics.Win.UltraWinGrid;
-using SincronizadorGPS50.GestprojectAPI;
-using SincronizadorGPS50.Workflows.Clients;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-    internal static class TableUISynchronizationActions
+    internal static class SynchronizationTableUIActions
     {
         internal static List<UltraGridRow> UltraGridRowList { get; set; } = new List<UltraGridRow>();
         internal static List<int> GestprojectClientIdList { get; set; } = new List<int>();    

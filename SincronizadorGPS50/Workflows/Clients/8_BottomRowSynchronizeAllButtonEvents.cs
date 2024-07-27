@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SincronizadorGPS50.Workflows.Clients
+﻿namespace SincronizadorGPS50.Workflows.Clients
 {
-    internal static class BottomRowSynchronizeFilteredButtonEvents
+    internal static class BottomRowSynchronizeAllButtonEvents
     {
-        internal static void Click(object sender, System.EventArgs e) 
+        internal static void Click(object sender, System.EventArgs e)
         {
-            TableUISynchronizationActions.CollectFilteredInTableUI(ClientsUIHolder.ClientDataTable);
+            SynchronizationTableUIActions.CollectFilteredInTableUI(ClientsUIHolder.ClientDataTable);
 
             GetSelectedClientsInUITable selectedClientsInUITable = new GetSelectedClientsInUITable(DataHolder.ListOfSelectedClientIdInTable);
 
@@ -23,6 +17,7 @@ namespace SincronizadorGPS50.Workflows.Clients
             DataHolder.ListOfSelectedClientIdInTable.Clear();
 
             ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
+            ClientsUIHolder.BottomRowSynchronizeFilteredButton.Enabled = false;
         }
     }
 }

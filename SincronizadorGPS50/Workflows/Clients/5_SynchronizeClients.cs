@@ -1,5 +1,4 @@
 ﻿using SincronizadorGPS50.GestprojectAPI;
-using System.Data;
 using SincronizadorGPS50.Sage50API;
 using System;
 using System.Collections.Generic;
@@ -11,8 +10,6 @@ namespace SincronizadorGPS50.Workflows.Clients
     {
         public SynchronizeClients(List<GestprojectClient> selectedGestprojectClients)
         {
-            //DataHolder.GestprojectSQLConnection.Open();
-
             GetSage50Clients sage50Clients = new GetSage50Clients();
 
             for(int i = 0; i < selectedGestprojectClients.Count; i++)
@@ -77,8 +74,6 @@ namespace SincronizadorGPS50.Workflows.Clients
                     };
                 };                
             };
-
-            //DataHolder.GestprojectSQLConnection.Close();
         }
     }
 }
