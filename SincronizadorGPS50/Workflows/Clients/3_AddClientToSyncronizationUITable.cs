@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
+﻿using System.Data;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
@@ -11,7 +9,7 @@ namespace SincronizadorGPS50.Workflows.Clients
             GestprojectClient gestprojectClient,
             DataTable sincronizationTable,
             string synchronizationStatus,
-            string comments = ""
+            string comments
         )
         {
             DataRow row = sincronizationTable.NewRow();
@@ -28,14 +26,7 @@ namespace SincronizadorGPS50.Workflows.Clients
             row[9] = gestprojectClient.PAR_LOCALIDAD_1;
             row[10] = gestprojectClient.PAR_PROVINCIA_1;
             row[11] = gestprojectClient.PAR_PAIS_1;
-            if(comments != "")
-            {
-                row[12] = comments;
-            }
-            else
-            {
-                row[12] = gestprojectClient.comments;
-            };
+            row[12] = gestprojectClient.comments;
 
             sincronizationTable.Rows.Add(row);       
         }

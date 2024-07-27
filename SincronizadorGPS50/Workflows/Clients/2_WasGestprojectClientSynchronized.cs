@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace SincronizadorGPS50.GestprojectAPI
+namespace SincronizadorGPS50
 {
-    internal class WasGestprojectClientRegistered
+    internal class WasGestprojectClientSynchronized
     {
         internal bool ItIs {  get; set; } = false;
-        internal WasGestprojectClientRegistered(GestprojectClient client)
+        internal WasGestprojectClientSynchronized(GestprojectClient client) 
         {
             using(System.Data.SqlClient.SqlConnection connection = GestprojectDatabase.Connect())
             {
@@ -19,7 +14,7 @@ namespace SincronizadorGPS50.GestprojectAPI
                 {
                     connection.Open();
 
-                    string sqlString = $"SELECT id FROM INT_SAGE_SINC_CLIENTE WHERE gestproject_id={client.PAR_ID};";
+                    string sqlString = $"SELECT sage50_guid_id FROM INT_SAGE_SINC_CLIENTE WHERE gestproject_id={client.PAR_ID};";
 
                     using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
                     {
@@ -27,9 +22,8 @@ namespace SincronizadorGPS50.GestprojectAPI
                         {
                             while(reader.Read())
                             {
-                                if((int)reader.GetValue(0) != -1)
+                                if((string)reader.GetValue(0) != "" && (string)reader.GetValue(0) != null)
                                 {
-                                    client.synchronization_table_id = (int)reader.GetValue(0);
                                     ItIs = true;
                                     break;
                                 }

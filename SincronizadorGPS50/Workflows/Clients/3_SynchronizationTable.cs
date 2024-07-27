@@ -39,18 +39,19 @@ namespace SincronizadorGPS50.Workflows.Clients
                     new AddClientToSynchronizationUITable(
                         gestprojectClient,
                         table,
-                        SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
+                        gestprojectClient.synchronization_status,
+                        gestprojectClient.comments
                     );
                 }
                 else
                 {
-                    bool GestprojectClientWasRegistered = new IsGestprojectClientRegistered(gestprojectClient).ItIs;
+                    bool GestprojectClientWasRegistered = new WasGestprojectClientRegistered(gestprojectClient).ItIs;
 
                     if(GestprojectClientWasRegistered)
                     {
                         new PopulateGestprojectClientSynchronizationData(gestprojectClient);
 
-                        bool GestprojectClientWasSynchronized = new CheckIfGestprojectClientWasSynchronized(gestprojectClient).ItIs;
+                        bool GestprojectClientWasSynchronized = new WasGestprojectClientSynchronized(gestprojectClient).ItIs;
 
                         if(!GestprojectClientWasSynchronized)
                         {
@@ -64,44 +65,33 @@ namespace SincronizadorGPS50.Workflows.Clients
                             new AddClientToSynchronizationUITable(
                                 gestprojectClient,
                                 table,
-                                SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
+                                gestprojectClient.synchronization_status,
+                                gestprojectClient.comments
                             );
                         }
                         else
                         {
-                            IsGestprojectClientSynchronized isGestprojectClientSynchronized =  new IsGestprojectClientSynchronized(gestprojectClient);
+                            new UpdateClientSynchronizationStatus(
+                                gestprojectClient,
+                                SynchronizationStatusOptions.Sincronizado
+                            );
 
-                            if(isGestprojectClientSynchronized.ItIs)
-                            {
-                                new UpdateClientSynchronizationStatus(
-                                    gestprojectClient,
-                                    SynchronizationStatusOptions.Sincronizado
-                                );
+                            new PopulateGestprojectClientSynchronizationData(gestprojectClient);
 
-                                new PopulateGestprojectClientSynchronizationData(gestprojectClient);
-
-                                new AddClientToSynchronizationUITable(
-                                    gestprojectClient,
-                                    table,
-                                    SynchronizationStatusOptions.Sincronizado
-                                );
-                            }
-                            else
+                            if(!new EndPointsData(gestprojectClient).Matches)
                             {
                                 new UpdateClientSynchronizationStatus(
                                     gestprojectClient,
                                     SynchronizationStatusOptions.Desincronizado
                                 );
-
-                                new PopulateGestprojectClientSynchronizationData(gestprojectClient);
-
-                                new AddClientToSynchronizationUITable(
-                                    gestprojectClient,
-                                    table,
-                                    "",
-                                    isGestprojectClientSynchronized.Comment
-                                );
                             };
+
+                            new AddClientToSynchronizationUITable(
+                                gestprojectClient,
+                                table,
+                                gestprojectClient.synchronization_status,
+                                gestprojectClient.comments
+                            );
                         };
                     }
                     else
@@ -116,7 +106,8 @@ namespace SincronizadorGPS50.Workflows.Clients
                         new AddClientToSynchronizationUITable(
                             gestprojectClient,
                             table,
-                            SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
+                            gestprojectClient.synchronization_status,
+                            gestprojectClient.comments
                         );
                     };
                 };
@@ -135,16 +126,58 @@ namespace SincronizadorGPS50.Workflows.Clients
             {
                 GestprojectClient gestprojectClient = gestprojectClientList[i];
 
-                new PopulateGestprojectClientSynchronizationData(gestprojectClient);
+                bool GestprojectClientWasSynchronized = new WasGestprojectClientSynchronized(gestprojectClient).ItIs;
 
-                new AddClientToSynchronizationUITable(
-                    gestprojectClient,
-                    table,
-                    gestprojectClient.synchronization_status
-                );
+                if(!GestprojectClientWasSynchronized)
+                {
+                    new UpdateClientSynchronizationStatus(
+                        gestprojectClient,
+                        SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
+                    );
+
+                    new PopulateGestprojectClientSynchronizationData(gestprojectClient);
+
+                    new AddClientToSynchronizationUITable(
+                        gestprojectClient,
+                        table,
+                        gestprojectClient.synchronization_status,
+                        gestprojectClient.comments
+                    );
+                }
+                else
+                {
+                    new PopulateGestprojectClientSynchronizationData(gestprojectClient);
+
+                    if(!new EndPointsData(gestprojectClient).Matches)
+                    {
+                        new UpdateClientSynchronizationStatus(
+                            gestprojectClient,
+                            SynchronizationStatusOptions.Desincronizado
+                        );
+                    };
+
+                    new PopulateGestprojectClientSynchronizationData(gestprojectClient);
+
+                    new AddClientToSynchronizationUITable(
+                        gestprojectClient,
+                        table,
+                        gestprojectClient.synchronization_status,
+                        gestprojectClient.comments
+                    );
+                };
             };
 
             return table;
         }
     }
 }
+
+
+
+
+
+
+
+
+    
+

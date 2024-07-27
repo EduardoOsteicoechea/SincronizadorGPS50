@@ -28,10 +28,29 @@ Sincronizar
 
 
 
+----------------------------------------------------------------
 
 
+2. Synchronization table:
+2.1. Create
+	Do the Sage50 conformity Check Before "AddClientToSynchronizationUITable" and modify the last argument (synchronization status)
 
+2.2. Refresh
+	Do the Sage50 conformity Check Before "AddClientToSynchronizationUITable" and modify the last argument (synchronization status)
 
+3. Synchronize Clients
+	3.1. In path 1: Do the Sage50 conformity Check Before "UpdateClient" and modify the last argument (synchronization status)
+	3.2. In path 2: Do the Sage50 conformity Check Before "UpdateClient" and modify the last argument (synchronization status)
+
+4. Ask if the user wants to override the sage 50 data showing the fields to be modified
+
+5. Do the Sage50 conformity Check AFTER "UpdateClient" and modify the last argument (synchronization status)
+
+-----------------------------------------------------------------
+Sage50 Conformity Check
+Value override authorization prompt
+Error model
+Add error to comment column
 
 
 

@@ -364,6 +364,10 @@
     <Compile Include="DataHolders\StyleHolder.cs" />
     <Compile Include="DataHolders\UIHolder.cs" />
     <Compile Include="GestprojectAPI\1_ConnectToGestprojectDatabase .cs" />
+    <Compile Include="Workflows\Clients\2_UpdateSage50Customer.cs" />
+    <Compile Include="Workflows\Clients\2_CreateSage50Customer.cs" />
+    <Compile Include="Workflows\Clients\2_WasGestprojectClientSynchronized.cs" />
+    <Compile Include="Workflows\Clients\2_CheckEndPointsDataConformity.cs" />
     <Compile Include="Workflows\Clients\2_IsGestprojectClientSynchronized.cs" />
     <Compile Include="Workflows\Clients\2_IsGestprojectClientRegistered.cs" />
     <Compile Include="GestprojectAPI\GetRegisteredClients.cs" />
@@ -400,6 +404,7 @@
     <Compile Include="Setup\LinkSage50.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workflows\Clients\3_SynchronizationTable - Copy.cs" />
     <Compile Include="Workflows\Clients\8_BottomRowSynchronizeAllButtonEvents.cs" />
     <Compile Include="Workflows\Clients\8_BottomRowSynchronizeFilteredButtonEvents.cs" />
     <Compile Include="Workflows\Clients\8_TopRowSinchronizeSelectedButtonEvents.cs" />
