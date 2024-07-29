@@ -42,8 +42,8 @@ namespace SincronizadorGPS50.Workflows.Clients
             {
                 Sage50Client sage50Client = new Sage50Client();
                 sage50Client.CODIGO = sage50ClientsDataTable.Rows[0].ItemArray[0].ToString().Trim();
-                sage50Client.NOMBRE = sage50ClientsDataTable.Rows[0].ItemArray[2].ToString().Trim();
-                sage50Client.CIF = sage50ClientsDataTable.Rows[0].ItemArray[1].ToString().Trim();
+                sage50Client.NOMBRE = sage50ClientsDataTable.Rows[0].ItemArray[1].ToString().Trim();
+                sage50Client.CIF = sage50ClientsDataTable.Rows[0].ItemArray[2].ToString().Trim();
                 sage50Client.DIRECCION = sage50ClientsDataTable.Rows[0].ItemArray[3].ToString().Trim();
                 sage50Client.CODPOST = sage50ClientsDataTable.Rows[0].ItemArray[4].ToString().Trim();
                 sage50Client.POBLACION = sage50ClientsDataTable.Rows[0].ItemArray[5].ToString().Trim();
@@ -52,14 +52,14 @@ namespace SincronizadorGPS50.Workflows.Clients
 
                 List<string> GestprojectClientData = new List<string>
                 {
-                    client.PAR_SUBCTA_CONTABLE,
-                    client.PAR_NOMBRE,
-                    client.PAR_CIF_NIF,
-                    client.PAR_DIRECCION_1,
-                    client.PAR_CP_1,
-                    client.PAR_LOCALIDAD_1,
-                    client.PAR_PROVINCIA_1,
-                    client.PAR_PAIS_1,
+                    client.PAR_SUBCTA_CONTABLE.Trim(),
+                    client.PAR_NOMBRE.Trim(),
+                    client.PAR_CIF_NIF.Trim(),
+                    client.PAR_DIRECCION_1.Trim(),
+                    client.PAR_CP_1.Trim(),
+                    client.PAR_LOCALIDAD_1.Trim(),
+                    client.PAR_PROVINCIA_1.Trim(),
+                    client.PAR_PAIS_1.Trim(),
                 };
 
                 List<string> Sage50ClientData = new List<string>
@@ -100,7 +100,7 @@ namespace SincronizadorGPS50.Workflows.Clients
 
                 if(ClientErrorQuantity > 0)
                 {
-                    Comment += ClientErrorQuantity + " errores en este cliente: \n";
+                    Comment += ClientErrorQuantity + " errores en este cliente: ";
 
                     for(global::System.Int32 i = 0; i < DataMismatchTuple.Count; i++)
                     {
@@ -117,11 +117,35 @@ namespace SincronizadorGPS50.Workflows.Clients
                         }
                         else
                         {
-                            Comment += fieldName + " difiere. ";
+                            Comment += fieldName + $" difiere (El valor en sage es: {sage50FieldValue}). ";
                         }
                     };
 
                     client.comments = Comment;
+
+                    List<string> checkProblematicFieldList = new List<string>();
+
+                    for(global::System.Int32 i = 0; i < DataMismatchTuple.Count; i++)
+                    {
+                        var dataMismatchTupleElement = DataMismatchTuple[i];
+                        int id = dataMismatchTupleElement.Id;
+
+                        string fieldName = dataMismatchTupleElement.fieldName;
+
+                        string sage50FieldValue = dataMismatchTupleElement.sage50FieldValue;
+
+                        string gestprojectFieldValue = dataMismatchTupleElement.gestprojectFieldValue;
+
+                        if(fieldName == "POBLACION" || fieldName == "PAIS")
+                        {
+                            checkProblematicFieldList.Add(fieldName);
+                        };
+                    };
+
+                    if(checkProblematicFieldList.Count > 0)
+                    {
+                        Matches = true;
+                    }
                 }
                 else
                 {

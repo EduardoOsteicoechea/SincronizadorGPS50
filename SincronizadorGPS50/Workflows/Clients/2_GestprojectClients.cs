@@ -138,22 +138,36 @@ namespace SincronizadorGPS50.Workflows.Clients
                         {
                             while(reader.Read())
                             {
-                                if(gestProjectClientIdList.Contains((int)reader.GetValue(0)))
+                                //MessageBox.Show(reader.GetValue(3).GetType().Name);
+                                if(reader.GetValue(0).GetType().Name != "DBNull")
                                 {
-                                    GestprojectClient gestprojectClient = new GestprojectClient();
+                                    if(gestProjectClientIdList.Contains((int)reader.GetValue(0)))
+                                    {
+                                        GestprojectClient gestprojectClient = new GestprojectClient();
 
-                                    gestprojectClient.PAR_ID = (int)reader.GetValue(0);
-                                    gestprojectClient.PAR_SUBCTA_CONTABLE = (string)reader.GetValue(1);
-                                    gestprojectClient.PAR_NOMBRE = (string)reader.GetValue(2);
-                                    gestprojectClient.PAR_NOMBRE_COMERCIAL = (string)reader.GetValue(3);
-                                    gestprojectClient.PAR_CIF_NIF = (string)reader.GetValue(4);
-                                    gestprojectClient.PAR_DIRECCION_1 = (string)reader.GetValue(5);
-                                    gestprojectClient.PAR_CP_1 = (string)reader.GetValue(6);
-                                    gestprojectClient.PAR_LOCALIDAD_1 = (string)reader.GetValue(7);
-                                    gestprojectClient.PAR_PROVINCIA_1 = (string)reader.GetValue(8);
-                                    gestprojectClient.PAR_PAIS_1 = (string)reader.GetValue(9);
+                                        //gestprojectClient.PAR_ID = (int)reader.GetValue(0);
+                                        //gestprojectClient.PAR_SUBCTA_CONTABLE = (string)reader.GetValue(1) != null ? (string)reader.GetValue(1) : "";
+                                        //gestprojectClient.PAR_NOMBRE = (string)reader.GetValue(2) != null ? (string)reader.GetValue(2) : "";
+                                        //gestprojectClient.PAR_NOMBRE_COMERCIAL = (string)reader.GetValue(3) != null ? (string)reader.GetValue(3) : "";
+                                        //gestprojectClient.PAR_CIF_NIF = (string)reader.GetValue(4) != null ? (string)reader.GetValue(4) : "";
+                                        //gestprojectClient.PAR_DIRECCION_1 = (string)reader.GetValue(5) != null ? (string)reader.GetValue(5) : "";
+                                        //gestprojectClient.PAR_CP_1 = (string)reader.GetValue(6) != null ? (string)reader.GetValue(6) : "";
+                                        //gestprojectClient.PAR_LOCALIDAD_1 = (string)reader.GetValue(7) != null ? (string)reader.GetValue(7) : "";
+                                        //gestprojectClient.PAR_PROVINCIA_1 = (string)reader.GetValue(8) != null ? (string)reader.GetValue(8) : "";
+                                        //gestprojectClient.PAR_PAIS_1 = (string)reader.GetValue(9) != null ? (string)reader.GetValue(9) : "";
+                                        gestprojectClient.PAR_ID = Convert.ToInt32(reader.GetValue(0));
+                                        gestprojectClient.PAR_SUBCTA_CONTABLE = Convert.ToString(reader.GetValue(1));
+                                        gestprojectClient.PAR_NOMBRE = Convert.ToString(reader.GetValue(2));
+                                        gestprojectClient.PAR_NOMBRE_COMERCIAL = Convert.ToString(reader.GetValue(3));
+                                        gestprojectClient.PAR_CIF_NIF = Convert.ToString(reader.GetValue(4));
+                                        gestprojectClient.PAR_DIRECCION_1 = Convert.ToString(reader.GetValue(5));
+                                        gestprojectClient.PAR_CP_1 = Convert.ToString(reader.GetValue(6));
+                                        gestprojectClient.PAR_LOCALIDAD_1 = Convert.ToString(reader.GetValue(7));
+                                        gestprojectClient.PAR_PROVINCIA_1 = Convert.ToString(reader.GetValue(8));
+                                        gestprojectClient.PAR_PAIS_1 = Convert.ToString(reader.GetValue(9));
 
-                                    gestprojectClientClassList.Add(gestprojectClient);
+                                        gestprojectClientClassList.Add(gestprojectClient);
+                                    };
                                 };
                             };
                         };

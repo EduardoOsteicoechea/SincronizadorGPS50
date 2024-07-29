@@ -14,10 +14,8 @@ namespace SincronizadorGPS50
         [STAThread]
         internal static void Main(string[] args)
         {
-            //System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            //System.Windows.Forms.Application.EnableVisualStyles();            
-            Infragistics.Win.AppStyling.StyleManager.Load(System.Windows.Forms.Application.StartupPath + "\\Resources\\Styles\\Outlook2013 - White.isl");            
-            //Infragistics.Win.AppStyling.StyleManager.Load(System.Windows.Forms.Application.StartupPath + "\\Resources\\Styles\\Excel2013 - Dark Gray.isl");            
+            // Add Global Styles
+            Infragistics.Win.AppStyling.StyleManager.Load(System.Windows.Forms.Application.StartupPath + "\\Resources\\Styles\\Excel2013 - White.isl");
 
             // InitialWindow wokflow
             new GenerateMainWindow();
