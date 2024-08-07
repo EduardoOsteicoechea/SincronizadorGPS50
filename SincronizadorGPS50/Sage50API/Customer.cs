@@ -397,7 +397,10 @@ namespace SincronizadorGPS50
             switch(tsTipo.ToLower())
             {
                 case "pais":
-                    string lsPais = _oLinkFuncs._VerificateCountry(toeCustomer.pais);
+
+                    // Aplicar modificaciones
+                    //string lsPais = _oLinkFuncs._VerificateCountry(toeCustomer.pais);
+                    string lsPais = toeCustomer.pais;
                     if(!string.IsNullOrWhiteSpace(lsPais))
                         toCliente._Pais = lsPais;
                     else
@@ -407,7 +410,9 @@ namespace SincronizadorGPS50
                 case "codpos":
                     if(!string.IsNullOrWhiteSpace(toeCustomer.codpos))
                     {
-                        string lsCodPos = _oLinkFuncs._VerificatePostalCode(toeCustomer.codpos);
+                        // Aplicar modificaciones
+                        //string lsCodPos = _oLinkFuncs._VerificatePostalCode(toeCustomer.codpos);
+                        string lsCodPos = toeCustomer.codpos;
                         if(!string.IsNullOrWhiteSpace(lsCodPos))
                             toCliente._CodPost = lsCodPos;
                         else

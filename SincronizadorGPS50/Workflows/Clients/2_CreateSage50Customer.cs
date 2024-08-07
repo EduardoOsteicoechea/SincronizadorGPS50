@@ -54,6 +54,8 @@ namespace SincronizadorGPS50.Sage50API
                     string getSage50ClientSQLQuery = @"
                 SELECT guid_id FROM " + DB.SQLDatabase("gestion","clientes") + " WHERE codigo = '" + ClientCode + "';";
 
+                //SELECT codigo FROM " + DB.SQLDatabase("comunes","paises") + " WHERE iso2 = '{gestprojectClient.substring(PAR_PAIS_1)}';
+
                     DataTable sage50ClientsDataTable = new DataTable();
 
                     DB.SQLExec(getSage50ClientSQLQuery, ref sage50ClientsDataTable);

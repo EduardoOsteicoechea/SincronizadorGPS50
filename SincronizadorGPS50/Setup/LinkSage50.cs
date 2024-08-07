@@ -36,7 +36,8 @@ namespace SincronizadorGPS50
             if(!string.IsNullOrEmpty(tsTerminal))
             {
                 this._Terminal = tsTerminal;
-                this._DllTerminal = Path.Combine(this._Terminal, @"Librerias\");
+                //this._DllTerminal = Path.Combine(this._Terminal, @"Librerias\");
+                this._DllTerminal = Path.Combine(this._Terminal, @"50.7840.3\");
                 this._AssemblyResolveBegin();
                 this._Loaded_Ok = true;
             }
@@ -97,6 +98,11 @@ namespace SincronizadorGPS50
             loEjer._Cambiar(tscEjercicio);
             _LoadEnvironmentCompany();
         }
+
+
+
+
+        /// This one
         public Boolean _GroupCompanyChange(string tscGrupoEmpresa)
         {
             bool llOk = false;

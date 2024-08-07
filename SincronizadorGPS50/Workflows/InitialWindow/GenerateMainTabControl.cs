@@ -13,11 +13,11 @@ namespace SincronizadorGPS50
     {
         internal GenerateMainTabControl() 
         {
-            UIHolder.MainTabControl = new UltraTabControl();
-            UIHolder.MainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            UIHolder.MainTabControl.TabStop = false;
+            MainWindowUIHolder.MainTabControl = new UltraTabControl();
+            MainWindowUIHolder.MainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            MainWindowUIHolder.MainTabControl.TabStop = false;
 
-            UIHolder.MainWindow.Controls.Add(UIHolder.MainTabControl);
+            MainWindowUIHolder.MainWindow.Controls.Add(MainWindowUIHolder.MainTabControl);
         }
     }
 }

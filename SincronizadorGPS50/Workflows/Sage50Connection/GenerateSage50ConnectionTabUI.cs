@@ -9,8 +9,8 @@ namespace SincronizadorGPS50
     {
         internal GenerateSage50ConnectionTabPageUI()
         {
-            UIHolder.MainTabControlMainPanel = new UltraPanel();
-            UIHolder.MainTabControlMainPanel.Dock = DockStyle.Fill;
+            MainWindowUIHolder.MainTabControlMainPanel = new UltraPanel();
+            MainWindowUIHolder.MainTabControlMainPanel.Dock = DockStyle.Fill;
 
             UIHolder.Sage50ConnectionTableLayoutPanel = new TableLayoutPanel();
             UIHolder.Sage50ConnectionTableLayoutPanel.ColumnCount = 1;
@@ -20,8 +20,8 @@ namespace SincronizadorGPS50
             UIHolder.Sage50ConnectionTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
             UIHolder.Sage50ConnectionTableLayoutPanel.Dock = DockStyle.Fill;
 
-            UIHolder.MainTabControlMainPanel.ClientArea.Controls.Add(UIHolder.Sage50ConnectionTableLayoutPanel);
-            UIHolder.Sage50ConnectionTab.TabPage.Controls.Add(UIHolder.MainTabControlMainPanel);
+            MainWindowUIHolder.MainTabControlMainPanel.ClientArea.Controls.Add(UIHolder.Sage50ConnectionTableLayoutPanel);
+            UIHolder.Sage50ConnectionTab.TabPage.Controls.Add(MainWindowUIHolder.MainTabControlMainPanel);
 
             // TopRow;
             // TopRow;

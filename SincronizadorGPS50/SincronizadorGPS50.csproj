@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SincronizadorGPS50</RootNamespace>
-    <AssemblyName>SincronizadorGPS50.1.0.2</AssemblyName>
+    <AssemblyName>SincronizadorGPS50.1.0.3</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -326,29 +326,36 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\2018.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.v18.2.Design.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="sage.50, Version=50.7840.1.0, Culture=neutral, PublicKeyToken=96ae376547cf7c42, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\..\Sage50_8\Sage50Term\50.7830.0\sage.50.exe</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="sage.ew.db, Version=50.7840.1.0, Culture=neutral, PublicKeyToken=96ae376547cf7c42, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\..\Sage50_8\Sage50Term\50.7830.0\sage.ew.db.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="sage.ew.images, Version=50.7840.1.0, Culture=neutral, PublicKeyToken=96ae376547cf7c42, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\..\Sage50_8\Sage50Term\50.7830.0\sage.ew.images.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="sage.ew.lic, Version=50.7840.1.0, Culture=neutral, PublicKeyToken=96ae376547cf7c42, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\..\Sage50_8\Sage50Term\50.7830.0\sage.ew.lic.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="sage.ew.reports, Version=50.7840.1.0, Culture=neutral, PublicKeyToken=96ae376547cf7c42, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\..\Sage50_8\Sage50Term\50.7830.0\sage.ew.reports.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -359,11 +366,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ApplicationManager.cs" />
+    <Compile Include="Configuration\CommonAppSettings.cs" />
+    <Compile Include="Configuration\Encryptor.cs" />
+    <Compile Include="Configuration\SerializatorBinderModifier.cs" />
+    <Compile Include="Configuration\Serializer.cs" />
+    <Compile Include="Configuration\UserAppSettings.cs" />
     <Compile Include="DataHolders\ClientsUIHolder.cs" />
     <Compile Include="DataHolders\DataHolder.cs" />
+    <Compile Include="DataHolders\MainWindowUIHolder.cs" />
     <Compile Include="DataHolders\StyleHolder.cs" />
     <Compile Include="DataHolders\UIHolder.cs" />
     <Compile Include="GestprojectAPI\1_ConnectToGestprojectDatabase .cs" />
+    <Compile Include="GestprojectConnectionModel.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Workflows\Clients\2_UpdateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_CreateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_WasGestprojectClientSynchronized.cs" />
@@ -431,6 +451,7 @@
     <Compile Include="Workflows\Clients\8_TopRowRefreshTableButtonEvents.cs" />
     <Compile Include="Workflows\Clients\4_UpdateRegisteredClientModelData.cs" />
     <Compile Include="Workflows\Clients\9_SyncronizationTableModel.cs" />
+    <Compile Include="Workflows\InitialWindow\GenerateApplicationContext.cs" />
     <Compile Include="Workflows\InitialWindow\GenerateMainTabControl.cs" />
     <Compile Include="Workflows\InitialWindow\GenerateMainWindow.cs" />
     <Compile Include="Workflows\InitialWindow\GenerateTabs.cs" />
@@ -451,6 +472,10 @@
     <Content Include="Media\Image\appicon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TextFile1.DAT" />
+    <EmbeddedResource Include="Media\Image\ApplicationIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="Media\Image\Cerrar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -545,6 +570,10 @@
     <Content Include="Media\Image\Warning.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\SuccessRedDot.bmp" />
+    <None Include="Resources\SuccessGreenDot.bmp" />
+    <None Include="Resources\ApplicationIcon.bmp" />
+    <None Include="Resources\applicationIcon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
@@ -667,6 +696,12 @@
     <None Include="Resources\Styles\Windows8-DarkGray-Yellow.isl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

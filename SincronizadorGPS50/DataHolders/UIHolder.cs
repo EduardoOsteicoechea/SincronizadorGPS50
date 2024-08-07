@@ -1,23 +1,16 @@
-﻿
-using Infragistics.Win.Misc;
+﻿using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinEditors;
-using Infragistics.Win.UltraWinGrid;
 using Infragistics.Win.UltraWinTabControl;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
     internal class UIHolder
     {
-        internal static System.Windows.Forms.Form MainWindow { get; set; } = null;
-        internal static UltraTabControl MainTabControl { get; set; } = null;
-        //internal static TableLayoutPanel MainTabControlTableLayoutPanel { get; set; } = null;
-        internal static UltraPanel MainTabControlMainPanel { get; set; } = null;
+        //internal static System.Windows.Forms.Form MainWindow { get; set; } = null;
+        //internal static UltraTabControl MainTabControl { get; set; } = null;
+        ////internal static TableLayoutPanel MainTabControlTableLayoutPanel { get; set; } = null;
+        //internal static UltraPanel MainTabControlMainPanel { get; set; } = null;
         internal static TableLayoutPanel Sage50ConnectionTableLayoutPanel { get; set; } = null;
 
 

@@ -14,8 +14,10 @@ namespace SincronizadorGPS50
         [STAThread]
         internal static void Main(string[] args)
         {
-            // Add Global Styles
-            Infragistics.Win.AppStyling.StyleManager.Load(System.Windows.Forms.Application.StartupPath + "\\Resources\\Styles\\Excel2013 - White.isl");
+            System.Windows.Forms.Application.EnableVisualStyles();
+            System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+
+            new GenerateApplicationContext();
 
             // InitialWindow wokflow
             new GenerateMainWindow();
@@ -27,11 +29,7 @@ namespace SincronizadorGPS50
             new ConnectToGestprojectDatabase();
 
             // Display initial window
-            UIHolder.MainWindow.ShowDialog();
-
-
-
-            //System.Windows.Forms.Application.Run(UIHolder.MainWindow);
+            System.Windows.Forms.Application.Run(ApplicationManager.ApplicationGlobalContext);
         }
     }
 }

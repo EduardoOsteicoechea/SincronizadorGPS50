@@ -16,13 +16,18 @@ namespace SincronizadorGPS50
 {
     internal class Sage50ConnectionActions
     {
+        internal void aaaa() { 
+            
+        }
         internal void VeryfyUserData(object sender, System.EventArgs e)
         {
             DataHolder.Sage50LocalTerminalPath = UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Text;
             DataHolder.Sage50Username = UIHolder.CenterRowCenterPanelUsernameTextBox.Text;
             DataHolder.Sage50Password = UIHolder.CenterRowCenterPanelPasswordTextBox.Text;
 
-            if(main_s50.Connect(DataHolder.Sage50LocalTerminalPath, DataHolder.Sage50Username, DataHolder.Sage50Password))
+            LinkSage50 linkSage50 = new LinkSage50(DataHolder.Sage50LocalTerminalPath);
+
+            if(linkSage50._Connect(DataHolder.Sage50Username, DataHolder.Sage50Password))
             {
                 UIHolder.CenterRowCenterPanelValidateUserDataButton.Enabled = false;
                 UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Text = "Datos correctos";
@@ -98,12 +103,12 @@ namespace SincronizadorGPS50
             UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Text = "Datos Incorrectos";
             UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Appearance.ForeColor = StyleHolder.c_red_1;
 
-            foreach(UltraTab tab in UIHolder.MainTabControl.Tabs)
+            foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs)
             {
                 tab.Enabled = false;
             };
 
-            UIHolder.MainTabControl.SelectedTab.Enabled = true;
+            MainWindowUIHolder.MainTabControl.SelectedTab.Enabled = true;
         }
 
         internal async void Connect(object sender, System.EventArgs e)
@@ -129,14 +134,14 @@ namespace SincronizadorGPS50
 
             UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Enabled = false;
 
-            foreach(UltraTab tab in UIHolder.MainTabControl.Tabs)
+            foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs)
             {
                 tab.Enabled = true;
             };
 
             await Task.Delay(1000);
 
-            UIHolder.MainTabControl.SelectedTab = UIHolder.ClientsTab;
+            MainWindowUIHolder.MainTabControl.SelectedTab = UIHolder.ClientsTab;
 
             new ClientsTabPageUI();
         }

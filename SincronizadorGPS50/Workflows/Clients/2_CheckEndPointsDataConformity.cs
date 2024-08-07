@@ -21,7 +21,6 @@ namespace SincronizadorGPS50.Workflows.Clients
         internal List<string> Sage50ClientGUID_IDList { get; set; } = new List<string>();
         internal EndPointsData(GestprojectClient client) 
         {
-
             string getSage50ClientSQLQuery = @"
             SELECT 
                 codigo,

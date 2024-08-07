@@ -49,7 +49,7 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.BottomRowCloseButton = new UltraButton();
             ClientsUIHolder.BottomRowCloseButton.Text = "Salir";
             ClientsUIHolder.BottomRowCloseButton.Dock = DockStyle.Fill;
-            ClientsUIHolder.BottomRowCloseButton.Click += new EventHandler((object sender, System.EventArgs e)=>{UIHolder.MainWindow.Close();});
+            ClientsUIHolder.BottomRowCloseButton.Click += new EventHandler((object sender, System.EventArgs e)=>{ MainWindowUIHolder.MainWindow.Close();});
 
 
             ClientsUIHolder.BottomRow.ClientArea.Controls.Add(ClientsUIHolder.BottomRowTableLayoutPanel);
