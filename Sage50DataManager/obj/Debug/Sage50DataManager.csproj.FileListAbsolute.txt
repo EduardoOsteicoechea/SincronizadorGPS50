@@ -1,0 +1,6 @@
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sage50DataManager\bin\Debug\Sage50DataManager.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sage50DataManager\bin\Debug\Sage50DataManager.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sage50DataManager\obj\Debug\Sage50DataManager.csproj.AssemblyReference.cache
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sage50DataManager\obj\Debug\Sage50DataManager.csproj.CoreCompileInputs.cache
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sage50DataManager\obj\Debug\Sage50DataManager.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sage50DataManager\obj\Debug\Sage50DataManager.pdb

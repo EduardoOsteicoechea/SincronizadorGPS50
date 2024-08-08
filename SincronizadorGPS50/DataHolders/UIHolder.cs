@@ -48,6 +48,7 @@ namespace SincronizadorGPS50
         internal static UltraTab ConfigurationTab { get; set; } = null;
         internal static UltraTab ClientsTab { get; set; } = null;
         internal static UltraTab ProvidersTab { get; set; } = null;
+        internal static UltraTab TaxesTab { get; set; } = null;
         internal static UltraTab IssuedBillsTab { get; set; } = null;
         internal static UltraTab ReceivedBillsTab { get; set; } = null;
 

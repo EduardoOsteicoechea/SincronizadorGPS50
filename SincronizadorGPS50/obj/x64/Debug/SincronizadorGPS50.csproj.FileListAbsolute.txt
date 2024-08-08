@@ -1,36 +1,3 @@
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\ajax-loader.gif
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Annadir.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\appicon.ico
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Cerrar.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Confirmation.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Contexto actual.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\delete.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\delete1.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Delete_16.ICO
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Delete_16.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Deshacer.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Eliminar.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Error.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Excel_Open.ico
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Excel_Open.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Excel_Save.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Excel_Save_Selection.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Expandir.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Folder yellow arrow up.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Folder yellow arrow up48.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\gestproject_logo.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Informacion.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\loading_spinner_1.gif
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\loading_spinner_2.gif
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\prl_elemento_riesgo.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\sage_logo_500x226.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\sage_logo_500x240.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\sage_logo_500x300.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Salir.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Semaforo rojo.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Semaforo verde.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Vista preliminar.png
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\Warning.png
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Infragistics4.Documents.Core.v18.2.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Infragistics4.Documents.Excel.v18.2.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Infragistics4.Documents.IO.v18.2.dll
@@ -215,4 +182,15 @@ C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sin
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.1.0.3.pdb
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.Resources.resources
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.csproj.GenerateResource.cache
-C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Media\Image\ApplicationIcon.ico
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\GestprojectConnector.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\GestprojectConnector.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\GestprojectStylesManager.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\GestprojectStylesManager.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\GestprojectDataManager.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\GestprojectDataManager.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage50ConnectionManager.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\AxInterop.eSign3.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Interop.eSign3.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage50ConnectionManager.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage50DataManager.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage50DataManager.pdb

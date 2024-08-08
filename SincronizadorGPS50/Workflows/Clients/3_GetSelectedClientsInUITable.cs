@@ -46,16 +46,16 @@ namespace SincronizadorGPS50.Workflows.Clients
                                 {
                                     GestprojectClient client = new GestprojectClient();
 
-                                    client.PAR_ID = (int)reader.GetValue(0);
-                                    client.PAR_SUBCTA_CONTABLE = (string)reader.GetValue(1);
-                                    client.PAR_NOMBRE = (string)reader.GetValue(2);
-                                    client.PAR_NOMBRE_COMERCIAL = (string)reader.GetValue(3);
-                                    client.PAR_CIF_NIF = (string)reader.GetValue(4);
-                                    client.PAR_DIRECCION_1 = (string)reader.GetValue(5);
-                                    client.PAR_CP_1 = (string)reader.GetValue(6);
-                                    client.PAR_LOCALIDAD_1 = (string)reader.GetValue(7);
-                                    client.PAR_PROVINCIA_1 = (string)reader.GetValue(8);
-                                    client.PAR_PAIS_1 = (string)reader.GetValue(9);
+                                    client.PAR_ID = Convert.ToInt32(reader.GetValue(0));
+                                    client.PAR_SUBCTA_CONTABLE = Convert.ToString(reader.GetValue(1));
+                                    client.PAR_NOMBRE = Convert.ToString(reader.GetValue(2));
+                                    client.PAR_NOMBRE_COMERCIAL = Convert.ToString(reader.GetValue(3));
+                                    client.PAR_CIF_NIF = Convert.ToString(reader.GetValue(4));
+                                    client.PAR_DIRECCION_1 = Convert.ToString(reader.GetValue(5));
+                                    client.PAR_CP_1 = Convert.ToString(reader.GetValue(6));
+                                    client.PAR_LOCALIDAD_1 = Convert.ToString(reader.GetValue(7));
+                                    client.PAR_PROVINCIA_1 = Convert.ToString(reader.GetValue(8));
+                                    client.PAR_PAIS_1 = Convert.ToString(reader.GetValue(9));
 
                                     Clients.Add(client);
                                 };

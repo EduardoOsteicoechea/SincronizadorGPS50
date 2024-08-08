@@ -93,9 +93,9 @@ namespace SincronizadorGPS50 {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon ApplicationIcon {
+        internal static System.Drawing.Icon appicon {
             get {
-                object obj = ResourceManager.GetObject("ApplicationIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("appicon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -323,9 +323,9 @@ namespace SincronizadorGPS50 {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Gestproject_logo {
+        internal static System.Drawing.Bitmap gestproject_logo {
             get {
-                object obj = ResourceManager.GetObject("Gestproject_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("gestproject_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -581,26 +581,6 @@ namespace SincronizadorGPS50 {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Refrescar {
-            get {
-                object obj = ResourceManager.GetObject("Refrescar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Refrescar_02 {
-            get {
-                object obj = ResourceManager.GetObject("Refrescar_02", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] RubberBlack {
@@ -653,26 +633,6 @@ namespace SincronizadorGPS50 {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Semaforo_rojo {
-            get {
-                object obj = ResourceManager.GetObject("Semaforo_rojo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Semaforo_rojo1 {
-            get {
-                object obj = ResourceManager.GetObject("Semaforo_rojo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Semaforo_verde {
             get {
                 object obj = ResourceManager.GetObject("Semaforo_verde", resourceCulture);
@@ -683,29 +643,9 @@ namespace SincronizadorGPS50 {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Semaforo_verde1 {
+        internal static System.Drawing.Bitmap SemaforoRojo {
             get {
-                object obj = ResourceManager.GetObject("Semaforo_verde1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap synchronize_blue_gradient {
-            get {
-                object obj = ResourceManager.GetObject("synchronize_blue_gradient", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap synchronize_green_gradient {
-            get {
-                object obj = ResourceManager.GetObject("synchronize_green_gradient", resourceCulture);
+                object obj = ResourceManager.GetObject("SemaforoRojo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

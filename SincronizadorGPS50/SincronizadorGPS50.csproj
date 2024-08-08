@@ -366,24 +366,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\ApplicationManager.cs" />
-    <Compile Include="Configuration\CommonAppSettings.cs" />
-    <Compile Include="Configuration\Encryptor.cs" />
-    <Compile Include="Configuration\SerializatorBinderModifier.cs" />
-    <Compile Include="Configuration\Serializer.cs" />
-    <Compile Include="Configuration\UserAppSettings.cs" />
+    <Compile Include="ApplicationManager.cs" />
     <Compile Include="DataHolders\ClientsUIHolder.cs" />
     <Compile Include="DataHolders\DataHolder.cs" />
     <Compile Include="DataHolders\MainWindowUIHolder.cs" />
     <Compile Include="DataHolders\StyleHolder.cs" />
     <Compile Include="DataHolders\UIHolder.cs" />
     <Compile Include="GestprojectAPI\1_ConnectToGestprojectDatabase .cs" />
-    <Compile Include="GestprojectConnectionModel.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Workflows\ApplicationContext\2_ApplyGestprojectGlobalStyle.cs" />
     <Compile Include="Workflows\Clients\2_UpdateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_CreateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_WasGestprojectClientSynchronized.cs" />
@@ -451,133 +446,56 @@
     <Compile Include="Workflows\Clients\8_TopRowRefreshTableButtonEvents.cs" />
     <Compile Include="Workflows\Clients\4_UpdateRegisteredClientModelData.cs" />
     <Compile Include="Workflows\Clients\9_SyncronizationTableModel.cs" />
-    <Compile Include="Workflows\InitialWindow\GenerateApplicationContext.cs" />
-    <Compile Include="Workflows\InitialWindow\GenerateMainTabControl.cs" />
-    <Compile Include="Workflows\InitialWindow\GenerateMainWindow.cs" />
-    <Compile Include="Workflows\InitialWindow\GenerateTabs.cs" />
+    <Compile Include="Workflows\ApplicationContext\1_GenerateApplicationContext.cs" />
+    <Compile Include="Workflows\InitialWindow\2_GenerateMainWindowUI.cs" />
     <Compile Include="Workflows\Sage50Connection\9_CompanyGroupModel.cs" />
-    <Compile Include="Workflows\Sage50Connection\CenterRowUI.cs" />
-    <Compile Include="Workflows\Sage50Connection\Sage50ConnectionActions.cs" />
-    <Compile Include="Workflows\Sage50Connection\GenerateSage50ConnectionTabUI.cs" />
-    <Compile Include="Workflows\Sage50Connection\CenterRowCenterPanelControls.cs" />
+    <Compile Include="Workflows\Sage50Connection\2_CenterRowUI.cs" />
+    <Compile Include="Workflows\InitialWindow\1_GenerateMainWindow.cs" />
+    <Compile Include="Workflows\Sage50Connection\3_Sage50ConnectionActions.cs" />
+    <Compile Include="Workflows\Sage50Connection\1_GenerateSage50ConnectionTabUI.cs" />
+    <Compile Include="Workflows\Sage50Connection\2_CenterRowCenterPanelControls.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="appicon.ico" />
-    <Content Include="Media\Image\ajax-loader.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Annadir.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\appicon.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="TextFile1.DAT" />
-    <EmbeddedResource Include="Media\Image\ApplicationIcon.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <Content Include="Media\Image\Cerrar.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Confirmation.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Contexto actual.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\delete.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\delete1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Delete_16.ICO">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Delete_16.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Deshacer.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Eliminar.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Error.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Excel_Open.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Excel_Open.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Excel_Save.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Excel_Save_Selection.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Expandir.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Folder yellow arrow up.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Folder yellow arrow up48.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\gestproject_logo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Informacion.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\loading_spinner_1.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\loading_spinner_2.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\prl_elemento_riesgo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Refrescar 02.png" />
-    <Content Include="Media\Image\Refrescar.png" />
-    <Content Include="Media\Image\sage_logo_500x226.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\sage_logo_500x240.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\sage_logo_500x300.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Salir.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Semaforo rojo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Semaforo verde.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\synchronize_blue_gradient.png" />
-    <Content Include="Media\Image\synchronize_green_gradient.png" />
-    <Content Include="Media\Image\Vista preliminar.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\Image\Warning.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="Resources\Excel_Open.ico" />
+    <None Include="Resources\Delete_16.ICO" />
+    <None Include="Resources\appicon.ico" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\Vista preliminar.png" />
+    <None Include="Resources\Semaforo verde.png" />
+    <None Include="Resources\SemaforoRojo.png" />
+    <None Include="Resources\Salir.png" />
+    <None Include="Resources\sage_logo_500x300.png" />
+    <None Include="Resources\sage_logo_500x240.png" />
+    <None Include="Resources\sage_logo_500x226.png" />
+    <None Include="Resources\prl_elemento_riesgo.png" />
+    <None Include="Resources\loading_spinner_2.gif" />
+    <None Include="Resources\loading_spinner_1.gif" />
+    <None Include="Resources\Informacion.png" />
+    <None Include="Resources\gestproject_logo.png" />
+    <None Include="Resources\Folder yellow arrow up48.png" />
+    <None Include="Resources\Folder yellow arrow up.png" />
+    <None Include="Resources\Expandir.png" />
+    <None Include="Resources\Excel_Save_Selection.png" />
+    <None Include="Resources\Excel_Save.png" />
+    <None Include="Resources\Excel_Open.png" />
+    <None Include="Resources\Error.png" />
+    <None Include="Resources\Eliminar.png" />
+    <None Include="Resources\Deshacer.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\Delete_16.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\Contexto actual.png" />
+    <None Include="Resources\Confirmation.png" />
+    <None Include="Resources\Cerrar.png" />
+    <None Include="Resources\Annadir.png" />
+    <None Include="Resources\ajax-loader.gif" />
     <None Include="Resources\SuccessRedDot.bmp" />
     <None Include="Resources\SuccessGreenDot.bmp" />
     <None Include="Resources\ApplicationIcon.bmp" />
     <None Include="Resources\applicationIcon.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Styles\Aero.isl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -700,8 +618,31 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestprojectConnector\GestprojectDatabaseConnector.csproj">
+      <Project>{e1d68abe-ce53-4d58-8d9e-fe116ecde711}</Project>
+      <Name>GestprojectDatabaseConnector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestprojectDataManager\GestprojectDataManager.csproj">
+      <Project>{31e51a57-59e2-41e3-9a19-545fbf72a0d1}</Project>
+      <Name>GestprojectDataManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestprojectStylesManager\GestprojectStyleManager.csproj">
+      <Project>{81103de6-4ccc-40e0-a0a6-b592f8ca739f}</Project>
+      <Name>GestprojectStyleManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage50ConnectionManager\Sage50ConnectionManager.csproj">
+      <Project>{ed0700f7-4cc0-4431-b9c8-f04f1fb75eae}</Project>
+      <Name>Sage50ConnectionManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sage50DataManager\Sage50DataManager.csproj">
+      <Project>{a63b7aad-d186-4711-b6d2-69d10936ac0d}</Project>
+      <Name>Sage50DataManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

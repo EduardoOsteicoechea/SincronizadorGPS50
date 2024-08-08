@@ -1,0 +1,6 @@
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\GestprojectStylesManager\bin\Debug\GestprojectStylesManager.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\GestprojectStylesManager\bin\Debug\GestprojectStylesManager.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\GestprojectStylesManager\obj\Debug\GestprojectStyleManager.csproj.AssemblyReference.cache
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\GestprojectStylesManager\obj\Debug\GestprojectStyleManager.csproj.CoreCompileInputs.cache
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\GestprojectStylesManager\obj\Debug\GestprojectStylesManager.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\GestprojectStylesManager\obj\Debug\GestprojectStylesManager.pdb
