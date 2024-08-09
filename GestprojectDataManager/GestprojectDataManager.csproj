@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
@@ -42,13 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encryptor.cs" />
     <Compile Include="GestprojectProviders.cs" />
     <Compile Include="GestprojectProviderModel.cs" />
     <Compile Include="GestprojectClientModel.cs" />
     <Compile Include="GestprojectParticipantModel.cs" />
     <Compile Include="GestprojectClients.cs" />
     <Compile Include="GestprojectParticipants.cs" />
+    <Compile Include="MangeUserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SynchronizerUserRememberableDataModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

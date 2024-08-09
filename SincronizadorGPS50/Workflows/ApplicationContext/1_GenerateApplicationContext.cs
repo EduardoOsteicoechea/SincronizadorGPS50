@@ -1,14 +1,10 @@
 ﻿using SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
     internal class GenerateApplicationContext : ApplicationContext
     {
-        internal System.Data.SqlClient.SqlConnection GestprojectDatabaseConnection { get; set; } = null;
-        internal List<GestprojectDataManager.GestprojectClientModel> GestprojectClientList { get; set; } = null;
-        internal List<GestprojectDataManager.GestprojectProviderModel> GestprojectProviderList { get; set; } = null;
         public GenerateApplicationContext() 
         {
             try
@@ -28,23 +24,23 @@ namespace SincronizadorGPS50
                     throw new System.Exception("Error applying Gestproject Styles");
                 };
 
-                GestprojectDatabaseConnection = new GestprojectDatabaseConnector.ConnectionManager().Connect();
+                GestprojectDataHolder.GestprojectDatabaseConnection = new GestprojectDatabaseConnector.ConnectionManager().Connect();
 
-                if(GestprojectDatabaseConnection == null)
+                if(GestprojectDataHolder.GestprojectDatabaseConnection == null)
                 {
                     throw new System.Exception("Error connecting to Gestproject Database");
                 };
 
-                GestprojectClientList = new GestprojectDataManager.GestprojectClients().Get(GestprojectDatabaseConnection);
+                GestprojectDataHolder.GestprojectClientList = new GestprojectDataManager.GestprojectClients().Get(GestprojectDataHolder.GestprojectDatabaseConnection);
 
-                if (GestprojectClientList == null)
+                if (GestprojectDataHolder.GestprojectClientList == null)
                 {
                     throw new System.Exception("Error Obtaining Gestproject Clients");
                 };
 
-                GestprojectProviderList = new GestprojectDataManager.GestprojectProviders().Get(GestprojectDatabaseConnection);
+                GestprojectDataHolder.GestprojectProviderList = new GestprojectDataManager.GestprojectProviders().Get(GestprojectDataHolder.GestprojectDatabaseConnection);
 
-                if (GestprojectProviderList == null)
+                if (GestprojectDataHolder.GestprojectProviderList == null)
                 {
                     throw new System.Exception("Error Obtaining Gestproject Providers");
                 };
@@ -74,10 +70,40 @@ namespace SincronizadorGPS50
                     throw new System.Exception("Error generating main window");
                 };
 
-                if(!new CenterRowCenterPanelControls().IsSuccessful)
+                if(GestprojectDataManager.ManageUserData.CheckIfGestprojectUserDataTableExists(GestprojectDataHolder.GestprojectDatabaseConnection))
                 {
-                    throw new System.Exception("Error generating main window");
-                };
+                    if(!GestprojectDataManager.ManageUserData.CheckIfRememberUserDataOptionWasActivated(GestprojectDataHolder.GestprojectDatabaseConnection))
+                    {
+                        MessageBox.Show("Stateless");
+                        if(!new StatelessCenterRowCenterPanelControls().IsSuccessful)
+                        {
+                            throw new System.Exception("Error generating main window");
+                        };
+                    }
+                    else
+                    {
+                        MessageBox.Show("Stateful");
+                        if(!new StatefulCenterRowCenterPanelControls().IsSuccessful)
+                        {
+                            throw new System.Exception("Error generating main window");
+                        };
+                    };
+                }
+                else
+                {
+                    if(
+                        GestprojectDataManager.ManageUserData.Save(
+                            GestprojectDataHolder.GestprojectDatabaseConnection,"","","",""
+                        )
+                    )
+                    {
+                        MessageBox.Show("Stateless");
+                        if(!new StatelessCenterRowCenterPanelControls().IsSuccessful)
+                        {
+                            throw new System.Exception("Error generating main window");
+                        };
+                    };
+                }
 
                 // InitialLaunchForSage50Connection
                 // InitialLaunchForSage50Connection
@@ -86,7 +112,7 @@ namespace SincronizadorGPS50
 
                 MainWindowUIHolder.MainWindow.Show();
             }
-            catch (System.Exception e)
+            catch(System.Exception e)
             {
                 MessageBox.Show($"Error: \n\n{e.Message}");
             };

@@ -369,6 +369,7 @@
     <Compile Include="ApplicationManager.cs" />
     <Compile Include="DataHolders\ClientsUIHolder.cs" />
     <Compile Include="DataHolders\DataHolder.cs" />
+    <Compile Include="DataHolders\GestprojectDataHolder.cs" />
     <Compile Include="DataHolders\MainWindowUIHolder.cs" />
     <Compile Include="DataHolders\StyleHolder.cs" />
     <Compile Include="DataHolders\UIHolder.cs" />
@@ -415,7 +416,6 @@
     <Compile Include="Sage50API\GetSage50Client.cs" />
     <Compile Include="Sage50API\2_GetSage50Clients.cs" />
     <Compile Include="Workflows\Clients\2_Sage50Clients.cs" />
-    <Compile Include="Sage50API\Sage50CompanyGroupActions.cs" />
     <Compile Include="Setup\LinkSage50.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -448,12 +448,13 @@
     <Compile Include="Workflows\Clients\9_SyncronizationTableModel.cs" />
     <Compile Include="Workflows\ApplicationContext\1_GenerateApplicationContext.cs" />
     <Compile Include="Workflows\InitialWindow\2_GenerateMainWindowUI.cs" />
+    <Compile Include="Workflows\Sage50Connection\2_StatefulCenterRowCenterPanelControls.cs" />
     <Compile Include="Workflows\Sage50Connection\9_CompanyGroupModel.cs" />
     <Compile Include="Workflows\Sage50Connection\2_CenterRowUI.cs" />
     <Compile Include="Workflows\InitialWindow\1_GenerateMainWindow.cs" />
     <Compile Include="Workflows\Sage50Connection\3_Sage50ConnectionActions.cs" />
     <Compile Include="Workflows\Sage50Connection\1_GenerateSage50ConnectionTabUI.cs" />
-    <Compile Include="Workflows\Sage50Connection\2_CenterRowCenterPanelControls.cs" />
+    <Compile Include="Workflows\Sage50Connection\2_StatelessCenterRowCenterPanelControls.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="appicon.ico" />

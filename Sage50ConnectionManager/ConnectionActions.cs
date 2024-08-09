@@ -10,9 +10,17 @@ namespace Sage50ConnectionManager
         public static LinkSage50 Sage50ConnectionManager { get; set; } = null;
         public static bool Connect(string Sage50LocalTerminalPath, string Sage50Username, string Sage50Password)
         {
-            Sage50ConnectionManager = new LinkSage50(Sage50LocalTerminalPath);
+            try
+            {
+                Sage50ConnectionManager = new LinkSage50(Sage50LocalTerminalPath);
 
-            return Sage50ConnectionManager._Connect(Sage50Username, Sage50Password);
+                return Sage50ConnectionManager._Connect(Sage50Username, Sage50Password);
+            }
+            catch (System.Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            };
         }
 
         public static void Disconnect() 

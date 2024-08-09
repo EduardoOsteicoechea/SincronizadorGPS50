@@ -83,6 +83,11 @@ namespace SincronizadorGPS50
         internal static UltraTextEditor CenterRowCenterPanelPasswordTextBox { get; set; } = null;
         internal static UltraButton CenterRowCenterPanelValidateUserDataButton { get; set; } = null;
         internal static UltraLabel CenterRowCenterPanelSesionDataValidationLabel { get; set; } = null;
+        internal static UltraLabel CenterRowCenterPanelRememberDataLabel { get; set; } = null;
+        internal static UltraCheckEditor CenterRowCenterPanelRememberDataCheckBox { get; set; } = null;
+        
+
+
         internal static UltraButton CenterRowCenterPanelGetEnterpryseGroupButton { get; set; } = null;
         internal static UltraLabel CenterRowCenterPanelEnterpryseGroupLabel { get; set; } = null;
         internal static UltraComboEditor CenterRowCenterPanelEnterpryseGroupMenu { get; set; } = null;

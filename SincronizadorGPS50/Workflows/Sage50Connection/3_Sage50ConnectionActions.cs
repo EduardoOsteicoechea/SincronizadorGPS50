@@ -1,12 +1,13 @@
 ﻿using Infragistics.Win.UltraWinTabControl;
 using SincronizadorGPS50.Workflows.Clients;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-    internal class Sage50ConnectionActions
+    internal static class Sage50ConnectionActions
     {
-        internal void VeryfyUserData(object sender, System.EventArgs e)
+        internal static void VeryfyUserData(object sender, System.EventArgs e)
         {
             DataHolder.Sage50LocalTerminalPath = UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Text;
             DataHolder.Sage50Username = UIHolder.CenterRowCenterPanelUsernameTextBox.Text;
@@ -20,13 +21,13 @@ namespace SincronizadorGPS50
                 )
             )
             {
-                UIHolder.CenterRowCenterPanelValidateUserDataButton.Enabled = false;
+                //UIHolder.CenterRowCenterPanelValidateUserDataButton.Enabled = false;
                 UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Text = "Datos correctos";
                 UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Appearance.ForeColor = StyleHolder.c_green_1;
 
-                UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Enabled = false;
-                UIHolder.CenterRowCenterPanelUsernameTextBox.Enabled = false;
-                UIHolder.CenterRowCenterPanelPasswordTextBox.Enabled = false;
+                //UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Enabled = false;
+                //UIHolder.CenterRowCenterPanelUsernameTextBox.Enabled = false;
+                //UIHolder.CenterRowCenterPanelPasswordTextBox.Enabled = false;
 
                 UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelSesionDataValidationLabel, 0, 11);
 
@@ -54,7 +55,7 @@ namespace SincronizadorGPS50
             };
         }
 
-        internal void Disconnect(object sender, System.EventArgs e) 
+        internal static void Disconnect(object sender, System.EventArgs e) 
         {
             Sage50ConnectionManager.ConnectionActions.Disconnect();
 
@@ -68,6 +69,10 @@ namespace SincronizadorGPS50
 
             UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Remove(UIHolder.CenterRowCenterPanelEnterpryseGroupMenu);
 
+            UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Remove(UIHolder.CenterRowCenterPanelRememberDataLabel);
+
+            UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Remove(UIHolder.CenterRowCenterPanelRememberDataCheckBox);
+
             UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedIndex = 0;
 
             UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Items.Clear();
@@ -75,14 +80,20 @@ namespace SincronizadorGPS50
             DataHolder.Sage50CompanyGroupsList.Clear();
 
             UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Enabled = true;
+
             UIHolder.CenterRowCenterPanelUsernameTextBox.Enabled = true;
             UIHolder.CenterRowCenterPanelPasswordTextBox.Enabled = true;
+
             UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Enabled = true;
 
             UIHolder.CenterRowCenterPanelStateIcon1.Image = Resources.SemaforoRojo;
+
             UIHolder.CenterRowCenterPanelStateStateMessageLabel.Text = "Desconectado";
+
             UIHolder.CenterRowCenterPanelConnectButton.Enabled = true;
+
             UIHolder.CenterRowCenterPanelValidateUserDataButton.Enabled = true;
+
             UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Text = "Datos Incorrectos";
             UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Appearance.ForeColor = StyleHolder.c_red_1;
 
@@ -94,28 +105,130 @@ namespace SincronizadorGPS50
             MainWindowUIHolder.MainTabControl.SelectedTab.Enabled = true;
         }
 
-        internal async void Connect(object sender, System.EventArgs e)
+        internal static async void Connect(object sender, System.EventArgs e)
         {
-            UIHolder.CenterRowCenterPanelStateIcon1.Image = Resources.Semaforo_verde;
+            DataHolder.Sage50LocalTerminalPath = UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Text;
+            DataHolder.Sage50Username = UIHolder.CenterRowCenterPanelUsernameTextBox.Text;
+            DataHolder.Sage50Password = UIHolder.CenterRowCenterPanelPasswordTextBox.Text;
+            //DataHolder.Sage50SelectedCompanyGroupName = UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedText;
+            DataHolder.Sage50SelectedCompanyGroupName = UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Text;
 
-            UIHolder.CenterRowCenterPanelStateStateMessageLabel.Text = "Conectado";
 
-            UIHolder.CenterRowCenterPanelConnectButton.Enabled = false;
+            Sage50ConnectionManager.ConnectionActions.Disconnect();
 
-            UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelDisconnectButton, 0, 17);
+            Sage50ConnectionManager.ConnectionActions.Connect(
+                DataHolder.Sage50LocalTerminalPath,
+                DataHolder.Sage50Username,
+                DataHolder.Sage50Password
+            );
 
-            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Enabled = false;
 
-            foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs)
+            if(UIHolder.CenterRowCenterPanelRememberDataCheckBox.Checked)
             {
-                tab.Enabled = true;
+                if(
+                    DataHolder.Sage50LocalTerminalPath != ""
+                    &&
+                    DataHolder.Sage50Username != ""
+                    &&
+                    DataHolder.Sage50Password != ""
+                    &&
+                    DataHolder.Sage50SelectedCompanyGroupName != ""
+                )
+                {
+                    GestprojectDataManager.ManageUserData.Save(
+                        GestprojectDataHolder.GestprojectDatabaseConnection,
+                        DataHolder.Sage50LocalTerminalPath,
+                        DataHolder.Sage50Username,
+                        DataHolder.Sage50Password,
+                        DataHolder.Sage50SelectedCompanyGroupName
+                    );
+
+                    UIHolder.CenterRowCenterPanelStateIcon1.Image = Resources.Semaforo_verde;
+
+                    UIHolder.CenterRowCenterPanelStateStateMessageLabel.Text = "Conectado";
+
+                    UIHolder.CenterRowCenterPanelConnectButton.Enabled = false;
+
+                    UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelDisconnectButton, 0, 19);
+
+                    UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Enabled = false;
+
+                    foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs)
+                    {
+                        tab.Enabled = true;
+                    };
+
+                    await Task.Delay(1000);
+
+                    MainWindowUIHolder.MainTabControl.SelectedTab = UIHolder.ClientsTab;
+
+                    new ClientsTabPageUI();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "DataHolder.Sage50LocalTerminalPath: " + "\n" +
+                        DataHolder.Sage50LocalTerminalPath + "\n\n" +
+                        "DataHolder.Sage50Username: " + "\n" +
+                        DataHolder.Sage50Username + "\n\n" +
+                        "DataHolder.Sage50Password: " + "\n" +
+                        DataHolder.Sage50Password + "\n\n" +
+                        "DataHolder.Sage50SelectedCompanyGroupName: " + "\n" +
+                        DataHolder.Sage50SelectedCompanyGroupName
+                    );
+                    MessageBox.Show("Alguno de los campos de conexión está vacío.");
+                };
+            }
+            else
+            {
+                GestprojectDataManager.ManageUserData.DisableRememberUserDataFeature(GestprojectDataHolder.GestprojectDatabaseConnection);
+
+                UIHolder.CenterRowCenterPanelStateIcon1.Image = Resources.Semaforo_verde;
+
+                UIHolder.CenterRowCenterPanelStateStateMessageLabel.Text = "Conectado";
+
+                //UIHolder.CenterRowCenterPanelConnectButton.Enabled = false;
+
+                UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelDisconnectButton, 0, 19);
+
+                //UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Enabled = false;
+
+                foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs)
+                {
+                    tab.Enabled = true;
+                };
+
+                await Task.Delay(1000);
+
+                MainWindowUIHolder.MainTabControl.SelectedTab = UIHolder.ClientsTab;
+
+                new ClientsTabPageUI();
             };
+        }
 
-            await Task.Delay(1000);
+        internal static void ChangeCompanyGroup(object sender, System.EventArgs e)
+        {
+            if(UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedText != "")
+            {
+                if(
+                    Sage50ConnectionManager.Sage50CompanyGroupActions.ChangeCompanyGroup(
+                        UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedText
+                    )
+                )
+                {
+                    UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelConnectButton, 0, 16);
 
-            MainWindowUIHolder.MainTabControl.SelectedTab = UIHolder.ClientsTab;
+                    UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelRememberDataLabel, 0, 17);
 
-            new ClientsTabPageUI();
+                    UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelRememberDataCheckBox, 0, 18);
+
+                    UIHolder.CenterRowCenterPanelConnectButton.Focus();
+                }
+                else
+                {
+
+                };
+            };
         }
     }
 }
