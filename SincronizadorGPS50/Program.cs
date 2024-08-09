@@ -1,5 +1,4 @@
 ﻿using SincronizadorGPS50.GestprojectAPI;
-using GestprojectDatabaseConnector;
 using System;
 
 namespace SincronizadorGPS50
@@ -13,7 +12,6 @@ namespace SincronizadorGPS50
 
             new ConnectToGestprojectDatabase();
 
-            // Display initial window
             System.Windows.Forms.Application.Run(ApplicationManager.ApplicationGlobalContext);
         }
     }

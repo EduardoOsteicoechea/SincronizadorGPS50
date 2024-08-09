@@ -61,7 +61,7 @@ namespace SincronizadorGPS50
                 };
             };
 
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = true;
+            ClientsUIHolder.BottomRowSynchronizeSelectedButton.Enabled = true;
         }
 
         internal static void CollectCurrentlySelected(UltraGrid ultraGrid)
@@ -100,7 +100,7 @@ namespace SincronizadorGPS50
                 };
             };
 
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = true;
+            ClientsUIHolder.BottomRowSynchronizeSelectedButton.Enabled = true;
         } 
         
         internal static void CollectFilteredInTableUI(UltraGrid ultraGrid)
@@ -129,7 +129,7 @@ namespace SincronizadorGPS50
                 item.Selected = false;
             };
 
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
+            ClientsUIHolder.BottomRowSynchronizeSelectedButton.Enabled = false;
         }
     }
 }

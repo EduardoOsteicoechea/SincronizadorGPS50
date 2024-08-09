@@ -1,6 +1,6 @@
 ﻿namespace SincronizadorGPS50.Workflows.Clients
 {
-    internal static class BottomRowSynchronizeAllButtonEvents
+    internal static class SynchronizeAllButtonEvents
     {
         internal static void Click(object sender, System.EventArgs e)
         {
@@ -16,7 +16,7 @@
 
             DataHolder.ListOfSelectedClientIdInTable.Clear();
 
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
+            ClientsUIHolder.BottomRowSynchronizeSelectedButton.Enabled = false;
             ClientsUIHolder.BottomRowSynchronizeFilteredButton.Enabled = false;
         }
     }

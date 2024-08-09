@@ -38,11 +38,14 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.TopRowRefreshTableButton.Click += TopRowRefreshTableButtonEvents.Click;
 
 
-            ClientsUIHolder.TopRowSynchronizeClientsButton = new UltraButton();
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Text = "Sincronizar selección";
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Dock = DockStyle.Fill;
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Click += TopRowSinchronizeSelectedButtonEvents.Click;
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
+            ClientsUIHolder.TopRowCloseButton = new UltraButton();
+            ClientsUIHolder.TopRowCloseButton.Text = "Salir";
+            ClientsUIHolder.TopRowCloseButton.Dock = DockStyle.Fill;
+            ClientsUIHolder.TopRowCloseButton.Click += new EventHandler((object sender, System.EventArgs e) => {
+                Application.ExitThread();
+                Application.Exit();
+                MainWindowUIHolder.MainWindow.Close();
+            });
 
 
             ClientsUIHolder.TopRow.ClientArea.Controls.Add(ClientsUIHolder.TopRowTableLayoutPanel);
@@ -50,7 +53,7 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             ClientsUIHolder.TopRowTableLayoutPanel.Controls.Add(ClientsUIHolder.TopRowMainInstructionLabel, 0, 0);
             ClientsUIHolder.TopRowTableLayoutPanel.Controls.Add(ClientsUIHolder.TopRowRefreshTableButton, 1, 0);
-            ClientsUIHolder.TopRowTableLayoutPanel.Controls.Add(ClientsUIHolder.TopRowSynchronizeClientsButton, 2, 0);
+            ClientsUIHolder.TopRowTableLayoutPanel.Controls.Add(ClientsUIHolder.TopRowCloseButton, 2, 0);
         }
     }
 }

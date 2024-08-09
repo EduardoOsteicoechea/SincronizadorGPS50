@@ -36,7 +36,7 @@ namespace Sage50ConnectionManager
             if(!string.IsNullOrEmpty(tsTerminal))
             {
                 this._Terminal = tsTerminal;
-                this._DllTerminal = Path.Combine(this._Terminal, @"50.7840.3\");
+                this._DllTerminal = Path.Combine(this._Terminal, Sage50LibrariesFolder.Get(this._Terminal));
                 this._AssemblyResolveBegin();
                 this._Loaded_Ok = true;
             }

@@ -1,0 +1,44 @@
+Repair CompanyGroup Change Issue
+Repair Company Group duplication on connection Issue
+Add validation by Sage50 CompanyGroup
+Add validation by Sage50 Instance
+
+Demonstrate that the company group change, in fact changes the Sage50 database to de queried.
+
+
+
+0. MainWindow.Load += ()=> {
+
+1. Sage50TerminalConnectionData
+	Onchange:
+		if AllInputsFilled && !Exists: 2, Create-Enable: 2
+		if AllInputsFilled && Exists: 2, Enable: 2
+		if AllInputsFilled && Exists: 2 && FirstChange:
+			if 3,4,5 exists, Dispose: 3,4,5
+		if !AllInputsFilled && Exists: 2, Disable: 2
+
+2. Connect To Get CompanyGroups
+	OnSuccess:
+		Create3
+	OnFailure:
+		MessageBox.Show("Los datos provistos eran incorrectos para el terminal especificado");	
+		Focus: TerminalPath
+
+3. EnterpryseGroup
+	Onchange:
+		Create connection button
+			Click:
+				Success:
+					Show database
+					Create: 4
+
+4. ConnectAndRememer
+	Click:
+		Create: 5
+		Go to: Client's Tab
+		RemembreChecked:
+			Yes:
+				UpdateUserData
+	
+5. Disconnect
+	Dispose: 2,3,4,5

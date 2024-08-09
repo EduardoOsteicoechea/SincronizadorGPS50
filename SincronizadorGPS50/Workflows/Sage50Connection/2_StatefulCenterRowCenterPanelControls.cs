@@ -65,7 +65,6 @@ namespace SincronizadorGPS50
 
             UIHolder.CenterRowCenterPanelLocalInstanceTextBox = new UltraTextEditor();
             UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Text = "C:\\Sage50_12\\Sage50Term";
 
             // Username
             // Username
@@ -81,7 +80,6 @@ namespace SincronizadorGPS50
 
             UIHolder.CenterRowCenterPanelUsernameTextBox = new UltraTextEditor();
             UIHolder.CenterRowCenterPanelUsernameTextBox.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelUsernameTextBox.Text = "SUPERVISOR";
 
             // Password
             // Password
@@ -98,7 +96,6 @@ namespace SincronizadorGPS50
             UIHolder.CenterRowCenterPanelPasswordTextBox = new UltraTextEditor();
             UIHolder.CenterRowCenterPanelPasswordTextBox.Dock = DockStyle.Fill;
             UIHolder.CenterRowCenterPanelPasswordTextBox.PasswordChar = '*';
-            UIHolder.CenterRowCenterPanelPasswordTextBox.Text = "Prueba123!";
 
             UIHolder.CenterRowCenterPanelValidateUserDataButton = new UltraButton();
             UIHolder.CenterRowCenterPanelValidateUserDataButton.Dock = DockStyle.Fill;
@@ -119,17 +116,32 @@ namespace SincronizadorGPS50
             // RememberData
             // RememberData
 
+            UIHolder.CenterRowCenterPanelRememberDataPanel = new UltraPanel();
+            UIHolder.CenterRowCenterPanelRememberDataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            UIHolder.CenterRowCenterPanelRememberDataPanel.Height = 25;
+            UIHolder.CenterRowCenterPanelRememberDataPanel.Margin = new Padding(0, 20, 0, 0);
+
             UIHolder.CenterRowCenterPanelRememberDataLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelRememberDataLabel.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelRememberDataLabel.Margin = new Padding(0, 10, 0, 0);
+            UIHolder.CenterRowCenterPanelRememberDataLabel.Width = Convert.ToInt32(UIHolder.CenterRowCenterPanelRememberDataPanel.Width * .8);
+            UIHolder.CenterRowCenterPanelRememberDataLabel.Location = new Point(
+                Convert.ToInt32(UIHolder.CenterRowCenterPanelRememberDataPanel.Width * 0.2),
+                0
+            );
             UIHolder.CenterRowCenterPanelRememberDataLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             UIHolder.CenterRowCenterPanelRememberDataLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
             UIHolder.CenterRowCenterPanelRememberDataLabel.Text = "¿Desea recordar sus datos?";
 
             UIHolder.CenterRowCenterPanelRememberDataCheckBox = new UltraCheckEditor();
-            UIHolder.CenterRowCenterPanelRememberDataCheckBox.Dock = DockStyle.Fill;
+            UIHolder.CenterRowCenterPanelRememberDataCheckBox.Width = Convert.ToInt32(UIHolder.CenterRowCenterPanelRememberDataPanel.Width * .1);
+            UIHolder.CenterRowCenterPanelRememberDataCheckBox.Location = new Point(
+                Convert.ToInt32(UIHolder.CenterRowCenterPanelRememberDataPanel.Width * 1.1), 
+                0
+            );
             UIHolder.CenterRowCenterPanelRememberDataCheckBox.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             UIHolder.CenterRowCenterPanelRememberDataCheckBox.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+
+            UIHolder.CenterRowCenterPanelRememberDataPanel.ClientArea.Controls.Add(UIHolder.CenterRowCenterPanelRememberDataLabel);
+            UIHolder.CenterRowCenterPanelRememberDataPanel.ClientArea.Controls.Add(UIHolder.CenterRowCenterPanelRememberDataCheckBox);
 
             // EnterpryseGroup
             // EnterpryseGroup
@@ -156,7 +168,7 @@ namespace SincronizadorGPS50
             UIHolder.CenterRowCenterPanelConnectButton = new UltraButton();
             UIHolder.CenterRowCenterPanelConnectButton.Dock = DockStyle.Fill;
             UIHolder.CenterRowCenterPanelConnectButton.AutoSize = true;
-            UIHolder.CenterRowCenterPanelConnectButton.Margin = new Padding(75,20,75,0);
+            UIHolder.CenterRowCenterPanelConnectButton.Margin = new Padding(75,25,75,0);
             UIHolder.CenterRowCenterPanelConnectButton.Text = "Conectar";
 
             // DisConnectButton
@@ -177,17 +189,24 @@ namespace SincronizadorGPS50
             // HanddleEvents
             // HanddleEvents
 
-            UIHolder.CenterRowCenterPanelValidateUserDataButton.Click +=
-                new EventHandler(Sage50ConnectionActions.VeryfyUserData);
+            UIHolder.CenterRowCenterPanelValidateUserDataButton.Click += Sage50ConnectionActions.VeryfyUserData;
 
-            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectionChanged +=
-                new EventHandler(Sage50ConnectionActions.ChangeCompanyGroup);
+            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectionChanged += Sage50ConnectionActions.ChangeCompanyGroup;
 
-            UIHolder.CenterRowCenterPanelConnectButton.Click +=
-                new EventHandler(Sage50ConnectionActions.Connect);
+            UIHolder.CenterRowCenterPanelConnectButton.Click += Sage50ConnectionActions.Connect;
 
-            UIHolder.CenterRowCenterPanelDisconnectButton.Click +=
-                new EventHandler(Sage50ConnectionActions.Disconnect);
+            UIHolder.CenterRowCenterPanelDisconnectButton.Click += Sage50ConnectionActions.Disconnect;
+            
+            // Prevent TextChanged events from firing on MainWindow.Load event
+            MainWindowUIHolder.MainWindow.Load += (object sender, System.EventArgs e) => 
+            {
+                UIHolder.CenterRowCenterPanelLocalInstanceTextBox.TextChanged += Sage50ConnectionActions.InforceDataValidation;
+
+                UIHolder.CenterRowCenterPanelUsernameTextBox.TextChanged += Sage50ConnectionActions.InforceDataValidation;
+
+                UIHolder.CenterRowCenterPanelPasswordTextBox.TextChanged += Sage50ConnectionActions.InforceDataValidation;
+            };
+
 
             try
             {
@@ -210,6 +229,10 @@ namespace SincronizadorGPS50
                         )
                     )
                     {
+                        UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Text = userRememberabledata.Sage50LocalTerminalPath;
+                        UIHolder.CenterRowCenterPanelUsernameTextBox.Text = userRememberabledata.Sage50Username;
+                        UIHolder.CenterRowCenterPanelPasswordTextBox.Text = userRememberabledata.Sage50Password;
+
                         // Add controls to tab page
                         // Add controls to tab page
                         // Add controls to tab page
@@ -272,6 +295,7 @@ namespace SincronizadorGPS50
                             Convert.ToInt32(userRememberabledata.Remember) == 1 ? true : false;
 
                         UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedText = userRememberabledata.Sage50CompanyGroupName;
+
                         UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Text = userRememberabledata.Sage50CompanyGroupName;
 
 
@@ -281,11 +305,9 @@ namespace SincronizadorGPS50
 
                         UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelEnterpryseGroupMenu, 0, 13);
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelConnectButton, 0, 16);
+                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelRememberDataPanel, 0, 14);
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelRememberDataLabel, 0, 17);
-
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelRememberDataCheckBox, 0, 18);
+                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelConnectButton, 0, 15);
 
                         UIHolder.CenterRowCenterPanelConnectButton.Focus();
 

@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="CompanyGroupModel.cs" />
     <Compile Include="ConnectionActions.cs" />
+    <Compile Include="GetLatestLibrariesFolder.cs" />
     <Compile Include="LinkSage50.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sage50CompanyGroupActions.cs" />

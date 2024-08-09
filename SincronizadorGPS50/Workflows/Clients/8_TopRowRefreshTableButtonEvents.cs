@@ -17,7 +17,7 @@ namespace SincronizadorGPS50.Workflows.Clients
             new CenterRowUI(SynchronizationTable.Refresh);
             
             ClientsUIHolder.BottomRowSynchronizeFilteredButton.Enabled = false;
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
+            ClientsUIHolder.BottomRowSynchronizeSelectedButton.Enabled = false;
 
             ClientsUIHolder.TopRowMainInstructionLabel.Text = "Visualize el estado actual de sus clientes respecto a la información de Sage50. Renderizado el " + DateTime.UtcNow.ToShortDateString().ToString() + " en el horario " + DateTime.Now.TimeOfDay.ToString();
         }

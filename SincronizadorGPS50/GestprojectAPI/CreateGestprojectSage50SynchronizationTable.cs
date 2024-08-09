@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestprojectDataManager;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
@@ -19,9 +20,9 @@ namespace SincronizadorGPS50.GestprojectAPI
                 {
                     connection.Open();
 
-                    string sqlString = @"
+                    string sqlString = $@"
                     CREATE TABLE 
-                        INT_SAGE_SINC_CLIENTE 
+                        {ClientSynchronizationTableSchema.TableName} 
                         (
                             id INT PRIMARY KEY IDENTITY(1,1), 
                             synchronization_status VARCHAR(MAX), 

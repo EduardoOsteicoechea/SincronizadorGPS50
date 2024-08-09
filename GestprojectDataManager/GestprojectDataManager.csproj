@@ -52,6 +52,7 @@
     <Compile Include="GestprojectParticipants.cs" />
     <Compile Include="MangeUserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ClientSynchronizationTableSchema.cs" />
     <Compile Include="SynchronizerUserRememberableDataModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

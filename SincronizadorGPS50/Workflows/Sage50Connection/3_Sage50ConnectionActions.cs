@@ -1,5 +1,7 @@
-﻿using Infragistics.Win.UltraWinTabControl;
+﻿using Infragistics.Win.Misc;
+using Infragistics.Win.UltraWinTabControl;
 using SincronizadorGPS50.Workflows.Clients;
+using SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -53,6 +55,54 @@ namespace SincronizadorGPS50
                 UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Appearance.ForeColor = StyleHolder.c_red_1;
                 UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelSesionDataValidationLabel, 0, 11);
             };
+        }
+
+        internal static void InforceDataValidation(object sender, System.EventArgs e) 
+        {
+           Sage50ConnectionManager.ConnectionActions.Disconnect();
+
+            UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Remove(UIHolder.CenterRowCenterPanelDisconnectButton);
+
+            UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Remove(UIHolder.CenterRowCenterPanelConnectButton);
+
+            UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Remove(UIHolder.CenterRowCenterPanelSesionDataValidationLabel);
+
+            UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Remove(UIHolder.CenterRowCenterPanelEnterpryseGroupLabel);
+
+            UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Remove(UIHolder.CenterRowCenterPanelEnterpryseGroupMenu);
+
+            UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Remove(UIHolder.CenterRowCenterPanelRememberDataPanel);
+
+            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedIndex = 0;
+
+            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Items.Clear();
+
+            DataHolder.Sage50CompanyGroupsList.Clear();
+
+            UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Enabled = true;
+
+            UIHolder.CenterRowCenterPanelUsernameTextBox.Enabled = true;
+            UIHolder.CenterRowCenterPanelPasswordTextBox.Enabled = true;
+
+            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Enabled = true;
+
+            UIHolder.CenterRowCenterPanelStateIcon1.Image = Resources.SemaforoRojo;
+
+            UIHolder.CenterRowCenterPanelStateStateMessageLabel.Text = "Desconectado";
+
+            UIHolder.CenterRowCenterPanelConnectButton.Enabled = true;
+
+            UIHolder.CenterRowCenterPanelValidateUserDataButton.Enabled = true;
+
+            UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Text = "Datos Incorrectos";
+            UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Appearance.ForeColor = StyleHolder.c_red_1;
+
+            foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs)
+            {
+                tab.Enabled = false;
+            };
+
+            MainWindowUIHolder.MainTabControl.SelectedTab.Enabled = true;
         }
 
         internal static void Disconnect(object sender, System.EventArgs e) 

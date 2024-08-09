@@ -62,12 +62,12 @@ namespace SincronizadorGPS50
 
                 if(!new GenerateSage50ConnectionTabPageUI().IsSuccessful)
                 {
-                    throw new System.Exception("Error generating main window");
+                    throw new System.Exception("Error generating Sage50 Connection tab page");
                 };
 
                 if(!new CenterRowUI().IsSuccessful)
                 {
-                    throw new System.Exception("Error generating main window");
+                    throw new System.Exception("Error generating Sage50 Connection UI elements");
                 };
 
                 if(GestprojectDataManager.ManageUserData.CheckIfGestprojectUserDataTableExists(GestprojectDataHolder.GestprojectDatabaseConnection))
@@ -91,19 +91,17 @@ namespace SincronizadorGPS50
                 }
                 else
                 {
-                    if(
-                        GestprojectDataManager.ManageUserData.Save(
-                            GestprojectDataHolder.GestprojectDatabaseConnection,"","","",""
-                        )
-                    )
+                    MessageBox.Show("Creating User Rememberable Data Table");
+
+                    GestprojectDataManager.ManageUserData.CreateGestprojectUserDataTable(GestprojectDataHolder.GestprojectDatabaseConnection);
+
+                    GestprojectDataManager.ManageUserData.PopulateGestprojectUserDataTable(GestprojectDataHolder.GestprojectDatabaseConnection,"", "", "", "");                    
+
+                    if(!new StatelessCenterRowCenterPanelControls().IsSuccessful)
                     {
-                        MessageBox.Show("Stateless");
-                        if(!new StatelessCenterRowCenterPanelControls().IsSuccessful)
-                        {
-                            throw new System.Exception("Error generating main window");
-                        };
+                        throw new System.Exception("Error generating main window");
                     };
-                }
+                };  
 
                 // InitialLaunchForSage50Connection
                 // InitialLaunchForSage50Connection

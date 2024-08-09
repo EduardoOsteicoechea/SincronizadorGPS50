@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
-    internal static class TopRowSinchronizeSelectedButtonEvents
+    internal static class SinchronizeSelectedButtonEvents
     {
         internal static void Click(object sender, System.EventArgs e)
         {
@@ -23,7 +23,7 @@ namespace SincronizadorGPS50.Workflows.Clients
             DataHolder.ListOfSelectedClientIdInTable.Clear();
 
             ClientsUIHolder.BottomRowSynchronizeFilteredButton.Enabled = false;
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
+            ClientsUIHolder.BottomRowSynchronizeSelectedButton.Enabled = false;
         }
     }
 }

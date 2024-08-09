@@ -64,7 +64,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI
 
             UIHolder.CenterRowCenterPanelLocalInstanceTextBox = new UltraTextEditor();
             UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Text = "C:\\Sage50_12\\Sage50Term";
+            UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Text = "C:\\Sage50_13\\Sage50Term";
 
             // Username
             // Username
@@ -74,9 +74,9 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI
 
             UIHolder.CenterRowCenterPanelUsernameLabel = new UltraLabel();
             UIHolder.CenterRowCenterPanelUsernameLabel.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelUsernameLabel.Text = "Nombre de Usuario";
             UIHolder.CenterRowCenterPanelUsernameLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             UIHolder.CenterRowCenterPanelUsernameLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            UIHolder.CenterRowCenterPanelUsernameLabel.Text = "Nombre de Usuario";
 
             UIHolder.CenterRowCenterPanelUsernameTextBox = new UltraTextEditor();
             UIHolder.CenterRowCenterPanelUsernameTextBox.Dock = DockStyle.Fill;

@@ -369,6 +369,7 @@
     <Compile Include="ApplicationManager.cs" />
     <Compile Include="DataHolders\ClientsUIHolder.cs" />
     <Compile Include="DataHolders\DataHolder.cs" />
+    <Compile Include="DataHolders\Sage50DataHolder.cs" />
     <Compile Include="DataHolders\GestprojectDataHolder.cs" />
     <Compile Include="DataHolders\MainWindowUIHolder.cs" />
     <Compile Include="DataHolders\StyleHolder.cs" />

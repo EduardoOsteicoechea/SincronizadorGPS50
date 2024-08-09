@@ -7,14 +7,6 @@
       "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\workflows\\sage50connection\\2_statefulcenterrowcenterpanelcontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\workflows\\applicationcontext\\1_generateapplicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\workflows\\applicationcontext\\1_generateapplicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED0700F7-4CC0-4431-B9C8-F04F1FB75EAE}|Sage50ConnectionManager\\Sage50ConnectionManager.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sage50connectionmanager\\connectionactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED0700F7-4CC0-4431-B9C8-F04F1FB75EAE}|Sage50ConnectionManager\\Sage50ConnectionManager.csproj|solutionrelative:sage50connectionmanager\\connectionactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\workflows\\sage50connection\\3_sage50connectionactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\workflows\\sage50connection\\3_sage50connectionactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -26,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "3_Sage50ConnectionActions.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Sage50Connection\\3_Sage50ConnectionActions.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\Workflows\\Sage50Connection\\3_Sage50ConnectionActions.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Sage50Connection\\3_Sage50ConnectionActions.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\Workflows\\Sage50Connection\\3_Sage50ConnectionActions.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAkwGIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T21:23:44.704Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -36,49 +41,9 @@
               "RelativeDocumentMoniker": "SincronizadorGPS50\\Workflows\\Sage50Connection\\2_StatefulCenterRowCenterPanelControls.cs",
               "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Sage50Connection\\2_StatefulCenterRowCenterPanelControls.cs",
               "RelativeToolTip": "SincronizadorGPS50\\Workflows\\Sage50Connection\\2_StatefulCenterRowCenterPanelControls.cs",
-              "ViewState": "AQIAAJ0AAAAAAAAAAAAkwNMAAAAVAAAA",
+              "ViewState": "AQIAAMoAAAAAAAAAAAAkwOcAAABlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-09T10:02:08.797Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "1_GenerateApplicationContext.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\ApplicationContext\\1_GenerateApplicationContext.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\Workflows\\ApplicationContext\\1_GenerateApplicationContext.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\ApplicationContext\\1_GenerateApplicationContext.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\Workflows\\ApplicationContext\\1_GenerateApplicationContext.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAAAFUAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-09T11:47:06.104Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ConnectionActions.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\Sage50ConnectionManager\\ConnectionActions.cs",
-              "RelativeDocumentMoniker": "Sage50ConnectionManager\\ConnectionActions.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\Sage50ConnectionManager\\ConnectionActions.cs",
-              "RelativeToolTip": "Sage50ConnectionManager\\ConnectionActions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-09T11:46:42.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "3_Sage50ConnectionActions.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Sage50Connection\\3_Sage50ConnectionActions.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\Workflows\\Sage50Connection\\3_Sage50ConnectionActions.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\Sage50Connection\\3_Sage50ConnectionActions.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\Workflows\\Sage50Connection\\3_Sage50ConnectionActions.cs",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAmwFoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-09T11:39:58.977Z",
+              "WhenOpened": "2024-08-09T20:28:57.195Z",
               "EditorCaption": ""
             }
           ]

@@ -32,7 +32,7 @@ namespace SincronizadorGPS50.Workflows.Clients
 
         private void ClientDataTable_AfterRowFilterChanged(object sender, AfterRowFilterChangedEventArgs e) 
         {
-            ClientsUIHolder.TopRowSynchronizeClientsButton.Enabled = false;
+            ClientsUIHolder.BottomRowSynchronizeSelectedButton.Enabled = false;
             ClientsUIHolder.BottomRowSynchronizeFilteredButton.Enabled = true;
             SynchronizationTableUIActions.DeselectRows(ClientsUIHolder.ClientDataTable);
         }
