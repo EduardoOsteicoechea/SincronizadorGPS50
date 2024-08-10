@@ -12,16 +12,16 @@ namespace SincronizadorGPS50
             MainWindowUIHolder.MainTabControlMainPanel = new UltraPanel();
             MainWindowUIHolder.MainTabControlMainPanel.Dock = DockStyle.Fill;
 
-            UIHolder.Sage50ConnectionTableLayoutPanel = new TableLayoutPanel();
-            UIHolder.Sage50ConnectionTableLayoutPanel.ColumnCount = 1;
-            UIHolder.Sage50ConnectionTableLayoutPanel.RowCount = 3;
-            UIHolder.Sage50ConnectionTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
-            UIHolder.Sage50ConnectionTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 87.50f));
-            UIHolder.Sage50ConnectionTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
-            UIHolder.Sage50ConnectionTableLayoutPanel.Dock = DockStyle.Fill;
+            MainWindowUIHolder.MainWindowTableLayoutPanel = new TableLayoutPanel();
+            MainWindowUIHolder.MainWindowTableLayoutPanel.ColumnCount = 1;
+            MainWindowUIHolder.MainWindowTableLayoutPanel.RowCount = 3;
+            MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
+            MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 87.50f));
+            MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
+            MainWindowUIHolder.MainWindowTableLayoutPanel.Dock = DockStyle.Fill;
 
-            MainWindowUIHolder.MainTabControlMainPanel.ClientArea.Controls.Add(UIHolder.Sage50ConnectionTableLayoutPanel);
-            UIHolder.Sage50ConnectionTab.TabPage.Controls.Add(MainWindowUIHolder.MainTabControlMainPanel);
+            MainWindowUIHolder.MainTabControlMainPanel.ClientArea.Controls.Add(MainWindowUIHolder.MainWindowTableLayoutPanel);
+            MainWindowUIHolder.Sage50ConnectionTab.TabPage.Controls.Add(MainWindowUIHolder.MainTabControlMainPanel);
 
             // TopRow;
             // TopRow;
@@ -29,11 +29,11 @@ namespace SincronizadorGPS50
             // TopRow;
             // TopRow;
 
-            UIHolder.Sage50ConnectionTopRow = new UltraPanel();
-            UIHolder.Sage50ConnectionTopRow.Dock = System.Windows.Forms.DockStyle.Fill;
-            UIHolder.Sage50ConnectionTopRow.Appearance.BackColor = StyleHolder.c_transparent;
+            Sage50ConnectionUIHolder.Sage50ConnectionTopRow = new UltraPanel();
+            Sage50ConnectionUIHolder.Sage50ConnectionTopRow.Dock = System.Windows.Forms.DockStyle.Fill;
+            Sage50ConnectionUIHolder.Sage50ConnectionTopRow.Appearance.BackColor = StyleHolder.c_transparent;
 
-            UIHolder.Sage50ConnectionTableLayoutPanel.Controls.Add(UIHolder.Sage50ConnectionTopRow, 0, 0);
+            MainWindowUIHolder.MainWindowTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.Sage50ConnectionTopRow, 0, 0);
 
             // CenterRow
             // CenterRow
@@ -41,21 +41,21 @@ namespace SincronizadorGPS50
             // CenterRow
             // CenterRow
 
-            UIHolder.Sage50ConnectionCenterRowTableLayoutPanel = new TableLayoutPanel();
-            UIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnCount = 3;
-            UIHolder.Sage50ConnectionCenterRowTableLayoutPanel.RowCount = 1;
-            UIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42f));
-            UIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, Convert.ToInt32(Math.Round(StyleHolder.ScreenWorkableWidth * .3))));
-            UIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42f));
-            UIHolder.Sage50ConnectionCenterRowTableLayoutPanel.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel = new TableLayoutPanel();
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnCount = 3;
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.RowCount = 1;
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42f));
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, Convert.ToInt32(Math.Round(StyleHolder.ScreenWorkableWidth * .3))));
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42f));
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.Dock = DockStyle.Fill;
 
-            UIHolder.Sage50ConnectionCenterRow = new UltraPanel();
-            UIHolder.Sage50ConnectionCenterRow.Height = StyleHolder.CenterRowHeight;
-            UIHolder.Sage50ConnectionCenterRow.Dock = System.Windows.Forms.DockStyle.Fill;
-            UIHolder.Sage50ConnectionCenterRow.Appearance.BackColor = StyleHolder.c_white;
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRow = new UltraPanel();
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRow.Height = StyleHolder.CenterRowHeight;
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRow.Dock = System.Windows.Forms.DockStyle.Fill;
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRow.Appearance.BackColor = StyleHolder.c_transparent;
 
-            UIHolder.Sage50ConnectionCenterRow.ClientArea.Controls.Add(UIHolder.Sage50ConnectionCenterRowTableLayoutPanel);
-            UIHolder.Sage50ConnectionTableLayoutPanel.Controls.Add(UIHolder.Sage50ConnectionCenterRow, 0, 1);
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRow.ClientArea.Controls.Add(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel);
+            MainWindowUIHolder.MainWindowTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.Sage50ConnectionCenterRow, 0, 1);
 
             // BottomRow
             // BottomRow
@@ -63,11 +63,11 @@ namespace SincronizadorGPS50
             // BottomRow
             // BottomRow
 
-            UIHolder.Sage50ConnectionBottomRow = new UltraPanel();
-            UIHolder.Sage50ConnectionBottomRow.Dock = System.Windows.Forms.DockStyle.Fill;
-            UIHolder.Sage50ConnectionBottomRow.Appearance.BackColor = StyleHolder.c_transparent;
+            Sage50ConnectionUIHolder.Sage50ConnectionBottomRow = new UltraPanel();
+            Sage50ConnectionUIHolder.Sage50ConnectionBottomRow.Dock = System.Windows.Forms.DockStyle.Fill;
+            Sage50ConnectionUIHolder.Sage50ConnectionBottomRow.Appearance.BackColor = StyleHolder.c_transparent;
 
-            UIHolder.Sage50ConnectionTableLayoutPanel.Controls.Add(UIHolder.Sage50ConnectionBottomRow, 0, 2);
+            MainWindowUIHolder.MainWindowTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.Sage50ConnectionBottomRow, 0, 2);
 
             IsSuccessful = true;
         }

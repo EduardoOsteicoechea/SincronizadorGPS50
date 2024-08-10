@@ -18,25 +18,25 @@ namespace SincronizadorGPS50
             // ConnectionState
             // ConnectionState
 
-            UIHolder.CenterRowCenterPanelStateLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelStateLabel.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelStateLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            UIHolder.CenterRowCenterPanelStateLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-            UIHolder.CenterRowCenterPanelStateLabel.Margin = new Padding(0, 10, 0, 0);
-            UIHolder.CenterRowCenterPanelStateLabel.Text = "Estado de la conexión";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateLabel = new UltraLabel();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateLabel.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateLabel.Margin = new Padding(0, 10, 0, 0);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateLabel.Text = "Estado de la conexión";
 
-            UIHolder.CenterRowCenterPanelStateStateMessageLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelStateStateMessageLabel.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelStateStateMessageLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            UIHolder.CenterRowCenterPanelStateStateMessageLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-            UIHolder.CenterRowCenterPanelStateStateMessageLabel.Text = "Desconectado";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateStateMessageLabel = new UltraLabel();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateStateMessageLabel.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateStateMessageLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateStateMessageLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateStateMessageLabel.Text = "Desconectado";
 
-            UIHolder.CenterRowCenterPanelStateIcon1 = new UltraPictureBox();
-            UIHolder.CenterRowCenterPanelStateIcon1.Image = Resources.SemaforoRojo;
-            UIHolder.CenterRowCenterPanelStateIcon1.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelStateIcon1.Height = 20;
-            UIHolder.CenterRowCenterPanelStateIcon1.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            UIHolder.CenterRowCenterPanelStateIcon1.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateIcon1 = new UltraPictureBox();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateIcon1.Image = Resources.SemaforoRojo;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateIcon1.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateIcon1.Height = 20;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateIcon1.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelStateIcon1.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
 
             // Title
             // Title
@@ -44,12 +44,12 @@ namespace SincronizadorGPS50
             // Title
             // Title
 
-            UIHolder.CenterRowCenterPanelTitleLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelTitleLabel.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelTitleLabel.Font= new Font(new UltraLabel().Font.FontFamily, 11, FontStyle.Bold);
-            UIHolder.CenterRowCenterPanelTitleLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            UIHolder.CenterRowCenterPanelTitleLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-            UIHolder.CenterRowCenterPanelTitleLabel.Text = "Datos para conectar a Sage50";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelTitleLabel = new UltraLabel();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelTitleLabel.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelTitleLabel.Font= new Font(new UltraLabel().Font.FontFamily, 11, FontStyle.Bold);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelTitleLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelTitleLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelTitleLabel.Text = "Datos para conectar a Sage50";
 
             // LocalInstance
             // LocalInstance
@@ -57,14 +57,14 @@ namespace SincronizadorGPS50
             // LocalInstance
             // LocalInstance
 
-            UIHolder.CenterRowCenterPanelLocalInstanceLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelLocalInstanceLabel.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelLocalInstanceLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            UIHolder.CenterRowCenterPanelLocalInstanceLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-            UIHolder.CenterRowCenterPanelLocalInstanceLabel.Text = "Especifique el terminal de Sage50";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceLabel = new UltraLabel();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceLabel.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceLabel.Text = "Especifique el terminal de Sage50";
 
-            UIHolder.CenterRowCenterPanelLocalInstanceTextBox = new UltraTextEditor();
-            UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceTextBox = new UltraTextEditor();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceTextBox.Dock = DockStyle.Fill;
 
             // Username
             // Username
@@ -72,14 +72,14 @@ namespace SincronizadorGPS50
             // Username
             // Username
 
-            UIHolder.CenterRowCenterPanelUsernameLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelUsernameLabel.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelUsernameLabel.Text = "Nombre de Usuario";
-            UIHolder.CenterRowCenterPanelUsernameLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            UIHolder.CenterRowCenterPanelUsernameLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameLabel = new UltraLabel();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameLabel.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameLabel.Text = "Nombre de Usuario";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
 
-            UIHolder.CenterRowCenterPanelUsernameTextBox = new UltraTextEditor();
-            UIHolder.CenterRowCenterPanelUsernameTextBox.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameTextBox = new UltraTextEditor();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameTextBox.Dock = DockStyle.Fill;
 
             // Password
             // Password
@@ -87,28 +87,28 @@ namespace SincronizadorGPS50
             // Password
             // Password
 
-            UIHolder.CenterRowCenterPanelPasswordLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelPasswordLabel.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelPasswordLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            UIHolder.CenterRowCenterPanelPasswordLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-            UIHolder.CenterRowCenterPanelPasswordLabel.Text = "Contraseña";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordLabel = new UltraLabel();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordLabel.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordLabel.Text = "Contraseña";
 
-            UIHolder.CenterRowCenterPanelPasswordTextBox = new UltraTextEditor();
-            UIHolder.CenterRowCenterPanelPasswordTextBox.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelPasswordTextBox.PasswordChar = '*';
+            Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordTextBox = new UltraTextEditor();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordTextBox.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordTextBox.PasswordChar = '*';
 
-            UIHolder.CenterRowCenterPanelValidateUserDataButton = new UltraButton();
-            UIHolder.CenterRowCenterPanelValidateUserDataButton.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelValidateUserDataButton.AutoSize = true;
-            UIHolder.CenterRowCenterPanelValidateUserDataButton.Margin = new Padding(75, 20, 75, 0);
-            UIHolder.CenterRowCenterPanelValidateUserDataButton.Text = "Verificar Datos";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelValidateUserDataButton = new UltraButton();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelValidateUserDataButton.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelValidateUserDataButton.AutoSize = true;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelValidateUserDataButton.Margin = new Padding(75, 20, 75, 0);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelValidateUserDataButton.Text = "Verificar Datos";
 
-            UIHolder.CenterRowCenterPanelSesionDataValidationLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Margin = new Padding(0, 10, 0, 0);
-            UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-            UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Text = "Datos inválidos para iniciar sesión";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelSesionDataValidationLabel = new UltraLabel();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelSesionDataValidationLabel.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelSesionDataValidationLabel.Margin = new Padding(0, 10, 0, 0);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelSesionDataValidationLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelSesionDataValidationLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelSesionDataValidationLabel.Text = "Datos inválidos para iniciar sesión";
 
             // RememberData
             // RememberData
@@ -116,32 +116,32 @@ namespace SincronizadorGPS50
             // RememberData
             // RememberData
 
-            UIHolder.CenterRowCenterPanelRememberDataPanel = new UltraPanel();
-            UIHolder.CenterRowCenterPanelRememberDataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelRememberDataPanel.Height = 25;
-            UIHolder.CenterRowCenterPanelRememberDataPanel.Margin = new Padding(0, 20, 0, 0);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataPanel = new UltraPanel();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataPanel.Height = 25;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataPanel.Margin = new Padding(0, 20, 0, 0);
 
-            UIHolder.CenterRowCenterPanelRememberDataLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelRememberDataLabel.Width = Convert.ToInt32(UIHolder.CenterRowCenterPanelRememberDataPanel.Width * .8);
-            UIHolder.CenterRowCenterPanelRememberDataLabel.Location = new Point(
-                Convert.ToInt32(UIHolder.CenterRowCenterPanelRememberDataPanel.Width * 0.2),
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataLabel = new UltraLabel();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataLabel.Width = Convert.ToInt32(Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataPanel.Width * .8);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataLabel.Location = new Point(
+                Convert.ToInt32(Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataPanel.Width * 0.2),
                 0
             );
-            UIHolder.CenterRowCenterPanelRememberDataLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            UIHolder.CenterRowCenterPanelRememberDataLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-            UIHolder.CenterRowCenterPanelRememberDataLabel.Text = "¿Desea recordar sus datos?";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataLabel.Text = "¿Desea recordar sus datos?";
 
-            UIHolder.CenterRowCenterPanelRememberDataCheckBox = new UltraCheckEditor();
-            UIHolder.CenterRowCenterPanelRememberDataCheckBox.Width = Convert.ToInt32(UIHolder.CenterRowCenterPanelRememberDataPanel.Width * .1);
-            UIHolder.CenterRowCenterPanelRememberDataCheckBox.Location = new Point(
-                Convert.ToInt32(UIHolder.CenterRowCenterPanelRememberDataPanel.Width * 1.1), 
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataCheckBox = new UltraCheckEditor();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataCheckBox.Width = Convert.ToInt32(Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataPanel.Width * .1);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataCheckBox.Location = new Point(
+                Convert.ToInt32(Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataPanel.Width * 1.1), 
                 0
             );
-            UIHolder.CenterRowCenterPanelRememberDataCheckBox.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            UIHolder.CenterRowCenterPanelRememberDataCheckBox.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataCheckBox.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataCheckBox.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
 
-            UIHolder.CenterRowCenterPanelRememberDataPanel.ClientArea.Controls.Add(UIHolder.CenterRowCenterPanelRememberDataLabel);
-            UIHolder.CenterRowCenterPanelRememberDataPanel.ClientArea.Controls.Add(UIHolder.CenterRowCenterPanelRememberDataCheckBox);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataPanel.ClientArea.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataLabel);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataPanel.ClientArea.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataCheckBox);
 
             // EnterpryseGroup
             // EnterpryseGroup
@@ -149,15 +149,15 @@ namespace SincronizadorGPS50
             // EnterpryseGroup
             // EnterpryseGroup
 
-            UIHolder.CenterRowCenterPanelEnterpryseGroupLabel = new UltraLabel();
-            UIHolder.CenterRowCenterPanelEnterpryseGroupLabel.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelEnterpryseGroupLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            UIHolder.CenterRowCenterPanelEnterpryseGroupLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-            UIHolder.CenterRowCenterPanelEnterpryseGroupLabel.Text = "Seleccione el grupo de empresa";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupLabel = new UltraLabel();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupLabel.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupLabel.Text = "Seleccione el grupo de empresa";
 
-            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu = new UltraComboEditor();
-            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Margin = new Padding(0, 10, 0, 0);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu = new UltraComboEditor();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Margin = new Padding(0, 10, 0, 0);
             
             // ConnectButton
             // ConnectButton
@@ -165,11 +165,11 @@ namespace SincronizadorGPS50
             // ConnectButton
             // ConnectButton
 
-            UIHolder.CenterRowCenterPanelConnectButton = new UltraButton();
-            UIHolder.CenterRowCenterPanelConnectButton.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelConnectButton.AutoSize = true;
-            UIHolder.CenterRowCenterPanelConnectButton.Margin = new Padding(75,25,75,0);
-            UIHolder.CenterRowCenterPanelConnectButton.Text = "Conectar";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelConnectButton = new UltraButton();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelConnectButton.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelConnectButton.AutoSize = true;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelConnectButton.Margin = new Padding(75,25,75,0);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelConnectButton.Text = "Conectar";
 
             // DisConnectButton
             // DisConnectButton
@@ -177,11 +177,11 @@ namespace SincronizadorGPS50
             // DisConnectButton
             // DisConnectButton
 
-            UIHolder.CenterRowCenterPanelDisconnectButton = new UltraButton();
-            UIHolder.CenterRowCenterPanelDisconnectButton.Dock = DockStyle.Fill;
-            UIHolder.CenterRowCenterPanelDisconnectButton.AutoSize = true;
-            UIHolder.CenterRowCenterPanelDisconnectButton.Margin = new Padding(75, 20, 75, 0);
-            UIHolder.CenterRowCenterPanelDisconnectButton.Text = "Desconectar";
+            Sage50ConnectionUIHolder.CenterRowCenterPanelDisconnectButton = new UltraButton();
+            Sage50ConnectionUIHolder.CenterRowCenterPanelDisconnectButton.Dock = DockStyle.Fill;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelDisconnectButton.AutoSize = true;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelDisconnectButton.Margin = new Padding(75, 20, 75, 0);
+            Sage50ConnectionUIHolder.CenterRowCenterPanelDisconnectButton.Text = "Desconectar";
 
             // HanddleEvents
             // HanddleEvents
@@ -189,22 +189,22 @@ namespace SincronizadorGPS50
             // HanddleEvents
             // HanddleEvents
 
-            UIHolder.CenterRowCenterPanelValidateUserDataButton.Click += Sage50ConnectionActions.VeryfyUserData;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelValidateUserDataButton.Click += Sage50ConnectionActions.VeryfyUserData;
 
-            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectionChanged += Sage50ConnectionActions.ChangeCompanyGroup;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectionChanged += Sage50ConnectionActions.ChangeCompanyGroup;
 
-            UIHolder.CenterRowCenterPanelConnectButton.Click += Sage50ConnectionActions.Connect;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelConnectButton.Click += Sage50ConnectionActions.Connect;
 
-            UIHolder.CenterRowCenterPanelDisconnectButton.Click += Sage50ConnectionActions.Disconnect;
+            Sage50ConnectionUIHolder.CenterRowCenterPanelDisconnectButton.Click += Sage50ConnectionActions.Disconnect;
             
             // Prevent TextChanged events from firing on MainWindow.Load event
             MainWindowUIHolder.MainWindow.Load += (object sender, System.EventArgs e) => 
             {
-                UIHolder.CenterRowCenterPanelLocalInstanceTextBox.TextChanged += Sage50ConnectionActions.InforceDataValidation;
+                Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceTextBox.TextChanged += Sage50ConnectionActions.InforceDataValidation;
 
-                UIHolder.CenterRowCenterPanelUsernameTextBox.TextChanged += Sage50ConnectionActions.InforceDataValidation;
+                Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameTextBox.TextChanged += Sage50ConnectionActions.InforceDataValidation;
 
-                UIHolder.CenterRowCenterPanelPasswordTextBox.TextChanged += Sage50ConnectionActions.InforceDataValidation;
+                Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordTextBox.TextChanged += Sage50ConnectionActions.InforceDataValidation;
             };
 
 
@@ -229,9 +229,9 @@ namespace SincronizadorGPS50
                         )
                     )
                     {
-                        UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Text = userRememberabledata.Sage50LocalTerminalPath;
-                        UIHolder.CenterRowCenterPanelUsernameTextBox.Text = userRememberabledata.Sage50Username;
-                        UIHolder.CenterRowCenterPanelPasswordTextBox.Text = userRememberabledata.Sage50Password;
+                        Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceTextBox.Text = userRememberabledata.Sage50LocalTerminalPath;
+                        Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameTextBox.Text = userRememberabledata.Sage50Username;
+                        Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordTextBox.Text = userRememberabledata.Sage50Password;
 
                         // Add controls to tab page
                         // Add controls to tab page
@@ -239,21 +239,21 @@ namespace SincronizadorGPS50
                         // Add controls to tab page
                         // Add controls to tab page
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelStateLabel, 0, 0);
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelStateStateMessageLabel, 0, 1);
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelStateIcon1, 0, 2);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelStateLabel, 0, 0);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelStateStateMessageLabel, 0, 1);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelStateIcon1, 0, 2);
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelTitleLabel, 0, 3);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelTitleLabel, 0, 3);
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelLocalInstanceLabel, 0, 4);
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelLocalInstanceTextBox, 0, 5);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceLabel, 0, 4);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceTextBox, 0, 5);
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelUsernameLabel, 0, 6);
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelUsernameTextBox, 0, 7);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameLabel, 0, 6);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameTextBox, 0, 7);
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelPasswordLabel, 0, 8);
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelPasswordTextBox, 0, 9);
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelValidateUserDataButton, 0, 10);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordLabel, 0, 8);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordTextBox, 0, 9);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelValidateUserDataButton, 0, 10);
 
                         // Aditional Controls And Actions for the Stateful UI
                         // Aditional Controls And Actions for the Stateful UI
@@ -261,27 +261,27 @@ namespace SincronizadorGPS50
                         // Aditional Controls And Actions for the Stateful UI
                         // Aditional Controls And Actions for the Stateful UI
 
-                        //UIHolder.CenterRowCenterPanelValidateUserDataButton.Enabled = false;
-                        UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Text = "Datos correctos";
-                        UIHolder.CenterRowCenterPanelSesionDataValidationLabel.Appearance.ForeColor = StyleHolder.c_green_1;
+                        //Sage50ConnectionUIHolder.CenterRowCenterPanelValidateUserDataButton.Enabled = false;
+                        Sage50ConnectionUIHolder.CenterRowCenterPanelSesionDataValidationLabel.Text = "Datos correctos";
+                        Sage50ConnectionUIHolder.CenterRowCenterPanelSesionDataValidationLabel.Appearance.ForeColor = StyleHolder.c_green_1;
 
-                        //UIHolder.CenterRowCenterPanelLocalInstanceTextBox.Enabled = false;
-                        //UIHolder.CenterRowCenterPanelUsernameTextBox.Enabled = false;
-                        //UIHolder.CenterRowCenterPanelPasswordTextBox.Enabled = false;
+                        //Sage50ConnectionUIHolder.CenterRowCenterPanelLocalInstanceTextBox.Enabled = false;
+                        //Sage50ConnectionUIHolder.CenterRowCenterPanelUsernameTextBox.Enabled = false;
+                        //Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordTextBox.Enabled = false;
 
                         DataHolder.Sage50CompanyGroupsList = Sage50ConnectionManager.Sage50CompanyGroupActions.GetCompanyGroups();
 
-                        if(UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Items.Count < 1)
+                        if(Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Items.Count < 1)
                         {
-                            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Items.Add("");
+                            Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Items.Add("");
                         };
 
                         for(global::System.Int32 i = 0; i < DataHolder.Sage50CompanyGroupsList.Count; i++)
                         {
-                            UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Items.Add(DataHolder.Sage50CompanyGroupsList[i].CompanyName);
+                            Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Items.Add(DataHolder.Sage50CompanyGroupsList[i].CompanyName);
                             if(userRememberabledata.Sage50CompanyGroupName == DataHolder.Sage50CompanyGroupsList[i].CompanyName)
                             {
-                                UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedIndex = i;
+                                   Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedIndex = i;
                             };
                         };
 
@@ -291,25 +291,25 @@ namespace SincronizadorGPS50
                             userRememberabledata.Sage50CompanyGroupName
                         );
 
-                        UIHolder.CenterRowCenterPanelRememberDataCheckBox.Checked =
+                        Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataCheckBox.Checked =
                             Convert.ToInt32(userRememberabledata.Remember) == 1 ? true : false;
 
-                        UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedText = userRememberabledata.Sage50CompanyGroupName;
+                        Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedText = userRememberabledata.Sage50CompanyGroupName;
 
-                        UIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Text = userRememberabledata.Sage50CompanyGroupName;
+                        Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Text = userRememberabledata.Sage50CompanyGroupName;
 
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelSesionDataValidationLabel, 0, 11);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelSesionDataValidationLabel, 0, 11);
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelEnterpryseGroupLabel, 0, 12);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupLabel, 0, 12);
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelEnterpryseGroupMenu, 0, 13);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu, 0, 13);
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelRememberDataPanel, 0, 14);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelRememberDataPanel, 0, 14);
 
-                        UIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(UIHolder.CenterRowCenterPanelConnectButton, 0, 15);
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelConnectButton, 0, 15);
 
-                        UIHolder.CenterRowCenterPanelConnectButton.Focus();
+                        Sage50ConnectionUIHolder.CenterRowCenterPanelConnectButton.Focus();
 
                         // Notify Success
                         // Notify Success

@@ -194,3 +194,4 @@ C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sin
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage50ConnectionManager.pdb
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage50DataManager.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\bin\x64\Debug\Sage50DataManager.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50\obj\x64\Debug\SincronizadorGPS50.1.0.3.exe.licenses

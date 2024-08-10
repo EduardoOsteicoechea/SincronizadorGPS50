@@ -1,4 +1,5 @@
-﻿using SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI;
+﻿using SincronizadorGPS50.Workflows.Sage50Connection;
+using SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50
@@ -12,10 +13,11 @@ namespace SincronizadorGPS50
                 System.Windows.Forms.Application.EnableVisualStyles();
                 System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
 
-                // GestprojectConnection
-                // GestprojectConnection
-                // GestprojectConnection
-                // GestprojectConnection
+                // Connect to Gestproject
+                // Connect to Gestproject
+                // Connect to Gestproject
+                // Connect to Gestproject
+                // Connect to Gestproject
 
                 ApplicationManager.ApplicationGlobalContext = this;
 
@@ -45,10 +47,11 @@ namespace SincronizadorGPS50
                     throw new System.Exception("Error Obtaining Gestproject Providers");
                 };
 
-                // InitialUI
-                // InitialUI
-                // InitialUI
-                // InitialUI
+                // Create Global UI
+                // Create Global UI
+                // Create Global UI
+                // Create Global UI
+                // Create Global UI
 
                 if(!new GenerateMainWindow().IsSuccessful)
                 {
@@ -70,37 +73,50 @@ namespace SincronizadorGPS50
                     throw new System.Exception("Error generating Sage50 Connection UI elements");
                 };
 
+                // Create Sage50Connection controls
+                // Create Sage50Connection controls
+                // Create Sage50Connection controls
+                // Create Sage50Connection controls
+                // Create Sage50Connection controls
+
                 if(GestprojectDataManager.ManageUserData.CheckIfGestprojectUserDataTableExists(GestprojectDataHolder.GestprojectDatabaseConnection))
                 {
                     if(!GestprojectDataManager.ManageUserData.CheckIfRememberUserDataOptionWasActivated(GestprojectDataHolder.GestprojectDatabaseConnection))
                     {
-                        MessageBox.Show("Stateless");
-                        if(!new StatelessCenterRowCenterPanelControls().IsSuccessful)
-                        {
-                            throw new System.Exception("Error generating main window");
-                        };
+                        //MessageBox.Show("Stateless");
+                        
+                        new Sage50ConnectionUIManager(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls, "stateless");
+
+                        //if(!new StatelessCenterRowCenterPanelControls().IsSuccessful)
+                        //{
+                        //    throw new System.Exception("Error generating main window");
+                        //};
                     }
                     else
                     {
-                        MessageBox.Show("Stateful");
-                        if(!new StatefulCenterRowCenterPanelControls().IsSuccessful)
-                        {
-                            throw new System.Exception("Error generating main window");
-                        };
+                        //MessageBox.Show("Stateful");
+
+                        new Sage50ConnectionUIManager(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls, "stateful");
+
+                        //if(!new StatefulCenterRowCenterPanelControls().IsSuccessful)
+                        //{
+                        //    throw new System.Exception("Error generating main window");
+                        //};
                     };
                 }
                 else
                 {
-                    MessageBox.Show("Creating User Rememberable Data Table");
-
+                    //MessageBox.Show("Creating User Rememberable Data Table");
                     GestprojectDataManager.ManageUserData.CreateGestprojectUserDataTable(GestprojectDataHolder.GestprojectDatabaseConnection);
 
-                    GestprojectDataManager.ManageUserData.PopulateGestprojectUserDataTable(GestprojectDataHolder.GestprojectDatabaseConnection,"", "", "", "");                    
+                    GestprojectDataManager.ManageUserData.PopulateGestprojectUserDataTable(GestprojectDataHolder.GestprojectDatabaseConnection,"", "", "", "");
 
-                    if(!new StatelessCenterRowCenterPanelControls().IsSuccessful)
-                    {
-                        throw new System.Exception("Error generating main window");
-                    };
+                    new Sage50ConnectionUIManager(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls, "stateless");
+
+                    //if(!new StatelessCenterRowCenterPanelControls().IsSuccessful)
+                    //{
+                    //    throw new System.Exception("Error generating main window");
+                    //};
                 };  
 
                 // InitialLaunchForSage50Connection

@@ -367,13 +367,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationManager.cs" />
-    <Compile Include="DataHolders\ClientsUIHolder.cs" />
+    <Compile Include="DataHolders\UI\ClientsUIHolder.cs" />
     <Compile Include="DataHolders\DataHolder.cs" />
+    <Compile Include="DataHolders\UI\Sage50ConnectionUIHolder.cs" />
     <Compile Include="DataHolders\Sage50DataHolder.cs" />
     <Compile Include="DataHolders\GestprojectDataHolder.cs" />
-    <Compile Include="DataHolders\MainWindowUIHolder.cs" />
-    <Compile Include="DataHolders\StyleHolder.cs" />
-    <Compile Include="DataHolders\UIHolder.cs" />
+    <Compile Include="DataHolders\UI\MainWindowUIHolder.cs" />
+    <Compile Include="DataHolders\UI\StyleHolder.cs" />
     <Compile Include="GestprojectAPI\1_ConnectToGestprojectDatabase .cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -456,6 +456,15 @@
     <Compile Include="Workflows\Sage50Connection\3_Sage50ConnectionActions.cs" />
     <Compile Include="Workflows\Sage50Connection\1_GenerateSage50ConnectionTabUI.cs" />
     <Compile Include="Workflows\Sage50Connection\2_StatelessCenterRowCenterPanelControls.cs" />
+    <Compile Include="Workflows\Sage50Connection\ConnectionStatePanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\RememberAllDataPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\ConnectToCompanyGroupPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\ConnectWithLocalTerminalUserDataPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\DisplayCompanyGroupsPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\9_ISage50ConnectionUIComponent.cs" />
+    <Compile Include="Workflows\Sage50Connection\LocalTerminalUserDataPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\ManageFullConnectionPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\8_Sage50ConnectionUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="appicon.ico" />
@@ -618,6 +627,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

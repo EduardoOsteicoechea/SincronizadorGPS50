@@ -24,7 +24,7 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             ClientsUIHolder.MainPanel.ClientArea.Controls.Add(ClientsUIHolder.TableLayoutPanel);
 
-            UIHolder.ClientsTab.TabPage.Controls.Add(ClientsUIHolder.MainPanel);
+            MainWindowUIHolder.ClientsTab.TabPage.Controls.Add(ClientsUIHolder.MainPanel);
 
             ////////////////////////////////////////
             // Clients TopRow
