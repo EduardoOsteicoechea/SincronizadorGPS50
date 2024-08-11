@@ -34,17 +34,17 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             PanelTableLayoutPanel = new TableLayoutPanel();
             PanelTableLayoutPanel.ColumnCount = 4;
             PanelTableLayoutPanel.RowCount = 0;
-            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 20f));
-            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 45f));
+            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 30f));
+            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 25f));
             PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 15f));
-            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 20f));
+            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 30f));
             PanelTableLayoutPanel.Dock = DockStyle.Fill;
 
             RememberLabel = new UltraLabel();
             RememberLabel.Dock = DockStyle.Fill;
             RememberLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             RememberLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-            RememberLabel.Text = "¿Recordar Datos?";
+            RememberLabel.Text = "¿Recordar?";
 
             CheckBox = new UltraCheckEditor();
             CheckBox.Width = 15;

@@ -15,9 +15,9 @@ namespace SincronizadorGPS50
             MainWindowUIHolder.MainWindowTableLayoutPanel = new TableLayoutPanel();
             MainWindowUIHolder.MainWindowTableLayoutPanel.ColumnCount = 1;
             MainWindowUIHolder.MainWindowTableLayoutPanel.RowCount = 3;
-            MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
+            MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 87.50f));
-            MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
+            MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             MainWindowUIHolder.MainWindowTableLayoutPanel.Dock = DockStyle.Fill;
 
             MainWindowUIHolder.MainTabControlMainPanel.ClientArea.Controls.Add(MainWindowUIHolder.MainWindowTableLayoutPanel);
@@ -45,7 +45,7 @@ namespace SincronizadorGPS50
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnCount = 3;
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.RowCount = 1;
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42f));
-            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, Convert.ToInt32(Math.Round(StyleHolder.ScreenWorkableWidth * .3))));
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, Convert.ToInt32(Math.Round(StyleHolder.ScreenWorkableWidth * .35))));
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42f));
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.Dock = DockStyle.Fill;
 

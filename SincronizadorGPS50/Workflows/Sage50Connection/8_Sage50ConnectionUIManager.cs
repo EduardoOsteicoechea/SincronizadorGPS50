@@ -1,4 +1,7 @@
 ﻿
+using System;
+using System.Windows.Forms;
+
 namespace SincronizadorGPS50.Workflows.Sage50Connection
 {
     internal class Sage50ConnectionUIManager
@@ -17,60 +20,53 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             public const string Connected = "Connected";
             public const string EditingConnection = "EditingConnection";
         };
-        internal ConnectionStatePanel ConnectionStateUI { get; set; } = null;
-        internal LocalTerminalUserDataPanel LocalTerminalUserDataUI { get; set; } = null;
-        internal ConnectWithLocalTerminalUserDataPanel ConnectWithLocalTerminalUserDataUI { get; set; } = null;
-        internal DisplayCompanyGroupsPanel DisplayCompanyGroupsUI { get; set; } = null;
-        internal ConnectToCompanyGroupPanel ConnectToCompanyGroupUI { get; set; } = null;
+        internal ShowConnectionStatePanel ShowConnectionStateUI { get; set; } = null;
+        internal GetLocalTerminalUserDataPanel GetLocalTerminalUserDataUI { get; set; } = null;
+        internal ValidateTerminalUserDataPanel ValidateTerminalUserDataUI { get; set; } = null;
+        internal SelectCompanyGroupPanel SelectCompanyGroupUI { get; set; } = null;
+        internal ValidateCompanyGroupPanel ValidateCompanyGroupUI { get; set; } = null;
+        internal ConnectPanel ConnectUI { get; set; } = null;
         internal RememberAllDataPanel RememberAllDataUI { get; set; } = null;
-        internal ManageFullConnectionPanel ManageFullConnectionUI { get; set; } = null;
-
+        internal ManageConnectionPanel ManageConnectionUI { get; set; } = null;
 
         internal Sage50ConnectionUIManager(System.Windows.Forms.TableLayoutControlCollection parentControl, string uiModel) 
         {
             ParentControl = parentControl;
-
             if(uiModel == "stateless")
-            { 
                 CreateStatelessUI(); 
-            }
             else
-            { 
-                CreateStatefulUI(); 
-            }
+                CreateStatefulUI();            
         }
-
-
-
         internal void CreateStatelessUI()
         {
             UIState = UIStates.StatelessStart;
-            ConnectionStateUI = new ConnectionStatePanel(this, ParentControl, 0, 0);
-            LocalTerminalUserDataUI = new LocalTerminalUserDataPanel(this, ParentControl, 0, 1);
+            ShowConnectionStateUI = new ShowConnectionStatePanel(this, ParentControl, 0, 0);
+            GetLocalTerminalUserDataUI = new GetLocalTerminalUserDataPanel(this, ParentControl, 0, 1);
         }
         internal void CreateStatefulUI()
         {
             UIState = UIStates.StatefulAwaitForFullDataRevision;
 
-            ConnectionStateUI = new ConnectionStatePanel(this, ParentControl, 0, 0);
+            ShowConnectionStateUI = new ShowConnectionStatePanel(this, ParentControl, 0, 0);
 
-            LocalTerminalUserDataUI = new LocalTerminalUserDataPanel(this, ParentControl, 0, 2);
-            LocalTerminalUserDataUI.Remember();
+            GetLocalTerminalUserDataUI = new GetLocalTerminalUserDataPanel(this, ParentControl, 0, 2);
+            GetLocalTerminalUserDataUI.Remember();
             
-            ConnectWithLocalTerminalUserDataUI = new ConnectWithLocalTerminalUserDataPanel(this, ParentControl, 0, 3);
+            ValidateTerminalUserDataUI = new ValidateTerminalUserDataPanel(this, ParentControl, 0, 3);
             
-            DisplayCompanyGroupsUI = new DisplayCompanyGroupsPanel(this, ParentControl, 0, 5);
-            DisplayCompanyGroupsUI.Remember();
-            
-            ConnectToCompanyGroupUI = new ConnectToCompanyGroupPanel(this, ParentControl, 0, 7);
-            ConnectToCompanyGroupUI.Remember();
+            SelectCompanyGroupUI = new SelectCompanyGroupPanel(this, ParentControl, 0, 5);
+            SelectCompanyGroupUI.Remember();
 
-            RememberAllDataUI = new RememberAllDataPanel(this, ParentControl, 0, 8);
+            ValidateCompanyGroupUI = new ValidateCompanyGroupPanel(this, ParentControl, 0, 6);
+
+            ConnectUI = new ConnectPanel(this, ParentControl, 0, 8);
+
+            RememberAllDataUI = new RememberAllDataPanel(this, ParentControl, 0, 9);
             RememberAllDataUI.Remember();
 
-            ManageFullConnectionUI = new ManageFullConnectionPanel(this, ParentControl, 0, 10);
-            RememberAllDataUI.Remember();
+            ManageConnectionUI = new ManageConnectionPanel(this, ParentControl, 0, 11);
         }
+
         internal void RestoreRememberedDataUI()
         {
             ClearUI();
@@ -81,107 +77,117 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             UIState = UIStates.StatelessStart;
             Sage50ConnectionManager.ConnectionActions.Disconnect();
 
-            ConnectionStateUI.Dispose();
-            ConnectionStateUI = null;
+            ShowConnectionStateUI.Dispose();
+            ShowConnectionStateUI = null;
 
-            LocalTerminalUserDataUI.Dispose();
-            LocalTerminalUserDataUI = null;
+            GetLocalTerminalUserDataUI.Dispose();
+            GetLocalTerminalUserDataUI = null;
 
-            ConnectWithLocalTerminalUserDataUI.Dispose();
-            ConnectWithLocalTerminalUserDataUI = null;
+            ValidateTerminalUserDataUI.Dispose();
+            ValidateTerminalUserDataUI = null;
 
-            DisplayCompanyGroupsUI.Dispose();
-            DisplayCompanyGroupsUI = null;
+            SelectCompanyGroupUI.Dispose();
+            SelectCompanyGroupUI = null;
 
-            ConnectToCompanyGroupUI.Dispose();
-            ConnectToCompanyGroupUI = null;
+            ValidateCompanyGroupUI.Dispose();
+            ValidateCompanyGroupUI = null;
+
+            ConnectUI.Dispose();
+            ConnectUI = null;
 
             RememberAllDataUI.Dispose();
             RememberAllDataUI = null;
 
-            ManageFullConnectionUI.Dispose();
-            ManageFullConnectionUI = null;
+            ManageConnectionUI.Dispose();
+            ManageConnectionUI = null;
         }
         internal void SetConnetedUI()
         {
             UIState = UIStates.Connected;
-            ConnectionStateUI.SetUIToConnected();
+            ShowConnectionStateUI.SetUIToConnected();
 
-            LocalTerminalUserDataUI.KeepData();
-            LocalTerminalUserDataUI.KeepData();
+            GetLocalTerminalUserDataUI.KeepData();
+            GetLocalTerminalUserDataUI.KeepData();
 
-            ConnectWithLocalTerminalUserDataUI.DisableControls();
+            ValidateTerminalUserDataUI.DisableControls();
 
-            DisplayCompanyGroupsUI.KeepData();
-            DisplayCompanyGroupsUI.DisableControls();
+            SelectCompanyGroupUI.KeepData();
+            SelectCompanyGroupUI.DisableControls();
 
-            ConnectToCompanyGroupUI.KeepData();
-            ConnectToCompanyGroupUI.DisableControls();
+            ValidateCompanyGroupUI.DisableControls();
 
-            RememberAllDataUI.Dispose();
-            RememberAllDataUI = null;
+            ConnectUI.DisableControls();
 
-            ManageFullConnectionUI.EnableControls();
+            RememberAllDataUI.KeepData();
+
+            ManageConnectionUI.EnableControls();
         }
         internal void SetStatefulAwaitForFullDataRevisionUI()
         {
             UIState = UIStates.StatefulAwaitForFullDataRevision;
             Sage50ConnectionManager.ConnectionActions.Disconnect();
-            ConnectionStateUI.SetUIToDisconnected();
+            ShowConnectionStateUI.SetUIToDisconnected();
 
-            LocalTerminalUserDataUI.KeepData();
-            ConnectWithLocalTerminalUserDataUI.DisableControls();
-            DisplayCompanyGroupsUI.KeepData();
-            ConnectToCompanyGroupUI.KeepData();
+            GetLocalTerminalUserDataUI.KeepData();
+            ValidateTerminalUserDataUI.DisableControls();
+            SelectCompanyGroupUI.KeepData();
+            ValidateCompanyGroupUI.KeepData();
+            ConnectUI.KeepData();
 
-            ManageFullConnectionUI.Dispose();
-            ManageFullConnectionUI = null;
+            ManageConnectionUI.Dispose();
+            ManageConnectionUI = null;
         }
         internal void SetStatelessStartUI()
         {
             UIState = UIStates.StatelessStart;
             Sage50ConnectionManager.ConnectionActions.Disconnect();
-            ConnectionStateUI.SetUIToDisconnected();
+            ShowConnectionStateUI.SetUIToDisconnected();
 
-            LocalTerminalUserDataUI.ClearData();
+            GetLocalTerminalUserDataUI.ClearData();
 
-            ConnectWithLocalTerminalUserDataUI.Dispose();
-            ConnectWithLocalTerminalUserDataUI = null;
+            ValidateTerminalUserDataUI.Dispose();
+            ValidateTerminalUserDataUI = null;
 
-            DisplayCompanyGroupsUI.Dispose();
-            DisplayCompanyGroupsUI = null;
+            SelectCompanyGroupUI.Dispose();
+            SelectCompanyGroupUI = null;
 
-            ConnectToCompanyGroupUI.Dispose();
-            ConnectToCompanyGroupUI = null;
+            ValidateCompanyGroupUI.Dispose();
+            ValidateCompanyGroupUI = null;
+
+            ConnectUI.Dispose();
+            ConnectUI = null;
 
             RememberAllDataUI.Dispose();
             RememberAllDataUI = null;
 
-            ManageFullConnectionUI.Dispose();
-            ManageFullConnectionUI = null;
+            ManageConnectionUI.Dispose();
+            ManageConnectionUI = null;
         }
         internal void SetStatefulStartUI()
         {
             UIState = UIStates.StatefulStart;
             Sage50ConnectionManager.ConnectionActions.Disconnect();
-            ConnectionStateUI.SetUIToDisconnected();
+            ShowConnectionStateUI.SetUIToDisconnected();
 
-            LocalTerminalUserDataUI.KeepData();
+            GetLocalTerminalUserDataUI.KeepData();
 
-            ConnectWithLocalTerminalUserDataUI.Dispose();
-            ConnectWithLocalTerminalUserDataUI = null;
+            ValidateTerminalUserDataUI.Dispose();
+            ValidateTerminalUserDataUI = null;
 
-            DisplayCompanyGroupsUI.Dispose();
-            DisplayCompanyGroupsUI = null;
+            SelectCompanyGroupUI.Dispose();
+            SelectCompanyGroupUI = null;
 
-            ConnectToCompanyGroupUI.Dispose();
-            ConnectToCompanyGroupUI = null;
+            ValidateCompanyGroupUI.Dispose();
+            ValidateCompanyGroupUI = null;
+
+            ConnectUI.Dispose();
+            ConnectUI = null;
 
             RememberAllDataUI.Dispose();
             RememberAllDataUI = null;
 
-            ManageFullConnectionUI.Dispose();
-            ManageFullConnectionUI = null;
+            ManageConnectionUI.Dispose();
+            ManageConnectionUI = null;
         }
     }
 }

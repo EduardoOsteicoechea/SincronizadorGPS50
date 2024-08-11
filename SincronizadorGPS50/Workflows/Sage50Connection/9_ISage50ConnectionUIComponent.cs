@@ -15,7 +15,6 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
     internal interface ISage50ConnectionUIComponent : IDisposable
     {
         bool IsDataCleared { get; }
-
         void Forget();
         void Remember();
         void ClearData();

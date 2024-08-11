@@ -456,14 +456,15 @@
     <Compile Include="Workflows\Sage50Connection\3_Sage50ConnectionActions.cs" />
     <Compile Include="Workflows\Sage50Connection\1_GenerateSage50ConnectionTabUI.cs" />
     <Compile Include="Workflows\Sage50Connection\2_StatelessCenterRowCenterPanelControls.cs" />
-    <Compile Include="Workflows\Sage50Connection\ConnectionStatePanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\RememberAllDataPanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\ConnectToCompanyGroupPanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\ConnectWithLocalTerminalUserDataPanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\DisplayCompanyGroupsPanel.cs" />
     <Compile Include="Workflows\Sage50Connection\9_ISage50ConnectionUIComponent.cs" />
-    <Compile Include="Workflows\Sage50Connection\LocalTerminalUserDataPanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\ManageFullConnectionPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\ShowConnectionStatePanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\ValidateCompanyGroupPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\RememberAllDataPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\ConnectPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\ValidateTerminalUserDataPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\ManageCompanyGroupOptionsPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\GetLocalTerminalUserDataPanel.cs" />
+    <Compile Include="Workflows\Sage50Connection\ManageConnectionPanel.cs" />
     <Compile Include="Workflows\Sage50Connection\8_Sage50ConnectionUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
