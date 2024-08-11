@@ -97,6 +97,7 @@ namespace SincronizadorGPS50
                         //MessageBox.Show("Stateful");
 
                         new Sage50ConnectionUIManager(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls, "stateful");
+                        //new Sage50ConnectionUIManager(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls, "stateless");
 
                         //if(!new StatefulCenterRowCenterPanelControls().IsSuccessful)
                         //{

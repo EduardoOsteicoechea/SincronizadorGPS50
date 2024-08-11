@@ -457,6 +457,7 @@
     <Compile Include="Workflows\Sage50Connection\1_GenerateSage50ConnectionTabUI.cs" />
     <Compile Include="Workflows\Sage50Connection\2_StatelessCenterRowCenterPanelControls.cs" />
     <Compile Include="Workflows\Sage50Connection\9_ISage50ConnectionUIComponent.cs" />
+    <Compile Include="Workflows\Sage50Connection\9_StateManager.cs" />
     <Compile Include="Workflows\Sage50Connection\ShowConnectionStatePanel.cs" />
     <Compile Include="Workflows\Sage50Connection\ValidateCompanyGroupPanel.cs" />
     <Compile Include="Workflows\Sage50Connection\RememberAllDataPanel.cs" />

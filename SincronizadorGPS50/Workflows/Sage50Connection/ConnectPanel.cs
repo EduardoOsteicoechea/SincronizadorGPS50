@@ -13,6 +13,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         public TableLayoutPanel PanelTableLayoutPanel { get; set; } = null;
         public UltraButton ConnectButton { get; set; } = null;
         public System.Windows.Forms.ImageList ImageList { get; set; } = new ImageList();
+        public Sage50ConnectionUIManager Sage50ConnectionUIManager { get; set; } = null;
 
         public bool IsDataCleared => throw new NotImplementedException();
 
@@ -27,6 +28,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             int parentControlRow
         )
         {
+            Sage50ConnectionUIManager = sage50ConnectionUIManager;
+
             Panel = new UltraPanel();
             Panel.Dock = DockStyle.Fill;
 
@@ -46,6 +49,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             ConnectButton.ImageList = ImageList;
             ConnectButton.Appearance.Image = 0;
             ConnectButton.Text = "Conectar";
+            ConnectButton.Click += ConnectButton_Click;
 
             PanelTableLayoutPanel.Controls.Add(ConnectButton, 0, 0);
 
@@ -55,14 +59,49 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
         }
 
-        public void EnableControls() => throw new NotImplementedException();
+        private void ConnectButton_Click(object sender, EventArgs e)
+        {
+            if(
+                true
+            )
+            {
+                ConnectButton.Appearance.Image = 1;
+                Sage50ConnectionUIManager.ShowConnectionStateUI.StateImage3.Image = Sage50ConnectionUIManager.ShowConnectionStateUI.ImageList.Images[1];
+                Sage50ConnectionUIManager.SetDataAcceptedAndConnetedUI();
+            }
+            else
+            {
+                ConnectButton.Appearance.Image = 0;
+                Sage50ConnectionUIManager.ShowConnectionStateUI.StateImage3.Image = Sage50ConnectionUIManager.ShowConnectionStateUI.ImageList.Images[0];
+            }
+        }
+
+        public void EnableControls()
+        {
+            ConnectButton.Enabled = true;
+        }
+        public void DisableControls()
+        {
+            ConnectButton.Enabled = false;
+        }
+        public void SetUIToConnected()
+        {
+            DisableControls();
+        }
+        public void SetUIToDisconnected()
+        {
+            EnableControls();
+        }
         public void ClearData() => throw new NotImplementedException();
-        public void DisableControls() => throw new NotImplementedException();
+
         public void Forget() => throw new NotImplementedException();
         public void KeepData() => throw new NotImplementedException();
         public void Remember() {}
-        public void SetUIToConnected() => throw new NotImplementedException();
-        public void SetUIToDisconnected() => throw new NotImplementedException();
-        public void Dispose() => throw new NotImplementedException();
+
+        public void Dispose()
+        {
+            Panel.Dispose();
+            GC.SuppressFinalize(Panel);
+        }
     }
 }

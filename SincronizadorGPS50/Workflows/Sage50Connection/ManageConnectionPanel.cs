@@ -13,6 +13,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         public UltraButton ConnectButton2 { get; set; } = null;
         public UltraButton ConnectButton3 { get; set; } = null;
         public System.Windows.Forms.ImageList ImageList { get; set; } = new ImageList();
+        public Sage50ConnectionUIManager Sage50ConnectionUIManager { get; set; } = null;
 
         public bool IsDataCleared => throw new NotImplementedException();
 
@@ -27,6 +28,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             int parentControlRow
         )
         {
+            Sage50ConnectionUIManager = sage50ConnectionUIManager;
+
             Panel = new UltraPanel();
             Panel.Dock = DockStyle.Fill;
 
@@ -87,14 +90,35 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
         }
 
+        public void EnableControls()
+        {
+            ConnectButton1.Enabled = true;
+            ConnectButton2.Enabled = true;
+            ConnectButton3.Enabled = true;
+        }
+        public void DisableControls()
+        {
+            ConnectButton1.Enabled = false;
+            ConnectButton2.Enabled = false;
+            ConnectButton3.Enabled = false;
+        }
+        public void SetUIToConnected()
+        {
+            EnableControls();
+        }
+        public void SetUIToDisconnected()
+        {
+            DisableControls();
+        }
+
         public void ClearData() => throw new NotImplementedException();
-        public void DisableControls() => throw new NotImplementedException();
-        public void EnableControls() => throw new NotImplementedException();
         public void Forget() => throw new NotImplementedException();
         public void KeepData() => throw new NotImplementedException();
         public void Remember() => throw new NotImplementedException();
-        public void SetUIToConnected() => throw new NotImplementedException();
-        public void SetUIToDisconnected() => throw new NotImplementedException();
-        public void Dispose() => throw new NotImplementedException();
+        public void Dispose()
+        {
+            Panel.Dispose();
+            GC.SuppressFinalize(Panel);
+        }
     }
 }

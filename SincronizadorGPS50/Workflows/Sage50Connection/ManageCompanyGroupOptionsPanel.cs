@@ -15,6 +15,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         public UltraComboEditor SelectEnterpryseGroupMenu { get; set; } = null;
         public UltraButton ConnectButton { get; set; } = null;
         public System.Windows.Forms.ImageList ImageList { get; set; } = new ImageList();
+        public Sage50ConnectionUIManager Sage50ConnectionUIManager { get; set; } = null;
 
         public bool IsDataCleared => throw new NotImplementedException();
 
@@ -29,6 +30,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             int parentControlRow
         )
         {
+            Sage50ConnectionUIManager = sage50ConnectionUIManager;
+
             Panel = new UltraPanel();
             Panel.Dock = DockStyle.Fill;
 
@@ -95,14 +98,34 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             parentControl.Add(Panel, parentControlColumn, parentControlRow);
         }
 
-        public void EnableControls() => throw new NotImplementedException();
+        public void EnableControls()
+        {
+            SelectEnterpryseGroupMenu.Enabled = true;
+        }
+        public void DisableControls()
+        {
+            SelectEnterpryseGroupMenu.Enabled = false;
+        }
+        public void SetUIToConnected()
+        {
+            DisableControls();
+        }
+        public void SetUIToDisconnected()
+        {
+            EnableControls();
+        }
+        public void GetCompanyGroupsFromTerminal() 
+        {
+
+        }
         public void ClearData() => throw new NotImplementedException();
-        public void DisableControls() => throw new NotImplementedException();
         public void Forget() => throw new NotImplementedException();
         public void KeepData() => throw new NotImplementedException();
         public void Remember() {}
-        public void SetUIToConnected() => throw new NotImplementedException();
-        public void SetUIToDisconnected() => throw new NotImplementedException();
-        public void Dispose() => throw new NotImplementedException();
+        public void Dispose()
+        {
+            Panel.Dispose();
+            GC.SuppressFinalize(Panel);
+        }
     }
 }

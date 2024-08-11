@@ -16,7 +16,8 @@ namespace SincronizadorGPS50
             MainWindowUIHolder.MainWindowTableLayoutPanel.ColumnCount = 1;
             MainWindowUIHolder.MainWindowTableLayoutPanel.RowCount = 3;
             MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
-            MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 87.50f));
+            //MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 87.50f));
+            MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 580)); // Mínimal height in 14 inch 768px screen
             MainWindowUIHolder.MainWindowTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             MainWindowUIHolder.MainWindowTableLayoutPanel.Dock = DockStyle.Fill;
 

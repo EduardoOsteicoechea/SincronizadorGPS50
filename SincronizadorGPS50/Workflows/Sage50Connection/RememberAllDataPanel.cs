@@ -14,6 +14,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         public TableLayoutPanel PanelTableLayoutPanel { get; set; } = null;
         public UltraLabel RememberLabel { get; set; } = null;
         public UltraCheckEditor CheckBox { get; set; } = null;
+        public Sage50ConnectionUIManager Sage50ConnectionUIManager { get; set; } = null;
 
         public bool IsDataCleared => throw new NotImplementedException();
 
@@ -28,6 +29,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             int parentControlRow
         )
         {
+            Sage50ConnectionUIManager = sage50ConnectionUIManager;
+
             Panel = new UltraPanel();
             Panel.Dock = DockStyle.Fill;
 
@@ -61,14 +64,28 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
         }
 
-        public void EnableControls() => throw new NotImplementedException();
+        public void EnableControls()
+        {
+        }
+        public void DisableControls()
+        {
+        }
+        public void SetUIToConnected()
+        {
+            DisableControls();
+        }
+        public void SetUIToDisconnected()
+        {
+            EnableControls();
+        }
         public void ClearData() => throw new NotImplementedException();
-        public void DisableControls() => throw new NotImplementedException();
         public void Forget() => throw new NotImplementedException();
         public void KeepData() => throw new NotImplementedException();
         public void Remember() {}
-        public void SetUIToConnected() => throw new NotImplementedException();
-        public void SetUIToDisconnected() => throw new NotImplementedException();
-        public void Dispose() => throw new NotImplementedException();
+        public void Dispose()
+        {
+            Panel.Dispose();
+            GC.SuppressFinalize(Panel);
+        }
     }
 }

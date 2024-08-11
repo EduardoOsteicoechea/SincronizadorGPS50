@@ -16,6 +16,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         public UltraPictureBox StateImage1 { get; set; } = null;
         public UltraPictureBox StateImage2 { get; set; } = null;
         public UltraPictureBox StateImage3 { get; set; } = null;
+        public System.Windows.Forms.ImageList ImageList { get; set; } = new ImageList();
+        public Sage50ConnectionUIManager Sage50ConnectionUIManager { get; set; } = null;
 
         public ShowConnectionStatePanel
         (
@@ -25,6 +27,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             int parentControlRow
         )
         {
+            Sage50ConnectionUIManager = sage50ConnectionUIManager;
+
             Panel = new UltraPanel();
             Panel.Dock = DockStyle.Fill;
 
@@ -36,6 +40,10 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             PanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50f));
             //PanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
             PanelTableLayoutPanel.Dock = DockStyle.Fill;
+
+            ImageList.Images.Add(Resources.SemaforoRojo);
+            ImageList.Images.Add(Resources.Semaforo_verde);
+
 
             StateLabel = new UltraLabel();
             StateLabel.Dock = DockStyle.Fill;
@@ -64,9 +72,9 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             StateImage3.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             StateImage3.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
 
-            StateImage1.Image = Resources.SemaforoRojo;
-            StateImage2.Image = Resources.SemaforoRojo;
-            StateImage3.Image = Resources.SemaforoRojo;
+            StateImage1.Image = ImageList.Images[0];
+            StateImage2.Image = ImageList.Images[0];
+            StateImage3.Image = ImageList.Images[0];
 
             UltraPanel StateIconsPanel = new UltraPanel();
             StateIconsPanel.Dock = DockStyle.Fill;
@@ -104,18 +112,20 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             StateLabel.Text = "Conectado";
             StateMessageLabel.Text = "Iniciamos una sesión de Sage50 con los datos provistos";
             StateMessageLabel.Appearance.ForeColor = StyleHolder.c_green_1;
-            StateImage1.Image = Resources.Semaforo_verde;
-            StateImage2.Image = Resources.Semaforo_verde;
-            StateImage3.Image = Resources.Semaforo_verde;
+
+            StateImage1.Image = ImageList.Images[1];
+            StateImage2.Image = ImageList.Images[1];
+            StateImage3.Image = ImageList.Images[1];
         }
         public void SetUIToDisconnected()
         {
             IsConnected = false;
             StateLabel.Text = "Desconectado";
             StateMessageLabel.Text = "Ingrese sus datos de Sage50 para iniciar sesión";
-            StateImage1.Image = Resources.SemaforoRojo;
-            StateImage2.Image = Resources.SemaforoRojo;
-            StateImage3.Image = Resources.SemaforoRojo;
+
+            StateImage1.Image = ImageList.Images[0];
+            StateImage2.Image = ImageList.Images[0];
+            StateImage3.Image = ImageList.Images[0];
         }
 
         public void Dispose() 

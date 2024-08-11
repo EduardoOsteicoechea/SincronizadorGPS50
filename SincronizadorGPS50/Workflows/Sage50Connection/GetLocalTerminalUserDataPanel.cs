@@ -24,6 +24,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         public UltraTextEditor PasswordTextBox { get; set; } = null;
         public UltraButton ValidateUserDataButton { get; set; } = null;
         public UltraLabel SesionDataValidationLabel { get; set; } = null;
+        public Sage50ConnectionUIManager Sage50ConnectionUIManager { get; set; } = null;
 
 
         public GetLocalTerminalUserDataPanel
@@ -34,6 +35,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             int parentControlRow
         )
         {
+            Sage50ConnectionUIManager = sage50ConnectionUIManager;
+
             Panel = new UltraPanel();
             Panel.Dock = DockStyle.Fill;
 
@@ -158,14 +161,30 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             parentControl.Add(Panel, parentControlColumn, parentControlRow);
         }
 
-        public void EnableControls() => throw new NotImplementedException();
+        public void EnableControls()
+        {
+            LocalInstanceTextBox.Enabled = true;
+            UsernameTextBox.Enabled = true;
+            PasswordTextBox.Enabled = true;
+        }
+        public void DisableControls()
+        {
+            LocalInstanceTextBox.Enabled = false;
+            UsernameTextBox.Enabled = false;
+            PasswordTextBox.Enabled = false;
+        }
         public void ClearData() => throw new NotImplementedException();
-        public void DisableControls() => throw new NotImplementedException();
         public void Forget() => throw new NotImplementedException();
         public void KeepData() => throw new NotImplementedException();
         public void Remember() {}
-        public void SetUIToConnected() => throw new NotImplementedException();
-        public void SetUIToDisconnected() => throw new NotImplementedException();
+        public void SetUIToConnected()
+        {
+            DisableControls();
+        }
+        public void SetUIToDisconnected()
+        {
+            EnableControls();
+        }
         public void Dispose() => throw new NotImplementedException();
     }
 }

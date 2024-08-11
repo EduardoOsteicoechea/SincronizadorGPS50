@@ -17,6 +17,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         public UltraButton ConnectButton {  get; set; } = null;
         public UltraPanel Panel { get; set; } = null;
         public TableLayoutPanel PanelTableLayoutPanel { get; set; } = null;
+        public Sage50ConnectionUIManager Sage50ConnectionUIManager { get; set; } = null;
 
         public ValidateTerminalUserDataPanel
         (
@@ -26,6 +27,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             int parentControlRow
         )
         {
+            Sage50ConnectionUIManager = sage50ConnectionUIManager;
+
             Panel = new UltraPanel();
             Panel.Dock = DockStyle.Fill;
 
@@ -44,6 +47,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             ConnectButton.ImageList = ImageList;
             ConnectButton.Appearance.Image = 0;
             ConnectButton.Text = "Validar Terminal";
+            ConnectButton.Click += ConnectButton_Click;
+            ;
 
 
             PanelTableLayoutPanel.Controls.Add(ConnectButton, 0, 0);
@@ -54,10 +59,53 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
             parentControl.Add(Panel, parentControlColumn, parentControlRow);
         }
-        public void SetUIToConnected() => throw new NotImplementedException();
+
+        private void ConnectButton_Click(object sender, EventArgs e)
+        {
+            if(
+                Sage50ConnectionManager.ConnectionActions.Connect(
+                    DataHolder.Sage50LocalTerminalPath,
+                    DataHolder.Sage50Username,
+                    DataHolder.Sage50Password
+                )
+            )
+            {
+                ConnectButton.Appearance.Image = 1;
+                Sage50ConnectionUIManager.ShowConnectionStateUI.StateImage1.Image = Sage50ConnectionUIManager.ShowConnectionStateUI.ImageList.Images[1];
+                Sage50ConnectionUIManager.SetValidatedTerminalSelectCompanyGroupUI();
+            }
+            else
+            {
+                ConnectButton.Appearance.Image = 0;
+                Sage50ConnectionUIManager.ShowConnectionStateUI.StateImage1.Image = Sage50ConnectionUIManager.ShowConnectionStateUI.ImageList.Images[0];
+            }
+        }
+
+        public void SetUIToAwaitingForData()
+        {
+            DisableControls();
+        }
+        public void SetUIToReadyForValidation()
+        {
+            EnableControls();
+        }
+        public void SetUIToValidationExecuted()
+        {
+            DisableControls();
+        }
+        public void SetUIToConnected()
+        {
+            DisableControls();
+        }
         public void SetUIToDisconnected() => throw new NotImplementedException();
-        public void EnableControls() => throw new NotImplementedException();
-        public void DisableControls() => throw new NotImplementedException();
+        public void EnableControls()
+        {
+            ConnectButton.Enabled = true;
+        }
+        public void DisableControls()
+        {
+            ConnectButton.Enabled = false;
+        }
         public void Dispose() => throw new NotImplementedException();
     }
 }
