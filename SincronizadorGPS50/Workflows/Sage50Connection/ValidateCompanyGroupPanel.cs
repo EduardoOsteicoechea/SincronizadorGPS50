@@ -51,19 +51,30 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             ConnectButton.ImageList = ImageList;
             ConnectButton.Appearance.Image = 0;
             ConnectButton.Text = "Validar Grupo de Empresa";
-            ConnectButton.Click += ConnectButton_Click;
 
             PanelTableLayoutPanel.Controls.Add(ConnectButton, 0, 0);
 
             Panel.ClientArea.Controls.Add(PanelTableLayoutPanel);
 
             parentControl.Add(Panel, parentControlColumn, parentControlRow);
+
+            // Hangle Events
+            // Hangle Events
+            // Hangle Events
+            // Hangle Events
+            // Hangle Events
+
+            ConnectButton.Click += ConnectButton_Click;
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
         {
             if(
-                true
+                Sage50ConnectionManager
+                .Sage50CompanyGroupActions
+                .ChangeCompanyGroup(
+                    Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Text
+                )
             )
             {
                 ConnectButton.Appearance.Image = 1;
@@ -93,9 +104,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         {
             EnableControls();
         }
-        public void ClearData() => throw new NotImplementedException();
         public void Forget() => throw new NotImplementedException();
-        public void KeepData() => throw new NotImplementedException();
         public void Remember() {}
         public void Dispose()
         {

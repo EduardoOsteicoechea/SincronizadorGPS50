@@ -9,10 +9,13 @@ namespace Sage50ConnectionManager
 {
     public static class Sage50CompanyGroupActions
     {
-        public static List<CompanyGroup> CompanyGroupList { get; set; } = new List<CompanyGroup>();
+        public static List<CompanyGroup> CompanyGroupList { get; set; } = null;
         public static DataTable Sage50CompanyGroupsDataTable { get; set; } = null;
         public static List<CompanyGroup> GetCompanyGroups() 
         {
+            Sage50CompanyGroupsDataTable = null;
+            CompanyGroupList = new List<CompanyGroup>();
+
             string sqlCommandString = $"SELECT codigo,nombre,codpripal,guid_id FROM {DB.SQLDatabase("eurowinsys", "gruposemp")}";
 
             DataTable sage50CompanyGroupsDataTable = new DataTable();
@@ -57,7 +60,11 @@ namespace Sage50ConnectionManager
 
                 var selectedCompanyGroup = companyGroupList.Where(companyGroup => companyGroup.CompanyName == selectedCompanyName).FirstOrDefault();
 
-                return companyGroupsOperator._CambiarGrupo(selectedCompanyGroup.CompanyCode, "", true);
+                bool result = companyGroupsOperator._CambiarGrupo(selectedCompanyGroup.CompanyCode, "", true);
+
+                MessageBox.Show(DB.SQLDatabase("COMUNES"));
+
+                return result;
             }
             else
             {

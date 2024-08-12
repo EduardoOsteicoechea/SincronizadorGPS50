@@ -1,5 +1,7 @@
 ﻿
+using GestprojectDataManager;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50.Workflows.Sage50Connection
@@ -15,6 +17,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         internal ConnectPanel ConnectUI { get; set; } = null;
         internal RememberAllDataPanel RememberAllDataUI { get; set; } = null;
         internal ManageConnectionPanel ManageConnectionUI { get; set; } = null;
+
 
         internal Sage50ConnectionUIManager(System.Windows.Forms.TableLayoutControlCollection parentControl, string uiModel) 
         {
@@ -45,16 +48,20 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             
             SelectCompanyGroupUI = new SelectCompanyGroupPanel(this, ParentControl, 0, 5);
             SelectCompanyGroupUI.Remember();
+            SelectCompanyGroupUI.DisableControls();
 
             ValidateCompanyGroupUI = new ValidateCompanyGroupPanel(this, ParentControl, 0, 6);
+            ValidateCompanyGroupUI.DisableControls();
 
             ConnectUI = new ConnectPanel(this, ParentControl, 0, 8);
+            ConnectUI.DisableControls();
 
             RememberAllDataUI = new RememberAllDataPanel(this, ParentControl, 0, 9);
-            RememberAllDataUI.Remember();
+            RememberAllDataUI.DisableControls();
 
             ManageConnectionUI = new ManageConnectionPanel(this, ParentControl, 0, 11);
             ManageConnectionUI.SetUIToConnected();
+            ManageConnectionUI.DisableControls();
         }
 
         internal void RestoreRememberedDataUI()
@@ -62,6 +69,38 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             ClearUI();
             CreateStatefulUI();
         }
+        internal void SetEditingTerminalDataUI()
+        {
+            if(SelectCompanyGroupUI != null)
+            {
+                SelectCompanyGroupUI.Dispose();
+                SelectCompanyGroupUI = null;
+            };
+
+            if(ValidateCompanyGroupUI != null)
+            {
+                ValidateCompanyGroupUI.Dispose();
+                ValidateCompanyGroupUI = null;
+            };
+
+            if(ConnectUI != null)
+            {
+                ConnectUI.Dispose();
+                ConnectUI = null;
+            };
+
+            if(RememberAllDataUI != null)
+            {
+                RememberAllDataUI.Dispose();
+                RememberAllDataUI = null;
+            };
+
+            if(ManageConnectionUI != null)
+            {
+                ManageConnectionUI.Dispose();
+                ManageConnectionUI = null;
+            };
+        }        
         internal void SetValidatedTerminalSelectCompanyGroupUI()
         {
             if(SelectCompanyGroupUI != null)
@@ -76,22 +115,51 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
                 ValidateCompanyGroupUI = null;
             };
 
+            ValidateTerminalUserDataUI.DisableControls();
+
             SelectCompanyGroupUI = new SelectCompanyGroupPanel(this, ParentControl, 0, 5);
             SelectCompanyGroupUI.GetCompanyGroupsFromTerminal();
 
             ValidateCompanyGroupUI = new ValidateCompanyGroupPanel(this, ParentControl, 0, 6);
 
-            ConnectUI.Dispose();
-            ConnectUI = null;
+            if(ConnectUI != null)
+            {
+                ConnectUI.Dispose();
+                ConnectUI = null;
+            };
 
-            RememberAllDataUI.Dispose();
-            RememberAllDataUI = null;
+            if(RememberAllDataUI != null)
+            {
+                RememberAllDataUI.Dispose();
+                RememberAllDataUI = null;
+            };
 
-            ManageConnectionUI.Dispose();
-            ManageConnectionUI = null;
+            if(ManageConnectionUI != null)
+            {
+                ManageConnectionUI.Dispose();
+                ManageConnectionUI = null;
+            };
         }
         internal void SetValidatedCompanyGroupAwaitingConnectionUI()
         {
+            if(ConnectUI != null)
+            {
+                ConnectUI.Dispose();
+                ConnectUI = null;
+            };
+
+            if(RememberAllDataUI != null)
+            {
+                RememberAllDataUI.Dispose();
+                RememberAllDataUI = null;
+            };
+
+            if(ManageConnectionUI != null)
+            {
+                ManageConnectionUI.Dispose();
+                ManageConnectionUI = null;
+            };
+
             ConnectUI = new ConnectPanel(this, ParentControl, 0, 8);
 
             RememberAllDataUI = new RememberAllDataPanel(this, ParentControl, 0, 9);
@@ -155,22 +223,18 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             Sage50ConnectionManager.ConnectionActions.Disconnect();
             ShowConnectionStateUI.SetUIToDisconnected();
 
-            GetLocalTerminalUserDataUI.KeepData();
             ValidateTerminalUserDataUI.DisableControls();
-            SelectCompanyGroupUI.KeepData();
-            ValidateCompanyGroupUI.KeepData();
-            ConnectUI.KeepData();
 
             ManageConnectionUI.Dispose();
             ManageConnectionUI = null;
         }
         internal void SetStatelessStartUI()
         {
-            StateManager.State = UIStates.StatelessStart;
-            Sage50ConnectionManager.ConnectionActions.Disconnect();
-            ShowConnectionStateUI.SetUIToDisconnected();
+            ShowConnectionStateUI.Dispose();
+            ShowConnectionStateUI = null;
 
-            GetLocalTerminalUserDataUI.ClearData();
+            GetLocalTerminalUserDataUI.Dispose();
+            GetLocalTerminalUserDataUI = null;
 
             ValidateTerminalUserDataUI.Dispose();
             ValidateTerminalUserDataUI = null;
@@ -189,14 +253,17 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
             ManageConnectionUI.Dispose();
             ManageConnectionUI = null;
+
+            Sage50ConnectionManager.ConnectionActions.Disconnect();
+            CreateStatelessUI();
         }
         internal void SetStatefulStartUI()
         {
-            StateManager.State = UIStates.StatefulStart;
-            Sage50ConnectionManager.ConnectionActions.Disconnect();
-            ShowConnectionStateUI.SetUIToDisconnected();
+            ShowConnectionStateUI.Dispose();
+            ShowConnectionStateUI = null;
 
-            GetLocalTerminalUserDataUI.KeepData();
+            GetLocalTerminalUserDataUI.Dispose();
+            GetLocalTerminalUserDataUI = null;
 
             ValidateTerminalUserDataUI.Dispose();
             ValidateTerminalUserDataUI = null;
@@ -215,6 +282,9 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
             ManageConnectionUI.Dispose();
             ManageConnectionUI = null;
+
+            Sage50ConnectionManager.ConnectionActions.Disconnect();
+            CreateStatefulUI();
         }
     }
 }

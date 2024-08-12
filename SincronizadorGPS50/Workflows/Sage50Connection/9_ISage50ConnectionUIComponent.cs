@@ -17,8 +17,6 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         bool IsDataCleared { get; }
         void Forget();
         void Remember();
-        void ClearData();
-        void KeepData();
 
         event EventHandler DataCleared;
     }    

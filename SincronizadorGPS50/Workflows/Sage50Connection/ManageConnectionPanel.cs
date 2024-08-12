@@ -88,6 +88,28 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
             parentControl.Add(Panel, parentControlColumn, parentControlRow);
 
+            // Manage Events
+            // Manage Events
+            // Manage Events
+            // Manage Events
+
+            ConnectButton1.Click += ConnectButton1_Click;
+            ConnectButton2.Click += ConnectButton2_Click;
+            ConnectButton3.Click += ConnectButton3_Click;
+
+        }
+
+        private void ConnectButton1_Click(object sender, EventArgs e)
+        {
+            Sage50ConnectionUIManager.SetStatefulStartUI();
+        }
+        private void ConnectButton2_Click(object sender, EventArgs e)
+        {
+            Sage50ConnectionUIManager.SetStatefulStartUI();
+        }
+        private void ConnectButton3_Click(object sender, EventArgs e)
+        {
+            Sage50ConnectionUIManager.SetStatelessStartUI();
         }
 
         public void EnableControls()
@@ -110,10 +132,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         {
             DisableControls();
         }
-
-        public void ClearData() => throw new NotImplementedException();
         public void Forget() => throw new NotImplementedException();
-        public void KeepData() => throw new NotImplementedException();
         public void Remember() => throw new NotImplementedException();
         public void Dispose()
         {

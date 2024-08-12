@@ -183,7 +183,11 @@ namespace SincronizadorGPS50
                         DataHolder.Sage50LocalTerminalPath,
                         DataHolder.Sage50Username,
                         DataHolder.Sage50Password,
-                        DataHolder.Sage50SelectedCompanyGroupName
+                        DataHolder.Sage50SelectedCompanyGroupName,
+                        new System.Collections.Generic.List<string>(),
+                        new System.Collections.Generic.List<string>(),
+                        new System.Collections.Generic.List<string>(),
+                        new System.Collections.Generic.List<string>()
                     );
 
                     Sage50ConnectionUIHolder.CenterRowCenterPanelStateIcon1.Image = Resources.Semaforo_verde;

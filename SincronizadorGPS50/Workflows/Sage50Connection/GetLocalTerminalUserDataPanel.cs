@@ -1,4 +1,5 @@
-﻿using Infragistics.Win;
+﻿using GestprojectDataManager;
+using Infragistics.Win;
 using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinEditors;
 using System;
@@ -36,6 +37,12 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         )
         {
             Sage50ConnectionUIManager = sage50ConnectionUIManager;
+
+            // Generate Controls
+            // Generate Controls
+            // Generate Controls
+            // Generate Controls
+            // Generate Controls
 
             Panel = new UltraPanel();
             Panel.Dock = DockStyle.Fill;
@@ -159,32 +166,103 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             Panel.ClientArea.Controls.Add(PanelTableLayoutPanel);
 
             parentControl.Add(Panel, parentControlColumn, parentControlRow);
+
+            // Manage Events
+            // Manage Events
+            // Manage Events
+            // Manage Events
+            // Manage Events
+
+            LocalInstanceTextBox.TextChanged += TextBox_TextChanged;
+            UsernameTextBox.TextChanged += TextBox_TextChanged;
+            PasswordTextBox.TextChanged += TextBox_TextChanged;
+
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            if
+            (
+                MainWindowUIHolder.MainWindow.IsHandleCreated
+                &&
+                LocalInstanceTextBox.Text != ""
+                &&
+                LocalInstanceTextBox != null
+                &&
+                UsernameTextBox.Text != ""
+                &&
+                UsernameTextBox != null
+                &&
+                PasswordTextBox.Text != ""
+                &&
+                PasswordTextBox != null
+            )
+            {
+                if(Sage50ConnectionUIManager.ValidateTerminalUserDataUI != null)
+                {
+                    Sage50ConnectionUIManager.SetEditingTerminalDataUI();
+                    Sage50ConnectionUIManager.ValidateTerminalUserDataUI.EnableControls();
+                };
+            };
+
+            if(StateManager.State == "AwaitingLocalTerminalUserData")
+            {
+                Sage50ConnectionUIManager.SetEditingTerminalDataUI();
+            };
         }
 
         public void EnableControls()
         {
             LocalInstanceTextBox.Enabled = true;
+            LocalInstanceTextBox.Appearance.BackColor = StyleHolder.c_white;
+            LocalInstanceTextBox.Appearance.ForeColor = System.Drawing.Color.Black;
+
             UsernameTextBox.Enabled = true;
+            UsernameTextBox.Appearance.BackColor = StyleHolder.c_white;
+            UsernameTextBox.Appearance.ForeColor = System.Drawing.Color.Black;
+
             PasswordTextBox.Enabled = true;
+            PasswordTextBox.Appearance.BackColor = StyleHolder.c_white;
+            PasswordTextBox.Appearance.ForeColor = System.Drawing.Color.Black;
         }
         public void DisableControls()
         {
             LocalInstanceTextBox.Enabled = false;
+            LocalInstanceTextBox.Appearance.BackColor = StyleHolder.c_gray_200;
+            LocalInstanceTextBox.Appearance.ForeColor = StyleHolder.c_gray_100;
+
             UsernameTextBox.Enabled = false;
+            UsernameTextBox.Appearance.BackColor = StyleHolder.c_gray_200;
+            UsernameTextBox.Appearance.ForeColor = StyleHolder.c_gray_100;
+
             PasswordTextBox.Enabled = false;
+            PasswordTextBox.Appearance.BackColor = StyleHolder.c_gray_200;
+            PasswordTextBox.Appearance.ForeColor = StyleHolder.c_gray_100;
         }
-        public void ClearData() => throw new NotImplementedException();
         public void Forget() => throw new NotImplementedException();
-        public void KeepData() => throw new NotImplementedException();
-        public void Remember() {}
+        public void Remember() 
+        {
+            SynchronizerUserRememberableDataModel userRememberableData = GestprojectDataManager.ManageUserData.GetSynchronizerUserRememberableDataForConnection(GestprojectDataHolder.GestprojectDatabaseConnection);
+
+            LocalInstanceTextBox.Text = userRememberableData.Sage50LocalTerminalPath;
+            UsernameTextBox.Text = userRememberableData.Sage50Username;
+            PasswordTextBox.Text = userRememberableData.Sage50Password;
+
+        }
         public void SetUIToConnected()
         {
+            IsConnected = true;
             DisableControls();
         }
         public void SetUIToDisconnected()
         {
+            IsConnected = false;
             EnableControls();
         }
-        public void Dispose() => throw new NotImplementedException();
+        public void Dispose()
+        {
+            Panel.Dispose();
+            GC.SuppressFinalize(Panel);
+        }
     }
 }

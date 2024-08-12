@@ -1,4 +1,5 @@
-﻿using Infragistics.Win.Misc;
+﻿using GestprojectDataManager;
+using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinEditors;
 using System;
 using System.Collections.Generic;
@@ -61,35 +62,6 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             SelectEnterpryseGroupMenu = new UltraComboEditor();
             SelectEnterpryseGroupMenu.Dock = DockStyle.Fill;
 
-            GestprojectDataManager.SynchronizerUserRememberableDataModel userRememberabledata = GestprojectDataManager.ManageUserData.GetSynchronizerUserRememberableDataForConnection(GestprojectDataHolder.GestprojectDatabaseConnection);
-
-            if(
-                Sage50ConnectionManager.ConnectionActions.Connect(
-                    userRememberabledata.Sage50LocalTerminalPath,
-                    userRememberabledata.Sage50Username,
-                    userRememberabledata.Sage50Password
-                )
-            )
-            {
-                List<Sage50ConnectionManager.CompanyGroup> sage50CompanyGroupsList = Sage50ConnectionManager.Sage50CompanyGroupActions.GetCompanyGroups();
-
-                if(SelectEnterpryseGroupMenu.Items.Count < 1)
-                {
-                    SelectEnterpryseGroupMenu.Items.Add("");
-                };
-
-                for(global::System.Int32 i = 0; i < sage50CompanyGroupsList.Count; i++)
-                {
-                    SelectEnterpryseGroupMenu.Items.Add(sage50CompanyGroupsList[i].CompanyName);
-                    if(userRememberabledata.Sage50CompanyGroupName == sage50CompanyGroupsList[i].CompanyName)
-                    {
-                        SelectEnterpryseGroupMenu.SelectedIndex = i;
-                    };
-                };
-            };
-
-
-
             PanelTableLayoutPanel.Controls.Add(SelectEnterpryseGroupLabel, 0, 0);
             PanelTableLayoutPanel.Controls.Add(SelectEnterpryseGroupMenu, 0, 1);
 
@@ -114,14 +86,31 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         {
             EnableControls();
         }
-        public void GetCompanyGroupsFromTerminal() 
+        public void GetCompanyGroupsFromTerminal()
         {
+            List<Sage50ConnectionManager.CompanyGroup> sage50CompanyGroupsList = Sage50ConnectionManager.Sage50CompanyGroupActions.GetCompanyGroups();
 
+            for(global::System.Int32 i = 0; i < sage50CompanyGroupsList.Count; i++)
+            {
+                SelectEnterpryseGroupMenu.Items.Add(sage50CompanyGroupsList[i].CompanyName);
+            };
+
+            SelectEnterpryseGroupMenu.SelectedIndex = 0;
         }
-        public void ClearData() => throw new NotImplementedException();
         public void Forget() => throw new NotImplementedException();
-        public void KeepData() => throw new NotImplementedException();
-        public void Remember() {}
+        public void Remember()
+        {
+            SynchronizerUserRememberableDataModel userRememberableData = GestprojectDataManager.ManageUserData.GetSynchronizerUserRememberableDataForConnection(GestprojectDataHolder.GestprojectDatabaseConnection);
+
+            for(global::System.Int32 i = 0; i < userRememberableData.Sage50AvailableCompanyGroupsNameList.Count; i++)
+            {
+                SelectEnterpryseGroupMenu.Items.Add(userRememberableData.Sage50AvailableCompanyGroupsNameList[i]);
+                if(userRememberableData.Sage50CompanyGroupName == userRememberableData.Sage50AvailableCompanyGroupsNameList[i])
+                {
+                    SelectEnterpryseGroupMenu.SelectedIndex = i;
+                };
+            };
+        }
         public void Dispose()
         {
             Panel.Dispose();

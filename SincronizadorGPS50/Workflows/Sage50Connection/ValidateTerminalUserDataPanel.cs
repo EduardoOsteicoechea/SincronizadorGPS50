@@ -47,8 +47,6 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             ConnectButton.ImageList = ImageList;
             ConnectButton.Appearance.Image = 0;
             ConnectButton.Text = "Validar Terminal";
-            ConnectButton.Click += ConnectButton_Click;
-            ;
 
 
             PanelTableLayoutPanel.Controls.Add(ConnectButton, 0, 0);
@@ -58,15 +56,24 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             Panel.ClientArea.Controls.Add(PanelTableLayoutPanel);
 
             parentControl.Add(Panel, parentControlColumn, parentControlRow);
+
+            // Handle Events
+            // Handle Events
+            // Handle Events
+            // Handle Events
+            // Handle Events
+
+            ConnectButton.Click += ConnectButton_Click;
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
         {
+            Sage50ConnectionUIManager.GetLocalTerminalUserDataUI.SetUIToConnected();
             if(
                 Sage50ConnectionManager.ConnectionActions.Connect(
-                    DataHolder.Sage50LocalTerminalPath,
-                    DataHolder.Sage50Username,
-                    DataHolder.Sage50Password
+                    Sage50ConnectionUIManager.GetLocalTerminalUserDataUI.LocalInstanceTextBox.Text,
+                    Sage50ConnectionUIManager.GetLocalTerminalUserDataUI.UsernameTextBox.Text,
+                    Sage50ConnectionUIManager.GetLocalTerminalUserDataUI.PasswordTextBox.Text
                 )
             )
             {
@@ -76,6 +83,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             }
             else
             {
+                Sage50ConnectionUIManager.GetLocalTerminalUserDataUI.SetUIToDisconnected();
                 ConnectButton.Appearance.Image = 0;
                 Sage50ConnectionUIManager.ShowConnectionStateUI.StateImage1.Image = Sage50ConnectionUIManager.ShowConnectionStateUI.ImageList.Images[0];
             }
@@ -95,9 +103,14 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         }
         public void SetUIToConnected()
         {
+            IsConnected = true;
             DisableControls();
         }
-        public void SetUIToDisconnected() => throw new NotImplementedException();
+        public void SetUIToDisconnected()
+        {
+            IsConnected = false;
+            EnableControls();
+        }
         public void EnableControls()
         {
             ConnectButton.Enabled = true;
@@ -106,6 +119,10 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         {
             ConnectButton.Enabled = false;
         }
-        public void Dispose() => throw new NotImplementedException();
+        public void Dispose()
+        {
+            Panel.Dispose();
+            GC.SuppressFinalize(Panel);
+        }
     }
 }

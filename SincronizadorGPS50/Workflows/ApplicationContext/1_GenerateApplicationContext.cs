@@ -112,6 +112,16 @@ namespace SincronizadorGPS50
 
                     GestprojectDataManager.ManageUserData.PopulateGestprojectUserDataTable(GestprojectDataHolder.GestprojectDatabaseConnection,"", "", "", "");
 
+                    GestprojectDataManager.ManageUserData.CreateSage50CompanyGroupDataTable(GestprojectDataHolder.GestprojectDatabaseConnection);
+
+                    GestprojectDataManager.ManageUserData.PopulateSage50CompanyGroupDataTable(
+                        GestprojectDataHolder.GestprojectDatabaseConnection, "", "", "", "",
+                        new System.Collections.Generic.List<string>(),
+                        new System.Collections.Generic.List<string>(),
+                        new System.Collections.Generic.List<string>(),
+                        new System.Collections.Generic.List<string>()
+                    );
+
                     new Sage50ConnectionUIManager(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls, "stateless");
 
                     //if(!new StatelessCenterRowCenterPanelControls().IsSuccessful)

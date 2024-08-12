@@ -35,10 +35,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             PanelTableLayoutPanel = new TableLayoutPanel();
             PanelTableLayoutPanel.ColumnCount = 1;
             PanelTableLayoutPanel.RowCount = 3;
-            //PanelTableLayoutPanel.RowCount = 2;
             PanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50f));
             PanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50f));
-            //PanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
             PanelTableLayoutPanel.Dock = DockStyle.Fill;
 
             ImageList.Images.Add(Resources.SemaforoRojo);
@@ -59,22 +57,28 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
             StateImage1 = new UltraPictureBox();
             StateImage1.Height = 15;
+            StateImage1.Width = 15;
             StateImage1.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             StateImage1.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
 
             StateImage2 = new UltraPictureBox();
             StateImage2.Height = 15;
+            StateImage2.Width = 15;
             StateImage2.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             StateImage2.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
 
             StateImage3 = new UltraPictureBox();
             StateImage3.Height = 15;
+            StateImage3.Width = 15;
             StateImage3.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             StateImage3.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
 
             StateImage1.Image = ImageList.Images[0];
+            StateImage1.Appearance.ImageBackground = ImageList.Images[1];
             StateImage2.Image = ImageList.Images[0];
+            StateImage2.Appearance.ImageBackground = ImageList.Images[1];
             StateImage3.Image = ImageList.Images[0];
+            StateImage3.Appearance.ImageBackground = ImageList.Images[1];
 
             UltraPanel StateIconsPanel = new UltraPanel();
             StateIconsPanel.Dock = DockStyle.Fill;
@@ -82,11 +86,11 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             TableLayoutPanel StateIconsPanelTableLayoutPanel = new TableLayoutPanel();
             StateIconsPanelTableLayoutPanel.RowCount = 1;
             StateIconsPanelTableLayoutPanel.ColumnCount = 5;
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35f));
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10f));
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10f));
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10f));
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35f));
+            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40f));
+            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.66f));
+            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.66f));
+            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.66f));
+            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40f));
             StateIconsPanelTableLayoutPanel.Dock = DockStyle.Fill;
 
             StateIconsPanelTableLayoutPanel.Controls.Add(StateImage1, 1, 0);

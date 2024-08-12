@@ -52,6 +52,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             CheckBox = new UltraCheckEditor();
             CheckBox.Width = 15;
             CheckBox.Height = 20;
+            CheckBox.TabStop = true;
             CheckBox.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             CheckBox.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
 
@@ -66,9 +67,11 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
         public void EnableControls()
         {
+            CheckBox.Enabled = true;
         }
         public void DisableControls()
         {
+            CheckBox.Enabled = false;
         }
         public void SetUIToConnected()
         {
@@ -78,9 +81,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         {
             EnableControls();
         }
-        public void ClearData() => throw new NotImplementedException();
         public void Forget() => throw new NotImplementedException();
-        public void KeepData() => throw new NotImplementedException();
         public void Remember() {}
         public void Dispose()
         {
