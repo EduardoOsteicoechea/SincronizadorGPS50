@@ -42,18 +42,10 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             ImageList.Images.Add(Resources.SemaforoRojo);
             ImageList.Images.Add(Resources.Semaforo_verde);
 
-
             StateLabel = new UltraLabel();
             StateLabel.Dock = DockStyle.Fill;
             StateLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             StateLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-
-            StateMessageLabel = new UltraLabel();
-            StateMessageLabel.Dock = DockStyle.Fill;
-            StateMessageLabel.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            StateMessageLabel.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-
-
 
             StateImage1 = new UltraPictureBox();
             StateImage1.Height = 15;
@@ -61,41 +53,18 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             StateImage1.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             StateImage1.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
 
-            StateImage2 = new UltraPictureBox();
-            StateImage2.Height = 15;
-            StateImage2.Width = 15;
-            StateImage2.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            StateImage2.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-
-            StateImage3 = new UltraPictureBox();
-            StateImage3.Height = 15;
-            StateImage3.Width = 15;
-            StateImage3.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
-            StateImage3.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
-
-            StateImage1.Image = ImageList.Images[0];
-            StateImage1.Appearance.ImageBackground = ImageList.Images[1];
-            StateImage2.Image = ImageList.Images[0];
-            StateImage2.Appearance.ImageBackground = ImageList.Images[1];
-            StateImage3.Image = ImageList.Images[0];
-            StateImage3.Appearance.ImageBackground = ImageList.Images[1];
-
             UltraPanel StateIconsPanel = new UltraPanel();
             StateIconsPanel.Dock = DockStyle.Fill;
 
             TableLayoutPanel StateIconsPanelTableLayoutPanel = new TableLayoutPanel();
             StateIconsPanelTableLayoutPanel.RowCount = 1;
-            StateIconsPanelTableLayoutPanel.ColumnCount = 5;
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40f));
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.66f));
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.66f));
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.66f));
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40f));
+            StateIconsPanelTableLayoutPanel.ColumnCount = 3;
+            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42f));
+            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6f));
+            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42f));
             StateIconsPanelTableLayoutPanel.Dock = DockStyle.Fill;
 
             StateIconsPanelTableLayoutPanel.Controls.Add(StateImage1, 1, 0);
-            StateIconsPanelTableLayoutPanel.Controls.Add(StateImage2, 2, 0);
-            StateIconsPanelTableLayoutPanel.Controls.Add(StateImage3, 3, 0);
 
             StateIconsPanel.ClientArea.Controls.Add(StateIconsPanelTableLayoutPanel);
 
@@ -103,7 +72,6 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
             PanelTableLayoutPanel.Controls.Add(StateLabel, 0, 0);
             PanelTableLayoutPanel.Controls.Add(StateIconsPanel, 0, 1);
-            //PanelTableLayoutPanel.Controls.Add(StateMessageLabel, 0, 2);
 
             Panel.ClientArea.Controls.Add(PanelTableLayoutPanel);
 
@@ -114,22 +82,13 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         {
             IsConnected = true;
             StateLabel.Text = "Conectado";
-            StateMessageLabel.Text = "Iniciamos una sesión de Sage50 con los datos provistos";
-            StateMessageLabel.Appearance.ForeColor = StyleHolder.c_green_1;
-
             StateImage1.Image = ImageList.Images[1];
-            StateImage2.Image = ImageList.Images[1];
-            StateImage3.Image = ImageList.Images[1];
         }
         public void SetUIToDisconnected()
         {
             IsConnected = false;
             StateLabel.Text = "Desconectado";
-            StateMessageLabel.Text = "Ingrese sus datos de Sage50 para iniciar sesión";
-
             StateImage1.Image = ImageList.Images[0];
-            StateImage2.Image = ImageList.Images[0];
-            StateImage3.Image = ImageList.Images[0];
         }
 
         public void Dispose() 

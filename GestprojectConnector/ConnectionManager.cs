@@ -8,7 +8,6 @@ namespace GestprojectDatabaseConnector
     public class ConnectionManager
     {
         public bool IsSuccessful { get; set; } = false;
-
         public System.Data.SqlClient.SqlConnection Connect()
         {
             try

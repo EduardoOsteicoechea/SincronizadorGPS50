@@ -70,6 +70,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
             LocalInstanceTextBox = new UltraTextEditor();
             LocalInstanceTextBox.Dock = DockStyle.Fill;
+            LocalInstanceTextBox.Text = "C:\\Sage50\\Sage50Term";
 
             LocalInstanceLabel.Height = 20;
             LocalInstanceTextBox.Height = 20;
@@ -242,11 +243,16 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         public void Forget() => throw new NotImplementedException();
         public void Remember() 
         {
-            SynchronizerUserRememberableDataModel userRememberableData = GestprojectDataManager.ManageUserData.GetSynchronizerUserRememberableDataForConnection(GestprojectDataHolder.GestprojectDatabaseConnection);
+            SynchronizerUserRememberableDataModel userRememberableData = 
+            GestprojectDataManager
+            .ManageRememberableUserData
+            .GetSynchronizerUserRememberableDataForConnection(
+                GestprojectDataHolder.GestprojectDatabaseConnection
+            );
 
-            LocalInstanceTextBox.Text = userRememberableData.Sage50LocalTerminalPath;
-            UsernameTextBox.Text = userRememberableData.Sage50Username;
-            PasswordTextBox.Text = userRememberableData.Sage50Password;
+            LocalInstanceTextBox.Text = userRememberableData.SAGE_50_LOCAL_TERMINAL_PATH;
+            UsernameTextBox.Text = userRememberableData.SAGE_50_USER_NAME;
+            PasswordTextBox.Text = userRememberableData.SAGE_50_PASSWORD;
 
         }
         public void SetUIToConnected()

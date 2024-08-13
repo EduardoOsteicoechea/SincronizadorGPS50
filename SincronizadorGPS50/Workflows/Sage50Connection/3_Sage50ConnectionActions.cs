@@ -178,17 +178,17 @@ namespace SincronizadorGPS50
                     DataHolder.Sage50SelectedCompanyGroupName != ""
                 )
                 {
-                    GestprojectDataManager.ManageUserData.Save(
-                        GestprojectDataHolder.GestprojectDatabaseConnection,
-                        DataHolder.Sage50LocalTerminalPath,
-                        DataHolder.Sage50Username,
-                        DataHolder.Sage50Password,
-                        DataHolder.Sage50SelectedCompanyGroupName,
-                        new System.Collections.Generic.List<string>(),
-                        new System.Collections.Generic.List<string>(),
-                        new System.Collections.Generic.List<string>(),
-                        new System.Collections.Generic.List<string>()
-                    );
+                    //GestprojectDataManager.ManageUserData.Save(
+                    //    GestprojectDataHolder.GestprojectDatabaseConnection,
+                    //    DataHolder.Sage50LocalTerminalPath,
+                    //    DataHolder.Sage50Username,
+                    //    DataHolder.Sage50Password,
+                    //    DataHolder.Sage50SelectedCompanyGroupName,
+                    //    new System.Collections.Generic.List<string>(),
+                    //    new System.Collections.Generic.List<string>(),
+                    //    new System.Collections.Generic.List<string>(),
+                    //    new System.Collections.Generic.List<string>()
+                    //);
 
                     Sage50ConnectionUIHolder.CenterRowCenterPanelStateIcon1.Image = Resources.Semaforo_verde;
 
@@ -228,7 +228,7 @@ namespace SincronizadorGPS50
             }
             else
             {
-                GestprojectDataManager.ManageUserData.DisableRememberUserDataFeature(GestprojectDataHolder.GestprojectDatabaseConnection);
+                GestprojectDataManager.ManageRememberableUserData.ChangeRememberUserDataFeature(GestprojectDataHolder.GestprojectDatabaseConnection,0);
 
                 Sage50ConnectionUIHolder.CenterRowCenterPanelStateIcon1.Image = Resources.Semaforo_verde;
 

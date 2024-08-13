@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-using System.IO;
-using GestprojectStyleManager;
+﻿using GestprojectStyleManager;
 
 namespace SincronizadorGPS50
 {

@@ -1,146 +1,154 @@
 ﻿using SincronizadorGPS50.Workflows.Sage50Connection;
-using SincronizadorGPS50.Workflows.Sage50Connection.Sage50ConnectionTabUI;
+using System.Security.Principal;
 using System.Windows.Forms;
 
-namespace SincronizadorGPS50
-{
-    internal class GenerateApplicationContext : ApplicationContext
-    {
-        public GenerateApplicationContext() 
-        {
-            try
-            {
-                System.Windows.Forms.Application.EnableVisualStyles();
-                System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+namespace SincronizadorGPS50 {
+   internal class GenerateApplicationContext : ApplicationContext {
+      public GenerateApplicationContext() {
+         try {
 
-                // Connect to Gestproject
-                // Connect to Gestproject
-                // Connect to Gestproject
-                // Connect to Gestproject
-                // Connect to Gestproject
+            // Set initial windows forms application settings
 
-                ApplicationManager.ApplicationGlobalContext = this;
-
-                if(!new ApplyGestprojectGlobalStyle().IsSuccessful)
-                {
-                    throw new System.Exception("Error applying Gestproject Styles");
-                };
-
-                GestprojectDataHolder.GestprojectDatabaseConnection = new GestprojectDatabaseConnector.ConnectionManager().Connect();
-
-                if(GestprojectDataHolder.GestprojectDatabaseConnection == null)
-                {
-                    throw new System.Exception("Error connecting to Gestproject Database");
-                };
-
-                GestprojectDataHolder.GestprojectClientList = new GestprojectDataManager.GestprojectClients().Get(GestprojectDataHolder.GestprojectDatabaseConnection);
-
-                if (GestprojectDataHolder.GestprojectClientList == null)
-                {
-                    throw new System.Exception("Error Obtaining Gestproject Clients");
-                };
-
-                GestprojectDataHolder.GestprojectProviderList = new GestprojectDataManager.GestprojectProviders().Get(GestprojectDataHolder.GestprojectDatabaseConnection);
-
-                if (GestprojectDataHolder.GestprojectProviderList == null)
-                {
-                    throw new System.Exception("Error Obtaining Gestproject Providers");
-                };
-
-                // Create Global UI
-                // Create Global UI
-                // Create Global UI
-                // Create Global UI
-                // Create Global UI
-
-                if(!new GenerateMainWindow().IsSuccessful)
-                {
-                    throw new System.Exception("Error generating main window");
-                };
-
-                if(!new GenerateMainWindowUI().IsSuccessful)
-                {
-                    throw new System.Exception("Error generating main window UI");
-                };
-
-                if(!new GenerateSage50ConnectionTabPageUI().IsSuccessful)
-                {
-                    throw new System.Exception("Error generating Sage50 Connection tab page");
-                };
-
-                if(!new CenterRowUI().IsSuccessful)
-                {
-                    throw new System.Exception("Error generating Sage50 Connection UI elements");
-                };
-
-                // Create Sage50Connection controls
-                // Create Sage50Connection controls
-                // Create Sage50Connection controls
-                // Create Sage50Connection controls
-                // Create Sage50Connection controls
-
-                if(GestprojectDataManager.ManageUserData.CheckIfGestprojectUserDataTableExists(GestprojectDataHolder.GestprojectDatabaseConnection))
-                {
-                    if(!GestprojectDataManager.ManageUserData.CheckIfRememberUserDataOptionWasActivated(GestprojectDataHolder.GestprojectDatabaseConnection))
-                    {
-                        //MessageBox.Show("Stateless");
-                        
-                        new Sage50ConnectionUIManager(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls, "stateless");
-
-                        //if(!new StatelessCenterRowCenterPanelControls().IsSuccessful)
-                        //{
-                        //    throw new System.Exception("Error generating main window");
-                        //};
-                    }
-                    else
-                    {
-                        //MessageBox.Show("Stateful");
-
-                        new Sage50ConnectionUIManager(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls, "stateful");
-                        //new Sage50ConnectionUIManager(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls, "stateless");
-
-                        //if(!new StatefulCenterRowCenterPanelControls().IsSuccessful)
-                        //{
-                        //    throw new System.Exception("Error generating main window");
-                        //};
-                    };
-                }
-                else
-                {
-                    //MessageBox.Show("Creating User Rememberable Data Table");
-                    GestprojectDataManager.ManageUserData.CreateGestprojectUserDataTable(GestprojectDataHolder.GestprojectDatabaseConnection);
-
-                    GestprojectDataManager.ManageUserData.PopulateGestprojectUserDataTable(GestprojectDataHolder.GestprojectDatabaseConnection,"", "", "", "");
-
-                    GestprojectDataManager.ManageUserData.CreateSage50CompanyGroupDataTable(GestprojectDataHolder.GestprojectDatabaseConnection);
-
-                    GestprojectDataManager.ManageUserData.PopulateSage50CompanyGroupDataTable(
-                        GestprojectDataHolder.GestprojectDatabaseConnection, "", "", "", "",
-                        new System.Collections.Generic.List<string>(),
-                        new System.Collections.Generic.List<string>(),
-                        new System.Collections.Generic.List<string>(),
-                        new System.Collections.Generic.List<string>()
-                    );
-
-                    new Sage50ConnectionUIManager(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls, "stateless");
-
-                    //if(!new StatelessCenterRowCenterPanelControls().IsSuccessful)
-                    //{
-                    //    throw new System.Exception("Error generating main window");
-                    //};
-                };  
-
-                // InitialLaunchForSage50Connection
-                // InitialLaunchForSage50Connection
-                // InitialLaunchForSage50Connection
-                // InitialLaunchForSage50Connection
-
-                MainWindowUIHolder.MainWindow.Show();
-            }
-            catch(System.Exception e)
-            {
-                MessageBox.Show($"Error: \n\n{e.Message}");
+            if(!new SetInitialWindowsFormSettings().IsSuccessful) {
+               throw new System.Exception("Error at SetInitialWindowsFormSettings");
             };
-        }
-    }
+
+            // Get and leverage user device Gestproject data
+
+            ApplicationManager.ApplicationGlobalContext = this;
+
+            if(!new ApplyGestprojectGlobalStyle().IsSuccessful) {
+               throw new System.Exception("Error at ApplyGestprojectGlobalStyle");
+            };
+
+            try {
+               GestprojectDataHolder.GestprojectDatabaseConnection = new GestprojectDatabaseConnector.ConnectionManager().Connect();
+            } 
+            catch {
+               throw new System.Exception("Error at GestprojectDatabaseConnector.ConnectionManager().Connect()");
+            };
+
+            try {
+               GestprojectDataHolder.LocalDeviceUserSessionData = new GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData;
+            }
+            catch {
+               throw new System.Exception("Error at GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData");
+            };
+
+            // Create Global UI
+
+            if(!new GenerateMainWindow().IsSuccessful) {
+               throw new System.Exception("Error at GenerateMainWindow");
+            };
+
+            if(!new GenerateMainWindowUI().IsSuccessful) {
+               throw new System.Exception("Error at GenerateMainWindowUI");
+            };
+
+            if(!new GenerateSage50ConnectionTabPageUI().IsSuccessful) {
+               throw new System.Exception("Error at GenerateSage50ConnectionTabPageUI");
+            };
+
+            if(!new GenerateCenterRowUI().IsSuccessful) {
+               throw new System.Exception("Error at GenerateCenterRowUI");
+            };
+
+            // Create Sage50Connection controls
+
+            bool gestprojectUserDataTableExists = false;
+            try {
+               gestprojectUserDataTableExists =
+                  GestprojectDataManager
+                  .ManageRememberableUserData
+                  .CheckIfGestprojectUserDataTableExists(
+                     GestprojectDataHolder.GestprojectDatabaseConnection
+                  );
+            }
+            catch {
+               throw new System.Exception("Error at gestprojectUserDataTableExists");
+            };
+
+            bool rememberUserDataOptionWasActivated = false;
+            if(gestprojectUserDataTableExists) {
+               try {
+                  rememberUserDataOptionWasActivated =
+                  GestprojectDataManager
+                     .ManageRememberableUserData
+                     .CheckIfRememberUserDataOptionWasActivated(
+                        GestprojectDataHolder.GestprojectDatabaseConnection
+                     );
+               }
+               catch {
+                  throw new System.Exception("Error at rememberUserDataOptionWasActivated");
+               };
+            };
+
+            string currentLocalDevice = WindowsIdentity.GetCurrent().Name.Split('\\')[0] + "2";
+            string gestprojectSessionDevice = GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO;
+
+            bool userIsInRememberedAndApprovedDevice = gestprojectSessionDevice == currentLocalDevice;
+
+            if(gestprojectUserDataTableExists){
+               if(rememberUserDataOptionWasActivated) {
+                  if(userIsInRememberedAndApprovedDevice) {
+                     if(!new Sage50ConnectionUIManager(
+                           Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls,
+                           "stateful"
+                        ).IsSuccessful
+                     ) {
+                        MessageBox.Show("gestprojectUserDataTableExists, rememberUserDataOptionWasActivated, userIsInRememberedAndApprovedDevice");
+                        throw new System.Exception("Error at Sage50ConnectionUIManager");
+                     };
+                  }
+                  else {
+                     if(!new Sage50ConnectionUIManager(
+                           Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls,
+                           "stateless"
+                        ).IsSuccessful
+                     ) {
+                        MessageBox.Show("gestprojectUserDataTableExists, rememberUserDataOptionWasActivated");
+                        throw new System.Exception("Error at Sage50ConnectionUIManager");
+                     };
+                  };                  
+               }
+               else {
+                  if(!new Sage50ConnectionUIManager(
+                        Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls,
+                        "stateless"
+                     ).IsSuccessful
+                  ) {
+                     MessageBox.Show("gestprojectUserDataTableExists");
+                     throw new System.Exception("Error at Sage50ConnectionUIManager");
+                  };
+               };
+            }
+            else {
+               if(!GestprojectDataManager
+                  .ManageRememberableUserData
+                  .CreateGestprojectUserDataTable(
+                     GestprojectDataHolder.GestprojectDatabaseConnection
+                  )
+               ){
+                  throw new System.Exception("Error at GestprojectDataManager.ManageRememberableUserData.CreateGestprojectUserDataTable");
+               };
+
+               if(!new Sage50ConnectionUIManager(
+                     Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls,
+                     "stateless"
+                  ).IsSuccessful
+               ) {
+                  MessageBox.Show("NOT gestprojectUserDataTableExists");
+                  throw new System.Exception("Error at Sage50ConnectionUIManager");
+               };
+            };
+
+            // InitialLaunchForSage50Connection
+
+            MainWindowUIHolder.MainWindow.Show();
+         }
+         catch(System.Exception e) {
+            MessageBox.Show($"Error: \n\n{e.Message}");
+         };
+      }
+   }
 }

@@ -10,8 +10,6 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         public UltraPanel Panel { get; set; } = null;
         public TableLayoutPanel PanelTableLayoutPanel { get; set; } = null;
         public UltraButton ConnectButton1 { get; set; } = null;
-        public UltraButton ConnectButton2 { get; set; } = null;
-        public UltraButton ConnectButton3 { get; set; } = null;
         public System.Windows.Forms.ImageList ImageList { get; set; } = new ImageList();
         public Sage50ConnectionUIManager Sage50ConnectionUIManager { get; set; } = null;
 
@@ -36,53 +34,18 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             PanelTableLayoutPanel = new TableLayoutPanel();
             PanelTableLayoutPanel.ColumnCount = 1;
             PanelTableLayoutPanel.RowCount = 2;
-            PanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50f));
-            PanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50f));
+            PanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100f));
             PanelTableLayoutPanel.Dock = DockStyle.Fill;
 
             ImageList.Images.Add(Resources.Deshacer);
             ImageList.Images.Add(Resources.delete);
 
-
             ConnectButton1 = new UltraButton();
             ConnectButton1.Dock = DockStyle.Fill;
             ConnectButton1.AutoSize = true;
-            ConnectButton1.ImageList = ImageList;
-            ConnectButton1.Appearance.Image = 0;
             ConnectButton1.Text = "Desconectar";
 
-            ConnectButton2 = new UltraButton();
-            ConnectButton2.Dock = DockStyle.Fill;
-            ConnectButton2.AutoSize = true;
-            ConnectButton2.ImageList = ImageList;
-            ConnectButton2.Appearance.Image = 0;
-            ConnectButton2.Text = "Modificar datos";
-
-            ConnectButton3 = new UltraButton();
-            ConnectButton3.Dock = DockStyle.Fill;
-            ConnectButton3.AutoSize = true;
-            ConnectButton3.ImageList = ImageList;
-            ConnectButton3.Appearance.Image = 1;
-            ConnectButton3.Text = "Comenzar de nuevo";
-
-
-            UltraPanel StateIconsPanel = new UltraPanel();
-            StateIconsPanel.Dock = DockStyle.Fill;
-
-            TableLayoutPanel StateIconsPanelTableLayoutPanel = new TableLayoutPanel();
-            StateIconsPanelTableLayoutPanel.RowCount = 1;
-            StateIconsPanelTableLayoutPanel.ColumnCount = 2;
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50f));
-            StateIconsPanelTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50f));
-            StateIconsPanelTableLayoutPanel.Dock = DockStyle.Fill;
-
-            StateIconsPanelTableLayoutPanel.Controls.Add(ConnectButton2, 0, 0);
-            StateIconsPanelTableLayoutPanel.Controls.Add(ConnectButton3, 1, 0);
-
-            StateIconsPanel.ClientArea.Controls.Add(StateIconsPanelTableLayoutPanel);
-
             PanelTableLayoutPanel.Controls.Add(ConnectButton1, 0, 0);
-            PanelTableLayoutPanel.Controls.Add(StateIconsPanel, 0, 1);
 
             Panel.ClientArea.Controls.Add(PanelTableLayoutPanel);
 
@@ -94,35 +57,20 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             // Manage Events
 
             ConnectButton1.Click += ConnectButton1_Click;
-            ConnectButton2.Click += ConnectButton2_Click;
-            ConnectButton3.Click += ConnectButton3_Click;
-
         }
 
-        private void ConnectButton1_Click(object sender, EventArgs e)
-        {
-            Sage50ConnectionUIManager.SetStatefulStartUI();
-        }
-        private void ConnectButton2_Click(object sender, EventArgs e)
-        {
-            Sage50ConnectionUIManager.SetStatefulStartUI();
-        }
-        private void ConnectButton3_Click(object sender, EventArgs e)
-        {
+        private void ConnectButton1_Click(object sender, EventArgs e) {
+            Sage50ConnectionManager.ConnectionActions.Disconnect();
             Sage50ConnectionUIManager.SetStatelessStartUI();
         }
 
         public void EnableControls()
         {
             ConnectButton1.Enabled = true;
-            ConnectButton2.Enabled = true;
-            ConnectButton3.Enabled = true;
         }
         public void DisableControls()
         {
             ConnectButton1.Enabled = false;
-            ConnectButton2.Enabled = false;
-            ConnectButton3.Enabled = false;
         }
         public void SetUIToConnected()
         {

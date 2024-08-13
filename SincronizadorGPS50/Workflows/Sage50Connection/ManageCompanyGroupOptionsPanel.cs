@@ -1,6 +1,8 @@
 ﻿using GestprojectDataManager;
 using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinEditors;
+using sage.ew.db;
+using Sage50ConnectionManager;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -70,27 +72,17 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             parentControl.Add(Panel, parentControlColumn, parentControlRow);
         }
 
-        public void EnableControls()
-        {
-            SelectEnterpryseGroupMenu.Enabled = true;
-        }
-        public void DisableControls()
-        {
-            SelectEnterpryseGroupMenu.Enabled = false;
-        }
-        public void SetUIToConnected()
-        {
-            DisableControls();
-        }
-        public void SetUIToDisconnected()
-        {
-            EnableControls();
-        }
+        public void EnableControls() { SelectEnterpryseGroupMenu.Enabled = true; }
+        public void DisableControls() { SelectEnterpryseGroupMenu.Enabled = false; }
+        public void SetUIToConnected() { DisableControls(); }
+        public void SetUIToDisconnected() { EnableControls(); }
         public void GetCompanyGroupsFromTerminal()
         {
             List<Sage50ConnectionManager.CompanyGroup> sage50CompanyGroupsList = Sage50ConnectionManager.Sage50CompanyGroupActions.GetCompanyGroups();
 
-            for(global::System.Int32 i = 0; i < sage50CompanyGroupsList.Count; i++)
+            MessageBox.Show(DB.SQLDatabase("COMUNES"));
+
+         for(global::System.Int32 i = 0; i < sage50CompanyGroupsList.Count; i++)
             {
                 SelectEnterpryseGroupMenu.Items.Add(sage50CompanyGroupsList[i].CompanyName);
             };
@@ -100,15 +92,31 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         public void Forget() => throw new NotImplementedException();
         public void Remember()
         {
-            SynchronizerUserRememberableDataModel userRememberableData = GestprojectDataManager.ManageUserData.GetSynchronizerUserRememberableDataForConnection(GestprojectDataHolder.GestprojectDatabaseConnection);
-
-            for(global::System.Int32 i = 0; i < userRememberableData.Sage50AvailableCompanyGroupsNameList.Count; i++)
+            if(Sage50ConnectionUIManager.RememberAllDataUI.CheckBox.Checked) 
             {
-                SelectEnterpryseGroupMenu.Items.Add(userRememberableData.Sage50AvailableCompanyGroupsNameList[i]);
-                if(userRememberableData.Sage50CompanyGroupName == userRememberableData.Sage50AvailableCompanyGroupsNameList[i])
+                SynchronizerUserRememberableDataModel userRememberableData = GestprojectDataManager.ManageRememberableUserData.GetSynchronizerUserRememberableDataForConnection(GestprojectDataHolder.GestprojectDatabaseConnection);
+
+                List<Sage50ConnectionManager.CompanyGroup> sageCompanyGroups = Sage50CompanyGroupActions.GetCompanyGroups();
+
+                for(global::System.Int32 i = 0; i < sageCompanyGroups.Count; i++)
                 {
-                    SelectEnterpryseGroupMenu.SelectedIndex = i;
+                    SelectEnterpryseGroupMenu.Items.Add(sageCompanyGroups[i].CompanyName);
+                    if(userRememberableData.SAGE_50_COMPANY_GROUP_NAME == sageCompanyGroups[i].CompanyName)
+                    {
+                        SelectEnterpryseGroupMenu.SelectedIndex = i;
+                    };
                 };
+            }
+            else
+            {
+                List<Sage50ConnectionManager.CompanyGroup> sageCompanyGroups = Sage50CompanyGroupActions.GetCompanyGroups();
+
+                for(global::System.Int32 i = 0; i < sageCompanyGroups.Count; i++)
+                {
+                    SelectEnterpryseGroupMenu.Items.Add(sageCompanyGroups[i].CompanyName);
+                };
+
+                SelectEnterpryseGroupMenu.SelectedIndex = 0;
             };
         }
         public void Dispose()

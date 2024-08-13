@@ -62,7 +62,7 @@ namespace Sage50ConnectionManager
 
                 bool result = companyGroupsOperator._CambiarGrupo(selectedCompanyGroup.CompanyCode, "", true);
 
-                MessageBox.Show(DB.SQLDatabase("COMUNES"));
+                //MessageBox.Show(DB.SQLDatabase("COMUNES"));
 
                 return result;
             }

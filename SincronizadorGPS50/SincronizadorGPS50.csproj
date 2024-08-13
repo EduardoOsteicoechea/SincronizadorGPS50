@@ -380,7 +380,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Workflows\ApplicationContext\1_GenerateApplicationContext - Copy.cs" />
     <Compile Include="Workflows\ApplicationContext\2_ApplyGestprojectGlobalStyle.cs" />
+    <Compile Include="Workflows\ApplicationContext\SetInitialWindowsFormSettings.cs" />
     <Compile Include="Workflows\Clients\2_UpdateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_CreateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_WasGestprojectClientSynchronized.cs" />
@@ -451,7 +453,7 @@
     <Compile Include="Workflows\InitialWindow\2_GenerateMainWindowUI.cs" />
     <Compile Include="Workflows\Sage50Connection\2_StatefulCenterRowCenterPanelControls.cs" />
     <Compile Include="Workflows\Sage50Connection\9_CompanyGroupModel.cs" />
-    <Compile Include="Workflows\Sage50Connection\2_CenterRowUI.cs" />
+    <Compile Include="Workflows\Sage50Connection\2_GenerateCenterRowUI.cs" />
     <Compile Include="Workflows\InitialWindow\1_GenerateMainWindow.cs" />
     <Compile Include="Workflows\Sage50Connection\3_Sage50ConnectionActions.cs" />
     <Compile Include="Workflows\Sage50Connection\1_GenerateSage50ConnectionTabUI.cs" />
@@ -459,7 +461,6 @@
     <Compile Include="Workflows\Sage50Connection\9_ISage50ConnectionUIComponent.cs" />
     <Compile Include="Workflows\Sage50Connection\9_StateManager.cs" />
     <Compile Include="Workflows\Sage50Connection\ShowConnectionStatePanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\ValidateCompanyGroupPanel.cs" />
     <Compile Include="Workflows\Sage50Connection\RememberAllDataPanel.cs" />
     <Compile Include="Workflows\Sage50Connection\ConnectPanel.cs" />
     <Compile Include="Workflows\Sage50Connection\ValidateTerminalUserDataPanel.cs" />

@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GestprojectDataManager
-{
-    public class SynchronizerUserRememberableDataModel
-    {
-        public string Sage50LocalTerminalPath { get; set; } = "";
-        public string Sage50Username { get; set; } = "";
-        public string Sage50Password { get; set; } = "";
-        public string Sage50CompanyGroupName { get; set; } = "";
-        public List<string> Sage50AvailableCompanyGroupsNameList { get; set; } = new List<string>();
-        public List<string> Sage50AvailableCompanyGroupsMainCodeList { get; set; } = new List<string>();
-        public List<string> Sage50AvailableCompanyGroupsCodeList { get; set; } = new List<string>();
-        public List<string> Sage50AvailableCompanyGroupsGuidIdList { get; set; } = new List<string>();
-        public byte Remember { get; set; } = 0;
-    }
+﻿
+namespace GestprojectDataManager {
+   public class SynchronizerUserRememberableDataModel {
+      public int? GP_CNX_ID { get; set; } = null;
+      public string GP_CNX_CODIGO { get; set; } = "";
+      public string GP_CNX_USUARIO { get; set; } = "";
+      public string GP_CNX_PERFIL { get; set; } = "";
+      public string GP_CNX_EQUIPO { get; set; } = "";
+      public int? GP_USU_ID { get; set; } = null;
+      public string SAGE_50_LOCAL_TERMINAL_PATH { get; set; } = "";
+      public string SAGE_50_USER_NAME { get; set; } = "";
+      public string SAGE_50_PASSWORD { get; set; } = "";
+      public string SAGE_50_COMPANY_GROUP_NAME { get; set; } = "";
+      public string SAGE_50_COMPANY_GROUP_MAIN_CODE { get; set; } = "";
+      public string SAGE_50_COMPANY_GROUP_CODE { get; set; } = "";
+      public string SAGE_50_COMPANY_GROUP_GUID_ID { get; set; } = "";
+      public byte REMEMBER { get; set; } = 0;
+   }
 }

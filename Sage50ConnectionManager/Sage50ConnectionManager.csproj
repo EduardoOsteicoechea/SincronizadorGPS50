@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompanyGroupModel.cs" />
+    <Compile Include="CompanyGroup.cs" />
     <Compile Include="ConnectionActions.cs" />
     <Compile Include="GetLatestLibrariesFolder.cs" />
     <Compile Include="LinkSage50.cs" />
