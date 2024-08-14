@@ -4,11 +4,12 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-    internal class GenerateSage50ConnectionTabPageUI
-    {
-        internal bool IsSuccessful { get; set; } = false;
-        internal GenerateSage50ConnectionTabPageUI()
-        {
+   internal class GenerateSage50ConnectionTabPageUI
+   {
+      internal GenerateSage50ConnectionTabPageUI()
+      {
+         try
+         {
             MainWindowUIHolder.MainTabControlMainPanel = new UltraPanel();
             MainWindowUIHolder.MainTabControlMainPanel.Dock = DockStyle.Fill;
 
@@ -69,8 +70,11 @@ namespace SincronizadorGPS50
             Sage50ConnectionUIHolder.Sage50ConnectionBottomRow.Appearance.BackColor = StyleHolder.c_transparent;
 
             MainWindowUIHolder.MainWindowTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.Sage50ConnectionBottomRow, 0, 2);
-
-            IsSuccessful = true;
-        }
-    }
+         }
+         catch(System.Exception exception)
+         {
+            throw exception;
+         }
+      }
+   }
 }

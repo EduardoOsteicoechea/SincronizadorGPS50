@@ -5,11 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SincronizadorGPS50 {
-   internal class GenerateMainWindow {
+namespace SincronizadorGPS50
+{
+   internal class GenerateMainWindow
+   {
       internal bool IsSuccessful { get; set; } = false;
-      internal GenerateMainWindow() {
-         try {
+      internal GenerateMainWindow()
+      {
+         try
+         {
             MainWindowUIHolder.MainWindow = new System.Windows.Forms.Form();
             MainWindowUIHolder.MainWindow.Text = "SincronizadorGPS50";
             MainWindowUIHolder.MainWindow.WindowState = FormWindowState.Maximized;
@@ -19,24 +23,29 @@ namespace SincronizadorGPS50 {
 
             IsSuccessful = true;
          }
-         catch(System.Exception e) {
-            MessageBox.Show($"Error: \n\n{e.ToString()}. \n\nProcederemos a detener la aplicación. Contacte a nuestro servicio de atención al cliente para reportar el error y recibir servicio técnico al respecto.");
+         catch(System.Exception exception)
+         {
+            throw exception;
          };
       }
 
-      private void MainWindow_FormClosing(object sender, FormClosingEventArgs e) {
-         if(e.CloseReason == CloseReason.UserClosing) {
+      private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+      {
+         if(e.CloseReason == CloseReason.UserClosing)
+         {
 
             DialogResult result = MessageBox.Show(
-               "¿Desea terminar la aplicación?", "Confirmación", 
-               MessageBoxButtons.YesNo, 
+               "¿Desea terminar la aplicación?", "Confirmación",
+               MessageBoxButtons.YesNo,
                MessageBoxIcon.Question
             );
 
-            if(result == DialogResult.No) {
+            if(result == DialogResult.No)
+            {
                e.Cancel = true;
             }
-            else {
+            else
+            {
                Environment.Exit(0);
             }
          }

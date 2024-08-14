@@ -8,11 +8,9 @@ namespace SincronizadorGPS50
         [STAThread]
         internal static void Main(string[] args)
         {
-            new GenerateApplicationContext();
-
             new ConnectToGestprojectDatabase();
 
-            System.Windows.Forms.Application.Run(ApplicationManager.ApplicationGlobalContext);
+            System.Windows.Forms.Application.Run(new GenerateApplicationContext());
         }
     }
 }

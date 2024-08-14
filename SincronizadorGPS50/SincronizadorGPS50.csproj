@@ -381,8 +381,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Workflows\ApplicationContext\1_GenerateApplicationContext - Copy.cs" />
-    <Compile Include="Workflows\ApplicationContext\2_ApplyGestprojectGlobalStyle.cs" />
-    <Compile Include="Workflows\ApplicationContext\SetInitialWindowsFormSettings.cs" />
+    <Compile Include="Workflows\ApplicationContext\ClientSynchronizationManager.cs" />
+    <Compile Include="Workflows\ApplicationContext\ManageApplicationGlobalStyles.cs" />
+    <Compile Include="Workflows\ApplicationContext\WindowsFormsApplicationSettings.cs" />
     <Compile Include="Workflows\Clients\2_UpdateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_CreateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_WasGestprojectClientSynchronized.cs" />

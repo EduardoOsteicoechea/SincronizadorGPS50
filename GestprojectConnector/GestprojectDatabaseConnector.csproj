@@ -43,12 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestprojectLocalDeviceUserData.cs" />
+    <Compile Include="GestprojectSessionSettings - Copy.cs" />
+    <Compile Include="LatestVersionFolderNameManager.cs" />
     <Compile Include="MySerializationBinder.cs" />
     <Compile Include="GestGestprojectStyleFilePath.cs" />
     <Compile Include="GestprojectConnectionString.cs" />
     <Compile Include="GestprojectSessionSettings.cs" />
     <Compile Include="Serializer.cs" />
     <Compile Include="UserAppSettings.cs" />
+    <Compile Include="LocalDeviceUserData.cs" />
     <Compile Include="UserSessionData.cs" />
     <Compile Include="UserSessionDataManager.cs" />
     <Compile Include="ValidateDatabaseConnectionString.cs" />

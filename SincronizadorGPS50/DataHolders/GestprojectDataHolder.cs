@@ -15,5 +15,7 @@ namespace SincronizadorGPS50
         internal static List<GestprojectDataManager.GestprojectProviderModel> GestprojectProviderList { get; set; } = null; 
         internal static UserSessionData LocalDeviceUserSessionData { get; set; } = null;
 
+        internal static LocalDeviceUserData GestprojectLocalDeviceUserData { get; set; } = null;
+
    }
 }

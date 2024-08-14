@@ -1,16 +1,13 @@
 ﻿using Infragistics.Win.UltraWinTabControl;
-using Sage.ES.S50.Modelos.Interficies;
-using System.Drawing;
-using System.IO;
-using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-    internal class GenerateMainWindowUI
-    {
-        internal bool IsSuccessful { get; set; } = false;
-        internal GenerateMainWindowUI() 
-        {
+   internal class GenerateMainWindowUI
+   {
+      internal GenerateMainWindowUI()
+      {
+         try
+         {
             // MainUltraTabControl
             // MainUltraTabControl
             // MainUltraTabControl
@@ -43,14 +40,17 @@ namespace SincronizadorGPS50
 
             foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs)
             {
-                tab.Enabled = false;
+               tab.Enabled = false;
             };
 
             MainWindowUIHolder.MainTabControl.SelectedTab.Enabled = true;
 
             MainWindowUIHolder.MainWindow.Controls.Add(MainWindowUIHolder.MainTabControl);
-
-            IsSuccessful = true;
-        }
-    }
+         }
+         catch (System.Exception exception)
+         {
+            throw exception;
+         };
+      }
+   }
 }

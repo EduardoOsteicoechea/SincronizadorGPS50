@@ -7,7 +7,6 @@ namespace GestprojectStyleManager
 {
     public class GestGestprojectStyleFilePath
     {
-        internal bool IsSuccessfull { get; set; } = false;
         private static string BaseLocalApplicationGestprojectDataFolder { get; set; } = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Micad\Gestproject");
         public string GestprojectDATUserSettingsFilePath { get; set; } = System.IO.Path.Combine(
             GetLatestVersionFolderName(
@@ -94,7 +93,7 @@ namespace GestprojectStyleManager
             {
                 MessageBox.Show($"Error: \n\n{e.ToString()}. \n\nProcederemos a asignar los estilos predeterminados.");
 
-                IsSuccessfull = true;
+                //IsSuccessfull = true;
 
                 string gestprojectStylesFolderPath = GestprojectStylesFolderPath;
                 

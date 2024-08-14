@@ -7,7 +7,6 @@ namespace GestprojectDatabaseConnector
 {
     internal class GetLocalDeviceData
     {
-        internal bool IsSuccessfull { get; set; } = false; 
         public static string WindowsIdentityDomainName { get; set; } = null;
         public static string WindowsIdentityUserName { get; set; } = null;
         public static string MicrosoftSQLServerfolderPath { get; set; } = null;
@@ -47,12 +46,10 @@ namespace GestprojectDatabaseConnector
                 {
                     MessageBox.Show("No logramos encontrar el nombre de usuario.\n\nContacte al proveedor para más información.");
                 };
-
-                IsSuccessfull = true;
             }
-            catch(System.Exception e)
+            catch(System.Exception exception)
             {
-                MessageBox.Show($"Error: \n\n{e.ToString()}. \n\nProcederemos a detener la aplicación. Contacte a nuestro servicio de atención al cliente para reportar el error y recibir servicio técnico al respecto.");
+                throw new System.Exception($"Error: \n\n{exception.ToString()}. \n\nProcederemos a detener la aplicación. Contacte a nuestro servicio de atención al cliente para reportar el error y recibir servicio técnico al respecto.");
             };
         }
     }

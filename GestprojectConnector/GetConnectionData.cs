@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms;
-using System.Xml;
+﻿using System.Xml;
 
 namespace GestprojectDatabaseConnector
 {
@@ -24,21 +23,11 @@ namespace GestprojectDatabaseConnector
                 ConnectionDataHolder.AskForServer = xmlDocument.SelectSingleNode("/configuration/conexion/AskServerAtStartup").InnerText;
                 ConnectionDataHolder.LastServer = xmlDocument.SelectSingleNode("/configuration/conexion/LastServer").InnerText;
 
-                //MessageBox.Show(
-                //    ConnectionDataHolder.Server + "\n" +
-                //    ConnectionDataHolder.DatabaseInstance + "\n" +
-                //    ConnectionDataHolder.DatabaseName + "\n" +
-                //    ConnectionDataHolder.DatabaseUser + "\n" +
-                //    ConnectionDataHolder.DatabasePassword + "\n" +
-                //    ConnectionDataHolder.AskForServer + "\n" +
-                //    ConnectionDataHolder.LastServer
-                //);
-
                 IsSuccessfull = true;
             }
-            catch(System.Exception e)
+            catch(System.Exception exception)
             {
-                MessageBox.Show($"Error: \n\n{e.ToString()}. \n\nProcederemos a detener la aplicación. Contacte a nuestro servicio de atención al cliente para reportar el error y recibir servicio técnico al respecto.");
+                throw new System.Exception($"Error: \n\n{exception.ToString()}. \n\nProcederemos a detener la aplicación. Contacte a nuestro servicio de atención al cliente para reportar el error y recibir servicio técnico al respecto.");
             };
         }
     }

@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
 using System.Windows.Forms;
 
-namespace GestprojectDataManager {
-   public static class ManageRememberableUserData {
+namespace GestprojectDataManager
+{
+   public static class ManageRememberableUserData
+   {
       public static string GestprojectSynchronizatorUserDataTableName { get; set; } = "INT_SAGE_USERDATA";
 
       public static string ID { get; set; } = "ID";
       public static string GP_CNX_ID { get; set; } = "GP_CNX_ID";
       public static string GP_CNX_PERSONAL { get; set; } = "GP_CNX_PERSONAL";
-      //public static string GP_CNX_CODIGO { get; set; } = "GP_CNX_CODIGO";
       public static string GP_CNX_USUARIO { get; set; } = "GP_CNX_USUARIO";
       public static string GP_CNX_PERFIL { get; set; } = "GP_CNX_PERFIL";
       public static string GP_CNX_EQUIPO { get; set; } = "GP_CNX_EQUIPO";
@@ -31,7 +30,6 @@ namespace GestprojectDataManager {
           System.Data.SqlClient.SqlConnection connection,
           int? gestprojectConnectionId,
           string gestprojectConnectionPersonalName,
-          //string gestprojectConnectionCode,
           string gestprojectConnectionUser,
           string gestprojectConnectionProfile,
           string gestprojectConnectionDevice,
@@ -43,14 +41,14 @@ namespace GestprojectDataManager {
           string selectedCompanyGroupMainCode,
           string selectedCompanyGroupCode,
           string selectedCompanyGroupGuidId
-      ) {
-         try {
-            //if(CheckIfGestprojectUserDataTableExists(connection)) {
+      )
+      {
+         try
+         {
             PopulateGestprojectUserDataTable(
                connection,
                gestprojectConnectionId,
                gestprojectConnectionPersonalName,
-               //gestprojectConnectionCode,
                gestprojectConnectionUser,
                gestprojectConnectionProfile,
                gestprojectConnectionDevice,
@@ -64,62 +62,49 @@ namespace GestprojectDataManager {
                selectedCompanyGroupGuidId
             );
             return true;
-            //}
-            //else {
-            //   CreateGestprojectUserDataTable(connection);
-            //   PopulateGestprojectUserDataTable(
-            //      connection,
-            //      gestprojectConnectionId,
-            //      gestprojectConnectionPersonalName,
-            //      //gestprojectConnectionCode,
-            //      gestprojectConnectionUser,
-            //      gestprojectConnectionProfile,
-            //      gestprojectConnectionDevice,
-            //      gestprojectRecordedUserId,
-            //      sage50LocalTerminalPath,
-            //      sage50Username,
-            //      sage50Password,
-            //      selectedCompanyGroupName,
-            //      selectedCompanyGroupMainCode,
-            //      selectedCompanyGroupCode,
-            //      selectedCompanyGroupGuidId
-            //   );
-            //   return true;
-            //};
          }
-         catch(SqlException ex) {
+         catch(SqlException ex)
+         {
             MessageBox.Show($"Error: \n\n{ex.Message}");
             return false;
          };
       }
 
-      public static bool CheckIfGestprojectUserDataTableExists(System.Data.SqlClient.SqlConnection connection) {
-         try {
+      public static bool CheckIfGestprojectUserDataTableExists(System.Data.SqlClient.SqlConnection connection)
+      {
+         try
+         {
             connection.Open();
 
             string sqlString = $"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE \"TABLE_NAME\" = '{GestprojectSynchronizatorUserDataTableName}'";
 
-            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection)) {
+            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
+            {
                int? Sage50SincronizationTableCount = (int)sqlCommand.ExecuteScalar();
-               if(Sage50SincronizationTableCount != null) {
+               if(Sage50SincronizationTableCount != null)
+               {
                   return Sage50SincronizationTableCount > 0;
                }
-               else {
+               else
+               {
                   return false;
                };
             };
          }
-         catch(SqlException ex) {
-            MessageBox.Show($"Error: \n\n{ex.Message}");
-            return false;
+         catch(SqlException exception)
+         {
+            throw exception;
          }
-         finally {
+         finally
+         {
             connection.Close();
          };
       }
 
-      public static bool CreateGestprojectUserDataTable(System.Data.SqlClient.SqlConnection connection) {
-         try {
+      public static bool CreateGestprojectUserDataTable(System.Data.SqlClient.SqlConnection connection)
+      {
+         try
+         {
             connection.Open();
 
             string sqlString = $@"
@@ -145,17 +130,19 @@ namespace GestprojectDataManager {
                )
             ;";
 
-            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection)) {
+            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
+            {
                sqlCommand.ExecuteNonQuery();
             };
 
             return true;
          }
-         catch(SqlException ex) {
-            MessageBox.Show($"Error: \n\n{ex.Message}");
-            return false;
+         catch(SqlException exception)
+         {
+            throw exception;
          }
-         finally {
+         finally
+         {
             connection.Close();
          };
       }
@@ -176,12 +163,15 @@ namespace GestprojectDataManager {
           string selectedCompanyGroupMainCode,
           string selectedCompanyGroupCode,
           string selectedCompanyGroupGuidId
-      ) {
-         try {
+      )
+      {
+         try
+         {
             connection.Open();
 
             string sqlString1 = $@"DELETE FROM {GestprojectSynchronizatorUserDataTableName} WHERE {GP_CNX_USUARIO}='{GestprojectConnectionUser}' AND {GP_CNX_EQUIPO}='{GestprojectConnectionDevice}' AND {GP_USU_ID}={GestprojectRecordedUserId};";
-            using(SqlCommand sqlCommand = new SqlCommand(sqlString1, connection)) {
+            using(SqlCommand sqlCommand = new SqlCommand(sqlString1, connection))
+            {
                sqlCommand.ExecuteNonQuery();
             };
 
@@ -222,17 +212,20 @@ namespace GestprojectDataManager {
                )
             ;";
 
-            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection)) {
+            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
+            {
                sqlCommand.ExecuteNonQuery();
             };
 
             return true;
          }
-         catch(SqlException ex) {
+         catch(SqlException ex)
+         {
             MessageBox.Show($"Error: \n\n{ex.Message}");
             return false;
          }
-         finally {
+         finally
+         {
             connection.Close();
          };
       }
@@ -242,25 +235,30 @@ namespace GestprojectDataManager {
          string gestprojectConnectionUser,
          string gestprojectConnectionDevice,
          int? gestprojectRecordedUserId
-      ) {
-         try {
+      )
+      {
+         try
+         {
             connection.Open();
 
             string sqlString1 = $@"DELETE FROM {GestprojectSynchronizatorUserDataTableName}
                 WHERE {GP_CNX_USUARIO}='{gestprojectConnectionUser}' 
                 AND {GP_CNX_EQUIPO}='{gestprojectConnectionDevice}' 
                 AND {GP_USU_ID}={gestprojectRecordedUserId};";
-            using(SqlCommand sqlCommand = new SqlCommand(sqlString1, connection)) {
+            using(SqlCommand sqlCommand = new SqlCommand(sqlString1, connection))
+            {
                sqlCommand.ExecuteNonQuery();
             };
 
             return true;
          }
-         catch(SqlException ex) {
+         catch(SqlException ex)
+         {
             MessageBox.Show($"Error: \n\n{ex.Message}");
             return false;
          }
-         finally {
+         finally
+         {
             connection.Close();
          };
       }
@@ -272,8 +270,10 @@ namespace GestprojectDataManager {
          string gestprojectConnectionDevice,
          int? gestprojectRecordedUserId,
          int rememberDataFeatureValue
-      ) {
-         try {
+      )
+      {
+         try
+         {
             connection.Open();
 
             string sqlString = $@"
@@ -288,17 +288,20 @@ namespace GestprojectDataManager {
                   {GP_USU_ID}={gestprojectRecordedUserId}
                 ;";
 
-            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection)) {
+            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
+            {
                sqlCommand.ExecuteNonQuery();
             };
 
             return true;
          }
-         catch(SqlException ex) {
+         catch(SqlException ex)
+         {
             MessageBox.Show($"Error: \n\n{ex.Message}");
             return false;
          }
-         finally {
+         finally
+         {
             connection.Close();
          };
       }
@@ -308,8 +311,10 @@ namespace GestprojectDataManager {
          string gestprojectConnectionUser,
          string gestprojectConnectionDevice,
          int? gestprojectRecordedUserId
-      ){
-         try {
+      )
+      {
+         try
+         {
             connection.Open();
 
             string sqlString = $@"
@@ -320,28 +325,34 @@ namespace GestprojectDataManager {
                 WHERE {GP_CNX_USUARIO}='{gestprojectConnectionUser}' 
                 AND {GP_CNX_EQUIPO}='{gestprojectConnectionDevice}' 
                 AND {GP_USU_ID}={gestprojectRecordedUserId}
-                ;";
+            ;";
 
-            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection)) {
-               using(SqlDataReader reader = sqlCommand.ExecuteReader()) {
-                  while(reader.Read()) {
+            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
+            {
+               using(SqlDataReader reader = sqlCommand.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
                      return Convert.ToInt32(reader.GetValue(0)) == 1;
                   };
                };
             };
             return false;
          }
-         catch(SqlException ex) {
-            MessageBox.Show($"Error: \n\n{ex.Message}");
-            return false;
+         catch(SqlException exception)
+         {
+            throw exception;
          }
-         finally {
+         finally
+         {
             connection.Close();
          };
       }
 
-      public static SynchronizerUserRememberableDataModel GetSynchronizerUserRememberableDataForConnection(System.Data.SqlClient.SqlConnection connection) {
-         try {
+      public static SynchronizerUserRememberableDataModel GetSynchronizerUserRememberableDataForConnection(System.Data.SqlClient.SqlConnection connection)
+      {
+         try
+         {
             connection.Open();
 
             SynchronizerUserRememberableDataModel userRememberableDataModel = new SynchronizerUserRememberableDataModel();
@@ -365,9 +376,12 @@ namespace GestprojectDataManager {
                 FROM 
                     {GestprojectSynchronizatorUserDataTableName};";
 
-            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection)) {
-               using(SqlDataReader reader = sqlCommand.ExecuteReader()) {
-                  while(reader.Read()) {
+            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
+            {
+               using(SqlDataReader reader = sqlCommand.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
                      userRememberableDataModel.GP_CNX_ID = Convert.ToInt32(reader.GetValue(0));
                      userRememberableDataModel.GP_CNX_PERSONAL = Convert.ToString(reader.GetValue(1));
                      userRememberableDataModel.GP_CNX_USUARIO = Convert.ToString(reader.GetValue(2));
@@ -388,12 +402,14 @@ namespace GestprojectDataManager {
 
             return userRememberableDataModel;
          }
-         catch(SqlException ex) {
+         catch(SqlException ex)
+         {
             MessageBox.Show($"Error: GetSynchronizerUserRememberableDataForConnection");
             MessageBox.Show($"Error: \n\n{ex.Message}");
             return null;
          }
-         finally {
+         finally
+         {
             connection.Close();
          };
       }

@@ -3,10 +3,12 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-    internal class GenerateCenterRowUI {
-        internal bool IsSuccessful { get; set; } = false;
-        internal GenerateCenterRowUI() 
-        {
+   internal class GenerateCenterRowUI
+   {
+      internal GenerateCenterRowUI()
+      {
+         try
+         {
             //LeftPanel
             //LeftPanel
             //LeftPanel
@@ -73,10 +75,8 @@ namespace SincronizadorGPS50
 
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanel.ClientArea.Controls.Add(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel);
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanel, 1, 0);
-
-            
-
-            IsSuccessful = true;
-        }
-    }
+         }
+         catch(System.Exception exception) { throw exception; };
+      }
+   }
 }

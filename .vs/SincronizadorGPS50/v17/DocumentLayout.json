@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1D68ABE-CE53-4D58-8D9E-FE116ECDE711}|GestprojectConnector\\GestprojectDatabaseConnector.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\gestprojectconnector\\gestgestprojectstylefilepath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D68ABE-CE53-4D58-8D9E-FE116ECDE711}|GestprojectConnector\\GestprojectDatabaseConnector.csproj|solutionrelative:gestprojectconnector\\gestgestprojectstylefilepath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D68ABE-CE53-4D58-8D9E-FE116ECDE711}|GestprojectConnector\\GestprojectDatabaseConnector.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\gestprojectconnector\\serializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D68ABE-CE53-4D58-8D9E-FE116ECDE711}|GestprojectConnector\\GestprojectDatabaseConnector.csproj|solutionrelative:gestprojectconnector\\serializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1D68ABE-CE53-4D58-8D9E-FE116ECDE711}|GestprojectConnector\\GestprojectDatabaseConnector.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\gestprojectconnector\\userappsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1D68ABE-CE53-4D58-8D9E-FE116ECDE711}|GestprojectConnector\\GestprojectDatabaseConnector.csproj|solutionrelative:gestprojectconnector\\userappsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\workflows\\applicationcontext\\1_generateapplicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\workflows\\applicationcontext\\1_generateapplicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,42 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GestGestprojectStyleFilePath.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectConnector\\GestGestprojectStyleFilePath.cs",
-              "RelativeDocumentMoniker": "GestprojectConnector\\GestGestprojectStyleFilePath.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectConnector\\GestGestprojectStyleFilePath.cs",
-              "RelativeToolTip": "GestprojectConnector\\GestGestprojectStyleFilePath.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAIwDYAAAAfAAAA",
+              "Title": "1_GenerateApplicationContext.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\ApplicationContext\\1_GenerateApplicationContext.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\Workflows\\ApplicationContext\\1_GenerateApplicationContext.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\Workflows\\ApplicationContext\\1_GenerateApplicationContext.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\Workflows\\ApplicationContext\\1_GenerateApplicationContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T16:30:37.302Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Serializer.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectConnector\\Serializer.cs",
-              "RelativeDocumentMoniker": "GestprojectConnector\\Serializer.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectConnector\\Serializer.cs",
-              "RelativeToolTip": "GestprojectConnector\\Serializer.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAgwDQAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T16:35:37.274Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserAppSettings.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectConnector\\UserAppSettings.cs",
-              "RelativeDocumentMoniker": "GestprojectConnector\\UserAppSettings.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectConnector\\UserAppSettings.cs",
-              "RelativeToolTip": "GestprojectConnector\\UserAppSettings.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAkwHIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-14T16:45:16.699Z",
+              "WhenOpened": "2024-08-14T20:14:02.8Z",
               "IsPinned": true,
               "EditorCaption": ""
             }
