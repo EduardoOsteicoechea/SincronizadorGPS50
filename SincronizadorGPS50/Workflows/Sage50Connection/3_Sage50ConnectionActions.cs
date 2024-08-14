@@ -228,7 +228,13 @@ namespace SincronizadorGPS50
             }
             else
             {
-                GestprojectDataManager.ManageRememberableUserData.ChangeRememberUserDataFeature(GestprojectDataHolder.GestprojectDatabaseConnection,0);
+                GestprojectDataManager.ManageRememberableUserData.ChangeRememberUserDataFeature(
+                  GestprojectDataHolder.GestprojectDatabaseConnection,
+                  GestprojectDataHolder.LocalDeviceUserSessionData.CNX_USUARIO,
+                  GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO,
+                  GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID,
+                  0
+                );
 
                 Sage50ConnectionUIHolder.CenterRowCenterPanelStateIcon1.Image = Resources.Semaforo_verde;
 

@@ -45,47 +45,47 @@ namespace GestprojectDataManager {
           string selectedCompanyGroupGuidId
       ) {
          try {
-            if(CheckIfGestprojectUserDataTableExists(connection)) {
-               PopulateGestprojectUserDataTable(
-                  connection,
-                  gestprojectConnectionId,
-                  gestprojectConnectionPersonalName,
-                  //gestprojectConnectionCode,
-                  gestprojectConnectionUser,
-                  gestprojectConnectionProfile,
-                  gestprojectConnectionDevice,
-                  gestprojectRecordedUserId,
-                  sage50LocalTerminalPath,
-                  sage50Username,
-                  sage50Password,
-                  selectedCompanyGroupName,
-                  selectedCompanyGroupMainCode,
-                  selectedCompanyGroupCode,
-                  selectedCompanyGroupGuidId
-               );
-               return true;
-            }
-            else {
-               CreateGestprojectUserDataTable(connection);
-               PopulateGestprojectUserDataTable(
-                  connection,
-                  gestprojectConnectionId,
-                  gestprojectConnectionPersonalName,
-                  //gestprojectConnectionCode,
-                  gestprojectConnectionUser,
-                  gestprojectConnectionProfile,
-                  gestprojectConnectionDevice,
-                  gestprojectRecordedUserId,
-                  sage50LocalTerminalPath,
-                  sage50Username,
-                  sage50Password,
-                  selectedCompanyGroupName,
-                  selectedCompanyGroupMainCode,
-                  selectedCompanyGroupCode,
-                  selectedCompanyGroupGuidId
-               );
-               return true;
-            };
+            //if(CheckIfGestprojectUserDataTableExists(connection)) {
+            PopulateGestprojectUserDataTable(
+               connection,
+               gestprojectConnectionId,
+               gestprojectConnectionPersonalName,
+               //gestprojectConnectionCode,
+               gestprojectConnectionUser,
+               gestprojectConnectionProfile,
+               gestprojectConnectionDevice,
+               gestprojectRecordedUserId,
+               sage50LocalTerminalPath,
+               sage50Username,
+               sage50Password,
+               selectedCompanyGroupName,
+               selectedCompanyGroupMainCode,
+               selectedCompanyGroupCode,
+               selectedCompanyGroupGuidId
+            );
+            return true;
+            //}
+            //else {
+            //   CreateGestprojectUserDataTable(connection);
+            //   PopulateGestprojectUserDataTable(
+            //      connection,
+            //      gestprojectConnectionId,
+            //      gestprojectConnectionPersonalName,
+            //      //gestprojectConnectionCode,
+            //      gestprojectConnectionUser,
+            //      gestprojectConnectionProfile,
+            //      gestprojectConnectionDevice,
+            //      gestprojectRecordedUserId,
+            //      sage50LocalTerminalPath,
+            //      sage50Username,
+            //      sage50Password,
+            //      selectedCompanyGroupName,
+            //      selectedCompanyGroupMainCode,
+            //      selectedCompanyGroupCode,
+            //      selectedCompanyGroupGuidId
+            //   );
+            //   return true;
+            //};
          }
          catch(SqlException ex) {
             MessageBox.Show($"Error: \n\n{ex.Message}");
@@ -165,7 +165,6 @@ namespace GestprojectDataManager {
           System.Data.SqlClient.SqlConnection connection,
           int? GestprojectConnectionId,
           string gestprojectConnectionPersonalName,
-          //string GestprojectConnectionCode,
           string GestprojectConnectionUser,
           string GestprojectConnectionProfile,
           string GestprojectConnectionDevice,
@@ -181,7 +180,7 @@ namespace GestprojectDataManager {
          try {
             connection.Open();
 
-            string sqlString1 = $@"DELETE FROM {GestprojectSynchronizatorUserDataTableName};";
+            string sqlString1 = $@"DELETE FROM {GestprojectSynchronizatorUserDataTableName} WHERE {GP_CNX_USUARIO}='{GestprojectConnectionUser}' AND {GP_CNX_EQUIPO}='{GestprojectConnectionDevice}' AND {GP_USU_ID}={GestprojectRecordedUserId};";
             using(SqlCommand sqlCommand = new SqlCommand(sqlString1, connection)) {
                sqlCommand.ExecuteNonQuery();
             };
@@ -239,12 +238,18 @@ namespace GestprojectDataManager {
       }
       public static bool ForgetUserRememberableData
       (
-          System.Data.SqlClient.SqlConnection connection
+         System.Data.SqlClient.SqlConnection connection,
+         string gestprojectConnectionUser,
+         string gestprojectConnectionDevice,
+         int? gestprojectRecordedUserId
       ) {
          try {
             connection.Open();
 
-            string sqlString1 = $@"DELETE FROM {GestprojectSynchronizatorUserDataTableName};";
+            string sqlString1 = $@"DELETE FROM {GestprojectSynchronizatorUserDataTableName}
+                WHERE {GP_CNX_USUARIO}='{gestprojectConnectionUser}' 
+                AND {GP_CNX_EQUIPO}='{gestprojectConnectionDevice}' 
+                AND {GP_USU_ID}={gestprojectRecordedUserId};";
             using(SqlCommand sqlCommand = new SqlCommand(sqlString1, connection)) {
                sqlCommand.ExecuteNonQuery();
             };
@@ -262,8 +267,11 @@ namespace GestprojectDataManager {
 
       public static bool ChangeRememberUserDataFeature
       (
-          System.Data.SqlClient.SqlConnection connection,
-          int rememberDataFeatureValue
+         System.Data.SqlClient.SqlConnection connection,
+         string gestprojectConnectionUser,
+         string gestprojectConnectionDevice,
+         int? gestprojectRecordedUserId,
+         int rememberDataFeatureValue
       ) {
          try {
             connection.Open();
@@ -271,7 +279,13 @@ namespace GestprojectDataManager {
             string sqlString = $@"
                 UPDATE {GestprojectSynchronizatorUserDataTableName}
                 SET
-                    {REMEMBER}={rememberDataFeatureValue}
+                  {REMEMBER}={rememberDataFeatureValue}
+                WHERE 
+                  {GP_CNX_USUARIO}='{gestprojectConnectionUser}' 
+                AND 
+                  {GP_CNX_EQUIPO}='{gestprojectConnectionDevice}' 
+                AND 
+                  {GP_USU_ID}={gestprojectRecordedUserId}
                 ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection)) {
@@ -289,7 +303,12 @@ namespace GestprojectDataManager {
          };
       }
 
-      public static bool CheckIfRememberUserDataOptionWasActivated(System.Data.SqlClient.SqlConnection connection) {
+      public static bool CheckIfRememberUserDataOptionWasActivated(
+         System.Data.SqlClient.SqlConnection connection,
+         string gestprojectConnectionUser,
+         string gestprojectConnectionDevice,
+         int? gestprojectRecordedUserId
+      ){
          try {
             connection.Open();
 
@@ -298,6 +317,9 @@ namespace GestprojectDataManager {
                     {REMEMBER}
                 FROM 
                     {GestprojectSynchronizatorUserDataTableName}
+                WHERE {GP_CNX_USUARIO}='{gestprojectConnectionUser}' 
+                AND {GP_CNX_EQUIPO}='{gestprojectConnectionDevice}' 
+                AND {GP_USU_ID}={gestprojectRecordedUserId}
                 ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection)) {
@@ -348,7 +370,6 @@ namespace GestprojectDataManager {
                   while(reader.Read()) {
                      userRememberableDataModel.GP_CNX_ID = Convert.ToInt32(reader.GetValue(0));
                      userRememberableDataModel.GP_CNX_PERSONAL = Convert.ToString(reader.GetValue(1));
-                     //userRememberableDataModel.GP_CNX_CODIGO = Convert.ToString(reader.GetValue(1));
                      userRememberableDataModel.GP_CNX_USUARIO = Convert.ToString(reader.GetValue(2));
                      userRememberableDataModel.GP_CNX_PERFIL = Convert.ToString(reader.GetValue(3));
                      userRememberableDataModel.GP_CNX_EQUIPO = Convert.ToString(reader.GetValue(4));

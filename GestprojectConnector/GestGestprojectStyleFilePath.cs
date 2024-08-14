@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dinq.Gestproject;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -50,38 +51,40 @@ namespace GestprojectStyleManager
 
                 if(System.IO.File.Exists(GestprojectDATUserSettingsFilePath))
                 {
-                    using(StreamReader reader = File.OpenText(GestprojectDATUserSettingsFilePath))
-                    {
-                        string fileContent = reader.ReadToEnd();
-                        int indexOfStyleFileExtension = fileContent.IndexOf(".isl");
-                        string fileSubstringToBeAnalized = fileContent.Substring(indexOfStyleFileExtension - 40, 45);
+                     var userSettings = Serializer.DeserializeObject(GestprojectDATUserSettingsFilePath);
+                     return "";
+               //using(StreamReader reader = File.OpenText(GestprojectDATUserSettingsFilePath))
+               //{
+               //    string fileContent = reader.ReadToEnd();
+               //    int indexOfStyleFileExtension = fileContent.IndexOf(".isl");
+               //    string fileSubstringToBeAnalized = fileContent.Substring(indexOfStyleFileExtension - 40, 45);
 
-                        System.Text.RegularExpressions.Match match = System.Text.RegularExpressions.Regex.Match(
-                            fileContent,
-                            @"(\w+\s*\-*\s*\w*\s*\-*\s*\w*\s*\-*\s*\w*\s*\-*\s*\w*)\.isl"
-                        );
+               //    System.Text.RegularExpressions.Match match = System.Text.RegularExpressions.Regex.Match(
+               //        fileContent,
+               //        @"(\w+\s*\-*\s*\w*\s*\-*\s*\w*\s*\-*\s*\w*\s*\-*\s*\w*)\.isl"
+               //    );
 
-                        if(match.Success)
-                        {
-                            styleFileName = match.Groups[1].Value + ".isl";
+               //    if(match.Success)
+               //    {
+               //        styleFileName = match.Groups[1].Value + ".isl";
 
-                            IsSuccessfull = true;
+               //        IsSuccessfull = true;
 
-                            string gestprojectStylesFolderPath = GestprojectStylesFolderPath;
+               //        string gestprojectStylesFolderPath = GestprojectStylesFolderPath;
 
-                            DisposeSensitiveData();
+               //        DisposeSensitiveData();
 
-                            return System.IO.Path.Combine(
-                                gestprojectStylesFolderPath,
-                                styleFileName
-                            );
-                        }
-                        else
-                        {
-                            throw new Exception("Error en la lectura del estilo actual de Gestproject");
-                        };
-                    };
-                }
+               //        return System.IO.Path.Combine(
+               //            gestprojectStylesFolderPath,
+               //            styleFileName
+               //        );
+               //    }
+               //    else
+               //    {
+               //        throw new Exception("Error en la lectura del estilo actual de Gestproject");
+               //    };
+               //};
+            }
                 else
                 {
                     throw new Exception("Error en la localización del registro de configuraciones de usuario en Gestproject");

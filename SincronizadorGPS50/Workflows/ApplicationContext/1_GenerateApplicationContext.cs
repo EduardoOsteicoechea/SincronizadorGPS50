@@ -57,6 +57,23 @@ namespace SincronizadorGPS50 {
             };
 
             ///////////////////////////////////////
+            // Get user Rememberlable Data
+            ///////////////////////////////////////
+
+            try {
+               GestprojectDataHolder.LocalDeviceUserSessionData = new GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData;
+            }
+            catch {
+               MessageBox.Show("Error at GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData");
+               throw new System.Exception("Error at GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData");
+            };
+
+            string currentLocalDevice = WindowsIdentity.GetCurrent().Name.Split('\\')[0];
+            string gestprojectSessionDevice = GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO;
+
+            bool userIsInRememberedAndApprovedDevice = gestprojectSessionDevice == currentLocalDevice;
+
+            ///////////////////////////////////////
             // Evaluate Basic User Rememberlable assets
             ///////////////////////////////////////
 
@@ -80,7 +97,10 @@ namespace SincronizadorGPS50 {
                   GestprojectDataManager
                      .ManageRememberableUserData
                      .CheckIfRememberUserDataOptionWasActivated(
-                        GestprojectDataHolder.GestprojectDatabaseConnection
+                        GestprojectDataHolder.GestprojectDatabaseConnection,
+                        GestprojectDataHolder.LocalDeviceUserSessionData.CNX_USUARIO,
+                        GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO,
+                        GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID
                      );
                }
                catch {
@@ -89,32 +109,15 @@ namespace SincronizadorGPS50 {
             };
 
             ///////////////////////////////////////
-            // Get user Rememberlable Data
-            ///////////////////////////////////////
-            
-            try {
-               GestprojectDataHolder.LocalDeviceUserSessionData = new GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData;
-            }
-            catch {
-               MessageBox.Show("Error at GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData");
-               throw new System.Exception("Error at GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData");
-            };
-
-            string currentLocalDevice = WindowsIdentity.GetCurrent().Name.Split('\\')[0];
-            string gestprojectSessionDevice = GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO;
-
-            bool userIsInRememberedAndApprovedDevice = gestprojectSessionDevice == currentLocalDevice;
-
-            ///////////////////////////////////////
             // Create Sage50Connection conditional controls
             ///////////////////////////////////////
 
             if(gestprojectUserDataTableExists) {
-               MessageBox.Show("gestprojectUserDataTableExists");
+               //MessageBox.Show("gestprojectUserDataTableExists");
                if(rememberUserDataOptionWasActivated) {
-                  MessageBox.Show("rememberUserDataOptionWasActivated");
+                  //MessageBox.Show("rememberUserDataOptionWasActivated");
                   if(userIsInRememberedAndApprovedDevice) {
-                     MessageBox.Show("userIsInRememberedAndApprovedDevice");
+                     //MessageBox.Show("userIsInRememberedAndApprovedDevice");
 
                      if(!new Sage50ConnectionUIManager(
                            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls,

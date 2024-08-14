@@ -88,7 +88,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
       public void Remember() {
          SynchronizerUserRememberableDataModel userRememberableData = GestprojectDataManager.ManageRememberableUserData.GetSynchronizerUserRememberableDataForConnection(GestprojectDataHolder.GestprojectDatabaseConnection);
 
-         MessageBox.Show(userRememberableData.SAGE_50_LOCAL_TERMINAL_PATH);
+         //MessageBox.Show(userRememberableData.SAGE_50_LOCAL_TERMINAL_PATH);
 
          Sage50ConnectionManager.ConnectionActions.Connect(
             userRememberableData.SAGE_50_LOCAL_TERMINAL_PATH,

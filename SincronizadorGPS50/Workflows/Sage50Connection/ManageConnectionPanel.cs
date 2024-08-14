@@ -58,7 +58,13 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
       }
 
       private void ConnectButton1_Click(object sender, EventArgs e) {
-         GestprojectDataManager.ManageRememberableUserData.ChangeRememberUserDataFeature(GestprojectDataHolder.GestprojectDatabaseConnection, 0);
+         GestprojectDataManager.ManageRememberableUserData.ChangeRememberUserDataFeature(
+            GestprojectDataHolder.GestprojectDatabaseConnection,
+            GestprojectDataHolder.LocalDeviceUserSessionData.CNX_USUARIO,
+            GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO,
+            GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID, 
+            0
+         );
          Sage50ConnectionUIManager.SetStatelessStartUI();
          Application.Exit();
          Process.Start(Application.ExecutablePath);

@@ -55,6 +55,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
          ManageConnectionUI = new ManageConnectionPanel(this, ParentControl, 0, 9);
          ManageConnectionUI.SetUIToConnected();
 
+         SetConnetedUI();
+
          IsSuccessful = true;
       }
 

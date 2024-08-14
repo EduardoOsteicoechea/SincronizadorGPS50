@@ -45,10 +45,12 @@ namespace SincronizadorGPS50
 
             double componentHeight = 580;
             int keyButtonHeight = 40;
-            int separatorHeight = 40;
+            int separatorHeight = 35;
+            //int separatorHeight = 40;
 
             // 0.ConnectionStatus
-            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, (int)(componentHeight * .10)));
+            //Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, (int)(componentHeight * .10)));
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, (int)(componentHeight * .20)));
             //Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, separatorHeight));
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, (int)(componentHeight * .0)));
             // 2.Terminal Connection Data

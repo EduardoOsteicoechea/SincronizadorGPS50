@@ -102,8 +102,19 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
                new ClientsTabPageUI();
             }
             else {
-               ManageRememberableUserData.ForgetUserRememberableData(GestprojectDataHolder.GestprojectDatabaseConnection);
-               ManageRememberableUserData.ChangeRememberUserDataFeature(GestprojectDataHolder.GestprojectDatabaseConnection, 0);
+               ManageRememberableUserData.ForgetUserRememberableData(
+                  GestprojectDataHolder.GestprojectDatabaseConnection,
+                  GestprojectDataHolder.LocalDeviceUserSessionData.CNX_USUARIO, 
+                  GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO,
+                  GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID
+               );
+               ManageRememberableUserData.ChangeRememberUserDataFeature(
+                  GestprojectDataHolder.GestprojectDatabaseConnection,
+                  GestprojectDataHolder.LocalDeviceUserSessionData.CNX_USUARIO,
+                  GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO,
+                  GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID, 
+                  0
+               );
             };
          }
          else {
@@ -114,7 +125,9 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
       }
 
       public void EnableControls() { ConnectButton.Enabled = true; }
-      public void DisableControls() { ConnectButton.Enabled = false; }
+      public void DisableControls() { 
+         ConnectButton.Enabled = false; 
+      }
       public void SetUIToConnected() { DisableControls(); }
       public void SetUIToDisconnected() { EnableControls(); }
 
