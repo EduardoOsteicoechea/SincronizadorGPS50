@@ -48,44 +48,84 @@ namespace GestprojectStyleManager {
                         break;
                      }
                   };
+                  if(currentUser == ""){ MessageBox.Show("User not found"); throw new Exception("User not found"); };
 
-                  if(currentUser == ""){ throw new Exception("User not found"); };
+                  // 2.2. Get "CNX_EQUIPO" matching to obtain it's lenght
 
-                  //3.Get the last-in-time 20 "CNX_CODIGO" matching that "CNX_USUARIO" in "[GESTPROJECT2020].[dbo].[CONEXIONES]".
-
-                  string sql2 = $"SELECT TOP 20 CNX_CODIGO FROM [GESTPROJECT2020].[dbo].[CONEXIONES] WHERE CNX_USUARIO='{currentUser}' ORDER BY CNX_ID DESC ;";
-                  List<string> last20ConnectionCodes = new List<string>();
-                  using(System.Data.SqlClient.SqlCommand sqlCommand = new System.Data.SqlClient.SqlCommand(sql2, connection)) {
+                  string sql1_2 = $"SELECT TOP 1 CNX_EQUIPO FROM [GESTPROJECT2020].[dbo].[CONEXIONES] WHERE CNX_USUARIO='{currentUser}';";
+                  string connectionUserDevice = "";
+                  using(System.Data.SqlClient.SqlCommand sqlCommand = new System.Data.SqlClient.SqlCommand(sql1_2, connection)) {
                      using(System.Data.SqlClient.SqlDataReader reader2 = sqlCommand.ExecuteReader()) {
                         while(reader2.Read()) {
-                           last20ConnectionCodes.Add(reader2.GetString(0));
+                           connectionUserDevice = reader2.GetString(0);
+                           break;
                         };
                      };
                   };
 
-                  //4.Find and store exact match of that "CNX_CODIGO" in the "_USERSETTINGS.DAT" file.
+                  //// 2.3. Extract the connectionCode from the "(Environment.SpecialFolder.LocalApplicationData)\Micad\Gestproject\12.0.0.0\_USERSETTINGS.DAT" file.
 
-                  string currentConnectionCode = "";
+                  //if(fileContent.Contains(connectionUserDevice)) {
+                  //   MessageBox.Show("The file contains the string: " + connectionUserDevice);
+                  //   int startIndexOfConnectionCode = fileContent.IndexOf(connectionUserDevice);
+                  //   int connectionUserDeviceLenght = connectionUserDevice.Length;
+                  //   int connectionCodeLenght = connectionUserDeviceLenght + 19;
+                  //   string userSettingFileConnectionCode = fileContent.Substring(startIndexOfConnectionCode, connectionCodeLenght);
+                  //};
 
-                  for(int x = 0; x < last20ConnectionCodes.Count; x++) {
-                     if(fileContent.Contains(last20ConnectionCodes[x])) {
-                        currentConnectionCode = last20ConnectionCodes[x];
-                        break;
-                     }
-                  };
+                  // 3. Get the last-in-time 20 "CNX_CODIGO" matching that "CNX_USUARIO" in "[GESTPROJECT2020].[dbo].[CONEXIONES]".
 
-                  if(currentConnectionCode == "") { throw new Exception("Connection code not found"); };
+                  //string sql2 = $"SELECT TOP 1000 CNX_CODIGO FROM [GESTPROJECT2020].[dbo].[CONEXIONES] WHERE CNX_USUARIO='{currentUser}' ORDER BY CNX_ID DESC ;";
+                  //List<string> last20ConnectionCodes = new List<string>();
+                  //using(System.Data.SqlClient.SqlCommand sqlCommand = new System.Data.SqlClient.SqlCommand(sql2, connection)) {
+                  //   using(System.Data.SqlClient.SqlDataReader reader2 = sqlCommand.ExecuteReader()) {
+                  //      while(reader2.Read()) {
+                  //         last20ConnectionCodes.Add(reader2.GetString(0));
+                  //      };
+                  //   };
+                  //};
+
+                  //// 4. Find and store exact match of that "CNX_CODIGO" in the "_USERSETTINGS.DAT" file.
+
+                  //string currentConnectionCode = "";
+
+                  //for(int x = 0; x < last20ConnectionCodes.Count; x++) {
+                  //   MessageBox.Show(last20ConnectionCodes[x]);
+                  //   if(fileContent.Contains(last20ConnectionCodes[x])) {
+                  //      currentConnectionCode = last20ConnectionCodes[x];
+                  //      break;
+                  //   }
+                  //};
+
+                  //if(currentConnectionCode == "") { MessageBox.Show("Connection code not found"); throw new Exception("Connection code not found"); };
+
+                  ////5.Get and store "CNX_EQUIPO" matching that "CNX_CODIGO" "FROM [GESTPROJECT2020].[dbo].[CONEXIONES]".
+
+                  //string sql3 = $"SELECT CNX_EQUIPO, CNX_PERFIL, CNX_ID FROM [GESTPROJECT2020].[dbo].[CONEXIONES] WHERE CNX_CODIGO='{currentConnectionCode}';";
+                  //string connectedDevice = "";
+                  //string connectedProfile = "";
+                  //int connectionId = 0;
+                  //using(System.Data.SqlClient.SqlCommand sqlCommand = new System.Data.SqlClient.SqlCommand(sql3, connection)) {
+                  //   using(System.Data.SqlClient.SqlDataReader reader2 = sqlCommand.ExecuteReader()) {
+                  //      while(reader2.Read()) {
+                  //         connectedDevice  = reader2.GetString(0);
+                  //         connectedProfile = reader2.GetString(1);
+                  //         connectionId = reader2.GetInt32(2);
+                  //         break;
+                  //      };
+                  //   };
+                  //};
 
                   //5.Get and store "CNX_EQUIPO" matching that "CNX_CODIGO" "FROM [GESTPROJECT2020].[dbo].[CONEXIONES]".
 
-                  string sql3 = $"SELECT CNX_EQUIPO, CNX_PERFIL, CNX_ID FROM [GESTPROJECT2020].[dbo].[CONEXIONES] WHERE CNX_CODIGO='{currentConnectionCode}';";
-                  string connectedDevice = "";
+                  string sql3 = $"SELECT CNX_PERSONAL, CNX_PERFIL, CNX_ID FROM [GESTPROJECT2020].[dbo].[CONEXIONES] WHERE CNX_EQUIPO='{connectionUserDevice}';";
+                  string connectedPersonalUserName = "";
                   string connectedProfile = "";
                   int connectionId = 0;
                   using(System.Data.SqlClient.SqlCommand sqlCommand = new System.Data.SqlClient.SqlCommand(sql3, connection)) {
                      using(System.Data.SqlClient.SqlDataReader reader2 = sqlCommand.ExecuteReader()) {
                         while(reader2.Read()) {
-                           connectedDevice  = reader2.GetString(0);
+                           connectedPersonalUserName = reader2.GetString(0);
                            connectedProfile = reader2.GetString(1);
                            connectionId = reader2.GetInt32(2);
                            break;
@@ -109,8 +149,10 @@ namespace GestprojectStyleManager {
 
                   userSessionData = new UserSessionData();
                   userSessionData.CNX_USUARIO = currentUser;
-                  userSessionData.CNX_CODIGO = currentConnectionCode;
-                  userSessionData.CNX_EQUIPO = connectedDevice;
+                  //userSessionData.CNX_CODIGO = currentConnectionCode;
+                  userSessionData.CNX_PERSONAL = connectedPersonalUserName;
+                  //userSessionData.CNX_EQUIPO = connectedDevice;
+                  userSessionData.CNX_EQUIPO = connectionUserDevice;
                   userSessionData.CNX_PERFIL = connectedProfile;
                   userSessionData.CNX_ID = connectionId;
                   userSessionData.CNX_USUARIO = currentUser;

@@ -2,12 +2,5 @@ Luego de recordar, conectar al ejecutar el programa
 
 Manejar segunda excepción de conexión fallida (empezar de nuevo) por terminal
 
-Refactorizar función de recordado para rastrear equipo actual y sesión
-
-Si, "USU_ID"([GESTPROJECT2020].[dbo].[USUARIO]) && "CNX_EQUIPO"([GESTPROJECT2020].[dbo].[CONEXIONES_ACTIVAS]),
-== Lo que se recordó, => recordar todo...
------ Anadir este par de campos a base de datos
------ Sí, se desmarcar "Recordar", borrar todo lo de este par usuario y equipo PERO mantener registros del mismo usuario y otro equipo
-
 
 

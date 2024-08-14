@@ -1,4 +1,8 @@
-﻿using SincronizadorGPS50.Workflows.Sage50Connection;
+﻿using GestprojectDataManager;
+using Infragistics.Win.DataVisualization;
+using Infragistics.Win.UltraWinTabControl;
+using SincronizadorGPS50.Workflows.Clients;
+using SincronizadorGPS50.Workflows.Sage50Connection;
 using System.Security.Principal;
 using System.Windows.Forms;
 
@@ -7,13 +11,17 @@ namespace SincronizadorGPS50 {
       public GenerateApplicationContext() {
          try {
 
+            ///////////////////////////////////////
             // Set initial windows forms application settings
+            ///////////////////////////////////////
 
             if(!new SetInitialWindowsFormSettings().IsSuccessful) {
                throw new System.Exception("Error at SetInitialWindowsFormSettings");
             };
 
-            // Get and leverage user device Gestproject data
+            ///////////////////////////////////////
+            // Get and leverage user device Gestproject data For Global Styling and Database Connection
+            ///////////////////////////////////////
 
             ApplicationManager.ApplicationGlobalContext = this;
 
@@ -28,14 +36,9 @@ namespace SincronizadorGPS50 {
                throw new System.Exception("Error at GestprojectDatabaseConnector.ConnectionManager().Connect()");
             };
 
-            try {
-               GestprojectDataHolder.LocalDeviceUserSessionData = new GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData;
-            }
-            catch {
-               throw new System.Exception("Error at GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData");
-            };
-
+            ///////////////////////////////////////
             // Create Global UI
+            ///////////////////////////////////////
 
             if(!new GenerateMainWindow().IsSuccessful) {
                throw new System.Exception("Error at GenerateMainWindow");
@@ -53,7 +56,9 @@ namespace SincronizadorGPS50 {
                throw new System.Exception("Error at GenerateCenterRowUI");
             };
 
-            // Create Sage50Connection controls
+            ///////////////////////////////////////
+            // Evaluate Basic User Rememberlable assets
+            ///////////////////////////////////////
 
             bool gestprojectUserDataTableExists = false;
             try {
@@ -83,14 +88,34 @@ namespace SincronizadorGPS50 {
                };
             };
 
-            string currentLocalDevice = WindowsIdentity.GetCurrent().Name.Split('\\')[0] + "2";
+            ///////////////////////////////////////
+            // Get user Rememberlable Data
+            ///////////////////////////////////////
+            
+            try {
+               GestprojectDataHolder.LocalDeviceUserSessionData = new GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData;
+            }
+            catch {
+               MessageBox.Show("Error at GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData");
+               throw new System.Exception("Error at GestprojectStyleManager.GestprojectSessionSettings(GestprojectDataHolder.GestprojectDatabaseConnection).userSessionData");
+            };
+
+            string currentLocalDevice = WindowsIdentity.GetCurrent().Name.Split('\\')[0];
             string gestprojectSessionDevice = GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO;
 
             bool userIsInRememberedAndApprovedDevice = gestprojectSessionDevice == currentLocalDevice;
 
-            if(gestprojectUserDataTableExists){
+            ///////////////////////////////////////
+            // Create Sage50Connection conditional controls
+            ///////////////////////////////////////
+
+            if(gestprojectUserDataTableExists) {
+               MessageBox.Show("gestprojectUserDataTableExists");
                if(rememberUserDataOptionWasActivated) {
+                  MessageBox.Show("rememberUserDataOptionWasActivated");
                   if(userIsInRememberedAndApprovedDevice) {
+                     MessageBox.Show("userIsInRememberedAndApprovedDevice");
+
                      if(!new Sage50ConnectionUIManager(
                            Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls,
                            "stateful"
@@ -98,6 +123,13 @@ namespace SincronizadorGPS50 {
                      ) {
                         MessageBox.Show("gestprojectUserDataTableExists, rememberUserDataOptionWasActivated, userIsInRememberedAndApprovedDevice");
                         throw new System.Exception("Error at Sage50ConnectionUIManager");
+                     }
+                     else {
+                        foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs) {
+                           tab.Enabled = true;
+                        };
+                        MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.ClientsTab;
+                        new ClientsTabPageUI();
                      };
                   }
                   else {
@@ -128,7 +160,8 @@ namespace SincronizadorGPS50 {
                   .CreateGestprojectUserDataTable(
                      GestprojectDataHolder.GestprojectDatabaseConnection
                   )
-               ){
+               ) {
+                  MessageBox.Show("Error at GestprojectDataManager.ManageRememberableUserData.CreateGestprojectUserDataTable");
                   throw new System.Exception("Error at GestprojectDataManager.ManageRememberableUserData.CreateGestprojectUserDataTable");
                };
 
@@ -137,13 +170,15 @@ namespace SincronizadorGPS50 {
                      "stateless"
                   ).IsSuccessful
                ) {
-                  MessageBox.Show("NOT gestprojectUserDataTableExists");
+                  MessageBox.Show("Error at Sage50ConnectionUIManager");
                   throw new System.Exception("Error at Sage50ConnectionUIManager");
                };
             };
 
+            ///////////////////////////////////////
             // InitialLaunchForSage50Connection
-
+            ///////////////////////////////////////
+            
             MainWindowUIHolder.MainWindow.Show();
          }
          catch(System.Exception e) {

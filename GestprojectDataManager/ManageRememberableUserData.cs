@@ -10,7 +10,8 @@ namespace GestprojectDataManager {
 
       public static string ID { get; set; } = "ID";
       public static string GP_CNX_ID { get; set; } = "GP_CNX_ID";
-      public static string GP_CNX_CODIGO { get; set; } = "GP_CNX_CODIGO";
+      public static string GP_CNX_PERSONAL { get; set; } = "GP_CNX_PERSONAL";
+      //public static string GP_CNX_CODIGO { get; set; } = "GP_CNX_CODIGO";
       public static string GP_CNX_USUARIO { get; set; } = "GP_CNX_USUARIO";
       public static string GP_CNX_PERFIL { get; set; } = "GP_CNX_PERFIL";
       public static string GP_CNX_EQUIPO { get; set; } = "GP_CNX_EQUIPO";
@@ -29,7 +30,8 @@ namespace GestprojectDataManager {
       (
           System.Data.SqlClient.SqlConnection connection,
           int? gestprojectConnectionId,
-          string gestprojectConnectionCode,
+          string gestprojectConnectionPersonalName,
+          //string gestprojectConnectionCode,
           string gestprojectConnectionUser,
           string gestprojectConnectionProfile,
           string gestprojectConnectionDevice,
@@ -47,7 +49,8 @@ namespace GestprojectDataManager {
                PopulateGestprojectUserDataTable(
                   connection,
                   gestprojectConnectionId,
-                  gestprojectConnectionCode,
+                  gestprojectConnectionPersonalName,
+                  //gestprojectConnectionCode,
                   gestprojectConnectionUser,
                   gestprojectConnectionProfile,
                   gestprojectConnectionDevice,
@@ -67,7 +70,8 @@ namespace GestprojectDataManager {
                PopulateGestprojectUserDataTable(
                   connection,
                   gestprojectConnectionId,
-                  gestprojectConnectionCode,
+                  gestprojectConnectionPersonalName,
+                  //gestprojectConnectionCode,
                   gestprojectConnectionUser,
                   gestprojectConnectionProfile,
                   gestprojectConnectionDevice,
@@ -124,7 +128,7 @@ namespace GestprojectDataManager {
                (
                   {ID} INT PRIMARY KEY IDENTITY(1,1),
                   {GP_CNX_ID} INT,
-                  {GP_CNX_CODIGO} VARCHAR(MAX),
+                  {GP_CNX_PERSONAL} VARCHAR(MAX),
                   {GP_CNX_USUARIO} VARCHAR(MAX),
                   {GP_CNX_PERFIL} VARCHAR(MAX),
                   {GP_CNX_EQUIPO} VARCHAR(MAX),
@@ -160,7 +164,8 @@ namespace GestprojectDataManager {
       (
           System.Data.SqlClient.SqlConnection connection,
           int? GestprojectConnectionId,
-          string GestprojectConnectionCode,
+          string gestprojectConnectionPersonalName,
+          //string GestprojectConnectionCode,
           string GestprojectConnectionUser,
           string GestprojectConnectionProfile,
           string GestprojectConnectionDevice,
@@ -185,7 +190,7 @@ namespace GestprojectDataManager {
                INSERT INTO {GestprojectSynchronizatorUserDataTableName}
                (
                {GP_CNX_ID},
-               {GP_CNX_CODIGO},
+               {GP_CNX_PERSONAL},
                {GP_CNX_USUARIO},
                {GP_CNX_PERFIL},
                {GP_CNX_EQUIPO},
@@ -202,7 +207,7 @@ namespace GestprojectDataManager {
                VALUES
                (
                {GestprojectConnectionId},
-               '{GestprojectConnectionCode.Trim()}',
+               '{gestprojectConnectionPersonalName.Trim()}',
                '{GestprojectConnectionUser.Trim()}',
                '{GestprojectConnectionProfile.Trim()}',
                '{GestprojectConnectionDevice.Trim()}',
@@ -322,7 +327,7 @@ namespace GestprojectDataManager {
             string sqlString = $@"
                 SELECT
                   {GP_CNX_ID},
-                  {GP_CNX_CODIGO},
+                  {GP_CNX_PERSONAL},
                   {GP_CNX_USUARIO},
                   {GP_CNX_PERFIL},
                   {GP_CNX_EQUIPO},
@@ -342,19 +347,20 @@ namespace GestprojectDataManager {
                using(SqlDataReader reader = sqlCommand.ExecuteReader()) {
                   while(reader.Read()) {
                      userRememberableDataModel.GP_CNX_ID = Convert.ToInt32(reader.GetValue(0));
-                     userRememberableDataModel.GP_CNX_CODIGO = Convert.ToString(reader.GetValue(1));
-                     userRememberableDataModel.GP_CNX_USUARIO = Convert.ToString(reader.GetValue(1));
-                     userRememberableDataModel.GP_CNX_PERFIL = Convert.ToString(reader.GetValue(1));
-                     userRememberableDataModel.GP_CNX_EQUIPO = Convert.ToString(reader.GetValue(1));
-                     userRememberableDataModel.GP_USU_ID = Convert.ToInt32(reader.GetValue(0));
-                     userRememberableDataModel.SAGE_50_LOCAL_TERMINAL_PATH = Encryptor.UnEncrypt(Convert.ToString(reader.GetValue(2)));
-                     userRememberableDataModel.SAGE_50_USER_NAME = Convert.ToString(reader.GetValue(3));
-                     userRememberableDataModel.SAGE_50_PASSWORD = Convert.ToString(reader.GetValue(4));
-                     userRememberableDataModel.SAGE_50_COMPANY_GROUP_NAME = Convert.ToString(reader.GetValue(5));
-                     userRememberableDataModel.SAGE_50_COMPANY_GROUP_MAIN_CODE = Convert.ToString(reader.GetValue(6));
-                     userRememberableDataModel.SAGE_50_COMPANY_GROUP_CODE = Convert.ToString(reader.GetValue(7));
-                     userRememberableDataModel.SAGE_50_COMPANY_GROUP_GUID_ID = Convert.ToString(reader.GetValue(8));
-                     userRememberableDataModel.REMEMBER = Convert.ToByte(reader.GetValue(9));
+                     userRememberableDataModel.GP_CNX_PERSONAL = Convert.ToString(reader.GetValue(1));
+                     //userRememberableDataModel.GP_CNX_CODIGO = Convert.ToString(reader.GetValue(1));
+                     userRememberableDataModel.GP_CNX_USUARIO = Convert.ToString(reader.GetValue(2));
+                     userRememberableDataModel.GP_CNX_PERFIL = Convert.ToString(reader.GetValue(3));
+                     userRememberableDataModel.GP_CNX_EQUIPO = Convert.ToString(reader.GetValue(4));
+                     userRememberableDataModel.GP_USU_ID = Convert.ToInt32(reader.GetValue(5));
+                     userRememberableDataModel.SAGE_50_LOCAL_TERMINAL_PATH = Convert.ToString(reader.GetValue(6));
+                     userRememberableDataModel.SAGE_50_USER_NAME = Convert.ToString(reader.GetValue(7));
+                     userRememberableDataModel.SAGE_50_PASSWORD = Encryptor.UnEncrypt(Convert.ToString(reader.GetValue(8)));
+                     userRememberableDataModel.SAGE_50_COMPANY_GROUP_NAME = Convert.ToString(reader.GetValue(9));
+                     userRememberableDataModel.SAGE_50_COMPANY_GROUP_MAIN_CODE = Convert.ToString(reader.GetValue(10));
+                     userRememberableDataModel.SAGE_50_COMPANY_GROUP_CODE = Convert.ToString(reader.GetValue(11));
+                     userRememberableDataModel.SAGE_50_COMPANY_GROUP_GUID_ID = Convert.ToString(reader.GetValue(12));
+                     userRememberableDataModel.REMEMBER = Convert.ToByte(reader.GetValue(13));
                   };
                };
             };

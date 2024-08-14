@@ -1,5 +1,7 @@
 ﻿using GestprojectDataManager;
 using Infragistics.Win.Misc;
+using Infragistics.Win.UltraWinTabControl;
+using SincronizadorGPS50.Workflows.Clients;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -75,7 +77,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
                GestprojectDataManager.ManageRememberableUserData.Save(
                   GestprojectDataHolder.GestprojectDatabaseConnection,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_ID,
-                  GestprojectDataHolder.LocalDeviceUserSessionData.CNX_CODIGO,
+                  GestprojectDataHolder.LocalDeviceUserSessionData.CNX_PERSONAL,
+                  //GestprojectDataHolder.LocalDeviceUserSessionData.CNX_CODIGO,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_USUARIO,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_PERFIL,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO,
@@ -91,6 +94,12 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
 
                Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Appearance.BackColor = StyleHolder.c_gray_200;
                Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Appearance.ForeColor = StyleHolder.c_gray_100;
+
+               foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs) {
+                  tab.Enabled = true;
+               };
+               MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.ClientsTab;
+               new ClientsTabPageUI();
             }
             else {
                ManageRememberableUserData.ForgetUserRememberableData(GestprojectDataHolder.GestprojectDatabaseConnection);
