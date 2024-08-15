@@ -13,8 +13,10 @@ using sage.ew.empresa;
 using Sage.ES.S50.Addons;
 using sage.ew.ewbase;
 
-namespace Sage50ConnectionManager {
-   public class LinkSage50 {
+namespace SincronizadorGPS50.Sage50Connector
+{
+   public class LinkSage50
+   {
       //public clsDatos _oDatos = new clsDatos();
       public bool _Loaded_Ok = false;
       public bool _connected = false;
@@ -29,8 +31,10 @@ namespace Sage50ConnectionManager {
 
       public LinkSage50() { }
 
-      public LinkSage50(String tsTerminal) {
-         if(!string.IsNullOrEmpty(tsTerminal)) {
+      public LinkSage50(String tsTerminal)
+      {
+         if(!string.IsNullOrEmpty(tsTerminal))
+         {
             this._Terminal = tsTerminal;
             this._DllTerminal = Path.Combine(this._Terminal, Sage50LibrariesFolder.Get(this._Terminal));
             this._AssemblyResolveBegin();
@@ -38,21 +42,26 @@ namespace Sage50ConnectionManager {
          }
       }
 
-      public Boolean _Connect(string tsUser, string tsPass, string tsEmpresa = "") {
+      public Boolean _Connect(string tsUser, string tsPass, string tsEmpresa = "")
+      {
          _connected = main_s50.Connect(this._Terminal, tsUser, tsPass, tsEmpresa);
-         if(_connected == true) {
+         if(_connected == true)
+         {
             _EsMultiEmpresa = this._HaveMultiCompany();
          }
          return _connected;
       }
-      public void _Disconnect() {
-         if(_connected == true) {
+      public void _Disconnect()
+      {
+         if(_connected == true)
+         {
             DB.Conexion = "";
             _connected = false;
          }
          this._AssemblyResolveEnd();
       }
-      public Boolean _LoadGlobalVariables(string tsEmpresa = "") {
+      public Boolean _LoadGlobalVariables(string tsEmpresa = "")
+      {
          Boolean llOk = false;
          string lsEmpresa = this._Empresa;
 
@@ -61,7 +70,8 @@ namespace Sage50ConnectionManager {
 
          llOk = main_s50._Cargar_Globales(lsEmpresa);
 
-         if(llOk) {
+         if(llOk)
+         {
             _Empresa = EW_GLOBAL._GetVariable("wc_empresa").ToString();
             _Ejercicio = EW_GLOBAL._GetVariable("wc_any").ToString();
             _Comunes = DB.DbComunes.ToString();
@@ -69,7 +79,8 @@ namespace Sage50ConnectionManager {
          }
          return llOk;
       }
-      public void _LoadEnvironmentCompany(string tsEmpresa = "") {
+      public void _LoadEnvironmentCompany(string tsEmpresa = "")
+      {
          string lsEmpresa = this._Empresa;
 
          if(!string.IsNullOrEmpty(tsEmpresa.Trim()))
@@ -80,7 +91,8 @@ namespace Sage50ConnectionManager {
          _Ejercicio = EW_GLOBAL._GetVariable("wc_any").ToString();
          _Comunes = DB.DbComunes.ToString();
       }
-      public void _ExerciseChange(string tscEjercicio) {
+      public void _ExerciseChange(string tscEjercicio)
+      {
          sage.ew.functions.Clases.CambioEjercicio loEjer = new sage.ew.functions.Clases.CambioEjercicio();
          loEjer._Cambiar(tscEjercicio);
          _LoadEnvironmentCompany();
@@ -90,7 +102,8 @@ namespace Sage50ConnectionManager {
 
 
       /// This one
-      public Boolean _GroupCompanyChange(string tscGrupoEmpresa) {
+      public Boolean _GroupCompanyChange(string tscGrupoEmpresa)
+      {
          bool llOk = false;
 
          string lcActGrupoEmp = string.Empty, lcNewGrupoEmp = string.Empty;
@@ -108,19 +121,25 @@ namespace Sage50ConnectionManager {
 
          GrupoEmpresaSel _oGruposEmp = new GrupoEmpresaSel();
 
-         if(_oGruposEmp.ExisteUsuario(lcNewGrupoEmp)) {
-            if(!string.IsNullOrWhiteSpace(lcNewEmpresa) && _oGruposEmp.VerificarEmpresaAcceso(lcNewGrupoEmp, lcNewEmpresa, ref lcNewEmpresa)) {
-               if(_oGruposEmp.AccesoUsuarioEmpresa(lcNewGrupoEmp, lcNewEmpresa)) {
+         if(_oGruposEmp.ExisteUsuario(lcNewGrupoEmp))
+         {
+            if(!string.IsNullOrWhiteSpace(lcNewEmpresa) && _oGruposEmp.VerificarEmpresaAcceso(lcNewGrupoEmp, lcNewEmpresa, ref lcNewEmpresa))
+            {
+               if(_oGruposEmp.AccesoUsuarioEmpresa(lcNewGrupoEmp, lcNewEmpresa))
+               {
                   Usuario._This._GrupoCambiadoEnFrmLogin = "";
 
-                  if(!_oGruposEmp._ComprobarPassword(lcNewGrupoEmp) || _oGruposEmp.EmpresaOcultaEnGrupo(lcNewGrupoEmp, lcNewEmpresa)) {
+                  if(!_oGruposEmp._ComprobarPassword(lcNewGrupoEmp) || _oGruposEmp.EmpresaOcultaEnGrupo(lcNewGrupoEmp, lcNewEmpresa))
+                  {
                      llOk = _oGruposEmp._CambiarGrupo(lcNewGrupoEmp, lcNewEmpresa, false);
 
-                     if(!Usuario._This._ShowLoginCambioGrupoEmpresas(ref lcNewEmpresa, ref tlRefrescar)) {
+                     if(!Usuario._This._ShowLoginCambioGrupoEmpresas(ref lcNewEmpresa, ref tlRefrescar))
+                     {
                         _oGruposEmp._CambiarGrupo(lcActGrupoEmp, lcActEmpresa, false);
                         llOk = false;
                      }
-                     else { llOk = true; }
+                     else
+                     { llOk = true; }
                   }
 
                   if(!string.IsNullOrWhiteSpace(Usuario._This._GrupoCambiadoEnFrmLogin))
@@ -130,7 +149,8 @@ namespace Sage50ConnectionManager {
 
                   llOk = _oGruposEmp._CambiarGrupo(lcNewGrupoEmp, lcNewEmpresa, tlRefrescar);
 
-                  if(llOk) {
+                  if(llOk)
+                  {
                      AddonsController.Instance.Methods._CambioEmpresa(TipoExecute.After, lcActEmpresa, lcNewEmpresa);
 
                      if(EW_GLOBAL._Empresa == null)
@@ -147,14 +167,16 @@ namespace Sage50ConnectionManager {
             else
                this._Error_Message = "El usuario actual no tiene acceso a ninguna de las empresas del grupo seleccionado, no se puede cambiar al grupo de empresa seleccionado.";
          }
-         else {
+         else
+         {
             this._Error_Message = "El usuario actual no existe en el grupo seleccionado, no se puede cambiar al grupo de empresa seleccionado.";
          }
          return llOk;
       }
 
 
-      public Boolean CambiarGrupoEmpresa(string tscGrupoEmpresa) {
+      public Boolean CambiarGrupoEmpresa(string tscGrupoEmpresa)
+      {
          bool llOk = false;
          string lcEmpresa = "";
          string lcGrupoActual = GrupoEmpresa._CodigoGrupoActual();
@@ -179,23 +201,27 @@ namespace Sage50ConnectionManager {
          return llOk;
       }
 
-      public Boolean _HaveMultiCompany() {
+      public Boolean _HaveMultiCompany()
+      {
          Boolean llOk = false;
          DataTable ldtGrupos = new DataTable();
          string lcComunesPripal = "";
          string lcCodPrin = "";
 
          lcCodPrin = GrupoempTools._Obtener_CodGrupoPripal(DB.DbComunes.Trim().Substring(4, 4));
-         if(!String.IsNullOrEmpty(lcCodPrin.Trim())) {
+         if(!String.IsNullOrEmpty(lcCodPrin.Trim()))
+         {
             lcComunesPripal = "COMU" + lcCodPrin;
             llOk = true;
          }
-         else {
+         else
+         {
             lcComunesPripal = DB.DbComunes.Trim();
             llOk = false;
          }
 
-         if(llOk == true) {
+         if(llOk == true)
+         {
             //llOk = _oDatos.Grupos_Multiempresa(lcCodPrin, ref ldtGrupos);
             ldtGrupos.Dispose();
          }
@@ -205,55 +231,68 @@ namespace Sage50ConnectionManager {
          return llOk;
       }
 
-      public void _AssemblyResolveBegin() {
-         if(!string.IsNullOrEmpty(_DllTerminal)) {
+      public void _AssemblyResolveBegin()
+      {
+         if(!string.IsNullOrEmpty(_DllTerminal))
+         {
             AppDomain currentDomain = AppDomain.CurrentDomain;
             currentDomain.AssemblyResolve += new ResolveEventHandler(this.__CurrentDomain_AssemblyResolve);
          }
       }
 
-      public void _AssemblyResolveEnd() {
+      public void _AssemblyResolveEnd()
+      {
          AppDomain currentDomain = AppDomain.CurrentDomain;
          currentDomain.AssemblyResolve -= new ResolveEventHandler(this.__CurrentDomain_AssemblyResolve);
       }
 
-      private Assembly __CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args) {
+      private Assembly __CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+      {
          string lcFile = args.Name.Replace(".exe", "");
 
          string lcDllName = args.Name.Contains(',') ? args.Name.Substring(0, args.Name.IndexOf(',')) : lcFile;
 
          lcDllName = lcDllName.Replace(".", "_");
-         if(lcDllName.EndsWith("_resources")) {
+         if(lcDllName.EndsWith("_resources"))
+         {
             return default(Assembly);
          }
 
          Assembly loAssembly = this.__GetAssemblyByName(args.Name);
-         if(loAssembly != null) {
+         if(loAssembly != null)
+         {
             return loAssembly;
          }
 
-         try {
+         try
+         {
             return this.__LoadAssemblyFromPath(args.Name, this._DllTerminal);
          }
-         catch(Exception) {
+         catch(Exception)
+         {
             return default(Assembly);
          }
       }
 
-      private Assembly __GetAssemblyByName(string name) {
+      private Assembly __GetAssemblyByName(string name)
+      {
          return AppDomain.CurrentDomain.GetAssemblies().
                 SingleOrDefault(assembly => assembly.GetName().Name == name);
       }
 
-      private Assembly __LoadAssemblyFromPath(string assemblyName, string directoryPath) {
+      private Assembly __LoadAssemblyFromPath(string assemblyName, string directoryPath)
+      {
          string lsExtFile = "";
 
-         foreach(string file in Directory.GetFiles(directoryPath)) {
+         foreach(string file in Directory.GetFiles(directoryPath))
+         {
             lsExtFile = Path.GetExtension(file).ToLower();
 
-            if(lsExtFile == ".dll" || lsExtFile == ".exe") {
+            if(lsExtFile == ".dll" || lsExtFile == ".exe")
+            {
                Assembly assembly;
-               if(this.__TryLoadAssemblyFromFile(file, assemblyName, out assembly)) {
+               if(this.__TryLoadAssemblyFromFile(file, assemblyName, out assembly))
+               {
                   return assembly;
                }
             }
@@ -262,8 +301,10 @@ namespace Sage50ConnectionManager {
          return null;
       }
 
-      private bool __TryLoadAssemblyFromFile(string file, string assemblyName, out Assembly assembly) {
-         try {
+      private bool __TryLoadAssemblyFromFile(string file, string assemblyName, out Assembly assembly)
+      {
+         try
+         {
             assemblyName += ",";
             string[] lcArgs0 = assemblyName.Split(',');
 
@@ -273,12 +314,14 @@ namespace Sage50ConnectionManager {
             assemblyFile += ",";
             string[] lcArgs1 = assemblyFile.Split(',');
 
-            if(lcArgs0[0] == lcArgs1[0]) {
+            if(lcArgs0[0] == lcArgs1[0])
+            {
                assembly = Assembly.LoadFile(file);
                return true;
             }
          }
-         catch {
+         catch
+         {
          }
 
          assembly = null;
@@ -286,10 +329,12 @@ namespace Sage50ConnectionManager {
       }
    }
 
-   public class LinkFuncSage50 {
+   public class LinkFuncSage50
+   {
       public string _Error_Message = "";
       public LinkFuncSage50() { }
-      public string _CountryCompany() {
+      public string _CountryCompany()
+      {
          string lcPais;
 
          lcPais = DB.SQLValor("CODIGOS", "EMPRESA", EW_GLOBAL._GetVariable("wc_empresa").ToString(), "PAIS").ToString();
@@ -297,7 +342,8 @@ namespace Sage50ConnectionManager {
 
          return lcPais;
       }
-      public string _VerificateCountry(string pcPais) {
+      public string _VerificateCountry(string pcPais)
+      {
          string lcPais = "";
 
          if(String.IsNullOrWhiteSpace(pcPais))
@@ -307,7 +353,8 @@ namespace Sage50ConnectionManager {
 
          return lcPais.Trim();
       }
-      public string _VerificatePostalCode(string pcCodpos) {
+      public string _VerificatePostalCode(string pcCodpos)
+      {
          string lcCodpos = "";
 
          if(!String.IsNullOrWhiteSpace(pcCodpos))
@@ -315,7 +362,8 @@ namespace Sage50ConnectionManager {
 
          return lcCodpos.Trim();
       }
-      public string _VerificateTaxType(string pcTipo_iva) {
+      public string _VerificateTaxType(string pcTipo_iva)
+      {
          string lcTipo_iva = "";
 
          if(!String.IsNullOrWhiteSpace(pcTipo_iva))
@@ -323,7 +371,8 @@ namespace Sage50ConnectionManager {
 
          return lcTipo_iva.Trim();
       }
-      public string _VerificateRetentionType(string pcTipo_ret) {
+      public string _VerificateRetentionType(string pcTipo_ret)
+      {
          string lcTipo_ret = "";
 
          if(!String.IsNullOrWhiteSpace(pcTipo_ret))
@@ -331,7 +380,8 @@ namespace Sage50ConnectionManager {
 
          return lcTipo_ret.Trim();
       }
-      public string _VerificatePaymentMethod(string pcFormapago) {
+      public string _VerificatePaymentMethod(string pcFormapago)
+      {
          string lcFormapago = "";
 
          if(!String.IsNullOrWhiteSpace(pcFormapago))
@@ -339,7 +389,8 @@ namespace Sage50ConnectionManager {
 
          return lcFormapago.Trim();
       }
-      public Dictionary<string, object> _VerificateNIFCustomer(string pcNif) {
+      public Dictionary<string, object> _VerificateNIFCustomer(string pcNif)
+      {
          Dictionary<string, object> loResultado = new Dictionary<string, object>();
 
          if(!String.IsNullOrWhiteSpace(pcNif))
@@ -347,7 +398,8 @@ namespace Sage50ConnectionManager {
 
          return loResultado;
       }
-      public Dictionary<string, object> _VerificateNIFProvider(string pcNif) {
+      public Dictionary<string, object> _VerificateNIFProvider(string pcNif)
+      {
          Dictionary<string, object> loResultado = new Dictionary<string, object>();
 
          if(!String.IsNullOrWhiteSpace(pcNif))

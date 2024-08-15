@@ -14,7 +14,7 @@ namespace SincronizadorGPS50.GestprojectAPI
         {
             string sqlString = $"SELECT id FROM INT_SAGE_SINC_CLIENTE WHERE gestproject_id={gestprojectClient.PAR_ID};";
 
-            SqlCommand sqlCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection);
+            SqlCommand sqlCommand = new SqlCommand(sqlString, GestprojectDataHolder.GestprojectDatabaseConnection);
 
             using(SqlDataReader reader = sqlCommand.ExecuteReader())
             {

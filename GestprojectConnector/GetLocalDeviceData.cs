@@ -3,7 +3,7 @@ using System.Security.Principal;
 using System;
 using System.Windows.Forms;
 
-namespace GestprojectDatabaseConnector
+namespace SincronizadorGPS50.GestprojectConnector
 {
     internal class GetLocalDeviceData
     {

@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace GestprojectDataManager
+namespace SincronizadorGPS50.GestprojectDataManager
 {
    public static class ManageRememberableUserData
    {

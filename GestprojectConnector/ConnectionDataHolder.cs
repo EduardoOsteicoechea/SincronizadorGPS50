@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GestprojectDatabaseConnector
+namespace SincronizadorGPS50.GestprojectConnector
 {
 
     internal static class ConnectionDataHolder
@@ -23,7 +19,6 @@ namespace GestprojectDatabaseConnector
             ),
             "Gestproject.config.xml"
         );
-
 
 
         internal static string Server { get; set; } = "";

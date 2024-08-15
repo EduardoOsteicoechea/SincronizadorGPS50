@@ -1,4 +1,4 @@
-﻿using GestprojectDataManager;
+﻿using SincronizadorGPS50.GestprojectDataManager;
 using Infragistics.Win;
 using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinEditors;

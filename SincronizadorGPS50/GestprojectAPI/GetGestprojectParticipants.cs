@@ -16,7 +16,7 @@ namespace SincronizadorGPS50.GestprojectAPI
 
             string getGestprojectParticipantTypesSQLString = "SELECT * FROM PAR_TPA";
 
-            SqlCommand getGestprojectParticipantTypesSQLCommand = new SqlCommand(getGestprojectParticipantTypesSQLString, DataHolder.GestprojectSQLConnection);
+            SqlCommand getGestprojectParticipantTypesSQLCommand = new SqlCommand(getGestprojectParticipantTypesSQLString, GestprojectDataHolder.GestprojectDatabaseConnection);
 
             using(SqlDataReader reader = getGestprojectParticipantTypesSQLCommand.ExecuteReader())
             {

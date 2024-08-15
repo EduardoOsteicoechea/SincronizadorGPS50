@@ -130,7 +130,7 @@ namespace SincronizadorGPS50.GestprojectAPI
             // ConnectToGestprojectDatabase
 
             SqlConnection connection = new SqlConnection(DataHolder.GestprojectConnectionString);
-            DataHolder.GestprojectSQLConnection = connection;
-        }
+         //DataHolder.GestprojectSQLConnection = connection;
+      }
     }
 }

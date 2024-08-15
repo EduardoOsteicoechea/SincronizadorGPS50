@@ -49,7 +49,9 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
 
          parentControl.Add(Panel, parentControlColumn, parentControlRow);
 
+         ////////////////////////////////
          // Handle Events
+         ////////////////////////////////
 
          ConnectButton.Click += ConnectButton_Click;
       }
@@ -60,7 +62,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
          PanelTableLayoutPanel.Controls.Add(ConectingMessageLabel, 0, 0);
          await Task.Delay(500);
 
-         if(Sage50ConnectionManager.ConnectionActions.Connect(
+         if(SincronizadorGPS50.Sage50Connector.ConnectionActions.Connect(
                Sage50ConnectionUIManager.GetLocalTerminalUserDataUI.LocalInstanceTextBox.Text,
                Sage50ConnectionUIManager.GetLocalTerminalUserDataUI.UsernameTextBox.Text,
                Sage50ConnectionUIManager.GetLocalTerminalUserDataUI.PasswordTextBox.Text

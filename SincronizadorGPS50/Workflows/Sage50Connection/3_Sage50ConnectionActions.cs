@@ -15,7 +15,7 @@ namespace SincronizadorGPS50
             DataHolder.Sage50Password = Sage50ConnectionUIHolder.CenterRowCenterPanelPasswordTextBox.Text;
 
             if(
-                Sage50ConnectionManager.ConnectionActions.Connect(
+                SincronizadorGPS50.Sage50Connector.ConnectionActions.Connect(
                     DataHolder.Sage50LocalTerminalPath,
                     DataHolder.Sage50Username,
                     DataHolder.Sage50Password
@@ -31,7 +31,7 @@ namespace SincronizadorGPS50
 
                 Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Add(Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu, 0, 13);
 
-                DataHolder.Sage50CompanyGroupsList = Sage50ConnectionManager.Sage50CompanyGroupActions.GetCompanyGroups();
+                DataHolder.Sage50CompanyGroupsList = SincronizadorGPS50.Sage50Connector.Sage50CompanyGroupActions.GetCompanyGroups();
 
                 if(Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Items.Count < 1)
                 {
@@ -53,7 +53,7 @@ namespace SincronizadorGPS50
 
         internal static void InforceDataValidation(object sender, System.EventArgs e) 
         {
-           Sage50ConnectionManager.ConnectionActions.Disconnect();
+         SincronizadorGPS50.Sage50Connector.ConnectionActions.Disconnect();
 
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Remove(Sage50ConnectionUIHolder.CenterRowCenterPanelDisconnectButton);
 
@@ -101,7 +101,7 @@ namespace SincronizadorGPS50
 
         internal static void Disconnect(object sender, System.EventArgs e) 
         {
-            Sage50ConnectionManager.ConnectionActions.Disconnect();
+         SincronizadorGPS50.Sage50Connector.ConnectionActions.Disconnect();
 
              Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls.Remove(Sage50ConnectionUIHolder.CenterRowCenterPanelDisconnectButton);
              
@@ -157,9 +157,9 @@ namespace SincronizadorGPS50
             DataHolder.Sage50SelectedCompanyGroupName = Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.Text;
 
 
-            Sage50ConnectionManager.ConnectionActions.Disconnect();
+         SincronizadorGPS50.Sage50Connector.ConnectionActions.Disconnect();
 
-            Sage50ConnectionManager.ConnectionActions.Connect(
+         SincronizadorGPS50.Sage50Connector.ConnectionActions.Connect(
                 DataHolder.Sage50LocalTerminalPath,
                 DataHolder.Sage50Username,
                 DataHolder.Sage50Password
@@ -260,7 +260,7 @@ namespace SincronizadorGPS50
             if(Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedText != "")
             {
                 if(
-                    Sage50ConnectionManager.Sage50CompanyGroupActions.ChangeCompanyGroup(
+                    SincronizadorGPS50.Sage50Connector.Sage50CompanyGroupActions.ChangeCompanyGroup(
                         Sage50ConnectionUIHolder.CenterRowCenterPanelEnterpryseGroupMenu.SelectedText
                     )
                 )

@@ -1,106 +1,124 @@
 ﻿using System;
 
-namespace Dinq.Gestproject {
+namespace Dinq.Gestproject
+{
    /// <summary>
    /// Clase que contiene los elementos de configuración de la aplicación de ambito usuario (relativas a cada usuario)
    /// </summary>
    [Serializable()]
-   class UserAppSettings {
+   class UserAppSettings
+   {
       private bool confirmEndSession = true;
-      public bool ConfirmEndSession {
+      public bool ConfirmEndSession
+      {
          get { return confirmEndSession; }
          set { confirmEndSession = value; }
       }
 
       private string defaultCountry = "";
-      public string DefaultCountry {
+      public string DefaultCountry
+      {
          get { return defaultCountry; }
          set { defaultCountry = value; }
       }
 
       private string defaultProvince = "";
-      public string DefaultProvince {
+      public string DefaultProvince
+      {
          get { return defaultProvince; }
          set { defaultProvince = value; }
       }
 
       private string defaultLocality = "";
-      public string DefaultLocality {
+      public string DefaultLocality
+      {
          get { return defaultLocality; }
          set { defaultLocality = value; }
       }
 
       private string connectionID = "";
-      public string ConnectionID {
+      public string ConnectionID
+      {
          get { return connectionID; }
          set { connectionID = value; }
       }
 
       private string lastUser = "";
-      public string LastUser {
+      public string LastUser
+      {
          get { return lastUser; }
          set { lastUser = value; }
       }
 
 
       private int messageInterval = 5;
-      public int MessageInterval {
+      public int MessageInterval
+      {
          get { return messageInterval; }
          set { messageInterval = value; }
       }
 
       private bool sendMessages = false;
-      public bool SendMessages {
+      public bool SendMessages
+      {
          get { return sendMessages; }
          set { sendMessages = value; }
       }
 
       private string schedulerBeginHour = "08:00";
-      public string SchedulerBeginHour {
+      public string SchedulerBeginHour
+      {
          get { return schedulerBeginHour; }
          set { schedulerBeginHour = value; }
       }
 
       private string schedulerEndHour = "20:00";
-      public string SchedulerEndHour {
+      public string SchedulerEndHour
+      {
          get { return schedulerEndHour; }
          set { schedulerEndHour = value; }
       }
 
       private int schedulerInterval = 5;
-      public int SchedulerInterval {
+      public int SchedulerInterval
+      {
          get { return schedulerInterval; }
          set { schedulerInterval = value; }
       }
 
       private bool useAppStyles = true;
-      public bool UseAppStyles {
+      public bool UseAppStyles
+      {
          get { return useAppStyles; }
          set { useAppStyles = value; }
       }
 
       private string styleFileName = "default.isl";
-      public string StyleFileName {
+      public string StyleFileName
+      {
          get { return styleFileName; }
          set { styleFileName = value; }
       }
 
       //DE07-108
       private int vigencia = 0;
-      public int Vigencia {
+      public int Vigencia
+      {
          get { return vigencia; }
          set { vigencia = value; }
       }
 
       private bool restoreOpenWindows = false;
-      public bool RestoreOpenWindows {
+      public bool RestoreOpenWindows
+      {
          get { return restoreOpenWindows; }
          set { restoreOpenWindows = value; }
       }
 
       //DE11-04-007 20190218
       private bool informarInicioRealTarea = true;
-      public bool InformarInicioRealTarea {
+      public bool InformarInicioRealTarea
+      {
          get { return informarInicioRealTarea; }
          set { informarInicioRealTarea = value; }
       }

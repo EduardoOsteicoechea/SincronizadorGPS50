@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace GestprojectStyleManager
+namespace SincronizadorGPS50.GestprojectConnector
 {
     public class GestGestprojectStyleFilePath
     {

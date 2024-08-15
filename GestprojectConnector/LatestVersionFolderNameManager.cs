@@ -1,30 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
-namespace GestprojectConnector {
-   internal class LatestVersionFolderNameManager {
-      public string Get(string folderToBeAnalizedPath, string defaultVersionValue = "12.0.0.0") {
+namespace SincronizadorGPS50.GestprojectConnector
+{
+   internal class LatestVersionFolderNameManager
+   {
+      public string Get(string folderToBeAnalizedPath, string defaultVersionValue = "12.0.0.0")
+      {
          DirectoryInfo folderToBeAnalizedInformation = new DirectoryInfo( folderToBeAnalizedPath );
-         if(folderToBeAnalizedInformation.Exists) {
+         if(folderToBeAnalizedInformation.Exists)
+         {
             System.Collections.SortedList folders = new System.Collections.SortedList();
-            foreach(DirectoryInfo directoryInfo in folderToBeAnalizedInformation.GetDirectories()) {
+            foreach(DirectoryInfo directoryInfo in folderToBeAnalizedInformation.GetDirectories())
+            {
                folders.Add(directoryInfo.Name, directoryInfo.Name);
             };
 
-            if(folders.Count > 0) {
+            if(folders.Count > 0)
+            {
                return Path.Combine(folderToBeAnalizedPath, folders.GetKey(folders.Count - 1).ToString());
             }
-            else {
+            else
+            {
                return Path.Combine(folderToBeAnalizedPath, defaultVersionValue);
             };
          }
-         else {
+         else
+         {
             return Path.Combine(folderToBeAnalizedPath, defaultVersionValue);
          };
-      }  
+      }
    }
 }

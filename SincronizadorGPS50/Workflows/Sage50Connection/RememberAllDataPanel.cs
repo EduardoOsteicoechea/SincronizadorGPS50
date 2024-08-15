@@ -37,10 +37,10 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             PanelTableLayoutPanel = new TableLayoutPanel();
             PanelTableLayoutPanel.ColumnCount = 4;
             PanelTableLayoutPanel.RowCount = 0;
-            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 30f));
-            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 25f));
+            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 26f));
+            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 33f));
             PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 15f));
-            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 30f));
+            PanelTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Percent, 26f));
             PanelTableLayoutPanel.Dock = DockStyle.Fill;
 
             RememberLabel = new UltraLabel();

@@ -24,7 +24,7 @@ namespace SincronizadorGPS50.GestprojectAPI
             WHERE 
                 PAR_ID=" + client.PAR_ID + ";";
 
-            SqlCommand sqlCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection);
+            SqlCommand sqlCommand = new SqlCommand(sqlString, GestprojectDataHolder.GestprojectDatabaseConnection);
 
             using(SqlDataReader reader = sqlCommand.ExecuteReader())
             {

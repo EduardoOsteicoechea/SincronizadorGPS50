@@ -1,16 +1,13 @@
-﻿using SincronizadorGPS50.GestprojectAPI;
-using System;
+﻿
 
 namespace SincronizadorGPS50
 {
     internal static class Program
     {
-        [STAThread]
-        internal static void Main(string[] args)
+        [System.STAThreadAttribute]
+        internal static void Main()
         {
-            new ConnectToGestprojectDatabase();
-
-            System.Windows.Forms.Application.Run(new GenerateApplicationContext());
+            System.Windows.Forms.Application.Run(new SetupAndConnections());
         }
     }
 }

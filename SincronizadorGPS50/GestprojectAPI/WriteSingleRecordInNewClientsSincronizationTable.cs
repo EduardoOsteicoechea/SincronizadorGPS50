@@ -20,7 +20,7 @@ namespace SincronizadorGPS50.GestprojectAPI
         {
             string sqlString = $"WRITE INTO INT_SAGE_SINC_CLIENTE (gestproject_id, sage50_code, sage50_guid_id) VALUES ({gestProjectClientId},'{Sage50CurrentClientCode}','{Sage50ClientId}');";
 
-            using(SqlCommand SQLCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection))
+            using(SqlCommand SQLCommand = new SqlCommand(sqlString, GestprojectDataHolder.GestprojectDatabaseConnection))
             {
                 if(SQLCommand.ExecuteNonQuery() > 0)
                 {

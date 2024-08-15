@@ -1,9 +1,8 @@
-﻿using GestprojectConnector;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace GestprojectStyleManager
+namespace SincronizadorGPS50.GestprojectConnector
 {
    public class GestprojectSessionSettings
    {

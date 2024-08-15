@@ -1,4 +1,4 @@
-﻿using GestprojectDataManager;
+﻿using SincronizadorGPS50.GestprojectDataManager;
 using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinTabControl;
 using SincronizadorGPS50.Workflows.Clients;
@@ -6,8 +6,10 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace SincronizadorGPS50.Workflows.Sage50Connection {
-   internal class ConnectPanel : ISage50ConnectionUIStateTracker, ISage50ConnectionUIComponent {
+namespace SincronizadorGPS50.Workflows.Sage50Connection
+{
+   internal class ConnectPanel : ISage50ConnectionUIStateTracker, ISage50ConnectionUIComponent
+   {
       public bool IsConnected { get; set; } = false;
       public UltraPanel Panel { get; set; } = null;
       public TableLayoutPanel PanelTableLayoutPanel { get; set; } = null;
@@ -25,7 +27,8 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
           System.Windows.Forms.TableLayoutControlCollection parentControl,
           int parentControlColumn,
           int parentControlRow
-      ) {
+      )
+      {
          Sage50ConnectionUIManager = sage50ConnectionUIManager;
 
          Panel = new UltraPanel();
@@ -56,20 +59,23 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
          ConnectButton.Click += ConnectButton_Click;
       }
 
-      private void ConnectButton_Click(object sender, EventArgs e) {
+      private void ConnectButton_Click(object sender, EventArgs e)
+      {
          if(
-             Sage50ConnectionManager
+             SincronizadorGPS50.Sage50Connector
              .Sage50CompanyGroupActions
              .ChangeCompanyGroup(
                  Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Text
              )
-         ) {
+         )
+         {
             Sage50ConnectionUIManager.ShowConnectionStateUI.StateImage1.Image = Sage50ConnectionUIManager.ShowConnectionStateUI.ImageList.Images[1];
             Sage50ConnectionUIManager.SetDataAcceptedAndConnetedUI();
 
-            if(Sage50ConnectionUIManager.RememberAllDataUI.CheckBox.Checked) {
+            if(Sage50ConnectionUIManager.RememberAllDataUI.CheckBox.Checked)
+            {
 
-               var sage50CompanyGroup = Sage50ConnectionManager
+               var sage50CompanyGroup = SincronizadorGPS50.Sage50Connector
                 .Sage50CompanyGroupActions
                 .GetCompanyGroups()
                 .FirstOrDefault(companyGroup => companyGroup.CompanyName == Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Text);
@@ -78,7 +84,6 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
                   GestprojectDataHolder.GestprojectDatabaseConnection,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_ID,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_PERSONAL,
-                  //GestprojectDataHolder.LocalDeviceUserSessionData.CNX_CODIGO,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_USUARIO,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_PERFIL,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO,
@@ -95,16 +100,18 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
                Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Appearance.BackColor = StyleHolder.c_gray_200;
                Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Appearance.ForeColor = StyleHolder.c_gray_100;
 
-               foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs) {
+               foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs)
+               {
                   tab.Enabled = true;
                };
                MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.ClientsTab;
                new ClientsTabPageUI();
             }
-            else {
+            else
+            {
                ManageRememberableUserData.ForgetUserRememberableData(
                   GestprojectDataHolder.GestprojectDatabaseConnection,
-                  GestprojectDataHolder.LocalDeviceUserSessionData.CNX_USUARIO, 
+                  GestprojectDataHolder.LocalDeviceUserSessionData.CNX_USUARIO,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO,
                   GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID
                );
@@ -112,29 +119,31 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
                   GestprojectDataHolder.GestprojectDatabaseConnection,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_USUARIO,
                   GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO,
-                  GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID, 
+                  GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID,
                   0
                );
             };
          }
-         else {
+         else
+         {
             MessageBox.Show("Encontramos un error con el grupo de empresas");
-            Sage50ConnectionManager.ConnectionActions.Disconnect();
+            SincronizadorGPS50.Sage50Connector.ConnectionActions.Disconnect();
             Sage50ConnectionUIManager.SetStatelessStartUI();
          };
       }
 
       public void EnableControls() { ConnectButton.Enabled = true; }
-      public void DisableControls() { 
-         ConnectButton.Enabled = false; 
+      public void DisableControls()
+      {
+         ConnectButton.Enabled = false;
       }
       public void SetUIToConnected() { DisableControls(); }
       public void SetUIToDisconnected() { EnableControls(); }
 
-      public void Forget() => throw new NotImplementedException();
+      public void Forget() { }
       public void Remember() { }
-
-      public void Dispose() {
+      public void Dispose()
+      {
          Panel.Dispose();
          GC.SuppressFinalize(Panel);
       }

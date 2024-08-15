@@ -35,7 +35,7 @@ namespace SincronizadorGPS50.GestprojectAPI
                 INT_SAGE_SINC_CLIENTE_IMAGEN 
             ;";
 
-            SqlCommand sqlCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection);
+            SqlCommand sqlCommand = new SqlCommand(sqlString, GestprojectDataHolder.GestprojectDatabaseConnection);
 
             using(SqlDataReader reader = sqlCommand.ExecuteReader())
             {

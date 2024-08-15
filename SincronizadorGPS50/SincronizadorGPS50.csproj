@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -55,7 +70,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>appicon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Infragistics4.Documents.Core.v18.2, Version=18.2.20182.130, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
@@ -366,7 +385,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationManager.cs" />
     <Compile Include="DataHolders\UI\ClientsUIHolder.cs" />
     <Compile Include="DataHolders\DataHolder.cs" />
     <Compile Include="DataHolders\UI\Sage50ConnectionUIHolder.cs" />
@@ -375,15 +393,14 @@
     <Compile Include="DataHolders\UI\MainWindowUIHolder.cs" />
     <Compile Include="DataHolders\UI\StyleHolder.cs" />
     <Compile Include="GestprojectAPI\1_ConnectToGestprojectDatabase .cs" />
+    <Compile Include="1_SetupAndConnections\ApplicationGlobalStyles.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Workflows\ApplicationContext\1_GenerateApplicationContext - Copy.cs" />
-    <Compile Include="Workflows\ApplicationContext\ClientSynchronizationManager.cs" />
-    <Compile Include="Workflows\ApplicationContext\ManageApplicationGlobalStyles.cs" />
-    <Compile Include="Workflows\ApplicationContext\WindowsFormsApplicationSettings.cs" />
+    <Compile Include="2_ClientsSynchronization\_ClientSynchronizationManager.cs" />
+    <Compile Include="1_SetupAndConnections\WindowsFormsApplicationSettings.cs" />
     <Compile Include="Workflows\Clients\2_UpdateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_CreateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_WasGestprojectClientSynchronized.cs" />
@@ -450,15 +467,13 @@
     <Compile Include="Workflows\Clients\8_TopRowRefreshTableButtonEvents.cs" />
     <Compile Include="Workflows\Clients\4_UpdateRegisteredClientModelData.cs" />
     <Compile Include="Workflows\Clients\9_SyncronizationTableModel.cs" />
-    <Compile Include="Workflows\ApplicationContext\1_GenerateApplicationContext.cs" />
+    <Compile Include="1_SetupAndConnections\_SetupAndConnections.cs" />
     <Compile Include="Workflows\InitialWindow\2_GenerateMainWindowUI.cs" />
-    <Compile Include="Workflows\Sage50Connection\2_StatefulCenterRowCenterPanelControls.cs" />
     <Compile Include="Workflows\Sage50Connection\9_CompanyGroupModel.cs" />
     <Compile Include="Workflows\Sage50Connection\2_GenerateCenterRowUI.cs" />
     <Compile Include="Workflows\InitialWindow\1_GenerateMainWindow.cs" />
     <Compile Include="Workflows\Sage50Connection\3_Sage50ConnectionActions.cs" />
     <Compile Include="Workflows\Sage50Connection\1_GenerateSage50ConnectionTabUI.cs" />
-    <Compile Include="Workflows\Sage50Connection\2_StatelessCenterRowCenterPanelControls.cs" />
     <Compile Include="Workflows\Sage50Connection\9_ISage50ConnectionUIComponent.cs" />
     <Compile Include="Workflows\Sage50Connection\9_StateManager.cs" />
     <Compile Include="Workflows\Sage50Connection\ShowConnectionStatePanel.cs" />
@@ -468,10 +483,9 @@
     <Compile Include="Workflows\Sage50Connection\ManageCompanyGroupOptionsPanel.cs" />
     <Compile Include="Workflows\Sage50Connection\GetLocalTerminalUserDataPanel.cs" />
     <Compile Include="Workflows\Sage50Connection\ManageConnectionPanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\8_Sage50ConnectionUIManager.cs" />
+    <Compile Include="Workflows\Sage50Connection\Sage50ConnectionUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="appicon.ico" />
     <None Include="Resources\Excel_Open.ico" />
     <None Include="Resources\Delete_16.ICO" />
     <None Include="Resources\appicon.ico" />
@@ -639,26 +653,30 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GestprojectConnector\GestprojectDatabaseConnector.csproj">
+    <ProjectReference Include="..\GestprojectConnector\SincronizadorGPS50.GestprojectConnector.csproj">
       <Project>{e1d68abe-ce53-4d58-8d9e-fe116ecde711}</Project>
-      <Name>GestprojectDatabaseConnector</Name>
+      <Name>SincronizadorGPS50.GestprojectConnector</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GestprojectDataManager\GestprojectDataManager.csproj">
+    <ProjectReference Include="..\GestprojectDataManager\SincronizadorGPS50.GestprojectDataManager.csproj">
       <Project>{31e51a57-59e2-41e3-9a19-545fbf72a0d1}</Project>
-      <Name>GestprojectDataManager</Name>
+      <Name>SincronizadorGPS50.GestprojectDataManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GestprojectStylesManager\GestprojectStyleManager.csproj">
-      <Project>{81103de6-4ccc-40e0-a0a6-b592f8ca739f}</Project>
-      <Name>GestprojectStyleManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sage50ConnectionManager\Sage50ConnectionManager.csproj">
+    <ProjectReference Include="..\Sage50ConnectionManager\SincronizadorGPS50.Sage50Connector.csproj">
       <Project>{ed0700f7-4cc0-4431-b9c8-f04f1fb75eae}</Project>
-      <Name>Sage50ConnectionManager</Name>
+      <Name>SincronizadorGPS50.Sage50Connector</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sage50DataManager\Sage50DataManager.csproj">
-      <Project>{a63b7aad-d186-4711-b6d2-69d10936ac0d}</Project>
-      <Name>Sage50DataManager</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

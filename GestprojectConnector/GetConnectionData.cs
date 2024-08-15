@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace GestprojectDatabaseConnector
+namespace SincronizadorGPS50.GestprojectConnector
 {
     internal class GetConnectionData
     {

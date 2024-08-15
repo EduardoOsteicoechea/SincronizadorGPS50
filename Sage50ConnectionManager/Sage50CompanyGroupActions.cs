@@ -5,11 +5,14 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Sage50ConnectionManager {
-   public static class Sage50CompanyGroupActions {
+namespace SincronizadorGPS50.Sage50Connector
+{
+   public static class Sage50CompanyGroupActions
+   {
       public static List<CompanyGroup> CompanyGroupList { get; set; } = null;
       public static DataTable Sage50CompanyGroupsDataTable { get; set; } = null;
-      public static List<CompanyGroup> GetCompanyGroups() {
+      public static List<CompanyGroup> GetCompanyGroups()
+      {
          Sage50CompanyGroupsDataTable = null;
          CompanyGroupList = new List<CompanyGroup>();
 
@@ -23,7 +26,8 @@ namespace Sage50ConnectionManager {
          //     "sage50CompanyGroupsDataTable.Rows: " + sage50CompanyGroupsDataTable.Rows.Count
          // );
 
-         for(int i = 0; i < sage50CompanyGroupsDataTable.Rows.Count; i++) {
+         for(int i = 0; i < sage50CompanyGroupsDataTable.Rows.Count; i++)
+         {
             CompanyGroup companyGroup = new CompanyGroup();
             companyGroup.CompanyCode = (string)sage50CompanyGroupsDataTable.Rows[i].ItemArray[0];
             companyGroup.CompanyName = (string)sage50CompanyGroupsDataTable.Rows[i].ItemArray[1];
@@ -45,11 +49,13 @@ namespace Sage50ConnectionManager {
          return CompanyGroupList;
       }
 
-      public static bool ChangeCompanyGroup(string selectedCompanyName) {
+      public static bool ChangeCompanyGroup(string selectedCompanyName)
+      {
          List<CompanyGroup> companyGroupList = GetCompanyGroups();
          List<string> companyGroupNamesList = companyGroupList.Select(companyGroup => companyGroup.CompanyName).ToList();
 
-         if(companyGroupNamesList.Contains(selectedCompanyName)) {
+         if(companyGroupNamesList.Contains(selectedCompanyName))
+         {
             GrupoEmpresaSel companyGroupsOperator = new GrupoEmpresaSel();
 
             var selectedCompanyGroup = companyGroupList.Where(companyGroup => companyGroup.CompanyName == selectedCompanyName).FirstOrDefault();
@@ -60,22 +66,26 @@ namespace Sage50ConnectionManager {
 
             return result;
          }
-         else {
+         else
+         {
             return false;
          };
       }
 
-      public static void GetCompanyGroupCompanies(object sender, System.EventArgs e) {
+      public static void GetCompanyGroupCompanies(object sender, System.EventArgs e)
+      {
          DataTable dtTabla = new DataTable();
          DB.SQLExec("SELECT codigo FROM " + DB.SQLDatabase("GESTION", "empresa"), ref dtTabla);
 
-         for(int i = 0; i < dtTabla.Rows.Count; i++) {
+         for(int i = 0; i < dtTabla.Rows.Count; i++)
+         {
             var codigo = (string)dtTabla.Rows[i].ItemArray[0];
             MessageBox.Show(codigo);
          };
       }
 
-      public static void ShowCompanyGroupSage50UI(object sender, System.EventArgs e) {
+      public static void ShowCompanyGroupSage50UI(object sender, System.EventArgs e)
+      {
          GrupoEmpresaSel CompanyGroupsOperator = new GrupoEmpresaSel();
          CompanyGroupsOperator._MostrarFormulario();
       }

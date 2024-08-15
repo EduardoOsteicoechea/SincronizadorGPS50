@@ -1,9 +1,10 @@
 ﻿
-namespace GestprojectDataManager {
-   public class SynchronizerUserRememberableDataModel {
+namespace SincronizadorGPS50.GestprojectDataManager
+{
+   public class SynchronizerUserRememberableDataModel
+   {
       public int? GP_CNX_ID { get; set; } = null;
       public string GP_CNX_PERSONAL { get; set; } = "";
-      //public string GP_CNX_CODIGO { get; set; } = "";
       public string GP_CNX_USUARIO { get; set; } = "";
       public string GP_CNX_PERFIL { get; set; } = "";
       public string GP_CNX_EQUIPO { get; set; } = "";

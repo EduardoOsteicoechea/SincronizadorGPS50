@@ -1,7 +1,7 @@
 ﻿using Dinq.Gestproject;
 using System;
 
-namespace GestprojectConnector
+namespace SincronizadorGPS50.GestprojectConnector
 {
    public class GestprojectLocalDeviceUserData
    {
@@ -19,7 +19,7 @@ namespace GestprojectConnector
           ),
           "_USERSETTINGS.DAT"
       );
-      public static string GestprojectStylesFolderPath { get; set; } = 
+      private static string GestprojectStylesFolderPath { get; set; } = 
       System.IO.Path.Combine(
          Environment.GetFolderPath(
             Environment.SpecialFolder.ProgramFilesX86

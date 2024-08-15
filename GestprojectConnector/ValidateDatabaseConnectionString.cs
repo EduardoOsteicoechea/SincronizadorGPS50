@@ -1,7 +1,6 @@
-﻿using GestprojectConnector;
-using System.Windows.Forms;
+﻿
 
-namespace GestprojectDatabaseConnector
+namespace SincronizadorGPS50.GestprojectConnector
 {
     internal class ValidateDatabaseConnectionString
     {

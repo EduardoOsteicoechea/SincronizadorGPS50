@@ -20,7 +20,7 @@ namespace SincronizadorGPS50.GestprojectAPI
         {
             string sqlString = $"SELECT sage50_guid_id FROM INT_SAGE_SINC_CLIENTE_IMAGEN WHERE PAR_ID='{client.PAR_ID}';";
 
-            SqlCommand sqlCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection);
+            SqlCommand sqlCommand = new SqlCommand(sqlString, GestprojectDataHolder.GestprojectDatabaseConnection);
 
             string clientRegisteredGUID = "";
 

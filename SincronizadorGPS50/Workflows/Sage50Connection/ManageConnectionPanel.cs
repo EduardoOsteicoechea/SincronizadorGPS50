@@ -49,10 +49,9 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
 
          parentControl.Add(Panel, parentControlColumn, parentControlRow);
 
+         ////////////////////////////////
          // Manage Events
-         // Manage Events
-         // Manage Events
-         // Manage Events
+         ////////////////////////////////
 
          ConnectButton1.Click += ConnectButton1_Click;
       }
@@ -64,6 +63,12 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection {
             GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO,
             GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID, 
             0
+         );
+         GestprojectDataManager.ManageRememberableUserData.ForgetUserRememberableData(
+            GestprojectDataHolder.GestprojectDatabaseConnection,
+            GestprojectDataHolder.LocalDeviceUserSessionData.CNX_USUARIO,
+            GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO,
+            GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID
          );
          Sage50ConnectionUIManager.SetStatelessStartUI();
          Application.Exit();

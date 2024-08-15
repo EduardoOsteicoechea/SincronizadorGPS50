@@ -15,7 +15,7 @@ namespace SincronizadorGPS50.GestprojectAPI
             string tableName = "PARTICIPANTE";
             string sqlString = $"UPDATE {tableName} SET PAR_SUBCTA_CONTABLE = {sage50ClientCode} WHERE PAR_ID = {gestprojectClientid};";
 
-            using(SqlCommand SQLCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection))
+            using(SqlCommand SQLCommand = new SqlCommand(sqlString, GestprojectDataHolder.GestprojectDatabaseConnection))
             {
                 SQLCommand.ExecuteNonQuery();
             };

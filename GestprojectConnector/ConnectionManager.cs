@@ -1,7 +1,6 @@
-﻿using GestprojectConnector;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
-namespace GestprojectDatabaseConnector
+namespace SincronizadorGPS50.GestprojectConnector
 {
    public class ConnectionManager
    {

@@ -1,4 +1,4 @@
-﻿using GestprojectDataManager;
+﻿using SincronizadorGPS50.GestprojectDataManager;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;

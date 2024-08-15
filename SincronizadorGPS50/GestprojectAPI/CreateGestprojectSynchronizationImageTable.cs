@@ -36,12 +36,12 @@ namespace SincronizadorGPS50.GestprojectAPI
             )
             ;";
 
-            using(SqlCommand SQLCommand = new SqlCommand(sqlString, DataHolder.GestprojectSQLConnection))
+            using(SqlCommand SQLCommand = new SqlCommand(sqlString, GestprojectDataHolder.GestprojectDatabaseConnection))
             {
                 SQLCommand.ExecuteNonQuery();
                 using(
                     SqlCommand command = new SqlCommand(
-                        "SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'INT_SAGE_SINC_CLIENTE';", DataHolder.GestprojectSQLConnection
+                        "SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'INT_SAGE_SINC_CLIENTE';", GestprojectDataHolder.GestprojectDatabaseConnection
                     )
                 )
                 {
