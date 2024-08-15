@@ -80,7 +80,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
       {
          List<SincronizadorGPS50.Sage50Connector.CompanyGroup> sage50CompanyGroupsList = SincronizadorGPS50.Sage50Connector.Sage50CompanyGroupActions.GetCompanyGroups();
 
-         MessageBox.Show(DB.SQLDatabase("COMUNES"));
+         //MessageBox.Show(DB.SQLDatabase("COMUNES"));
 
          for(global::System.Int32 i = 0; i < sage50CompanyGroupsList.Count; i++)
          {

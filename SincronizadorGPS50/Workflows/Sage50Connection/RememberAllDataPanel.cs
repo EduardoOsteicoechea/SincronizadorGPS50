@@ -1,8 +1,6 @@
 ﻿using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinEditors;
-using Infragistics.Win.UltraWinGrid;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50.Workflows.Sage50Connection
@@ -55,6 +53,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             CheckBox.TabStop = true;
             CheckBox.Appearance.TextHAlign = Infragistics.Win.HAlign.Center;
             CheckBox.Appearance.TextVAlign = Infragistics.Win.VAlign.Middle;
+            CheckBox.Checked = true;
 
             PanelTableLayoutPanel.Controls.Add(RememberLabel, 1, 0);
             PanelTableLayoutPanel.Controls.Add(CheckBox, 2, 0);
@@ -62,7 +61,6 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             Panel.ClientArea.Controls.Add(PanelTableLayoutPanel);
 
             parentControl.Add(Panel, parentControlColumn, parentControlRow);
-
         }
 
         public void EnableControls()
@@ -81,7 +79,7 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
         {
             EnableControls();
         }
-        public void Forget() => throw new NotImplementedException();
+        public void Forget() {}
         public void Remember() {}
         public void Dispose()
         {

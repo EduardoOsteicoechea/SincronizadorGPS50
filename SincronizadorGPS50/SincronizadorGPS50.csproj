@@ -393,14 +393,14 @@
     <Compile Include="DataHolders\UI\MainWindowUIHolder.cs" />
     <Compile Include="DataHolders\UI\StyleHolder.cs" />
     <Compile Include="GestprojectAPI\1_ConnectToGestprojectDatabase .cs" />
-    <Compile Include="1_SetupAndConnections\ApplicationGlobalStyles.cs" />
+    <Compile Include="1_SetupAndConnections\2_ApplicationGlobalStyles.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="2_ClientsSynchronization\_ClientSynchronizationManager.cs" />
-    <Compile Include="1_SetupAndConnections\WindowsFormsApplicationSettings.cs" />
+    <Compile Include="1_SetupAndConnections\3_WindowsFormsApplicationSettings.cs" />
     <Compile Include="Workflows\Clients\2_UpdateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_CreateSage50Customer.cs" />
     <Compile Include="Workflows\Clients\2_WasGestprojectClientSynchronized.cs" />

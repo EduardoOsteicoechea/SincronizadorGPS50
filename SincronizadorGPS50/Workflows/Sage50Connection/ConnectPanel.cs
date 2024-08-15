@@ -54,7 +54,9 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
          parentControl.Add(Panel, parentControlColumn, parentControlRow);
 
+         /////////////////////////////////
          // Handle Events
+         /////////////////////////////////
 
          ConnectButton.Click += ConnectButton_Click;
       }
@@ -100,12 +102,13 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
                Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Appearance.BackColor = StyleHolder.c_gray_200;
                Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Appearance.ForeColor = StyleHolder.c_gray_100;
 
-               foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs)
-               {
-                  tab.Enabled = true;
-               };
-               MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.ClientsTab;
-               new ClientsTabPageUI();
+               //foreach(UltraTab tab in MainWindowUIHolder.MainTabControl.Tabs)
+               //{
+               //   tab.Enabled = true;
+               //};
+               //MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.ClientsTab;
+               //new ClientsTabPageUI();
+               new ClientSynchronizationManager().Launch();
             }
             else
             {

@@ -1,0 +1,93 @@
+-------------------------
+Prioridad 1 (Conexiones)
+-------------------------
+Hecho
+
+-------------------------
+Prioridad 2 (Lógica de negocio de Clientes)
+-------------------------
+- Resolución completa de sincronización de clientes
+	- Vinculación de clientes con grupos de empresa
+	- Comparación suelta (evitar duplicación en Sage50)
+	- Escritura de datos en Sage (Remover validaciones discutidas)
+	- Mensajes de comparación de Datos (Único error (Remover "rechazado por sage50"))
+	- Corregir error de estado de sincronización
+- Selección de clientes para sincronización (Botón de seleccionar todo, y de sincronizar)
+
+-------------------------
+Prioridad 3 (modificaciones de interfaz de global)
+-------------------------
+
+
+
+
+
+- Añadir botón de filtrado de columnas
+- Añadir función de organizar por nombre
+
+- modificar mensaje de confirmación para sincronización: "Autoriza a Gestproject para sincronizar los clientes seleccionados actualmente"
+----------------------------------------------------
+- Botón: Seleccionar todo: Todo lo visible actualmente
+- Movilizar botones a barra superior
+- Botones: Salir (barra inferior), Actualizar, Sincronizar, Seleccionar todo
+- Parte superior: Botones: refrescar, seleccionar todo, sincronizar. Remover mensaje
+---------------------------------------------------
+- En parte inferior de UI:
+	- Botonera: Acciones de ventana (Botón de salir) (aprox.35-40px)
+	-barra  de estado (de 20 - 25px), dejar mensaje de estado. :
+			Gestproject:
+		"CNX_USUARIO" - "CNX_PERSONAL" 
+		 Conectado a: "GPdb e.g."Default"]" 
+
+			Sage50:
+		Nombre de usuario
+		GrupoDeEmpresa
+
+			última actualización de UI actual
+--------------------------------------------
+- Modificar UI de Pestaña de conexión:
+	- Campos de datos ubicados a la izquierda siempre, seguidos de imágenes de logos, ambos con tamaños fijos, y columna de espaciado variable a la derecha.
+
+
+---------------------------------------------
+
+
+- Añadir guid de grupo de empresa a cada cliente
+- Quitar validaciones de campos: País, Código postal, Provincia, etc (Mantener validación de diferencia para notificar errores)
+- 
+- Luego de sincronizar, mostrar sólo clientes vinculados a guid de grupo de empresa, y clientes no vinculados a ningún grupo de empresa.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

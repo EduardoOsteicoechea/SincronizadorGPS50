@@ -45,17 +45,11 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
          GetLocalTerminalUserDataUI = new GetLocalTerminalUserDataPanel(this, ParentControl, 0, 2);
          GetLocalTerminalUserDataUI.Remember();
 
-         ValidateTerminalUserDataUI = new ValidateTerminalUserDataPanel(this, ParentControl, 0, 3);
-
          SelectCompanyGroupUI = new SelectCompanyGroupPanel(this, ParentControl, 0, 4);
          SelectCompanyGroupUI.Remember();
          SelectCompanyGroupUI.DisableControls();
 
-         RememberAllDataUI = new RememberAllDataPanel(this, ParentControl, 0, 5);
-
-         ConnectUI = new ConnectPanel(this, ParentControl, 0, 6);
-
-         ManageConnectionUI = new ManageConnectionPanel(this, ParentControl, 0, 7);
+         ManageConnectionUI = new ManageConnectionPanel(this, ParentControl, 0, 6);
          ManageConnectionUI.SetUIToConnected();
 
          SetConnetedUI();
@@ -118,7 +112,12 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
       }
       internal void SetDataAcceptedAndConnetedUI()
       {
-         ManageConnectionUI = new ManageConnectionPanel(this, ParentControl, 0, 7);
+         if(ConnectUI != null)
+         {
+            ConnectUI.Dispose();
+            ConnectUI = null;
+         };
+         ManageConnectionUI = new ManageConnectionPanel(this, ParentControl, 0, 6);
          SetConnetedUI();
       }
       internal void SetConnetedUI()
@@ -128,41 +127,14 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
          GetLocalTerminalUserDataUI.SetUIToConnected();
 
-         ValidateTerminalUserDataUI.SetUIToConnected();
-
          SelectCompanyGroupUI.SetUIToConnected();
-
-         RememberAllDataUI.SetUIToConnected();
-
-         ConnectUI.SetUIToConnected();
 
          ManageConnectionUI.SetUIToConnected();
       }
       internal void SetStatelessStartUI()
       {
-         ShowConnectionStateUI.Dispose();
-         ShowConnectionStateUI = null;
-
-         GetLocalTerminalUserDataUI.Dispose();
-         GetLocalTerminalUserDataUI = null;
-
-         ValidateTerminalUserDataUI.Dispose();
-         ValidateTerminalUserDataUI = null;
-
-         SelectCompanyGroupUI.Dispose();
-         SelectCompanyGroupUI = null;
-
-         RememberAllDataUI.Dispose();
-         RememberAllDataUI = null;
-
-         ConnectUI.Dispose();
-         ConnectUI = null;
-
-         ManageConnectionUI.Dispose();
-         ManageConnectionUI = null;
-
          SincronizadorGPS50.Sage50Connector.ConnectionActions.Disconnect();
-         CreateStatelessUI();
+         RemoveAllUIElements();
       }
       internal void RemoveAllUIElements()
       {

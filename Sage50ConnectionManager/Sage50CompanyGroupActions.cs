@@ -80,7 +80,7 @@ namespace SincronizadorGPS50.Sage50Connector
          for(int i = 0; i < dtTabla.Rows.Count; i++)
          {
             var codigo = (string)dtTabla.Rows[i].ItemArray[0];
-            MessageBox.Show(codigo);
+            //MessageBox.Show(codigo);
          };
       }
 
