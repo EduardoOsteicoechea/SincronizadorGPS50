@@ -385,6 +385,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1_SetupAndConnections\2_MainWindowActions.cs" />
+    <Compile Include="2_ClientsSynchronization\3_AddUnsynchronizedClientToUITable.cs" />
+    <Compile Include="2_ClientsSynchronization\3_ClientSynchronizationTable - Copy.cs" />
     <Compile Include="DataHolders\UI\ClientsUIHolder.cs" />
     <Compile Include="DataHolders\DataHolder.cs" />
     <Compile Include="DataHolders\UI\Sage50ConnectionUIHolder.cs" />
@@ -393,20 +396,19 @@
     <Compile Include="DataHolders\UI\MainWindowUIHolder.cs" />
     <Compile Include="DataHolders\UI\StyleHolder.cs" />
     <Compile Include="GestprojectAPI\1_ConnectToGestprojectDatabase .cs" />
-    <Compile Include="1_SetupAndConnections\2_ApplicationGlobalStyles.cs" />
+    <Compile Include="1_SetupAndConnections\1_ApplicationGlobalStyles.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="2_ClientsSynchronization\_ClientSynchronizationManager.cs" />
-    <Compile Include="1_SetupAndConnections\3_WindowsFormsApplicationSettings.cs" />
-    <Compile Include="Workflows\Clients\2_UpdateSage50Customer.cs" />
-    <Compile Include="Workflows\Clients\2_CreateSage50Customer.cs" />
-    <Compile Include="Workflows\Clients\2_WasGestprojectClientSynchronized.cs" />
-    <Compile Include="Workflows\Clients\2_CheckEndPointsDataConformity.cs" />
-    <Compile Include="Workflows\Clients\2_IsGestprojectClientSynchronized.cs" />
-    <Compile Include="Workflows\Clients\2_IsGestprojectClientRegistered.cs" />
+    <Compile Include="1_SetupAndConnections\1_WindowsFormsApplicationSettings.cs" />
+    <Compile Include="2_ClientsSynchronization\2_UpdateSage50Customer.cs" />
+    <Compile Include="2_ClientsSynchronization\2_CreateSage50Customer.cs" />
+    <Compile Include="2_ClientsSynchronization\2_CheckEndPointsDataConformity.cs" />
+    <Compile Include="2_ClientsSynchronization\2_IsGestprojectClientSynchronized.cs" />
+    <Compile Include="2_ClientsSynchronization\2_IsGestprojectClientRegistered.cs" />
     <Compile Include="GestprojectAPI\GetRegisteredClients.cs" />
     <Compile Include="GestprojectAPI\RecordSage50ClientCodeInGestproject.cs" />
     <Compile Include="GestprojectAPI\AddAccountableSubacountValueToClient.cs" />
@@ -414,7 +416,6 @@
     <Compile Include="GestprojectAPI\IsClientUpToDateWithSage50.cs" />
     <Compile Include="GestprojectAPI\IsClientUpToDateWithLastGestProjectRecord.cs" />
     <Compile Include="GestprojectAPI\CheckIfGestprojectClientWasRegistered.cs" />
-    <Compile Include="GestprojectAPI\CheckIfTableExistsOnGestproject.cs" />
     <Compile Include="GestprojectAPI\ConnectToGestprojectDatabase.cs" />
     <Compile Include="GestprojectAPI\CreateGestprojectSynchronizationImageTable.cs" />
     <Compile Include="GestprojectAPI\GestprojectClientsActions.cs" />
@@ -424,9 +425,7 @@
     <Compile Include="GestprojectAPI\GetGestprojectParticipants.cs" />
     <Compile Include="GestprojectAPI\RegisterClient - Copy.cs" />
     <Compile Include="GestprojectAPI\UpdateClient.cs" />
-    <Compile Include="GestprojectAPI\RegisterClient.cs" />
     <Compile Include="GestprojectAPI\UpdateClientSynchronizationStatus.cs" />
-    <Compile Include="GestprojectAPI\CreateGestprojectSage50SynchronizationTable.cs" />
     <Compile Include="GestprojectAPI\WriteSingleRecordInNewClientsSincronizationTable.cs" />
     <Compile Include="Sage50API\BaseMaster.cs" />
     <Compile Include="Sage50API\clsDatos.cs" />
@@ -436,54 +435,51 @@
     <Compile Include="Sage50API\Customer.cs" />
     <Compile Include="Sage50API\GetSage50Client.cs" />
     <Compile Include="Sage50API\2_GetSage50Clients.cs" />
-    <Compile Include="Workflows\Clients\2_Sage50Clients.cs" />
-    <Compile Include="Setup\LinkSage50.cs" />
+    <Compile Include="2_ClientsSynchronization\2_Sage50Clients.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Workflows\Clients\3_SynchronizationTable - Copy.cs" />
-    <Compile Include="Workflows\Clients\8_BottomRowSynchronizeAllButtonEvents.cs" />
-    <Compile Include="Workflows\Clients\8_BottomRowSynchronizeFilteredButtonEvents.cs" />
-    <Compile Include="Workflows\Clients\8_TopRowSinchronizeSelectedButtonEvents.cs" />
-    <Compile Include="Workflows\Clients\9_Client_model.cs" />
-    <Compile Include="Workflows\Clients\9_ColumnsFilter.cs">
+    <Compile Include="2_ClientsSynchronization\3_SynchronizationTable - Copy.cs" />
+    <Compile Include="2_ClientsSynchronization\8_BottomRowSynchronizeAllButtonEvents.cs" />
+    <Compile Include="2_ClientsSynchronization\8_BottomRowSynchronizeFilteredButtonEvents.cs" />
+    <Compile Include="2_ClientsSynchronization\8_TopRowSinchronizeSelectedButtonEvents.cs" />
+    <Compile Include="2_ClientsSynchronization\9_Client_model.cs" />
+    <Compile Include="2_ClientsSynchronization\9_ColumnsFilter.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Workflows\Clients\3_SynchronizationTable.cs" />
-    <Compile Include="Workflows\Clients\8_TableUISynchronizationActions.cs" />
-    <Compile Include="Workflows\Clients\1_BottomRowUI.cs" />
-    <Compile Include="Workflows\Clients\9_Error_models.cs" />
-    <Compile Include="Workflows\Clients\9_SynchronizationTableDelegate.cs" />
-    <Compile Include="Workflows\Clients\3_AddClientToSyncronizationUITable.cs" />
-    <Compile Include="Workflows\Clients\2_GestprojectClients.cs" />
-    <Compile Include="Workflows\Clients\3_GetSelectedClientsInUITable.cs" />
-    <Compile Include="Workflows\Clients\4_PopulateGestprojectClientSynchronizationData.cs" />
-    <Compile Include="Workflows\Clients\8_RemoveClientsSynchronizationTable.cs" />
-    <Compile Include="Workflows\Clients\1_TopRowUI.cs" />
-    <Compile Include="Workflows\Clients\1_CenterRowUI.cs" />
-    <Compile Include="Workflows\Clients\1_ClientsTabPageUI.cs" />
-    <Compile Include="Workflows\Clients\5_SynchronizeClients.cs" />
-    <Compile Include="Workflows\Clients\3_CreateTableControl.cs" />
-    <Compile Include="Workflows\Clients\9_SyncronizationStatusOptions.cs" />
-    <Compile Include="Workflows\Clients\8_TopRowRefreshTableButtonEvents.cs" />
-    <Compile Include="Workflows\Clients\4_UpdateRegisteredClientModelData.cs" />
-    <Compile Include="Workflows\Clients\9_SyncronizationTableModel.cs" />
+    <Compile Include="2_ClientsSynchronization\3_ClientSynchronizationTable.cs" />
+    <Compile Include="2_ClientsSynchronization\8_TableUISynchronizationActions.cs" />
+    <Compile Include="2_ClientsSynchronization\1_BottomRowUI.cs" />
+    <Compile Include="2_ClientsSynchronization\9_Error_models.cs" />
+    <Compile Include="2_ClientsSynchronization\9_SynchronizationTableDelegate.cs" />
+    <Compile Include="2_ClientsSynchronization\3_AddClientToSyncronizationUITable.cs" />
+    <Compile Include="2_ClientsSynchronization\2_GestprojectClients.cs" />
+    <Compile Include="2_ClientsSynchronization\3_GetSelectedClientsInUITable.cs" />
+    <Compile Include="2_ClientsSynchronization\4_PopulateGestprojectClientSynchronizationData.cs" />
+    <Compile Include="2_ClientsSynchronization\8_RemoveClientsSynchronizationTable.cs" />
+    <Compile Include="2_ClientsSynchronization\1_TopRowUI.cs" />
+    <Compile Include="2_ClientsSynchronization\1_CenterRowUI.cs" />
+    <Compile Include="2_ClientsSynchronization\1_ClientsTabPageUI.cs" />
+    <Compile Include="2_ClientsSynchronization\5_SynchronizeClients.cs" />
+    <Compile Include="2_ClientsSynchronization\3_CreateTableControl.cs" />
+    <Compile Include="2_ClientsSynchronization\9_SyncronizationStatusOptions.cs" />
+    <Compile Include="2_ClientsSynchronization\8_TopRowRefreshTableButtonEvents.cs" />
+    <Compile Include="2_ClientsSynchronization\4_UpdateRegisteredClientModelData.cs" />
+    <Compile Include="2_ClientsSynchronization\9_SyncronizationTableModel.cs" />
     <Compile Include="1_SetupAndConnections\_SetupAndConnections.cs" />
-    <Compile Include="Workflows\InitialWindow\2_GenerateMainWindowUI.cs" />
-    <Compile Include="Workflows\Sage50Connection\9_CompanyGroupModel.cs" />
-    <Compile Include="Workflows\Sage50Connection\2_GenerateCenterRowUI.cs" />
-    <Compile Include="Workflows\InitialWindow\1_GenerateMainWindow.cs" />
-    <Compile Include="Workflows\Sage50Connection\3_Sage50ConnectionActions.cs" />
-    <Compile Include="Workflows\Sage50Connection\1_GenerateSage50ConnectionTabUI.cs" />
-    <Compile Include="Workflows\Sage50Connection\9_ISage50ConnectionUIComponent.cs" />
-    <Compile Include="Workflows\Sage50Connection\9_StateManager.cs" />
-    <Compile Include="Workflows\Sage50Connection\ShowConnectionStatePanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\RememberAllDataPanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\ConnectPanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\ValidateTerminalUserDataPanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\ManageCompanyGroupOptionsPanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\GetLocalTerminalUserDataPanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\ManageConnectionPanel.cs" />
-    <Compile Include="Workflows\Sage50Connection\Sage50ConnectionUIManager.cs" />
+    <Compile Include="1_SetupAndConnections\2_GenerateMainWindowUI.cs" />
+    <Compile Include="1_SetupAndConnections\3_GenerateCenterRowUI.cs" />
+    <Compile Include="1_SetupAndConnections\2_GenerateMainWindow.cs" />
+    <Compile Include="1_SetupAndConnections\3_GenerateSage50ConnectionTabUI.cs" />
+    <Compile Include="1_SetupAndConnections\9_ISage50ConnectionUIComponent.cs" />
+    <Compile Include="1_SetupAndConnections\9_StateManager.cs" />
+    <Compile Include="1_SetupAndConnections\4_2_ShowConnectionStatePanel.cs" />
+    <Compile Include="1_SetupAndConnections\4_6_RememberAllDataPanel.cs" />
+    <Compile Include="1_SetupAndConnections\4_7_ConnectPanel.cs" />
+    <Compile Include="1_SetupAndConnections\4_4_ValidateTerminalUserDataPanel.cs" />
+    <Compile Include="1_SetupAndConnections\4_5_ManageCompanyGroupOptionsPanel.cs" />
+    <Compile Include="1_SetupAndConnections\4_3_GetLocalTerminalUserDataPanel.cs" />
+    <Compile Include="1_SetupAndConnections\4_8_ManageConnectionPanel.cs" />
+    <Compile Include="1_SetupAndConnections\4_1_Sage50ConnectionUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Excel_Open.ico" />

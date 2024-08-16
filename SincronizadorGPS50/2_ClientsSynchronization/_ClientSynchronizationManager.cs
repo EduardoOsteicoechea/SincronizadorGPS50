@@ -1,5 +1,4 @@
-﻿using Infragistics.Win.UltraWinTabControl;
-using SincronizadorGPS50.Workflows.Clients;
+﻿using SincronizadorGPS50.Workflows.Clients;
 
 namespace SincronizadorGPS50
 {
@@ -9,10 +8,19 @@ namespace SincronizadorGPS50
       {
          try
          {
+            /////////////////////////////////////////////
+            // Enable and set as selected, ClientsTab
+            /////////////////////////////////////////////
+
             MainWindowUIHolder.ClientsTab.Enabled = true;
             MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.ClientsTab;
+
+            /////////////////////////////////////////////
+            // Launch Clients Tab page generation
+            /////////////////////////////////////////////
+
             new ClientsTabPageUI();
-         } 
+         }
          catch (System.Exception exception) 
          {
             throw exception;

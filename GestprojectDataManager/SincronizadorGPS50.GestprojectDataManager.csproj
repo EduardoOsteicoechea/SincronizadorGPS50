@@ -43,18 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clients\PopulateGestprojectClientSynchronizationData - Copy.cs" />
+    <Compile Include="Clients\PopulateUnsynchronizedClientRegistrationData.cs" />
+    <Compile Include="Clients\WasGestprojectClientSynchronized.cs" />
+    <Compile Include="CheckIfTableExistsOnGestproject.cs" />
+    <Compile Include="Clients\CreateClientSynchronizationTable.cs" />
     <Compile Include="Encryptor.cs" />
     <Compile Include="GestprojectProviders.cs" />
     <Compile Include="GestprojectProviderModel.cs" />
-    <Compile Include="GestprojectClientModel.cs" />
+    <Compile Include="Clients\GestprojectClient.cs" />
     <Compile Include="GestprojectParticipantModel.cs" />
-    <Compile Include="GestprojectClients.cs" />
+    <Compile Include="Clients\GestprojectClientsManager.cs" />
     <Compile Include="GestprojectParticipants.cs" />
     <Compile Include="GestprojectUserIdAndDevice.cs" />
     <Compile Include="IdsAndDeviceTerminalNames.cs" />
     <Compile Include="ManageRememberableUserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ClientSynchronizationTableSchema.cs" />
+    <Compile Include="Clients\ClientSynchronizationTableSchema.cs" />
+    <Compile Include="Clients\RegisterClient.cs" />
     <Compile Include="SynchronizerUserRememberableDataModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,6 +8,7 @@ using sage.ew.global;
 using sage.ew.global.Diccionarios;
 using sage.ew.functions;
 using SincronizadorGPS50;
+using SincronizadorGPS50.Sage50Connector;
 
 namespace SincronizadorGPS50
 {
