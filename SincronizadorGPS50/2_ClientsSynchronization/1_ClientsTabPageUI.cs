@@ -17,9 +17,9 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.TableLayoutPanel = new TableLayoutPanel();
             ClientsUIHolder.TableLayoutPanel.ColumnCount = 1;
             ClientsUIHolder.TableLayoutPanel.RowCount = 3;
-            ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
+            ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
             ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 87.50f));
-            ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
+            ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
             ClientsUIHolder.TableLayoutPanel.Dock = DockStyle.Fill;
 
             ClientsUIHolder.MainPanel.ClientArea.Controls.Add(ClientsUIHolder.TableLayoutPanel);

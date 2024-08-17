@@ -69,10 +69,11 @@ namespace SincronizadorGPS50.GestprojectDataManager
 
             return gestprojectClientList;
          }
-         catch(SqlException ex)
+         catch(SqlException exception)
          {
-            MessageBox.Show($"Error: \n\n{ex.Message}");
-            return null;
+            throw new System.Exception(
+               $"At:\n\nSincronizadorGPS50.GestprojectDataManager\n.GestprojectClientsManager\n.GetClients\r\n:\n\n{exception.Message}"
+            );
          }
          finally
          {

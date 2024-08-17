@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectDataManager
 {
@@ -14,7 +15,14 @@ namespace SincronizadorGPS50.GestprojectDataManager
          {
             connection.Open();
 
-            string sqlString = $"SELECT id FROM INT_SAGE_SINC_CLIENTE WHERE PAR_ID={client.PAR_ID};";
+            string sqlString = $@"
+               SELECT 
+                  {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}
+               FROM 
+                  {ClientSynchronizationTableSchema.TableName}
+               WHERE 
+                  {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
+            ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {
@@ -22,18 +30,17 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {
                   while(reader.Read())
                   {
-                     if((int)reader.GetValue(0) != -1)
-                     {
-                        ItIs = true;
-                        break;
-                     }
+                     ItIs = true;
+                     break;
                   };
                };
             };
          }
-         catch(SqlException exception)
+         catch(System.Exception exception)
          {
-            throw exception;
+            throw new System.Exception(
+               $"At:\n\nSincronizadorGPS50.GestprojectDataManager\n.WasGestprojectClientRegistered:\n\n{exception.Message}"
+            );
          }
          finally
          {

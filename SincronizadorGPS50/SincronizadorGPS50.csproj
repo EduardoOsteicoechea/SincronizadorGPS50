@@ -386,8 +386,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="1_SetupAndConnections\2_MainWindowActions.cs" />
-    <Compile Include="2_ClientsSynchronization\3_AddUnsynchronizedClientToUITable.cs" />
-    <Compile Include="2_ClientsSynchronization\3_ClientSynchronizationTable - Copy.cs" />
+    <Compile Include="2_ClientsSynchronization\AddClientToUITable.cs" />
     <Compile Include="DataHolders\UI\ClientsUIHolder.cs" />
     <Compile Include="DataHolders\DataHolder.cs" />
     <Compile Include="DataHolders\UI\Sage50ConnectionUIHolder.cs" />
@@ -447,7 +446,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="2_ClientsSynchronization\3_ClientSynchronizationTable.cs" />
-    <Compile Include="2_ClientsSynchronization\8_TableUISynchronizationActions.cs" />
+    <Compile Include="2_ClientsSynchronization\SynchronizationTableUIActions.cs" />
     <Compile Include="2_ClientsSynchronization\1_BottomRowUI.cs" />
     <Compile Include="2_ClientsSynchronization\9_Error_models.cs" />
     <Compile Include="2_ClientsSynchronization\9_SynchronizationTableDelegate.cs" />
@@ -460,7 +459,7 @@
     <Compile Include="2_ClientsSynchronization\1_CenterRowUI.cs" />
     <Compile Include="2_ClientsSynchronization\1_ClientsTabPageUI.cs" />
     <Compile Include="2_ClientsSynchronization\5_SynchronizeClients.cs" />
-    <Compile Include="2_ClientsSynchronization\3_CreateTableControl.cs" />
+    <Compile Include="2_ClientsSynchronization\CreateTableControl.cs" />
     <Compile Include="2_ClientsSynchronization\9_SyncronizationStatusOptions.cs" />
     <Compile Include="2_ClientsSynchronization\8_TopRowRefreshTableButtonEvents.cs" />
     <Compile Include="2_ClientsSynchronization\4_UpdateRegisteredClientModelData.cs" />

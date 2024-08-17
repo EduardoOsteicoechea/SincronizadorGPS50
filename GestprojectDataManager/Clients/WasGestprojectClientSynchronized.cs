@@ -1,46 +1,54 @@
 ﻿using System.Data.SqlClient;
-using System.Windows.Forms;
 
-namespace SincronizadorGPS50
+namespace SincronizadorGPS50.GestprojectDataManager
 {
    public class WasGestprojectClientSynchronized
    {
       public bool ItIs { get; set; } = false;
       public WasGestprojectClientSynchronized
       (
-       System.Data.SqlClient.SqlConnection connection,
-       GestprojectDataManager.GestprojectClient client
+         System.Data.SqlClient.SqlConnection connection,
+         GestprojectDataManager.GestprojectClient client
       )
       {
-            try
+         try
+         {
+            connection.Open();
+
+            string sqlString = $@"
+               SELECT 
+                  {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}
+               FROM 
+                  {ClientSynchronizationTableSchema.TableName}
+               WHERE 
+                  {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
+            ";
+
+            using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {
-               connection.Open();
-
-               string sqlString = $"SELECT sage50_guid_id FROM INT_SAGE_SINC_CLIENTE WHERE gestproject_id={client.PAR_ID};";
-
-               using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
+               using(SqlDataReader reader = sqlCommand.ExecuteReader())
                {
-                  using(SqlDataReader reader = sqlCommand.ExecuteReader())
+                  while(reader.Read())
                   {
-                     while(reader.Read())
+                     if(reader.GetValue(0).GetType().Name != "DBNull" || System.Convert.ToString(reader.GetValue(0)) != "")
                      {
-                        if((string)reader.GetValue(0) != "" && (string)reader.GetValue(0) != null)
-                        {
-                           ItIs = true;
-                           break;
-                        }
-                     };
+                        ItIs = true;
+                        break;
+                     }
                   };
                };
-            }
-            catch(SqlException exception)
-            {
-               throw exception;
-            }
-            finally
-            {
-               connection.Close();
             };
+         }
+         catch(SqlException exception)
+         {
+            throw new System.Exception(
+               $"At:\n\nSincronizadorGPS50\n.GestprojectDataManager\n.WasGestprojectClientSynchronized:\n\n{exception.Message}"
+            );
+         }
+         finally
+         {
+            connection.Close();
+         };
       }
    }
 }

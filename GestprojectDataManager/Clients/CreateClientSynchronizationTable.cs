@@ -44,7 +44,9 @@ namespace SincronizadorGPS50.GestprojectDataManager
          }
          catch(SqlException exception)
          {
-            throw exception;
+            throw new System.Exception(
+               $"At:\n\nSincronizadorGPS50.GestprojectDataManager\n.CreateClientSynchronizationTable:\n\n{exception.Message}"
+            );
          }
          finally
          {

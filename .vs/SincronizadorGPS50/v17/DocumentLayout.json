@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{31E51A57-59E2-41E3-9A19-545FBF72A0D1}|GestprojectDataManager\\SincronizadorGPS50.GestprojectDataManager.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\gestprojectdatamanager\\clients\\populateunsynchronizedclientregistrationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31E51A57-59E2-41E3-9A19-545FBF72A0D1}|GestprojectDataManager\\SincronizadorGPS50.GestprojectDataManager.csproj|solutionrelative:gestprojectdatamanager\\clients\\populateunsynchronizedclientregistrationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\2_clientssynchronization\\3_clientsynchronizationtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\2_clientssynchronization\\3_clientsynchronizationtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\1_setupandconnections\\_setupandconnections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\1_setupandconnections\\_setupandconnections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\2_clientssynchronization\\3_addunsynchronizedclienttouitable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\2_clientssynchronization\\3_addunsynchronizedclienttouitable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\2_clientssynchronization\\1_toprowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\2_clientssynchronization\\1_toprowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,60 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_SetupAndConnections.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\1_SetupAndConnections\\_SetupAndConnections.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\1_SetupAndConnections\\_SetupAndConnections.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\1_SetupAndConnections\\_SetupAndConnections.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\1_SetupAndConnections\\_SetupAndConnections.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAgwEsAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-16T21:36:33.287Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "3_ClientSynchronizationTable.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\3_ClientSynchronizationTable.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\2_ClientsSynchronization\\3_ClientSynchronizationTable.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\3_ClientSynchronizationTable.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\2_ClientsSynchronization\\3_ClientSynchronizationTable.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAswDQAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-16T09:01:40.972Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PopulateUnsynchronizedClientRegistrationData.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectDataManager\\Clients\\PopulateUnsynchronizedClientRegistrationData.cs",
-              "RelativeDocumentMoniker": "GestprojectDataManager\\Clients\\PopulateUnsynchronizedClientRegistrationData.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectDataManager\\Clients\\PopulateUnsynchronizedClientRegistrationData.cs",
-              "RelativeToolTip": "GestprojectDataManager\\Clients\\PopulateUnsynchronizedClientRegistrationData.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAmwCYAAAAZAAAA",
+              "Title": "1_TopRowUI.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\1_TopRowUI.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\2_ClientsSynchronization\\1_TopRowUI.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\1_TopRowUI.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\2_ClientsSynchronization\\1_TopRowUI.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAQwGEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-16T21:30:19.685Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "3_AddUnsynchronizedClientToUITable.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\3_AddUnsynchronizedClientToUITable.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\2_ClientsSynchronization\\3_AddUnsynchronizedClientToUITable.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\3_AddUnsynchronizedClientToUITable.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\2_ClientsSynchronization\\3_AddUnsynchronizedClientToUITable.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAiwA0AAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-16T21:25:12.671Z",
+              "WhenOpened": "2024-08-17T10:55:50.65Z",
               "EditorCaption": ""
             }
           ]
