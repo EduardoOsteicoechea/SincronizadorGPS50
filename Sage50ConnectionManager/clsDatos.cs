@@ -7,7 +7,7 @@ using System.Data;
 // Clases de Sage50
 using sage.ew.db;
 
-namespace SincronizadorGPS50
+namespace SincronizadorGPS50.Sage50Connector
 {
     public class clsDatos
     {

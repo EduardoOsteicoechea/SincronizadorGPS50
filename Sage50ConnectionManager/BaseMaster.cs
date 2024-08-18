@@ -11,7 +11,7 @@ using System.Reflection;
 using sage.ew.db;
 using sage.ew.functions;
 
-namespace SincronizadorGPS50
+namespace SincronizadorGPS50.Sage50Connector
 {
     public class BaseMaster
     {

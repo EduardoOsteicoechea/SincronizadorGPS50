@@ -20,7 +20,10 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {ClientSynchronizationTableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName},
                {ClientSynchronizationTableSchema.ClientLastUpdateTerminalColumn.ColumnDatabaseName},
                {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName}
+               {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.Sage50ClientCodeColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.CommentsColumn.ColumnDatabaseName}
             FROM 
                {ClientSynchronizationTableSchema.TableName} 
             WHERE 
@@ -34,8 +37,16 @@ namespace SincronizadorGPS50.GestprojectDataManager
                   {
                      client.synchronization_table_id = System.Convert.ToInt32(reader.GetValue(0));
                      client.last_record = System.Convert.ToDateTime(reader.GetValue(1));
+
                      client.synchronization_status = System.Convert.ToString(reader.GetValue(2)) == "" || Convert.ToString(reader.GetValue(2)) == null || Convert.ToString(reader.GetValue(2)) == null ? "Desincronizado" : System.Convert.ToString(reader.GetValue(2));
+
                      client.parent_gesproject_user_id = System.Convert.ToInt32(reader.GetValue(3));
+
+                     client.sage50_client_code = System.Convert.ToString(reader.GetValue(4)) == "" || Convert.ToString(reader.GetValue(4)) == null || Convert.ToString(reader.GetValue(4)) == null ? "" : System.Convert.ToString(reader.GetValue(4));
+
+                     client.sage50_guid_id = System.Convert.ToString(reader.GetValue(5)) == "" || Convert.ToString(reader.GetValue(5)) == null || Convert.ToString(reader.GetValue(5)) == null ? "" : System.Convert.ToString(reader.GetValue(5));
+
+                     client.comments = System.Convert.ToString(reader.GetValue(6)) == "" || Convert.ToString(reader.GetValue(6)) == null || Convert.ToString(reader.GetValue(6)) == null ? "" : System.Convert.ToString(reader.GetValue(6));
                   };
                };
             };

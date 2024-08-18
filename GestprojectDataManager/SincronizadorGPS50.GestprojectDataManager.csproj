@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clients\GetClientsFromSynchronizationTable.cs" />
     <Compile Include="Clients\PopulateGestprojectClientSynchronizationData - Copy.cs" />
     <Compile Include="Clients\PopulateUnsynchronizedClientRegistrationData.cs" />
+    <Compile Include="Clients\RegisterNewSage50ClientData.cs" />
     <Compile Include="Clients\WasGestprojectClientSynchronized.cs" />
     <Compile Include="CheckIfTableExistsOnGestproject.cs" />
     <Compile Include="Clients\CreateClientSynchronizationTable.cs" />

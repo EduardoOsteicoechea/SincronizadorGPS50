@@ -1,4 +1,5 @@
 ﻿using SincronizadorGPS50.Workflows.Clients;
+using System;
 
 namespace SincronizadorGPS50
 {
@@ -21,9 +22,9 @@ namespace SincronizadorGPS50
 
             new ClientsTabPageUI();
          }
-         catch (System.Exception exception) 
+         catch(Exception exception)
          {
-            throw exception;
+            throw new Exception($"En:\n\nSincronizadorGPS50\n.ClientSynchronizationManager:\n\n{exception.Message}");
          };
       }
    }

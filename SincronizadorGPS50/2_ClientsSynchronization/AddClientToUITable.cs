@@ -28,7 +28,8 @@ namespace SincronizadorGPS50
             row[9] = gestprojectClient.PAR_LOCALIDAD_1;
             row[10] = gestprojectClient.PAR_PROVINCIA_1;
             row[11] = gestprojectClient.PAR_PAIS_1;
-
+            row[12] = gestprojectClient.sage50_client_code;
+            row[13] = gestprojectClient.sage50_guid_id;
             row[14] = gestprojectClient.sage50_company_group_name;
             row[15] = gestprojectClient.sage50_company_group_code;
             row[16] = gestprojectClient.sage50_company_group_main_code;

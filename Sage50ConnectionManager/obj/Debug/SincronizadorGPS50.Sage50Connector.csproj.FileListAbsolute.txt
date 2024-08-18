@@ -137,3 +137,4 @@ C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sag
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sage50ConnectionManager\obj\Debug\Sincroni.692B7CB1.Up2Date
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sage50ConnectionManager\obj\Debug\Sage50ConnectionManager.dll
 C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sage50ConnectionManager\obj\Debug\Sage50ConnectionManager.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\Sage50ConnectionManager\bin\Debug\FuzzySharp.dll

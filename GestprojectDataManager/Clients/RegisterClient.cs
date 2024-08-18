@@ -53,7 +53,14 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName},
                {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName},
                {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName}
+               {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.GestprojectClientNameColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.GestprojectClientCIFNIFColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.GestprojectClientAddressColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.GestprojectClientPostalCodeColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.GestprojectClientLocalityColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.GestprojectClientProvinceColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.GestprojectClientCountryColumn.ColumnDatabaseName}
             ) 
             VALUES 
             (
@@ -63,7 +70,14 @@ namespace SincronizadorGPS50.GestprojectDataManager
                '{client.sage50_company_group_main_code}', 
                '{client.sage50_company_group_code}', 
                '{client.sage50_company_group_guid_id}', 
-               {client.parent_gesproject_user_id} 
+               {client.parent_gesproject_user_id},
+               '{client.PAR_NOMBRE}', 
+               '{client.PAR_CIF_NIF}', 
+               '{client.PAR_DIRECCION_1}', 
+               '{client.PAR_CP_1}', 
+               '{client.PAR_LOCALIDAD_1}', 
+               '{client.PAR_PROVINCIA_1}', 
+               '{client.PAR_PAIS_1}'
             );";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString2, connection))

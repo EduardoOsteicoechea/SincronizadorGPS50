@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
-namespace SincronizadorGPS50
+namespace SincronizadorGPS50.Sage50Connector
 {
     public class clsEntidades
     {

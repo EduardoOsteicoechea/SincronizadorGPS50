@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FuzzySharp, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FuzzySharp.2.0.2\lib\net461\FuzzySharp.dll</HintPath>
+    </Reference>
     <Reference Include="sage.50">
       <HintPath>..\..\..\..\..\..\..\..\..\Sage50_8\Sage50Term\50.7840.1\sage.50.exe</HintPath>
     </Reference>
@@ -57,12 +60,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseMaster.cs" />
+    <Compile Include="Clients\CustomerManager.cs" />
+    <Compile Include="Clients\CustomerModel.cs" />
+    <Compile Include="Clients\GetSage50Customer - Copy.cs" />
+    <Compile Include="Clients\GetSage50Customer.cs" />
+    <Compile Include="clsDatos.cs" />
+    <Compile Include="clsEntidades.cs" />
+    <Compile Include="Clients\CreateSage50Customer.cs" />
+    <Compile Include="Clients\Customer.cs" />
     <Compile Include="CompanyGroup.cs" />
     <Compile Include="ConnectionActions.cs" />
     <Compile Include="GetLatestLibrariesFolder.cs" />
     <Compile Include="LinkSage50.cs" />
+    <Compile Include="LooseComparison.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sage50CompanyGroupActions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
