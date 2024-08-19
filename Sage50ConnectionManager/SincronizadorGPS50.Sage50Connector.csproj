@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseMaster.cs" />
+    <Compile Include="Clients\UpdateSage50Customer.cs" />
     <Compile Include="Clients\CustomerManager.cs" />
     <Compile Include="Clients\CustomerModel.cs" />
     <Compile Include="Clients\GetSage50Customer - Copy.cs" />

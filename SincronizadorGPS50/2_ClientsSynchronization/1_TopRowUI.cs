@@ -23,11 +23,6 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.TopRowTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(SizeType.Absolute, 110));
             ClientsUIHolder.TopRowTableLayoutPanel.Dock = DockStyle.Fill;
 
-            //ClientsUIHolder.TopRowMainInstructionLabel = new UltraLabel();
-            //ClientsUIHolder.TopRowMainInstructionLabel.Text = "Visualize el estado actual de sus clientes respecto a la información de Sage50. Renderizado el " + DateTime.UtcNow.ToShortDateString().ToString() + " en el horario " + DateTime.Now.TimeOfDay.ToString();
-            //ClientsUIHolder.TopRowMainInstructionLabel.Dock = DockStyle.Fill;
-            //ClientsUIHolder.TopRowMainInstructionLabel.Appearance.TextVAlign = VAlign.Middle;
-
 
             ClientsUIHolder.TopRowRefreshTableButton = new UltraButton();
             ClientsUIHolder.TopRowRefreshTableButton.Text = "Refrescar";

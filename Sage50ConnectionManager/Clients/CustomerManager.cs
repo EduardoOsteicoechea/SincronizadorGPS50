@@ -33,7 +33,17 @@ namespace Sage50ConnectionManager
       {
          try
          {
-            if(guidId != null && guidId != "")
+            if(
+               guidId != null 
+               && guidId != "" 
+               //&& guidId != null
+               //&& country != null
+               //&& name != null
+               //&& cif != null
+               //&& postalCode != null
+               //&& address != null
+               //&& province != null
+            )
             {
                Getsage50Client(guidId);
 

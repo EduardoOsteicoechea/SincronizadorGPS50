@@ -389,6 +389,7 @@
     <Compile Include="2_ClientsSynchronization\2_CreateSage50Customer - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\AddClientToUITable.cs" />
     <Compile Include="2_ClientsSynchronization\SynchronizeCustomersWorkflow.cs" />
+    <Compile Include="2_ClientsSynchronization\ValidateClientSyncronizationStatus.cs" />
     <Compile Include="3_ProviderSynchronization\_ProviderSynchronizationManager.cs" />
     <Compile Include="DataHolders\UI\ClientsUIHolder.cs" />
     <Compile Include="DataHolders\DataHolder.cs" />

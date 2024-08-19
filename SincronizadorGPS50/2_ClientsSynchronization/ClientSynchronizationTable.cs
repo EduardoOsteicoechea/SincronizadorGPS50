@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using SincronizadorGPS50.Sage50Connector;
+using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
@@ -13,6 +15,8 @@ namespace SincronizadorGPS50
          .GetClients(
             GestprojectDataHolder.GestprojectDatabaseConnection
          );
+
+         List<Sage50Customer> sage50CustomerList = new GetSage50Customer().CustomerList;
 
          DataTable table = new CreateTableControl().Table;
 
@@ -61,6 +65,31 @@ namespace SincronizadorGPS50
                      GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID
                   );
                }
+               else
+               {
+                  GestprojectDataManager.GestprojectClient synchronizationTableProjectClient =
+                  new SincronizadorGPS50
+                  .GestprojectDataManager
+                  .GetSingleClientFromSynchronizationTable(
+                     GestprojectDataHolder.GestprojectDatabaseConnection,
+                     gestprojectClient.PAR_ID
+                  ).GestprojectClient;
+
+                  GestprojectDataManager.GestprojectClient validatedGestprojectClient = 
+                  new ValidateClientSyncronizationStatus(
+                     synchronizationTableProjectClient.sage50_guid_id,
+                     gestprojectClient.PAR_NOMBRE,
+                     gestprojectClient.PAR_CIF_NIF,
+                     gestprojectClient.PAR_CP_1,
+                     gestprojectClient.PAR_DIRECCION_1,
+                     gestprojectClient.PAR_PROVINCIA_1,
+                     gestprojectClient.PAR_PAIS_1,
+                     sage50CustomerList
+                  ).GestprojectClient;
+
+                  gestprojectClient.synchronization_status = validatedGestprojectClient.synchronization_status;
+                  gestprojectClient.comments = validatedGestprojectClient.comments;
+               };
             };
 
             new GestprojectDataManager.PopulateUnsynchronizedClientRegistrationData(

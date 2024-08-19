@@ -15,6 +15,15 @@ namespace SincronizadorGPS50.GestprojectDataManager
          {
             connection.Open();
 
+            string clientInitalSyncronizationStatus = client.synchronization_status;
+            string clientInitalComments = client.comments;
+
+            //MessageBox.Show(
+            //"client:\n" + client.PAR_NOMBRE + "\n\n" +
+            //"synchronization_status:\n" + client.synchronization_status + "\n\n" +
+            //"comments:\n" + client.comments
+            //);
+
             string sqlString = $@"
             SELECT 
                {ClientSynchronizationTableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName},
@@ -74,6 +83,47 @@ namespace SincronizadorGPS50.GestprojectDataManager
                      client.sage50_company_group_guid_id = System.Convert.ToString(reader.GetValue(3));
                   };
                };
+            };
+
+            string clientSynchronizationStatus = "Desincronizado";
+            string clientComments = "";
+            if(clientInitalSyncronizationStatus != "Sincronizado")
+            {
+               clientSynchronizationStatus = clientInitalSyncronizationStatus;
+               client.synchronization_status = clientSynchronizationStatus;
+               clientComments = clientInitalComments;
+               client.comments = clientComments;
+            } 
+            else
+            {
+               clientSynchronizationStatus = client.synchronization_status;
+               clientComments = client.comments;
+            };
+
+            if(client.synchronization_status == "") 
+            {
+               client.synchronization_status = "Desincronizado";
+            };
+
+            string sqlString1 = $@"
+            UPDATE {ClientSynchronizationTableSchema.TableName} 
+            SET 
+               {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='{clientSynchronizationStatus}',
+               {ClientSynchronizationTableSchema.GestprojectClientCountryColumn.ColumnDatabaseName}='{client.PAR_PAIS_1}',
+               {ClientSynchronizationTableSchema.GestprojectClientNameColumn.ColumnDatabaseName}='{client.PAR_NOMBRE}', 
+               {ClientSynchronizationTableSchema.GestprojectClientCIFNIFColumn.ColumnDatabaseName}='{client.PAR_CIF_NIF}',
+               {ClientSynchronizationTableSchema.GestprojectClientPostalCodeColumn.ColumnDatabaseName}='{client.PAR_CP_1}',
+               {ClientSynchronizationTableSchema.GestprojectClientAddressColumn.ColumnDatabaseName}='{client.PAR_DIRECCION_1}',
+               {ClientSynchronizationTableSchema.GestprojectClientProvinceColumn.ColumnDatabaseName}='{client.PAR_PROVINCIA_1}',
+               {ClientSynchronizationTableSchema.CommentsColumn.ColumnDatabaseName}='{clientComments}'
+            WHERE
+               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
+            ;";
+
+
+            using(SqlCommand sqlCommand = new SqlCommand(sqlString1, connection))
+            {
+               sqlCommand.ExecuteNonQuery();
             };
          }
          catch(System.Exception exception)
