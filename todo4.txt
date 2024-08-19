@@ -1,0 +1,18 @@
+Añadir datos de grupo de empresa sólo luego de sincronizar
+
+comparar si ambas "nombre completo"(gp) con "nombre"(s50) y cif coinciden
+
+manejar todo los datos desde cada usuario admitido de gp
+
+incorporar lógica de negocio:
+1. Nunca fue sincronizado
+	¿Hay similar?
+		si: ¿Duplicar? o ¿Sobrescribir?
+			duplicar: crear
+			sobrescribir: actualizar
+		no: crear
+
+2. Fue sincronizado 
+	¿hay cambio?
+		si: ¿sobrescribir?
+			si: actualizar

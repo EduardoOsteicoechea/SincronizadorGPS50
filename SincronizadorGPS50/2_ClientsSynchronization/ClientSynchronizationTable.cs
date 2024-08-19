@@ -49,12 +49,14 @@ namespace SincronizadorGPS50
             }
             else
             {
-               bool gestprojectClientWasRegistered =
+               GestprojectDataManager.WasGestprojectClientRegistered gestprojectClientRegistrationValidator =
                new GestprojectDataManager
                .WasGestprojectClientRegistered(
                   GestprojectDataHolder.GestprojectDatabaseConnection,
                   gestprojectClient
-               ).ItIs;
+               );
+
+               bool gestprojectClientWasRegistered = gestprojectClientRegistrationValidator.ItIs;
 
                if(!gestprojectClientWasRegistered)
                {
@@ -65,6 +67,10 @@ namespace SincronizadorGPS50
                      GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID
                   );
                }
+               //else if(gestprojectClientRegistrationValidator.GP_USU_ID != GestprojectDataHolder.LocalDeviceUserSessionData.USU_ID)
+               //{
+               //   continue;
+               //}
                else
                {
                   GestprojectDataManager.GestprojectClient synchronizationTableProjectClient =

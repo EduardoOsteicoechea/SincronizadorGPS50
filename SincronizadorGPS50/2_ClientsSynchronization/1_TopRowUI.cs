@@ -38,13 +38,16 @@ namespace SincronizadorGPS50.Workflows.Clients
             ClientsUIHolder.TopRowSelectAllButton.Dock = DockStyle.Fill;
             ClientsUIHolder.TopRowSelectAllButton.Click += (object sender, System.EventArgs e) =>
             {
+               int counter = 0;
                foreach(Infragistics.Win.UltraWinGrid.UltraGridRow row in ClientsUIHolder.ClientDataTable.Rows)
                {
                   if(!row.IsFilteredOut)
                   {
                      row.Selected = true;
+                     counter++;
                   };
                };
+               //MessageBox.Show("Tomó " + counter + " clientes");
             };
 
             ClientsUIHolder.TopRowSynchronizeButton = new UltraButton();
@@ -83,6 +86,8 @@ namespace SincronizadorGPS50.Workflows.Clients
                      };
                   };
                };
+
+               //MessageBox.Show("Tomó " + counter + " clientes");
 
                //////////////////////////////////
                // Synchronize selected id's

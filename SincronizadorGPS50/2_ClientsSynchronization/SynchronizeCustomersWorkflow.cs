@@ -77,28 +77,32 @@ namespace SincronizadorGPS50
 
          if(noGestprojectClientsExistsInSage50)
          {
-            for(global::System.Int32 i = 0; i < gestProjectClientList.Count; i++)
-            {
-               if(
-                  Sage50ConnectionManager.CustomerManager.ClientExists(
-                     gestProjectClientList[i].sage50_guid_id,
-                     gestProjectClientList[i].PAR_PAIS_1,
-                     gestProjectClientList[i].PAR_NOMBRE,
-                     gestProjectClientList[i].PAR_CIF_NIF,
-                     gestProjectClientList[i].PAR_CP_1,
-                     gestProjectClientList[i].PAR_DIRECCION_1,
-                     gestProjectClientList[i].PAR_PROVINCIA_1
-                  )
-               )
-               {
-                  DialogResult result = MessageBox.Show("Desea crear este cliente de igual manera?", "Confirmación para creación", MessageBoxButtons.OKCancel);
-                  if(result == DialogResult.Cancel)
-                  {
-                     continue;
-                  }
-               };
+            DialogResult result = MessageBox.Show($"¿Desea sincronizar {gestProjectClientList.Count} cliente(s) con Sage50?", "Confirmación para actualización", MessageBoxButtons.OKCancel);
 
-               CreateSage50Customer newSage50Client = new SincronizadorGPS50.Sage50Connector.CreateSage50Customer(
+            if(result == DialogResult.OK)
+            {
+               for(global::System.Int32 i = 0; i < gestProjectClientList.Count; i++)
+               {
+                  if(
+                     Sage50ConnectionManager.CustomerManager.ClientExists(
+                        gestProjectClientList[i].sage50_guid_id,
+                        gestProjectClientList[i].PAR_PAIS_1,
+                        gestProjectClientList[i].PAR_NOMBRE,
+                        gestProjectClientList[i].PAR_CIF_NIF,
+                        gestProjectClientList[i].PAR_CP_1,
+                        gestProjectClientList[i].PAR_DIRECCION_1,
+                        gestProjectClientList[i].PAR_PROVINCIA_1
+                     )
+                  )
+                  {
+                     DialogResult result2 = MessageBox.Show($"¿Desea crear el cliente \"{gestProjectClientList[i].PAR_NOMBRE}\" de igual manera?", "Confirmación para creación", MessageBoxButtons.OKCancel);
+                     if(result2 == DialogResult.Cancel)
+                     {
+                        continue;
+                     }
+                  };
+
+                  CreateSage50Customer newSage50Client = new SincronizadorGPS50.Sage50Connector.CreateSage50Customer(
                   gestProjectClientList[i].PAR_PAIS_1,
                   gestProjectClientList[i].PAR_NOMBRE ,
                   gestProjectClientList[i].PAR_CIF_NIF,
@@ -107,20 +111,21 @@ namespace SincronizadorGPS50
                   gestProjectClientList[i].PAR_PROVINCIA_1
                );
 
-               new GestprojectDataManager.RegisterNewSage50ClientData(
-                  GestprojectDataHolder.GestprojectDatabaseConnection,
-                  gestProjectClientList[i].PAR_ID,
-                  newSage50Client.ClientCode,
-                  newSage50Client.GUID_ID
-               );
-            }
+                  new GestprojectDataManager.RegisterNewSage50ClientData(
+                     GestprojectDataHolder.GestprojectDatabaseConnection,
+                     gestProjectClientList[i].PAR_ID,
+                     newSage50Client.ClientCode,
+                     newSage50Client.GUID_ID
+                  );
+               }
+            };            
          }
 
          if(allGestprojectClientsExistsInSage50)
          {
             if(unsynchronizedClientsExists)
             {
-               DialogResult result = MessageBox.Show("Desea actualizar los datos de Sage50 de los clientes desincronizados?", "Confirmación para actualización", MessageBoxButtons.OKCancel);
+               DialogResult result = MessageBox.Show($"¿Desea sincronizar los datos de los {gestProjectClientList.Count} cliente(s) desincronizados?", "Confirmación para actualización", MessageBoxButtons.OKCancel);
 
                if(result == DialogResult.OK)
                {
@@ -161,7 +166,7 @@ namespace SincronizadorGPS50
          {
             if(unsynchronizedClientsExists)
             {
-               DialogResult result = MessageBox.Show("Desea actualizar los datos de Sage50 de los clientes desincronizados?", "Confirmación para actualización", MessageBoxButtons.OKCancel);
+               DialogResult result = MessageBox.Show("¿Desea actualizar los datos de Sage50 de los clientes desincronizados?", "Confirmación para actualización", MessageBoxButtons.OKCancel);
 
                if(result == DialogResult.OK)
                {
@@ -210,7 +215,7 @@ namespace SincronizadorGPS50
                   )
                )
                {
-                  DialogResult result2 = MessageBox.Show("Desea crear este cliente de igual manera?", "Confirmación para creación", MessageBoxButtons.OKCancel);
+                  DialogResult result2 = MessageBox.Show("¿Desea crear este cliente de igual manera?", "Confirmación para creación", MessageBoxButtons.OKCancel);
                   if(result2 == DialogResult.Cancel)
                      continue;
                };
