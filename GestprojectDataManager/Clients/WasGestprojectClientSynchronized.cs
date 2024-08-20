@@ -8,7 +8,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
       public WasGestprojectClientSynchronized
       (
          System.Data.SqlClient.SqlConnection connection,
-         GestprojectDataManager.GestprojectClient client
+         GestprojectDataManager.GestprojectCustomer client
       )
       {
          try

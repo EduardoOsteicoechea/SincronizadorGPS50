@@ -9,7 +9,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
       public PopulateUnsynchronizedClientRegistrationData
       (
          System.Data.SqlClient.SqlConnection connection,
-         GestprojectDataManager.GestprojectClient client
+         GestprojectDataManager.GestprojectCustomer client
       ){
          try
          {
@@ -17,12 +17,6 @@ namespace SincronizadorGPS50.GestprojectDataManager
 
             string clientInitalSyncronizationStatus = client.synchronization_status;
             string clientInitalComments = client.comments;
-
-            //MessageBox.Show(
-            //"client:\n" + client.PAR_NOMBRE + "\n\n" +
-            //"synchronization_status:\n" + client.synchronization_status + "\n\n" +
-            //"comments:\n" + client.comments
-            //);
 
             string sqlString = $@"
             SELECT 
@@ -44,18 +38,13 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {
                   while(reader.Read())
                   {
-                     client.synchronization_table_id = System.Convert.ToInt32(reader.GetValue(0));
+                     client.synchronization_table_id = Convert.ToInt32(reader.GetValue(0).GetType().Name == "DBNull" ? -1 : reader.GetValue(0));
                      client.last_record = System.Convert.ToDateTime(reader.GetValue(1));
-
-                     client.synchronization_status = System.Convert.ToString(reader.GetValue(2)) == "" || Convert.ToString(reader.GetValue(2)) == null || Convert.ToString(reader.GetValue(2)) == null ? "Desincronizado" : System.Convert.ToString(reader.GetValue(2));
-
-                     client.parent_gesproject_user_id = System.Convert.ToInt32(reader.GetValue(3));
-
-                     client.sage50_client_code = System.Convert.ToString(reader.GetValue(4)) == "" || Convert.ToString(reader.GetValue(4)) == null || Convert.ToString(reader.GetValue(4)) == null ? "" : System.Convert.ToString(reader.GetValue(4));
-
-                     client.sage50_guid_id = System.Convert.ToString(reader.GetValue(5)) == "" || Convert.ToString(reader.GetValue(5)) == null || Convert.ToString(reader.GetValue(5)) == null ? "" : System.Convert.ToString(reader.GetValue(5));
-
-                     client.comments = System.Convert.ToString(reader.GetValue(6)) == "" || Convert.ToString(reader.GetValue(6)) == null || Convert.ToString(reader.GetValue(6)) == null ? "" : System.Convert.ToString(reader.GetValue(6));
+                     client.synchronization_status = Convert.ToString(reader.GetValue(2).GetType().Name == "DBNull" ? "" : reader.GetValue(2));
+                     client.parent_gesproject_user_id = Convert.ToInt32(reader.GetValue(3).GetType().Name == "DBNull" ? -1 : reader.GetValue(3));
+                     client.sage50_client_code = Convert.ToString(reader.GetValue(4).GetType().Name == "DBNull" ? "" : reader.GetValue(4));
+                     client.sage50_guid_id = Convert.ToString(reader.GetValue(5).GetType().Name == "DBNull" ? "" : reader.GetValue(5));
+                     client.comments = Convert.ToString(reader.GetValue(6).GetType().Name == "DBNull" ? "" : reader.GetValue(6));
                   };
                };
             };
@@ -77,10 +66,10 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {
                   while(reader.Read())
                   {
-                     client.sage50_company_group_name = System.Convert.ToString(reader.GetValue(0));
-                     client.sage50_company_group_main_code = System.Convert.ToString(reader.GetValue(1));
-                     client.sage50_company_group_code = System.Convert.ToString(reader.GetValue(2));
-                     client.sage50_company_group_guid_id = System.Convert.ToString(reader.GetValue(3));
+                     client.sage50_company_group_name = Convert.ToString(reader.GetValue(0).GetType().Name == "DBNull" ? "" : reader.GetValue(0));
+                     client.sage50_company_group_main_code = Convert.ToString(reader.GetValue(1).GetType().Name == "DBNull" ? "" : reader.GetValue(1));
+                     client.sage50_company_group_code = Convert.ToString(reader.GetValue(2).GetType().Name == "DBNull" ? "" : reader.GetValue(2));
+                     client.sage50_company_group_guid_id = Convert.ToString(reader.GetValue(3).GetType().Name == "DBNull" ? "" : reader.GetValue(3));
                   };
                };
             };
@@ -110,7 +99,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
             SET 
                {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='{clientSynchronizationStatus}',
                {ClientSynchronizationTableSchema.GestprojectClientCountryColumn.ColumnDatabaseName}='{client.PAR_PAIS_1}',
-               {ClientSynchronizationTableSchema.GestprojectClientNameColumn.ColumnDatabaseName}='{client.PAR_NOMBRE}', 
+               {ClientSynchronizationTableSchema.GestprojectClientNameColumn.ColumnDatabaseName}='{client.fullName}', 
                {ClientSynchronizationTableSchema.GestprojectClientCIFNIFColumn.ColumnDatabaseName}='{client.PAR_CIF_NIF}',
                {ClientSynchronizationTableSchema.GestprojectClientPostalCodeColumn.ColumnDatabaseName}='{client.PAR_CP_1}',
                {ClientSynchronizationTableSchema.GestprojectClientAddressColumn.ColumnDatabaseName}='{client.PAR_DIRECCION_1}',

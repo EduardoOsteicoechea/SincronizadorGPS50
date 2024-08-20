@@ -4,124 +4,49 @@ using SincronizadorGPS50.Sage50Connector;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Sage50ConnectionManager
 {
-   public static class CustomerManager
+   public class CustomerManager
    {
-      private static Sage50Customer Sage50Customer { get; set; } = new Sage50Customer();
-
-      private static void PrintMessage(string fileldName, string gpValue, string SValue, string customerName)
-      {
-
-         MessageBox.Show($"{fileldName}: \"{gpValue}\", era simimilar a: \"{SValue}\" para el cliente {customerName}.\n\nDetuvimos la creación de este cliente en Sage50 parar evitar duplicación de datos.");
-      }
-      public static bool ClientExists
+      public Sage50Customer Sage50Customer { get; set; } = new Sage50Customer();
+      public List<Sage50Customer> Sage50CustomerList { get; set; } = new List<Sage50Customer>();
+      public string MatchMessage { get; set; } = "";
+      public bool ClientExists { get; set; } = false;
+      public string CustomerGuid { get; set; } = "";
+      public string CustomerCode{ get; set; } = "";
+      public CustomerManager
       (
-         string guidId,
-         string country,
          string name,
-         string cif,
-         string postalCode,
-         string address,
-         string province
+         string cif
       )
       {
          try
          {
-            if(
-               guidId != null 
-               && guidId != "" 
-               //&& guidId != null
-               //&& country != null
-               //&& name != null
-               //&& cif != null
-               //&& postalCode != null
-               //&& address != null
-               //&& province != null
-            )
+            Getsage50Clients();
+
+            foreach(Sage50Customer customer in Sage50CustomerList)
             {
-               Getsage50Client(guidId);
-
-               if(Sage50Customer != null && IsThisSimilar(country, Sage50Customer.PAIS, 80))
+               if(IsThisSimilar(name, customer.NOMBRE, 75) && IsThisSimilar(cif, customer.CIF, 75))
                {
-                  PrintMessage("El valor de Pais", country, Sage50Customer.PAIS, name);
-                  return true;
+                  PrintMessage("El valor de \"Nombre\"", name, customer.NOMBRE, name);
+                  CustomerGuid = customer.GUID_ID;
+                  CustomerCode = customer.CODIGO;
+                  ClientExists = true;
                }
-
-               if(Sage50Customer != null && IsThisSimilar(name, Sage50Customer.NOMBRE, 80))
-               {
-                  PrintMessage("El valor de Nombre", name, Sage50Customer.NOMBRE, name);
-                  return true;
-               }
-
-               if(Sage50Customer != null && IsThisSimilar(cif, Sage50Customer.CIF, 90))
-               {
-                  PrintMessage("El valor de CIF-NIF", cif, Sage50Customer.CIF, name);
-                  return true;
-               }
-
-               if(Sage50Customer != null && IsThisSimilar(postalCode, Sage50Customer.CODPOST, 90))
-               {
-                  PrintMessage("El valor de Código Postal", postalCode, Sage50Customer.CODPOST, name);
-                  return true;
-               }
-
-               if(Sage50Customer != null && IsThisSimilar(address, Sage50Customer.DIRECCION, 80))
-               {
-                  PrintMessage("El valor de Dirección", address, Sage50Customer.DIRECCION, name);
-                  return true;
-               }
-
-               if(Sage50Customer != null && IsThisSimilar(province, Sage50Customer.PROVINCIA, 80))
-               {
-                  PrintMessage("El valor de Provincia", province, Sage50Customer.PROVINCIA, name);
-                  return true;
-               }
-
-               if(ExistsInDatabase(guidId))
-               {
-                  MessageBox.Show($"El guid: {guidId} ya existe.");
-                  return true;
-               }
-
-               if(
-                  !ExistsInDatabase(guidId)
-                  ||
-                  Sage50Customer == null
-               )
-               {
-                  if(Sage50Customer != null)
-                  {
-                     MessageBox.Show($@"El cliente: 
-               
-                  {Sage50Customer.PAIS}
-                  {Sage50Customer.NOMBRE}
-                  {Sage50Customer.CIF}
-                  {Sage50Customer.CODPOST}
-                  {Sage50Customer.DIRECCION}
-                  {Sage50Customer.PROVINCIA}
-
-                  no existe");
-                  };
-                  return false;
-               }
-               return false;
             }
-            else
-            {
-               return false;
-            };
          }
          catch(Exception exception)
          {
-            throw new Exception($"En:\n\nSage50ConnectionManager.Clients\n.CustomerManager:\n\n{exception.Message}");
+            throw new Exception($"En:\n\nSage50ConnectionManager.Clients\n.CustomerManager\n.ClientExists:\n\n{exception.Message}");
          };
       }
+
+      private void PrintMessage(string fileldName, string gpValue, string SValue, string customerName)
+      {
+         MatchMessage = $"El cliente \"{customerName}\" ya existe en Sage50.";
+      }
+
       public static bool IsThisSimilar
       (
          string value1,
@@ -129,18 +54,25 @@ namespace Sage50ConnectionManager
          int minimalToleranceRatio
       )
       {
-         //MessageBox.Show($"\"{value1}\" & \"{value2}\" have a: {Fuzz.Ratio(value1, value2)}% match ratio");
-         if(Fuzz.Ratio(value1, value2) > minimalToleranceRatio)
+         try
          {
-            return true;
+            //MessageBox.Show($"\"{value1}\" & \"{value2}\" have a: {Fuzz.Ratio(value1, value2)}% match ratio");
+            if(Fuzz.Ratio(value1, value2) > minimalToleranceRatio || Fuzz.Ratio(value1, value2) == 0)
+            {
+               return true;
+            }
+            else
+               return false;
          }
-         else
-            return false;
+         catch(Exception exception)
+         {
+            throw new Exception($"En:\n\nSage50ConnectionManager.Clients\n.CustomerManager\n.IsThisSimilar:\n\n{exception.Message}");
+         };
       }
-      public static bool ExistsInDatabase
-      (
-         string guidId
-      )
+
+
+
+      public void Getsage50Clients()
       {
          try
          {
@@ -154,10 +86,10 @@ namespace Sage50ConnectionManager
                     codpost, 
                     poblacion, 
                     provincia, 
-                    pais
+                    pais,
+                    guid_id
                 FROM 
                   {DB.SQLDatabase("gestion","clientes")}
-                WHERE guid_id='{guidId}'
                ;";
 
             DataTable sage50CustomersDataTable = new DataTable();
@@ -166,75 +98,37 @@ namespace Sage50ConnectionManager
 
             if(sage50CustomersDataTable.Rows.Count > 0)
             {
-               Sage50Customer.CODIGO = sage50CustomersDataTable.Rows[0].ItemArray[0].ToString().Trim();
-               Sage50Customer.CIF = sage50CustomersDataTable.Rows[0].ItemArray[1].ToString().Trim();
-               Sage50Customer.NOMBRE = sage50CustomersDataTable.Rows[0].ItemArray[2].ToString().Trim();
-               Sage50Customer.NOMBRE2 = sage50CustomersDataTable.Rows[0].ItemArray[3].ToString().Trim();
-               Sage50Customer.DIRECCION = sage50CustomersDataTable.Rows[0].ItemArray[4].ToString().Trim();
-               Sage50Customer.CODPOST = sage50CustomersDataTable.Rows[0].ItemArray[5].ToString().Trim();
-               Sage50Customer.POBLACION = sage50CustomersDataTable.Rows[0].ItemArray[6].ToString().Trim();
-               Sage50Customer.PROVINCIA = sage50CustomersDataTable.Rows[0].ItemArray[7].ToString().Trim();
-               Sage50Customer.PAIS = sage50CustomersDataTable.Rows[0].ItemArray[8].ToString().Trim();
-               Sage50Customer.GUID_ID = guidId;
-               return true;
-            }
-            else
-               return false;
-
-         }
-         catch(Exception exception)
-         {
-            throw new Exception($"En:\n\nSage50ConnectionManager\n.CustomerManager\n.ExistsInDatabase:\n\n{exception.Message}");
-         };
-      }
-
-      public static void Getsage50Client
-      (
-         string guidId
-      )
-      {
-         try
-         {
-            if(guidId != null && guidId != "")
-            {
-               string getSage50CustomerSQLQuery = $@"
-                SELECT 
-                    codigo, 
-                    cif, 
-                    nombre, 
-                    nombre2, 
-                    direccion, 
-                    codpost, 
-                    poblacion, 
-                    provincia, 
-                    pais
-                FROM 
-                  {DB.SQLDatabase("gestion","clientes")}
-                WHERE guid_id='{guidId}'
-               ;";
-
-               DataTable sage50CustomersDataTable = new DataTable();
-
-               DB.SQLExec(getSage50CustomerSQLQuery, ref sage50CustomersDataTable);
-
-               if(sage50CustomersDataTable.Rows.Count > 0)
+               for(global::System.Int32 i = 0; i < sage50CustomersDataTable.Rows.Count; i++)
                {
-                  Sage50Customer.CODIGO = sage50CustomersDataTable.Rows[0].ItemArray[0].ToString().Trim();
-                  Sage50Customer.CIF = sage50CustomersDataTable.Rows[0].ItemArray[1].ToString().Trim();
-                  Sage50Customer.NOMBRE = sage50CustomersDataTable.Rows[0].ItemArray[2].ToString().Trim();
-                  Sage50Customer.NOMBRE2 = sage50CustomersDataTable.Rows[0].ItemArray[3].ToString().Trim();
-                  Sage50Customer.DIRECCION = sage50CustomersDataTable.Rows[0].ItemArray[4].ToString().Trim();
-                  Sage50Customer.CODPOST = sage50CustomersDataTable.Rows[0].ItemArray[5].ToString().Trim();
-                  Sage50Customer.POBLACION = sage50CustomersDataTable.Rows[0].ItemArray[6].ToString().Trim();
-                  Sage50Customer.PROVINCIA = sage50CustomersDataTable.Rows[0].ItemArray[7].ToString().Trim();
-                  Sage50Customer.PAIS = sage50CustomersDataTable.Rows[0].ItemArray[8].ToString().Trim();
-                  Sage50Customer.GUID_ID = guidId;
+                  Sage50Customer customer = new Sage50Customer();
+                  customer.CODIGO = Convert.ToString(sage50CustomersDataTable.Rows[i].ItemArray[0].ToString().Trim() == "DBNull" ? "" : sage50CustomersDataTable.Rows[i].ItemArray[0].ToString().Trim());
+                  customer.CIF = Convert.ToString(sage50CustomersDataTable.Rows[i].ItemArray[4].ToString().Trim() == "DBNull" ? "" : sage50CustomersDataTable.Rows[i].ItemArray[1].ToString().Trim());
+                  customer.NOMBRE = Convert.ToString(sage50CustomersDataTable.Rows[i].ItemArray[2].ToString().Trim() == "DBNull" ? "" : sage50CustomersDataTable.Rows[i].ItemArray[2].ToString().Trim());
+                  customer.NOMBRE2 = Convert.ToString(sage50CustomersDataTable.Rows[i].ItemArray[3].ToString().Trim() == "DBNull" ? "" : sage50CustomersDataTable.Rows[i].ItemArray[3].ToString().Trim());
+                  customer.DIRECCION = Convert.ToString(sage50CustomersDataTable.Rows[i].ItemArray[4].ToString().Trim() == "DBNull" ? "" : sage50CustomersDataTable.Rows[i].ItemArray[4].ToString().Trim());
+                  customer.CODPOST = Convert.ToString(sage50CustomersDataTable.Rows[i].ItemArray[5].ToString().Trim() == "DBNull" ? "" : sage50CustomersDataTable.Rows[i].ItemArray[5].ToString().Trim());
+                  customer.POBLACION = Convert.ToString(sage50CustomersDataTable.Rows[i].ItemArray[6].ToString().Trim() == "DBNull" ? "" : sage50CustomersDataTable.Rows[i].ItemArray[6].ToString().Trim());
+                  customer.PROVINCIA = Convert.ToString(sage50CustomersDataTable.Rows[i].ItemArray[7].ToString().Trim() == "DBNull" ? "" : sage50CustomersDataTable.Rows[i].ItemArray[7].ToString().Trim());
+                  customer.PAIS = Convert.ToString(sage50CustomersDataTable.Rows[i].ItemArray[8].ToString().Trim() == "DBNull" ? "" : sage50CustomersDataTable.Rows[i].ItemArray[8].ToString().Trim());
+                  customer.GUID_ID = Convert.ToString(sage50CustomersDataTable.Rows[i].ItemArray[9].ToString().Trim() == "DBNull" ? "" : sage50CustomersDataTable.Rows[i].ItemArray[9].ToString().Trim());
+
+                  //customer.CIF = sage50CustomersDataTable.Rows[i].ItemArray[1].ToString().Trim();
+                  //customer.NOMBRE = sage50CustomersDataTable.Rows[i].ItemArray[2].ToString().Trim();
+                  //customer.NOMBRE2 = sage50CustomersDataTable.Rows[i].ItemArray[3].ToString().Trim();
+                  //customer.DIRECCION = sage50CustomersDataTable.Rows[i].ItemArray[4].ToString().Trim();
+                  //customer.CODPOST = sage50CustomersDataTable.Rows[i].ItemArray[5].ToString().Trim();
+                  //customer.POBLACION = sage50CustomersDataTable.Rows[i].ItemArray[6].ToString().Trim();
+                  //customer.PROVINCIA = sage50CustomersDataTable.Rows[i].ItemArray[7].ToString().Trim();
+                  //customer.PAIS = sage50CustomersDataTable.Rows[i].ItemArray[8].ToString().Trim();
+                  //customer.GUID_ID = sage50CustomersDataTable.Rows[i].ItemArray[9].ToString().Trim();
+
+                  Sage50CustomerList.Add(customer);
                };
             };
          }
          catch(Exception exception)
          {
-            throw new Exception($"En:\n\nSage50ConnectionManager\n.CustomerManager\n.ExistsInDatabase:\n\n{exception.Message}");
+            throw new Exception($"En:\n\nSage50ConnectionManager\n.CustomerManager\n.Getsage50Clients:\n\n{exception.Message}");
          };
       }
    }

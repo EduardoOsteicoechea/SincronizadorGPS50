@@ -11,7 +11,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
       public WasGestprojectClientRegistered
       (
          System.Data.SqlClient.SqlConnection connection, 
-         GestprojectDataManager.GestprojectClient client
+         GestprojectDataManager.GestprojectCustomer client
          //int? GP_USU_ID
       )
       {

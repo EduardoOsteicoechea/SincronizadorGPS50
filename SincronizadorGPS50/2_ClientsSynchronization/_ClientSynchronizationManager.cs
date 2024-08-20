@@ -13,14 +13,14 @@ namespace SincronizadorGPS50
             // Enable and set as selected, ClientsTab
             /////////////////////////////////////////////
 
-            MainWindowUIHolder.ClientsTab.Enabled = true;
-            MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.ClientsTab;
+            MainWindowUIHolder.CustomersTab.Enabled = true;
+            MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.CustomersTab;
 
             /////////////////////////////////////////////
             // Launch Clients Tab page generation
             /////////////////////////////////////////////
 
-            new ClientsTabPageUI();
+            new CreateCustomersTabPageUI();
          }
          catch(Exception exception)
          {

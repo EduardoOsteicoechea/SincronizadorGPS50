@@ -15,7 +15,12 @@ namespace SincronizadorGPS50.GestprojectDataManager
          System.Data.SqlClient.SqlConnection connection,
          int gestprojectClientId,
          string newSage50ClientCode,
-         string newSage50ClientGuidId
+         string newSage50ClientGuidId,
+         string companyGroupName,
+         string companyGroupMainCode,
+         string companyGroupCode,
+         string companyGroupGuid,
+         int? parentUserId
       ) 
       {
          try
@@ -28,7 +33,12 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='Sincronizado', 
                {ClientSynchronizationTableSchema.Sage50ClientCodeColumn.ColumnDatabaseName}='{newSage50ClientCode}', 
                {ClientSynchronizationTableSchema.GestprojectClientAccountableSubaccountColumn.ColumnDatabaseName}='{newSage50ClientCode}', 
-               {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}='{newSage50ClientGuidId}'
+               {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}='{newSage50ClientGuidId}',
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupNameColumn.ColumnDatabaseName}='{companyGroupName}',
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName}='{companyGroupMainCode}',
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName}='{companyGroupCode}',
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}',
+               {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName}={parentUserId}
             WHERE
                {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
             ;";

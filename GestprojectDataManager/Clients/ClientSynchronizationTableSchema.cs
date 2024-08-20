@@ -15,7 +15,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
 
 
       public static (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType) GestprojectClientAccountableSubaccountColumn { get; set; } = ("PAR_SUBCTA_CONTABLE", "Subcuenta contable", typeof(string));
-      public static (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType) GestprojectClientNameColumn { get; set; } = ("PAR_NOMBRE", "Nombre", typeof(string));
+      public static (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType) GestprojectClientNameColumn { get; set; } = ("NOMBRE_COMPLETO", "Nombre", typeof(string));
       public static (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType) GestprojectClientCommercialNameColumn { get; set; } = ("PAR_NOMBRE_COMERCIAL", "Nombre comercial", typeof(string));
       public static (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType) GestprojectClientCIFNIFColumn { get; set; } = ("PAR_CIF_NIF", "CIF - NIF", typeof(string));
       public static (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType) GestprojectClientAddressColumn { get; set; } = ("PAR_DIRECCION_1", "Dirección", typeof(string));

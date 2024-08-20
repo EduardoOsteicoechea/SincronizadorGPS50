@@ -28,7 +28,9 @@ namespace SincronizadorGPS50.GestprojectDataManager
                         PAR_CP_1,
                         PAR_LOCALIDAD_1,
                         PAR_PROVINCIA_1,
-                        PAR_PAIS_1
+                        PAR_PAIS_1,
+                        PAR_APELLIDO_1,
+                        PAR_APELLIDO_2
                     FROM 
                         PARTICIPANTE;";
             }
@@ -46,7 +48,9 @@ namespace SincronizadorGPS50.GestprojectDataManager
                         PAR_CP_1,
                         PAR_LOCALIDAD_1,
                         PAR_PROVINCIA_1,
-                        PAR_PAIS_1
+                        PAR_PAIS_1,
+                        PAR_APELLIDO_1,
+                        PAR_APELLIDO_2
                     FROM 
                         PARTICIPANTE
                     WHERE PAR_ID IN ({string.Join(",", IdList)})
@@ -73,6 +77,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
                      client.PAR_LOCALIDAD_1 = Convert.ToString(reader.GetValue(8));
                      client.PAR_PROVINCIA_1 = Convert.ToString(reader.GetValue(9));
                      client.PAR_PAIS_1 = Convert.ToString(reader.GetValue(10));
+                     client.PAR_APELLIDO_1 = Convert.ToString(reader.GetValue(11));
+                     client.PAR_APELLIDO_2 = Convert.ToString(reader.GetValue(12));
 
                      gestprojectClientClassList.Add(client);
                   };

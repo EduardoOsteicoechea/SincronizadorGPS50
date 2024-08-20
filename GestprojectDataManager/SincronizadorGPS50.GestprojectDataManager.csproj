@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clients\GetSingleClientFromSynchronizationTable.cs" />
+    <Compile Include="Clients\GetSingleCustomerFromSynchronizationTable.cs" />
     <Compile Include="Clients\GetClientsFromSynchronizationTable.cs" />
     <Compile Include="Clients\PopulateGestprojectClientSynchronizationData - Copy.cs" />
     <Compile Include="Clients\PopulateUnsynchronizedClientRegistrationData.cs" />

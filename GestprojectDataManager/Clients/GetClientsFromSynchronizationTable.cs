@@ -7,7 +7,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
 {
    public class GetClientsFromSynchronizationTable
    {
-      public List<GestprojectClient> GestprojectClientList { get; set; } = new List<GestprojectClient>();
+      public List<GestprojectCustomer> GestprojectClientList { get; set; } = new List<GestprojectCustomer>();
       public GetClientsFromSynchronizationTable
       (
          System.Data.SqlClient.SqlConnection connection,
@@ -47,7 +47,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {
                   while(reader.Read())
                   {
-                     GestprojectDataManager.GestprojectClient client = new GestprojectClient();
+                     GestprojectDataManager.GestprojectCustomer client = new GestprojectCustomer();
 
                      client.PAR_NOMBRE = Convert.ToString(reader.GetValue(0));
                      client.PAR_CIF_NIF = Convert.ToString(reader.GetValue(1));

@@ -9,14 +9,14 @@ namespace SincronizadorGPS50.GestprojectDataManager
    public class GestprojectClientsManager
    {
       public bool IsSuccessful { get; set; } = false;
-      public List<GestprojectClient> GetClients(System.Data.SqlClient.SqlConnection connection, List<int> IdList = null)
+      public List<GestprojectCustomer> GetClients(System.Data.SqlClient.SqlConnection connection, List<int> IdList = null)
       {
          try
          {
             connection.Open();
 
             List<int> gestProjectClientIdList = new List<int>();
-            List<GestprojectClient> gestprojectClientList = new List<GestprojectClient>();
+            List<GestprojectCustomer> gestprojectClientList = new List<GestprojectCustomer>();
 
             string sqlString = "";
 
@@ -49,7 +49,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
             for(global::System.Int32 i = 0; i < gestprojectClientParticipantList.Count; i++)
             {
                GestprojectParticipantModel gestprojectClientParticipant = gestprojectClientParticipantList[i];
-               GestprojectClient gestprojectClient = new GestprojectClient();
+               GestprojectCustomer gestprojectClient = new GestprojectCustomer();
 
                gestprojectClient.PAR_ID = gestprojectClientParticipant.PAR_ID;
                gestprojectClient.PAR_SUBCTA_CONTABLE = gestprojectClientParticipant.PAR_SUBCTA_CONTABLE;
@@ -61,6 +61,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
                gestprojectClient.PAR_LOCALIDAD_1 = gestprojectClientParticipant.PAR_LOCALIDAD_1;
                gestprojectClient.PAR_PROVINCIA_1 = gestprojectClientParticipant.PAR_PROVINCIA_1;
                gestprojectClient.PAR_PAIS_1 = gestprojectClientParticipant.PAR_PAIS_1;
+               gestprojectClient.PAR_APELLIDO_1 = gestprojectClientParticipant.PAR_APELLIDO_1;
+               gestprojectClient.PAR_APELLIDO_2 = gestprojectClientParticipant.PAR_APELLIDO_2;
 
                gestprojectClientList.Add(gestprojectClient);
             };
