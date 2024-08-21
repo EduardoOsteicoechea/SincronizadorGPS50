@@ -49,7 +49,7 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.CenterRow, 0, 1);
 
-            new CreateCenterRowUI(ManageCustomerSynchronizationTable.Create);
+            new CreateCenterRowUI();
 
             ////////////////////////////////////////
             // Clients BottomRow

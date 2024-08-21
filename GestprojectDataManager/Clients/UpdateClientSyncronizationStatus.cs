@@ -14,6 +14,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
       (
          System.Data.SqlClient.SqlConnection connection,
          int gestprojectClientId,
+         string sage50ClientGuid,
+         string sage50CompanyGroupGuid,
          bool isSynchronized
       ) 
       {
@@ -23,6 +25,24 @@ namespace SincronizadorGPS50.GestprojectDataManager
 
             string synchronizationStatus = isSynchronized ? "Sincronizado" : "Desincronizado";
 
+            string whereClause = "";
+            if(sage50ClientGuid != null && sage50ClientGuid != "") 
+            {
+               whereClause = $@"
+               {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}='{sage50ClientGuid}'
+               AND
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{sage50CompanyGroupGuid}'
+               ";
+            } 
+            else
+            {
+               whereClause = $@"
+               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
+               AND
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{sage50CompanyGroupGuid}'
+               ";
+            };
+
             string sqlString1 = $@"
             UPDATE 
                {ClientSynchronizationTableSchema.TableName} 
@@ -30,7 +50,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='{synchronizationStatus}',
                {ClientSynchronizationTableSchema.CommentsColumn.ColumnDatabaseName}=''
             WHERE
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
+               {whereClause}
             ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString1, connection))

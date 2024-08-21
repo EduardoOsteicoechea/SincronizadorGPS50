@@ -9,7 +9,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
       public PopulateUnsynchronizedClientRegistrationData
       (
          System.Data.SqlClient.SqlConnection connection,
-         GestprojectDataManager.GestprojectCustomer client
+         GestprojectDataManager.GestprojectCustomer client,
+         string companyGroupGuid
       ){
          try
          {
@@ -30,7 +31,10 @@ namespace SincronizadorGPS50.GestprojectDataManager
             FROM 
                {ClientSynchronizationTableSchema.TableName} 
             WHERE 
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID};";
+               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
+            AND
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}'
+            ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {
@@ -58,7 +62,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
             FROM 
                INT_SAGE_USERDATA 
             WHERE 
-               GP_USU_ID={client.parent_gesproject_user_id};";
+               GP_USU_ID={client.parent_gesproject_user_id}
+            ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString2, connection))
             {
@@ -89,9 +94,14 @@ namespace SincronizadorGPS50.GestprojectDataManager
                clientComments = client.comments;
             };
 
-            if(client.synchronization_status == "") 
+            if(client.synchronization_status == "" && client.sage50_guid_id != "") 
             {
                client.synchronization_status = "Desincronizado";
+            };
+
+            if(client.synchronization_status == "" && client.sage50_guid_id == "")
+            {
+               client.synchronization_status = "Nunca ha sido sincronizado";
             };
 
             string sqlString1 = $@"

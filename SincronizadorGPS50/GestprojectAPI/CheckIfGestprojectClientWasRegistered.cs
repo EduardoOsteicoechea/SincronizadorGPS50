@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+﻿using System.Data.SqlClient;
 
 namespace SincronizadorGPS50.GestprojectDataManager
 {
@@ -11,22 +9,40 @@ namespace SincronizadorGPS50.GestprojectDataManager
       public WasGestprojectClientRegistered
       (
          System.Data.SqlClient.SqlConnection connection, 
-         GestprojectDataManager.GestprojectCustomer client
-         //int? GP_USU_ID
+         GestprojectDataManager.GestprojectCustomer client,
+         string currentCompanyGroupGuid
       )
       {
          try
          {
             connection.Open();
 
+            string whereClause = "";
+
+            if(client.sage50_guid_id != "" && client.sage50_guid_id != null) 
+            {
+               whereClause = $@"
+                  {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
+                  AND
+                  {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}='{client.sage50_guid_id}'
+               ";
+            }
+            else 
+            {
+               whereClause = $@"
+               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
+               AND
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{currentCompanyGroupGuid}'
+               ";
+            };
+
             string sqlString = $@"
                SELECT 
-                  {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName},
-                  {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName}
+                  {ClientSynchronizationTableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName}
                FROM 
                   {ClientSynchronizationTableSchema.TableName}
                WHERE 
-                  {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
+                  {whereClause}
             ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
@@ -35,12 +51,11 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {
                   while(reader.Read())
                   {
-                     if(reader.GetValue(1).GetType().Name != "DBNull")
+                     if(reader.GetValue(0).GetType().Name != "DBNull")
                      {
-                        GP_USU_ID = Convert.ToInt32(reader.GetValue(1));
+                        ItIs = true;
+                        break;
                      }
-                     ItIs = true;
-                     break;
                   };
                };
             };

@@ -59,7 +59,7 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             ClientsUIHolder.TopRowSynchronizeButton.Click += (object sender, System.EventArgs e) =>
             {
-               List<int> selectedIdList = ManageUserInteractionWithUI.GetSelectedOrAllIfNoSelectFound();
+               List<int> selectedIdList = ManageUserInteractionWithUI.GetSelectedIfAnyOrAll();
 
                new RunSynchronizeCustomersWorkflow(
                   GestprojectDataHolder.GestprojectDatabaseConnection,
@@ -67,6 +67,10 @@ namespace SincronizadorGPS50.Workflows.Clients
                );
 
                ManageUserInteractionWithUI.RefreshTable();
+
+               //////////////////////////////////
+               // enable providers tab
+               //////////////////////////////////
 
                new ProviderSynchronizationManager();
             };

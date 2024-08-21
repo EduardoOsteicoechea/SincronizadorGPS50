@@ -13,7 +13,8 @@ namespace SincronizadorGPS50
       {
          if(unsynchronizedClientsExists)
          {
-            DialogResult result = MessageBox.Show($"¿Desea sincronizar los datos de los {unsynchronizedClientList.Count} cliente(s) desincronizados?", "Confirmación para actualización", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show($"¿Desea sincronizar {unsynchronizedClientList.Count} cliente(s) con Sage50?", "Confirmación para actualización", MessageBoxButtons.OKCancel);
+            //DialogResult result = MessageBox.Show($"Se han encontrado {unsynchronizedClientList.Count} cliente(s) que ya existen en SAGE, pero sus datos están desincronizados.\n\n¿Desea sincronizarlo(s)?", "Confirmación para sincronización", MessageBoxButtons.OKCancel);
 
             if(result == DialogResult.OK)
             {

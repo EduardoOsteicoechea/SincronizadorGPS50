@@ -3,40 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ED0700F7-4CC0-4431-B9C8-F04F1FB75EAE}|Sage50ConnectionManager\\SincronizadorGPS50.Sage50Connector.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sage50connectionmanager\\clients\\customermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED0700F7-4CC0-4431-B9C8-F04F1FB75EAE}|Sage50ConnectionManager\\SincronizadorGPS50.Sage50Connector.csproj|solutionrelative:sage50connectionmanager\\clients\\customermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\2_clientssynchronization\\3_1_unexsistingclientlistworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\2_clientssynchronization\\3_1_unexsistingclientlistworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\2_clientssynchronization\\2_5_runsynchronizecustomersworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\2_clientssynchronization\\2_5_runsynchronizecustomersworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\2_clientssynchronization\\2_1_managecustomersynchronizationtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\2_clientssynchronization\\2_1_managecustomersynchronizationtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{31E51A57-59E2-41E3-9A19-545FBF72A0D1}|GestprojectDataManager\\SincronizadorGPS50.GestprojectDataManager.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\gestprojectdatamanager\\clients\\clientsynchronizationtableschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31E51A57-59E2-41E3-9A19-545FBF72A0D1}|GestprojectDataManager\\SincronizadorGPS50.GestprojectDataManager.csproj|solutionrelative:gestprojectdatamanager\\clients\\clientsynchronizationtableschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{31E51A57-59E2-41E3-9A19-545FBF72A0D1}|GestprojectDataManager\\SincronizadorGPS50.GestprojectDataManager.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\gestprojectdatamanager\\clients\\populateunsynchronizedclientregistrationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31E51A57-59E2-41E3-9A19-545FBF72A0D1}|GestprojectDataManager\\SincronizadorGPS50.GestprojectDataManager.csproj|solutionrelative:gestprojectdatamanager\\clients\\populateunsynchronizedclientregistrationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{31E51A57-59E2-41E3-9A19-545FBF72A0D1}|GestprojectDataManager\\SincronizadorGPS50.GestprojectDataManager.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\gestprojectdatamanager\\clients\\getclientsfromsynchronizationtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31E51A57-59E2-41E3-9A19-545FBF72A0D1}|GestprojectDataManager\\SincronizadorGPS50.GestprojectDataManager.csproj|solutionrelative:gestprojectdatamanager\\clients\\getclientsfromsynchronizationtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\2_clientssynchronization\\1_4_createtoprowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\2_clientssynchronization\\1_4_createtoprowui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\2_clientssynchronization\\1_5_manageuserinteractionwithui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\2_clientssynchronization\\1_5_manageuserinteractionwithui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,124 +14,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "3_1_UnexsistingClientListWorkflow.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\3_1_UnexsistingClientListWorkflow.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\2_ClientsSynchronization\\3_1_UnexsistingClientListWorkflow.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\3_1_UnexsistingClientListWorkflow.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\2_ClientsSynchronization\\3_1_UnexsistingClientListWorkflow.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAB0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:19:41.018Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CustomerManager.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\Sage50ConnectionManager\\Clients\\CustomerManager.cs",
-              "RelativeDocumentMoniker": "Sage50ConnectionManager\\Clients\\CustomerManager.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\Sage50ConnectionManager\\Clients\\CustomerManager.cs",
-              "RelativeToolTip": "Sage50ConnectionManager\\Clients\\CustomerManager.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAAB0AAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T14:39:33.524Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ClientSynchronizationTableSchema.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectDataManager\\Clients\\ClientSynchronizationTableSchema.cs",
-              "RelativeDocumentMoniker": "GestprojectDataManager\\Clients\\ClientSynchronizationTableSchema.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectDataManager\\Clients\\ClientSynchronizationTableSchema.cs",
-              "RelativeToolTip": "GestprojectDataManager\\Clients\\ClientSynchronizationTableSchema.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAowBEAAACsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T14:12:40.652Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "2_1_ManageCustomerSynchronizationTable.cs",
               "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\2_1_ManageCustomerSynchronizationTable.cs",
               "RelativeDocumentMoniker": "SincronizadorGPS50\\2_ClientsSynchronization\\2_1_ManageCustomerSynchronizationTable.cs",
               "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\2_1_ManageCustomerSynchronizationTable.cs",
               "RelativeToolTip": "SincronizadorGPS50\\2_ClientsSynchronization\\2_1_ManageCustomerSynchronizationTable.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAgwDMAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:57:57.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "2_5_RunSynchronizeCustomersWorkflow.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\2_5_RunSynchronizeCustomersWorkflow.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\2_ClientsSynchronization\\2_5_RunSynchronizeCustomersWorkflow.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\2_5_RunSynchronizeCustomersWorkflow.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\2_ClientsSynchronization\\2_5_RunSynchronizeCustomersWorkflow.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAQwGcAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:51:42.678Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PopulateUnsynchronizedClientRegistrationData.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectDataManager\\Clients\\PopulateUnsynchronizedClientRegistrationData.cs",
-              "RelativeDocumentMoniker": "GestprojectDataManager\\Clients\\PopulateUnsynchronizedClientRegistrationData.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectDataManager\\Clients\\PopulateUnsynchronizedClientRegistrationData.cs",
-              "RelativeToolTip": "GestprojectDataManager\\Clients\\PopulateUnsynchronizedClientRegistrationData.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAAAGMAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T14:10:58.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "1_5_ManageUserInteractionWithUI.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\1_5_ManageUserInteractionWithUI.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\2_ClientsSynchronization\\1_5_ManageUserInteractionWithUI.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\1_5_ManageUserInteractionWithUI.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\2_ClientsSynchronization\\1_5_ManageUserInteractionWithUI.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAcwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:58:51.021Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GetClientsFromSynchronizationTable.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectDataManager\\Clients\\GetClientsFromSynchronizationTable.cs",
-              "RelativeDocumentMoniker": "GestprojectDataManager\\Clients\\GetClientsFromSynchronizationTable.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\GestprojectDataManager\\Clients\\GetClientsFromSynchronizationTable.cs",
-              "RelativeToolTip": "GestprojectDataManager\\Clients\\GetClientsFromSynchronizationTable.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAADwvyUAAABTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:59:22.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "1_4_CreateTopRowUI.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\1_4_CreateTopRowUI.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\2_ClientsSynchronization\\1_4_CreateTopRowUI.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\2_ClientsSynchronization\\1_4_CreateTopRowUI.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\2_ClientsSynchronization\\1_4_CreateTopRowUI.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAgwD8AAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:58:57.772Z",
+              "WhenOpened": "2024-08-21T09:42:25.555Z",
+              "IsPinned": true,
               "EditorCaption": ""
             }
           ]

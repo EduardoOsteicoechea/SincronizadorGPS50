@@ -1,5 +1,6 @@
 ﻿using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinEditors;
+using SincronizadorGPS50.Workflows.Sage50Connection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,5 +54,8 @@ namespace SincronizadorGPS50
         internal static UltraPictureBox CenterRowCenterPanelConnectingSpinner { get; set; } = null;
 
         internal static UltraButton CenterRowCenterPanelChangeEnterpryseGroupButton { get; set; } = null;
-    }
+
+
+         public static Sage50ConnectionUIManager Sage50ConnectionUIManagerInstance { get; set; } = null;
+   }
 }

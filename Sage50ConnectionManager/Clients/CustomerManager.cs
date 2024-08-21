@@ -27,7 +27,8 @@ namespace Sage50ConnectionManager
 
             foreach(Sage50Customer customer in Sage50CustomerList)
             {
-               if(IsThisSimilar(name, customer.NOMBRE, 75) && IsThisSimilar(cif, customer.CIF, 75))
+               if(IsThisSimilar(name, customer.NOMBRE, 95) && (IsThisSimilar(cif, customer.CIF, 95) || customer.CIF ==""))
+               //if(IsThisSimilar(name, customer.NOMBRE, 75) && IsThisSimilar(cif, customer.CIF, 75))
                {
                   PrintMessage("El valor de \"Nombre\"", name, customer.NOMBRE, name);
                   CustomerGuid = customer.GUID_ID;
@@ -57,7 +58,8 @@ namespace Sage50ConnectionManager
          try
          {
             //MessageBox.Show($"\"{value1}\" & \"{value2}\" have a: {Fuzz.Ratio(value1, value2)}% match ratio");
-            if(Fuzz.Ratio(value1, value2) > minimalToleranceRatio || Fuzz.Ratio(value1, value2) == 0)
+            //if(Fuzz.Ratio(value1, value2) > minimalToleranceRatio || Fuzz.Ratio(value1, value2) == 0)
+            if(Fuzz.Ratio(value1, value2) > minimalToleranceRatio)
             {
                return true;
             }

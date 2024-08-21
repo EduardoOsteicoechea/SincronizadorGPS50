@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Windows.Forms;
+﻿using System.Data;
 
 namespace SincronizadorGPS50
 {
@@ -20,7 +18,6 @@ namespace SincronizadorGPS50
             row[1] = gestprojectClient.synchronization_status;
             row[2] = gestprojectClient.PAR_ID;
             row[3] = gestprojectClient.PAR_SUBCTA_CONTABLE;
-            //row[4] = gestprojectClient.PAR_NOMBRE;
             row[4] = gestprojectClient.fullName;
             row[5] = gestprojectClient.PAR_NOMBRE_COMERCIAL;
             row[6] = gestprojectClient.PAR_CIF_NIF;
@@ -37,7 +34,8 @@ namespace SincronizadorGPS50
             row[17] = gestprojectClient.sage50_company_group_guid_id;
             row[18] = gestprojectClient.last_record;
             row[19] = gestprojectClient.parent_gesproject_user_id;
-            row[20] = gestprojectClient.comments ?? "";
+            int commentsLenght = gestprojectClient.comments.Length;
+            row[20] = (commentsLenght > 1000 ? gestprojectClient.comments.Substring(0,999): gestprojectClient.comments) ?? "";            
 
             // 0. SynchronizationTableClientIdColumn
             // 1. SynchronizationStatusColumn

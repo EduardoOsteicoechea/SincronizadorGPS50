@@ -22,23 +22,11 @@ namespace SincronizadorGPS50
 
                if(customerManager.ClientExists)
                {
-                  //AksIfDuplicationOrUpdateIsDesired aksIfDuplicationOrUpdateIsDesired = new AksIfDuplicationOrUpdateIsDesired("cliente",currentClient.PAR_NOMBRE, customerManager.MatchMessage);
+                  currentClient.sage50_guid_id = customerManager.CustomerGuid;
+                  currentClient.sage50_client_code = customerManager.CustomerCode;
+                  currentClient.PAR_SUBCTA_CONTABLE = customerManager.CustomerCode;
 
-                  //if(!aksIfDuplicationOrUpdateIsDesired.WasOperationCanceled)
-                  //{
-                     currentClient.sage50_guid_id = customerManager.CustomerGuid;
-                     currentClient.sage50_client_code = customerManager.CustomerCode;
-                     currentClient.PAR_SUBCTA_CONTABLE = customerManager.CustomerCode;
-
-                     //if(aksIfDuplicationOrUpdateIsDesired.IsDuplicationDesired)
-                     //{
-                     //   new CreateClientWorkflow(connection, currentClient);
-                     //}
-                     //else
-                     //{
-                        new UpdateClientWorkflow(connection, currentClient);
-                  //   };
-                  //};
+                  new UpdateClientWorkflow(connection, currentClient);
                }
                else
                {

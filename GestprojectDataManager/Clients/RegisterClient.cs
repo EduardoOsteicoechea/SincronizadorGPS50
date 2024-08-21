@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectDataManager
 {
@@ -8,13 +9,17 @@ namespace SincronizadorGPS50.GestprojectDataManager
       (
          System.Data.SqlClient.SqlConnection connection, 
          GestprojectDataManager.GestprojectCustomer client, 
-         string synchronizationStatus
+         string synchronizationStatus,
+         string companyGroupName,
+         string companyGroupMainCode,
+         string companyGroupCode,
+         string companyGroupGuid
+
       )
       {
          try
          {
             connection.Open();
-
             string sqlString2 = $@"
             INSERT INTO {ClientSynchronizationTableSchema.TableName} 
             (
@@ -26,7 +31,11 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {ClientSynchronizationTableSchema.GestprojectClientPostalCodeColumn.ColumnDatabaseName},
                {ClientSynchronizationTableSchema.GestprojectClientLocalityColumn.ColumnDatabaseName},
                {ClientSynchronizationTableSchema.GestprojectClientProvinceColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientCountryColumn.ColumnDatabaseName}
+               {ClientSynchronizationTableSchema.GestprojectClientCountryColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupNameColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}
             ) 
             VALUES 
             (
@@ -38,7 +47,11 @@ namespace SincronizadorGPS50.GestprojectDataManager
                '{client.PAR_CP_1}', 
                '{client.PAR_LOCALIDAD_1}', 
                '{client.PAR_PROVINCIA_1}', 
-               '{client.PAR_PAIS_1}'
+               '{client.PAR_PAIS_1}',               
+               '{companyGroupName}',
+               '{companyGroupMainCode}',
+               '{companyGroupCode}',
+               '{companyGroupGuid}'
             );";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString2, connection))

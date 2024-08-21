@@ -10,14 +10,20 @@ namespace SincronizadorGPS50
          try
          {
             /////////////////////////////////////////////
-            // Enable and set as selected, ClientsTab
+            /////////////////////////////////////////////
+            // start point of the client synchronization workflow
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+            
+            /////////////////////////////////////////////
+            // enable ClientsTab and set it as selected
             /////////////////////////////////////////////
 
             MainWindowUIHolder.CustomersTab.Enabled = true;
             MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.CustomersTab;
 
             /////////////////////////////////////////////
-            // Launch Clients Tab page generation
+            // launch Clients Tab page generation
             /////////////////////////////////////////////
 
             new CreateCustomersTabPageUI();

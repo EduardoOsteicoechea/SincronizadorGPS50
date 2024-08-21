@@ -11,7 +11,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
       public GetSingleCustomerFromSynchronizationTable
       (
          System.Data.SqlClient.SqlConnection connection,
-         int gestprojectClientId
+         GestprojectCustomer gestprojectCustomer,
+         string companyGroupGuid
       )
       {
          try
@@ -20,26 +21,27 @@ namespace SincronizadorGPS50.GestprojectDataManager
 
             string sqlString = $@"
             SELECT 
-               {ClientSynchronizationTableSchema.GestprojectClientNameColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientCIFNIFColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientAddressColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientPostalCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientLocalityColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientProvinceColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientCountryColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName},
                {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName},
+
+               {ClientSynchronizationTableSchema.Sage50ClientCodeColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName},
+
                {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupNameColumn.ColumnDatabaseName},
                {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName},
                {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName},
                {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.CommentsColumn.ColumnDatabaseName}
+
+               {ClientSynchronizationTableSchema.CommentsColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName},
+               {ClientSynchronizationTableSchema.ClientLastUpdateTerminalColumn.ColumnDatabaseName},
             FROM 
                {ClientSynchronizationTableSchema.TableName} 
             WHERE 
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId};";
+               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectCustomer.PAR_ID}
+            AND
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}'               
+            ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {
@@ -47,25 +49,20 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {
                   while(reader.Read())
                   {
-                     GestprojectCustomer.PAR_NOMBRE = Convert.ToString(reader.GetValue(0));
-                     GestprojectCustomer.PAR_CIF_NIF = Convert.ToString(reader.GetValue(1));
-                     GestprojectCustomer.PAR_DIRECCION_1 = Convert.ToString(reader.GetValue(2));
-                     GestprojectCustomer.PAR_CP_1 = Convert.ToString(reader.GetValue(3));
-                     GestprojectCustomer.PAR_LOCALIDAD_1 = Convert.ToString(reader.GetValue(4));
-                     GestprojectCustomer.PAR_PROVINCIA_1 = Convert.ToString(reader.GetValue(5));
-                     GestprojectCustomer.PAR_PAIS_1 = Convert.ToString(reader.GetValue(6));
-                     GestprojectCustomer.synchronization_status = Convert.ToString(reader.GetValue(7));
-                     GestprojectCustomer.sage50_company_group_name = Convert.ToString(reader.GetValue(8));
-                     GestprojectCustomer.sage50_company_group_code = Convert.ToString(reader.GetValue(9));
-                     GestprojectCustomer.sage50_company_group_main_code = Convert.ToString(reader.GetValue(10));
-                     GestprojectCustomer.sage50_company_group_guid_id = Convert.ToString(reader.GetValue(11));
-                     GestprojectCustomer.PAR_ID = Convert.ToInt32(reader.GetValue(12));
+                     GestprojectCustomer.synchronization_table_id = Convert.ToInt32(reader.GetValue(0).GetType().Name == "DBNull" ? -1 : reader.GetValue(0));
+                     GestprojectCustomer.synchronization_status = Convert.ToString(reader.GetValue(1).GetType().Name == "DBNull" ? "" : reader.GetValue(1));
 
-                     GestprojectCustomer.sage50_client_code = System.Convert.ToString(reader.GetValue(13)) == "" || Convert.ToString(reader.GetValue(13)) == null || Convert.ToString(reader.GetValue(13)) == null ? "" : System.Convert.ToString(reader.GetValue(13));
+                     GestprojectCustomer.sage50_client_code = Convert.ToString(reader.GetValue(2).GetType().Name == "DBNull" ? "" : reader.GetValue(2));
+                     GestprojectCustomer.sage50_client_code = Convert.ToString(reader.GetValue(3).GetType().Name == "DBNull" ? "" : reader.GetValue(3));
 
-                     GestprojectCustomer.sage50_guid_id = System.Convert.ToString(reader.GetValue(14)) == "" || Convert.ToString(reader.GetValue(14)) == null || Convert.ToString(reader.GetValue(14)) == null ? "" : System.Convert.ToString(reader.GetValue(14));
+                     GestprojectCustomer.sage50_company_group_name = Convert.ToString(reader.GetValue(4).GetType().Name == "DBNull" ? "" : reader.GetValue(4));
+                     GestprojectCustomer.sage50_company_group_code = Convert.ToString(reader.GetValue(5).GetType().Name == "DBNull" ? "" : reader.GetValue(5));
+                     GestprojectCustomer.sage50_company_group_main_code = Convert.ToString(reader.GetValue(6).GetType().Name == "DBNull" ? "" : reader.GetValue(6));
+                     GestprojectCustomer.sage50_company_group_guid_id = Convert.ToString(reader.GetValue(7).GetType().Name == "DBNull" ? "" : reader.GetValue(7));
 
-                     GestprojectCustomer.comments = System.Convert.ToString(reader.GetValue(15)) == "" || Convert.ToString(reader.GetValue(15)) == null || Convert.ToString(reader.GetValue(15)) == null ? "" : System.Convert.ToString(reader.GetValue(15));
+                     GestprojectCustomer.comments = Convert.ToString(reader.GetValue(8).GetType().Name == "DBNull" ? "" : reader.GetValue(8));
+                     GestprojectCustomer.parent_gesproject_user_id = Convert.ToInt32(reader.GetValue(9).GetType().Name == "DBNull" ? -1 : reader.GetValue(9));
+                     GestprojectCustomer.last_record = Convert.ToDateTime(reader.GetValue(10).GetType().Name == "DBNull" ? DateTime.Now : reader.GetValue(10));
                   };
                };
             };

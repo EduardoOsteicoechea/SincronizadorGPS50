@@ -9,7 +9,7 @@ namespace SincronizadorGPS50
    {
       internal List<UltraGridRow> UltraGridRowList { get; set; } = new List<UltraGridRow>();
       internal List<int> GestprojectClientIdList { get; set; } = new List<int>();
-      internal CreateCenterRowUI(SynchronizationTableDelegate createTableDelegate)
+      internal CreateCenterRowUI()
       {
          try
          {
@@ -26,7 +26,7 @@ namespace SincronizadorGPS50
 
             ClientsUIHolder.ClientDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
 
-            DataTable synchronizationTable = createTableDelegate();
+            DataTable synchronizationTable = ManageCustomerSynchronizationTable.Create();
 
             ClientsUIHolder.ClientDataTable.DataSource = synchronizationTable;
 

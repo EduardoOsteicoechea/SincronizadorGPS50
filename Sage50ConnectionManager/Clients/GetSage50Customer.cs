@@ -55,6 +55,7 @@ namespace SincronizadorGPS50.Sage50Connector
                for(int i = 0; i < sage50CustomersDataTable.Rows.Count; i++)
                {
                   Sage50Customer sage50Customer = new Sage50Customer();
+
                   sage50Customer.CODIGO = sage50CustomersDataTable.Rows[i].ItemArray[0].ToString().Trim();
                   sage50Customer.CIF = sage50CustomersDataTable.Rows[i].ItemArray[1].ToString().Trim();
                   sage50Customer.NOMBRE = sage50CustomersDataTable.Rows[i].ItemArray[2].ToString().Trim();
@@ -79,7 +80,7 @@ namespace SincronizadorGPS50.Sage50Connector
                   if(CustomerList[i].CODIGO_NUMERO > Sage50HigestCodeNumber)
                   {
                      Sage50HigestCodeNumber = CustomerList[i].CODIGO_NUMERO;
-                  }
+                  };
                };
 
                if(CustomerList.Count > 0)
@@ -95,7 +96,7 @@ namespace SincronizadorGPS50.Sage50Connector
             }
             else
             {
-               throw new System.Exception();
+               throw new System.Exception("No clients were found in Sage50");
             }
          }
          catch(System.Exception exception)

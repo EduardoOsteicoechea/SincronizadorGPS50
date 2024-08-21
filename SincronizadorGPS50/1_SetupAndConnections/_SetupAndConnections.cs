@@ -95,7 +95,7 @@ namespace SincronizadorGPS50
             (gestprojectUserDataTableExists && !rememberUserDataOptionWasActivated) ||
             (gestprojectUserDataTableExists && rememberUserDataOptionWasActivated && !userIsInRememberedAndApprovedDevice)
          ){
-            new Sage50ConnectionUIManager(
+            Sage50ConnectionUIHolder.Sage50ConnectionUIManagerInstance = new Sage50ConnectionUIManager(
                Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls,
                "stateless"
             );
@@ -103,7 +103,7 @@ namespace SincronizadorGPS50
 
          if(gestprojectUserDataTableExists && rememberUserDataOptionWasActivated && userIsInRememberedAndApprovedDevice)
          {
-            new Sage50ConnectionUIManager(
+            Sage50ConnectionUIHolder.Sage50ConnectionUIManagerInstance = new Sage50ConnectionUIManager(
                Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls,
                "stateful"
             );

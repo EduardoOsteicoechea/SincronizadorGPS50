@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data.SqlClient;
 
 namespace SincronizadorGPS50.GestprojectDataManager
 {
@@ -41,8 +35,9 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName}={parentUserId}
             WHERE
                {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
+            AND
+               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}'
             ;";
-
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString1, connection))
             {

@@ -84,10 +84,10 @@ namespace SincronizadorGPS50
          ClientsUIHolder.ClientDataTable.DataSource = ManageCustomerSynchronizationTable.Create();
 
          DeselectRows(ClientsUIHolder.ClientDataTable);
-         ClientsUIHolder.ClientDataTable.ClickCell += ManageUserInteractionWithUI.ConfigureTable;
+         ClientsUIHolder.ClientDataTable.ClickCell += ConfigureTable;
       }
 
-      internal static List<int> GetSelectedOrAllIfNoSelectFound()
+      internal static List<int> GetSelectedIfAnyOrAll()
       {
          int counter = 0;
          System.Collections.Generic.List<int> selectedIdList = new System.Collections.Generic.List<int>();

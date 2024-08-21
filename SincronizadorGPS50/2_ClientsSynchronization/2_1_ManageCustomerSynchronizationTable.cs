@@ -1,7 +1,8 @@
 ﻿using SincronizadorGPS50.Sage50Connector;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Windows.Forms;
+using System.Linq;
 
 namespace SincronizadorGPS50
 {
@@ -12,7 +13,7 @@ namespace SincronizadorGPS50
          ///////////////////////////////////
          /// get both gestproject and sage50 clients
          ///////////////////////////////////
-         
+
          List<GestprojectDataManager.GestprojectCustomer> gestprojectCustomerList = new GestprojectDataManager.GestprojectClientsManager()
          .GetClients(
             GestprojectDataHolder.GestprojectDatabaseConnection
@@ -21,7 +22,7 @@ namespace SincronizadorGPS50
          List<Sage50Customer> sage50CustomerList = new GetSage50Customer().CustomerList;
 
          ///////////////////////////////////
-         /// create data table
+         /// create ui data source
          ///////////////////////////////////
 
          DataTable table = new CreateTableControl().Table;
@@ -30,85 +31,115 @@ namespace SincronizadorGPS50
          /// manage synchronization table state
          ///////////////////////////////////
 
-         bool Sage50SincronizationTableExists = new GestprojectDataManager.CheckIfTableExistsOnGestproject(
-            GestprojectDataHolder.GestprojectDatabaseConnection, 
+         bool CustomerSincronizationTableExists = new GestprojectDataManager.CheckIfTableExistsOnGestproject(
+            GestprojectDataHolder.GestprojectDatabaseConnection,
             "INT_SAGE_SINC_CLIENTE"
          ).Exists;
 
-         if(!Sage50SincronizationTableExists)
-         {
+         if(!CustomerSincronizationTableExists)
             new GestprojectDataManager.CreateClientSynchronizationTable(GestprojectDataHolder.GestprojectDatabaseConnection);
-         };
-
-         bool Sage50SynchronizationTableWasJustCreated = !Sage50SincronizationTableExists;
 
          ///////////////////////////////////
-         /// process each gestproject database client
+         /// process each Gestproject customer
          ///////////////////////////////////
 
          for(int i = 0; i < gestprojectCustomerList.Count; i++)
          {
             GestprojectDataManager.GestprojectCustomer gestprojectCustomer = gestprojectCustomerList[i];
 
-            if(Sage50SynchronizationTableWasJustCreated)
+            ///////////////////////////////////
+            /// get current session UI Company Group data
+            ///////////////////////////////////
+
+            var sage50CompanyGroup = SincronizadorGPS50.Sage50Connector.Sage50CompanyGroupActions.GetCompanyGroups().FirstOrDefault(companyGroup => companyGroup.CompanyName == Sage50ConnectionUIHolder.Sage50ConnectionUIManagerInstance.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Text);
+
+            ///////////////////////////////////
+            /// if new, register customer in synchronization table
+            ///////////////////////////////////
+
+            if(
+               !CustomerSincronizationTableExists 
+                  || 
+               !new GestprojectDataManager.WasGestprojectClientRegistered(
+                  GestprojectDataHolder.GestprojectDatabaseConnection,
+                  gestprojectCustomer,
+                  sage50CompanyGroup.CompanyGuidId
+               ).ItIs
+            )
             {
                new GestprojectDataManager.RegisterClient(
                   GestprojectDataHolder.GestprojectDatabaseConnection,
                   gestprojectCustomer,
-                  SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
+                  SynchronizationStatusOptions.Nunca_ha_sido_sincronizado,
+                  sage50CompanyGroup.CompanyName,
+                  sage50CompanyGroup.CompanyMainCode,
+                  sage50CompanyGroup.CompanyCode,
+                  sage50CompanyGroup.CompanyGuidId
                );
-            }
-            else
-            {
-               if(
-                  !new GestprojectDataManager.WasGestprojectClientRegistered(
-                     GestprojectDataHolder.GestprojectDatabaseConnection,
-                     gestprojectCustomer
-                  ).ItIs
-               )
-               {
-                  new GestprojectDataManager.RegisterClient(
-                     GestprojectDataHolder.GestprojectDatabaseConnection,
-                     gestprojectCustomer,
-                     SynchronizationStatusOptions.Nunca_ha_sido_sincronizado
-                  );
-               }
-               else
-               {
-                  GestprojectDataManager.GestprojectCustomer synchronizationTableProjectClient =
-                  new SincronizadorGPS50
-                  .GestprojectDataManager
-                  .GetSingleCustomerFromSynchronizationTable(
-                     GestprojectDataHolder.GestprojectDatabaseConnection,
-                     gestprojectCustomer.PAR_ID
-                  ).GestprojectCustomer;
-
-                  GestprojectDataManager.GestprojectCustomer validatedGestprojectClient = 
-                  new ValidateClientSyncronizationStatus(
-                     synchronizationTableProjectClient.sage50_guid_id,
-                     gestprojectCustomer.fullName,
-                     gestprojectCustomer.PAR_APELLIDO_1,
-                     gestprojectCustomer.PAR_APELLIDO_2,
-                     gestprojectCustomer.PAR_CIF_NIF,
-                     gestprojectCustomer.PAR_CP_1,
-                     gestprojectCustomer.PAR_DIRECCION_1,
-                     gestprojectCustomer.PAR_PROVINCIA_1,
-                     gestprojectCustomer.PAR_PAIS_1,
-                     sage50CustomerList
-                  ).GestprojectClient;
-
-                  gestprojectCustomer.synchronization_status = validatedGestprojectClient.synchronization_status;
-                  gestprojectCustomer.comments = validatedGestprojectClient.comments;
-               };
             };
 
-            new GestprojectDataManager.PopulateUnsynchronizedClientRegistrationData(
+            ///////////////////////////////////
+            /// add current Gestproject customer synchronization table data if any
+            ///////////////////////////////////
+
+            new GestprojectDataManager.AddSynchronizationTableCustomerData(
                GestprojectDataHolder.GestprojectDatabaseConnection,
-               gestprojectCustomer
+               gestprojectCustomer,
+               sage50CompanyGroup.CompanyGuidId
             );
+
+            ///////////////////////////////////
+            /// get Gestproject client current synchronization state
+            ///////////////////////////////////
+
+            ValidateClientSyncronizationStatus clientSyncronizationStatusValidator = new ValidateClientSyncronizationStatus(
+               gestprojectCustomer,
+               sage50CustomerList
+            );
+
+            if(clientSyncronizationStatusValidator.MustBeDeleted)
+            {
+               ///////////////////////////////////
+               /// delete sage50 unexisting customer from synchronization table
+               /// and register it again as a never synchronized customer
+               ///////////////////////////////////
+               
+               new GestprojectDataManager.DeleteFromSynchronizationTable(
+                  GestprojectDataHolder.GestprojectDatabaseConnection,
+                  gestprojectCustomer
+               );
+
+               new GestprojectDataManager.ClearCustomerSynchronizationData(
+                  gestprojectCustomer
+               );
+
+               new GestprojectDataManager.RegisterClient(
+                  GestprojectDataHolder.GestprojectDatabaseConnection,
+                  gestprojectCustomer,
+                  SynchronizationStatusOptions.Nunca_ha_sido_sincronizado,
+                  sage50CompanyGroup.CompanyName,
+                  sage50CompanyGroup.CompanyMainCode,
+                  sage50CompanyGroup.CompanyCode,
+                  sage50CompanyGroup.CompanyGuidId
+               );
+
+               new GestprojectDataManager.AddSynchronizationTableCustomerData(
+                  GestprojectDataHolder.GestprojectDatabaseConnection,
+                  gestprojectCustomer,
+                  sage50CompanyGroup.CompanyGuidId
+               );
+            };
+
+            ///////////////////////////////////
+            /// add stateful Gestproject client to ui data source
+            ///////////////////////////////////
 
             new AddClientToUITable(gestprojectCustomer, table);
          };
+
+         ///////////////////////////////////
+         /// return ui data source
+         ///////////////////////////////////
 
          return table;
       }

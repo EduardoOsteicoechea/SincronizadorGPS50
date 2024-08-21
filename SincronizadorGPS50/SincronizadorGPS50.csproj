@@ -387,7 +387,8 @@
   <ItemGroup>
     <Compile Include="1_SetupAndConnections\2_3_ManageMainWindowActions.cs" />
     <Compile Include="2_ClientsSynchronization\1_5_ManageUserInteractionWithUI.cs" />
-    <Compile Include="2_ClientsSynchronization\2_5_RunSynchronizeCustomersWorkflow.cs" />
+    <Compile Include="2_ClientsSynchronization\3_0_RunSynchronizeCustomersWorkflow.cs" />
+    <Compile Include="2_ClientsSynchronization\prev\3_1_UnexsistingClientListWorkflow - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\3_5_UpdateClientWorkflow.cs" />
     <Compile Include="2_ClientsSynchronization\3_4_CreateClientWorkflow.cs" />
     <Compile Include="2_ClientsSynchronization\3_3_AksIfDuplicationOrUpdateIsDesired.cs" />
