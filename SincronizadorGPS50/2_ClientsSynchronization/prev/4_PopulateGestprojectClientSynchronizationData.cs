@@ -8,7 +8,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
       (
          System.Data.SqlClient.SqlConnection connection,
          GestprojectDataManager.GestprojectCustomer client,
-         string synchronizationStatus
+         string synchronizationStatus,
+         GestprojectDataManager.CustomerSyncronizationTableSchema tableSchema
       )
       {
          try
@@ -17,14 +18,14 @@ namespace SincronizadorGPS50.GestprojectDataManager
 
             string sqlString = $@"
             SELECT 
-               {ClientSynchronizationTableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName}, 
+               {tableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName}, 
                synchronization_status, 
                sage50_code, 
                sage50_guid_id 
             FROM 
-               {ClientSynchronizationTableSchema.TableName} 
+               {tableSchema.TableName} 
             WHERE 
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID};";
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID};";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {

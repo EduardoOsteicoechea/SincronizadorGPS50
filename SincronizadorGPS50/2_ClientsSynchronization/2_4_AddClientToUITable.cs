@@ -14,9 +14,10 @@ namespace SincronizadorGPS50
          {
             DataRow row = sincronizationTable.NewRow();
 
-            row[0] = gestprojectClient.synchronization_table_id;
+            row[0] = gestprojectClient.synchronization_table_id.ToString() ?? "";
             row[1] = gestprojectClient.synchronization_status;
-            row[2] = gestprojectClient.PAR_ID;
+            row[2] = gestprojectClient.PAR_ID.ToString() ?? "";
+
             row[3] = gestprojectClient.PAR_SUBCTA_CONTABLE;
             row[4] = gestprojectClient.fullName;
             row[5] = gestprojectClient.PAR_NOMBRE_COMERCIAL;
@@ -32,8 +33,10 @@ namespace SincronizadorGPS50
             row[15] = gestprojectClient.sage50_company_group_code;
             row[16] = gestprojectClient.sage50_company_group_main_code;
             row[17] = gestprojectClient.sage50_company_group_guid_id;
-            row[18] = gestprojectClient.last_record;
-            row[19] = gestprojectClient.parent_gesproject_user_id;
+
+            row[18] = gestprojectClient.last_record.ToString() ?? "";
+            row[19] = gestprojectClient.parent_gesproject_user_id.ToString() ?? "";
+
             int commentsLenght = gestprojectClient.comments.Length;
             row[20] = (commentsLenght > 1000 ? gestprojectClient.comments.Substring(0,999): gestprojectClient.comments) ?? "";            
 

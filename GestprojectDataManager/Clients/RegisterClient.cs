@@ -8,12 +8,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
       public RegisterClient
       (
          System.Data.SqlClient.SqlConnection connection, 
-         GestprojectDataManager.GestprojectCustomer client, 
-         string synchronizationStatus,
-         string companyGroupName,
-         string companyGroupMainCode,
-         string companyGroupCode,
-         string companyGroupGuid
+         GestprojectDataManager.GestprojectCustomer client,
+         CustomerSyncronizationTableSchema tableSchema
 
       )
       {
@@ -21,25 +17,21 @@ namespace SincronizadorGPS50.GestprojectDataManager
          {
             connection.Open();
             string sqlString2 = $@"
-            INSERT INTO {ClientSynchronizationTableSchema.TableName} 
+            INSERT INTO {tableSchema.TableName} 
             (
-               {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName}, 
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientNameColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientCIFNIFColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientAddressColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientPostalCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientLocalityColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientProvinceColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientCountryColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupNameColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}
+               {tableSchema.SynchronizationStatusColumn.ColumnDatabaseName}, 
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName},
+               {tableSchema.GestprojectClientNameColumn.ColumnDatabaseName},
+               {tableSchema.GestprojectClientCIFNIFColumn.ColumnDatabaseName},
+               {tableSchema.GestprojectClientAddressColumn.ColumnDatabaseName},
+               {tableSchema.GestprojectClientPostalCodeColumn.ColumnDatabaseName},
+               {tableSchema.GestprojectClientLocalityColumn.ColumnDatabaseName},
+               {tableSchema.GestprojectClientProvinceColumn.ColumnDatabaseName},
+               {tableSchema.GestprojectClientCountryColumn.ColumnDatabaseName}
             ) 
             VALUES 
             (
-               '{synchronizationStatus}',
+               'Nunca ha sido sincronizado',
                {client.PAR_ID},
                '{client.fullName}',
                '{client.PAR_CIF_NIF}', 
@@ -47,11 +39,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
                '{client.PAR_CP_1}', 
                '{client.PAR_LOCALIDAD_1}', 
                '{client.PAR_PROVINCIA_1}', 
-               '{client.PAR_PAIS_1}',               
-               '{companyGroupName}',
-               '{companyGroupMainCode}',
-               '{companyGroupCode}',
-               '{companyGroupGuid}'
+               '{client.PAR_PAIS_1}'
             );";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString2, connection))

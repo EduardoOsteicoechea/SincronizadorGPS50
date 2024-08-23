@@ -11,7 +11,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
       (
          System.Data.SqlClient.SqlConnection connection,
          GestprojectCustomer gestprojectCustomer,
-         string companyGroupGuid
+         CustomerSyncronizationTableSchema tableSchema
+
       )
       {
          try
@@ -20,26 +21,24 @@ namespace SincronizadorGPS50.GestprojectDataManager
 
             string sqlString = $@"
             SELECT 
-               {ClientSynchronizationTableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName},
+               {tableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName},
+               {tableSchema.SynchronizationStatusColumn.ColumnDatabaseName},
 
-               {ClientSynchronizationTableSchema.Sage50ClientCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientCodeColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName},
 
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupNameColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientCompanyGroupNameColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName},
 
-               {ClientSynchronizationTableSchema.CommentsColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.ClientLastUpdateTerminalColumn.ColumnDatabaseName}
+               {tableSchema.CommentsColumn.ColumnDatabaseName},
+               {tableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName},
+               {tableSchema.ClientLastUpdateTerminalColumn.ColumnDatabaseName}
             FROM 
-               {ClientSynchronizationTableSchema.TableName} 
+               {tableSchema.TableName} 
             WHERE 
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectCustomer.PAR_ID}
-            AND
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}'               
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectCustomer.PAR_ID}              
             ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
@@ -48,7 +47,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
                {
                   while(reader.Read())
                   {
-                     gestprojectCustomer.synchronization_table_id = Convert.ToInt32(reader.GetValue(0).GetType().Name == "DBNull" ? -1 : reader.GetValue(0));
+                     gestprojectCustomer.synchronization_table_id = Convert.ToInt32(reader.GetValue(0).GetType().Name == "DBNull" ? null : reader.GetValue(0));
                      gestprojectCustomer.synchronization_status = Convert.ToString(reader.GetValue(1).GetType().Name == "DBNull" ? "" : reader.GetValue(1));
 
                      gestprojectCustomer.sage50_client_code = Convert.ToString(reader.GetValue(2).GetType().Name == "DBNull" ? "" : reader.GetValue(2));
@@ -62,8 +61,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
                      gestprojectCustomer.comments = Convert.ToString(reader.GetValue(8).GetType().Name == "DBNull" ? "" : reader.GetValue(8));
                      gestprojectCustomer.comments = gestprojectCustomer.comments.Length > 2000 ? gestprojectCustomer.comments.Substring(0,2000) : gestprojectCustomer.comments;
 
-                     gestprojectCustomer.parent_gesproject_user_id = Convert.ToInt32(reader.GetValue(9).GetType().Name == "DBNull" ? -1 : reader.GetValue(9));
-                     gestprojectCustomer.last_record = Convert.ToDateTime(reader.GetValue(10).GetType().Name == "DBNull" ? DateTime.Now : reader.GetValue(10));
+                     gestprojectCustomer.parent_gesproject_user_id = Convert.ToInt32(reader.GetValue(9).GetType().Name == "DBNull" ? null : reader.GetValue(9));
+                     gestprojectCustomer.last_record = Convert.ToDateTime(reader.GetValue(10).GetType().Name == "DBNull" ? null : reader.GetValue(10));
                   };
                };
             };

@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectDataManager
 {
@@ -10,7 +11,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
       (
          System.Data.SqlClient.SqlConnection connection, 
          GestprojectDataManager.GestprojectCustomer client,
-         string currentCompanyGroupGuid
+         string currentCompanyGroupGuid,
+         GestprojectDataManager.CustomerSyncronizationTableSchema tableSchema
       )
       {
          try
@@ -22,25 +24,23 @@ namespace SincronizadorGPS50.GestprojectDataManager
             if(client.sage50_guid_id != "" && client.sage50_guid_id != null) 
             {
                whereClause = $@"
-                  {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
+                  {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
                   AND
-                  {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}='{client.sage50_guid_id}'
+                  {tableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}='{client.sage50_guid_id}'
                ";
             }
             else 
             {
                whereClause = $@"
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
-               AND
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{currentCompanyGroupGuid}'
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
                ";
             };
 
             string sqlString = $@"
                SELECT 
-                  {ClientSynchronizationTableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName}
+                  {tableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName}
                FROM 
-                  {ClientSynchronizationTableSchema.TableName}
+                  {tableSchema.TableName}
                WHERE 
                   {whereClause}
             ;";

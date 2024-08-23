@@ -1,11 +1,16 @@
-﻿using SincronizadorGPS50.Workflows.Clients;
+﻿using SincronizadorGPS50.Sage50Connector;
+using SincronizadorGPS50.Workflows.Clients;
 using System;
 
 namespace SincronizadorGPS50
 {
    internal class ClientSynchronizationManager
    {
-      public void Launch()
+      public void Launch
+      (
+         System.Data.SqlClient.SqlConnection connection,
+         CompanyGroup sage50CompanyGroupData
+      )
       {
          try
          {
@@ -26,7 +31,10 @@ namespace SincronizadorGPS50
             // launch Clients Tab page generation
             /////////////////////////////////////////////
 
-            new CreateCustomersTabPageUI();
+            new CreateCustomersTabPageUI(
+               connection,
+               sage50CompanyGroupData
+            );
          }
          catch(Exception exception)
          {

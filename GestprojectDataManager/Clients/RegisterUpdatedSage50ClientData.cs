@@ -20,7 +20,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
          string cif,
          string postalCode,
          string address,
-         string province
+         string province,
+         CustomerSyncronizationTableSchema tableSchema
       ) 
       {
          try
@@ -28,19 +29,19 @@ namespace SincronizadorGPS50.GestprojectDataManager
             connection.Open();
 
             string sqlString1 = $@"
-            UPDATE {ClientSynchronizationTableSchema.TableName} 
+            UPDATE {tableSchema.TableName} 
             SET 
-               {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='Sincronizado', 
-               {ClientSynchronizationTableSchema.GestprojectClientCountryColumn.ColumnDatabaseName}='{country}', 
-               {ClientSynchronizationTableSchema.GestprojectClientNameColumn.ColumnDatabaseName}='{name}', 
-               {ClientSynchronizationTableSchema.GestprojectClientCIFNIFColumn.ColumnDatabaseName}='{cif}',
-               {ClientSynchronizationTableSchema.GestprojectClientPostalCodeColumn.ColumnDatabaseName}='{postalCode}',
-               {ClientSynchronizationTableSchema.GestprojectClientAddressColumn.ColumnDatabaseName}='{address}',
-               {ClientSynchronizationTableSchema.GestprojectClientProvinceColumn.ColumnDatabaseName}='{province}',
-               {ClientSynchronizationTableSchema.GestprojectClientAccountableSubaccountColumn.ColumnDatabaseName}='{sage50ClientCode}',
-               {ClientSynchronizationTableSchema.Sage50ClientCodeColumn.ColumnDatabaseName}='{sage50ClientCode}'
+               {tableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='Sincronizado', 
+               {tableSchema.GestprojectClientCountryColumn.ColumnDatabaseName}='{country}', 
+               {tableSchema.GestprojectClientNameColumn.ColumnDatabaseName}='{name}', 
+               {tableSchema.GestprojectClientCIFNIFColumn.ColumnDatabaseName}='{cif}',
+               {tableSchema.GestprojectClientPostalCodeColumn.ColumnDatabaseName}='{postalCode}',
+               {tableSchema.GestprojectClientAddressColumn.ColumnDatabaseName}='{address}',
+               {tableSchema.GestprojectClientProvinceColumn.ColumnDatabaseName}='{province}',
+               {tableSchema.GestprojectClientAccountableSubaccountColumn.ColumnDatabaseName}='{sage50ClientCode}',
+               {tableSchema.Sage50ClientCodeColumn.ColumnDatabaseName}='{sage50ClientCode}'
             WHERE
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
             ;";
 
 
@@ -52,9 +53,9 @@ namespace SincronizadorGPS50.GestprojectDataManager
             string sqlString2 = $@"
             UPDATE {"PARTICIPANTE"}
             SET
-               {ClientSynchronizationTableSchema.GestprojectClientAccountableSubaccountColumn.ColumnDatabaseName}='{sage50ClientCode}'
+               {tableSchema.GestprojectClientAccountableSubaccountColumn.ColumnDatabaseName}='{sage50ClientCode}'
             WHERE
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
             ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString2, connection))

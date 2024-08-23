@@ -107,7 +107,11 @@ namespace SincronizadorGPS50
                Sage50ConnectionUIHolder.Sage50ConnectionCenterRowCenterPanelTableLayoutPanel.Controls,
                "stateful"
             );
-            new ClientSynchronizationManager().Launch();
+            //new ClientSynchronizationManager().Launch
+            //(
+            //   GestprojectDataHolder.GestprojectDatabaseConnection,
+
+            //);
          };
 
          ///////////////////////////////////////

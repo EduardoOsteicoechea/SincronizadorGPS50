@@ -1,5 +1,7 @@
 ﻿
 
+using System.Linq;
+
 namespace SincronizadorGPS50.Workflows.Sage50Connection
 {
    internal class Sage50ConnectionUIManager
@@ -18,9 +20,13 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
          {
             ParentControl = parentControl;
             if(uiModel == "stateless")
+            {
                CreateStatelessUI();
+            }
             else
+            {
                CreateStatefulUI();
+            };
          } 
          catch (System.Exception exception) 
          { 
@@ -53,6 +59,14 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
          ManageConnectionUI.SetUIToConnected();
 
          SetConnetedUI();
+
+         var sage50CompanyGroupData = Sage50Connector.Sage50CompanyGroupActions.GetCompanyGroups().FirstOrDefault(companyGroup => companyGroup.CompanyName == SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Text);
+
+         new ClientSynchronizationManager().Launch
+         (
+            GestprojectDataHolder.GestprojectDatabaseConnection,
+            sage50CompanyGroupData
+         );
       }
       internal void SetEditingTerminalDataUI()
       {

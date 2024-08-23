@@ -10,9 +10,9 @@ namespace SincronizadorGPS50
 {
    internal class CreateClientWorkflow
    {
-      public CreateClientWorkflow(System.Data.SqlClient.SqlConnection connection, GestprojectCustomer gestprojectClient) 
+      public CreateClientWorkflow(System.Data.SqlClient.SqlConnection connection, GestprojectCustomer gestprojectClient,
+         CustomerSyncronizationTableSchema tableSchema)
       {
-         string d = "";
          CreateSage50Customer newSage50Client = new SincronizadorGPS50.Sage50Connector.CreateSage50Customer(
             gestprojectClient.PAR_PAIS_1,
             gestprojectClient.PAR_NOMBRE ,
@@ -23,28 +23,25 @@ namespace SincronizadorGPS50
          );
 
          SynchronizerUserRememberableDataModel userRememberableData = ManageRememberableUserData.GetSynchronizerUserRememberableDataForConnection(
-                GestprojectDataHolder.GestprojectDatabaseConnection
-            );
+               GestprojectDataHolder.GestprojectDatabaseConnection
+         );
 
          var sage50CompanyGroup = SincronizadorGPS50.Sage50Connector
-                .Sage50CompanyGroupActions
-                .GetCompanyGroups()
-                .FirstOrDefault(companyGroup => companyGroup.CompanyName == Sage50ConnectionUIHolder.Sage50ConnectionUIManagerInstance.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Text);
+         .Sage50CompanyGroupActions
+         .GetCompanyGroups()
+         .FirstOrDefault(companyGroup => companyGroup.CompanyName == Sage50ConnectionUIHolder.Sage50ConnectionUIManagerInstance.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Text);
 
          new GestprojectDataManager.RegisterNewSage50ClientData(
             connection,
             gestprojectClient.PAR_ID,
             newSage50Client.ClientCode,
             newSage50Client.GUID_ID,
-            //userRememberableData.SAGE_50_COMPANY_GROUP_NAME,
-            //userRememberableData.SAGE_50_COMPANY_GROUP_MAIN_CODE,
-            //userRememberableData.SAGE_50_COMPANY_GROUP_CODE,
-            //userRememberableData.SAGE_50_COMPANY_GROUP_GUID_ID,
             sage50CompanyGroup.CompanyName,
             sage50CompanyGroup.CompanyMainCode,
             sage50CompanyGroup.CompanyCode,
             sage50CompanyGroup.CompanyGuidId,
-            userRememberableData.GP_USU_ID
+            userRememberableData.GP_USU_ID,
+            tableSchema
          );
       }
    }

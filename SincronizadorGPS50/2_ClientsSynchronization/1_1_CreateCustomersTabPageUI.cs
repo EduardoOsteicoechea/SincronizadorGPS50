@@ -1,67 +1,72 @@
 ﻿using Infragistics.Win.Misc;
+using SincronizadorGPS50.Sage50Connector;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50.Workflows.Clients
 {
-    internal class CreateCustomersTabPageUI
+   internal class CreateCustomersTabPageUI
    {
-        internal CreateCustomersTabPageUI()
-        {
-            ////////////////////////////////////////
-            // ClientsTab Rows Container
-            ////////////////////////////////////////
-            
-            ClientsUIHolder.MainPanel = new UltraPanel();
-            ClientsUIHolder.MainPanel.Dock = DockStyle.Fill; 
+      internal CreateCustomersTabPageUI
+       (
+          System.Data.SqlClient.SqlConnection connection,
+          CompanyGroup sage50CompanyGroupData
+       )
+      {
+         ////////////////////////////////////////
+         // ClientsTab Rows Container
+         ////////////////////////////////////////
 
-            ClientsUIHolder.TableLayoutPanel = new TableLayoutPanel();
-            ClientsUIHolder.TableLayoutPanel.ColumnCount = 1;
-            ClientsUIHolder.TableLayoutPanel.RowCount = 3;
-            ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
-            ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 87.50f));
-            ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
-            ClientsUIHolder.TableLayoutPanel.Dock = DockStyle.Fill;
+         ClientsUIHolder.MainPanel = new UltraPanel();
+         ClientsUIHolder.MainPanel.Dock = DockStyle.Fill;
 
-            ClientsUIHolder.MainPanel.ClientArea.Controls.Add(ClientsUIHolder.TableLayoutPanel);
+         ClientsUIHolder.TableLayoutPanel = new TableLayoutPanel();
+         ClientsUIHolder.TableLayoutPanel.ColumnCount = 1;
+         ClientsUIHolder.TableLayoutPanel.RowCount = 3;
+         ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
+         ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 87.50f));
+         ClientsUIHolder.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
+         ClientsUIHolder.TableLayoutPanel.Dock = DockStyle.Fill;
 
-            MainWindowUIHolder.CustomersTab.TabPage.Controls.Add(ClientsUIHolder.MainPanel);
+         ClientsUIHolder.MainPanel.ClientArea.Controls.Add(ClientsUIHolder.TableLayoutPanel);
 
-            ////////////////////////////////////////
-            // Clients TopRow
-            ////////////////////////////////////////
+         MainWindowUIHolder.CustomersTab.TabPage.Controls.Add(ClientsUIHolder.MainPanel);
 
-            ClientsUIHolder.TopRow = new UltraPanel();
-            ClientsUIHolder.TopRow.Dock = System.Windows.Forms.DockStyle.Fill;
-            ClientsUIHolder.TopRow.Appearance.BackColor = StyleHolder.c_transparent;
+         ////////////////////////////////////////
+         // Clients TopRow
+         ////////////////////////////////////////
 
-            ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.TopRow, 0, 0);
+         ClientsUIHolder.TopRow = new UltraPanel();
+         ClientsUIHolder.TopRow.Dock = System.Windows.Forms.DockStyle.Fill;
+         ClientsUIHolder.TopRow.Appearance.BackColor = StyleHolder.c_transparent;
 
-            new CreateTopRowUI();
+         ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.TopRow, 0, 0);
 
-            ////////////////////////////////////////
-            // Clients CenterRow
-            ////////////////////////////////////////
+         new CreateTopRowUI(connection, sage50CompanyGroupData);
 
-            ClientsUIHolder.CenterRow = new UltraPanel();
-            ClientsUIHolder.CenterRow.Height = StyleHolder.CenterRowHeight;
-            ClientsUIHolder.CenterRow.Dock = System.Windows.Forms.DockStyle.Fill;
-            ClientsUIHolder.CenterRow.Appearance.BackColor = StyleHolder.c_white;
+         ////////////////////////////////////////
+         // Clients CenterRow
+         ////////////////////////////////////////
 
-            ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.CenterRow, 0, 1);
+         ClientsUIHolder.CenterRow = new UltraPanel();
+         ClientsUIHolder.CenterRow.Height = StyleHolder.CenterRowHeight;
+         ClientsUIHolder.CenterRow.Dock = System.Windows.Forms.DockStyle.Fill;
+         ClientsUIHolder.CenterRow.Appearance.BackColor = StyleHolder.c_white;
 
-            new CreateCenterRowUI();
+         ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.CenterRow, 0, 1);
 
-            ////////////////////////////////////////
-            // Clients BottomRow
-            ////////////////////////////////////////
+         new CreateCenterRowUI(connection, sage50CompanyGroupData);
 
-            ClientsUIHolder.BottomRow = new UltraPanel();
-            ClientsUIHolder.BottomRow.Dock = System.Windows.Forms.DockStyle.Fill;
-            ClientsUIHolder.BottomRow.Appearance.BackColor = StyleHolder.c_transparent;
+         ////////////////////////////////////////
+         // Clients BottomRow
+         ////////////////////////////////////////
 
-            ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.BottomRow, 0, 2);
+         ClientsUIHolder.BottomRow = new UltraPanel();
+         ClientsUIHolder.BottomRow.Dock = System.Windows.Forms.DockStyle.Fill;
+         ClientsUIHolder.BottomRow.Appearance.BackColor = StyleHolder.c_transparent;
 
-            new CreateBottomRowUI();
-        }
-    }
+         ClientsUIHolder.TableLayoutPanel.Controls.Add(ClientsUIHolder.BottomRow, 0, 2);
+
+         new CreateBottomRowUI();
+      }
+   }
 }

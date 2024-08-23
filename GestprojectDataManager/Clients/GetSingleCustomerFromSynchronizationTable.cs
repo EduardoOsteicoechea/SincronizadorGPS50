@@ -12,7 +12,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
       (
          System.Data.SqlClient.SqlConnection connection,
          GestprojectCustomer gestprojectCustomer,
-         string companyGroupGuid
+         string companyGroupGuid,
+         CustomerSyncronizationTableSchema tableSchema
       )
       {
          try
@@ -21,26 +22,26 @@ namespace SincronizadorGPS50.GestprojectDataManager
 
             string sqlString = $@"
             SELECT 
-               {ClientSynchronizationTableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName},
+               {tableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName},
+               {tableSchema.SynchronizationStatusColumn.ColumnDatabaseName},
 
-               {ClientSynchronizationTableSchema.Sage50ClientCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientCodeColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName},
 
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupNameColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientCompanyGroupNameColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName},
 
-               {ClientSynchronizationTableSchema.CommentsColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.ClientLastUpdateTerminalColumn.ColumnDatabaseName},
+               {tableSchema.CommentsColumn.ColumnDatabaseName},
+               {tableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName},
+               {tableSchema.ClientLastUpdateTerminalColumn.ColumnDatabaseName},
             FROM 
-               {ClientSynchronizationTableSchema.TableName} 
+               {tableSchema.TableName} 
             WHERE 
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectCustomer.PAR_ID}
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectCustomer.PAR_ID}
             AND
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}'               
+               {tableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}'               
             ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))

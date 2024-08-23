@@ -1,0 +1,5 @@
+1. Remover color transparente en UI
+2. Modificar preguntas
+3. Al encontrar que cliente de Sage fue eliminado, borrar datos de sincronización y vaciar dato de subcuenta contable de Gestproject
+4. Sólo añadir datos de grupos de empresa al sincronizar y entonces restringir cliente de Gestproject a ese grupo de empresa.
+5. Actualizar tabla de sincronización con datos actuales de GP al refrescar UI.

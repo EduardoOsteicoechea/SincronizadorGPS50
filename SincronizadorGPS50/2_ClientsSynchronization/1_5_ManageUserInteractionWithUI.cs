@@ -1,4 +1,5 @@
 ﻿using Infragistics.Win.UltraWinGrid;
+using SincronizadorGPS50.Sage50Connector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,12 +77,21 @@ namespace SincronizadorGPS50
          };
       }
 
-      internal static void RefreshTable()
+      internal static void RefreshTable
+      (
+         System.Data.SqlClient.SqlConnection connection,
+         CompanyGroup sage50CompanyGroupData
+      )
       {
          DeselectRows(ClientsUIHolder.ClientDataTable);
 
          ClientsUIHolder.ClientDataTable.DisplayLayout.Bands[0].ColumnFilters.ClearAllFilters();
-         ClientsUIHolder.ClientDataTable.DataSource = ManageCustomerSynchronizationTable.Create();
+
+         ClientsUIHolder.ClientDataTable.DataSource = CustomerSynchronizationDataTable.Create(
+            connection, 
+            sage50CompanyGroupData, 
+            new GestprojectDataManager.CustomerSyncronizationTableSchema()
+         );
 
          DeselectRows(ClientsUIHolder.ClientDataTable);
          ClientsUIHolder.ClientDataTable.ClickCell += ConfigureTable;
@@ -99,7 +109,7 @@ namespace SincronizadorGPS50
                if(row.Selected)
                {
                   row.Selected = true;
-                  selectedIdList.Add(Convert.ToInt32(row.Cells[0].Value));
+                  selectedIdList.Add(Convert.ToInt32(row.Cells[2].Value));
                   counter++;
                };
             };
@@ -111,7 +121,7 @@ namespace SincronizadorGPS50
             {
                if(!row.IsFilteredOut)
                {
-                  selectedIdList.Add(Convert.ToInt32(row.Cells[0].Value));
+                  selectedIdList.Add(Convert.ToInt32(row.Cells[2].Value));
                   counter++;
                };
             };

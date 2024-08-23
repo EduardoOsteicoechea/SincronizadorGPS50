@@ -387,6 +387,7 @@
   <ItemGroup>
     <Compile Include="1_SetupAndConnections\2_3_ManageMainWindowActions.cs" />
     <Compile Include="2_ClientsSynchronization\1_5_ManageUserInteractionWithUI.cs" />
+    <Compile Include="2_ClientsSynchronization\2_1_CustomerSynchronizationDataTable - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\3_0_RunSynchronizeCustomersWorkflow.cs" />
     <Compile Include="2_ClientsSynchronization\prev\3_1_UnexsistingClientListWorkflow - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\3_5_UpdateClientWorkflow.cs" />
@@ -451,7 +452,7 @@
     <Compile Include="2_ClientsSynchronization\prev\9_ColumnsFilter.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="2_ClientsSynchronization\2_1_ManageCustomerSynchronizationTable.cs" />
+    <Compile Include="2_ClientsSynchronization\2_1_CustomerSynchronizationDataTable.cs" />
     <Compile Include="2_ClientsSynchronization\prev\SynchronizationTableUIActions.cs" />
     <Compile Include="2_ClientsSynchronization\1_2_CreateBottomRowUI.cs" />
     <Compile Include="2_ClientsSynchronization\prev\9_Error_models.cs" />

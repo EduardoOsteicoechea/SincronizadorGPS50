@@ -10,8 +10,10 @@ namespace SincronizadorGPS50.GestprojectDataManager
       (
          System.Data.SqlClient.SqlConnection connection,
          GestprojectDataManager.GestprojectCustomer client,
-         string companyGroupGuid
-      ){
+         string companyGroupGuid,
+         CustomerSyncronizationTableSchema tableSchema
+      )
+      {
          try
          {
             connection.Open();
@@ -21,19 +23,19 @@ namespace SincronizadorGPS50.GestprojectDataManager
 
             string sqlString = $@"
             SELECT 
-               {ClientSynchronizationTableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.ClientLastUpdateTerminalColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientCodeColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName},
-               {ClientSynchronizationTableSchema.CommentsColumn.ColumnDatabaseName}
+               {tableSchema.SynchronizationTableClientIdColumn.ColumnDatabaseName},
+               {tableSchema.ClientLastUpdateTerminalColumn.ColumnDatabaseName},
+               {tableSchema.SynchronizationStatusColumn.ColumnDatabaseName},
+               {tableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientCodeColumn.ColumnDatabaseName},
+               {tableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName},
+               {tableSchema.CommentsColumn.ColumnDatabaseName}
             FROM 
-               {ClientSynchronizationTableSchema.TableName} 
+               {tableSchema.TableName} 
             WHERE 
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
             AND
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}'
+               {tableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}'
             ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
@@ -105,18 +107,18 @@ namespace SincronizadorGPS50.GestprojectDataManager
             };
 
             string sqlString1 = $@"
-            UPDATE {ClientSynchronizationTableSchema.TableName} 
+            UPDATE {tableSchema.TableName} 
             SET 
-               {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='{clientSynchronizationStatus}',
-               {ClientSynchronizationTableSchema.GestprojectClientCountryColumn.ColumnDatabaseName}='{client.PAR_PAIS_1}',
-               {ClientSynchronizationTableSchema.GestprojectClientNameColumn.ColumnDatabaseName}='{client.fullName}', 
-               {ClientSynchronizationTableSchema.GestprojectClientCIFNIFColumn.ColumnDatabaseName}='{client.PAR_CIF_NIF}',
-               {ClientSynchronizationTableSchema.GestprojectClientPostalCodeColumn.ColumnDatabaseName}='{client.PAR_CP_1}',
-               {ClientSynchronizationTableSchema.GestprojectClientAddressColumn.ColumnDatabaseName}='{client.PAR_DIRECCION_1}',
-               {ClientSynchronizationTableSchema.GestprojectClientProvinceColumn.ColumnDatabaseName}='{client.PAR_PROVINCIA_1}',
-               {ClientSynchronizationTableSchema.CommentsColumn.ColumnDatabaseName}='{clientComments}'
+               {tableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='{clientSynchronizationStatus}',
+               {tableSchema.GestprojectClientCountryColumn.ColumnDatabaseName}='{client.PAR_PAIS_1}',
+               {tableSchema.GestprojectClientNameColumn.ColumnDatabaseName}='{client.fullName}', 
+               {tableSchema.GestprojectClientCIFNIFColumn.ColumnDatabaseName}='{client.PAR_CIF_NIF}',
+               {tableSchema.GestprojectClientPostalCodeColumn.ColumnDatabaseName}='{client.PAR_CP_1}',
+               {tableSchema.GestprojectClientAddressColumn.ColumnDatabaseName}='{client.PAR_DIRECCION_1}',
+               {tableSchema.GestprojectClientProvinceColumn.ColumnDatabaseName}='{client.PAR_PROVINCIA_1}',
+               {tableSchema.CommentsColumn.ColumnDatabaseName}='{clientComments}'
             WHERE
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={client.PAR_ID}
             ;";
 
 

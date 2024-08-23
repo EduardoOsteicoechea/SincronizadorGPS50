@@ -7,14 +7,15 @@ namespace SincronizadorGPS50.GestprojectDataManager
       public RegisterNewSage50ClientData
       (
          System.Data.SqlClient.SqlConnection connection,
-         int gestprojectClientId,
+         int? gestprojectClientId,
          string newSage50ClientCode,
          string newSage50ClientGuidId,
          string companyGroupName,
          string companyGroupMainCode,
          string companyGroupCode,
          string companyGroupGuid,
-         int? parentUserId
+         int? parentUserId,
+         CustomerSyncronizationTableSchema tableSchema
       ) 
       {
          try
@@ -22,21 +23,19 @@ namespace SincronizadorGPS50.GestprojectDataManager
             connection.Open();
 
             string sqlString1 = $@"
-            UPDATE {ClientSynchronizationTableSchema.TableName} 
+            UPDATE {tableSchema.TableName} 
             SET 
-               {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='Sincronizado', 
-               {ClientSynchronizationTableSchema.Sage50ClientCodeColumn.ColumnDatabaseName}='{newSage50ClientCode}', 
-               {ClientSynchronizationTableSchema.GestprojectClientAccountableSubaccountColumn.ColumnDatabaseName}='{newSage50ClientCode}', 
-               {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}='{newSage50ClientGuidId}',
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupNameColumn.ColumnDatabaseName}='{companyGroupName}',
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName}='{companyGroupMainCode}',
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName}='{companyGroupCode}',
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}',
-               {ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName}={parentUserId}
+               {tableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='Sincronizado', 
+               {tableSchema.Sage50ClientCodeColumn.ColumnDatabaseName}='{newSage50ClientCode}', 
+               {tableSchema.GestprojectClientAccountableSubaccountColumn.ColumnDatabaseName}='{newSage50ClientCode}', 
+               {tableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}='{newSage50ClientGuidId}',
+               {tableSchema.Sage50ClientCompanyGroupNameColumn.ColumnDatabaseName}='{companyGroupName}',
+               {tableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName}='{companyGroupMainCode}',
+               {tableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName}='{companyGroupCode}',
+               {tableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}',
+               {tableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName}={parentUserId}
             WHERE
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
-            AND
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}'
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
             ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString1, connection))
@@ -47,9 +46,9 @@ namespace SincronizadorGPS50.GestprojectDataManager
             string sqlString2 = $@"
             UPDATE {"PARTICIPANTE"}
             SET
-               {ClientSynchronizationTableSchema.GestprojectClientAccountableSubaccountColumn.ColumnDatabaseName}='{newSage50ClientCode}'
+               {tableSchema.GestprojectClientAccountableSubaccountColumn.ColumnDatabaseName}='{newSage50ClientCode}'
             WHERE
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
             ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString2, connection))

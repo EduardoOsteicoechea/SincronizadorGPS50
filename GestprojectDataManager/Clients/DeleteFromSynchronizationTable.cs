@@ -7,7 +7,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
       public DeleteFromSynchronizationTable
       (
          System.Data.SqlClient.SqlConnection connection,
-         GestprojectCustomer customer
+         GestprojectCustomer customer,
+         CustomerSyncronizationTableSchema tableSchema
       )
       {
          try
@@ -16,11 +17,11 @@ namespace SincronizadorGPS50.GestprojectDataManager
 
             string sqlString = $@"
             DELETE FROM 
-               {ClientSynchronizationTableSchema.TableName} 
+               {tableSchema.TableName} 
             WHERE 
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={customer.PAR_ID}
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={customer.PAR_ID}
             AND
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{customer.sage50_company_group_guid_id}'
+               {tableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{customer.sage50_company_group_guid_id}'
             ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))

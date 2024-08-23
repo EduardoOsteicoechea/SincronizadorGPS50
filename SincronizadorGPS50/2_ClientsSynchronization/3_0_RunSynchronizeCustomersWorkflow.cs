@@ -1,5 +1,7 @@
 ﻿using SincronizadorGPS50.GestprojectConnector;
+using SincronizadorGPS50.GestprojectDataManager;
 using SincronizadorGPS50.Sage50Connector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,7 +13,8 @@ namespace SincronizadorGPS50
       public RunSynchronizeCustomersWorkflow
       (
          System.Data.SqlClient.SqlConnection connection,
-         List<int> selectedIdList
+         List<int> selectedIdList,
+         CustomerSyncronizationTableSchema tableSchema
       )
       {
          ////////////////////////////////////
@@ -23,7 +26,8 @@ namespace SincronizadorGPS50
          .GestprojectDataManager
          .GetClientsFromSynchronizationTable(
             connection,
-            selectedIdList
+            selectedIdList,
+            tableSchema
          ).GestprojectClientList;
 
          List<Sage50Customer> sage50CustomerList = new GetSage50Customer().CustomerList;
@@ -82,22 +86,22 @@ namespace SincronizadorGPS50
 
          if(noGestprojectClientsExistsInSage50)
          {
-            new UnexsistingClientListWorkflow(GestprojectDataHolder.GestprojectDatabaseConnection, nonExistingClientsList);
+            new UnexsistingClientListWorkflow(GestprojectDataHolder.GestprojectDatabaseConnection, nonExistingClientsList, tableSchema);
          }
 
          if(allGestprojectClientsExistsInSage50)
          {
-            new ExsistingClientListWorkflow(GestprojectDataHolder.GestprojectDatabaseConnection, gestProjectClientList, unsynchronizedClientList, unsynchronizedClientsExists);
+            new ExsistingClientListWorkflow(GestprojectDataHolder.GestprojectDatabaseConnection, gestProjectClientList, unsynchronizedClientList, unsynchronizedClientsExists, tableSchema);
          }
 
          if(someGestprojectClientsExistsInSage50 && !allGestprojectClientsExistsInSage50)
          {
             if(unsynchronizedClientsExists)
             {
-               new ExsistingClientListWorkflow(GestprojectDataHolder.GestprojectDatabaseConnection, existingClientsList, unsynchronizedClientList, unsynchronizedClientsExists);
+               new ExsistingClientListWorkflow(GestprojectDataHolder.GestprojectDatabaseConnection, existingClientsList, unsynchronizedClientList, unsynchronizedClientsExists, tableSchema);
             };
 
-            new UnexsistingClientListWorkflow(GestprojectDataHolder.GestprojectDatabaseConnection, nonExistingClientsList);
+            new UnexsistingClientListWorkflow(GestprojectDataHolder.GestprojectDatabaseConnection, nonExistingClientsList, tableSchema);
          };
       }
    }

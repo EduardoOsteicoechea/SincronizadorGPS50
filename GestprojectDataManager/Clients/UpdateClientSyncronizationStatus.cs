@@ -13,10 +13,11 @@ namespace SincronizadorGPS50.GestprojectDataManager
       public UpdateClientSyncronizationStatus
       (
          System.Data.SqlClient.SqlConnection connection,
-         int gestprojectClientId,
+         int? gestprojectClientId,
          string sage50ClientGuid,
          string sage50CompanyGroupGuid,
-         bool isSynchronized
+         bool isSynchronized,
+         CustomerSyncronizationTableSchema tableSchema
       ) 
       {
          try
@@ -29,26 +30,26 @@ namespace SincronizadorGPS50.GestprojectDataManager
             if(sage50ClientGuid != null && sage50ClientGuid != "") 
             {
                whereClause = $@"
-               {ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}='{sage50ClientGuid}'
+               {tableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}='{sage50ClientGuid}'
                AND
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{sage50CompanyGroupGuid}'
+               {tableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{sage50CompanyGroupGuid}'
                ";
             } 
             else
             {
                whereClause = $@"
-               {ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
+               {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
                AND
-               {ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{sage50CompanyGroupGuid}'
+               {tableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{sage50CompanyGroupGuid}'
                ";
             };
 
             string sqlString1 = $@"
             UPDATE 
-               {ClientSynchronizationTableSchema.TableName} 
+               {tableSchema.TableName} 
             SET 
-               {ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='{synchronizationStatus}',
-               {ClientSynchronizationTableSchema.CommentsColumn.ColumnDatabaseName}=''
+               {tableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='{synchronizationStatus}',
+               {tableSchema.CommentsColumn.ColumnDatabaseName}=''
             WHERE
                {whereClause}
             ;";

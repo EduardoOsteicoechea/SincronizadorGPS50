@@ -7,119 +7,118 @@ namespace SincronizadorGPS50
    internal class CreateTableControl
    {
       internal DataTable Table { get; set; }
-      public CreateTableControl()
+      public CreateTableControl(GestprojectDataManager.CustomerSyncronizationTableSchema tableSchema)
       {
          try
          {
             Table = new DataTable();
-            PropertyInfo[] SincronizationTableProperties = typeof(ClientSynchronizationTableSchema).GetProperties();
 
             // 0. SynchronizationTableClientIdColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.SynchronizationTableClientIdColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.SynchronizationTableClientIdColumn.ColumnValueType
+               tableSchema.SynchronizationTableClientIdColumn.ColumnUserFriendlyNane,
+               typeof(string)
             );
             // 1. SynchronizationStatusColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.SynchronizationStatusColumn.ColumnValueType
+               tableSchema.SynchronizationStatusColumn.ColumnUserFriendlyNane,
+               tableSchema.SynchronizationStatusColumn.ColumnValueType
             );
             // 2. GestprojectClientIdColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.GestprojectClientIdColumn.ColumnValueType
+               tableSchema.GestprojectClientIdColumn.ColumnUserFriendlyNane,
+               typeof(string)
             );
 
             // 3. GestprojectClientAccountableSubaccountColumn
             Table.Columns.Add(
-                ClientSynchronizationTableSchema.GestprojectClientAccountableSubaccountColumn.ColumnUserFriendlyNane,
-                ClientSynchronizationTableSchema.GestprojectClientAccountableSubaccountColumn.ColumnValueType
+                tableSchema.GestprojectClientAccountableSubaccountColumn.ColumnUserFriendlyNane,
+                tableSchema.GestprojectClientAccountableSubaccountColumn.ColumnValueType
             );
             // 4. GestprojectClientNameColumn
             Table.Columns.Add(
-                ClientSynchronizationTableSchema.GestprojectClientNameColumn.ColumnUserFriendlyNane,
-                ClientSynchronizationTableSchema.GestprojectClientNameColumn.ColumnValueType
+                tableSchema.GestprojectClientNameColumn.ColumnUserFriendlyNane,
+                tableSchema.GestprojectClientNameColumn.ColumnValueType
             );
             // 5. GestprojectClientCommercialNameColumn
             Table.Columns.Add(
-                ClientSynchronizationTableSchema.GestprojectClientCommercialNameColumn.ColumnUserFriendlyNane,
-                ClientSynchronizationTableSchema.GestprojectClientCommercialNameColumn.ColumnValueType
+                tableSchema.GestprojectClientCommercialNameColumn.ColumnUserFriendlyNane,
+                tableSchema.GestprojectClientCommercialNameColumn.ColumnValueType
             );
             // 6. GestprojectClientCIFNIFColumn
             Table.Columns.Add(
-                ClientSynchronizationTableSchema.GestprojectClientCIFNIFColumn.ColumnUserFriendlyNane,
-                ClientSynchronizationTableSchema.GestprojectClientCIFNIFColumn.ColumnValueType
+                tableSchema.GestprojectClientCIFNIFColumn.ColumnUserFriendlyNane,
+                tableSchema.GestprojectClientCIFNIFColumn.ColumnValueType
             );
             // 7. GestprojectClientAddressColumn
             Table.Columns.Add(
-                ClientSynchronizationTableSchema.GestprojectClientAddressColumn.ColumnUserFriendlyNane,
-                ClientSynchronizationTableSchema.GestprojectClientAddressColumn.ColumnValueType
+                tableSchema.GestprojectClientAddressColumn.ColumnUserFriendlyNane,
+                tableSchema.GestprojectClientAddressColumn.ColumnValueType
             );
             // 8. GestprojectClientPostalCodeColumn
             Table.Columns.Add(
-                ClientSynchronizationTableSchema.GestprojectClientPostalCodeColumn.ColumnUserFriendlyNane,
-                ClientSynchronizationTableSchema.GestprojectClientPostalCodeColumn.ColumnValueType
+                tableSchema.GestprojectClientPostalCodeColumn.ColumnUserFriendlyNane,
+                tableSchema.GestprojectClientPostalCodeColumn.ColumnValueType
             );
             // 9. GestprojectClientLocalityColumn
             Table.Columns.Add(
-                ClientSynchronizationTableSchema.GestprojectClientLocalityColumn.ColumnUserFriendlyNane,
-                ClientSynchronizationTableSchema.GestprojectClientLocalityColumn.ColumnValueType
+                tableSchema.GestprojectClientLocalityColumn.ColumnUserFriendlyNane,
+                tableSchema.GestprojectClientLocalityColumn.ColumnValueType
             );
             // 10. GestprojectClientProvinceColumn
             Table.Columns.Add(
-                ClientSynchronizationTableSchema.GestprojectClientProvinceColumn.ColumnUserFriendlyNane,
-                ClientSynchronizationTableSchema.GestprojectClientProvinceColumn.ColumnValueType
+                tableSchema.GestprojectClientProvinceColumn.ColumnUserFriendlyNane,
+                tableSchema.GestprojectClientProvinceColumn.ColumnValueType
             );
             // 11. GestprojectClientCountryColumn
             Table.Columns.Add(
-                ClientSynchronizationTableSchema.GestprojectClientCountryColumn.ColumnUserFriendlyNane,
-                ClientSynchronizationTableSchema.GestprojectClientCountryColumn.ColumnValueType
+                tableSchema.GestprojectClientCountryColumn.ColumnUserFriendlyNane,
+                tableSchema.GestprojectClientCountryColumn.ColumnValueType
             );
 
             // 12. Sage50ClientCodeColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.Sage50ClientCodeColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.Sage50ClientCodeColumn.ColumnValueType
+               tableSchema.Sage50ClientCodeColumn.ColumnUserFriendlyNane,
+               tableSchema.Sage50ClientCodeColumn.ColumnValueType
             );
             // 13. Sage50ClientGuidIdColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.Sage50ClientGuidIdColumn.ColumnValueType
+               tableSchema.Sage50ClientGuidIdColumn.ColumnUserFriendlyNane,
+               tableSchema.Sage50ClientGuidIdColumn.ColumnValueType
             );
             // 14. Sage50ClientCompanyGroupNameColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.Sage50ClientCompanyGroupNameColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.Sage50ClientCompanyGroupNameColumn.ColumnValueType
+               tableSchema.Sage50ClientCompanyGroupNameColumn.ColumnUserFriendlyNane,
+               tableSchema.Sage50ClientCompanyGroupNameColumn.ColumnValueType
             );
             // 15. Sage50ClientCompanyGroupCodeColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnValueType
+               tableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnUserFriendlyNane,
+               tableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnValueType
             );
             // 16. Sage50ClientCompanyGroupMainCodeColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnValueType
+               tableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnUserFriendlyNane,
+               tableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnValueType
             );
             // 17. Sage50ClientCompanyGroupGuidIdColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnValueType
+               tableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnUserFriendlyNane,
+               tableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnValueType
             );
             // 18. ClientLastUpdateTerminalColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.ClientLastUpdateTerminalColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.ClientLastUpdateTerminalColumn.ColumnValueType
+               tableSchema.ClientLastUpdateTerminalColumn.ColumnUserFriendlyNane,
+               typeof(string)
             );
             // 19. ParentUserIdColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.GestprojectClientParentUserIdColumn.ColumnValueType
+               tableSchema.GestprojectClientParentUserIdColumn.ColumnUserFriendlyNane,
+               typeof(string)
             );
             // 20. CommentsColumn
             Table.Columns.Add(
-               ClientSynchronizationTableSchema.CommentsColumn.ColumnUserFriendlyNane,
-               ClientSynchronizationTableSchema.CommentsColumn.ColumnValueType
+               tableSchema.CommentsColumn.ColumnUserFriendlyNane,
+               tableSchema.CommentsColumn.ColumnValueType
             );
 
             for(int i = 0; i < Table.Columns.Count; i++)

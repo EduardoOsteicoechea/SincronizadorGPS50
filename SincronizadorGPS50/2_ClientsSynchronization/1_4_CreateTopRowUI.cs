@@ -10,7 +10,11 @@ namespace SincronizadorGPS50.Workflows.Clients
 {
    internal class CreateTopRowUI
    {
-      internal CreateTopRowUI()
+      internal CreateTopRowUI
+      (
+         System.Data.SqlClient.SqlConnection connection,
+         CompanyGroup sage50CompanyGroupData
+      )
       {
          try
          {
@@ -49,7 +53,7 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             ClientsUIHolder.TopRowRefreshTableButton.Click += (object sender, System.EventArgs e) =>
             {
-               ManageUserInteractionWithUI.RefreshTable();
+               ManageUserInteractionWithUI.RefreshTable(connection, sage50CompanyGroupData);
             };
 
             ClientsUIHolder.TopRowSelectAllButton.Click += (object sender, System.EventArgs e) =>
@@ -63,10 +67,11 @@ namespace SincronizadorGPS50.Workflows.Clients
 
                new RunSynchronizeCustomersWorkflow(
                   GestprojectDataHolder.GestprojectDatabaseConnection,
-                  selectedIdList
+                  selectedIdList,
+                  new GestprojectDataManager.CustomerSyncronizationTableSchema()
                );
 
-               ManageUserInteractionWithUI.RefreshTable();
+               ManageUserInteractionWithUI.RefreshTable(connection, sage50CompanyGroupData);
 
                //////////////////////////////////
                // enable providers tab

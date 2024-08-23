@@ -1,7 +1,9 @@
 ﻿using Infragistics.Win;
 using Infragistics.Win.UltraWinGrid;
+using SincronizadorGPS50.Sage50Connector;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace SincronizadorGPS50
 {
@@ -9,7 +11,11 @@ namespace SincronizadorGPS50
    {
       internal List<UltraGridRow> UltraGridRowList { get; set; } = new List<UltraGridRow>();
       internal List<int> GestprojectClientIdList { get; set; } = new List<int>();
-      internal CreateCenterRowUI()
+      internal CreateCenterRowUI
+      (
+         System.Data.SqlClient.SqlConnection connection,
+         CompanyGroup sage50CompanyGroupData
+      )
       {
          try
          {
@@ -26,7 +32,11 @@ namespace SincronizadorGPS50
 
             ClientsUIHolder.ClientDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
 
-            DataTable synchronizationTable = ManageCustomerSynchronizationTable.Create();
+            DataTable synchronizationTable =  CustomerSynchronizationDataTable.Create(
+               connection, 
+               sage50CompanyGroupData, 
+               new GestprojectDataManager.CustomerSyncronizationTableSchema()
+            );
 
             ClientsUIHolder.ClientDataTable.DataSource = synchronizationTable;
 
