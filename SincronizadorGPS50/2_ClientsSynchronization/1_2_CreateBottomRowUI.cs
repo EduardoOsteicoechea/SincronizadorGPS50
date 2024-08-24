@@ -39,7 +39,7 @@ namespace SincronizadorGPS50
          }
          catch(Exception exception)
          {
-            throw new Exception($"En:\n\nSincronizadorGPS50\n.BottomRowUI:\n\n{exception.Message}");
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          };
       }
    }

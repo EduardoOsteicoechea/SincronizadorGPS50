@@ -1,0 +1,11 @@
+() 1. Si hay menos datos en Gestproject:
+	no sobrescribir en Sage pero vincular.
+	reflejar como desincronizado
+
+(?) 2. Revisar 
+	En comparación suelta, cuando se cancela, parece duplicar.
+
+(HECHO) 3. Añadir a comparación suelta
+	100% del nombre completo -> EXISTE
+	Si no hay cif: 100% del nombre -> EXISTE
+	si hay cif: 100% del cif -> EXISTE

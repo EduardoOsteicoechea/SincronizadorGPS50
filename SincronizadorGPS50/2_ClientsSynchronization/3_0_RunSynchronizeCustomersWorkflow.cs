@@ -74,12 +74,6 @@ namespace SincronizadorGPS50
          bool noGestprojectClientsExistsInSage50 = existingClientsList.Count == 0;
          bool unsynchronizedClientsExists = unsynchronizedClientList.Count > 0;
 
-         //MessageBox.Show(
-         //   "existingClientsList.Count: " + existingClientsList.Count + "\n\n" +
-         //   "nonExistingClientsList.Count: " + nonExistingClientsList.Count + "\n\n" +
-         //   "unsynchronizedClientList.Count: " + unsynchronizedClientList.Count + "\n\n"
-         //);
-
          ////////////////////////////////////
          /// execute client synchornization flow according to client distribution
          ////////////////////////////////////

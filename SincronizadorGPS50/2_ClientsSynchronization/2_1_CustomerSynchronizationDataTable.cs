@@ -35,11 +35,7 @@ namespace SincronizadorGPS50
          {
             GestprojectDataManager.GestprojectCustomer gestprojectCustomer = gestprojectCustomerList[i];
 
-            new GestprojectDataManager.AddSynchronizationTableCustomerData(
-               connection,
-               gestprojectCustomer,
-               tableSchema
-            );
+            new GestprojectDataManager.AddSynchronizationTableCustomerData(connection, gestprojectCustomer, tableSchema);
 
             bool mustRegister = !CustomerSincronizationTableExists || !new GestprojectDataManager.WasGestprojectClientRegistered(
                   connection,
@@ -61,6 +57,8 @@ namespace SincronizadorGPS50
             else if(mustRegister)
             {
                new GestprojectDataManager.RegisterClient(connection, gestprojectCustomer, tableSchema);
+
+               new AddSynchronizationTableCustomerData(connection, gestprojectCustomer, tableSchema);
             }
             else if(neverSynchronized || synchronizedInThePast)
             {
@@ -84,17 +82,13 @@ namespace SincronizadorGPS50
                new RegisterClient(connection, gestprojectCustomer, tableSchema);
 
                new AddSynchronizationTableCustomerData(connection, gestprojectCustomer, tableSchema);
-
-               MessageBox.Show("Borrado de Sage");
             }
             else if(clientSyncronizationStatusValidator.NeverWasSynchronized)
             {
-               MessageBox.Show("Nunca ha sido sincronizado");
                gestprojectCustomer.synchronization_status = "Nunca ha sido sincronizado";
             }
             else if(!clientSyncronizationStatusValidator.IsSynchronized)
             {
-               MessageBox.Show("Desincronizado");
                gestprojectCustomer.synchronization_status = "Desincronizado";
             };
 

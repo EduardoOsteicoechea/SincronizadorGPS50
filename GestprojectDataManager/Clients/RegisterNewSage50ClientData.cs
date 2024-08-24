@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectDataManager
 {
@@ -15,6 +17,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
          string companyGroupCode,
          string companyGroupGuid,
          int? parentUserId,
+         string syncronizationStatus,
          CustomerSyncronizationTableSchema tableSchema
       ) 
       {
@@ -25,14 +28,16 @@ namespace SincronizadorGPS50.GestprojectDataManager
             string sqlString1 = $@"
             UPDATE {tableSchema.TableName} 
             SET 
-               {tableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='Sincronizado', 
+               {tableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='{syncronizationStatus}', 
                {tableSchema.Sage50ClientCodeColumn.ColumnDatabaseName}='{newSage50ClientCode}', 
                {tableSchema.GestprojectClientAccountableSubaccountColumn.ColumnDatabaseName}='{newSage50ClientCode}', 
                {tableSchema.Sage50ClientGuidIdColumn.ColumnDatabaseName}='{newSage50ClientGuidId}',
+
                {tableSchema.Sage50ClientCompanyGroupNameColumn.ColumnDatabaseName}='{companyGroupName}',
                {tableSchema.Sage50ClientCompanyGroupMainCodeColumn.ColumnDatabaseName}='{companyGroupMainCode}',
                {tableSchema.Sage50ClientCompanyGroupCodeColumn.ColumnDatabaseName}='{companyGroupCode}',
                {tableSchema.Sage50ClientCompanyGroupGuidIdColumn.ColumnDatabaseName}='{companyGroupGuid}',
+
                {tableSchema.GestprojectClientParentUserIdColumn.ColumnDatabaseName}={parentUserId}
             WHERE
                {tableSchema.GestprojectClientIdColumn.ColumnDatabaseName}={gestprojectClientId}
@@ -58,9 +63,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
          }
          catch(SqlException exception)
          {
-            throw new System.Exception(
-               $"At:\n\nSincronizadorGPS50.GestprojectDataManager\n.RegisterClient:\n\n{exception.Message}"
-            );
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          }
          finally
          {

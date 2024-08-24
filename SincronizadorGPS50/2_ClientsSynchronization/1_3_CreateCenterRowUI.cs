@@ -1,6 +1,7 @@
 ﻿using Infragistics.Win;
 using Infragistics.Win.UltraWinGrid;
 using SincronizadorGPS50.Sage50Connector;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -51,7 +52,7 @@ namespace SincronizadorGPS50
          }
          catch(System.Exception exception)
          {
-            throw new System.Exception($"En:\n\nSincronizadorGPS50\n.CenterRowUI:\n\n{exception.Message}");
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          };
       }
 

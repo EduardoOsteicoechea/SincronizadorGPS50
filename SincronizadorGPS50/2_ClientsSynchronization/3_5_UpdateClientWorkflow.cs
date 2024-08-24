@@ -1,12 +1,13 @@
 ﻿using SincronizadorGPS50.GestprojectDataManager;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
    internal class UpdateClientWorkflow
    {
       public UpdateClientWorkflow(System.Data.SqlClient.SqlConnection connection, GestprojectCustomer gestprojectClient,
-         CustomerSyncronizationTableSchema tableSchema)
+         CustomerSyncronizationTableSchema tableSchema, string sage50ClientCode = "", string sage50guid = "", int? parentUserId = null)
       {
          new SincronizadorGPS50.Sage50Connector.UpdateSage50Customer(
             gestprojectClient.sage50_guid_id,
@@ -23,14 +24,6 @@ namespace SincronizadorGPS50
          .GetCompanyGroups()
          .FirstOrDefault(companyGroup => companyGroup.CompanyName == Sage50ConnectionUIHolder.Sage50ConnectionUIManagerInstance.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Text);
 
-         //new GestprojectDataManager.UpdateClientSyncronizationStatus(
-         //   connection,
-         //   gestprojectClient.PAR_ID,
-         //   gestprojectClient.sage50_guid_id,
-         //   sage50CompanyGroup.CompanyGuidId,
-         //   true
-         //);
-
          SynchronizerUserRememberableDataModel userRememberableData = ManageRememberableUserData.GetSynchronizerUserRememberableDataForConnection(
             GestprojectDataHolder.GestprojectDatabaseConnection
          );
@@ -44,7 +37,8 @@ namespace SincronizadorGPS50
             sage50CompanyGroup.CompanyMainCode,
             sage50CompanyGroup.CompanyCode,
             sage50CompanyGroup.CompanyGuidId,
-            userRememberableData.GP_USU_ID, 
+            userRememberableData.GP_USU_ID,
+            "Sincronizado",
             tableSchema
          );
       }

@@ -91,7 +91,7 @@ namespace SincronizadorGPS50.Workflows.Clients
          }
          catch(Exception exception)
          {
-            throw new Exception($"En:\n\nSincronizadorGPS50\n.TopRowUI:\n\n{exception.Message}");
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          };
       }
    }

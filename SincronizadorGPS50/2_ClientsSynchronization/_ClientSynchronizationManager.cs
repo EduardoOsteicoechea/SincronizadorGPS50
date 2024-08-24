@@ -1,6 +1,7 @@
 ﻿using SincronizadorGPS50.Sage50Connector;
 using SincronizadorGPS50.Workflows.Clients;
 using System;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
@@ -38,7 +39,7 @@ namespace SincronizadorGPS50
          }
          catch(Exception exception)
          {
-            throw new Exception($"En:\n\nSincronizadorGPS50\n.ClientSynchronizationManager:\n\n{exception.Message}");
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          };
       }
    }

@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectDataManager
@@ -19,7 +20,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
             string sqlString1 = $@"
             UPDATE 
                {tableSchema.TableName} 
-            SET 
+            SET
                {tableSchema.SynchronizationStatusColumn.ColumnDatabaseName}='{customer.synchronization_status}',
                {tableSchema.GestprojectClientNameColumn.ColumnDatabaseName}='{customer.fullName}',
                {tableSchema.GestprojectClientCIFNIFColumn.ColumnDatabaseName}='{customer.PAR_CIF_NIF}',
@@ -39,9 +40,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
          }
          catch(System.Exception exception)
          {
-            throw new System.Exception(
-               $"At:\n\nSincronizadorGPS50.GestprojectDataManager\n.UpdateClientState:\n\n{exception.Message}"
-            );
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          }
          finally
          {

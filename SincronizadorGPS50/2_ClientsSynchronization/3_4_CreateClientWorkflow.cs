@@ -41,6 +41,7 @@ namespace SincronizadorGPS50
             sage50CompanyGroup.CompanyCode,
             sage50CompanyGroup.CompanyGuidId,
             userRememberableData.GP_USU_ID,
+            "Sincronizado",
             tableSchema
          );
       }

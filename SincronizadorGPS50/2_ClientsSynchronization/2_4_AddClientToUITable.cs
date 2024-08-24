@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 namespace SincronizadorGPS50
 {
@@ -14,7 +15,8 @@ namespace SincronizadorGPS50
          {
             DataRow row = sincronizationTable.NewRow();
 
-            row[0] = gestprojectClient.synchronization_table_id.ToString() ?? "";
+            //row[0] = gestprojectClient.synchronization_table_id.ToString() ?? "";
+            row[0] = gestprojectClient.synchronization_table_id.ToString();
             row[1] = gestprojectClient.synchronization_status;
             row[2] = gestprojectClient.PAR_ID.ToString() ?? "";
 
@@ -68,9 +70,7 @@ namespace SincronizadorGPS50
          }
          catch (System.Exception exception)
          {
-            throw new System.Exception(
-               $"At:\n\nSincronizadorGPS50\n.AddClientToUITable:\n\n{exception.Message}"
-            );
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          };
       }
    }

@@ -69,9 +69,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
          }
          catch(System.Exception exception)
          {
-            throw new System.Exception(
-               $"At:\n\nSincronizadorGPS50.GestprojectDataManager\n.AddSynchronizationTableCustomerData:\n\n{exception.Message}"
-            );
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          }
          finally
          {

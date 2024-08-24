@@ -1,4 +1,5 @@
 ﻿using SincronizadorGPS50.GestprojectDataManager;
+using System;
 using System.Data;
 using System.Reflection;
 
@@ -131,9 +132,7 @@ namespace SincronizadorGPS50
          }
          catch (System.Exception exception)
          {
-            throw new System.Exception(
-               $"At:\n\nSincronizadorGPS50.GestprojectDataManager\n.CreateTableControl:\n\n{exception.Message}"
-            );
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          };
       }
    }

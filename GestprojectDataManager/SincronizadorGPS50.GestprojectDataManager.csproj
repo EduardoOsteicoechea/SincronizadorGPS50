@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clients\LinkToSageCustomer.cs" />
     <Compile Include="Clients\ClientSynchronizationTableSchema - Copy.cs" />
     <Compile Include="Clients\DeleteFromSynchronizationTable.cs" />
     <Compile Include="Clients\AddSynchronizationTableCustomerData.cs" />

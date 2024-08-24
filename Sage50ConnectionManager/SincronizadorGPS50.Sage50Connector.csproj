@@ -61,16 +61,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseMaster.cs" />
-    <Compile Include="Clients\CustomerManager - Copy.cs" />
-    <Compile Include="Clients\UpdateSage50Customer.cs" />
-    <Compile Include="Clients\CustomerManager.cs" />
-    <Compile Include="Clients\CustomerModel.cs" />
-    <Compile Include="Clients\GetSage50Customer - Copy.cs" />
-    <Compile Include="Clients\GetSage50Customer.cs" />
+    <Compile Include="Customers\CustomerComparer.cs" />
+    <Compile Include="Customers\CustomerManager - Copy.cs" />
+    <Compile Include="Customers\UpdateSage50Customer.cs" />
+    <Compile Include="Customers\CustomerManager.cs" />
+    <Compile Include="Customers\CustomerModel.cs" />
+    <Compile Include="Customers\GetSage50Customer - Copy.cs" />
+    <Compile Include="Customers\GetSage50Customer.cs" />
     <Compile Include="clsDatos.cs" />
     <Compile Include="clsEntidades.cs" />
-    <Compile Include="Clients\CreateSage50Customer.cs" />
-    <Compile Include="Clients\Customer.cs" />
+    <Compile Include="Customers\CreateSage50Customer.cs" />
+    <Compile Include="Customers\Customer.cs" />
     <Compile Include="CompanyGroup.cs" />
     <Compile Include="ConnectionActions.cs" />
     <Compile Include="GetLatestLibrariesFolder.cs" />

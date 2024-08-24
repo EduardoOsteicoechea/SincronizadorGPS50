@@ -389,6 +389,7 @@
     <Compile Include="2_ClientsSynchronization\1_5_ManageUserInteractionWithUI.cs" />
     <Compile Include="2_ClientsSynchronization\2_1_CustomerSynchronizationDataTable - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\3_0_RunSynchronizeCustomersWorkflow.cs" />
+    <Compile Include="2_ClientsSynchronization\3_6_LinkClientWorkflow.cs" />
     <Compile Include="2_ClientsSynchronization\prev\3_1_UnexsistingClientListWorkflow - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\3_5_UpdateClientWorkflow.cs" />
     <Compile Include="2_ClientsSynchronization\3_4_CreateClientWorkflow.cs" />

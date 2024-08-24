@@ -117,9 +117,7 @@ namespace SincronizadorGPS50
          }
          catch(System.Exception exception)
          {
-            throw new System.Exception(
-               $"At:\n\nSincronizadorGPS50\n.ValidateClientSyncronizationStatus:\n\n{exception.Message}"
-            );
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          };
       }
    }
