@@ -50,6 +50,10 @@ namespace SincronizadorGPS50
 
             bool synchronizedInThePast = gestprojectCustomer.sage50_company_group_guid_id != "" && sage50CompanyGroupData.CompanyGuidId == gestprojectCustomer.sage50_company_group_guid_id;
 
+            // add existing customer data to avoid dsincronization status in just linked and equal items
+
+            //new GestprojectDataManager.RegisterClient(connection, gestprojectCustomer, tableSchema);
+
             if(registeredInDifferentCompanyGroup)
             {
                continue;

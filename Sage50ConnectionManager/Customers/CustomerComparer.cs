@@ -30,7 +30,8 @@ namespace SincronizadorGPS50.Sage50Connector
                bool noHayCifEnNinguno = cif == "" && customer.CIF == "";
 
                bool coincidenciaCompletaDeNombre = name == customer.NOMBRE;
-               bool coincidenciaCompletaDeCif =(!noHayCifEnNinguno) && (cif == customer.CIF);
+               //bool coincidenciaCompletaDeCif = (!noHayCifEnNinguno) && (cif == customer.CIF);
+               bool coincidenciaCompletaDeCif = cif == customer.CIF;
 
                bool nombresSimilares = IsThisSimilar(name, customer.NOMBRE, 95);
                bool cifSimilares = !noHayCifEnNinguno && (IsThisSimilar(cif, customer.CIF, 90) || customer.CIF =="");
@@ -41,13 +42,21 @@ namespace SincronizadorGPS50.Sage50Connector
 
                if
                (
-                  coincidenciaCompletaDeNombre
-                  ||
-                  coincidenciaCompletaDeCif
-                  ||
-                  noHayCifNombreParecido
-                  ||
-                  nombreYCifSimilares
+                  (
+                     coincidenciaCompletaDeNombre
+                     &&
+                     coincidenciaCompletaDeCif
+                  )
+                  //||
+                  //(
+                  //   coincidenciaCompletaDeNombre
+                  //   &&
+                  //   noHayCifEnNinguno
+                  //)
+                  //||
+                  //noHayCifNombreParecido
+                  //||
+                  //nombreYCifSimilares
                )
                {
                   CustomerGuid = customer.GUID_ID;

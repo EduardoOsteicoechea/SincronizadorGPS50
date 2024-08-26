@@ -95,6 +95,8 @@ namespace SincronizadorGPS50
                         IsSynchronized = true;
                         MustBeDeleted = false;
                         gestprojectCustomer.comments = "";
+                        gestprojectCustomer.synchronization_status = "Sincronizado";
+
                      };
 
                      break;
