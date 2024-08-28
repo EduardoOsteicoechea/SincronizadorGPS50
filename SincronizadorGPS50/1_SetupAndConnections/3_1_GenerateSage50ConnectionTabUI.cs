@@ -1,4 +1,4 @@
-﻿using Infragistics.Win.Misc;
+﻿//using Infragistics.Win.Misc;
 using System;
 using System.Windows.Forms;
 
@@ -10,7 +10,7 @@ namespace SincronizadorGPS50
       {
          try
          {
-            MainWindowUIHolder.MainTabControlMainPanel = new UltraPanel();
+            MainWindowUIHolder.MainTabControlMainPanel = new Infragistics.Win.Misc.UltraPanel();
             MainWindowUIHolder.MainTabControlMainPanel.Dock = DockStyle.Fill;
 
             MainWindowUIHolder.MainWindowTableLayoutPanel = new TableLayoutPanel();
@@ -31,7 +31,7 @@ namespace SincronizadorGPS50
             // TopRow;
             // TopRow;
 
-            Sage50ConnectionUIHolder.Sage50ConnectionTopRow = new UltraPanel();
+            Sage50ConnectionUIHolder.Sage50ConnectionTopRow = new Infragistics.Win.Misc.UltraPanel();
             Sage50ConnectionUIHolder.Sage50ConnectionTopRow.Dock = System.Windows.Forms.DockStyle.Fill;
             //Sage50ConnectionUIHolder.Sage50ConnectionTopRow.Appearance.BackColor = StyleHolder.c_transparent;
 
@@ -51,7 +51,7 @@ namespace SincronizadorGPS50
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70f));
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRowTableLayoutPanel.Dock = DockStyle.Fill;
 
-            Sage50ConnectionUIHolder.Sage50ConnectionCenterRow = new UltraPanel();
+            Sage50ConnectionUIHolder.Sage50ConnectionCenterRow = new Infragistics.Win.Misc.UltraPanel();
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRow.Height = StyleHolder.CenterRowHeight;
             Sage50ConnectionUIHolder.Sage50ConnectionCenterRow.Dock = System.Windows.Forms.DockStyle.Fill;
             //Sage50ConnectionUIHolder.Sage50ConnectionCenterRow.Appearance.BackColor = StyleHolder.c_transparent;
@@ -65,7 +65,7 @@ namespace SincronizadorGPS50
             // BottomRow
             // BottomRow
 
-            Sage50ConnectionUIHolder.Sage50ConnectionBottomRow = new UltraPanel();
+            Sage50ConnectionUIHolder.Sage50ConnectionBottomRow = new Infragistics.Win.Misc.UltraPanel();
             Sage50ConnectionUIHolder.Sage50ConnectionBottomRow.Dock = System.Windows.Forms.DockStyle.Fill;
             //Sage50ConnectionUIHolder.Sage50ConnectionBottomRow.Appearance.BackColor = StyleHolder.c_transparent;
 

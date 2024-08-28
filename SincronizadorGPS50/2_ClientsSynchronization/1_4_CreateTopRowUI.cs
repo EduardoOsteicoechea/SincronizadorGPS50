@@ -72,12 +72,6 @@ namespace SincronizadorGPS50.Workflows.Clients
                );
 
                ManageUserInteractionWithUI.RefreshTable(connection, sage50CompanyGroupData);
-
-               //////////////////////////////////
-               // enable providers tab
-               //////////////////////////////////
-
-               new ProviderSynchronizationManager();
             };
 
             //////////////////////////////////

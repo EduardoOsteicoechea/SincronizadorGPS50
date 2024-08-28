@@ -1,5 +1,6 @@
 ﻿
 
+using Infragistics.Documents.Excel;
 using System.Linq;
 
 namespace SincronizadorGPS50.Workflows.Sage50Connection
@@ -60,12 +61,23 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
 
          SetConnetedUI();
 
-         var sage50CompanyGroupData = Sage50Connector.Sage50CompanyGroupActions.GetCompanyGroups().FirstOrDefault(companyGroup => companyGroup.CompanyName == SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Text);
+         /////////////////////////////////////
+         /// Launch Tab Pages genration
+         /////////////////////////////////////
+         
+         IGestprojectConnectionManager gestprojectConnectionManager = new GestprojectConnectionManager();
+         ISage50ConnectionManager sage50ConnectionManager = new Sage50ConnectionManager(SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Text);
 
          new ClientSynchronizationManager().Launch
          (
             GestprojectDataHolder.GestprojectDatabaseConnection,
-            sage50CompanyGroupData
+            sage50ConnectionManager.CompanyGroupData
+         );
+
+         new ProviderSynchronizationManager().Launch
+         (
+            gestprojectConnectionManager,
+            sage50ConnectionManager
          );
       }
       internal void SetEditingTerminalDataUI()

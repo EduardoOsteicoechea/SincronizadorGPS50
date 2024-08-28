@@ -1,33 +1,46 @@
-﻿using SincronizadorGPS50.Workflows.Clients;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 
 namespace SincronizadorGPS50
 {
    public class ProviderSynchronizationManager
    {
-      public void Launch()
+      public void Launch
+      (
+         IGestprojectConnectionManager gestprojectConnectionManager,
+         ISage50ConnectionManager sage50ConnectionManager
+      )
       {
          try
          {
-            /////////////////////////////////////////////
-            // Enable and set as selected, ClientsTab
-            /////////////////////////////////////////////
-
             MainWindowUIHolder.ProvidersTab.Enabled = true;
+            MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.ProvidersTab;
 
-            /////////////////////////////////////////////
-            // Launch the Providers Tab page generation
-            /////////////////////////////////////////////
+            UIFactory.GenerateTabPage
+            (
+               new SynchronizationTabGenerator(),
+               MainWindowUIHolder.ProvidersTab.TabPage.Controls,
+               new TabPageMainPanelTableLayoutPanelGenerator(),
+               new TabPageLayoutPanelRowGenerator(),
 
-            
+               new ProvidersTopRowControlsGenerator(),
+               new ProvidersMiddleRowControlsGenerator(),
+               new ProvidersBottomRowControlsGenerator(),
+
+               gestprojectConnectionManager,
+               sage50ConnectionManager,
+
+               new ProvidersSynchronizationTableSchemaProvider(),
+               new ProvidersDataTableManager()
+            );
          }
-         catch(Exception exception)
+         catch(System.Exception exception)
          {
-            throw new Exception($"En:\n\nSincronizadorGPS50\n.ProviderSynchronizationManager:\n\n{exception.Message}");
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
          };
       }
    }

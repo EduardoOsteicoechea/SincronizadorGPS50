@@ -102,10 +102,23 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
                Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Appearance.BackColor = StyleHolder.c_gray_200;
                Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Appearance.ForeColor = StyleHolder.c_gray_100;
 
+               /////////////////////////////////////
+               /// Launch Tab Pages genration
+               /////////////////////////////////////
+
+               IGestprojectConnectionManager gestprojectConnectionManager = new GestprojectConnectionManager();
+               ISage50ConnectionManager sage50ConnectionManager = new Sage50ConnectionManager(Sage50ConnectionUIManager.SelectCompanyGroupUI.SelectEnterpryseGroupMenu.Text);
+
                new ClientSynchronizationManager().Launch
                (
                   GestprojectDataHolder.GestprojectDatabaseConnection,
-                  sage50CompanyGroup
+                  sage50ConnectionManager.CompanyGroupData
+               );
+
+               new ProviderSynchronizationManager().Launch
+               (
+                  gestprojectConnectionManager,
+                  sage50ConnectionManager
                );
             }
             else

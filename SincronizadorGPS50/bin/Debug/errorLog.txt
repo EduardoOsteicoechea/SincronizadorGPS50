@@ -1,0 +1,51 @@
+Date: 2024-08-28 10:06:24.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-28 10:06:34.
+Location: At:
+
+SincronizadorGPS50
+.ProviderSynchronizationManager
+.Launch:
+
+At: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-28 11:51:12.
+Location: At:
+
+SincronizadorGPS50
+.ProviderSynchronizationManager
+.Launch:
+
+Referencia a objeto no establecida como instancia de un objeto..
+Short Description: Failed to end the methods execution successfully..
+Message: Referencia a objeto no establecida como instancia de un objeto.
+
+
+--------------------------------------------------

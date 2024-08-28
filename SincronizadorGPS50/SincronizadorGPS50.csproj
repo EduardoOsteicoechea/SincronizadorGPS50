@@ -400,7 +400,21 @@
     <Compile Include="2_ClientsSynchronization\prev\2_CreateSage50Customer - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\2_4_AddClientToUITable.cs" />
     <Compile Include="2_ClientsSynchronization\2_3_ValidateClientSyncronizationStatus.cs" />
+    <Compile Include="3_ProviderSynchronization\1_2_ProvidersSynchronizationTableSchemaProvider.cs" />
+    <Compile Include="3_ProviderSynchronization\1_4_ProvidersDataTableManager.cs" />
+    <Compile Include="GestprojectConnectionProvider.cs" />
+    <Compile Include="Sage50ConnectionProvider.cs" />
+    <Compile Include="_Dependency\Interface\IGridDataSourceGenerator.cs" />
+    <Compile Include="_Dependency\Interface\ITabPageLayoutPanelRowGenerator.cs" />
+    <Compile Include="_UserInterface\SynchronizationTabGenerator.cs" />
+    <Compile Include="3_ProviderSynchronization\1_1_TabPageMainPanelTableLayoutPanelGenerator.cs" />
+    <Compile Include="_Dependency\Interface\ITabPageMainPanelTableLayoutPanelGenerator.cs" />
+    <Compile Include="3_ProviderSynchronization\1_2_ProvidersBottomRowControlsGenerator.cs" />
+    <Compile Include="3_ProviderSynchronization\1_2_ProvidersMiddleRowControlsGenerator.cs" />
+    <Compile Include="3_ProviderSynchronization\1_3_ProvidersTopRowControlsGenerator.cs" />
+    <Compile Include="_UserInterface\TabPageLayoutPanelRowGenerator.cs" />
     <Compile Include="3_ProviderSynchronization\_ProviderSynchronizationManager.cs" />
+    <Compile Include="ApplicationLogger.cs" />
     <Compile Include="DataHolders\UI\ClientsUIHolder.cs" />
     <Compile Include="DataHolders\DataHolder.cs" />
     <Compile Include="DataHolders\UI\Sage50ConnectionUIHolder.cs" />
@@ -487,6 +501,14 @@
     <Compile Include="1_SetupAndConnections\5_3_GetLocalTerminalUserDataPanel.cs" />
     <Compile Include="1_SetupAndConnections\5_8_ManageConnectionPanel.cs" />
     <Compile Include="1_SetupAndConnections\5_1_Sage50ConnectionUIManager.cs" />
+    <Compile Include="_Dependency\Interface\IGestprojectConnectionProvider.cs" />
+    <Compile Include="_Dependency\Interface\ISage50ConnectionProvider.cs" />
+    <Compile Include="_Dependency\Interface\ISynchronizationTableSchemaProvider.cs" />
+    <Compile Include="_Dependency\Interface\ITabPageLayoutPanelBottomRowControlsGenerator.cs" />
+    <Compile Include="_Dependency\Interface\ITabPageLayoutPanelMiddleRowControlsGenerator.cs" />
+    <Compile Include="_Dependency\Interface\ITabPageGenerator.cs" />
+    <Compile Include="_Dependency\Interface\ITabPageLayoutPanelTopRowControlsGenerator.cs" />
+    <Compile Include="_Factory\UIFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Excel_Open.ico" />
