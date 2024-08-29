@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50.GestprojectDataManager
@@ -62,9 +63,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
          }
          catch(System.Exception exception)
          {
-            throw new System.Exception(
-               $"At:\n\nSincronizadorGPS50.GestprojectDataManager\n.WasGestprojectClientRegistered:\n\n{exception.Message}"
-            );
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          }
          finally
          {

@@ -3,13 +3,11 @@ using SincronizadorGPS50.Sage50Connector;
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
-using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
    public class ProvidersDataTableManager : IGridDataSourceGenerator
    {
-      public DataTable DataSource { get; set; }
       public System.Data.DataTable GenerateDataTable
       (
          IGestprojectConnectionManager gestprojectConnectionManager,

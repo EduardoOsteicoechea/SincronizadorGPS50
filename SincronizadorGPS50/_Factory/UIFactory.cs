@@ -23,7 +23,8 @@ namespace SincronizadorGPS50
          ISage50ConnectionManager sage50ConnectionManager,
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
                
-         IGridDataSourceGenerator gridDataSourceGenerator
+         IGridDataSourceGenerator gridDataSourceGenerator,
+         IEntitySynchronizer entitySynchronizer
       )
       {
          try
@@ -38,7 +39,8 @@ namespace SincronizadorGPS50
                gestprojectConnectionManager,
                sage50ConnectionManager,
                synchronizationTableSchemaProvider,
-               gridDataSourceGenerator
+               gridDataSourceGenerator,
+               entitySynchronizer
             );
          }
          catch(System.Exception exception)

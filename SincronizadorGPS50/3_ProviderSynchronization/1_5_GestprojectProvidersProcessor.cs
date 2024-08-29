@@ -53,7 +53,7 @@ namespace SincronizadorGPS50
                /// append synchronization table data to entity
                ////////////////////////////
 
-               bool mustRegister = !new WasParticipantSynchronized(
+               bool mustRegister = !new WasParticipantRegistered(
                   connection,
                   tableSchema.TableName,
                   tableSchema.Sage50ProviderCodeColumn.ColumnDatabaseName,

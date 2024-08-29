@@ -402,11 +402,17 @@
     <Compile Include="2_ClientsSynchronization\2_4_AddClientToUITable.cs" />
     <Compile Include="2_ClientsSynchronization\2_3_ValidateClientSyncronizationStatus.cs" />
     <Compile Include="3_ProviderSynchronization\1_2_ProvidersSynchronizationTableSchemaProvider.cs" />
-    <Compile Include="3_ProviderSynchronization\1_4_1_ProvidersDataTableGenerator.cs" />
+    <Compile Include="3_ProviderSynchronization\1_4_ProvidersDataTableGenerator.cs" />
     <Compile Include="3_ProviderSynchronization\1_4_0_ProvidersDataTableManager.cs" />
-    <Compile Include="3_ProviderSynchronization\1_4_2_ProvidersSyncronizationTableStatusManager.cs" />
-    <Compile Include="3_ProviderSynchronization\2_3_ValidateClientSyncronizationStatus.cs" />
+    <Compile Include="3_ProviderSynchronization\1_4_ProvidersSyncronizationTableStatusManager.cs" />
+    <Compile Include="3_ProviderSynchronization\2_3_ValidateProviderSyncronizationStatus.cs" />
     <Compile Include="3_ProviderSynchronization\1_5_GestprojectProvidersProcessor.cs" />
+    <Compile Include="3_ProviderSynchronization\3_1_ProvidersSynchronizer.cs" />
+    <Compile Include="3_ProviderSynchronization\3_3_ExsistingProviderListWorkflow.cs" />
+    <Compile Include="3_ProviderSynchronization\3_2_UnexsistingProviderListWorkflow.cs" />
+    <Compile Include="3_ProviderSynchronization\3_4_CreateProviderWorkflow.cs" />
+    <Compile Include="3_ProviderSynchronization\3_5_LinkProviderWorkflow.cs" />
+    <Compile Include="3_ProviderSynchronization\3_5_UpdateProviderWorkflow.cs" />
     <Compile Include="3_ProviderSynchronization\GestprojectProvidersPainter.cs" />
     <Compile Include="GestprojectConnectionProvider.cs" />
     <Compile Include="GestprojectEntitiesProvider.cs" />
@@ -414,6 +420,7 @@
     <Compile Include="Sage50EntitiesProvider.cs" />
     <Compile Include="_Dependency\Delegate\DataTableDelegate.cs" />
     <Compile Include="_Dependency\Interface\IDataTableGenerator.cs" />
+    <Compile Include="_Dependency\Interface\IEntitySynchronizer.cs" />
     <Compile Include="_Dependency\Interface\IGestprojectEntitiesProvider.cs" />
     <Compile Include="_Dependency\Interface\IGridDataSourceGenerator.cs" />
     <Compile Include="_Dependency\Interface\IProvidersSynchronizationTableSchemaProvider.cs" />
@@ -565,7 +572,9 @@
     <None Include="Resources\ApplicationIcon.bmp" />
     <None Include="Resources\applicationIcon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="3_ProviderSynchronization\prev\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Styles\Aero.isl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

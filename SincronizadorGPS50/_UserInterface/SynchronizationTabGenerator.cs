@@ -19,6 +19,7 @@ namespace SincronizadorGPS50
       public ISage50ConnectionManager Sage50ConnectionManager { get; set; }
       public ISynchronizationTableSchemaProvider SynchronizationTableSchemaProvider { get; set; }
       public DataTableGeneratorDelegate DataTableGeneratorDelegate { get; set; }
+      public IEntitySynchronizer EntitySynchronizer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
       public void _01_Build
       (
@@ -33,7 +34,9 @@ namespace SincronizadorGPS50
          IGestprojectConnectionManager gestprojectConnectionManager, 
          ISage50ConnectionManager sage50ConnectionManager, 
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator gridDataSourceGenerator
+         IGridDataSourceGenerator gridDataSourceGenerator,
+
+         IEntitySynchronizer entitySynchronizer
       )
       {
          try
@@ -42,6 +45,7 @@ namespace SincronizadorGPS50
             Sage50ConnectionManager = sage50ConnectionManager;
             SynchronizationTableSchemaProvider = synchronizationTableSchemaProvider;
             DataTableGeneratorDelegate = gridDataSourceGenerator.GenerateDataTable;
+            EntitySynchronizer = entitySynchronizer;
 
             MainPanel = _02_CreateMainPanel();
             TabPageTableLayoutPanel = _03_GenerateMainPanelTableLayoutPanel(tabPageMainPanelTableLayoutGenerator);
@@ -112,7 +116,8 @@ namespace SincronizadorGPS50
             GestprojectConnectionManager,
             Sage50ConnectionManager,
             SynchronizationTableSchemaProvider,
-            gridDataSourceGenerator
+            gridDataSourceGenerator,
+            EntitySynchronizer
          );
       }
 

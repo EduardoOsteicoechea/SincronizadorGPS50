@@ -63,8 +63,8 @@
     <Compile Include="Encryptor.cs" />
     <Compile Include="GestprojectPAR_TPA.cs" />
     <Compile Include="GestprojectProviders.cs" />
-    <Compile Include="Providers\2_AppendSynchronizationTableDataToProvider.cs" />
-    <Compile Include="Providers\1_GestprojectProvidersManager.cs" />
+    <Compile Include="Providers\1_2_AppendSynchronizationTableDataToProvider.cs" />
+    <Compile Include="Providers\1_1_GestprojectProvidersManager.cs" />
     <Compile Include="Providers\0_GestprojectProviderModel.cs" />
     <Compile Include="Clients\GestprojectCustomer.cs" />
     <Compile Include="GestprojectParticipantModel.cs" />
@@ -76,12 +76,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clients\CustomerSyncronizationTableSchema.cs" />
     <Compile Include="Clients\RegisterClient.cs" />
-    <Compile Include="Providers\3_WasParticipantSynchronized.cs" />
-    <Compile Include="Providers\8_ClearProviderSynchronizationData.cs" />
-    <Compile Include="Providers\7_DeleteEntityCodeInGestproject.cs" />
-    <Compile Include="Providers\6_DeleteEntityFromSynchronizationTable.cs" />
-    <Compile Include="Providers\4_RegisterParticipant.cs" />
-    <Compile Include="Providers\5_UpdateParticipantState.cs" />
+    <Compile Include="Providers\1_3_WasParticipantRegistered.cs" />
+    <Compile Include="Providers\1_3_WasParticipantSynchronized.cs" />
+    <Compile Include="Providers\1_8_ClearProviderSynchronizationData.cs" />
+    <Compile Include="Providers\1_7_DeleteEntityCodeInGestproject.cs" />
+    <Compile Include="Providers\1_6_DeleteEntityFromSynchronizationTable.cs" />
+    <Compile Include="Providers\1_4_RegisterParticipant.cs" />
+    <Compile Include="Providers\1_5_UpdateParticipantState.cs" />
+    <Compile Include="Providers\2_1_GetProvidersFromSynchronizationTable.cs" />
     <Compile Include="SynchronizerUserRememberableDataModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

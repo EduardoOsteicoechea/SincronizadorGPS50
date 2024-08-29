@@ -18,6 +18,7 @@ namespace SincronizadorGPS50
       IGestprojectConnectionManager GestprojectConnectionManager { get; set; }
       ISage50ConnectionManager Sage50ConnectionManager { get; set; }
       ISynchronizationTableSchemaProvider SynchronizationTableSchemaProvider { get; set; }
+      IEntitySynchronizer EntitySynchronizer { get; set; }
 
       void GenerateControls
       (
@@ -26,7 +27,8 @@ namespace SincronizadorGPS50
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator dataSourceGenerator
+         IGridDataSourceGenerator dataSourceGenerator,
+         IEntitySynchronizer entitySynchronizer
       );
 
       void GenerateRowTableLayoutPanel();

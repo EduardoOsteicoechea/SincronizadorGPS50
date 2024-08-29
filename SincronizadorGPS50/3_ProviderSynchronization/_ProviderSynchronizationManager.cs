@@ -30,7 +30,8 @@ namespace SincronizadorGPS50
                sage50ConnectionManager,
 
                new ProvidersSynchronizationTableSchemaProvider(),
-               new ProvidersDataTableManager()
+               new ProvidersDataTableManager(),
+               new ProvidersSynchronizer()
             );
          }
          catch(System.Exception exception)

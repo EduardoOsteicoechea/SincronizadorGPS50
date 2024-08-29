@@ -2,6 +2,7 @@
 using Infragistics.Win.UltraWinGrid;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50
@@ -17,6 +18,7 @@ namespace SincronizadorGPS50
       public ISage50ConnectionManager Sage50ConnectionManager { get; set; }
       public ISynchronizationTableSchemaProvider SynchronizationTableSchemaProvider { get; set; }
       public IGridDataSourceGenerator DataSourceGenerator { get; set; }
+      public IEntitySynchronizer EntitySynchronizer { get; set; }
 
       public void GenerateControls
       (
@@ -25,23 +27,38 @@ namespace SincronizadorGPS50
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator dataSourceGenerator
+         IGridDataSourceGenerator dataSourceGenerator,
+         IEntitySynchronizer entitySynchronizer
       )
       {
-         GestprojectConnectionManager = gestprojectConnectionManager;
-         Sage50ConnectionManager = sage50ConnectionManager;
-         SynchronizationTableSchemaProvider = synchronizationTableSchemaProvider;
-         MiddleRowGrid = middleRowGrid;
-         DataSourceGenerator = dataSourceGenerator;
-         GenerateRowTableLayoutPanel();
-         GenerateRefreshButtonControl();
-         GenerateSelectAllButtonControl();
-         GenerateSynchronizeButtonControl();
-         SetRefreshButtonClickEventHandler();
-         SetSelectAllButtonClickEventHandler();
-         SetSynchronizeButtonClickEventHandler();
-         AddButtonsToRowTableLayoutPanel();
-         AddRowTableLayoutPanelToRowPanel(rowPanel);
+         try
+         {
+            GestprojectConnectionManager = gestprojectConnectionManager;
+            Sage50ConnectionManager = sage50ConnectionManager;
+            SynchronizationTableSchemaProvider = synchronizationTableSchemaProvider;
+            MiddleRowGrid = middleRowGrid;
+            DataSourceGenerator = dataSourceGenerator;
+            EntitySynchronizer = entitySynchronizer;
+
+            GenerateRowTableLayoutPanel();
+            GenerateRefreshButtonControl();
+            GenerateSelectAllButtonControl();
+            GenerateSynchronizeButtonControl();
+            SetRefreshButtonClickEventHandler();
+            SetSelectAllButtonClickEventHandler();
+            SetSynchronizeButtonClickEventHandler();
+            AddButtonsToRowTableLayoutPanel();
+            AddRowTableLayoutPanelToRowPanel(rowPanel);
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
 
       public void GenerateRowTableLayoutPanel()
@@ -108,15 +125,13 @@ namespace SincronizadorGPS50
       {
          List<int> selectedIdList = ManageUserInteractionWithUI.GetSelectedIfAnyOrAll(MiddleRowGrid);
 
-         ///////////////////////////
-         /// Data Synchronization workflow goes here
-         ///////////////////////////
-         
-
-
-         ///////////////////////////
-         /// Print the updated data
-         ///////////////////////////
+         EntitySynchronizer.Synchronize
+         (
+            GestprojectConnectionManager,
+            Sage50ConnectionManager,
+            SynchronizationTableSchemaProvider,
+            selectedIdList 
+         );
 
          System.Data.DataTable dataTable = DataSourceGenerator.GenerateDataTable(
             GestprojectConnectionManager,
