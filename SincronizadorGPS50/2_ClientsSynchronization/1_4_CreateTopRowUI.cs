@@ -1,9 +1,7 @@
 ﻿using Infragistics.Win.Misc;
-using Sage50ConnectionManager;
 using SincronizadorGPS50.Sage50Connector;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50.Workflows.Clients
@@ -53,17 +51,17 @@ namespace SincronizadorGPS50.Workflows.Clients
 
             ClientsUIHolder.TopRowRefreshTableButton.Click += (object sender, System.EventArgs e) =>
             {
-               ManageUserInteractionWithUI.RefreshTable(connection, sage50CompanyGroupData);
+               ManageUserInteractionWithUI.RefreshTable(ClientsUIHolder.ClientDataTable, CustomerSynchronizationDataTable.Create(connection, sage50CompanyGroupData, new GestprojectDataManager.CustomerSyncronizationTableSchema()));
             };
 
             ClientsUIHolder.TopRowSelectAllButton.Click += (object sender, System.EventArgs e) =>
             {
-               ManageUserInteractionWithUI.SelectNonfiltered();
+               ManageUserInteractionWithUI.SelectNonfiltered(ClientsUIHolder.ClientDataTable);
             };
 
             ClientsUIHolder.TopRowSynchronizeButton.Click += (object sender, System.EventArgs e) =>
             {
-               List<int> selectedIdList = ManageUserInteractionWithUI.GetSelectedIfAnyOrAll();
+               List<int> selectedIdList = ManageUserInteractionWithUI.GetSelectedIfAnyOrAll(ClientsUIHolder.ClientDataTable);
 
                new RunSynchronizeCustomersWorkflow(
                   GestprojectDataHolder.GestprojectDatabaseConnection,
@@ -71,7 +69,7 @@ namespace SincronizadorGPS50.Workflows.Clients
                   new GestprojectDataManager.CustomerSyncronizationTableSchema()
                );
 
-               ManageUserInteractionWithUI.RefreshTable(connection, sage50CompanyGroupData);
+               ManageUserInteractionWithUI.RefreshTable(ClientsUIHolder.ClientDataTable, CustomerSynchronizationDataTable.Create(connection, sage50CompanyGroupData, new GestprojectDataManager.CustomerSyncronizationTableSchema()));
             };
 
             //////////////////////////////////

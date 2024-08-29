@@ -6,10 +6,10 @@ namespace SincronizadorGPS50
 {
    internal class ProvidersMiddleRowControlsGenerator : ITabPageLayoutPanelMiddleRowControlsGenerator
    {
-      public UltraGrid Grid { get; set; }
+      public Infragistics.Win.UltraWinGrid.UltraGrid Grid { get; set; }
       public void CreateGrid()
       {
-         Grid = new UltraGrid();
+         Grid = new Infragistics.Win.UltraWinGrid.UltraGrid();
       }
       public void SetGridFilters()
       {

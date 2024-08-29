@@ -1,14 +1,14 @@
 ﻿using Infragistics.Win.Misc;
-using SincronizadorGPS50.Workflows.Sage50Connection;
+using Infragistics.Win.UltraWinGrid;
 using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
    internal class ProvidersTopRowControlsGenerator : ITabPageLayoutPanelTopRowControlsGenerator
    {
+      public UltraGrid MiddleRowGrid { get; set; }
       public TableLayoutPanel RowTableLayout { get; set; }
       public UltraButton RefreshButton { get; set; }
       public UltraButton SelectAllButton { get; set; }
@@ -16,18 +16,23 @@ namespace SincronizadorGPS50
       public IGestprojectConnectionManager GestprojectConnectionManager { get; set; }
       public ISage50ConnectionManager Sage50ConnectionManager { get; set; }
       public ISynchronizationTableSchemaProvider SynchronizationTableSchemaProvider { get; set; }
+      public IGridDataSourceGenerator DataSourceGenerator { get; set; }
 
       public void GenerateControls
       (
          UltraPanel rowPanel,
+         UltraGrid middleRowGrid,
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
-         ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider
+         ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
+         IGridDataSourceGenerator dataSourceGenerator
       )
       {
          GestprojectConnectionManager = gestprojectConnectionManager;
          Sage50ConnectionManager = sage50ConnectionManager;
          SynchronizationTableSchemaProvider = synchronizationTableSchemaProvider;
+         MiddleRowGrid = middleRowGrid;
+         DataSourceGenerator = dataSourceGenerator;
          GenerateRowTableLayoutPanel();
          GenerateRefreshButtonControl();
          GenerateSelectAllButtonControl();
@@ -83,23 +88,47 @@ namespace SincronizadorGPS50
 
       public void RefreshButtonClickEventHandler(object sender, System.EventArgs e)
       {
-         //ManageUserInteractionWithUI.RefreshTable(GestprojectConnectionManager.GestprojectSqlConnection, Sage50ConnectionManager.CompanyGroupData); 
+         System.Data.DataTable dataTable = DataSourceGenerator.GenerateDataTable(
+            GestprojectConnectionManager,
+            Sage50ConnectionManager,
+            SynchronizationTableSchemaProvider
+         );
+
+         ManageUserInteractionWithUI.RefreshTable
+         (
+            MiddleRowGrid,
+            dataTable
+         );
       }
       public void SelectAllButtonClickEventHandler(object sender, EventArgs e)
       {
-         //ManageUserInteractionWithUI.SelectNonfiltered();
+         ManageUserInteractionWithUI.SelectNonfiltered(MiddleRowGrid);
       }
       public void SynchronizeButtonClickEventHandler(object sender, EventArgs e)
       {
-         //List<int> selectedIdList = ManageUserInteractionWithUI.GetSelectedIfAnyOrAll();
+         List<int> selectedIdList = ManageUserInteractionWithUI.GetSelectedIfAnyOrAll(MiddleRowGrid);
 
-         //new RunSynchronizeCustomersWorkflow(
-         //   GestprojectDataHolder.GestprojectDatabaseConnection,
-         //   selectedIdList,
-         //   new GestprojectDataManager.CustomerSyncronizationTableSchema()
-         //);
+         ///////////////////////////
+         /// Data Synchronization workflow goes here
+         ///////////////////////////
+         
 
-         //ManageUserInteractionWithUI.RefreshTable(GestprojectConnectionManager.GestprojectSqlConnection, Sage50ConnectionManager.CompanyGroupData);
+
+         ///////////////////////////
+         /// Print the updated data
+         ///////////////////////////
+
+         System.Data.DataTable dataTable = DataSourceGenerator.GenerateDataTable(
+            GestprojectConnectionManager,
+            Sage50ConnectionManager,
+            SynchronizationTableSchemaProvider
+         );
+
+         ManageUserInteractionWithUI.RefreshTable
+         (
+            MiddleRowGrid,
+            dataTable
+         );
       }
       public void AddButtonsToRowTableLayoutPanel()
       {

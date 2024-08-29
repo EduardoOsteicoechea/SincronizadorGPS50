@@ -1,4 +1,5 @@
 ﻿using Infragistics.Win.Misc;
+using Infragistics.Win.UltraWinGrid;
 using SincronizadorGPS50.Workflows.Sage50Connection;
 using System;
 using System.Data;
@@ -17,15 +18,18 @@ namespace SincronizadorGPS50
       public IGestprojectConnectionManager GestprojectConnectionManager { get; set; }
       public ISage50ConnectionManager Sage50ConnectionManager { get; set; }
       public ISynchronizationTableSchemaProvider SynchronizationTableSchemaProvider { get; set; }
+      public DataTableGeneratorDelegate DataTableGeneratorDelegate { get; set; }
 
       public void _01_Build
       (
          Control.ControlCollection MainWindowUITabControlCollection, 
          ITabPageMainPanelTableLayoutPanelGenerator tabPageMainPanelTableLayoutGenerator, 
-         ITabPageLayoutPanelRowGenerator tabPageUIRowGenerator, 
+         ITabPageLayoutPanelRowGenerator tabPageUIRowGenerator,
+
+         ITabPageLayoutPanelMiddleRowControlsGenerator tabPageUImiddleRowControlsGenerator,
          ITabPageLayoutPanelTopRowControlsGenerator tabPageUItopRowControlsGenerator, 
-         ITabPageLayoutPanelMiddleRowControlsGenerator tabPageUImiddleRowControlsGenerator, 
          ITabPageLayoutPanelBottomRowControlsGenerator tabPageUIbottomRowControlsGenerator, 
+
          IGestprojectConnectionManager gestprojectConnectionManager, 
          ISage50ConnectionManager sage50ConnectionManager, 
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
@@ -37,17 +41,18 @@ namespace SincronizadorGPS50
             GestprojectConnectionManager = gestprojectConnectionManager;
             Sage50ConnectionManager = sage50ConnectionManager;
             SynchronizationTableSchemaProvider = synchronizationTableSchemaProvider;
+            DataTableGeneratorDelegate = gridDataSourceGenerator.GenerateDataTable;
 
             MainPanel = _02_CreateMainPanel();
             TabPageTableLayoutPanel = _03_GenerateMainPanelTableLayoutPanel(tabPageMainPanelTableLayoutGenerator);
             _04_AddTabPageTableLayoutToMainPanel(TabPageTableLayoutPanel, MainPanel);
             _05_AddMainPanelToTab(MainPanel, MainWindowUITabControlCollection);
 
-            TopRow = _06_CreateTopRow(tabPageUIRowGenerator);
-            _07_CreateAndAddTopRowControls(TopRow, tabPageUItopRowControlsGenerator);
-
             MiddleRow = _08_CreateMiddleRow(tabPageUIRowGenerator);
             _09_CreateAndAddMiddleRowControls(MiddleRow, tabPageUImiddleRowControlsGenerator, gestprojectConnectionManager, sage50ConnectionManager, synchronizationTableSchemaProvider, gridDataSourceGenerator);
+
+            TopRow = _06_CreateTopRow(tabPageUIRowGenerator);
+            _07_CreateAndAddTopRowControls(TopRow, tabPageUImiddleRowControlsGenerator.Grid, tabPageUItopRowControlsGenerator, gridDataSourceGenerator);
 
             BottomRow = _10_CreateBottomRow(tabPageUIRowGenerator);
             _11_CreateAndAddBottomRowControls(BottomRow, tabPageUIbottomRowControlsGenerator);
@@ -89,21 +94,27 @@ namespace SincronizadorGPS50
       {
          return rowGenerator.GenerateRowPanel();
       }
+
+      public UltraPanel _06_CreateTopRow(ITabPageLayoutPanelRowGenerator rowGenerator, IGridDataSourceGenerator gridDataSourceGenerator) => throw new NotImplementedException();
+
       public void _07_CreateAndAddTopRowControls
       (
-         UltraPanel topRow, 
-         ITabPageLayoutPanelTopRowControlsGenerator tabPageUItopRowControlsGenerator
+         UltraPanel topRow,
+         Infragistics.Win.UltraWinGrid.UltraGrid middleRowGrid,
+         ITabPageLayoutPanelTopRowControlsGenerator tabPageUItopRowControlsGenerator,
+         IGridDataSourceGenerator gridDataSourceGenerator
       )
       {
          tabPageUItopRowControlsGenerator.GenerateControls
          (
             topRow,
+            middleRowGrid,
             GestprojectConnectionManager,
             Sage50ConnectionManager,
-            SynchronizationTableSchemaProvider
+            SynchronizationTableSchemaProvider,
+            gridDataSourceGenerator
          );
       }
-
 
       public UltraPanel _08_CreateMiddleRow(ITabPageLayoutPanelRowGenerator rowGenerator)
       {

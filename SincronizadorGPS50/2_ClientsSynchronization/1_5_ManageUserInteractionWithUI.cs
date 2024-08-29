@@ -63,9 +63,9 @@ namespace SincronizadorGPS50
          };
       }
 
-      internal static void SelectNonfiltered()
+      internal static void SelectNonfiltered(UltraGrid grid)
       {
-         foreach(Infragistics.Win.UltraWinGrid.UltraGridRow row in ClientsUIHolder.ClientDataTable.Rows)
+         foreach(Infragistics.Win.UltraWinGrid.UltraGridRow row in grid.Rows)
          {
             if(!row.IsFilteredOut)
             {
@@ -76,30 +76,26 @@ namespace SincronizadorGPS50
 
       internal static void RefreshTable
       (
-         System.Data.SqlClient.SqlConnection connection,
-         CompanyGroup sage50CompanyGroupData
+         UltraGrid grid,
+         System.Data.DataTable dataTable
       )
       {
-         DeselectRows(ClientsUIHolder.ClientDataTable);
+         DeselectRows(grid);
 
-         ClientsUIHolder.ClientDataTable.DisplayLayout.Bands[0].ColumnFilters.ClearAllFilters();
+         grid.DisplayLayout.Bands[0].ColumnFilters.ClearAllFilters();
 
-         ClientsUIHolder.ClientDataTable.DataSource = CustomerSynchronizationDataTable.Create(
-            connection, 
-            sage50CompanyGroupData, 
-            new GestprojectDataManager.CustomerSyncronizationTableSchema()
-         );
+         grid.DataSource = dataTable;
 
-         DeselectRows(ClientsUIHolder.ClientDataTable);
-         ClientsUIHolder.ClientDataTable.ClickCell += ConfigureTable;
+         DeselectRows(grid);
+         grid.ClickCell += ConfigureTable;
       }
 
-      internal static List<int> GetSelectedIfAnyOrAll()
+      internal static List<int> GetSelectedIfAnyOrAll(UltraGrid grid)
       {
          int counter = 0;
          System.Collections.Generic.List<int> selectedIdList = new System.Collections.Generic.List<int>();
 
-         foreach(Infragistics.Win.UltraWinGrid.UltraGridRow row in ClientsUIHolder.ClientDataTable.Rows)
+         foreach(Infragistics.Win.UltraWinGrid.UltraGridRow row in grid.Rows)
          {
             if(!row.IsFilteredOut)
             {
@@ -114,7 +110,7 @@ namespace SincronizadorGPS50
 
          if(counter == 0)
          {
-            foreach(Infragistics.Win.UltraWinGrid.UltraGridRow row in ClientsUIHolder.ClientDataTable.Rows)
+            foreach(Infragistics.Win.UltraWinGrid.UltraGridRow row in grid.Rows)
             {
                if(!row.IsFilteredOut)
                {

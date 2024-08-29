@@ -15,8 +15,8 @@ namespace SincronizadorGPS50
 
          ITabPageLayoutPanelRowGenerator tabPageUIRowGenerator, // Generates the Row UltraPanel.
 
-         ITabPageLayoutPanelTopRowControlsGenerator tabPageUItopRowControlsGenerator, // Generates the Row's UltraPanel TableLayout controls.
          ITabPageLayoutPanelMiddleRowControlsGenerator tabPageUImiddleRowControlsGenerator, // Generates the Row's UltraPanel TableLayout controls.
+         ITabPageLayoutPanelTopRowControlsGenerator tabPageUItopRowControlsGenerator, // Generates the Row's UltraPanel TableLayout controls.
          ITabPageLayoutPanelBottomRowControlsGenerator tabPageUIbottomRowControlsGenerator, // Generates the Row's UltraPanel TableLayout controls.
 
          IGestprojectConnectionManager gestprojectConnectionManager,
@@ -32,8 +32,8 @@ namespace SincronizadorGPS50
                MainWindowUITabControlCollection,
                tabPageMainPanelTableLayoutGenerator,
                tabPageUIRowGenerator,
-               tabPageUItopRowControlsGenerator,
                tabPageUImiddleRowControlsGenerator,
+               tabPageUItopRowControlsGenerator,
                tabPageUIbottomRowControlsGenerator,
                gestprojectConnectionManager,
                sage50ConnectionManager,

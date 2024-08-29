@@ -22,8 +22,8 @@ namespace SincronizadorGPS50
                new TabPageMainPanelTableLayoutPanelGenerator(),
                new TabPageLayoutPanelRowGenerator(),
 
-               new ProvidersTopRowControlsGenerator(),
                new ProvidersMiddleRowControlsGenerator(),
+               new ProvidersTopRowControlsGenerator(),
                new ProvidersBottomRowControlsGenerator(),
 
                gestprojectConnectionManager,

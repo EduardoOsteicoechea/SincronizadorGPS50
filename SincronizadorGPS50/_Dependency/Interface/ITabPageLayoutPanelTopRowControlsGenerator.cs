@@ -1,4 +1,5 @@
 ﻿using Infragistics.Win.Misc;
+using Infragistics.Win.UltraWinGrid;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace SincronizadorGPS50
 {
    internal interface ITabPageLayoutPanelTopRowControlsGenerator
    {
+      UltraGrid MiddleRowGrid { get; set; }
       System.Windows.Forms.TableLayoutPanel RowTableLayout { get; set; }
       Infragistics.Win.Misc.UltraButton RefreshButton { get; set; }
       Infragistics.Win.Misc.UltraButton SelectAllButton { get; set; }
@@ -20,9 +22,11 @@ namespace SincronizadorGPS50
       void GenerateControls
       (
          Infragistics.Win.Misc.UltraPanel rowPanel,
+         Infragistics.Win.UltraWinGrid.UltraGrid middleRowGrid,
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
-         ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider
+         ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
+         IGridDataSourceGenerator dataSourceGenerator
       );
 
       void GenerateRowTableLayoutPanel();

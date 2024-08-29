@@ -78,6 +78,9 @@
     <Compile Include="LinkSage50.cs" />
     <Compile Include="LooseComparison.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\GetSage50Providers.cs" />
+    <Compile Include="Providers\Provider.cs" />
+    <Compile Include="Providers\ProviderModel.cs" />
     <Compile Include="Sage50CompanyGroupActions.cs" />
   </ItemGroup>
   <ItemGroup>

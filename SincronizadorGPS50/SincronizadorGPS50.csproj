@@ -386,6 +386,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="1_SetupAndConnections\2_3_ManageMainWindowActions.cs" />
+    <Compile Include="2_ClientsSynchronization\1_5_ManageUserInteractionWithUI - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\1_5_ManageUserInteractionWithUI.cs" />
     <Compile Include="2_ClientsSynchronization\2_1_CustomerSynchronizationDataTable - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\3_0_RunSynchronizeCustomersWorkflow.cs" />
@@ -401,10 +402,25 @@
     <Compile Include="2_ClientsSynchronization\2_4_AddClientToUITable.cs" />
     <Compile Include="2_ClientsSynchronization\2_3_ValidateClientSyncronizationStatus.cs" />
     <Compile Include="3_ProviderSynchronization\1_2_ProvidersSynchronizationTableSchemaProvider.cs" />
-    <Compile Include="3_ProviderSynchronization\1_4_ProvidersDataTableManager.cs" />
+    <Compile Include="3_ProviderSynchronization\1_4_1_ProvidersDataTableGenerator.cs" />
+    <Compile Include="3_ProviderSynchronization\1_4_0_ProvidersDataTableManager.cs" />
+    <Compile Include="3_ProviderSynchronization\1_4_2_ProvidersSyncronizationTableStatusManager.cs" />
+    <Compile Include="3_ProviderSynchronization\2_3_ValidateClientSyncronizationStatus.cs" />
+    <Compile Include="3_ProviderSynchronization\1_5_GestprojectProvidersProcessor.cs" />
+    <Compile Include="3_ProviderSynchronization\GestprojectProvidersPainter.cs" />
     <Compile Include="GestprojectConnectionProvider.cs" />
+    <Compile Include="GestprojectEntitiesProvider.cs" />
     <Compile Include="Sage50ConnectionProvider.cs" />
+    <Compile Include="Sage50EntitiesProvider.cs" />
+    <Compile Include="_Dependency\Delegate\DataTableDelegate.cs" />
+    <Compile Include="_Dependency\Interface\IDataTableGenerator.cs" />
+    <Compile Include="_Dependency\Interface\IGestprojectEntitiesProvider.cs" />
     <Compile Include="_Dependency\Interface\IGridDataSourceGenerator.cs" />
+    <Compile Include="_Dependency\Interface\IProvidersSynchronizationTableSchemaProvider.cs" />
+    <Compile Include="_Dependency\Interface\ISage50EntitiesProvider.cs" />
+    <Compile Include="_Dependency\Interface\ISynchronizableEntityPainter.cs" />
+    <Compile Include="_Dependency\Interface\ISynchronizableEntityProcessor.cs" />
+    <Compile Include="_Dependency\Interface\ISynchronizationDatabaseTableManager.cs" />
     <Compile Include="_Dependency\Interface\ITabPageLayoutPanelRowGenerator.cs" />
     <Compile Include="_UserInterface\SynchronizationTabGenerator.cs" />
     <Compile Include="3_ProviderSynchronization\1_1_TabPageMainPanelTableLayoutPanelGenerator.cs" />

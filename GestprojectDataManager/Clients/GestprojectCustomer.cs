@@ -5,6 +5,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
 {
    public class GestprojectCustomer
    {
+      public int? synchronization_table_id { get; set; } = null;
       public int? PAR_ID { get; set; } = null;
       public string PAR_SUBCTA_CONTABLE { get; set; } = "";
       public string PAR_NOMBRE { get; set; } = "";
@@ -38,7 +39,6 @@ namespace SincronizadorGPS50.GestprojectDataManager
       public string comments { get; set; } = "";
       public DateTime? last_record { get; set; } = null;
 
-      public int? synchronization_table_id { get; set; } = null;
       public int? parent_gesproject_user_id { get; set; } = null;
    }
 }

@@ -21,8 +21,8 @@ namespace SincronizadorGPS50
          ITabPageMainPanelTableLayoutPanelGenerator tabPageMainPanelTableLayoutGenerator,
          ITabPageLayoutPanelRowGenerator tabPageUIRowGenerator,
 
-         ITabPageLayoutPanelTopRowControlsGenerator tabPageUItopRowControlsGenerator,
          ITabPageLayoutPanelMiddleRowControlsGenerator tabPageUImiddleRowControlsGenerator,
+         ITabPageLayoutPanelTopRowControlsGenerator tabPageUItopRowControlsGenerator,
          ITabPageLayoutPanelBottomRowControlsGenerator tabPageUIbottomRowControlsGenerator,
 
          IGestprojectConnectionManager gestprojectConnectionManager,
@@ -40,11 +40,14 @@ namespace SincronizadorGPS50
          Infragistics.Win.UltraWinTabControl.UltraTabPageControl.ControlCollection tabControlCollection
       );
 
-      Infragistics.Win.Misc.UltraPanel _06_CreateTopRow(ITabPageLayoutPanelRowGenerator rowGenerator);
+      Infragistics.Win.Misc.UltraPanel _06_CreateTopRow(ITabPageLayoutPanelRowGenerator rowGenerator,
+         IGridDataSourceGenerator gridDataSourceGenerator);
       void _07_CreateAndAddTopRowControls
       (
-         Infragistics.Win.Misc.UltraPanel topRow, 
-         ITabPageLayoutPanelTopRowControlsGenerator topRowControlsGenerator
+         Infragistics.Win.Misc.UltraPanel topRow,
+         Infragistics.Win.UltraWinGrid.UltraGrid middleRowGrid,
+         ITabPageLayoutPanelTopRowControlsGenerator topRowControlsGenerator,
+         IGridDataSourceGenerator gridDataSourceGenerator
       );
 
 
