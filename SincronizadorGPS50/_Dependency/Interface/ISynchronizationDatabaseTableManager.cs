@@ -10,7 +10,7 @@ namespace SincronizadorGPS50
    {
       bool TableExists(
          System.Data.SqlClient.SqlConnection connection,
-         ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider
+         string tableName
       );
       void CreateTable(
          System.Data.SqlClient.SqlConnection connection,

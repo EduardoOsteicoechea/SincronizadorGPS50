@@ -1,12 +1,8 @@
 ﻿using SincronizadorGPS50.GestprojectDataManager;
 using SincronizadorGPS50.Sage50Connector;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50
@@ -68,13 +64,13 @@ namespace SincronizadorGPS50
                for(global::System.Int32 i = 0; i < existingEntityList.Count; i++)
                {
                   GestprojectProviderModel existingEntity = existingEntityList[i];
-                  new LinkProviderWorkflow(connection, existingEntity, tableSchema);
+                  //new LinkProviderWorkflow(connection, existingEntity, tableSchema);
                };
 
                for(global::System.Int32 i = 0; i < unexistingEntityList.Count; i++)
                {
                   GestprojectProviderModel unexistingEntity = unexistingEntityList[i];
-                  new CreateProviderWorkflow(connection, unexistingEntity, tableSchema);
+                  //new CreateProviderWorkflow(connection, unexistingEntity, tableSchema);
                };
             };
          }

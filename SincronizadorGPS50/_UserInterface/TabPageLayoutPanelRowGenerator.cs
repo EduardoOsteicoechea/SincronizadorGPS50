@@ -1,14 +1,4 @@
-﻿using Infragistics.Win;
-using Infragistics.Win.Misc;
-using Infragistics.Win.UltraWinGrid;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿using Infragistics.Win.Misc;
 namespace SincronizadorGPS50
 {
    internal class TabPageLayoutPanelRowGenerator : ITabPageLayoutPanelRowGenerator

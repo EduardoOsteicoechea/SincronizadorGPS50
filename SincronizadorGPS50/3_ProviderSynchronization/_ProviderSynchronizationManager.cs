@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using SincronizadorGPS50.GestprojectDataManager;
+using SincronizadorGPS50.Sage50Connector;
+using System.Reflection;
 
 namespace SincronizadorGPS50
 {
@@ -17,13 +19,15 @@ namespace SincronizadorGPS50
 
             UIFactory.GenerateTabPage
             (
-               new SynchronizationTabGenerator(),
                MainWindowUIHolder.ProvidersTab.TabPage.Controls,
+
+               new SynchronizationTabGenerator<GestprojectProviderModel, Sage50ProviderModel>(),
+
                new TabPageMainPanelTableLayoutPanelGenerator(),
                new TabPageLayoutPanelRowGenerator(),
 
                new ProvidersMiddleRowControlsGenerator(),
-               new ProvidersTopRowControlsGenerator(),
+               new ProvidersTopRowControlsGenerator<GestprojectProviderModel, Sage50ProviderModel>(),
                new ProvidersBottomRowControlsGenerator(),
 
                gestprojectConnectionManager,

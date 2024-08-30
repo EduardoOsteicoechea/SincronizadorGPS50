@@ -1,1 +1,291 @@
 
+Date: 2024-08-30 07:25:52.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 07:26:00.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 07:26:04.
+Location: At:
+
+SincronizadorGPS50
+.ProviderSynchronizationManager
+.Launch:
+
+At: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 07:28:40.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 07:28:43.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 07:28:44.
+Location: At:
+
+SincronizadorGPS50
+.ProviderSynchronizationManager
+.Launch:
+
+At: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 07:30:34.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 08:33:02.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 08:33:05.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 08:33:06.
+Location: At:
+
+SincronizadorGPS50
+.ProviderSynchronizationManager
+.Launch:
+
+At: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At: At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+At: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 08:34:56.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 08:35:37.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 08:36:01.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-08-30 08:50:45.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------

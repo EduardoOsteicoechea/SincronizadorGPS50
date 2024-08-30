@@ -1,5 +1,6 @@
 ﻿using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinGrid;
+using Infragistics.Win.UltraWinLiveTileView;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -7,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-   internal class ProvidersTopRowControlsGenerator : ITabPageLayoutPanelTopRowControlsGenerator
+   internal class ProvidersTopRowControlsGenerator<GestprojectProviderModel, Sage50ProviderModel> : ITabPageLayoutPanelTopRowControlsGenerator<GestprojectProviderModel, Sage50ProviderModel>
    {
       public UltraGrid MiddleRowGrid { get; set; }
       public TableLayoutPanel RowTableLayout { get; set; }
@@ -17,8 +18,8 @@ namespace SincronizadorGPS50
       public IGestprojectConnectionManager GestprojectConnectionManager { get; set; }
       public ISage50ConnectionManager Sage50ConnectionManager { get; set; }
       public ISynchronizationTableSchemaProvider SynchronizationTableSchemaProvider { get; set; }
-      public IGridDataSourceGenerator DataSourceGenerator { get; set; }
-      public IEntitySynchronizer EntitySynchronizer { get; set; }
+      public IGridDataSourceGenerator<GestprojectProviderModel, Sage50ProviderModel> DataSourceGenerator { get; set; }
+      public IEntitySynchronizer<GestprojectProviderModel, Sage50ProviderModel> EntitySynchronizer { get; set; }
 
       public void GenerateControls
       (
@@ -27,8 +28,8 @@ namespace SincronizadorGPS50
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator dataSourceGenerator,
-         IEntitySynchronizer entitySynchronizer
+         IGridDataSourceGenerator<GestprojectProviderModel, Sage50ProviderModel> dataSourceGenerator,
+         IEntitySynchronizer<GestprojectProviderModel, Sage50ProviderModel> entitySynchronizer
       )
       {
          try
@@ -125,13 +126,13 @@ namespace SincronizadorGPS50
       {
          List<int> selectedIdList = ManageUserInteractionWithUI.GetSelectedIfAnyOrAll(MiddleRowGrid);
 
-         EntitySynchronizer.Synchronize
-         (
-            GestprojectConnectionManager,
-            Sage50ConnectionManager,
-            SynchronizationTableSchemaProvider,
-            selectedIdList 
-         );
+         //EntitySynchronizer.Synchronize
+         //(
+         //   GestprojectConnectionManager,
+         //   Sage50ConnectionManager,
+         //   SynchronizationTableSchemaProvider,
+         //   selectedIdList 
+         //);
 
          System.Data.DataTable dataTable = DataSourceGenerator.GenerateDataTable(
             GestprojectConnectionManager,

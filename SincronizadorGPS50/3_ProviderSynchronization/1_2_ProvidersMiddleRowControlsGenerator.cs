@@ -1,12 +1,37 @@
 ﻿using Infragistics.Win;
 using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinGrid;
+using SincronizadorGPS50.GestprojectDataManager;
+using SincronizadorGPS50.Sage50Connector;
 
 namespace SincronizadorGPS50
 {
-   internal class ProvidersMiddleRowControlsGenerator : ITabPageLayoutPanelMiddleRowControlsGenerator
+   internal class ProvidersMiddleRowControlsGenerator : ITabPageLayoutPanelMiddleRowControlsGenerator<GestprojectProviderModel, Sage50ProviderModel>
    {
       public Infragistics.Win.UltraWinGrid.UltraGrid Grid { get; set; }
+      public void GenerateControls
+      (
+         UltraPanel rowPanel,
+         IGestprojectConnectionManager gestprojectConnectionManager,
+         ISage50ConnectionManager sage50ConnectionManager,
+         ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
+         IGridDataSourceGenerator<GestprojectProviderModel, Sage50ProviderModel> gridDataSourceGenerator
+      )
+      {
+         CreateGrid();
+         SetGridFilters();
+         PreventGridUpdates();
+         StyleGrid();
+         SetGridDataSource(
+            gestprojectConnectionManager, 
+            sage50ConnectionManager, 
+            synchronizationTableSchemaProvider, 
+            gridDataSourceGenerator
+         );
+         AddGridToRow(rowPanel);
+         SetClickCellEventHandler();
+         SetAfterRowFilterChangedEventHandler();
+      }
       public void CreateGrid()
       {
          Grid = new Infragistics.Win.UltraWinGrid.UltraGrid();
@@ -33,10 +58,15 @@ namespace SincronizadorGPS50
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator gridDataSourceGenerator
+         IGridDataSourceGenerator<GestprojectProviderModel, Sage50ProviderModel> gridDataSourceGenerator
       )
       {
-         System.Data.DataTable dataSource = gridDataSourceGenerator.GenerateDataTable(gestprojectConnectionManager, sage50ConnectionManager, synchronizationTableSchemaProvider);
+         System.Data.DataTable dataSource = gridDataSourceGenerator.GenerateDataTable(
+            gestprojectConnectionManager, 
+            sage50ConnectionManager, 
+            synchronizationTableSchemaProvider
+         );
+
          Grid.DataSource = dataSource;
       }
       public void AddGridToRow(UltraPanel row)
@@ -54,26 +84,6 @@ namespace SincronizadorGPS50
       public void AfterRowFilterChangedEventHandler(object sender, AfterRowFilterChangedEventArgs e)
       {
          ManageUserInteractionWithUI.DeselectRows(this.Grid);
-      }
-
-
-      public void GenerateControls
-      (
-         UltraPanel rowPanel,
-         IGestprojectConnectionManager gestprojectConnectionManager, 
-         ISage50ConnectionManager sage50ConnectionManager, 
-         ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator gridDataSourceGenerator
-      )
-      {
-         CreateGrid();
-         SetGridFilters();
-         PreventGridUpdates();
-         StyleGrid();
-         SetGridDataSource(gestprojectConnectionManager, sage50ConnectionManager, synchronizationTableSchemaProvider, gridDataSourceGenerator);
-         AddGridToRow(rowPanel);
-         SetClickCellEventHandler();
-         SetAfterRowFilterChangedEventHandler();
       }
    }
 }

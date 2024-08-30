@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SincronizadorGPS50
 {
-   internal interface ITabPageLayoutPanelTopRowControlsGenerator
+   internal interface ITabPageLayoutPanelTopRowControlsGenerator<T1,T2>
    {
       UltraGrid MiddleRowGrid { get; set; }
       System.Windows.Forms.TableLayoutPanel RowTableLayout { get; set; }
@@ -18,7 +18,7 @@ namespace SincronizadorGPS50
       IGestprojectConnectionManager GestprojectConnectionManager { get; set; }
       ISage50ConnectionManager Sage50ConnectionManager { get; set; }
       ISynchronizationTableSchemaProvider SynchronizationTableSchemaProvider { get; set; }
-      IEntitySynchronizer EntitySynchronizer { get; set; }
+      IEntitySynchronizer<T1, T2> EntitySynchronizer { get; set; }
 
       void GenerateControls
       (
@@ -27,8 +27,8 @@ namespace SincronizadorGPS50
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator dataSourceGenerator,
-         IEntitySynchronizer entitySynchronizer
+         IGridDataSourceGenerator<T1, T2> dataSourceGenerator,
+         IEntitySynchronizer<T1, T2> entitySynchronizer
       );
 
       void GenerateRowTableLayoutPanel();

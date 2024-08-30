@@ -5,7 +5,7 @@ using System.Data;
 
 namespace SincronizadorGPS50
 {
-   internal interface ITabPageGenerator
+   internal interface ITabPageGenerator<T1, T2>
    {
       IGestprojectConnectionManager GestprojectConnectionManager { get; set; }
       ISage50ConnectionManager Sage50ConnectionManager { get; set; }
@@ -15,22 +15,22 @@ namespace SincronizadorGPS50
       Infragistics.Win.Misc.UltraPanel TopRow { get; set; }
       Infragistics.Win.Misc.UltraPanel MiddleRow { get; set; }
       Infragistics.Win.Misc.UltraPanel BottomRow { get; set; }
-      IEntitySynchronizer EntitySynchronizer { get; set; }
+      IEntitySynchronizer<T1, T2> EntitySynchronizer { get; set; }
       // Must follow this order
       void _01_Build(
          Infragistics.Win.UltraWinTabControl.UltraTabPageControl.ControlCollection MainWindowUITabControlCollection,
          ITabPageMainPanelTableLayoutPanelGenerator tabPageMainPanelTableLayoutGenerator,
          ITabPageLayoutPanelRowGenerator tabPageUIRowGenerator,
 
-         ITabPageLayoutPanelMiddleRowControlsGenerator tabPageUImiddleRowControlsGenerator,
-         ITabPageLayoutPanelTopRowControlsGenerator tabPageUItopRowControlsGenerator,
+         ITabPageLayoutPanelMiddleRowControlsGenerator<T1, T2> tabPageUImiddleRowControlsGenerator,
+         ITabPageLayoutPanelTopRowControlsGenerator<T1, T2> tabPageUItopRowControlsGenerator,
          ITabPageLayoutPanelBottomRowControlsGenerator tabPageUIbottomRowControlsGenerator,
 
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator gridDataSourceGenerator,
-         IEntitySynchronizer entitySynchronizer
+         IGridDataSourceGenerator<T1, T2> gridDataSourceGenerator,
+         IEntitySynchronizer<T1, T2> entitySynchronizer
       );
 
       Infragistics.Win.Misc.UltraPanel _02_CreateMainPanel();
@@ -43,13 +43,13 @@ namespace SincronizadorGPS50
       );
 
       Infragistics.Win.Misc.UltraPanel _06_CreateTopRow(ITabPageLayoutPanelRowGenerator rowGenerator,
-         IGridDataSourceGenerator gridDataSourceGenerator);
+         IGridDataSourceGenerator<T1, T2> gridDataSourceGenerator);
       void _07_CreateAndAddTopRowControls
       (
          Infragistics.Win.Misc.UltraPanel topRow,
          Infragistics.Win.UltraWinGrid.UltraGrid middleRowGrid,
-         ITabPageLayoutPanelTopRowControlsGenerator topRowControlsGenerator,
-         IGridDataSourceGenerator gridDataSourceGenerator
+         ITabPageLayoutPanelTopRowControlsGenerator<T1, T2> topRowControlsGenerator,
+         IGridDataSourceGenerator<T1, T2> gridDataSourceGenerator
       );
 
 
@@ -57,11 +57,11 @@ namespace SincronizadorGPS50
       void _09_CreateAndAddMiddleRowControls
       (
          Infragistics.Win.Misc.UltraPanel middleRow, 
-         ITabPageLayoutPanelMiddleRowControlsGenerator middleRowControlsGenerator,
+         ITabPageLayoutPanelMiddleRowControlsGenerator<T1, T2> middleRowControlsGenerator,
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator gridDataSourceGenerator
+         IGridDataSourceGenerator<T1, T2> gridDataSourceGenerator
       );
 
 

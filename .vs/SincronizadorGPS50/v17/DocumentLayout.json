@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\3_providersynchronization\\3_2_unexsistingproviderlistworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\3_providersynchronization\\3_2_unexsistingproviderlistworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\3_providersynchronization\\2_0_providersdatatablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\3_providersynchronization\\2_0_providersdatatablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\3_providersynchronization\\3_1_providerssynchronizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\3_providersynchronization\\3_1_providerssynchronizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\3_providersynchronization\\1_1_tabpagemainpaneltablelayoutpanelgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\3_providersynchronization\\1_1_tabpagemainpaneltablelayoutpanelgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\3_providersynchronization\\3_5_linkproviderworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\3_providersynchronization\\3_5_linkproviderworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\3_providersynchronization\\2_3_validateprovidersyncronizationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\3_providersynchronization\\2_3_validateprovidersyncronizationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\3_providersynchronization\\3_4_createproviderworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\3_providersynchronization\\3_4_createproviderworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\_factory\\uifactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\_factory\\uifactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,59 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "3_1_ProvidersSynchronizer.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\3_1_ProvidersSynchronizer.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\3_ProviderSynchronization\\3_1_ProvidersSynchronizer.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\3_1_ProvidersSynchronizer.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\3_ProviderSynchronization\\3_1_ProvidersSynchronizer.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAgwGkAAAAwAAAA",
+              "DocumentIndex": 0,
+              "Title": "2_0_ProvidersDataTableManager.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\2_0_ProvidersDataTableManager.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\3_ProviderSynchronization\\2_0_ProvidersDataTableManager.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\2_0_ProvidersDataTableManager.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\3_ProviderSynchronization\\2_0_ProvidersDataTableManager.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAmwE0AAABjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T20:52:40.753Z",
+              "WhenOpened": "2024-08-30T16:02:10.961Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "3_5_LinkProviderWorkflow.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\3_5_LinkProviderWorkflow.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\3_ProviderSynchronization\\3_5_LinkProviderWorkflow.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\3_5_LinkProviderWorkflow.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\3_ProviderSynchronization\\3_5_LinkProviderWorkflow.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABfAAAA",
+              "DocumentIndex": 1,
+              "Title": "1_1_TabPageMainPanelTableLayoutPanelGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\1_1_TabPageMainPanelTableLayoutPanelGenerator.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\3_ProviderSynchronization\\1_1_TabPageMainPanelTableLayoutPanelGenerator.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\1_1_TabPageMainPanelTableLayoutPanelGenerator.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\3_ProviderSynchronization\\1_1_TabPageMainPanelTableLayoutPanelGenerator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T21:52:16.338Z",
+              "WhenOpened": "2024-08-30T16:03:32.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "2_3_ValidateProviderSyncronizationStatus.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\2_3_ValidateProviderSyncronizationStatus.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\3_ProviderSynchronization\\2_3_ValidateProviderSyncronizationStatus.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\2_3_ValidateProviderSyncronizationStatus.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\3_ProviderSynchronization\\2_3_ValidateProviderSyncronizationStatus.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA1wB8AAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T15:13:02.067Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "3_4_CreateProviderWorkflow.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\3_4_CreateProviderWorkflow.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\3_ProviderSynchronization\\3_4_CreateProviderWorkflow.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\3_4_CreateProviderWorkflow.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\3_ProviderSynchronization\\3_4_CreateProviderWorkflow.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAEAAAApAAAA",
+              "Title": "UIFactory.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\_Factory\\UIFactory.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\_Factory\\UIFactory.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\_Factory\\UIFactory.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\_Factory\\UIFactory.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwCAAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T21:37:57.412Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "3_2_UnexsistingProviderListWorkflow.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\3_2_UnexsistingProviderListWorkflow.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\3_ProviderSynchronization\\3_2_UnexsistingProviderListWorkflow.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\3_ProviderSynchronization\\3_2_UnexsistingProviderListWorkflow.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\3_ProviderSynchronization\\3_2_UnexsistingProviderListWorkflow.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAgwDwAAABrAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T21:36:03.604Z",
+              "WhenOpened": "2024-08-30T14:58:21.159Z",
               "EditorCaption": ""
             }
           ]

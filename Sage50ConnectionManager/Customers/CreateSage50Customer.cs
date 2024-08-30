@@ -1,4 +1,5 @@
 ﻿using sage.ew.db;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -96,9 +97,7 @@ namespace SincronizadorGPS50.Sage50Connector
          }
          catch(System.Exception exception)
          {
-            throw new System.Exception(
-               $"At:\n\nSincronizadorGPS50.Sage50Connector\n.CreateSage50Customer:\n\n{exception.Message}"
-            );
+            throw new Exception($"At:\n\n{GetType().Namespace}\n.{GetType().Name}:\n\n{exception.Message}");
          };
       }
    }

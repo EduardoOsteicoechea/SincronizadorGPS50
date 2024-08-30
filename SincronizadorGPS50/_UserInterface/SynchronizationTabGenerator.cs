@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-   internal class SynchronizationTabGenerator : ITabPageGenerator
+   internal class SynchronizationTabGenerator<GestprojectProviderModel, Sage50ProviderModel> : ITabPageGenerator<GestprojectProviderModel, Sage50ProviderModel>
    {
       public UltraPanel MainPanel { get; set;}
       public TableLayoutPanel TabPageTableLayoutPanel { get; set; }
@@ -19,7 +19,7 @@ namespace SincronizadorGPS50
       public ISage50ConnectionManager Sage50ConnectionManager { get; set; }
       public ISynchronizationTableSchemaProvider SynchronizationTableSchemaProvider { get; set; }
       public DataTableGeneratorDelegate DataTableGeneratorDelegate { get; set; }
-      public IEntitySynchronizer EntitySynchronizer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public IEntitySynchronizer<GestprojectProviderModel, Sage50ProviderModel> EntitySynchronizer { get; set; }
 
       public void _01_Build
       (
@@ -27,16 +27,16 @@ namespace SincronizadorGPS50
          ITabPageMainPanelTableLayoutPanelGenerator tabPageMainPanelTableLayoutGenerator, 
          ITabPageLayoutPanelRowGenerator tabPageUIRowGenerator,
 
-         ITabPageLayoutPanelMiddleRowControlsGenerator tabPageUImiddleRowControlsGenerator,
-         ITabPageLayoutPanelTopRowControlsGenerator tabPageUItopRowControlsGenerator, 
+         ITabPageLayoutPanelMiddleRowControlsGenerator<GestprojectProviderModel, Sage50ProviderModel> tabPageUImiddleRowControlsGenerator,
+         ITabPageLayoutPanelTopRowControlsGenerator<GestprojectProviderModel, Sage50ProviderModel> tabPageUItopRowControlsGenerator, 
          ITabPageLayoutPanelBottomRowControlsGenerator tabPageUIbottomRowControlsGenerator, 
 
          IGestprojectConnectionManager gestprojectConnectionManager, 
          ISage50ConnectionManager sage50ConnectionManager, 
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator gridDataSourceGenerator,
+         IGridDataSourceGenerator<GestprojectProviderModel, Sage50ProviderModel> gridDataSourceGenerator,
 
-         IEntitySynchronizer entitySynchronizer
+         IEntitySynchronizer<GestprojectProviderModel, Sage50ProviderModel> entitySynchronizer
       )
       {
          try
@@ -99,14 +99,14 @@ namespace SincronizadorGPS50
          return rowGenerator.GenerateRowPanel();
       }
 
-      public UltraPanel _06_CreateTopRow(ITabPageLayoutPanelRowGenerator rowGenerator, IGridDataSourceGenerator gridDataSourceGenerator) => throw new NotImplementedException();
+      public UltraPanel _06_CreateTopRow(ITabPageLayoutPanelRowGenerator rowGenerator, IGridDataSourceGenerator<GestprojectProviderModel, Sage50ProviderModel> gridDataSourceGenerator) => throw new NotImplementedException();
 
       public void _07_CreateAndAddTopRowControls
       (
          UltraPanel topRow,
          Infragistics.Win.UltraWinGrid.UltraGrid middleRowGrid,
-         ITabPageLayoutPanelTopRowControlsGenerator tabPageUItopRowControlsGenerator,
-         IGridDataSourceGenerator gridDataSourceGenerator
+         ITabPageLayoutPanelTopRowControlsGenerator<GestprojectProviderModel, Sage50ProviderModel> tabPageUItopRowControlsGenerator,
+         IGridDataSourceGenerator<GestprojectProviderModel, Sage50ProviderModel> gridDataSourceGenerator
       )
       {
          tabPageUItopRowControlsGenerator.GenerateControls
@@ -128,11 +128,11 @@ namespace SincronizadorGPS50
       public void _09_CreateAndAddMiddleRowControls
       (
          UltraPanel middleRow, 
-         ITabPageLayoutPanelMiddleRowControlsGenerator middleRowControlsGenerator, 
+         ITabPageLayoutPanelMiddleRowControlsGenerator<GestprojectProviderModel, Sage50ProviderModel> middleRowControlsGenerator, 
          IGestprojectConnectionManager gestprojectConnectionManager, 
          ISage50ConnectionManager sage50ConnectionManager, 
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider, 
-         IGridDataSourceGenerator gridDataSourceGenerator
+         IGridDataSourceGenerator<GestprojectProviderModel, Sage50ProviderModel> gridDataSourceGenerator
       )
       {
          middleRowControlsGenerator.GenerateControls

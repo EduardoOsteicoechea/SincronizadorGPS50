@@ -1,9 +1,11 @@
 ﻿using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinGrid;
+using SincronizadorGPS50.GestprojectDataManager;
+using SincronizadorGPS50.Sage50Connector;
 
 namespace SincronizadorGPS50
 {
-   internal interface ITabPageLayoutPanelMiddleRowControlsGenerator
+   internal interface ITabPageLayoutPanelMiddleRowControlsGenerator<T1, T2>
    {
       UltraGrid Grid { get; set; }
       void CreateGrid();
@@ -15,7 +17,7 @@ namespace SincronizadorGPS50
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator gridDataSourceGenerator
+         IGridDataSourceGenerator<T1, T2> gridDataSourceGenerator
       );
       void AddGridToRow(UltraPanel row);
       void SetClickCellEventHandler();
@@ -28,7 +30,7 @@ namespace SincronizadorGPS50
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
          ISynchronizationTableSchemaProvider synchronizationTableSchemaProvider,
-         IGridDataSourceGenerator gridDataSourceGenerator
+         IGridDataSourceGenerator<T1, T2> gridDataSourceGenerator
       );
    }
 }
