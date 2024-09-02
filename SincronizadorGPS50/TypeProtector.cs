@@ -27,7 +27,7 @@ namespace SincronizadorGPS50
 
             if(reader.GetFieldType(ordinal) != typeof(T))
             {
-               throw new InvalidOperationException($"Type mismatch: Expected {typeof(T)}, but got {reader.GetFieldType(ordinal)}");
+               throw new InvalidOperationException($"Type mismatch: Expected {typeof(T)}, but got {reader.GetFieldType(ordinal)} at iteration \"{ordinal}\". The value was: \"{reader.GetValue(ordinal)}\"");
             };
 
             T value = reader.GetFieldValue<T>(ordinal);

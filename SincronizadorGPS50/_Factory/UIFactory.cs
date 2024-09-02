@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Data;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-   internal static class UIFactory
+   internal static class UIFactory<T1, T2>
    {
-      internal static void GenerateTabPage<T1, T2>
+      internal static void GenerateTabPage
       (
-         Infragistics.Win.UltraWinTabControl.UltraTabPageControl.ControlCollection MainWindowUITabControlCollection, // just call the .Add() method and pass the "MainPanel" UltraPanel that contains the "TabPageTableLayoutPanel" TableLayoutPanel, which itself will contain the UltraPanel corresponding to the UI rows along with their respective TableLayoutPanels, controls and event handlers.
          ITabPageGenerator<T1, T2> tabPageGenerator,
+
+         Infragistics.Win.UltraWinTabControl.UltraTabPageControl.ControlCollection MainWindowUITabControlCollection, // just call the .Add() method and pass the "MainPanel" UltraPanel that contains the "TabPageTableLayoutPanel" TableLayoutPanel, which itself will contain the UltraPanel corresponding to the UI rows along with their respective TableLayoutPanels, controls and event handlers.
 
          ITabPageMainPanelTableLayoutPanelGenerator tabPageMainPanelTableLayoutGenerator, // Generates tab page main panel table layout.
 
@@ -17,7 +19,7 @@ namespace SincronizadorGPS50
 
          ITabPageLayoutPanelMiddleRowControlsGenerator<T1, T2> tabPageUImiddleRowControlsGenerator, // Generates the Row's UltraPanel TableLayout controls.
          ITabPageLayoutPanelTopRowControlsGenerator<T1, T2> tabPageUItopRowControlsGenerator, // Generates the Row's UltraPanel TableLayout controls.
-         ITabPageLayoutPanelBottomRowControlsGenerator tabPageUIbottomRowControlsGenerator, // Generates the Row's UltraPanel TableLayout controls.
+         ITabPageLayoutPanelBottomRowControlsGenerator<T1, T2> tabPageUIbottomRowControlsGenerator, // Generates the Row's UltraPanel TableLayout controls.
 
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
@@ -53,5 +55,7 @@ namespace SincronizadorGPS50
             );
          };
       }
+
+      
    }
 }

@@ -8,7 +8,7 @@ namespace SincronizadorGPS50
 
         internal static System.Data.SqlClient.SqlConnection GestprojectDatabaseConnection { get; set; } = null;
         internal static List<GestprojectDataManager.GestprojectCustomer> GestprojectClientList { get; set; } = null;
-        internal static List<GestprojectDataManager.GestprojectProviderModel> GestprojectProviderList { get; set; } = null; 
+        //internal static List<GestprojectDataManager.GestprojectProviderModel> GestprojectProviderList { get; set; } = null; 
         internal static UserSessionData LocalDeviceUserSessionData { get; set; } = null;
 
         internal static LocalDeviceUserData GestprojectLocalDeviceUserData { get; set; } = null;

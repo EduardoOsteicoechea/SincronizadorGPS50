@@ -20,7 +20,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
          PAR_PAIS_1,
          PAR_APELLIDO_1,
          PAR_APELLIDO_2
-      ";      
+      ";
       private string tableName { get; } = "PARTICIPANTE";
       public List<GestprojectParticipantModel> Get(System.Data.SqlClient.SqlConnection connection, List<int> IdList = null)
       {

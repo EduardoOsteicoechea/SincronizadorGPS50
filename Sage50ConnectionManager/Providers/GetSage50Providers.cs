@@ -26,7 +26,6 @@ namespace SincronizadorGPS50.Sage50Connector
                     codigo, 
                     cif, 
                     nombre, 
-                    nombre2, 
                     direccion, 
                     codpost, 
                     poblacion, 
@@ -48,13 +47,12 @@ namespace SincronizadorGPS50.Sage50Connector
                   sage50Provider.CODIGO = sage50ProvidersDataTable.Rows[i].ItemArray[0].ToString().Trim();
                   sage50Provider.CIF = sage50ProvidersDataTable.Rows[i].ItemArray[1].ToString().Trim();
                   sage50Provider.NOMBRE = sage50ProvidersDataTable.Rows[i].ItemArray[2].ToString().Trim();
-                  sage50Provider.NOMBRE2 = sage50ProvidersDataTable.Rows[i].ItemArray[3].ToString().Trim();
-                  sage50Provider.DIRECCION = sage50ProvidersDataTable.Rows[i].ItemArray[4].ToString().Trim();
-                  sage50Provider.CODPOST = sage50ProvidersDataTable.Rows[i].ItemArray[5].ToString().Trim();
-                  sage50Provider.POBLACION = sage50ProvidersDataTable.Rows[i].ItemArray[6].ToString().Trim();
-                  sage50Provider.PROVINCIA = sage50ProvidersDataTable.Rows[i].ItemArray[7].ToString().Trim();
-                  sage50Provider.PAIS = sage50ProvidersDataTable.Rows[i].ItemArray[8].ToString().Trim();
-                  sage50Provider.GUID_ID = sage50ProvidersDataTable.Rows[i].ItemArray[9].ToString().Trim();
+                  sage50Provider.DIRECCION = sage50ProvidersDataTable.Rows[i].ItemArray[3].ToString().Trim();
+                  sage50Provider.CODPOST = sage50ProvidersDataTable.Rows[i].ItemArray[4].ToString().Trim();
+                  sage50Provider.POBLACION = sage50ProvidersDataTable.Rows[i].ItemArray[5].ToString().Trim();
+                  sage50Provider.PROVINCIA = sage50ProvidersDataTable.Rows[i].ItemArray[6].ToString().Trim();
+                  sage50Provider.PAIS = sage50ProvidersDataTable.Rows[i].ItemArray[7].ToString().Trim();
+                  sage50Provider.GUID_ID = sage50ProvidersDataTable.Rows[i].ItemArray[8].ToString().Trim();
 
                   ProviderList.Add(sage50Provider);
                   Sage50ProviderCodeList.Add(sage50Provider.CODIGO);

@@ -12,7 +12,7 @@ namespace SincronizadorGPS50
 
       public List<Sage50ProviderModel> GetProviders()
       {
-         return new GetSage50Providers().ProviderList;
+         return new GetSage50Providers().Entities;
       }
    }
 }

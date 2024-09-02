@@ -24,7 +24,7 @@ namespace SincronizadorGPS50
 
          ITabPageLayoutPanelMiddleRowControlsGenerator<T1, T2> tabPageUImiddleRowControlsGenerator,
          ITabPageLayoutPanelTopRowControlsGenerator<T1, T2> tabPageUItopRowControlsGenerator,
-         ITabPageLayoutPanelBottomRowControlsGenerator tabPageUIbottomRowControlsGenerator,
+         ITabPageLayoutPanelBottomRowControlsGenerator<T1, T2> tabPageUIbottomRowControlsGenerator,
 
          IGestprojectConnectionManager gestprojectConnectionManager,
          ISage50ConnectionManager sage50ConnectionManager,
@@ -69,7 +69,7 @@ namespace SincronizadorGPS50
       void _11_CreateAndAddBottomRowControls
       (
          Infragistics.Win.Misc.UltraPanel bottomRow, 
-         ITabPageLayoutPanelBottomRowControlsGenerator bottomRowControlsGenerator
+         ITabPageLayoutPanelBottomRowControlsGenerator<T1, T2> bottomRowControlsGenerator
       );
 
 

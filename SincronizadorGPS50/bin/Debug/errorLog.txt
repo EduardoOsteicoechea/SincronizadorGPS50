@@ -289,3 +289,774 @@ Message: No se puede implementar el método o la operación.
 
 
 --------------------------------------------------
+Date: 2024-08-31 05:19:29.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada..
+Short Description: Failed to end the methods execution successfully..
+Message: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+
+
+--------------------------------------------------
+Date: 2024-08-31 05:55:17.
+Location: At:
+
+SincronizadorGPS50
+.RegisterParticipant
+..ctor:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ')'.
+
+
+--------------------------------------------------
+Date: 2024-08-31 05:58:25.
+Location: At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime.
+Short Description: Error processing ordinal 8 (expected System.Int32).
+Message: Type mismatch: Expected System.Int32, but got System.DateTime
+
+
+--------------------------------------------------
+Date: 2024-08-31 06:02:40.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25".
+Short Description: Error processing ordinal 8 (expected System.Int32).
+Message: Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25"
+
+
+--------------------------------------------------
+Date: 2024-08-31 06:04:00.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25".
+Short Description: Error processing ordinal 8 (expected System.Int32).
+Message: Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25"
+
+
+--------------------------------------------------
+Date: 2024-08-31 06:04:59.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25".
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25"
+
+
+--------------------------------------------------
+Date: 2024-08-31 06:05:04.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25".
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25"
+
+
+--------------------------------------------------
+Date: 2024-08-31 06:05:13.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25".
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25"
+
+
+--------------------------------------------------
+Date: 2024-08-31 06:05:19.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25".
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25"
+
+
+--------------------------------------------------
+Date: 2024-08-31 06:05:22.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25".
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25"
+
+
+--------------------------------------------------
+Date: 2024-08-31 06:05:25.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.ProviderSynchronizationManager
+.Launch:
+
+
+
+At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25".
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.UIFactory
+.GenerateTabPage:
+
+
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+._01_Build:
+
+
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTableData`1
+.AppendData:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime. At iteration "8". The value was: "31/08/2024 5:58:25"
+
+
+--------------------------------------------------
+Date: 2024-08-31 06:07:18.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime at iteration "8". The value was: "31/08/2024 5:58:25".
+Short Description: Error processing ordinal 8 (expected System.Int32).
+Message: Type mismatch: Expected System.Int32, but got System.DateTime at iteration "8". The value was: "31/08/2024 5:58:25"
+
+
+--------------------------------------------------
+Date: 2024-08-31 06:09:34.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime at iteration "8". The value was: "31/08/2024 5:58:25".
+Short Description: Error processing ordinal 8 (expected System.Int32).
+Message: Type mismatch: Expected System.Int32, but got System.DateTime at iteration "8". The value was: "31/08/2024 5:58:25"
+
+
+--------------------------------------------------
+Date: 2024-08-31 06:10:49.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Int32, but got System.DateTime at iteration "8". The value was: "31/08/2024 5:58:25".
+Short Description: Error processing ordinal 8 (expected System.Int32).
+Message: Type mismatch: Expected System.Int32, but got System.DateTime at iteration "8". The value was: "31/08/2024 5:58:25"
+
+
+--------------------------------------------------
+Date: 2024-08-31 07:37:09.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersPainter
+.PaintEntityListOnDataTable:
+
+No puede establecer el valor de Column 'Id de Sincronización' en null. Utilice DBNull en su lugar..
+Short Description: Failed to end the methods execution successfully..
+Message: No puede establecer el valor de Column 'Id de Sincronización' en null. Utilice DBNull en su lugar.
+
+
+--------------------------------------------------
+Date: 2024-08-31 07:48:32.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableGenerator
+.CreateDataTable:
+
+DataSet no admite System.Nullable<>..
+Short Description: Failed to end the methods execution successfully..
+Message: DataSet no admite System.Nullable<>.
+
+
+--------------------------------------------------
+Date: 2024-08-31 12:14:05.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-08-31 12:14:12.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-08-31 12:14:14.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.Synchronize:
+
+
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-08-31 12:26:23.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-08-31 12:26:29.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-08-31 12:26:30.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.Synchronize:
+
+
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-02 05:50:01.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.ProviderSynchronizationManager
+.Launch:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------

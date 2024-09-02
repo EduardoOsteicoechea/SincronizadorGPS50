@@ -15,18 +15,18 @@ namespace SincronizadorGPS50.Sage50Connector
       {
          try
          {
-            foreach(Sage50ProviderModel Provider in new GetSage50Providers().ProviderList)
-            {
-               bool nameFullMatch = name == Provider.NOMBRE;
-               bool cifFullMatch = cif == Provider.CIF;
+            //foreach(Sage50ProviderModel Provider in new GetSage50Providers().ProviderList)
+            //{
+            //   bool nameFullMatch = name == Provider.NOMBRE;
+            //   bool cifFullMatch = cif == Provider.CIF;
 
-               if(nameFullMatch && cifFullMatch)
-               {
-                  Sage50Guid = Provider.GUID_ID;
-                  Sage50Code = Provider.CODIGO;
-                  Exists = true;
-               }
-            }
+            //   if(nameFullMatch && cifFullMatch)
+            //   {
+            //      Sage50Guid = Provider.GUID_ID;
+            //      Sage50Code = Provider.CODIGO;
+            //      Exists = true;
+            //   }
+            //}
          }
          catch(Exception exception)
          {

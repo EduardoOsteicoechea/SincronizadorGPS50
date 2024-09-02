@@ -8,13 +8,15 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-   internal interface ITabPageLayoutPanelBottomRowControlsGenerator
+   internal interface ITabPageLayoutPanelBottomRowControlsGenerator<T1, T2>
    {
       TableLayoutPanel RowTableLayout { get; set; }
       UltraButton ExitButton { get; set; }
       IGestprojectConnectionManager GestprojectConnectionManager { get; set; }
       ISage50ConnectionManager Sage50ConnectionManager { get; set; }
       ISynchronizationTableSchemaProvider SynchronizationTableSchemaProvider { get; set; }
+      T1 TypeStore1 { get; set; }
+      T2 TypeStore2 { get; set; }
       void GenerateControls
       (
          UltraPanel rowPanel,

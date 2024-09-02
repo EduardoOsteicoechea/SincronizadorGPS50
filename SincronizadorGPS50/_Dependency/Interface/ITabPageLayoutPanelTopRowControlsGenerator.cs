@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace SincronizadorGPS50
 {
-   internal interface ITabPageLayoutPanelTopRowControlsGenerator<T1,T2>
+   //internal interface ITabPageLayoutPanelTopRowControlsGenerator<T1,T2>
+   internal interface ITabPageLayoutPanelTopRowControlsGenerator<T1, T2>
    {
       UltraGrid MiddleRowGrid { get; set; }
       System.Windows.Forms.TableLayoutPanel RowTableLayout { get; set; }

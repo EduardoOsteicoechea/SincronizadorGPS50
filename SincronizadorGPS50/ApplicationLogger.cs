@@ -9,7 +9,7 @@ namespace SincronizadorGPS50
    {
       public static System.Exception ReportError(string namespaceName, string className, string methodName, System.Exception exception, string exceptionShortDescription = "Failed to end the methods execution successfully.")
       {
-         string exceptionLocation = $"At:\n\n{namespaceName}\n.{className}\n.{methodName}:\n\n{exception.Message}";
+         string exceptionLocation = $"\n\nAt:\n\n{namespaceName}\n.{className}\n.{methodName}:\n\n{exception.Message}";
          try
          {
             string assemblyLocation = Assembly.GetExecutingAssembly().Location;
@@ -22,12 +22,12 @@ namespace SincronizadorGPS50
                writer.WriteLine(new string('-', 50));
             };
 
-            throw new Exception($"At: {exceptionLocation}");
+            throw new Exception($"{exceptionLocation}");
          }
          catch(Exception errorLogException)
          {
-            MessageBox.Show("Failed to write to the log file: " + errorLogException.Message);
-            throw new Exception($"At: {exceptionLocation}");
+            MessageBox.Show("Failed to write to the log file:" + errorLogException.Message);
+            throw new Exception($"{exceptionLocation}");
          };
       }
    }

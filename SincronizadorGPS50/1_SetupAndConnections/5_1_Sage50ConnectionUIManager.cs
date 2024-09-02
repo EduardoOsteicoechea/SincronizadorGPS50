@@ -79,6 +79,12 @@ namespace SincronizadorGPS50.Workflows.Sage50Connection
             gestprojectConnectionManager,
             sage50ConnectionManager
          );
+
+         new ProjectsSynchronizationManager().Launch
+         (
+            gestprojectConnectionManager,
+            sage50ConnectionManager
+         );
       }
       internal void SetEditingTerminalDataUI()
       {

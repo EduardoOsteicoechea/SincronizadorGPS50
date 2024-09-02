@@ -19,7 +19,7 @@ namespace SincronizadorGPS50.GestprojectDataManager
          int? parentUserId,
          string syncronizationStatus,
          CustomerSyncronizationTableSchema tableSchema
-      ) 
+      )
       {
          try
          {
