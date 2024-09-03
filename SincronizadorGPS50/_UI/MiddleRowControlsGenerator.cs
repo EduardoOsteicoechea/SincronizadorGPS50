@@ -3,6 +3,7 @@ using Infragistics.Win.Misc;
 using Infragistics.Win.UltraWinGrid;
 using SincronizadorGPS50.GestprojectDataManager;
 using SincronizadorGPS50.Sage50Connector;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SincronizadorGPS50.Sage50Connector;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace SincronizadorGPS50

@@ -82,10 +82,10 @@ namespace SincronizadorGPS50
             }
             else
             {
-               throw new System.Exception("No providers were found in Sage50");
+               throw new Exception("No providers were found in Sage50");
             }
          }
-         catch(System.Exception exception)
+         catch(Exception exception)
          {
             throw ApplicationLogger.ReportError(
                MethodBase.GetCurrentMethod().DeclaringType.Namespace,

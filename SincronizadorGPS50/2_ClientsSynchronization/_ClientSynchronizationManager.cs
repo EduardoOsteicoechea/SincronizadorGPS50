@@ -1,4 +1,5 @@
-﻿using SincronizadorGPS50.Sage50Connector;
+﻿using Infragistics.Win.UltraWinTabControl;
+using SincronizadorGPS50.Sage50Connector;
 using SincronizadorGPS50.Workflows.Clients;
 using System;
 using System.Windows.Forms;
@@ -10,7 +11,8 @@ namespace SincronizadorGPS50
       public void Launch
       (
          System.Data.SqlClient.SqlConnection connection,
-         CompanyGroup sage50CompanyGroupData
+         CompanyGroup sage50CompanyGroupData,
+         UltraTab hostTab
       )
       {
          try

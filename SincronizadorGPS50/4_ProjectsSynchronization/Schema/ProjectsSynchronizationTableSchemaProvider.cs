@@ -8,13 +8,15 @@ namespace SincronizadorGPS50
 {
 	public class ProjectsSynchronizationTableSchemaProvider : ISynchronizationTableSchemaProvider
 	{
-		public string TableName { get; set; } = "INT_SAGE_SYNCRONIZATION_ENTITY_DATA_PROJECTS";
-		public List<(string columnName, string friendlyName, Type columnType, string columnDefinition)> ColumnsTuplesList { get; set; } = new List<(string, string, Type, string)>()
+		// The following static fields are necessary because properties aren't callable in other properties.
+		// Keep the "ColumnsTuplesItemsProvider" as an exact copy of it's corresponding property.
+
+		static List<(string columnName, string friendlyName, Type columnType, string columnDefinition)> ColumnsTuplesItemsProvider = new List<(string, string, Type, string)>()
 		{
-			("ID", "Id de Sincronización", typeof(int?), "INT PRIMARY KEY IDENTITY(1,1)"),
+			("ID", "Id de Sincronización", typeof(int), "INT PRIMARY KEY IDENTITY(1,1)"),
 			("SYNC_STATUS", "Estado", typeof(string), "VARCHAR(MAX)"),
 
-			("PRY_ID", "Id de Proyecto en Gestproject", typeof(int), "INT"),
+			("PRY_ID", $"Id en Gestproject", typeof(int), "INT"),
 			("PRY_CODIGO", "Código", typeof(string), "VARCHAR(MAX)"),
 			("PRY_NOMBRE", "Nombre", typeof(string), "VARCHAR(MAX)"),
 			("PRY_DIRECCION", "Nombre comercial", typeof(string), "VARCHAR(MAX)"),
@@ -22,14 +24,35 @@ namespace SincronizadorGPS50
 			("PRY_PROVINCIA", "Provincia", typeof(string), "VARCHAR(MAX)"),
 			("PRY_CP", "Código postal", typeof(string), "VARCHAR(MAX)"),
 
-			("NOMBRE", "Nombre", typeof(string), "VARCHAR(MAX)"),
-			("DIRECCION", "Dirección", typeof(string), "VARCHAR(MAX)"),
-			("POBLACION", "Población", typeof(string), "VARCHAR(MAX)"),
-			("PROVINCIA", "Provincia", typeof(string), "VARCHAR(MAX)"),
-			("CODPOST", "Código postal", typeof(string), "VARCHAR(MAX)"),
+			("S50_CODE", $"Código en Sage50", typeof(string), "VARCHAR(MAX)"),
+			("S50_GUID_ID", $"Guid en Sage50", typeof(string), "VARCHAR(MAX)"),
 
-			("S50_CODE", "Código de Proyecto", typeof(string), "VARCHAR(MAX)"),
-			("S50_GUID_ID", "Guid de Proyecto en Sage50", typeof(string), "VARCHAR(MAX)"),
+			("S50_COMPANY_GROUP_NAME", "Nombre de Grupo de Empresas en Sage50", typeof(string), "VARCHAR(MAX)"),
+			("S50_COMPANY_GROUP_CODE", "Código de Grupo de Empresas en Sage50", typeof(string), "VARCHAR(MAX)"),
+			("S50_COMPANY_GROUP_MAIN_CODE", "Código principal de Grupo de Empresas en Sage50", typeof(string), "VARCHAR(MAX)"),
+			("S50_COMPANY_GROUP_GUID_ID", "Guid de Grupo de Empresas en Sage50", typeof(string), "VARCHAR(MAX)"),
+
+			("LAST_UPDATE", "Última actualización", typeof(DateTime),"DATETIME DEFAULT GETDATE() NOT NULL" ),
+			("GP_USU_ID", "Id de Gestor en Gestproject", typeof(int), "INT"),
+			("COMMENTS", "Comentarios", typeof(string), "VARCHAR(MAX)"),
+		};
+
+		public string TableName { get; set; } = "INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROJECTS";
+		public List<(string columnName, string friendlyName, Type columnType, string columnDefinition)> ColumnsTuplesList { get; set; } = new List<(string, string, Type, string)>()
+		{
+			("ID", "Id de Sincronización", typeof(int), "INT PRIMARY KEY IDENTITY(1,1)"),
+			("SYNC_STATUS", "Estado", typeof(string), "VARCHAR(MAX)"),
+
+			("PRY_ID", $"Id en Gestproject", typeof(int), "INT"),
+			("PRY_CODIGO", "Código", typeof(string), "VARCHAR(MAX)"),
+			("PRY_NOMBRE", "Nombre", typeof(string), "VARCHAR(MAX)"),
+			("PRY_DIRECCION", "Nombre comercial", typeof(string), "VARCHAR(MAX)"),
+			("PRY_LOCALIDAD", "Localidad", typeof(string), "VARCHAR(MAX)"),
+			("PRY_PROVINCIA", "Provincia", typeof(string), "VARCHAR(MAX)"),
+			("PRY_CP", "Código postal", typeof(string), "VARCHAR(MAX)"),
+
+			("S50_CODE", $"Código en Sage50", typeof(string), "VARCHAR(MAX)"),
+			("S50_GUID_ID", $"Guid en Sage50", typeof(string), "VARCHAR(MAX)"),
 
 			("S50_COMPANY_GROUP_NAME", "Nombre de Grupo de Empresas en Sage50", typeof(string), "VARCHAR(MAX)"),
 			("S50_COMPANY_GROUP_CODE", "Código de Grupo de Empresas en Sage50", typeof(string), "VARCHAR(MAX)"),
@@ -85,36 +108,6 @@ namespace SincronizadorGPS50
 			("PRY_CP", typeof(string)),
 		};
 
-		// I need this becauseI can't call this in the other properties. This must always be an exact copy of the above
-		public static List<(string columnName, string friendlyName, Type columnType, string columnDefinition)> ColumnsTuplesItemsProvider { get; set; } = new List<(string, string, Type, string)>()
-		{
-			("ID", "Id de Sincronización", typeof(int), "INT PRIMARY KEY IDENTITY(1,1)"),
-			("SYNC_STATUS", "Estado", typeof(string), "VARCHAR(MAX)"),
-			("PAR_ID", "Id de Proyecto en Gestproject", typeof(int), "INT"),
-
-			("PAR_SUBCTA_CONTABLE_2", "Subcuenta contable", typeof(string), "VARCHAR(MAX)"),
-			("NOMBRE_COMPLETO", "Nombre", typeof(string), "VARCHAR(MAX)"),
-			("PAR_NOMBRE_COMERCIAL", "Nombre comercial", typeof(string), "VARCHAR(MAX)"),
-			("PAR_CIF_NIF", "CIF - NIF", typeof(string), "VARCHAR(MAX)"),
-			("PAR_DIRECCION_1", "Dirección", typeof(string), "VARCHAR(MAX)"),
-			("PAR_CP_1", "Código postal", typeof(string), "VARCHAR(MAX)"),
-			("PAR_LOCALIDAD_1", "Localidad", typeof(string), "VARCHAR(MAX)"),
-			("PAR_PROVINCIA_1", "Provincia", typeof(string), "VARCHAR(MAX)"),
-			("PAR_PAIS_1", "País", typeof(string), "VARCHAR(MAX)"),
-
-			("S50_CODE", "Código de Proyecto", typeof(string), "VARCHAR(MAX)"),
-			("S50_GUID_ID", "Guid de Proyecto en Sage50", typeof(string), "VARCHAR(MAX)"),
-
-			("S50_COMPANY_GROUP_NAME", "Nombre de Grupo de Empresas en Sage50", typeof(string), "VARCHAR(MAX)"),
-			("S50_COMPANY_GROUP_CODE", "Código de Grupo de Empresas en Sage50", typeof(string), "VARCHAR(MAX)"),
-			("S50_COMPANY_GROUP_MAIN_CODE", "Código principal de Grupo de Empresas en Sage50", typeof(string), "VARCHAR(MAX)"),
-			("S50_COMPANY_GROUP_GUID_ID", "Guid de Grupo de Empresas en Sage50", typeof(string), "VARCHAR(MAX)"),
-
-			("LAST_UPDATE", "Última actualización", typeof(DateTime),"DATETIME DEFAULT GETDATE() NOT NULL" ),
-			("GP_USU_ID", "Id de Gestor en Gestproject", typeof(int), "INT"),
-			("COMMENTS", "Comentarios", typeof(string), "VARCHAR(MAX)"),
-		};
-
 
 
 
@@ -130,14 +123,15 @@ namespace SincronizadorGPS50
 		   ColumnsTuplesItemsProvider.ElementAt(1).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(1).columnDefinition
 		);
+
+
 		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) GestprojectId { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(2).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(2).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(2).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(2).columnDefinition
 		);
-
-
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) AccountableSubaccount { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) ProjectCode { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(3).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(3).friendlyName,
@@ -150,19 +144,21 @@ namespace SincronizadorGPS50
 		   ColumnsTuplesItemsProvider.ElementAt(4).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(4).columnDefinition
 		);
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CommercialName { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CommercialName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Cif { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Address { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(5).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(5).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(5).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(5).columnDefinition
 		);
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Cif { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Locality { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(6).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(6).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(6).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(6).columnDefinition
 		);
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Address { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Province { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(7).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(7).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(7).columnType,
@@ -174,85 +170,63 @@ namespace SincronizadorGPS50
 		   ColumnsTuplesItemsProvider.ElementAt(8).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(8).columnDefinition
 		);
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Locality { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Country { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+
+
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Sage50Code { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(9).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(9).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(9).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(9).columnDefinition
 		);
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Province { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Sage50GuidId { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(10).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(10).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(10).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(10).columnDefinition
 		);
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Country { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupName { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(11).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(11).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(11).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(11).columnDefinition
 		);
-
-
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Sage50Code { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupCode { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(12).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(12).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(12).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(12).columnDefinition
 		);
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Sage50GuidId { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupMainCode { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(13).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(13).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(13).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(13).columnDefinition
 		);
-
-
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupName { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupGuidId { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(14).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(14).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(14).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(14).columnDefinition
 		);
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupCode { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) LastUpdate { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(15).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(15).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(15).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(15).columnDefinition
 		);
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupMainCode { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) ParentUserId { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(16).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(16).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(16).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(16).columnDefinition
 		);
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupGuidId { get; set; } = (
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Comments { get; set; } = (
 		   ColumnsTuplesItemsProvider.ElementAt(17).columnName,
 		   ColumnsTuplesItemsProvider.ElementAt(17).friendlyName,
 		   ColumnsTuplesItemsProvider.ElementAt(17).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(17).columnDefinition
-		);
-
-
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) LastUpdate { get; set; } = (
-		   ColumnsTuplesItemsProvider.ElementAt(18).columnName,
-		   ColumnsTuplesItemsProvider.ElementAt(18).friendlyName,
-		   ColumnsTuplesItemsProvider.ElementAt(18).columnType,
-		   ColumnsTuplesItemsProvider.ElementAt(18).columnDefinition
-		);
-
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) ParentUserId { get; set; } = (
-		   ColumnsTuplesItemsProvider.ElementAt(19).columnName,
-		   ColumnsTuplesItemsProvider.ElementAt(19).friendlyName,
-		   ColumnsTuplesItemsProvider.ElementAt(19).columnType,
-		   ColumnsTuplesItemsProvider.ElementAt(19).columnDefinition
-		);
-
-		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Comments { get; set; } = (
-		   ColumnsTuplesItemsProvider.ElementAt(20).columnName,
-		   ColumnsTuplesItemsProvider.ElementAt(20).friendlyName,
-		   ColumnsTuplesItemsProvider.ElementAt(20).columnType,
-		   ColumnsTuplesItemsProvider.ElementAt(20).columnDefinition
 		);
 	}
 }

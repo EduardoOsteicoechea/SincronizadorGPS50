@@ -2,52 +2,46 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-   internal class EntityPainter : ISynchronizableEntityPainter
+   internal class EntityPainter<T1> : ISynchronizableEntityPainter<T1>
    {
       public void PaintEntityListOnDataTable
       (
-         List<GestprojectProviderModel> proccessedGestprojectProviders, 
-         DataTable dataTable, 
+         List<T1> proccessedGestprojectEntities,
+         DataTable dataTable,
          List<(string columnName, string friendlyName, Type columnType, string columnDefinition)> tableFieldsTupleList
       )
       {
          try
          {
-            foreach (GestprojectProviderModel item in proccessedGestprojectProviders)
+            foreach(T1 item in proccessedGestprojectEntities)
             {
                DataRow row = dataTable.NewRow();
 
-               row[0] = item.ID.GetValueOrDefault();
-               row[1] = item.SYNC_STATUS;
-               row[2] = item.PAR_ID.GetValueOrDefault();
+               for(global::System.Int32 i = 0; i < tableFieldsTupleList.Count; i++)
+               {
+                  var propertyName = tableFieldsTupleList[i].columnName;
+                  var propertyValue = item.GetType().GetProperty(propertyName)?.GetValue(item);
 
-               row[3] = item.PAR_SUBCTA_CONTABLE_2;
-               row[4] = item.NOMBRE_COMPLETO;
-               row[5] = item.PAR_NOMBRE_COMERCIAL;
-               row[6] = item.PAR_CIF_NIF;
-               row[7] = item.PAR_DIRECCION_1;
-               row[8] = item.PAR_CP_1;
-               row[9] = item.PAR_LOCALIDAD_1;
-               row[10] = item.PAR_PROVINCIA_1;
-               row[11] = item.PAR_PAIS_1;
-               row[12] = item.S50_CODE;
-               row[13] = item.S50_GUID_ID;
-               row[14] = item.S50_COMPANY_GROUP_NAME;
-               row[15] = item.S50_COMPANY_GROUP_CODE;
-               row[16] = item.S50_COMPANY_GROUP_MAIN_CODE;
-               row[17] = item.S50_COMPANY_GROUP_GUID_ID;
-
-               row[18] = item.LAST_UPDATE.GetValueOrDefault();
-               row[19] = item.GP_USU_ID.GetValueOrDefault();
-
-               int commentsLenght = item.COMMENTS.Length;
-               row[20] = (commentsLenght > 1000 ? item.COMMENTS.Substring(0, 999) : item.COMMENTS) ?? "";
+                  if(tableFieldsTupleList[i].columnType == typeof(string))
+                  {
+                     row[i] = propertyValue ?? "";
+                  }
+                  else if(tableFieldsTupleList[i].columnType == typeof(int))
+                  {
+                     row[i] = propertyValue ?? DBNull.Value;
+                  }
+                  else if(tableFieldsTupleList[i].columnType == typeof(DateTime))
+                  {
+                     row[i] = propertyValue ?? DBNull.Value;
+                  };
+               };
 
                dataTable.Rows.Add(row);
-            };            
+            };
          }
          catch(System.Exception exception)
          {

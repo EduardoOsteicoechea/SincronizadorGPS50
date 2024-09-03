@@ -8,13 +8,13 @@ namespace SincronizadorGPS50
 {
    public class ProvidersSynchronizationTableSchemaProvider : ISynchronizationTableSchemaProvider
    {
-      public string TableName { get; set; } = "INT_SAGE_SYNCRONIZATION_ENTITY_DATA_PROVIDERS";
+      public string TableName { get; set; } = "INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROVIDERS";
       public List<(string columnName, string friendlyName,Type columnType, string columnDefinition)> ColumnsTuplesList { get; set; } = new List<(string, string, Type, string)>()
       {
          ("ID", "Id de Sincronización", typeof(int), "INT PRIMARY KEY IDENTITY(1,1)"),
          ("SYNC_STATUS", "Estado", typeof(string), "VARCHAR(MAX)"),
-         ("PAR_ID", "Id de Proveedor en Gestproject", typeof(int), "INT"),
 
+         ("PAR_ID", "Id de Proveedor en Gestproject", typeof(int), "INT"),
          ("PAR_SUBCTA_CONTABLE_2", "Subcuenta contable", typeof(string), "VARCHAR(MAX)"),
          ("NOMBRE_COMPLETO", "Nombre", typeof(string), "VARCHAR(MAX)"),
          ("PAR_NOMBRE_COMERCIAL", "Nombre comercial", typeof(string), "VARCHAR(MAX)"),
@@ -254,5 +254,6 @@ namespace SincronizadorGPS50
          ColumnsTuplesItemsProvider.ElementAt(20).columnType,
          ColumnsTuplesItemsProvider.ElementAt(20).columnDefinition
       );
-   }
+		public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) ProjectCode { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+	}
 }

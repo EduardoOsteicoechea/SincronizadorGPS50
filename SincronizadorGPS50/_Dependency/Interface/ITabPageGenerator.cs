@@ -17,7 +17,7 @@ namespace SincronizadorGPS50
       Infragistics.Win.Misc.UltraPanel BottomRow { get; set; }
       IEntitySynchronizer<T1, T2> EntitySynchronizer { get; set; }
       // Must follow this order
-      void _01_Build(
+      void Build(
          Infragistics.Win.UltraWinTabControl.UltraTabPageControl.ControlCollection MainWindowUITabControlCollection,
          ITabPageMainPanelTableLayoutPanelGenerator tabPageMainPanelTableLayoutGenerator,
          ITabPageLayoutPanelRowGenerator tabPageUIRowGenerator,
@@ -33,18 +33,18 @@ namespace SincronizadorGPS50
          IEntitySynchronizer<T1, T2> entitySynchronizer
       );
 
-      Infragistics.Win.Misc.UltraPanel _02_CreateMainPanel();
-      System.Windows.Forms.TableLayoutPanel _03_GenerateMainPanelTableLayoutPanel(ITabPageMainPanelTableLayoutPanelGenerator tabPageMainPanelTableLayoutGenerator);
-      void _04_AddTabPageTableLayoutToMainPanel(System.Windows.Forms.TableLayoutPanel tabPageTableLayoutPanel, Infragistics.Win.Misc.UltraPanel mainPanel);
-      void _05_AddMainPanelToTab
+      Infragistics.Win.Misc.UltraPanel CreateMainPanel();
+      System.Windows.Forms.TableLayoutPanel GenerateMainPanelTableLayoutPanel(ITabPageMainPanelTableLayoutPanelGenerator tabPageMainPanelTableLayoutGenerator);
+      void AddTabPageTableLayoutToMainPanel(System.Windows.Forms.TableLayoutPanel tabPageTableLayoutPanel, Infragistics.Win.Misc.UltraPanel mainPanel);
+      void AddMainPanelToTab
       (
          Infragistics.Win.Misc.UltraPanel mainPanel, 
          Infragistics.Win.UltraWinTabControl.UltraTabPageControl.ControlCollection tabControlCollection
       );
 
-      Infragistics.Win.Misc.UltraPanel _06_CreateTopRow(ITabPageLayoutPanelRowGenerator rowGenerator,
+      Infragistics.Win.Misc.UltraPanel CreateTopRow(ITabPageLayoutPanelRowGenerator rowGenerator,
          IGridDataSourceGenerator<T1, T2> gridDataSourceGenerator);
-      void _07_CreateAndAddTopRowControls
+      void CreateAndAddTopRowControls
       (
          Infragistics.Win.Misc.UltraPanel topRow,
          Infragistics.Win.UltraWinGrid.UltraGrid middleRowGrid,
@@ -53,8 +53,8 @@ namespace SincronizadorGPS50
       );
 
 
-      Infragistics.Win.Misc.UltraPanel _08_CreateMiddleRow(ITabPageLayoutPanelRowGenerator rowGenerator);
-      void _09_CreateAndAddMiddleRowControls
+      Infragistics.Win.Misc.UltraPanel CreateMiddleRow(ITabPageLayoutPanelRowGenerator rowGenerator);
+      void CreateAndAddMiddleRowControls
       (
          Infragistics.Win.Misc.UltraPanel middleRow, 
          ITabPageLayoutPanelMiddleRowControlsGenerator<T1, T2> middleRowControlsGenerator,
@@ -65,15 +65,15 @@ namespace SincronizadorGPS50
       );
 
 
-      Infragistics.Win.Misc.UltraPanel _10_CreateBottomRow(ITabPageLayoutPanelRowGenerator rowGenerator);
-      void _11_CreateAndAddBottomRowControls
+      Infragistics.Win.Misc.UltraPanel CreateBottomRow(ITabPageLayoutPanelRowGenerator rowGenerator);
+      void CreateAndAddBottomRowControls
       (
          Infragistics.Win.Misc.UltraPanel bottomRow, 
          ITabPageLayoutPanelBottomRowControlsGenerator<T1, T2> bottomRowControlsGenerator
       );
 
 
-      void _12_AddRowsPanelsToTabPageTableLayout
+      void AddRowsPanelsToTabPageTableLayout
       (
          Infragistics.Win.Misc.UltraPanel topRow,
          Infragistics.Win.Misc.UltraPanel middleRow,

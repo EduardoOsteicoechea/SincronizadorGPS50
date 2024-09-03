@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace SincronizadorGPS50
 {
-   internal interface ISynchronizableEntityPainter
+   internal interface ISynchronizableEntityPainter<T1>
    {
       void PaintEntityListOnDataTable(
-         List<GestprojectProviderModel> proccessedGestprojectProviders,
+         List<T1> proccessedGestprojectEntities,
          DataTable dataTable,
          List<(string columnName, string friendlyName, Type columnType, string columnDefinition)> tableFieldsTupleList
       );

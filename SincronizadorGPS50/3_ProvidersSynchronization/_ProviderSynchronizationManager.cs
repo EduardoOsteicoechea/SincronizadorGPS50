@@ -1,27 +1,29 @@
-﻿using System.Reflection;
+﻿using Infragistics.Win.UltraWinTabControl;
+using System.Reflection;
 
 namespace SincronizadorGPS50
 {
-   public class ProviderSynchronizationManager
+   public class ProviderSynchronizationManager : IEntitySynchronizationManager
    {
       public void Launch
       (
          IGestprojectConnectionManager gestprojectConnectionManager,
-         ISage50ConnectionManager sage50ConnectionManager
+         ISage50ConnectionManager sage50ConnectionManager,
+         UltraTab hostTab
       )
       {
          try
          {
-            MainWindowUIHolder.ProvidersTab.Enabled = true;
-            MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.ProvidersTab;
+            hostTab.Enabled = true;
+            MainWindowUIHolder.MainTabControl.SelectedTab = hostTab;
 
             UIFactory<GestprojectProviderModel, Sage50ProviderModel>.GenerateTabPage
             (
                // Application Constructor
                new SynchronizationTabGenerator<GestprojectProviderModel, Sage50ProviderModel>(),
 
-               // UI Components
-               MainWindowUIHolder.ProvidersTab.TabPage.Controls,
+               // UI comon
+               hostTab.TabPage.Controls,
                new TabPageMainPanelTableLayoutPanelGenerator(),
                new TabPageLayoutPanelRowGenerator(),
                new MiddleRowControlsGenerator<GestprojectProviderModel, Sage50ProviderModel>(),

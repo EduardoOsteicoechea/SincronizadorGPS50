@@ -1,20 +1,22 @@
-﻿using SincronizadorGPS50._4_ProjectsSynchronization.Models;
+﻿using Infragistics.Win.UltraWinTabControl;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-   public class ProjectsSynchronizationManager
+   public class ProjectsSynchronizationManager : IEntitySynchronizationManager
    {
       public void Launch
       (
          IGestprojectConnectionManager gestprojectConnectionManager,
-         ISage50ConnectionManager sage50ConnectionManager
+         ISage50ConnectionManager sage50ConnectionManager,
+         UltraTab hostTab
       )
       {
          try
          {
-            MainWindowUIHolder.ProjectsTab.Enabled = true;
-            MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.ProjectsTab;
+            hostTab.Enabled = true;
+            MainWindowUIHolder.MainTabControl.SelectedTab = hostTab;
 
             UIFactory<GestprojectProjectModel, Sage50ProjectModel>.GenerateTabPage
             (
@@ -22,7 +24,7 @@ namespace SincronizadorGPS50
                new SynchronizationTabGenerator<GestprojectProjectModel, Sage50ProjectModel>(),
 
                // UI comon
-               MainWindowUIHolder.ProvidersTab.TabPage.Controls,
+               hostTab.TabPage.Controls,
                new TabPageMainPanelTableLayoutPanelGenerator(),
                new TabPageLayoutPanelRowGenerator(),
                new MiddleRowControlsGenerator<GestprojectProjectModel, Sage50ProjectModel>(),

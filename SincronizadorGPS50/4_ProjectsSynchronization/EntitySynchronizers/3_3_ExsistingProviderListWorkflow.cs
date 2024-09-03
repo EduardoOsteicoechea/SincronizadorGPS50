@@ -10,37 +10,37 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-   internal class ExsistingProviderListWorkflow
+   internal class ExsistingProjectListWorkflow
    {
-      public ExsistingProviderListWorkflow
+      public ExsistingProjectListWorkflow
       (
          System.Data.SqlClient.SqlConnection connection, 
-         List<GestprojectDataManager.GestprojectCustomer> clientsList, 
-         List<GestprojectDataManager.GestprojectCustomer> unsynchronizedClientList, 
-         bool unsynchronizedClientsExists, 
+         List<GestprojectDataManager.GestprojectCustomer> entityList, 
+         List<GestprojectDataManager.GestprojectCustomer> unsynchronizedEntityList, 
+         bool unsynchronizedEntitysExists, 
          CustomerSyncronizationTableSchema tableSchema
       )
       {
          try
          {
-            if(unsynchronizedClientsExists)
+            if(unsynchronizedEntitysExists)
             {
-               DialogResult result = MessageBox.Show($"Partiendo de la selección encontramos {unsynchronizedClientList.Count} cliente(s) desactualizados.\n\n¿Desea sincronizarlo(s)?", "Confirmación de actualización", MessageBoxButtons.OKCancel);
+               DialogResult result = MessageBox.Show($"Partiendo de la selección encontramos {unsynchronizedEntityList.Count} Entitye(s) desactualizados.\n\n¿Desea sincronizarlo(s)?", "Confirmación de actualización", MessageBoxButtons.OKCancel);
 
                if(result == DialogResult.OK)
                {
-                  for(global::System.Int32 i = 0; i < clientsList.Count; i++)
+                  for(global::System.Int32 i = 0; i < entityList.Count; i++)
                   {
-                     if(unsynchronizedClientList.Contains(clientsList[i]))
+                     if(unsynchronizedEntityList.Contains(entityList[i]))
                      {
-                        new UpdateClientWorkflow(GestprojectDataHolder.GestprojectDatabaseConnection, clientsList[i], tableSchema);
+                        //new UpdateEntityWorkflow(GestprojectDataHolder.GestprojectDatabaseConnection, EntitysList[i], tableSchema);
                      };
                   };
                };
             }
             else
             {
-               MessageBox.Show($"Los {clientsList.Count} cliente(s) están sincronizados.");
+               MessageBox.Show($"Los {entityList.Count} Entitye(s) están sincronizados.");
             };
          }
          catch(System.Exception exception)

@@ -216,13 +216,13 @@ namespace SincronizadorGPS50
 
          if (NoEntitiesExistsInSage50)
          {
-            new UnexsistingProvidersSynchronizationWorkflow().Execute
-            (
-               GestprojectConnectionManager,
-               Sage50ConnectionManager,
-               UnexistingGestprojectEntityList,
-               tableSchemaProvider
-            );
+            //new UnexsistingProjectsSynchronizationWorkflow().Execute
+            //(
+            //   GestprojectConnectionManager,
+            //   Sage50ConnectionManager,
+            //   UnexistingGestprojectEntityList,
+            //   tableSchemaProvider
+            //);
          }
 
          if(AllEntitiesExistsInSage50)

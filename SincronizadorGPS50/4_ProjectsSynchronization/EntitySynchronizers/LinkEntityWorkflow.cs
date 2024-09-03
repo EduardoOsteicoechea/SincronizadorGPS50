@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-   internal class LinkProviderWorkflow : IEntityLinkWorkflow<GestprojectProviderModel>
+   internal class LinkProjectWorkflow : IEntityLinkWorkflow<GestprojectProviderModel>
    {
       public void Execute
       (

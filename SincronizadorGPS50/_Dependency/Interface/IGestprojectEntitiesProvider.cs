@@ -1,10 +1,13 @@
-﻿using SincronizadorGPS50.GestprojectDataManager;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SincronizadorGPS50
 {
-   internal interface IGestprojectEntitiesProvider
+   internal interface IGestprojectEntitiesProvider<T1>
    {
-      List<GestprojectProviderModel> GetProviders(System.Data.SqlClient.SqlConnection connection);
+      List<T1> GetProviders
+      (
+         System.Data.SqlClient.SqlConnection connection, 
+         GestprojectEntityProviderDelegate<T1> entityProviderDelegate
+      );
    }
 }

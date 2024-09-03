@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-   internal class UpdateProviderWorkflow
+   internal class UpdateProjectWorkflow
    {
-      public UpdateProviderWorkflow(System.Data.SqlClient.SqlConnection connection, GestprojectCustomer gestprojectClient,
+      public UpdateProjectWorkflow(System.Data.SqlClient.SqlConnection connection, GestprojectCustomer gestprojectClient,
          CustomerSyncronizationTableSchema tableSchema, string sage50ClientCode = "", string sage50guid = "", int? parentUserId = null)
       {
          try
