@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseMaster.cs" />
+    <Compile Include="Entities\Sage50Work.cs" />
+    <Compile Include="Entities\Sage50Provider.cs" />
     <Compile Include="Customers\CustomerComparer.cs" />
     <Compile Include="Customers\CustomerManager - Copy.cs" />
     <Compile Include="Customers\UpdateSage50Customer.cs" />
@@ -71,7 +73,7 @@
     <Compile Include="clsDatos.cs" />
     <Compile Include="clsEntidades.cs" />
     <Compile Include="Customers\CreateSage50Customer.cs" />
-    <Compile Include="Customers\Customer.cs" />
+    <Compile Include="Entities\Customer.cs" />
     <Compile Include="CompanyGroup.cs" />
     <Compile Include="ConnectionActions.cs" />
     <Compile Include="GetLatestLibrariesFolder.cs" />

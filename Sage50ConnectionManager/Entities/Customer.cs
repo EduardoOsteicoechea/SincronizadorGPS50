@@ -42,6 +42,9 @@ namespace SincronizadorGPS50.Sage50Connector
             {
                if(FUNCTIONS._Es_Cliente(toeCustomer.codigo))
                {
+                  new sage.ew.docscompra.Proveedor()._Save();
+                  new sage.ew.cliente.Obra()._Save();
+
                   _oCliente = new Cliente();
                   _oCliente._Codigo = toeCustomer.codigo;
 
