@@ -12,7 +12,7 @@ namespace SincronizadorGPS50
 {
    internal class GestprojectProjectsProvider : IGestprojectEntitiesProvider<GestprojectProviderModel>
    {
-      public List<GestprojectProviderModel> GetProviders(System.Data.SqlClient.SqlConnection connection, GestprojectEntityProviderDelegate<GestprojectProviderModel> entityProviderDelegate) 
+      public List<GestprojectProviderModel> Get(System.Data.SqlClient.SqlConnection connection, GestprojectEntityProviderDelegate<GestprojectProviderModel> entityProviderDelegate) 
       {
          try
          {

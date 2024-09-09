@@ -401,6 +401,22 @@
     <Compile Include="2_ClientsSynchronization\prev\2_CreateSage50Customer - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\2_4_AddClientToUITable.cs" />
     <Compile Include="2_ClientsSynchronization\2_3_ValidateClientSyncronizationStatus.cs" />
+    <Compile Include="5_TaxesSynchronization\1_TaxesDataTableManager.cs" />
+    <Compile Include="5_TaxesSynchronization\2_GestprojectTaxesProcessor.cs" />
+    <Compile Include="5_TaxesSynchronization\EntityProviders\GestprojectTaxesManager.cs" />
+    <Compile Include="5_TaxesSynchronization\EntityProviders\GestprojectTaxesProvider.cs" />
+    <Compile Include="5_TaxesSynchronization\EntityProviders\GetSage50Taxes.cs" />
+    <Compile Include="5_TaxesSynchronization\EntitySynchronizers\3_3_ExsistingTaxesListWorkflow.cs" />
+    <Compile Include="5_TaxesSynchronization\EntitySynchronizers\3_4_CreateTaxWorkflow.cs" />
+    <Compile Include="5_TaxesSynchronization\EntitySynchronizers\3_4_UpdateTaxWorkflow.cs" />
+    <Compile Include="5_TaxesSynchronization\EntitySynchronizers\CreateSage50Tax.cs" />
+    <Compile Include="5_TaxesSynchronization\EntitySynchronizers\LinkTaxWorkflow.cs" />
+    <Compile Include="5_TaxesSynchronization\EntitySynchronizers\TaxesSynchronizer.cs" />
+    <Compile Include="5_TaxesSynchronization\EntityValidators\ValidateTaxSyncronizationStatus.cs" />
+    <Compile Include="5_TaxesSynchronization\Schema\GestprojectTaxModel.cs" />
+    <Compile Include="5_TaxesSynchronization\Schema\TaxesSynchronizationTableSchemaProvider.cs" />
+    <Compile Include="5_TaxesSynchronization\Schema\Sage50TaxModel.cs" />
+    <Compile Include="5_TaxesSynchronization\_TaxesSynchronizationManager.cs" />
     <Compile Include="4_ProjectsSynchronization\EntityValidators\ValidateProjectSyncronizationStatus.cs" />
     <Compile Include="4_ProjectsSynchronization\2_GestprojectProjectsProcessor.cs" />
     <Compile Include="_Dependency\Interface\IEntitySynchronizationManager.cs" />
@@ -616,10 +632,7 @@
     <None Include="Resources\ApplicationIcon.bmp" />
     <None Include="Resources\applicationIcon.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="3_ProvidersSynchronization\DataTable\" />
-    <Folder Include="4_ProjectsSynchronization\DataTable\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Styles\Aero.isl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

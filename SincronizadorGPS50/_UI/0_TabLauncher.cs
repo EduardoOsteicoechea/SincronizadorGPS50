@@ -33,6 +33,13 @@ namespace SincronizadorGPS50
             sage50ConnectionManager,
             MainWindowUIHolder.ProjectsTab
          );
+
+         new TaxesSynchronizationManager().Launch
+         (
+            gestprojectConnectionManager,
+            sage50ConnectionManager,
+            MainWindowUIHolder.TaxesTab
+         );
       }
 	}
 }

@@ -1,9 +1,6 @@
-﻿using SincronizadorGPS50.Sage50Connector;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
-using System.Text;
-using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {

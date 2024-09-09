@@ -228,5 +228,20 @@ namespace SincronizadorGPS50
 		   ColumnsTuplesItemsProvider.ElementAt(17).columnType,
 		   ColumnsTuplesItemsProvider.ElementAt(17).columnDefinition
 		);
-	}
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) AccountableSubaccount2 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Sage50Type { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Value { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Iva { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CtaIvRep { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CtaIvSop { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Irpf { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Retencion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CtaReRep { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CtaReSop { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) TaxType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) GestprojectType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) GestprojectName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) GestprojectValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Withholding { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+   }
 }
