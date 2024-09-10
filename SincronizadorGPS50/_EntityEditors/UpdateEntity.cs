@@ -23,23 +23,16 @@ namespace SincronizadorGPS50
 
             StringBuilder columnsAndValuesStringBuilder = new StringBuilder();
 
-            Dictionary<Type, Func<object, string>> formatters = new Dictionary<Type, Func<object, string>>
-            {
-                { typeof(int), value => value.ToString() },
-                { typeof(string), value => $"'{value}'" },
-                { typeof(DateTime), value => $"'{value:yyyy-MM-dd HH:mm:ss}'" }
-            };
-
             for(global::System.Int32 i = 0; i < columnsAndValues.Count; i++)
             {
                string name = columnsAndValues[i].columnName;
                dynamic value = columnsAndValues[i].columnValue;
 
-               columnsAndValuesStringBuilder.Append($"{name}={formatters[value.GetType()](value)},");
+               columnsAndValuesStringBuilder.Append($"{name}={DynamicValuesFormatters.Formatters[value.GetType()](value)},");
             };
 
             StringBuilder conditionStringBuilder = new StringBuilder();
-            conditionStringBuilder.Append($"{conditionKeyValuePair.columnName}={formatters[conditionKeyValuePair.columnValue.GetType()](conditionKeyValuePair.columnValue)}");
+            conditionStringBuilder.Append($"{conditionKeyValuePair.columnName}={DynamicValuesFormatters.Formatters[conditionKeyValuePair.columnValue.GetType()](conditionKeyValuePair.columnValue)}");
 
             string sqlString = $@"
             UPDATE 
@@ -49,6 +42,8 @@ namespace SincronizadorGPS50
             WHERE
                {conditionStringBuilder.ToString()}
             ;";
+
+            //MessageBox.Show(sqlString);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {

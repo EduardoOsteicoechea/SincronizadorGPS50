@@ -14,7 +14,7 @@ namespace SincronizadorGPS50
       (
          SqlConnection connection,
          string tableName,
-         List<(string columName, System.Type columnType)> fieldsToBeRetrieved,
+         List<(string columnName, System.Type columnType)> fieldsToBeRetrieved,
          (string condition1ColumnName, dynamic condition1Value) condition1Data,
          T entity
       )
@@ -26,7 +26,7 @@ namespace SincronizadorGPS50
             string fieldNamesForSqlStatement = string.Empty;
             for(global::System.Int32 i = 0; i < fieldsToBeRetrieved.Count; i++)
             {
-               fieldNamesForSqlStatement += $"{fieldsToBeRetrieved[i].columName},";
+               fieldNamesForSqlStatement += $"{fieldsToBeRetrieved[i].columnName},";
             };
             fieldNamesForSqlStatement = fieldNamesForSqlStatement.TrimEnd(',');
 
@@ -39,35 +39,28 @@ namespace SincronizadorGPS50
                {condition1Data.condition1ColumnName}={DynamicValuesFormatters.Formatters[condition1Data.condition1Value.GetType()](condition1Data.condition1Value)}
             ;";
 
+            //MessageBox.Show(sqlString);
+
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {
                using(SqlDataReader reader = sqlCommand.ExecuteReader())
                {
                   while(reader.Read())
                   {
-                     Entity = new T();
+                     Entity = new T(); 
+
+                     PropertyInfo[] properties = Entity.GetType().GetProperties();
 
                      for(global::System.Int32 i = 0; i < fieldsToBeRetrieved.Count; i++)
                      {
-                        if(fieldsToBeRetrieved[i].columnType == typeof(int))
-                        {
-                           var scrutinizedValue = TypeProtector<int>.Scrutinize(reader, i, 0);
-                           typeof(T).GetProperty(fieldsToBeRetrieved[i].columName).SetValue(entity, scrutinizedValue);
-                        }
-                        else if(fieldsToBeRetrieved[i].columnType == typeof(string))
-                        {
-                           var scrutinizedValue = TypeProtector<string>.Scrutinize(reader, i, string.Empty);
-                           typeof(T).GetProperty(fieldsToBeRetrieved[i].columName).SetValue(entity, scrutinizedValue);
-                        }
-                        else if(fieldsToBeRetrieved[i].columnType == typeof(DateTime))
-                        {
-                           var scrutinizedValue = TypeProtector<DateTime>.Scrutinize(reader, i, DateTime.Now);
-                           typeof(T).GetProperty(fieldsToBeRetrieved[i].columName).SetValue(entity, scrutinizedValue);
-                        }
-                        else
-                        {
-                           throw new Exception($"Unallowed type \"{reader.GetValue(i).GetType().Name}\" on \"{typeof(T).Name}\", please check the data schema you're using.");
-                        };
+                        TypeRevisor<T>.Check(
+                           fieldsToBeRetrieved[i].columnType,
+                           fieldsToBeRetrieved[i].columnName,
+                           Entity,
+                           reader,
+                           i,
+                           properties
+                        );
                      };
                   };
                };

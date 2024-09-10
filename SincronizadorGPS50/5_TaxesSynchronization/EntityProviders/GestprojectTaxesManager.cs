@@ -35,8 +35,10 @@ namespace SincronizadorGPS50
             SELECT 
                {columnsAndValuesStringBuilder.ToString().TrimEnd(',')}
             FROM 
-            {tableName} 
+               {tableName} 
             ;";
+
+            //MessageBox.Show(sqlString);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {
@@ -50,25 +52,14 @@ namespace SincronizadorGPS50
 
                      for(global::System.Int32 i = 0; i < columnsAndTypesToQuery.Count; i++)
                      {
-                        if(columnsAndTypesToQuery[i].columnType == typeof(int))
-                        {
-                           var scrutinizedValue = TypeProtector<int>.Scrutinize(reader, i, 0);
-                           typeof(GestprojectTaxModel).GetProperty(columnsAndTypesToQuery[i].columnName).SetValue(entity, scrutinizedValue);
-                        }
-                        else if(columnsAndTypesToQuery[i].columnType == typeof(string))
-                        {
-                           var scrutinizedValue = TypeProtector<string>.Scrutinize(reader, i, string.Empty);
-                           typeof(GestprojectTaxModel).GetProperty(columnsAndTypesToQuery[i].columnName).SetValue(entity, scrutinizedValue);
-                        }
-                        else if(columnsAndTypesToQuery[i].columnType == typeof(DateTime))
-                        {
-                           var scrutinizedValue = TypeProtector<DateTime>.Scrutinize(reader, i, DateTime.Now);
-                           typeof(GestprojectTaxModel).GetProperty(columnsAndTypesToQuery[i].columnName).SetValue(entity, scrutinizedValue);
-                        }
-                        else
-                        {
-                           throw new Exception($"Unallowed type \"{reader.GetValue(i).GetType().Name}\" on \"{typeof(GestprojectTaxModel).Name}\", please check the data schema you're using.");
-                        };
+                        TypeRevisor<GestprojectTaxModel>.Check(
+                           columnsAndTypesToQuery[i].columnType,
+                           columnsAndTypesToQuery[i].columnName,
+                           entity,
+                           reader,
+                           i,
+                           properties
+                        );
                      };
 
                      GestprojectEntityList.Add(entity);

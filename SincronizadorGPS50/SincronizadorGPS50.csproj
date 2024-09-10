@@ -414,6 +414,7 @@
     <Compile Include="5_TaxesSynchronization\EntitySynchronizers\TaxesSynchronizer.cs" />
     <Compile Include="5_TaxesSynchronization\EntityValidators\ValidateTaxSyncronizationStatus.cs" />
     <Compile Include="5_TaxesSynchronization\Schema\GestprojectTaxModel.cs" />
+    <Compile Include="5_TaxesSynchronization\Schema\NewTaxesGestprojectTableSchemaProvider.cs" />
     <Compile Include="5_TaxesSynchronization\Schema\TaxesSynchronizationTableSchemaProvider.cs" />
     <Compile Include="5_TaxesSynchronization\Schema\Sage50TaxModel.cs" />
     <Compile Include="5_TaxesSynchronization\_TaxesSynchronizationManager.cs" />
@@ -428,6 +429,7 @@
     <Compile Include="_EntityEditors\ClearEntitySynchronizationData.cs" />
     <Compile Include="3_ProvidersSynchronization\EntitySynchronizers\CreateSage50Provider.cs" />
     <Compile Include="3_ProvidersSynchronization\EntitySynchronizers\RegisterNewSage50EntityData.cs" />
+    <Compile Include="_TypeSafety\TypeRevisor.cs" />
     <Compile Include="__prev\_prev_3\ValidateProviderSyncronizationStatus - Copy.cs" />
     <Compile Include="_EntityValidators\WasEntityRegistered.cs" />
     <Compile Include="3_ProvidersSynchronization\EntityProviders\GetSage50Providers.cs" />

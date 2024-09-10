@@ -23,20 +23,13 @@ namespace SincronizadorGPS50
             StringBuilder  dynamicColumns = new StringBuilder();
             StringBuilder  dynamicValues = new StringBuilder();
 
-            Dictionary<Type, Func<object, string>> formatters = new Dictionary<Type, Func<object, string>>
-            {
-                { typeof(int), value => value.ToString() },
-                { typeof(string), value => $"'{value}'" },
-                { typeof(DateTime), value => $"'{value:yyyy-MM-dd HH:mm:ss}'" }
-            };
-
             for (global::System.Int32 i = 0; i < columnsNamesAndValues.Count; i++)
             {
                string name = columnsNamesAndValues[i].columnName;
                dynamic value = columnsNamesAndValues[i].columnValue;
 
                dynamicColumns.Append($"{name},");
-               dynamicValues.Append($"{formatters[value.GetType()](value)},");
+               dynamicValues.Append($"{DynamicValuesFormatters.Formatters[value.GetType()](value)},");
             };
 
             string sqlString2 = $@"INSERT INTO {tableName} ({dynamicColumns.ToString().TrimEnd(',')}) VALUES ({dynamicValues.ToString().TrimEnd(',')});";

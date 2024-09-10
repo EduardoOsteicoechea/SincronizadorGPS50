@@ -8,7 +8,7 @@ namespace SincronizadorGPS50
 		public int? IMP_ID { get; set; }
 		public string IMP_TIPO { get; set; }
 		public string IMP_NOMBRE { get; set; }
-		public string IMP_VALOR { get; set; }
+		public System.Decimal IMP_VALOR { get; set; }
 		public string IMP_SUBCTA_CONTABLE { get; set; }
 		public string IMP_SUBCTA_CONTABLE_2 { get; set; }
 
@@ -16,12 +16,12 @@ namespace SincronizadorGPS50
       // Sage50 fields
       public string NOMBRE { get; set; }
 
-      public string IVA { get; set; }
+      public decimal IVA { get; set; }
       public string CTA_IV_REP { get; set; }
       public string CTA_IV_SOP { get; set; }
 
-      public string IRPF { get; set; }
-      public string RETENCION { get; set; }
+      //public decimal IRPF { get; set; }
+      public decimal RETENCION { get; set; }
       public string CTA_RE_REP { get; set; }
       public string CTA_RE_SOP { get; set; }
 

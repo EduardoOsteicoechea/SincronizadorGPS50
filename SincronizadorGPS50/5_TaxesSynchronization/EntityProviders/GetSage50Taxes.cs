@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
@@ -22,14 +23,19 @@ namespace SincronizadorGPS50
       {
          try
          {
-            string sqlString1 = $@"
-                SELECT 
-                    guid_id,
-                    iva,
-                    nombre,
-                    cta_iv_rep,
-                    cta_iv_sop
-                FROM {DB.SQLDatabase("gestion","tipo_iva")}";
+            string sqlString1DatabaseName = DB.SQLDatabase("gestion","tipo_iva").ToString();
+            string sqlString1 = $@"SELECT 
+               *
+            FROM {sqlString1DatabaseName};";            
+            //string sqlString1 = $@"SELECT 
+            //   [GUID_ID], 
+            //   [IVA], 
+            //   [NOMBRE], 
+            //   [CTA_IV_REP], 
+            //   [CTA_IV_SOP] 
+            //FROM {sqlString1DatabaseName};";
+
+            //MessageBox.Show(sqlString1);
 
             DataTable table1 = new DataTable();
 
@@ -41,11 +47,12 @@ namespace SincronizadorGPS50
                {
                   Sage50TaxModel sage50Entity = new Sage50TaxModel();
 
-                  sage50Entity.GUID_ID = table1.Rows[i].ItemArray[0].ToString().Trim();
-                  sage50Entity.IVA = table1.Rows[i].ItemArray[2].ToString().Trim();
-                  sage50Entity.NOMBRE = table1.Rows[i].ItemArray[3].ToString().Trim();
-                  sage50Entity.CTA_IV_REP = table1.Rows[i].ItemArray[5].ToString().Trim();
-                  sage50Entity.CTA_IV_SOP = table1.Rows[i].ItemArray[6].ToString().Trim();
+                  sage50Entity.GUID_ID = table1.Rows[i].ItemArray[24].ToString().Trim();
+                  sage50Entity.IVA = Convert.ToDecimal(table1.Rows[i].ItemArray[2]);
+                  sage50Entity.NOMBRE = table1.Rows[i].ItemArray[1].ToString().Trim();
+                  sage50Entity.CTA_IV_REP = table1.Rows[i].ItemArray[4].ToString().Trim();
+                  sage50Entity.CTA_IV_SOP = table1.Rows[i].ItemArray[5].ToString().Trim();
+                  sage50Entity.TAX_TYPE = "IVA";
 
                   Entities.Add(sage50Entity);
                };
@@ -54,12 +61,11 @@ namespace SincronizadorGPS50
             string sqlString2 = $@"
                 SELECT 
                     guid_id,
-                    irpf,
                     nombre,
                     retencion,
                     cta_re_rep,
                     cta_re_sop
-                FROM {DB.SQLDatabase("gestion","tipo_ret")}";
+                FROM {DB.SQLDatabase("gestion","tipo_ret")};";
 
             DataTable table2 = new DataTable();
 
@@ -72,11 +78,11 @@ namespace SincronizadorGPS50
                   Sage50TaxModel sage50Entity = new Sage50TaxModel();
 
                   sage50Entity.GUID_ID = table2.Rows[i].ItemArray[0].ToString().Trim();
-                  sage50Entity.IRPF = table2.Rows[i].ItemArray[2].ToString().Trim();
-                  sage50Entity.NOMBRE = table2.Rows[i].ItemArray[3].ToString().Trim();
-                  sage50Entity.RETENCION = table2.Rows[i].ItemArray[4].ToString().Trim();
-                  sage50Entity.CTA_RE_REP = table2.Rows[i].ItemArray[5].ToString().Trim();
-                  sage50Entity.CTA_RE_SOP = table2.Rows[i].ItemArray[6].ToString().Trim();
+                  sage50Entity.NOMBRE = table2.Rows[i].ItemArray[1].ToString().Trim();
+                  sage50Entity.RETENCION = Convert.ToDecimal(table2.Rows[i].ItemArray[2].ToString().Trim());
+                  sage50Entity.CTA_RE_REP = table2.Rows[i].ItemArray[3].ToString().Trim();
+                  sage50Entity.CTA_RE_SOP = table2.Rows[i].ItemArray[4].ToString().Trim();
+                  sage50Entity.TAX_TYPE = "IRPF";
 
                   Entities.Add(sage50Entity);
                };

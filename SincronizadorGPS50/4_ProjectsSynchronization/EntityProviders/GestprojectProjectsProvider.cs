@@ -15,8 +15,7 @@ namespace SincronizadorGPS50
       public List<GestprojectProviderModel> Get(System.Data.SqlClient.SqlConnection connection, GestprojectEntityProviderDelegate<GestprojectProviderModel> entityProviderDelegate) 
       {
          try
-         {
-            
+         {            
             return entityProviderDelegate();
          }
          catch(System.Exception exception)

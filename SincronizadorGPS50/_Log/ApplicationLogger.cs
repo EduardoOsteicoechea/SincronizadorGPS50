@@ -9,7 +9,7 @@ namespace SincronizadorGPS50
    {
       public static System.Exception ReportError(string namespaceName, string className, string methodName, System.Exception exception, string exceptionShortDescription = "Failed to end the methods execution successfully.")
       {
-         string exceptionLocation = $"\n\nAt:\n\n{namespaceName}\n.{className}\n.{methodName}:\n\n{exception.Message}";
+         string exceptionLocation = $"At:\n\n{namespaceName}\n.{className}\n.{methodName}:\n\n{exception.Message}";
          try
          {
             string assemblyLocation = Assembly.GetExecutingAssembly().Location;
@@ -26,7 +26,7 @@ namespace SincronizadorGPS50
          }
          catch(Exception errorLogException)
          {
-            MessageBox.Show("Failed to write to the log file:" + errorLogException.Message);
+            MessageBox.Show($"Error {errorLogException.Message}");
             throw new Exception($"{exceptionLocation}");
          };
       }

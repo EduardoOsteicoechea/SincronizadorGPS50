@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
@@ -25,8 +26,10 @@ namespace SincronizadorGPS50
                FROM 
                   {tableName}
                WHERE 
-                  {condition.columnName}={condition.value}
+                  {condition.columnName}={DynamicValuesFormatters.Formatters[condition.value.GetType()](condition.value)}
             ";
+
+            //MessageBox.Show(sqlString);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {

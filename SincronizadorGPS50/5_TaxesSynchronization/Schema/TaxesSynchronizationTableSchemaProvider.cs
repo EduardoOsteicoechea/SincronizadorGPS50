@@ -11,6 +11,7 @@ namespace SincronizadorGPS50
       // The following static fields are necessary because properties aren't callable in other properties.
       // Keep the "ColumnsTuplesItemsProvider" as an exact copy of it's corresponding property.
 
+      public string TableName { get; set; } = "INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_TAXES";
 
       static List<(string columnName, string friendlyName, Type columnType, string columnDefinition)> ColumnsTuplesItemsProvider = new List<(string, string, Type, string)>()
       {
@@ -20,18 +21,17 @@ namespace SincronizadorGPS50
          ("IMP_ID", $"Id en Gestproject", typeof(int), "INT"),
          ("IMP_TIPO", "Tipo de impuesto en Gestproject", typeof(string), "VARCHAR(MAX)"),
          ("IMP_NOMBRE", "Nombre en Gestproject", typeof(string), "VARCHAR(MAX)"),
-         ("IMP_VALOR", "Valor en Gestproject", typeof(string), "VARCHAR(MAX)"),
-         ("IMP_SUBCTA_CONTABLE", "CC Repercutida", typeof(string), "VARCHAR(MAX)"),
-         ("IMP_SUBCTA_CONTABLE_2", "CC Soportada", typeof(string), "VARCHAR(MAX)"),
+         ("IMP_VALOR", "Valor en Gestproject", typeof(decimal), "DECIMAL(18,2)"),
+         ("IMP_SUBCTA_CONTABLE", "Subcuenta contable", typeof(string), "VARCHAR(MAX)"),
+         ("IMP_SUBCTA_CONTABLE_2", "Subcuenta contable 2", typeof(string), "VARCHAR(MAX)"),
 
          ("NOMBRE", "Nombre de impuesto en Sage50", typeof(string), "VARCHAR(MAX)"),
 
-         ("IVA", "IVA", typeof(float), "DECIMAL(18,2)"),
+         ("IVA", "IVA", typeof(decimal), "DECIMAL(18,2)"),
          ("CTA_IV_REP", "CTA_IV_REP", typeof(string), "VARCHAR(MAX)"),
          ("CTA_IV_SOP", "CTA_IV_SOP", typeof(string), "VARCHAR(MAX)"),
 
-         ("IRPF", "IRPF", typeof(float), "DECIMAL(18,2)"),
-         ("RETENCION", "Provincia", typeof(string), "VARCHAR(MAX)"),
+         ("RETENCION", "Retención", typeof(decimal), "DECIMAL(18,2)"),
          ("CTA_RE_REP", "CTA_RE_REP", typeof(string), "VARCHAR(MAX)"),
          ("CTA_RE_SOP", "CTA_RE_SOP", typeof(string), "VARCHAR(MAX)"),
 
@@ -50,7 +50,6 @@ namespace SincronizadorGPS50
          ("COMMENTS", "Comentarios", typeof(string), "VARCHAR(MAX)"),
       };
 
-      public string TableName { get; set; } = "INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROJECTS";
       public List<(string columnName, string friendlyName, Type columnType, string columnDefinition)> ColumnsTuplesList { get; set; } = new List<(string, string, Type, string)>()
       {
          ("ID", "Id de Sincronización", typeof(int), "INT PRIMARY KEY IDENTITY(1,1)"),
@@ -59,18 +58,17 @@ namespace SincronizadorGPS50
          ("IMP_ID", $"Id en Gestproject", typeof(int), "INT"),
          ("IMP_TIPO", "Tipo de impuesto en Gestproject", typeof(string), "VARCHAR(MAX)"),
          ("IMP_NOMBRE", "Nombre en Gestproject", typeof(string), "VARCHAR(MAX)"),
-         ("IMP_VALOR", "Valor en Gestproject", typeof(string), "VARCHAR(MAX)"),
+         ("IMP_VALOR", "Valor en Gestproject", typeof(decimal), "DECIMAL(18,2)"),
          ("IMP_SUBCTA_CONTABLE", "Subcuenta contable", typeof(string), "VARCHAR(MAX)"),
          ("IMP_SUBCTA_CONTABLE_2", "Subcuenta contable 2", typeof(string), "VARCHAR(MAX)"),
 
          ("NOMBRE", "Nombre de impuesto en Sage50", typeof(string), "VARCHAR(MAX)"),
 
-         ("IVA", "IVA", typeof(float), "VARCHAR(MAX)"),
+         ("IVA", "IVA", typeof(decimal), "DECIMAL(18,2)"),
          ("CTA_IV_REP", "CTA_IV_REP", typeof(string), "VARCHAR(MAX)"),
          ("CTA_IV_SOP", "CTA_IV_SOP", typeof(string), "VARCHAR(MAX)"),
 
-         ("IRPF", "IRPF", typeof(float), "VARCHAR(MAX)"),
-         ("RETENCION", "Provincia", typeof(string), "VARCHAR(MAX)"),
+         ("RETENCION", "Retención", typeof(decimal), "DECIMAL(18,2)"),
          ("CTA_RE_REP", "CTA_RE_REP", typeof(string), "VARCHAR(MAX)"),
          ("CTA_RE_SOP", "CTA_RE_SOP", typeof(string), "VARCHAR(MAX)"),
 
@@ -127,7 +125,7 @@ namespace SincronizadorGPS50
          ("IMP_ID", typeof(int)),
          ("IMP_TIPO", typeof(string)),
          ("IMP_NOMBRE", typeof(string)),
-         ("IMP_VALOR", typeof(string)),
+         ("IMP_VALOR", typeof(decimal)),
          ("IMP_SUBCTA_CONTABLE", typeof(string)),
          ("IMP_SUBCTA_CONTABLE_2", typeof(string)),
       };
@@ -216,86 +214,80 @@ namespace SincronizadorGPS50
          ColumnsTuplesItemsProvider.ElementAt(11).columnType,
          ColumnsTuplesItemsProvider.ElementAt(11).columnDefinition
       );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Irpf { get; set; } = (
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Withholding { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(12).columnName,
          ColumnsTuplesItemsProvider.ElementAt(12).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(12).columnType,
          ColumnsTuplesItemsProvider.ElementAt(12).columnDefinition
       );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Withholding { get; set; } = (
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CtaReRep { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(13).columnName,
          ColumnsTuplesItemsProvider.ElementAt(13).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(13).columnType,
          ColumnsTuplesItemsProvider.ElementAt(13).columnDefinition
       );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CtaReRep { get; set; } = (
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CtaReSop { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(14).columnName,
          ColumnsTuplesItemsProvider.ElementAt(14).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(14).columnType,
          ColumnsTuplesItemsProvider.ElementAt(14).columnDefinition
       );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CtaReSop { get; set; } = (
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) TaxType { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(15).columnName,
          ColumnsTuplesItemsProvider.ElementAt(15).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(15).columnType,
          ColumnsTuplesItemsProvider.ElementAt(15).columnDefinition
       );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) TaxType { get; set; } = (
+
+
+
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Sage50GuidId { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(16).columnName,
          ColumnsTuplesItemsProvider.ElementAt(16).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(16).columnType,
          ColumnsTuplesItemsProvider.ElementAt(16).columnDefinition
       );
-
-
-
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Sage50GuidId { get; set; } = (
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupName { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(17).columnName,
          ColumnsTuplesItemsProvider.ElementAt(17).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(17).columnType,
          ColumnsTuplesItemsProvider.ElementAt(17).columnDefinition
       );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupName { get; set; } = (
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupCode { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(18).columnName,
          ColumnsTuplesItemsProvider.ElementAt(18).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(18).columnType,
          ColumnsTuplesItemsProvider.ElementAt(18).columnDefinition
       );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupCode { get; set; } = (
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupMainCode { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(19).columnName,
          ColumnsTuplesItemsProvider.ElementAt(19).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(19).columnType,
          ColumnsTuplesItemsProvider.ElementAt(19).columnDefinition
       );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupMainCode { get; set; } = (
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupGuidId { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(20).columnName,
          ColumnsTuplesItemsProvider.ElementAt(20).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(20).columnType,
          ColumnsTuplesItemsProvider.ElementAt(20).columnDefinition
       );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) CompanyGroupGuidId { get; set; } = (
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) LastUpdate { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(21).columnName,
          ColumnsTuplesItemsProvider.ElementAt(21).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(21).columnType,
          ColumnsTuplesItemsProvider.ElementAt(21).columnDefinition
       );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) LastUpdate { get; set; } = (
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) ParentUserId { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(22).columnName,
          ColumnsTuplesItemsProvider.ElementAt(22).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(22).columnType,
          ColumnsTuplesItemsProvider.ElementAt(22).columnDefinition
       );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) ParentUserId { get; set; } = (
+      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Comments { get; set; } = (
          ColumnsTuplesItemsProvider.ElementAt(23).columnName,
          ColumnsTuplesItemsProvider.ElementAt(23).friendlyName,
          ColumnsTuplesItemsProvider.ElementAt(23).columnType,
          ColumnsTuplesItemsProvider.ElementAt(23).columnDefinition
-      );
-      public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition) Comments { get; set; } = (
-         ColumnsTuplesItemsProvider.ElementAt(24).columnName,
-         ColumnsTuplesItemsProvider.ElementAt(24).friendlyName,
-         ColumnsTuplesItemsProvider.ElementAt(24).columnType,
-         ColumnsTuplesItemsProvider.ElementAt(24).columnDefinition
       );
 
 

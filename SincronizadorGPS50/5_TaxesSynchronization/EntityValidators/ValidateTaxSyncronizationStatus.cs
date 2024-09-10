@@ -41,12 +41,12 @@ namespace SincronizadorGPS50
                         gestprojectEntity.COMMENTS += this.CreateErrorMesage(entityNameColumnName, sage50EntityList[i].NOMBRE);
                      };
 
-                     if(sage50EntityList[i].IVA.Trim() != gestprojectEntity.IMP_VALOR.Trim())
+                     if(sage50EntityList[i].IVA != gestprojectEntity.IMP_VALOR)
                      {
                         NeverWasSynchronized = false;
                         IsSynchronized = false;
                         MustBeDeleted = false;
-                        gestprojectEntity.COMMENTS += this.CreateErrorMesage(entityPostalCodeColumnName, sage50EntityList[i].IVA.Trim());
+                        gestprojectEntity.COMMENTS += this.CreateErrorMesage(entityPostalCodeColumnName, sage50EntityList[i].IVA.ToString());
                      };
 
                      if(sage50EntityList[i].CTA_IV_REP.Trim() != gestprojectEntity.IMP_SUBCTA_CONTABLE.Trim())
@@ -69,7 +69,7 @@ namespace SincronizadorGPS50
                      (
                         sage50EntityList[i].NOMBRE.Trim() == gestprojectEntity.IMP_NOMBRE.Trim()
                         &&
-                        sage50EntityList[i].IVA.Trim() == gestprojectEntity.IMP_VALOR.Trim()
+                        sage50EntityList[i].IVA == gestprojectEntity.IMP_VALOR
                         &&
                         sage50EntityList[i].CTA_IV_REP.Trim() == gestprojectEntity.IMP_SUBCTA_CONTABLE.Trim()
                         &&

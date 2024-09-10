@@ -2377,3 +2377,2931 @@ Type mismatch: Expected System.String, but got System.Decimal at iteration "3". 
 
 
 --------------------------------------------------
+Date: 2024-09-10 01:29:02.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Decimal at iteration "3". The value was: "5,0000".
+Short Description: Error processing ordinal 3 (expected System.String).
+Message: Type mismatch: Expected System.String, but got System.Decimal at iteration "3". The value was: "5,0000"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:29:07.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Decimal at iteration "3". The value was: "5,0000".
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Decimal at iteration "3". The value was: "5,0000"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:29:24.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Decimal at iteration "3". The value was: "5,0000".
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Decimal at iteration "3". The value was: "5,0000"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:32:30.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Decimal at iteration "3". The value was: "5,0000".
+Short Description: Error processing ordinal 3 (expected System.String).
+Message: Type mismatch: Expected System.String, but got System.Decimal at iteration "3". The value was: "5,0000"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:33:46.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA".
+Short Description: Error processing ordinal 1 (expected System.Single).
+Message: Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:34:30.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA".
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:37:41.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+El método especificado no es compatible..
+Short Description: Error processing ordinal 1 (expected System.Single).
+Message: El método especificado no es compatible.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:37:47.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+El método especificado no es compatible..
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+El método especificado no es compatible.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:38:19.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+El método especificado no es compatible..
+Short Description: Error processing ordinal 1 (expected System.Single).
+Message: El método especificado no es compatible.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:38:20.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+El método especificado no es compatible..
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+El método especificado no es compatible.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:38:22.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+El método especificado no es compatible..
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+El método especificado no es compatible.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:40:00.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA" and the column name: "System.Data.DataRow".
+Short Description: Error processing ordinal 1 (expected System.Single).
+Message: Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA" and the column name: "System.Data.DataRow"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:40:24.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA" and the column name: "ColumnOrdinal".
+Short Description: Error processing ordinal 1 (expected System.Single).
+Message: Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA" and the column name: "ColumnOrdinal"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:41:47.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA" and the column name: "ColumnOrdinal".
+Short Description: Error processing ordinal 1 (expected System.Single).
+Message: Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA" and the column name: "ColumnOrdinal"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:42:09.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA" and the column name: "ColumnOrdinal".
+Short Description: Error processing ordinal 1 (expected System.Single).
+Message: Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA" and the column name: "ColumnOrdinal"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:45:54.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA" and the column name: "IMP_TIPO".
+Short Description: Error processing ordinal 1 (expected System.Single).
+Message: Type mismatch: Expected System.Single, but got System.String at iteration "1". The value was: "IVA" and the column name: "IMP_TIPO"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:47:05.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Decimal at iteration "3". The value was: "5,0000" and the column name: "IMP_VALOR".
+Short Description: Error processing ordinal 3 (expected System.String).
+Message: Type mismatch: Expected System.String, but got System.Decimal at iteration "3". The value was: "5,0000" and the column name: "IMP_VALOR"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:47:52.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Single, but got System.Decimal at iteration "3". The value was: "5,0000" and the column name: "IMP_VALOR".
+Short Description: Error processing ordinal 3 (expected System.Single).
+Message: Type mismatch: Expected System.Single, but got System.Decimal at iteration "3". The value was: "5,0000" and the column name: "IMP_VALOR"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:48:59.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Single, but got System.Decimal at iteration "3". The value was: "5,0000" and the column name: "IMP_VALOR".
+Short Description: Error processing ordinal 3 (expected System.Single).
+Message: Type mismatch: Expected System.Single, but got System.Decimal at iteration "3". The value was: "5,0000" and the column name: "IMP_VALOR"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:51:07.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel", please check the data schema you're using..
+Short Description: Failed to end the methods execution successfully..
+Message: Unallowed type "Decimal" on "GestprojectTaxModel", please check the data schema you're using.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:51:47.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Double, but got System.Decimal at iteration "3". The value was: "5,0000" and the column name: "IMP_VALOR".
+Short Description: Error processing ordinal 3 (expected System.Double).
+Message: Type mismatch: Expected System.Double, but got System.Decimal at iteration "3". The value was: "5,0000" and the column name: "IMP_VALOR"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:53:23.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.Double, but got System.Decimal at iteration "3". The value was: "5,0000" and the column name: "IMP_VALOR".
+Short Description: Error processing ordinal 3 (expected System.Double).
+Message: Type mismatch: Expected System.Double, but got System.Decimal at iteration "3". The value was: "5,0000" and the column name: "IMP_VALOR"
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:54:03.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:54:09.
+Location: 
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: 
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:54:45.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:54:50.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:55:37.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:56:18.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:57:18.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 01:58:51.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:00:49.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:00:54.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:04:00.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:05:09.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:06:48.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.Decimal' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:11:18.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel", please check the data schema you're using..
+Short Description: Failed to end the methods execution successfully..
+Message: Unallowed type "Decimal" on "GestprojectTaxModel", please check the data schema you're using.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:11:48.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel", please check the data schema you're using..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel", please check the data schema you're using.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:13:28.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel", please check the data schema you're using..
+Short Description: Failed to end the methods execution successfully..
+Message: Unallowed type "Decimal" on "GestprojectTaxModel", please check the data schema you're using.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:14:29.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel", please check the data schema you're using..
+Short Description: Failed to end the methods execution successfully..
+Message: Unallowed type "Decimal" on "GestprojectTaxModel", please check the data schema you're using.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:16:17.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using..
+Short Description: Failed to end the methods execution successfully..
+Message: Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:20:24.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using..
+Short Description: Failed to end the methods execution successfully..
+Message: Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:23:06.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using..
+Short Description: Failed to end the methods execution successfully..
+Message: Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:24:57.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using..
+Short Description: Failed to end the methods execution successfully..
+Message: Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:27:01.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using..
+Short Description: Failed to end the methods execution successfully..
+Message: Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:32:10.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using..
+Short Description: Failed to end the methods execution successfully..
+Message: Unallowed type "Decimal" on "GestprojectTaxModel" on property "IMP_VALOR", please check the data schema you're using.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:33:19.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:35:08.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:35:55.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:35:57.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:35:59.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:39:32.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:43:11.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:44:15.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:44:31.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:57:16.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:57:29.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-10 02:58:31.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:01:52.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:01:56.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:02:45.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:05:04.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:05:05.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:05:07.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:05:08.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:05:09.
+Location: At:
+
+SincronizadorGPS50
+.TaxesSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:06:26.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:06:28.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:06:29.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:08:12.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:08:48.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:09:10.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:55:58.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:58:00.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:58:54.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 03:58:58.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:00:17.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:01:37.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:06:45.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:06:48.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:08:54.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:12:12.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:13:10.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:13:12.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:21:52.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+La clave proporcionada no se encontró en el diccionario..
+Short Description: Failed to end the methods execution successfully..
+Message: La clave proporcionada no se encontró en el diccionario.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:22:40.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+La clave proporcionada no se encontró en el diccionario..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+La clave proporcionada no se encontró en el diccionario.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:25:54.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+La clave proporcionada no se encontró en el diccionario..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+La clave proporcionada no se encontró en el diccionario.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:31:04.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+La clave proporcionada no se encontró en el diccionario..
+Short Description: Failed to end the methods execution successfully..
+Message: La clave proporcionada no se encontró en el diccionario.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:32:53.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+La clave proporcionada no se encontró en el diccionario..
+Short Description: Failed to end the methods execution successfully..
+Message: La clave proporcionada no se encontró en el diccionario.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:37:31.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+La clave proporcionada no se encontró en el diccionario..
+Short Description: Failed to end the methods execution successfully..
+Message: La clave proporcionada no se encontró en el diccionario.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:40:38.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+La clave proporcionada no se encontró en el diccionario..
+Short Description: Failed to end the methods execution successfully..
+Message: La clave proporcionada no se encontró en el diccionario.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:42:15.
+Location: At:
+
+SincronizadorGPS50
+.RegisterEntity
+..ctor:
+
+There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement..
+Short Description: Failed to end the methods execution successfully..
+Message: There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:45:33.
+Location: At:
+
+SincronizadorGPS50
+.RegisterEntity
+..ctor:
+
+There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement..
+Short Description: Failed to end the methods execution successfully..
+Message: There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:45:48.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+At:
+
+SincronizadorGPS50
+.RegisterEntity
+..ctor:
+
+There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.RegisterEntity
+..ctor:
+
+There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:45:49.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+At:
+
+SincronizadorGPS50
+.RegisterEntity
+..ctor:
+
+There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+At:
+
+SincronizadorGPS50
+.RegisterEntity
+..ctor:
+
+There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:49:06.
+Location: At:
+
+SincronizadorGPS50
+.RegisterEntity
+..ctor:
+
+Error converting data type varchar to numeric..
+Short Description: Failed to end the methods execution successfully..
+Message: Error converting data type varchar to numeric.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:51:29.
+Location: At:
+
+SincronizadorGPS50
+.RegisterEntity
+..ctor:
+
+Error converting data type varchar to numeric..
+Short Description: Failed to end the methods execution successfully..
+Message: Error converting data type varchar to numeric.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:54:07.
+Location: At:
+
+SincronizadorGPS50
+.UpdateEntity
+..ctor:
+
+La clave proporcionada no se encontró en el diccionario..
+Short Description: Failed to end the methods execution successfully..
+Message: La clave proporcionada no se encontró en el diccionario.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:54:23.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.UpdateEntity:
+
+At:
+
+SincronizadorGPS50
+.UpdateEntity
+..ctor:
+
+La clave proporcionada no se encontró en el diccionario..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UpdateEntity
+..ctor:
+
+La clave proporcionada no se encontró en el diccionario.
+
+
+--------------------------------------------------
+Date: 2024-09-10 04:56:19.
+Location: At:
+
+SincronizadorGPS50
+.UpdateEntity
+..ctor:
+
+Incorrect syntax near '='..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near '='.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:07:20.
+Location: At:
+
+SincronizadorGPS50
+.UpdateEntity
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:07:28.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.UpdateEntity:
+
+At:
+
+SincronizadorGPS50
+.UpdateEntity
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UpdateEntity
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:07:32.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.UpdateEntity:
+
+At:
+
+SincronizadorGPS50
+.UpdateEntity
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.UpdateEntity:
+
+At:
+
+SincronizadorGPS50
+.UpdateEntity
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:08:51.
+Location: At:
+
+SincronizadorGPS50
+.UpdateEntity
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:51:00.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:51:01.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:51:03.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:51:03.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:51:04.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:51:05.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:51:05.
+Location: At:
+
+SincronizadorGPS50
+.TaxesSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:51:25.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Invalid column name 'S50_GUID_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'S50_GUID_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:53:10.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:54:07.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 05:54:17.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:02:55.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:02:56.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:03:24.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesManager
+.GetEntities:
+
+Invalid column name 'S50_GUID_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'S50_GUID_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:05:25.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GetAndStoreGestprojectEntities:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:11:51.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GetAndStoreGestprojectEntities:
+
+Incorrect syntax near 'exento'.
+The floating point value '8E79886' is out of the range of computer representation (8 bytes).
+The floating point value '3334E846365' is out of the range of computer representation (8 bytes)..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near 'exento'.
+The floating point value '8E79886' is out of the range of computer representation (8 bytes).
+The floating point value '3334E846365' is out of the range of computer representation (8 bytes).
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:12:39.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GetAndStoreGestprojectEntities:
+
+Incorrect syntax near 'exento'.
+The floating point value '8E79886' is out of the range of computer representation (8 bytes).
+The floating point value '3334E846365' is out of the range of computer representation (8 bytes)..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near 'exento'.
+The floating point value '8E79886' is out of the range of computer representation (8 bytes).
+The floating point value '3334E846365' is out of the range of computer representation (8 bytes).
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:15:56.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GetAndStoreGestprojectEntities:
+
+There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement..
+Short Description: Failed to end the methods execution successfully..
+Message: There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:24:33.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GetAndStoreGestprojectEntities:
+
+Incorrect syntax near '0'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near '0'.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:26:55.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:29:42.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:30:03.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:30:04.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:30:39.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:31:58.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:32:00.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:34:15.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:35:28.
+Location: At:
+
+SincronizadorGPS50
+.WasEntityRegistered
+..ctor:
+
+Incorrect syntax near '='..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near '='.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:36:37.
+Location: At:
+
+SincronizadorGPS50
+.WasEntityRegistered
+..ctor:
+
+The floating point value '8E79886' is out of the range of computer representation (8 bytes).
+Incorrect syntax near 'D'.
+The floating point value '3334E846365' is out of the range of computer representation (8 bytes)..
+Short Description: Failed to end the methods execution successfully..
+Message: The floating point value '8E79886' is out of the range of computer representation (8 bytes).
+Incorrect syntax near 'D'.
+The floating point value '3334E846365' is out of the range of computer representation (8 bytes).
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:36:46.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.DetermineEntityWorkflow:
+
+At:
+
+SincronizadorGPS50
+.WasEntityRegistered
+..ctor:
+
+The floating point value '8E79886' is out of the range of computer representation (8 bytes).
+Incorrect syntax near 'D'.
+The floating point value '3334E846365' is out of the range of computer representation (8 bytes)..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.WasEntityRegistered
+..ctor:
+
+The floating point value '8E79886' is out of the range of computer representation (8 bytes).
+Incorrect syntax near 'D'.
+The floating point value '3334E846365' is out of the range of computer representation (8 bytes).
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:38:39.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:40:57.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:40:59.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:43:51.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:44:55.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:46:14.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-10 06:52:51.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GetAndStoreGestprojectEntities:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ')'.
+
+
+--------------------------------------------------

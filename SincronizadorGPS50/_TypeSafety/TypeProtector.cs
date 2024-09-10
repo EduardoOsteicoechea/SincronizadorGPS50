@@ -1,6 +1,7 @@
 ﻿using SincronizadorGPS50.Workflows.Clients;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -27,7 +28,7 @@ namespace SincronizadorGPS50
 
             if(reader.GetFieldType(ordinal) != typeof(T))
             {
-               throw new InvalidOperationException($"Type mismatch: Expected {typeof(T)}, but got {reader.GetFieldType(ordinal)} at iteration \"{ordinal}\". The value was: \"{reader.GetValue(ordinal)}\"");
+               throw new InvalidOperationException($"Type mismatch: Expected {typeof(T)}, but got {reader.GetFieldType(ordinal)} at iteration \"{ordinal}\". The value was: \"{reader.GetValue(ordinal)}\" and the column name: \"{reader.GetSchemaTable().Rows[ordinal]["ColumnName"]}\"");
             };
 
             T value = reader.GetFieldValue<T>(ordinal);

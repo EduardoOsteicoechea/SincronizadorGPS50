@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SincronizadorGPS50.Workflows.Sage50Connection;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Reflection;
 using System.Windows.Forms;
@@ -76,131 +77,203 @@ namespace SincronizadorGPS50
 
       public void AppendSynchronizationTableDataToEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, GestprojectTaxModel entity)
       {
-         new EntitySynchronizationTable<GestprojectTaxModel>().AppendTableDataToEntity
-         (
-            connection,
-            tableSchema.TableName,
-            new List<(string, System.Type)>()
-            {
-               (tableSchema.Id.ColumnDatabaseName, tableSchema.Id.ColumnValueType),
-               (tableSchema.SynchronizationStatus.ColumnDatabaseName, tableSchema.SynchronizationStatus.ColumnValueType),
-               (tableSchema.Sage50Code.ColumnDatabaseName, tableSchema.Sage50Code.ColumnValueType),
-               (tableSchema.Sage50GuidId.ColumnDatabaseName, tableSchema.Sage50GuidId.ColumnValueType),
-               (tableSchema.CompanyGroupName.ColumnDatabaseName, tableSchema.CompanyGroupName.ColumnValueType),
-               (tableSchema.CompanyGroupCode.ColumnDatabaseName, tableSchema.CompanyGroupCode.ColumnValueType),
-               (tableSchema.CompanyGroupMainCode.ColumnDatabaseName, tableSchema.CompanyGroupMainCode.ColumnValueType),
-               (tableSchema.CompanyGroupGuidId.ColumnDatabaseName, tableSchema.CompanyGroupGuidId.ColumnValueType),
-               (tableSchema.LastUpdate.ColumnDatabaseName, tableSchema.LastUpdate.ColumnValueType),
-               (tableSchema.ParentUserId.ColumnDatabaseName, tableSchema.ParentUserId.ColumnValueType),
-               (tableSchema.Comments.ColumnDatabaseName, tableSchema.Comments.ColumnValueType),
-            },
-            (tableSchema.GestprojectId.ColumnDatabaseName,entity.IMP_ID),
-            entity
-         );
+         try
+         {
+            new EntitySynchronizationTable<GestprojectTaxModel>().AppendTableDataToEntity
+            (
+               connection,
+               tableSchema.TableName,
+               tableSchema.SynchronizationFieldsTupleList,
+               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
+               entity
+            );
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
       public void DetermineEntityWorkflow(SqlConnection connection, ISage50ConnectionManager sage50ConnectionManager, ISynchronizationTableSchemaProvider tableSchema, GestprojectTaxModel entity)
       {
-         MustBeRegistered = !new WasEntityRegistered(
-            connection,
-            tableSchema.TableName,
-            tableSchema.GestprojectId.ColumnDatabaseName,
-            (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
-         ).ItIs;
+         try
+         {
+            MustBeRegistered = !new WasEntityRegistered(
+               connection,
+               tableSchema.TableName,
+               tableSchema.GestprojectId.ColumnDatabaseName,
+               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
+            ).ItIs;
 
-         bool registeredInDifferentCompanyGroup =
-         entity.S50_COMPANY_GROUP_GUID_ID != ""
-         &&
-         sage50ConnectionManager.CompanyGroupData.CompanyGuidId != entity.S50_COMPANY_GROUP_GUID_ID;
+            bool registeredInDifferentCompanyGroup =
+            entity.S50_COMPANY_GROUP_GUID_ID != ""
+            &&
+            sage50ConnectionManager.CompanyGroupData.CompanyGuidId != entity.S50_COMPANY_GROUP_GUID_ID;
 
-         MustBeSkipped = registeredInDifferentCompanyGroup;
+            MustBeSkipped = registeredInDifferentCompanyGroup;
 
-         bool neverSynchronized = entity.S50_COMPANY_GROUP_GUID_ID == "";
+            bool neverSynchronized = entity.S50_COMPANY_GROUP_GUID_ID == "";
 
-         bool synchronizedInThePast =
-         entity.S50_COMPANY_GROUP_GUID_ID != ""
-         &&
-         sage50ConnectionManager.CompanyGroupData.CompanyGuidId == entity.S50_COMPANY_GROUP_GUID_ID;
+            bool synchronizedInThePast =
+            entity.S50_COMPANY_GROUP_GUID_ID != ""
+            &&
+            sage50ConnectionManager.CompanyGroupData.CompanyGuidId == entity.S50_COMPANY_GROUP_GUID_ID;
 
-         MustBeUpdated = neverSynchronized || synchronizedInThePast;
+            MustBeUpdated = neverSynchronized || synchronizedInThePast;
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
       public void RegisterEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, GestprojectTaxModel entity)
       {
-         new RegisterEntity
-         (
-            connection,
-            tableSchema.TableName,
-            new List<(string, dynamic)>(){
-               (tableSchema.SynchronizationStatus.ColumnDatabaseName, SynchronizationStatusOptions.Desincronizado),
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
-               (tableSchema.Name.ColumnDatabaseName, entity.IMP_TIPO),
-               (tableSchema.Address.ColumnDatabaseName, entity.IMP_NOMBRE),
-               (tableSchema.PostalCode.ColumnDatabaseName, entity.IMP_VALOR),
-               (tableSchema.Locality.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE),
-               (tableSchema.Province.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE_2)
-            }
-         );
+         try
+         {
+            new RegisterEntity
+            (
+               connection,
+               tableSchema.TableName,
+               new List<(string, dynamic)>()
+               {
+                  (tableSchema.SynchronizationStatus.ColumnDatabaseName, SynchronizationStatusOptions.Desincronizado),
+                  (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
+                  (tableSchema.GestprojectType.ColumnDatabaseName, entity.IMP_TIPO),
+                  (tableSchema.GestprojectName.ColumnDatabaseName, entity.IMP_NOMBRE),
+                  (tableSchema.GestprojectValue.ColumnDatabaseName, entity.IMP_VALOR),
+                  (tableSchema.AccountableSubaccount.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE),
+                  (tableSchema.AccountableSubaccount2.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE_2)
+               }
+            );
 
-         AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
+            AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
       public void UpdateEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, GestprojectTaxModel entity)
       {
-         new UpdateEntity
-         (
-            connection,
-            tableSchema.TableName,
-            new List<(string, dynamic)>(){
-               (tableSchema.SynchronizationStatus.ColumnDatabaseName, entity.SYNC_STATUS),
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
-               (tableSchema.Name.ColumnDatabaseName, entity.IMP_TIPO),
-               (tableSchema.Address.ColumnDatabaseName, entity.IMP_NOMBRE),
-               (tableSchema.PostalCode.ColumnDatabaseName, entity.IMP_VALOR),
-               (tableSchema.Locality.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE),
-               (tableSchema.Province.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE_2)
-            },
-            (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
-         );
+         try
+         {
+            new UpdateEntity
+            (
+               connection,
+               tableSchema.TableName,
+               new List<(string, dynamic)>()
+               {
+                  (tableSchema.SynchronizationStatus.ColumnDatabaseName, entity.SYNC_STATUS),
+                  (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
+                  (tableSchema.GestprojectType.ColumnDatabaseName, entity.IMP_TIPO),
+                  (tableSchema.GestprojectName.ColumnDatabaseName, entity.IMP_NOMBRE),
+                  (tableSchema.GestprojectValue.ColumnDatabaseName, entity.IMP_VALOR),
+                  (tableSchema.AccountableSubaccount.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE),
+                  (tableSchema.AccountableSubaccount2.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE_2)
+               },
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
+            );
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
       public void ValidateEntitySynchronizationStatus(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, List<Sage50TaxModel> sage50Entities, GestprojectTaxModel entity)
       {
+         try
+         {
+            ValidateTaxSyncronizationStatus ProviderSyncronizationStatusValidator = new ValidateTaxSyncronizationStatus(
+               entity,
+               sage50Entities,
+               tableSchema.Name.ColumnDatabaseName,
+               tableSchema.PostalCode.ColumnDatabaseName,
+               tableSchema.Address.ColumnDatabaseName,
+               tableSchema.Locality.ColumnDatabaseName,
+               tableSchema.Province.ColumnDatabaseName
+            );
 
-         ValidateTaxSyncronizationStatus ProviderSyncronizationStatusValidator = new ValidateTaxSyncronizationStatus(
-            entity,
-            sage50Entities,
-            tableSchema.Name.ColumnDatabaseName,
-            tableSchema.PostalCode.ColumnDatabaseName,
-            tableSchema.Address.ColumnDatabaseName,
-            tableSchema.Locality.ColumnDatabaseName,
-            tableSchema.Province.ColumnDatabaseName
-         );
-
-         MustBeDeleted = ProviderSyncronizationStatusValidator.MustBeDeleted;
+            MustBeDeleted = ProviderSyncronizationStatusValidator.MustBeDeleted;
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
       public void DeleteEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, List<GestprojectTaxModel> gestprojectEntites, GestprojectTaxModel entity)
       {
-         new DeleteEntityFromSynchronizationTable(
-            connection,
-            tableSchema.TableName,
-            (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
-            (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
-         );
+         try
+         {
+            new DeleteEntityFromSynchronizationTable(
+               connection,
+               tableSchema.TableName,
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
+               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
+            );
 
-         new ClearEntityDataInGestproject(
-            connection,
-            "PROYECTO",
-            new List<string>(){
+            new ClearEntityDataInGestproject(
+               connection,
+               "PROYECTO",
+               new List<string>(){
                tableSchema.AccountableSubaccount.ColumnDatabaseName
-            },
-            (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
-         );
+               },
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
+            );
 
-         ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
+            ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
 
       public void ClearEntitySynchronizationData(GestprojectTaxModel entity, List<(string propertyName, dynamic defaultValue)> entityPropertiesValuesTupleList)
       {
-         for(global::System.Int32 i = 0; i < entityPropertiesValuesTupleList.Count; i++)
+         try
          {
-            typeof(GestprojectTaxModel).GetProperty(entityPropertiesValuesTupleList[i].propertyName).SetValue(entity, entityPropertiesValuesTupleList[i].defaultValue);
+            for(global::System.Int32 i = 0; i < entityPropertiesValuesTupleList.Count; i++)
+            {
+               typeof(GestprojectTaxModel).GetProperty(entityPropertiesValuesTupleList[i].propertyName).SetValue(entity, entityPropertiesValuesTupleList[i].defaultValue);
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
          };
       }
    }
