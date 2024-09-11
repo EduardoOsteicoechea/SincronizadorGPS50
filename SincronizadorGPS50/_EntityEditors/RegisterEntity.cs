@@ -29,17 +29,19 @@ namespace SincronizadorGPS50
                dynamic value = columnsNamesAndValues[i].columnValue;
 
                dynamicColumns.Append($"{name},");
-               dynamicValues.Append($"{DynamicValuesFormatters.Formatters[value.GetType()](value)},");
+               dynamicValues.Append($"{DynamicValuesFormatters.Formatters[value.GetType()](value)},");               
             };
 
             string sqlString2 = $@"INSERT INTO {tableName} ({dynamicColumns.ToString().TrimEnd(',')}) VALUES ({dynamicValues.ToString().TrimEnd(',')});";
 
-            //MessageBox.Show(sqlString2);
+            MessageBox.Show(sqlString2);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString2, connection))
             {
                sqlCommand.ExecuteNonQuery();
             };
+            
+            MessageBox.Show($"Registered {columnsNamesAndValues[3].columnValue}");
          }
          catch(SqlException exception)
          {

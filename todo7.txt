@@ -1,0 +1,27 @@
+IMP_NOMBRE = IMP_TIPO + IMP_VALOR
+IMP_DESCRIPCION = sage.Nombre
+
+Al abrir:
+	- Mostrar tanto impuestos de IMPUESTO_CONFIG Gestproject (sin GUID_ID) como impuestos de Sage (desincronizados)
+	- Añadir comentario a impuestos anteriores (que no serán sincronizados, todos los que no tendrán GUID_ID) ("Estos datos no se sincronizarán con Sage")
+
+Al sincronizar:
+	- Escribir impuestos de sage en IMPUESTO_CONFIG (en sus campos respectivos)
+	- Impuestos anteriores quedan desincronizados siempre
+
+------------------------------------------------
+Facturas emitidas:
+FACTURA_EMITIDA
+DETALLE_FACTURA_EMITIDA
+FACTURA_EMITIDA_SUPLIDO
+
+Factura recibida:
+FACTURA_PROVEEDOR
+DETALLE_FACTURA_PROVEEDOR
+
+
+............................................
+
+Herramientas > Copia de seguridad
+
+

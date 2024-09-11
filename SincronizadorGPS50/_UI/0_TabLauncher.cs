@@ -30,7 +30,7 @@ namespace SincronizadorGPS50
          new ProjectsSynchronizationManager().Launch
          (
             gestprojectConnectionManager,
-            sage50ConnectionManager,
+         sage50ConnectionManager,
             MainWindowUIHolder.ProjectsTab
          );
 

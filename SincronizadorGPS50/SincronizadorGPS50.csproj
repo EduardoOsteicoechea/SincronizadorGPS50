@@ -401,6 +401,7 @@
     <Compile Include="2_ClientsSynchronization\prev\2_CreateSage50Customer - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\2_4_AddClientToUITable.cs" />
     <Compile Include="2_ClientsSynchronization\2_3_ValidateClientSyncronizationStatus.cs" />
+    <Compile Include="5_TaxesSynchronization\1_TaxesDataTableManager - Copy.cs" />
     <Compile Include="5_TaxesSynchronization\1_TaxesDataTableManager.cs" />
     <Compile Include="5_TaxesSynchronization\2_GestprojectTaxesProcessor.cs" />
     <Compile Include="5_TaxesSynchronization\EntityProviders\GestprojectTaxesManager.cs" />
@@ -413,6 +414,7 @@
     <Compile Include="5_TaxesSynchronization\EntitySynchronizers\LinkTaxWorkflow.cs" />
     <Compile Include="5_TaxesSynchronization\EntitySynchronizers\TaxesSynchronizer.cs" />
     <Compile Include="5_TaxesSynchronization\EntityValidators\ValidateTaxSyncronizationStatus.cs" />
+    <Compile Include="5_TaxesSynchronization\EntityValidators\WasTaxRegistered.cs" />
     <Compile Include="5_TaxesSynchronization\Schema\GestprojectTaxModel.cs" />
     <Compile Include="5_TaxesSynchronization\Schema\NewTaxesGestprojectTableSchemaProvider.cs" />
     <Compile Include="5_TaxesSynchronization\Schema\TaxesSynchronizationTableSchemaProvider.cs" />
@@ -429,6 +431,7 @@
     <Compile Include="_EntityEditors\ClearEntitySynchronizationData.cs" />
     <Compile Include="3_ProvidersSynchronization\EntitySynchronizers\CreateSage50Provider.cs" />
     <Compile Include="3_ProvidersSynchronization\EntitySynchronizers\RegisterNewSage50EntityData.cs" />
+    <Compile Include="_TypeSafety\DualConditionGenerator.cs" />
     <Compile Include="_TypeSafety\TypeRevisor.cs" />
     <Compile Include="__prev\_prev_3\ValidateProviderSyncronizationStatus - Copy.cs" />
     <Compile Include="_EntityValidators\WasEntityRegistered.cs" />

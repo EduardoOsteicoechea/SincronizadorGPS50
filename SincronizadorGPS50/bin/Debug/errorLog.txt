@@ -5305,3 +5305,556 @@ Message: Incorrect syntax near ')'.
 
 
 --------------------------------------------------
+Date: 2024-09-10 11:07:38.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Taxes
+..ctor:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-11 04:31:04.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+El operador '==' no se puede aplicar a operandos del tipo 'int' y 'string'.
+Short Description: Failed to end the methods execution successfully..
+Message: El operador '==' no se puede aplicar a operandos del tipo 'int' y 'string'
+
+
+--------------------------------------------------
+Date: 2024-09-11 10:07:25.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ValidateEntitySynchronizationStatus:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-11 10:08:47.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ValidateEntitySynchronizationStatus:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-11 10:18:09.
+Location: At:
+
+SincronizadorGPS50
+.SyncrhonizationDataTableGenerator
+.CreateDataTable:
+
+La columna 'Nombre' ya pertenece a DataTable..
+Short Description: Failed to end the methods execution successfully..
+Message: La columna 'Nombre' ya pertenece a DataTable.
+
+
+--------------------------------------------------
+Date: 2024-09-11 10:19:26.
+Location: At:
+
+SincronizadorGPS50
+.SyncrhonizationDataTableGenerator
+.CreateDataTable:
+
+La columna 'Nombre' ya pertenece a DataTable..
+Short Description: Failed to end the methods execution successfully..
+Message: La columna 'Nombre' ya pertenece a DataTable.
+
+
+--------------------------------------------------
+Date: 2024-09-11 10:30:36.
+Location: At:
+
+SincronizadorGPS50
+.SyncrhonizationDataTableGenerator
+.CreateDataTable:
+
+La columna 'Nombre' ya pertenece a DataTable..
+Short Description: Failed to end the methods execution successfully..
+Message: La columna 'Nombre' ya pertenece a DataTable.
+
+
+--------------------------------------------------
+Date: 2024-09-11 10:30:40.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.SyncrhonizationDataTableGenerator
+.CreateDataTable:
+
+La columna 'Nombre' ya pertenece a DataTable..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SyncrhonizationDataTableGenerator
+.CreateDataTable:
+
+La columna 'Nombre' ya pertenece a DataTable.
+
+
+--------------------------------------------------
+Date: 2024-09-11 10:30:42.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.SyncrhonizationDataTableGenerator
+.CreateDataTable:
+
+La columna 'Nombre' ya pertenece a DataTable..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.SyncrhonizationDataTableGenerator
+.CreateDataTable:
+
+La columna 'Nombre' ya pertenece a DataTable.
+
+
+--------------------------------------------------
+Date: 2024-09-11 10:35:47.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-11 10:35:54.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-11 10:36:46.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.AppendSynchronizationTableDataToEntity:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:03:07.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:03:08.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:03:08.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:03:08.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:07:51.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:10:33.
+Location: At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'IMP_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:10:34.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.DeleteEntity:
+
+At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:11:06.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.DeleteEntity:
+
+At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.DeleteEntity:
+
+At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:11:14.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.DeleteEntity:
+
+At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.DeleteEntity:
+
+At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:12:01.
+Location: At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'IMP_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:12:08.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.DeleteEntity:
+
+At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:12:11.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.DeleteEntity:
+
+At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.DeleteEntity:
+
+At:
+
+SincronizadorGPS50
+.ClearEntityDataInGestproject
+..ctor:
+
+Invalid column name 'IMP_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-11 11:17:43.
+Location: At:
+
+SincronizadorGPS50
+.RegisterEntity
+..ctor:
+
+The column name 'IMP_NOMBRE' is specified more than once in the SET clause or column list of an INSERT. A column cannot be assigned more than one value in the same clause. Modify the clause to make sure that a column is updated only once. If this statement updates or inserts columns into a view, column aliasing can conceal the duplication in your code..
+Short Description: Failed to end the methods execution successfully..
+Message: The column name 'IMP_NOMBRE' is specified more than once in the SET clause or column list of an INSERT. A column cannot be assigned more than one value in the same clause. Modify the clause to make sure that a column is updated only once. If this statement updates or inserts columns into a view, column aliasing can conceal the duplication in your code.
+
+
+--------------------------------------------------

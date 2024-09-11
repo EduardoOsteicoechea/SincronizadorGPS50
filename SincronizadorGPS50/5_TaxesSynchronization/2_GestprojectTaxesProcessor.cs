@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Reflection;
+using System.Text;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50
@@ -13,6 +14,7 @@ namespace SincronizadorGPS50
       public bool MustBeSkipped { get; set; } = false;
       public bool MustBeUpdated { get; set; } = false;
       public bool MustBeDeleted { get; set; } = false;
+      public bool NevesWasSynchronized { get; set; } = false;
 
       public List<GestprojectTaxModel> ProcessEntityList
       (
@@ -36,14 +38,17 @@ namespace SincronizadorGPS50
 
                if(MustBeSkipped)
                {
+                  MessageBox.Show("MustBeSkipped");
                   continue;
                }
                else if(MustBeRegistered)
                {
+                  MessageBox.Show("MustBeRegistered");
                   RegisterEntity(connection, tableSchema, entity);
                }
                else if(MustBeUpdated)
                {
+                  MessageBox.Show("MustBeUpdated");
                   UpdateEntity(connection, tableSchema, entity);
                };
 
@@ -54,7 +59,6 @@ namespace SincronizadorGPS50
                   DeleteEntity(connection, tableSchema, gestprojectEntites, entity);
                   RegisterEntity(connection, tableSchema, entity);
                };
-
 
                UpdateEntity(connection, tableSchema, entity);
 
@@ -85,8 +89,16 @@ namespace SincronizadorGPS50
                tableSchema.TableName,
                tableSchema.SynchronizationFieldsTupleList,
                (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
-               entity
+               entity,               
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
             );
+            
+            //StringBuilder stringBuilder = new StringBuilder();
+            //foreach(var item in entity.GetType().GetProperties())
+            //{
+            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
+            //};
+            //MessageBox.Show(stringBuilder.ToString());
          }
          catch(System.Exception exception)
          {
@@ -102,12 +114,13 @@ namespace SincronizadorGPS50
       {
          try
          {
-            MustBeRegistered = !new WasEntityRegistered(
+            MustBeRegistered = !new WasTaxRegistered(
                connection,
                tableSchema.TableName,
                tableSchema.GestprojectId.ColumnDatabaseName,
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
                (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
-            ).ItIs;
+            ).ItWas;
 
             bool registeredInDifferentCompanyGroup =
             entity.S50_COMPANY_GROUP_GUID_ID != ""
@@ -117,6 +130,7 @@ namespace SincronizadorGPS50
             MustBeSkipped = registeredInDifferentCompanyGroup;
 
             bool neverSynchronized = entity.S50_COMPANY_GROUP_GUID_ID == "";
+            NevesWasSynchronized = neverSynchronized;
 
             bool synchronizedInThePast =
             entity.S50_COMPANY_GROUP_GUID_ID != ""
@@ -124,6 +138,12 @@ namespace SincronizadorGPS50
             sage50ConnectionManager.CompanyGroupData.CompanyGuidId == entity.S50_COMPANY_GROUP_GUID_ID;
 
             MustBeUpdated = neverSynchronized || synchronizedInThePast;
+
+            //MessageBox.Show(
+            //   "MustBeRegistered: " + MustBeRegistered + "\n" +
+            //   "MustBeSkipped: " + MustBeSkipped + "\n" +
+            //   "MustBeUpdated: " + MustBeUpdated + "\n"
+            //);
          }
          catch(System.Exception exception)
          {
@@ -139,6 +159,13 @@ namespace SincronizadorGPS50
       {
          try
          {
+            //StringBuilder stringBuilder = new StringBuilder();
+            //foreach(var item in entity.GetType().GetProperties())
+            //{
+            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
+            //};
+            //MessageBox.Show(stringBuilder.ToString());
+
             new RegisterEntity
             (
                connection,
@@ -149,11 +176,21 @@ namespace SincronizadorGPS50
                   (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
                   (tableSchema.GestprojectType.ColumnDatabaseName, entity.IMP_TIPO),
                   (tableSchema.GestprojectName.ColumnDatabaseName, entity.IMP_NOMBRE),
+                  (tableSchema.GestprojectDescription.ColumnDatabaseName, entity.IMP_DESCRIPCION),
                   (tableSchema.GestprojectValue.ColumnDatabaseName, entity.IMP_VALOR),
                   (tableSchema.AccountableSubaccount.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE),
-                  (tableSchema.AccountableSubaccount2.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE_2)
+                  (tableSchema.AccountableSubaccount2.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE_2),
+                  (tableSchema.Sage50Code.ColumnDatabaseName, entity.S50_CODE ?? ""),
+                  (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID ?? ""),
                }
             );
+            
+            //StringBuilder stringBuilder = new StringBuilder();
+            //foreach(var item in entity.GetType().GetProperties())
+            //{
+            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
+            //};
+            //MessageBox.Show(stringBuilder.ToString());
 
             AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
          }
@@ -185,7 +222,8 @@ namespace SincronizadorGPS50
                   (tableSchema.AccountableSubaccount.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE),
                   (tableSchema.AccountableSubaccount2.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE_2)
                },
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
+               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
             );
          }
          catch(System.Exception exception)
@@ -205,11 +243,11 @@ namespace SincronizadorGPS50
             ValidateTaxSyncronizationStatus ProviderSyncronizationStatusValidator = new ValidateTaxSyncronizationStatus(
                entity,
                sage50Entities,
-               tableSchema.Name.ColumnDatabaseName,
-               tableSchema.PostalCode.ColumnDatabaseName,
-               tableSchema.Address.ColumnDatabaseName,
-               tableSchema.Locality.ColumnDatabaseName,
-               tableSchema.Province.ColumnDatabaseName
+               tableSchema.GestprojectDescription.ColumnDatabaseName,
+               tableSchema.GestprojectValue.ColumnDatabaseName,
+               tableSchema.AccountableSubaccount.ColumnDatabaseName,
+               tableSchema.AccountableSubaccount2.ColumnDatabaseName,
+               NevesWasSynchronized
             );
 
             MustBeDeleted = ProviderSyncronizationStatusValidator.MustBeDeleted;
@@ -228,23 +266,23 @@ namespace SincronizadorGPS50
       {
          try
          {
-            new DeleteEntityFromSynchronizationTable(
-               connection,
-               tableSchema.TableName,
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
-               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
-            );
+            //new DeleteEntityFromSynchronizationTable(
+            //   connection,
+            //   tableSchema.TableName,
+            //   (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
+            //   (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
+            //);
 
-            new ClearEntityDataInGestproject(
-               connection,
-               "PROYECTO",
-               new List<string>(){
-               tableSchema.AccountableSubaccount.ColumnDatabaseName
-               },
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
-            );
+            //new ClearEntityDataInGestproject(
+            //   connection,
+            //   "PROYECTO",
+            //   new List<string>(){
+            //   tableSchema.AccountableSubaccount.ColumnDatabaseName
+            //   },
+            //   (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
+            //);
 
-            ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
+            //ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
          }
          catch(System.Exception exception)
          {

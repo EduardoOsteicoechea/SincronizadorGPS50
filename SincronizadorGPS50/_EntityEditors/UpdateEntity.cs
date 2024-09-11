@@ -14,12 +14,14 @@ namespace SincronizadorGPS50
          System.Data.SqlClient.SqlConnection connection,
          string tableName,
          List<(string columnName, dynamic columnValue)> columnsAndValues,
-         (string columnName, dynamic columnValue) conditionKeyValuePair
+         (string columnName, dynamic value) condition1,
+         (string columnName, dynamic value) condition2 = default
       )
       {
          try
          {
             connection.Open();
+
 
             StringBuilder columnsAndValuesStringBuilder = new StringBuilder();
 
@@ -30,9 +32,35 @@ namespace SincronizadorGPS50
 
                columnsAndValuesStringBuilder.Append($"{name}={DynamicValuesFormatters.Formatters[value.GetType()](value)},");
             };
+            
+            
+            StringBuilder sqlCondition = new StringBuilder();
+            
+            if(condition1.value.GetType() == typeof(string))
+            {
+               if(condition1.value == "")
+               {
+                  sqlCondition.Append($"{condition2.columnName}={DynamicValuesFormatters.Formatters[condition2.value.GetType()](condition2.value)}");
+               }
+               else
+               {
+                  sqlCondition.Append($"{condition1.columnName}={DynamicValuesFormatters.Formatters[condition1.value.GetType()](condition1.value)}");            
+               };
+            }
+            else
+            {
+               if(condition1.value == null || condition1.value == 0)
+               {
+                  sqlCondition.Append($"{condition2.columnName}={DynamicValuesFormatters.Formatters[condition2.value.GetType()](condition2.value)}");
+               }
+               else
+               {
+                  sqlCondition.Append($"{condition1.columnName}={DynamicValuesFormatters.Formatters[condition1.value.GetType()](condition1.value)}");            
+               };
+            };
 
-            StringBuilder conditionStringBuilder = new StringBuilder();
-            conditionStringBuilder.Append($"{conditionKeyValuePair.columnName}={DynamicValuesFormatters.Formatters[conditionKeyValuePair.columnValue.GetType()](conditionKeyValuePair.columnValue)}");
+            //StringBuilder conditionStringBuilder = new StringBuilder();
+            //conditionStringBuilder.Append($"{conditionKeyValuePair.columnName}={DynamicValuesFormatters.Formatters[conditionKeyValuePair.columnValue.GetType()](conditionKeyValuePair.columnValue)}");
 
             string sqlString = $@"
             UPDATE 
@@ -40,10 +68,10 @@ namespace SincronizadorGPS50
             SET
                {columnsAndValuesStringBuilder.ToString().TrimEnd(',')}
             WHERE
-               {conditionStringBuilder.ToString()}
+               {sqlCondition.ToString()}
             ;";
 
-            //MessageBox.Show(sqlString);
+            MessageBox.Show(sqlString);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {

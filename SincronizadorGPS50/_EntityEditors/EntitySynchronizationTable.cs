@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Infragistics.Documents.Excel.ConditionalFormatting;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Reflection;
@@ -15,8 +16,9 @@ namespace SincronizadorGPS50
          SqlConnection connection,
          string tableName,
          List<(string columnName, System.Type columnType)> fieldsToBeRetrieved,
-         (string condition1ColumnName, dynamic condition1Value) condition1Data,
-         T entity
+         (string conditionColumnName, dynamic conditionValue) condition1Data,
+         T entity,
+         (string conditionColumnName, dynamic conditionValue) condition2Data = default
       )
       {
          try
@@ -28,7 +30,35 @@ namespace SincronizadorGPS50
             {
                fieldNamesForSqlStatement += $"{fieldsToBeRetrieved[i].columnName},";
             };
+
             fieldNamesForSqlStatement = fieldNamesForSqlStatement.TrimEnd(',');
+
+            // generate a conditional condition for the sql. This might be necessary if some items come from sage and other from Gestproject at this point of the process. This would imply that some have a Gestproject Id but no Guid_id, and others the reverse. Therefore, it's necessary to generate the sql condition according to which id item has the entity.
+            
+            StringBuilder sqlCondition = new StringBuilder();
+            
+            if(condition1Data.conditionValue.GetType() == typeof(string))
+            {
+               if(condition1Data.conditionValue == "")
+               {
+                  sqlCondition.Append($"{condition2Data.conditionColumnName}={DynamicValuesFormatters.Formatters[condition2Data.conditionValue.GetType()](condition2Data.conditionValue)}");
+               }
+               else
+               {
+                  sqlCondition.Append($"{condition1Data.conditionColumnName}={DynamicValuesFormatters.Formatters[condition1Data.conditionValue.GetType()](condition1Data.conditionValue)}");            
+               };
+            }
+            else
+            {
+               if(condition1Data.conditionValue == null)
+               {
+                  sqlCondition.Append($"{condition2Data.conditionColumnName}={DynamicValuesFormatters.Formatters[condition2Data.conditionValue.GetType()](condition2Data.conditionValue)}");
+               }
+               else
+               {
+                  sqlCondition.Append($"{condition1Data.conditionColumnName}={DynamicValuesFormatters.Formatters[condition1Data.conditionValue.GetType()](condition1Data.conditionValue)}");            
+               };
+            };
 
             string sqlString = $@"
             SELECT
@@ -36,7 +66,7 @@ namespace SincronizadorGPS50
             FROM
                {tableName}
             WHERE
-               {condition1Data.condition1ColumnName}={DynamicValuesFormatters.Formatters[condition1Data.condition1Value.GetType()](condition1Data.condition1Value)}
+               {sqlCondition.ToString()}
             ;";
 
             //MessageBox.Show(sqlString);
@@ -47,7 +77,7 @@ namespace SincronizadorGPS50
                {
                   while(reader.Read())
                   {
-                     Entity = new T(); 
+                     Entity = entity; 
 
                      PropertyInfo[] properties = Entity.GetType().GetProperties();
 
