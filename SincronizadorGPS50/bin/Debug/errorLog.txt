@@ -5858,3 +5858,956 @@ Message: The column name 'IMP_NOMBRE' is specified more than once in the SET cla
 
 
 --------------------------------------------------
+Date: 2024-09-11 17:08:37.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+Invalid object name 'FACTURAS_EMITIDAS'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid object name 'FACTURAS_EMITIDAS'.
+
+
+--------------------------------------------------
+Date: 2024-09-11 17:08:37.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+Invalid object name 'FACTURAS_EMITIDAS'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+Invalid object name 'FACTURAS_EMITIDAS'.
+
+
+--------------------------------------------------
+Date: 2024-09-11 17:08:44.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+Invalid object name 'FACTURAS_EMITIDAS'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+Invalid object name 'FACTURAS_EMITIDAS'.
+
+
+--------------------------------------------------
+Date: 2024-09-11 17:08:45.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+Invalid object name 'FACTURAS_EMITIDAS'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+Invalid object name 'FACTURAS_EMITIDAS'.
+
+
+--------------------------------------------------
+Date: 2024-09-11 17:08:46.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+Invalid object name 'FACTURAS_EMITIDAS'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+Invalid object name 'FACTURAS_EMITIDAS'.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:21:32.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+Invalid column name 'PROYECTO'.
+Invalid column name 'TIPO'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'PROYECTO'.
+Invalid column name 'TIPO'.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:23:49.
+Location: At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA".
+Short Description: Error processing ordinal 3 (expected System.String).
+Message: Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA"
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:24:14.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA".
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA"
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:28:04.
+Location: At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA".
+Short Description: Error processing ordinal 3 (expected System.String).
+Message: Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA"
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:28:13.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA".
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA"
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:29:18.
+Location: At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA".
+Short Description: Error processing ordinal 3 (expected System.String).
+Message: Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA"
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:29:25.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA".
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Type mismatch: Expected System.String, but got System.Int32 at iteration "3". The value was: "1" and the column name: "FCE_NUM_FACTURA"
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:30:53.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+El objeto de tipo 'System.Int32' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.Int32' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:30:59.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+El objeto de tipo 'System.Int32' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+El objeto de tipo 'System.Int32' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:31:14.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+El objeto de tipo 'System.Int32' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+El objeto de tipo 'System.Int32' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:34:00.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+El objeto de tipo 'System.Int32' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.Int32' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:34:04.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+El objeto de tipo 'System.Int32' no puede convertirse en el tipo 'System.String'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+El objeto de tipo 'System.Int32' no puede convertirse en el tipo 'System.String'.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:38:25.
+Location: At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Índice fuera de los límites de la matriz..
+Short Description: Error processing ordinal 14 (expected System.String).
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:38:32.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsManager
+.GetEntities:
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:41:14.
+Location: At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Índice fuera de los límites de la matriz..
+Short Description: Error processing ordinal 14 (expected System.String).
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:41:19.
+Location: At:
+
+SincronizadorGPS50
+.TypeRevisor`1
+.Check:
+
+At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TypeProtector`1
+.Scrutinize:
+
+Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:52:24.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Invalid column name 'FCE_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'FCE_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:52:31.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Invalid column name 'FCE_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Invalid column name 'FCE_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:55:39.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Invalid column name 'FCE_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'FCE_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:57:58.
+Location: At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:57:58.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:57:58.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:57:58.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:57:58.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:58:33.
+Location: At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:58:53.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-12 05:59:13.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-12 06:00:52.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-12 06:01:58.
+Location: At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-12 06:02:10.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySyncronizationTableStatusManager
+.CreateTable:
+
+Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-12 06:12:59.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsProcessor
+.RegisterEntity:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-12 06:14:23.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsProcessor
+.RegisterEntity:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-12 06:16:50.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsProcessor
+.RegisterEntity:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-12 06:39:57.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectIssuedBillsProcessor
+.ValidateEntitySynchronizationStatus:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------

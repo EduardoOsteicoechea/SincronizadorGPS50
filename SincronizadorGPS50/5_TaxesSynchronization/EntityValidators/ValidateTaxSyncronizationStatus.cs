@@ -34,7 +34,7 @@ namespace SincronizadorGPS50
                {
                   for(int i = 0; i < sage50EntityList.Count; i++)
                   {
-                     if(sage50EntityList[i].GUID_ID.Trim() == gestprojectEntity.S50_CODE.Trim())
+                     if(sage50EntityList[i].GUID_ID.Trim() == gestprojectEntity.S50_GUID_ID.Trim())
                      {
                         if(sage50EntityList[i].NOMBRE.Trim() != gestprojectEntity.IMP_DESCRIPCION.Trim())
                         {
@@ -79,7 +79,7 @@ namespace SincronizadorGPS50
                            sage50EntityList[i].CTA_IV_SOP.Trim() == gestprojectEntity.IMP_SUBCTA_CONTABLE_2.Trim()
                         )
                         {
-                           MessageBox.Show("Sincronizado");
+                           //MessageBox.Show("Sincronizado");
                            NeverWasSynchronized = false;
                            IsSynchronized = true;
                            MustBeDeleted = false;
@@ -91,7 +91,7 @@ namespace SincronizadorGPS50
                      }
                      else
                      {
-                        MessageBox.Show("Eliminado en Sage");
+                        //MessageBox.Show("Eliminado en Sage");
                         NeverWasSynchronized = true;
                         MustBeDeleted = true;
                         gestprojectEntity.SYNC_STATUS = SynchronizationStatusOptions.Desincronizado;
@@ -100,7 +100,7 @@ namespace SincronizadorGPS50
                }
                else
                {
-                  MessageBox.Show("Nunca sincronizado");
+                  //MessageBox.Show("Nunca sincronizado");
                   NeverWasSynchronized = true;
                   IsSynchronized = false;
                   MustBeDeleted = false;
@@ -109,7 +109,7 @@ namespace SincronizadorGPS50
             }
             else
             {
-               MessageBox.Show("Nunca sincronizado");
+               //MessageBox.Show("Nunca sincronizado");
                NeverWasSynchronized = true;
                IsSynchronized = false;
                MustBeDeleted = false;

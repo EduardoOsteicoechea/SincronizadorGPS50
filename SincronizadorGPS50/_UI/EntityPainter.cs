@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
+using System.Text;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50
@@ -19,6 +20,13 @@ namespace SincronizadorGPS50
          {
             foreach(T1 item in proccessedGestprojectEntities)
             {
+               //StringBuilder stringBuilder = new StringBuilder();
+               //foreach(var item2 in item.GetType().GetProperties())
+               //{
+               //   stringBuilder.Append($"{item2.Name}: {item2.GetValue(item)}\n");
+               //};
+               //MessageBox.Show(stringBuilder.ToString());
+               
                DataRow row = dataTable.NewRow();
 
                for(global::System.Int32 i = 0; i < tableFieldsTupleList.Count; i++)
@@ -26,6 +34,10 @@ namespace SincronizadorGPS50
                   var propertyName = tableFieldsTupleList[i].columnName;
                   var propertyValue = item.GetType().GetProperty(propertyName)?.GetValue(item);
 
+                  if(tableFieldsTupleList[i].columnType == typeof(decimal))
+                  {
+                     row[i] = propertyValue ?? 0.00;
+                  }
                   if(tableFieldsTupleList[i].columnType == typeof(string))
                   {
                      row[i] = propertyValue ?? "";

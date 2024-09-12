@@ -31,7 +31,7 @@ namespace SincronizadorGPS50
             {
                for(int i = 0; i < sage50ParticipantList.Count; i++)
                {
-                  if( sage50ParticipantList[i].GUID_ID.Trim() == gestprojectEntity.S50_CODE.Trim() )
+                  if( sage50ParticipantList[i].GUID_ID.Trim() == gestprojectEntity.S50_GUID_ID.Trim() )
                   {
                      if(sage50ParticipantList[i].NOMBRE.Trim() != gestprojectEntity.NOMBRE_COMPLETO.Trim())
                      {

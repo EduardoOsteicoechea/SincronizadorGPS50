@@ -86,6 +86,8 @@ namespace SincronizadorGPS50
             tableSchemaProvider.GestprojectFieldsTupleList
          );
 
+         //MessageBox.Show(GestprojectEntities.Count + "");
+
          List<Sage50TaxModel> sage50Entities = new GetSage50Taxes().Entities;
 
          foreach(var item in sage50Entities)
@@ -94,18 +96,18 @@ namespace SincronizadorGPS50
             
             gestprojectTaxModel.IMP_ID = 0;
             gestprojectTaxModel.IMP_TIPO = item.IMP_TIPO;
-            gestprojectTaxModel.IMP_DESCRIPCION = item.NOMBRE;
+            gestprojectTaxModel.IMP_DESCRIPCION = item.NOMBRE.Trim();
 
             if(item.IMP_TIPO == "IVA")
             {
-               gestprojectTaxModel.IMP_NOMBRE = item.IMP_TIPO + item.IVA;
+               gestprojectTaxModel.IMP_NOMBRE = $"{item.IMP_TIPO} {item.IVA.ToString().Split(',')[0]}";
                gestprojectTaxModel.IMP_VALOR = item.IVA;
                gestprojectTaxModel.IMP_SUBCTA_CONTABLE = item.CTA_IV_REP;
                gestprojectTaxModel.IMP_SUBCTA_CONTABLE_2 = item.CTA_IV_SOP;
             }
             else
             {
-               gestprojectTaxModel.IMP_NOMBRE = item.IMP_TIPO + item.RETENCION;
+               gestprojectTaxModel.IMP_NOMBRE = $"{item.IMP_TIPO} {item.RETENCION.ToString().Split(',')[0]}";
                gestprojectTaxModel.IMP_VALOR = item.RETENCION;
                gestprojectTaxModel.IMP_SUBCTA_CONTABLE = item.CTA_RE_REP;
                gestprojectTaxModel.IMP_SUBCTA_CONTABLE_2 = item.CTA_RE_SOP;
@@ -117,7 +119,7 @@ namespace SincronizadorGPS50
             GestprojectEntities.Add(gestprojectTaxModel);
          };
 
-         MessageBox.Show(GestprojectEntities.Count + "");
+         //MessageBox.Show(GestprojectEntities.Count + "");
 
          //foreach(var item in GestprojectEntities)
          //{
@@ -181,15 +183,15 @@ namespace SincronizadorGPS50
          DataTable dataTable
       )
       {
-         foreach(var entity in ProcessedGestprojectEntities)
-         {
-            StringBuilder stringBuilder = new StringBuilder();
-            foreach(var item in entity.GetType().GetProperties())
-            {
-               stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
-            };
-            MessageBox.Show(stringBuilder.ToString());
-         };
+         //foreach(var entity in ProcessedGestprojectEntities)
+         //{
+         //   StringBuilder stringBuilder = new StringBuilder();
+         //   foreach(var item in entity.GetType().GetProperties())
+         //   {
+         //      stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
+         //   };
+         //   MessageBox.Show(stringBuilder.ToString());
+         //};
 
          ISynchronizableEntityPainter<GestprojectTaxModel> entityPainter = new EntityPainter<GestprojectTaxModel>();
          entityPainter.PaintEntityListOnDataTable(

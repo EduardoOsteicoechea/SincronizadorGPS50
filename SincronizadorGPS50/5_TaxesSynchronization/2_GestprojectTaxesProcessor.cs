@@ -38,17 +38,17 @@ namespace SincronizadorGPS50
 
                if(MustBeSkipped)
                {
-                  MessageBox.Show("MustBeSkipped");
+                  MessageBox.Show(entity.IMP_NOMBRE + " MustBeSkipped");
                   continue;
                }
                else if(MustBeRegistered)
                {
-                  MessageBox.Show("MustBeRegistered");
+                  MessageBox.Show(entity.IMP_NOMBRE + " MustBeRegistered");
                   RegisterEntity(connection, tableSchema, entity);
                }
                else if(MustBeUpdated)
                {
-                  MessageBox.Show("MustBeUpdated");
+                  MessageBox.Show(entity.IMP_NOMBRE + " MustBeUpdated");
                   UpdateEntity(connection, tableSchema, entity);
                };
 
@@ -208,6 +208,13 @@ namespace SincronizadorGPS50
       {
          try
          {
+            //StringBuilder stringBuilder = new StringBuilder();
+            //foreach(var item in entity.GetType().GetProperties())
+            //{
+            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
+            //}
+            //MessageBox.Show(stringBuilder.ToString());
+
             new UpdateEntity
             (
                connection,
@@ -274,15 +281,16 @@ namespace SincronizadorGPS50
             //);
 
             //new ClearEntityDataInGestproject(
-            //   connection,
-            //   "PROYECTO",
-            //   new List<string>(){
-            //   tableSchema.AccountableSubaccount.ColumnDatabaseName
+            //      connection,
+            //      "IMPUESTO_CONFIG",
+            //      new List<string>(){
+            //      tableSchema.AccountableSubaccount.ColumnDatabaseName
             //   },
-            //   (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
+            //   (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
+            //   (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
             //);
 
-            //ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
+            ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
          }
          catch(System.Exception exception)
          {

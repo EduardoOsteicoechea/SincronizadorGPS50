@@ -317,15 +317,19 @@ namespace SincronizadorGPS50.GestprojectDataManager
          {
             connection.Open();
 
-            string sqlString = $@"
-                SELECT
-                    {REMEMBER}
-                FROM 
-                    {GestprojectSynchronizatorUserDataTableName}
-                WHERE {GP_CNX_USUARIO}='{gestprojectConnectionUser}' 
-                AND {GP_CNX_EQUIPO}='{gestprojectConnectionDevice}' 
-                AND {GP_USU_ID}={gestprojectRecordedUserId}
-            ;";
+            //string sqlString = $@"
+            //    SELECT
+            //        {REMEMBER}
+            //    FROM 
+            //        {GestprojectSynchronizatorUserDataTableName}
+            //    WHERE {GP_CNX_USUARIO}='{gestprojectConnectionUser}' 
+            //    AND {GP_CNX_EQUIPO}='{gestprojectConnectionDevice}' 
+            //    AND {GP_USU_ID}={gestprojectRecordedUserId}
+            //;";
+
+            string sqlString = $"SELECT {REMEMBER} FROM {GestprojectSynchronizatorUserDataTableName} WHERE {GP_CNX_USUARIO}='{gestprojectConnectionUser}' AND {GP_CNX_EQUIPO}='{gestprojectConnectionDevice}' AND {GP_USU_ID}={gestprojectRecordedUserId};";
+
+            //MessageBox.Show("On:\n\nManageRememberableUserData\n.CheckIfRememberUserDataOptionWasActivated\n\n" + sqlString);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {

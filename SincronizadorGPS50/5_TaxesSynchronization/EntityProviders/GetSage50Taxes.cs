@@ -24,12 +24,7 @@ namespace SincronizadorGPS50
          try
          {
             string sqlString1DatabaseName = DB.SQLDatabase("gestion","tipo_iva").ToString();
-            //string sqlString1 = $@"
-            //SELECT 
-            //   *
-
-            //[NOMBRE], 
-            //FROM {sqlString1DatabaseName};";            
+          
             string sqlString1 = $@"SELECT 
                [GUID_ID], 
                [IVA], 
@@ -50,12 +45,6 @@ namespace SincronizadorGPS50
                for(int i = 0; i < table1.Rows.Count; i++)
                {
                   Sage50TaxModel sage50Entity = new Sage50TaxModel();
-
-                  //sage50Entity.GUID_ID = table1.Rows[i].ItemArray[24].ToString().Trim();
-                  //sage50Entity.IVA = Convert.ToDecimal(table1.Rows[i].ItemArray[2]);
-                  ////sage50Entity.NOMBRE = table1.Rows[i].ItemArray[1].ToString().Trim();
-                  //sage50Entity.CTA_IV_REP = table1.Rows[i].ItemArray[4].ToString().Trim();
-                  //sage50Entity.CTA_IV_SOP = table1.Rows[i].ItemArray[5].ToString().Trim();
 
                   sage50Entity.GUID_ID = table1.Rows[i].ItemArray[0].ToString().Trim();
                   sage50Entity.IVA = Convert.ToDecimal(table1.Rows[i].ItemArray[1]);

@@ -4,7 +4,8 @@ namespace SincronizadorGPS50.GestprojectDataManager
 {
    public class CustomerSyncronizationTableSchema
    {
-      public  string TableName { get; set; } = "INT_SAGE_SINC_CLIENTE";
+      //public  string TableName { get; set; } = "INT_SAGE_SINC_CLIENTE";
+      public  string TableName { get; set; } = "INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_CUSTOMERS";
 
       public  (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType) SynchronizationTableClientIdColumn { get; set; } = ("ID", "Id de Sincronización", typeof(int));
       public  (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType) SynchronizationStatusColumn { get; set; } = ("SYNC_STATUS", "Estado", typeof(string));

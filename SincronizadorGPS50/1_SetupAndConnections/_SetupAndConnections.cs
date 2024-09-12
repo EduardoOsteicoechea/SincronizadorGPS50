@@ -50,7 +50,19 @@ namespace SincronizadorGPS50
 
          string currentLocalDevice = WindowsIdentity.GetCurrent().Name.Split('\\')[0];
          string gestprojectSessionDevice = GestprojectDataHolder.LocalDeviceUserSessionData.CNX_EQUIPO;
-         bool userIsInRememberedAndApprovedDevice = gestprojectSessionDevice == currentLocalDevice;
+         //bool userIsInRememberedAndApprovedDevice = gestprojectSessionDevice == currentLocalDevice;
+
+         //////////////////////
+         //////////////////////
+         //////////////////////
+         //////////////////////
+         //////////////////////
+         //////////////////////
+         //////////////////////
+         // CHANGE THIS FOR PRODUCTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         //////////////////////
+         //////////////////////
+         bool userIsInRememberedAndApprovedDevice = true;
 
          ///////////////////////////////////////
          // Evaluate Basic User Rememberlable assets

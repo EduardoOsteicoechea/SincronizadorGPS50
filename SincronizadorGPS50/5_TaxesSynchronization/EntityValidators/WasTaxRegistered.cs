@@ -24,8 +24,7 @@ namespace SincronizadorGPS50
          try
          {
             connection.Open();
-            
-            
+                 
             StringBuilder sqlCondition = new StringBuilder();
             
             if(condition1.value.GetType() == typeof(string))
@@ -60,7 +59,7 @@ namespace SincronizadorGPS50
                   {sqlCondition.ToString()}
             ";
 
-            MessageBox.Show(sqlString);
+            //MessageBox.Show(sqlString);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {

@@ -71,7 +71,7 @@ namespace SincronizadorGPS50
                {sqlCondition.ToString()}
             ;";
 
-            MessageBox.Show(sqlString);
+            //MessageBox.Show(sqlString);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {
