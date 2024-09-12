@@ -385,7 +385,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1_SetupAndConnections\2_3_ManageMainWindowActions.cs" />
+    <Compile Include="_UI\0_3_ManageMainWindowActions.cs" />
     <Compile Include="2_ClientsSynchronization\1_5_ManageUserInteractionWithUI - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\1_5_ManageUserInteractionWithUI.cs" />
     <Compile Include="2_ClientsSynchronization\2_1_CustomerSynchronizationDataTable - Copy.cs" />
@@ -401,6 +401,23 @@
     <Compile Include="2_ClientsSynchronization\prev\2_CreateSage50Customer - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\2_4_AddClientToUITable.cs" />
     <Compile Include="2_ClientsSynchronization\2_3_ValidateClientSyncronizationStatus.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\1_ReceivedBillsDataTableManager.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\2_GestprojectReceivedBillsProcessor.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntityProviders\GestprojectReceivedBillsManager.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntityProviders\GestprojectReceivedBillsProvider.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntityProviders\GetSage50ReceivedBills.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntitySynchronizers\3_3_ExsistingReceivedBillsListWorkflow.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntitySynchronizers\3_4_CreateReceivedBillWorkflow.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntitySynchronizers\3_4_UpdateReceivedBillWorkflow.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntitySynchronizers\CreateSage50ReceivedBills.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntitySynchronizers\ReceivedBillsSynchronizer.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntitySynchronizers\LinkReceivedBillWorkflow.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntityValidators\ValidateReceivedBillSyncronizationStatus.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntityValidators\WasReceivedBillRegistered.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\Schema\GestprojectReceivedBillModel.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\Schema\ReceivedBillsSynchronizationTableSchemaProvider.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\Schema\Sage50ReceivedBillModel.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\_ReceivedBillsSynchronizationManager.cs" />
     <Compile Include="6_IssuedBillsSynchronization\1_IssuedBillsDataTableManager.cs" />
     <Compile Include="6_IssuedBillsSynchronization\2_GestprojectIssuedBillsProcessor.cs" />
     <Compile Include="6_IssuedBillsSynchronization\EntityProviders\GestprojectIssuedBillsManager.cs" />
@@ -529,7 +546,7 @@
     <Compile Include="_DataHolders\UI\MainWindowUIHolder.cs" />
     <Compile Include="_DataHolders\UI\StyleHolder.cs" />
     <Compile Include="GestprojectAPI\1_ConnectToGestprojectDatabase .cs" />
-    <Compile Include="1_SetupAndConnections\1_2_ManageApplicationGlobalStyles.cs" />
+    <Compile Include="_UI\0_0_ManageApplicationGlobalStyles.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -591,9 +608,9 @@
     <Compile Include="2_ClientsSynchronization\prev\4_UpdateRegisteredClientModelData.cs" />
     <Compile Include="2_ClientsSynchronization\prev\9_SyncronizationTableModel.cs" />
     <Compile Include="1_SetupAndConnections\_SetupAndConnections.cs" />
-    <Compile Include="1_SetupAndConnections\2_2_GenerateMainWindowUI.cs" />
+    <Compile Include="_UI\0_2_GenerateMainWindowUI.cs" />
     <Compile Include="1_SetupAndConnections\4_1_GenerateCenterRowUI.cs" />
-    <Compile Include="1_SetupAndConnections\2_1_GenerateMainWindow.cs" />
+    <Compile Include="_UI\0_1_GenerateMainWindow.cs" />
     <Compile Include="1_SetupAndConnections\3_1_GenerateSage50ConnectionTabUI.cs" />
     <Compile Include="1_SetupAndConnections\9_ISage50ConnectionUIComponent.cs" />
     <Compile Include="1_SetupAndConnections\9_StateManager.cs" />

@@ -38,17 +38,17 @@ namespace SincronizadorGPS50
 
                if(MustBeSkipped)
                {
-                  MessageBox.Show(entity.IMP_NOMBRE + " MustBeSkipped");
+                  //MessageBox.Show(entity.IMP_NOMBRE + " MustBeSkipped");
                   continue;
                }
                else if(MustBeRegistered)
                {
-                  MessageBox.Show(entity.IMP_NOMBRE + " MustBeRegistered");
+                  //MessageBox.Show(entity.IMP_NOMBRE + " MustBeRegistered");
                   RegisterEntity(connection, tableSchema, entity);
                }
                else if(MustBeUpdated)
                {
-                  MessageBox.Show(entity.IMP_NOMBRE + " MustBeUpdated");
+                  //MessageBox.Show(entity.IMP_NOMBRE + " MustBeUpdated");
                   UpdateEntity(connection, tableSchema, entity);
                };
 
