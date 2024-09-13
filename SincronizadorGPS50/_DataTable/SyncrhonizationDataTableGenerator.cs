@@ -7,7 +7,7 @@ namespace SincronizadorGPS50
 {
    internal class SyncrhonizationDataTableGenerator : IDataTableGenerator
    {
-      public DataTable CreateDataTable(List<(string columnName, string friendlyName, Type columnType, string columnDefinition)> tableFieldsTupleList)
+      public DataTable CreateDataTable(List<(string columnName, string friendlyName, Type columnType, string columnDefinition, dynamic defaultValue)> tableFieldsTupleList)
       {
          try
          {

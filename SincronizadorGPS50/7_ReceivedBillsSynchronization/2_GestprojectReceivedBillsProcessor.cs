@@ -38,17 +38,17 @@ namespace SincronizadorGPS50
 
                if(MustBeSkipped)
                {
-                  //MessageBox.Show(entity.FCE_ID + " MustBeSkipped");
+                  //MessageBox.Show(entity.FCP_ID + " MustBeSkipped");
                   continue;
                }
                else if(MustBeRegistered)
                {
-                  //MessageBox.Show(entity.FCE_ID + " MustBeRegistered");
+                  //MessageBox.Show(entity.FCP_ID + " MustBeRegistered");
                   RegisterEntity(connection, tableSchema, entity);
                }
                else if(MustBeUpdated)
                {
-                  //MessageBox.Show(entity.FCE_ID + " MustBeUpdated");
+                  //MessageBox.Show(entity.FCP_ID + " MustBeUpdated");
                   UpdateEntity(connection, tableSchema, entity);
                };
 
@@ -90,7 +90,7 @@ namespace SincronizadorGPS50
                tableSchema.SynchronizationFieldsTupleList,
                (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
                entity,               
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.FCE_ID)
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.FCP_ID)
             );
             
             //StringBuilder stringBuilder = new StringBuilder();
@@ -118,7 +118,7 @@ namespace SincronizadorGPS50
                connection,
                tableSchema.TableName,
                tableSchema.GestprojectId.ColumnDatabaseName,
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.FCE_ID),
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.FCP_ID),
                (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
             ).ItWas;
 
@@ -173,20 +173,17 @@ namespace SincronizadorGPS50
                new List<(string, dynamic)>()
                {
                   (tableSchema.SynchronizationStatus.ColumnDatabaseName, SynchronizationStatusOptions.Desincronizado),
-                  (tableSchema.GestprojectId.ColumnDatabaseName, entity.FCE_ID),
+                  (tableSchema.GestprojectId.ColumnDatabaseName, entity.FCP_ID),
                   (tableSchema.GestprojectDaoId.ColumnDatabaseName, entity.PAR_DAO_ID),
-                  (tableSchema.GestprojectReference.ColumnDatabaseName, entity.FCE_REFERENCIA),
-                  (tableSchema.GestprojectBillNumber.ColumnDatabaseName, entity.FCE_NUM_FACTURA),
-                  (tableSchema.GestprojectDate.ColumnDatabaseName, entity.FCE_FECHA),
-                  (tableSchema.GestprojectCliId.ColumnDatabaseName, entity.PAR_CLI_ID),
-                  (tableSchema.GestprojectTaxableBase.ColumnDatabaseName, entity.FCE_BASE_IMPONIBLE),
-                  (tableSchema.GestprojectIvaValue.ColumnDatabaseName, entity.FCE_VALOR_IVA),
-                  (tableSchema.GestprojectIvaValueInEuros.ColumnDatabaseName, entity.FCE_IVA),
-                  (tableSchema.GestprojectIrpfValue.ColumnDatabaseName, entity.FCE_VALOR_IRPF),
-                  (tableSchema.GestprojectIrpfValueInEuros.ColumnDatabaseName, entity.FCE_IRPF),
-                  (tableSchema.GestprojectTotalInvoiced.ColumnDatabaseName, entity.FCE_TOTAL_SUPLIDO),
-                  (tableSchema.GestprojectBillTotal.ColumnDatabaseName, entity.FCE_TOTAL_FACTURA),
-                  (tableSchema.GestprojectBillObservations.ColumnDatabaseName, entity.FCE_OBSERVACIONES)
+                  (tableSchema.GestprojectBillNumber.ColumnDatabaseName, entity.FCP_NUM_FACTURA),
+                  (tableSchema.GestprojectDate.ColumnDatabaseName, entity.FCP_FECHA),
+                  (tableSchema.GestprojectProId.ColumnDatabaseName, entity.PAR_PRO_ID),
+                  (tableSchema.GestprojectTaxableBase.ColumnDatabaseName, entity.FCP_BASE_IMPONIBLE),
+                  (tableSchema.GestprojectIvaValue.ColumnDatabaseName, entity.FCP_VALOR_IVA),
+                  (tableSchema.GestprojectIvaValueInEuros.ColumnDatabaseName, entity.FCP_IVA),
+                  (tableSchema.GestprojectIrpfValue.ColumnDatabaseName, entity.FCP_VALOR_IRPF),
+                  (tableSchema.GestprojectIrpfValueInEuros.ColumnDatabaseName, entity.FCP_IRPF),
+                  (tableSchema.GestprojectBillTotal.ColumnDatabaseName, entity.FCP_TOTAL_FACTURA)
                }
             );
 
@@ -227,22 +224,18 @@ namespace SincronizadorGPS50
                new List<(string, dynamic)>()
                {
                   (tableSchema.SynchronizationStatus.ColumnDatabaseName, entity.SYNC_STATUS),
-                  (tableSchema.GestprojectId.ColumnDatabaseName, entity.FCE_ID),
+                  (tableSchema.GestprojectId.ColumnDatabaseName, entity.FCP_ID),
                   (tableSchema.GestprojectDaoId.ColumnDatabaseName, entity.PAR_DAO_ID),
-                  (tableSchema.GestprojectReference.ColumnDatabaseName, entity.FCE_REFERENCIA),
-                  (tableSchema.GestprojectBillNumber.ColumnDatabaseName, entity.FCE_NUM_FACTURA),
-                  (tableSchema.GestprojectDate.ColumnDatabaseName, entity.FCE_FECHA),
-                  (tableSchema.GestprojectCliId.ColumnDatabaseName, entity.PAR_CLI_ID),
-                  (tableSchema.GestprojectTaxableBase.ColumnDatabaseName, entity.FCE_BASE_IMPONIBLE),
-                  (tableSchema.GestprojectIvaValue.ColumnDatabaseName, entity.FCE_VALOR_IVA),
-                  (tableSchema.GestprojectIvaValueInEuros.ColumnDatabaseName, entity.FCE_IVA),
-                  (tableSchema.GestprojectIrpfValue.ColumnDatabaseName, entity.FCE_VALOR_IRPF),
-                  (tableSchema.GestprojectIrpfValueInEuros.ColumnDatabaseName, entity.FCE_IRPF),
-                  (tableSchema.GestprojectTotalInvoiced.ColumnDatabaseName, entity.FCE_TOTAL_SUPLIDO),
-                  (tableSchema.GestprojectBillTotal.ColumnDatabaseName, entity.FCE_TOTAL_FACTURA),
-                  (tableSchema.GestprojectBillObservations.ColumnDatabaseName, entity.FCE_OBSERVACIONES)
+                  (tableSchema.GestprojectDate.ColumnDatabaseName, entity.FCP_FECHA),
+                  (tableSchema.GestprojectProId.ColumnDatabaseName, entity.PAR_PRO_ID),
+                  (tableSchema.GestprojectTaxableBase.ColumnDatabaseName, entity.FCP_BASE_IMPONIBLE),
+                  (tableSchema.GestprojectIvaValue.ColumnDatabaseName, entity.FCP_VALOR_IVA),
+                  (tableSchema.GestprojectIvaValueInEuros.ColumnDatabaseName, entity.FCP_IVA),
+                  (tableSchema.GestprojectIrpfValue.ColumnDatabaseName, entity.FCP_VALOR_IRPF),
+                  (tableSchema.GestprojectIrpfValueInEuros.ColumnDatabaseName, entity.FCP_IRPF),
+                  (tableSchema.GestprojectBillTotal.ColumnDatabaseName, entity.FCP_TOTAL_FACTURA)
                },
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.FCE_ID),
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.FCP_ID),
                (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
             );
          }
@@ -264,13 +257,11 @@ namespace SincronizadorGPS50
                entity,
                sage50Entities,
                (tableSchema.GestprojectDaoId.ColumnDatabaseName),
-               (tableSchema.GestprojectReference.ColumnDatabaseName),
                (tableSchema.GestprojectBillNumber.ColumnDatabaseName),
                (tableSchema.GestprojectDate.ColumnDatabaseName),
-               (tableSchema.GestprojectCliId.ColumnDatabaseName),
+               (tableSchema.GestprojectProId.ColumnDatabaseName),
                (tableSchema.GestprojectTaxableBase.ColumnDatabaseName),
                (tableSchema.GestprojectBillTotal.ColumnDatabaseName),
-               (tableSchema.GestprojectBillObservations.ColumnDatabaseName),
                NevesWasSynchronized
             );
 

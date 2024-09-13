@@ -123,13 +123,13 @@ namespace SincronizadorGPS50
       {
          List<int> selectedIdList = ManageUserInteractionWithUI.GetSelectedIfAnyOrAll(MiddleRowGrid);
 
-         //EntitySynchronizer.Synchronize
-         //(
-         //   GestprojectConnectionManager,
-         //   Sage50ConnectionManager,
-         //   SynchronizationTableSchemaProvider,
-         //   selectedIdList
-         //);
+         EntitySynchronizer.Synchronize
+         (
+            GestprojectConnectionManager,
+            Sage50ConnectionManager,
+            SynchronizationTableSchemaProvider,
+            selectedIdList
+         );
 
          System.Data.DataTable dataTable = DataSourceGenerator.GenerateDataTable(
             GestprojectConnectionManager,

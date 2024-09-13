@@ -26,13 +26,11 @@ namespace SincronizadorGPS50
          GestprojectReceivedBillModel gestprojectEntity,
          List<Sage50ReceivedBillModel> sage50EntityList,
          string GestprojectDaoId,
-         string GestprojectReference,
          string GestprojectBillNumber,
          string GestprojectDate,
          string GestprojectCliId,
          string GestprojectTaxableBase,
          string GestprojectBillTotal,
-         string GestprojectBillObservations,
          bool neverWasSynchronized
       )
       {
@@ -54,15 +52,7 @@ namespace SincronizadorGPS50
                            gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectDaoId, sage50EntityList[i].EMPRESA.Trim());
                         };
 
-                        if(sage50EntityList[i].LETRA != gestprojectEntity.FCE_REFERENCIA)
-                        {
-                           NeverWasSynchronized = false;
-                           IsSynchronized = false;
-                           MustBeDeleted = false;
-                           gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectReference, sage50EntityList[i].LETRA.ToString());
-                        };
-
-                        if(sage50EntityList[i].NUMERO.Trim() != gestprojectEntity.FCE_NUM_FACTURA.ToString())
+                        if(sage50EntityList[i].NUMERO.Trim() != gestprojectEntity.FCP_NUM_FACTURA.ToString())
                         {
                            NeverWasSynchronized = false;
                            IsSynchronized = false;
@@ -70,23 +60,23 @@ namespace SincronizadorGPS50
                            gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectBillNumber, sage50EntityList[i].NUMERO.Trim());
                         };
 
-                        if(sage50EntityList[i].FECHA != gestprojectEntity.FCE_FECHA)
+                        if(sage50EntityList[i].CREATED != gestprojectEntity.FCP_FECHA)
                         {
                            NeverWasSynchronized = false;
                            IsSynchronized = false;
                            MustBeDeleted = false;
-                           gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectDate, sage50EntityList[i].FECHA.ToString());
+                           gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectDate, sage50EntityList[i].CREATED.ToString());
                         };
 
-                        if(sage50EntityList[i].CLIENTE.Trim() != gestprojectEntity.PAR_CLI_ID.ToString().Trim())
+                        if(sage50EntityList[i].PROVEEDOR.Trim() != gestprojectEntity.PAR_PRO_ID.ToString().Trim())
                         {
                            NeverWasSynchronized = false;
                            IsSynchronized = false;
                            MustBeDeleted = false;
-                           gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectCliId, sage50EntityList[i].CLIENTE.Trim());
+                           gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectCliId, sage50EntityList[i].PROVEEDOR.Trim());
                         };
 
-                        if(sage50EntityList[i].IMPORTE != gestprojectEntity.FCE_BASE_IMPONIBLE)
+                        if(sage50EntityList[i].IMPORTE != gestprojectEntity.FCP_BASE_IMPONIBLE)
                         {
                            NeverWasSynchronized = false;
                            IsSynchronized = false;
@@ -94,7 +84,7 @@ namespace SincronizadorGPS50
                            gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectTaxableBase, sage50EntityList[i].IMPORTE.ToString());
                         };
 
-                        if(sage50EntityList[i].TOTALDOC != gestprojectEntity.FCE_TOTAL_FACTURA)
+                        if(sage50EntityList[i].TOTALDOC != gestprojectEntity.FCP_TOTAL_FACTURA)
                         {
                            NeverWasSynchronized = false;
                            IsSynchronized = false;
@@ -102,31 +92,19 @@ namespace SincronizadorGPS50
                            gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectBillTotal, sage50EntityList[i].TOTALDOC.ToString());
                         };
 
-                        if(sage50EntityList[i].OBSERVACIO.Trim() != gestprojectEntity.FCE_OBSERVACIONES.Trim())
-                        {
-                           NeverWasSynchronized = false;
-                           IsSynchronized = false;
-                           MustBeDeleted = false;
-                           gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectBillObservations, sage50EntityList[i].OBSERVACIO);
-                        };
-
                         if
                         (
                            sage50EntityList[i].EMPRESA.Trim() == gestprojectEntity.PAR_DAO_ID.ToString()
                            &&
-                           sage50EntityList[i].LETRA == gestprojectEntity.FCE_REFERENCIA
+                           sage50EntityList[i].NUMERO.Trim() == gestprojectEntity.FCP_NUM_FACTURA.ToString()
                            &&
-                           sage50EntityList[i].NUMERO.Trim() == gestprojectEntity.FCE_NUM_FACTURA.ToString()
+                           sage50EntityList[i].CREATED == gestprojectEntity.FCP_FECHA
                            &&
-                           sage50EntityList[i].FECHA == gestprojectEntity.FCE_FECHA
+                           sage50EntityList[i].PROVEEDOR == gestprojectEntity.PAR_PRO_ID.ToString()
                            &&
-                           sage50EntityList[i].CLIENTE == gestprojectEntity.PAR_CLI_ID.ToString()
+                           sage50EntityList[i].IMPORTE == gestprojectEntity.FCP_BASE_IMPONIBLE
                            &&
-                           sage50EntityList[i].IMPORTE == gestprojectEntity.FCE_BASE_IMPONIBLE
-                           &&
-                           sage50EntityList[i].TOTALDOC == gestprojectEntity.FCE_TOTAL_FACTURA
-                           &&
-                           sage50EntityList[i].OBSERVACIO.Trim() == gestprojectEntity.FCE_OBSERVACIONES.Trim()
+                           sage50EntityList[i].TOTALDOC == gestprojectEntity.FCP_TOTAL_FACTURA
                         )
                         {
                            //MessageBox.Show("Sincronizado");

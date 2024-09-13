@@ -385,6 +385,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="7_ReceivedBillsSynchronization\EntitySynchronizers\BaseDocument.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntitySynchronizers\BuyDocument.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntitySynchronizers\CreateSage50ReceivedBills - Copy.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntitySynchronizers\SalesDocument - Copy.cs" />
+    <Compile Include="7_ReceivedBillsSynchronization\EntitySynchronizers\SalesDocument.cs" />
     <Compile Include="_UI\0_3_ManageMainWindowActions.cs" />
     <Compile Include="2_ClientsSynchronization\1_5_ManageUserInteractionWithUI - Copy.cs" />
     <Compile Include="2_ClientsSynchronization\1_5_ManageUserInteractionWithUI.cs" />
@@ -428,7 +433,7 @@
     <Compile Include="6_IssuedBillsSynchronization\EntitySynchronizers\3_4_UpdateIssuedBillWorkflow.cs" />
     <Compile Include="6_IssuedBillsSynchronization\EntitySynchronizers\CreateSage50IssuedBills.cs" />
     <Compile Include="6_IssuedBillsSynchronization\EntitySynchronizers\LinkIssuedBillWorkflow.cs" />
-    <Compile Include="6_IssuedBillsSynchronization\EntitySynchronizers\IssuedBillsSynchronizer.cs" />
+    <Compile Include="6_IssuedBillsSynchronization\EntitySynchronizers\_IssuedBillsSynchronizer.cs" />
     <Compile Include="6_IssuedBillsSynchronization\EntityValidators\ValidateIssuedBillSyncronizationStatus.cs" />
     <Compile Include="6_IssuedBillsSynchronization\EntityValidators\WasIssuedBillRegistered.cs" />
     <Compile Include="6_IssuedBillsSynchronization\Schema\GestprojectIssuedBillModel.cs" />

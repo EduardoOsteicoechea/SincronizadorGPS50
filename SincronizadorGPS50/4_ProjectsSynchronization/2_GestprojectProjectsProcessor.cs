@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SincronizadorGPS50.Workflows.Sage50Connection;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Reflection;
 using System.Windows.Forms;
@@ -76,12 +77,14 @@ namespace SincronizadorGPS50
 
       public void AppendSynchronizationTableDataToEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, GestprojectProjectModel entity)
       {
-         new EntitySynchronizationTable<GestprojectProjectModel>().AppendTableDataToEntity
-         (
-            connection,
-            tableSchema.TableName,
-            new List<(string, System.Type)>()
-            {
+         try
+         {
+            new EntitySynchronizationTable<GestprojectProjectModel>().AppendTableDataToEntity
+            (
+               connection,
+               tableSchema.TableName,
+               new List<(string, System.Type)>()
+               {
                (tableSchema.Id.ColumnDatabaseName, tableSchema.Id.ColumnValueType),
                (tableSchema.SynchronizationStatus.ColumnDatabaseName, tableSchema.SynchronizationStatus.ColumnValueType),
                (tableSchema.Sage50Code.ColumnDatabaseName, tableSchema.Sage50Code.ColumnValueType),
@@ -93,43 +96,67 @@ namespace SincronizadorGPS50
                (tableSchema.LastUpdate.ColumnDatabaseName, tableSchema.LastUpdate.ColumnValueType),
                (tableSchema.ParentUserId.ColumnDatabaseName, tableSchema.ParentUserId.ColumnValueType),
                (tableSchema.Comments.ColumnDatabaseName, tableSchema.Comments.ColumnValueType),
-            },
-            (tableSchema.GestprojectId.ColumnDatabaseName,entity.PRY_ID),
-            entity
-         );
+               },
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID),
+               entity
+            );
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
       public void DetermineEntityWorkflow(SqlConnection connection, ISage50ConnectionManager sage50ConnectionManager, ISynchronizationTableSchemaProvider tableSchema, GestprojectProjectModel entity)
       {
-         MustBeRegistered = !new WasEntityRegistered(
-            connection,
-            tableSchema.TableName,
-            tableSchema.GestprojectId.ColumnDatabaseName,
-            (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID)
-         ).ItIs;
+         try
+         {
+            MustBeRegistered = !new WasEntityRegistered(
+               connection,
+               tableSchema.TableName,
+               tableSchema.GestprojectId.ColumnDatabaseName,
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID)
+            ).ItIs;
 
-         bool registeredInDifferentCompanyGroup =
+            bool registeredInDifferentCompanyGroup =
          entity.S50_COMPANY_GROUP_GUID_ID != ""
          &&
          sage50ConnectionManager.CompanyGroupData.CompanyGuidId != entity.S50_COMPANY_GROUP_GUID_ID;
 
-         MustBeSkipped = registeredInDifferentCompanyGroup;
+            MustBeSkipped = registeredInDifferentCompanyGroup;
 
-         bool neverSynchronized = entity.S50_COMPANY_GROUP_GUID_ID == "";
+            bool neverSynchronized = entity.S50_COMPANY_GROUP_GUID_ID == "";
 
-         bool synchronizedInThePast =
+            bool synchronizedInThePast =
          entity.S50_COMPANY_GROUP_GUID_ID != ""
          &&
          sage50ConnectionManager.CompanyGroupData.CompanyGuidId == entity.S50_COMPANY_GROUP_GUID_ID;
 
-         MustBeUpdated = neverSynchronized || synchronizedInThePast;
+            MustBeUpdated = neverSynchronized || synchronizedInThePast;
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
       public void RegisterEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, GestprojectProjectModel entity)
       {
-         new RegisterEntity
-         (
-            connection,
-            tableSchema.TableName,
-            new List<(string, dynamic)>(){
+         try
+         {
+            new RegisterEntity
+            (
+               connection,
+               tableSchema.TableName,
+               new List<(string, dynamic)>(){
                (tableSchema.SynchronizationStatus.ColumnDatabaseName, SynchronizationStatusOptions.Desincronizado),
                (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID),
                (tableSchema.Name.ColumnDatabaseName, entity.PRY_NOMBRE),
@@ -137,18 +164,30 @@ namespace SincronizadorGPS50
                (tableSchema.PostalCode.ColumnDatabaseName, entity.PRY_CP),
                (tableSchema.Locality.ColumnDatabaseName, entity.PRY_LOCALIDAD),
                (tableSchema.Province.ColumnDatabaseName, entity.PRY_PROVINCIA)
-            }
-         );
+               }
+            );
 
-         AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
+            AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
       public void UpdateEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, GestprojectProjectModel entity)
       {
-         new UpdateEntity
-         (
-            connection,
-            tableSchema.TableName,
-            new List<(string, dynamic)>(){
+         try
+         {
+            new UpdateEntity
+            (
+               connection,
+               tableSchema.TableName,
+               new List<(string, dynamic)>(){
                (tableSchema.SynchronizationStatus.ColumnDatabaseName, entity.SYNC_STATUS),
                (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID),
                (tableSchema.Name.ColumnDatabaseName, entity.PRY_NOMBRE),
@@ -156,14 +195,25 @@ namespace SincronizadorGPS50
                (tableSchema.PostalCode.ColumnDatabaseName, entity.PRY_CP),
                (tableSchema.Locality.ColumnDatabaseName, entity.PRY_LOCALIDAD),
                (tableSchema.Province.ColumnDatabaseName, entity.PRY_PROVINCIA)
-            },
-            (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID)
-         );
+               },
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID)
+            );
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
       public void ValidateEntitySynchronizationStatus(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, List<Sage50ProjectModel> sage50Entities, GestprojectProjectModel entity)
       {
-
-         ValidateProjectSyncronizationStatus ProviderSyncronizationStatusValidator = new ValidateProjectSyncronizationStatus(
+         try
+         {
+            ValidateProjectSyncronizationStatus ProviderSyncronizationStatusValidator = new ValidateProjectSyncronizationStatus(
             entity,
             sage50Entities,
             tableSchema.Name.ColumnDatabaseName,
@@ -173,34 +223,68 @@ namespace SincronizadorGPS50
             tableSchema.Province.ColumnDatabaseName
          );
 
-         MustBeDeleted = ProviderSyncronizationStatusValidator.MustBeDeleted;
+            MustBeDeleted = ProviderSyncronizationStatusValidator.MustBeDeleted;
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
       public void DeleteEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, List<GestprojectProjectModel> gestprojectEntites, GestprojectProjectModel entity)
       {
-         new DeleteEntityFromSynchronizationTable(
-            connection,
-            tableSchema.TableName,
-            (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID),
-            (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
-         );
+         try
+         {
+            new DeleteEntityFromSynchronizationTable(
+               connection,
+               tableSchema.TableName,
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID),
+               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
+            );
 
-         new ClearEntityDataInGestproject(
-            connection,
-            "PROYECTO",
-            new List<string>(){
+            new ClearEntityDataInGestproject(
+               connection,
+               "PROYECTO",
+               new List<string>(){
                tableSchema.AccountableSubaccount.ColumnDatabaseName
-            },
-            (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID)
-         );
+               },
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID)
+            );
 
-         ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
+            ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
 
       public void ClearEntitySynchronizationData(GestprojectProjectModel entity, List<(string propertyName, dynamic defaultValue)> entityPropertiesValuesTupleList)
       {
-         for(global::System.Int32 i = 0; i < entityPropertiesValuesTupleList.Count; i++)
+         try
          {
-            typeof(GestprojectProjectModel).GetProperty(entityPropertiesValuesTupleList[i].propertyName).SetValue(entity, entityPropertiesValuesTupleList[i].defaultValue);
+            for(global::System.Int32 i = 0; i < entityPropertiesValuesTupleList.Count; i++)
+            {
+               typeof(GestprojectProjectModel).GetProperty(entityPropertiesValuesTupleList[i].propertyName).SetValue(entity, entityPropertiesValuesTupleList[i].defaultValue);
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
          };
       }
    }

@@ -53,17 +53,34 @@ namespace SincronizadorGPS50
 
                      PropertyInfo[] properties = entity.GetType().GetProperties();
 
-                     for(global::System.Int32 i = 0; i < columnsAndTypesToQuery.Count; i++)
-                     {
-                        TypeRevisor<GestprojectReceivedBillModel>.Check(
-                           columnsAndTypesToQuery[i].columnType,
-                           columnsAndTypesToQuery[i].columnName,
-                           entity,
-                           reader,
-                           i,
-                           properties
-                        );
-                     };
+                        for(global::System.Int32 i = 0; i < columnsAndTypesToQuery.Count; i++)
+                        {
+                           try
+                           {
+                              TypeRevisor<GestprojectReceivedBillModel>.Check(
+                                 columnsAndTypesToQuery[i].columnType,
+                                 columnsAndTypesToQuery[i].columnName,
+                                 entity,
+                                 reader,
+                                 i,
+                                 properties
+                              );                                                
+                           }
+                           catch(System.Exception exception)
+                           {
+                              MessageBox.Show($@"
+                                 {columnsAndTypesToQuery[i].columnName},
+                                 {entity.FCP_ID}
+                              ");
+
+                              throw ApplicationLogger.ReportError(
+                                 MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+                                 MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                 MethodBase.GetCurrentMethod().Name,
+                                 exception
+                              );
+                           }
+                        };   
 
                      GestprojectEntityList.Add(entity);
                   };

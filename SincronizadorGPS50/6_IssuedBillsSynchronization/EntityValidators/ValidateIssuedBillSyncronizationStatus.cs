@@ -27,7 +27,6 @@ namespace SincronizadorGPS50
          List<Sage50IssuedBillModel> sage50EntityList,
          string GestprojectDaoId,
          string GestprojectReference,
-         string GestprojectBillNumber,
          string GestprojectDate,
          string GestprojectCliId,
          string GestprojectTaxableBase,
@@ -54,20 +53,12 @@ namespace SincronizadorGPS50
                            gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectDaoId, sage50EntityList[i].EMPRESA.Trim());
                         };
 
-                        if(sage50EntityList[i].LETRA != gestprojectEntity.FCE_REFERENCIA)
+                        if(sage50EntityList[i].NUMERO != gestprojectEntity.FCE_REFERENCIA)
                         {
                            NeverWasSynchronized = false;
                            IsSynchronized = false;
                            MustBeDeleted = false;
-                           gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectReference, sage50EntityList[i].LETRA.ToString());
-                        };
-
-                        if(sage50EntityList[i].NUMERO.Trim() != gestprojectEntity.FCE_NUM_FACTURA.ToString())
-                        {
-                           NeverWasSynchronized = false;
-                           IsSynchronized = false;
-                           MustBeDeleted = false;
-                           gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectBillNumber, sage50EntityList[i].NUMERO.Trim());
+                           gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectReference, sage50EntityList[i].NUMERO.ToString());
                         };
 
                         if(sage50EntityList[i].FECHA != gestprojectEntity.FCE_FECHA)
@@ -110,13 +101,13 @@ namespace SincronizadorGPS50
                            gestprojectEntity.COMMENTS += this.CreateErrorMesage(GestprojectBillObservations, sage50EntityList[i].OBSERVACIO);
                         };
 
+                        // sage50EntityList[i].LETRA == gestprojectEntity.FCE_REFERENCIA. No se usa en v.1.0.0.0
+
                         if
                         (
                            sage50EntityList[i].EMPRESA.Trim() == gestprojectEntity.PAR_DAO_ID.ToString()
                            &&
-                           sage50EntityList[i].LETRA == gestprojectEntity.FCE_REFERENCIA
-                           &&
-                           sage50EntityList[i].NUMERO.Trim() == gestprojectEntity.FCE_NUM_FACTURA.ToString()
+                           sage50EntityList[i].NUMERO.Trim() == gestprojectEntity.FCE_REFERENCIA.ToString()
                            &&
                            sage50EntityList[i].FECHA == gestprojectEntity.FCE_FECHA
                            &&

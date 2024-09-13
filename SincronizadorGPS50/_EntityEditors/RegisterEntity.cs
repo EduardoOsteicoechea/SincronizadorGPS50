@@ -26,10 +26,19 @@ namespace SincronizadorGPS50
             for (global::System.Int32 i = 0; i < columnsNamesAndValues.Count; i++)
             {
                string name = columnsNamesAndValues[i].columnName;
-               dynamic value = columnsNamesAndValues[i].columnValue;
 
-               dynamicColumns.Append($"{name},");
-               dynamicValues.Append($"{DynamicValuesFormatters.Formatters[value.GetType()](value)},");               
+               if(columnsNamesAndValues[i].columnValue == null && name == "FCE_OBSERVACIONES")
+               {
+                  dynamic value = "";
+                  dynamicColumns.Append($"{name},");
+                  dynamicValues.Append($"{DynamicValuesFormatters.Formatters[value.GetType()](value)},"); 
+               }
+               else
+               {
+                  dynamic value = columnsNamesAndValues[i].columnValue;
+                  dynamicColumns.Append($"{name},");
+                  dynamicValues.Append($"{DynamicValuesFormatters.Formatters[value.GetType()](value)},"); 
+               };
             };
 
             string sqlString2 = $@"INSERT INTO {tableName} ({dynamicColumns.ToString().TrimEnd(',')}) VALUES ({dynamicValues.ToString().TrimEnd(',')});";

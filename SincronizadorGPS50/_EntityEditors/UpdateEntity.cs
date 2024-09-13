@@ -13,7 +13,7 @@ namespace SincronizadorGPS50
       (
          System.Data.SqlClient.SqlConnection connection,
          string tableName,
-         List<(string columnName, dynamic columnValue)> columnsAndValues,
+         List<(string columnName, dynamic columnValue)> columnsNamesAndValues,
          (string columnName, dynamic value) condition1,
          (string columnName, dynamic value) condition2 = default
       )
@@ -22,18 +22,29 @@ namespace SincronizadorGPS50
          {
             connection.Open();
 
+            StringBuilder columnsNamesAndValuesStringBuilder = new StringBuilder();
 
-            StringBuilder columnsAndValuesStringBuilder = new StringBuilder();
-
-            for(global::System.Int32 i = 0; i < columnsAndValues.Count; i++)
+            for(global::System.Int32 i = 0; i < columnsNamesAndValues.Count; i++)
             {
-               string name = columnsAndValues[i].columnName;
-               dynamic value = columnsAndValues[i].columnValue;
+            //   string name = columnsNamesAndValues[i].columnName;
+            //   dynamic value = columnsNamesAndValues[i].columnValue;
 
-               columnsAndValuesStringBuilder.Append($"{name}={DynamicValuesFormatters.Formatters[value.GetType()](value)},");
+            //   columnsNamesAndValuesStringBuilder.Append($"{name}={DynamicValuesFormatters.Formatters[value.GetType()](value)},");
+            
+               string name = columnsNamesAndValues[i].columnName;
+
+               if(columnsNamesAndValues[i].columnValue == null && name == "FCE_OBSERVACIONES")
+               {
+                  dynamic value = "";
+                  columnsNamesAndValuesStringBuilder.Append($"{name}={DynamicValuesFormatters.Formatters[value.GetType()](value)},");
+               }
+               else
+               {
+                  dynamic value = columnsNamesAndValues[i].columnValue;
+                  columnsNamesAndValuesStringBuilder.Append($"{name}={DynamicValuesFormatters.Formatters[value.GetType()](value)},");
+               };
             };
-            
-            
+
             StringBuilder sqlCondition = new StringBuilder();
             
             if(condition1.value.GetType() == typeof(string))
@@ -66,7 +77,7 @@ namespace SincronizadorGPS50
             UPDATE 
                {tableName} 
             SET
-               {columnsAndValuesStringBuilder.ToString().TrimEnd(',')}
+               {columnsNamesAndValuesStringBuilder.ToString().TrimEnd(',')}
             WHERE
                {sqlCondition.ToString()}
             ;";

@@ -8,22 +8,20 @@ namespace SincronizadorGPS50
    public class GestprojectReceivedBillModel : ISynchronizationModel
    {
       // Gestproject fields
-      public int? FCE_ID { get; set; }
-      public int? PAR_DAO_ID { get; set; }
-      public string FCE_REFERENCIA { get; set; }
-      public int FCE_NUM_FACTURA { get; set; }
-      public DateTime? FCE_FECHA { get; set; }
-      public int? PAR_CLI_ID { get; set; }
-      public decimal? FCE_BASE_IMPONIBLE { get; set; }
-      public decimal? FCE_VALOR_IVA { get; set; }
-      public decimal? FCE_IVA { get; set; }
-      public decimal? FCE_VALOR_IRPF { get; set; }
-      public decimal? FCE_IRPF { get; set; }
-      public decimal? FCE_TOTAL_SUPLIDO { get; set; }
-      public decimal? FCE_TOTAL_FACTURA { get; set; }
-      public string FCE_OBSERVACIONES { get; set; }
-      public string PROYECTO { get; set; }
-      public string TIPO { get; set; }
+      public int? FCP_ID { get; set; } = null;
+      public int? PAR_DAO_ID { get; set; } = null;
+      public string FCP_NUM_FACTURA { get; set; } = "";
+      public DateTime? FCP_FECHA { get; set; } = null;
+      public int? PAR_PRO_ID { get; set; } = null;
+      public decimal? FCP_BASE_IMPONIBLE { get; set; } = null;
+      public decimal? FCP_VALOR_IVA { get; set; } = null;
+      public decimal? FCP_IVA { get; set; } = null;
+      public decimal? FCP_VALOR_IRPF { get; set; } = null;
+      public decimal? FCP_IRPF { get; set; } = null;
+      public decimal? FCP_TOTAL_FACTURA { get; set; } = null;
+      public string FCP_OBSERVACIONES { get; set; } = "";
+      public string PROYECTO { get; set; } = "";
+      public string TIPO { get; set; } = "";
 
       // Syncronization fields
       public int? ID { get; set; } = null;

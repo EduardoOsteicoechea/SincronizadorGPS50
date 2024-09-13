@@ -53,7 +53,7 @@ namespace SincronizadorGPS50
 
             for (global::System.Int32 i = 0; i < tableSchema.ColumnsTuplesList.Count; i++)
             {
-               (string columnName, string friendlyName, Type columnType, string columnDefinition) currentTuple = tableSchema.ColumnsTuplesList[i];
+               (string columnName, string friendlyName, Type columnType, string columnDefinition, dynamic defaultValue) currentTuple = tableSchema.ColumnsTuplesList[i];
                string columnDatabaseName = currentTuple.columnName;
                string columnDefinition = currentTuple.columnDefinition;
                string columnFullDefinition = $"{columnDatabaseName} {columnDefinition}";

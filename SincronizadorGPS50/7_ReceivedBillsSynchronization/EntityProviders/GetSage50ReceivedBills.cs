@@ -19,19 +19,16 @@ namespace SincronizadorGPS50
       {
          try
          {
-            string sqlString1DatabaseName = DB.SQLDatabase("gestion","c_albven").ToString();
+            string sqlString1DatabaseName = DB.SQLDatabase("gestion","c_factucom").ToString();
           
             string sqlString1 = $@"SELECT 
                GUID_ID,
                EMPRESA,
-               LETRA,
                NUMERO,
-               FECHA,
-               OBRA,
-               CLIENTE,
+               CREATED,
+               PROVEEDOR,
                IMPORTE,
-               TOTALDOC,
-               OBSERVACIO
+               TOTALDOC
             FROM {sqlString1DatabaseName};";
 
             //MessageBox.Show(sqlString1);
@@ -48,14 +45,11 @@ namespace SincronizadorGPS50
 
                   sage50Entity.GUID_ID = table1.Rows[i].ItemArray[0].ToString().Trim();
                   sage50Entity.EMPRESA = table1.Rows[i].ItemArray[1].ToString().Trim();
-                  sage50Entity.LETRA = table1.Rows[i].ItemArray[2].ToString().Trim();
-                  sage50Entity.NUMERO = table1.Rows[i].ItemArray[3].ToString().Trim();
-                  sage50Entity.FECHA = Convert.ToDateTime(table1.Rows[i].ItemArray[4]);
-                  sage50Entity.OBRA = table1.Rows[i].ItemArray[5].ToString().Trim();
-                  sage50Entity.CLIENTE = table1.Rows[i].ItemArray[6].ToString().Trim();
-                  sage50Entity.IMPORTE = Convert.ToDecimal(table1.Rows[i].ItemArray[7]);
-                  sage50Entity.TOTALDOC = Convert.ToDecimal(table1.Rows[i].ItemArray[8]);
-                  sage50Entity.OBSERVACIO = table1.Rows[i].ItemArray[9].ToString().Trim();
+                  sage50Entity.NUMERO = table1.Rows[i].ItemArray[2].ToString().Trim();
+                  sage50Entity.CREATED = Convert.ToDateTime(table1.Rows[3].ItemArray[4]);
+                  sage50Entity.PROVEEDOR = table1.Rows[i].ItemArray[4].ToString().Trim();
+                  sage50Entity.IMPORTE = Convert.ToDecimal(table1.Rows[i].ItemArray[5]);
+                  sage50Entity.TOTALDOC = Convert.ToDecimal(table1.Rows[i].ItemArray[6]);
 
                   Entities.Add(sage50Entity);
                };

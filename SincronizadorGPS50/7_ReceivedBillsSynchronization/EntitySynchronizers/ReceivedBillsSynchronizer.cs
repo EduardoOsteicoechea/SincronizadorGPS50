@@ -35,71 +35,73 @@ namespace SincronizadorGPS50
             Sage50ConnectionManager = sage50ConnectionManager;
             SynchronizationTableSchemaProvider = tableSchema;
 
-            StoreGestprojectEntityList
-            (
-               GestprojectConnectionManager,
-               selectedIdList,
-               SynchronizationTableSchemaProvider.TableName,
-               new List<(string, System.Type)>()
-               {
-                  (tableSchema.Name.ColumnDatabaseName, tableSchema.Name.ColumnValueType),
-                  (tableSchema.Cif.ColumnDatabaseName, tableSchema.Cif.ColumnValueType),
-                  (tableSchema.Address.ColumnDatabaseName, tableSchema.Address.ColumnValueType),
-                  (tableSchema.PostalCode.ColumnDatabaseName, tableSchema.PostalCode.ColumnValueType),
-                  (tableSchema.Locality.ColumnDatabaseName, tableSchema.Locality.ColumnValueType),
-                  (tableSchema.Province.ColumnDatabaseName, tableSchema.Province.ColumnValueType),
-                  (tableSchema.Country.ColumnDatabaseName, tableSchema.Country.ColumnValueType),
-                  (tableSchema.SynchronizationStatus.ColumnDatabaseName, tableSchema.SynchronizationStatus.ColumnValueType),
-                  (tableSchema.CompanyGroupName.ColumnDatabaseName, tableSchema.CompanyGroupName.ColumnValueType),
-                  (tableSchema.CompanyGroupCode.ColumnDatabaseName, tableSchema.CompanyGroupCode.ColumnValueType),
-                  (tableSchema.CompanyGroupMainCode.ColumnDatabaseName, tableSchema.CompanyGroupMainCode.ColumnValueType),
-                  (tableSchema.CompanyGroupGuidId.ColumnDatabaseName, tableSchema.CompanyGroupGuidId.ColumnValueType),
-                  (tableSchema.GestprojectId.ColumnDatabaseName, tableSchema.GestprojectId.ColumnValueType),
-                  (tableSchema.Sage50Code.ColumnDatabaseName, tableSchema.Sage50Code.ColumnValueType),
-                  (tableSchema.Sage50GuidId.ColumnDatabaseName, tableSchema.Sage50GuidId.ColumnValueType),
-                  (tableSchema.Comments.ColumnDatabaseName, tableSchema.Comments.ColumnValueType)
-               },
-               (
-                  tableSchema.GestprojectId.ColumnDatabaseName,
-                  string.Join(",", selectedIdList)
-               )
-            );
+            new CreateSage50ReceivedBills()._CrearEjemploAlbaran();
 
-            StoreSage50EntityList
-            (
-               "proveed",
-               new List<(string, System.Type)>()
-               {
-                  ("CODIGO", typeof(string)),
-                  ("CIF", typeof(string)),
-                  ("NOMBRE", typeof(string)),
-                  ("DIRECCION", typeof(string)),
-                  ("CODPOST", typeof(string)),
-                  ("POBLACION", typeof(string)),
-                  ("PROVINCIA", typeof(string)),
-                  ("PAIS", typeof(string)),
-                  ("GUID_ID", typeof(string))
-               }
-            );
+            //StoreGestprojectEntityList
+            //(
+            //   GestprojectConnectionManager,
+            //   selectedIdList,
+            //   SynchronizationTableSchemaProvider.TableName,
+            //   new List<(string, System.Type)>()
+            //   {
+            //      (tableSchema.Name.ColumnDatabaseName, tableSchema.Name.ColumnValueType),
+            //      (tableSchema.Cif.ColumnDatabaseName, tableSchema.Cif.ColumnValueType),
+            //      (tableSchema.Address.ColumnDatabaseName, tableSchema.Address.ColumnValueType),
+            //      (tableSchema.PostalCode.ColumnDatabaseName, tableSchema.PostalCode.ColumnValueType),
+            //      (tableSchema.Locality.ColumnDatabaseName, tableSchema.Locality.ColumnValueType),
+            //      (tableSchema.Province.ColumnDatabaseName, tableSchema.Province.ColumnValueType),
+            //      (tableSchema.Country.ColumnDatabaseName, tableSchema.Country.ColumnValueType),
+            //      (tableSchema.SynchronizationStatus.ColumnDatabaseName, tableSchema.SynchronizationStatus.ColumnValueType),
+            //      (tableSchema.CompanyGroupName.ColumnDatabaseName, tableSchema.CompanyGroupName.ColumnValueType),
+            //      (tableSchema.CompanyGroupCode.ColumnDatabaseName, tableSchema.CompanyGroupCode.ColumnValueType),
+            //      (tableSchema.CompanyGroupMainCode.ColumnDatabaseName, tableSchema.CompanyGroupMainCode.ColumnValueType),
+            //      (tableSchema.CompanyGroupGuidId.ColumnDatabaseName, tableSchema.CompanyGroupGuidId.ColumnValueType),
+            //      (tableSchema.GestprojectId.ColumnDatabaseName, tableSchema.GestprojectId.ColumnValueType),
+            //      (tableSchema.Sage50Code.ColumnDatabaseName, tableSchema.Sage50Code.ColumnValueType),
+            //      (tableSchema.Sage50GuidId.ColumnDatabaseName, tableSchema.Sage50GuidId.ColumnValueType),
+            //      (tableSchema.Comments.ColumnDatabaseName, tableSchema.Comments.ColumnValueType)
+            //   },
+            //   (
+            //      tableSchema.GestprojectId.ColumnDatabaseName,
+            //      string.Join(",", selectedIdList)
+            //   )
+            //);
 
-            StoreBreakDownGestprojectEntityListByStatus(GestprojectEntityList, Sage50EntityList);
+            //StoreSage50EntityList
+            //(
+            //   "proveed",
+            //   new List<(string, System.Type)>()
+            //   {
+            //      ("CODIGO", typeof(string)),
+            //      ("CIF", typeof(string)),
+            //      ("NOMBRE", typeof(string)),
+            //      ("DIRECCION", typeof(string)),
+            //      ("CODPOST", typeof(string)),
+            //      ("POBLACION", typeof(string)),
+            //      ("PROVINCIA", typeof(string)),
+            //      ("PAIS", typeof(string)),
+            //      ("GUID_ID", typeof(string))
+            //   }
+            //);
 
-            DetermineEntitySincronizationWorkflow(UnexistingGestprojectEntityList, ExistingGestprojectEntityList, UnsynchronizedGestprojectEntityList, GestprojectEntityList);
+            //StoreBreakDownGestprojectEntityListByStatus(GestprojectEntityList, Sage50EntityList);
 
-            ExecuteSyncronizationWorkflow
-            (
-               SomeEntitiesExistsInSage50,
-               AllEntitiesExistsInSage50,
-               NoEntitiesExistsInSage50,
-               UnsynchronizedEntityExists,
-               GestprojectConnectionManager,
-               Sage50ConnectionManager,
-               SynchronizationTableSchemaProvider,
-               UnexistingGestprojectEntityList,
-               ExistingGestprojectEntityList,
-               UnsynchronizedGestprojectEntityList,
-               GestprojectEntityList
-            );
+            //DetermineEntitySincronizationWorkflow(UnexistingGestprojectEntityList, ExistingGestprojectEntityList, UnsynchronizedGestprojectEntityList, GestprojectEntityList);
+
+            //ExecuteSyncronizationWorkflow
+            //(
+            //   SomeEntitiesExistsInSage50,
+            //   AllEntitiesExistsInSage50,
+            //   NoEntitiesExistsInSage50,
+            //   UnsynchronizedEntityExists,
+            //   GestprojectConnectionManager,
+            //   Sage50ConnectionManager,
+            //   SynchronizationTableSchemaProvider,
+            //   UnexistingGestprojectEntityList,
+            //   ExistingGestprojectEntityList,
+            //   UnsynchronizedGestprojectEntityList,
+            //   GestprojectEntityList
+            //);
          }
          catch(System.Exception exception)
          {
@@ -121,13 +123,13 @@ namespace SincronizadorGPS50
          (string condition1ColumnName, string condition1Value) condition1Data
       )
       {
-         GestprojectEntityList = new GestprojectEntities<GestprojectReceivedBillModel>().GetAll(
-            gestprojectConnectionManager.GestprojectSqlConnection,
-            selectedIdList,
-            tableName,
-            fieldsToBeRetrieved,
-            condition1Data
-         );
+         //GestprojectEntityList = new GestprojectEntities<GestprojectReceivedBillModel>().GetAll(
+         //   gestprojectConnectionManager.GestprojectSqlConnection,
+         //   selectedIdList,
+         //   tableName,
+         //   fieldsToBeRetrieved,
+         //   condition1Data
+         //);
       }
 
       public void StoreSage50EntityList
@@ -136,10 +138,10 @@ namespace SincronizadorGPS50
          List<(string, System.Type)> fieldsToBeRetrieved
       )
       {
-         Sage50EntityList = new Sage50Entities<Sage50ReceivedBillModel>().GetAll(
-            tableName,
-            fieldsToBeRetrieved
-         );
+         //Sage50EntityList = new Sage50Entities<Sage50ReceivedBillModel>().GetAll(
+         //   tableName,
+         //   fieldsToBeRetrieved
+         //);
       }
       
       public void StoreBreakDownGestprojectEntityListByStatus
@@ -148,34 +150,34 @@ namespace SincronizadorGPS50
          List<Sage50ReceivedBillModel> Sage50EntityList
       )
       {
-         for(int i = 0; i < GestprojectEntityList.Count; i++)
-         {
-            var gestprojectEntity = GestprojectEntityList[i];
-            bool found = false;
+         //for(int i = 0; i < GestprojectEntityList.Count; i++)
+         //{
+         //   var gestprojectEntity = GestprojectEntityList[i];
+         //   bool found = false;
 
-            for(global::System.Int32 j = 0; j < Sage50EntityList.Count; j++)
-            {
-               var sage50Entity = Sage50EntityList[j];
-               if(
-                  gestprojectEntity.S50_CODE == sage50Entity.GUID_ID
-               )
-               {
-               ExistingGestprojectEntityList.Add(gestprojectEntity);
-                  found = true;
-                  break;
-               };
-            };
+         //   for(global::System.Int32 j = 0; j < Sage50EntityList.Count; j++)
+         //   {
+         //      var sage50Entity = Sage50EntityList[j];
+         //      if(
+         //         gestprojectEntity.S50_CODE == sage50Entity.GUID_ID
+         //      )
+         //      {
+         //      ExistingGestprojectEntityList.Add(gestprojectEntity);
+         //         found = true;
+         //         break;
+         //      };
+         //   };
 
-            if(!found)
-            {
-            UnexistingGestprojectEntityList.Add(gestprojectEntity);
-            };
+         //   if(!found)
+         //   {
+         //   UnexistingGestprojectEntityList.Add(gestprojectEntity);
+         //   };
 
-            if(gestprojectEntity.SYNC_STATUS != "Sincronizado" && gestprojectEntity.S50_CODE != "")
-            {
-            UnsynchronizedGestprojectEntityList.Add(gestprojectEntity);
-            };
-         };
+         //   if(gestprojectEntity.SYNC_STATUS != "Sincronizado" && gestprojectEntity.S50_CODE != "")
+         //   {
+         //   UnsynchronizedGestprojectEntityList.Add(gestprojectEntity);
+         //   };
+         //};
       }
 
       public void DetermineEntitySincronizationWorkflow
@@ -186,10 +188,10 @@ namespace SincronizadorGPS50
          List<GestprojectReceivedBillModel> GestprojectEntityList
       )
       {
-         SomeEntitiesExistsInSage50 = ExistingGestprojectEntityList.Count > 0;
-         AllEntitiesExistsInSage50 = ExistingGestprojectEntityList.Count == GestprojectEntityList.Count;
-         NoEntitiesExistsInSage50 = ExistingGestprojectEntityList.Count == 0;
-         UnsynchronizedEntityExists = UnsynchronizedGestprojectEntityList.Count > 0;
+         //SomeEntitiesExistsInSage50 = ExistingGestprojectEntityList.Count > 0;
+         //AllEntitiesExistsInSage50 = ExistingGestprojectEntityList.Count == GestprojectEntityList.Count;
+         //NoEntitiesExistsInSage50 = ExistingGestprojectEntityList.Count == 0;
+         //UnsynchronizedEntityExists = UnsynchronizedGestprojectEntityList.Count > 0;
       }
 
       public void ExecuteSyncronizationWorkflow

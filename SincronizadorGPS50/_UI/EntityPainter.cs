@@ -13,7 +13,7 @@ namespace SincronizadorGPS50
       (
          List<T1> proccessedGestprojectEntities,
          DataTable dataTable,
-         List<(string columnName, string friendlyName, Type columnType, string columnDefinition)> tableFieldsTupleList
+         List<(string columnName, string friendlyName, Type columnType, string columnDefinition, dynamic defaultValue)> tableFieldsTupleList
       )
       {
          try

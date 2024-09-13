@@ -9,6 +9,6 @@ namespace SincronizadorGPS50
 {
    internal interface IDataTableGenerator
    {
-      System.Data.DataTable CreateDataTable(List<(string columnName, string friendlyName, Type columnType, string columnDefinition)> tableFieldsTupleList);      
+      System.Data.DataTable CreateDataTable(List<(string columnName, string friendlyName, Type columnType, string columnDefinition, dynamic defaultValue)> tableFieldsTupleList);      
    }
 }
