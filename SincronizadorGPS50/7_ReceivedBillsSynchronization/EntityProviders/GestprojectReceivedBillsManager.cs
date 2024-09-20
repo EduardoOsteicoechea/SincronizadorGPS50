@@ -79,7 +79,7 @@ namespace SincronizadorGPS50
                                  MethodBase.GetCurrentMethod().Name,
                                  exception
                               );
-                           }
+                           };
                         };   
 
                      GestprojectEntityList.Add(entity);

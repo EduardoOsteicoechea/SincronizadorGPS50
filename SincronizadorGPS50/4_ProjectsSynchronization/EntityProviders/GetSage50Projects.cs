@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Windows.Forms;
 
 namespace SincronizadorGPS50
@@ -18,52 +19,65 @@ namespace SincronizadorGPS50
       public string Code { get; set; }
       public string Guid { get; set; }
       public bool Exists { get; set; } = false;
-      public GetSage50Projects()
+      public GetSage50Projects
+      (
+         (
+            (string sageDispactcherMechanismRoute, string tableName) dispatcherAndName,
+            List<(string name, Type type)> tableFieldsAlongTypes
+         ) sageTableDataEntity = default
+      )
       {
          try
          {
-            string getSage50ProviderSQLQuery = @"
-                SELECT 
-                    codigo,
-                    nombre, 
-                    direccion, 
-                    codpost, 
-                    poblacion, 
-                    provincia,
-                    guid_id 
-                FROM " + $"{DB.SQLDatabase("comunes","obra")}";
-
-            DataTable sage50ProvidersDataTable = new DataTable();
-
-            DB.SQLExec(getSage50ProviderSQLQuery, ref sage50ProvidersDataTable);
-
-            if(sage50ProvidersDataTable.Rows.Count > 0)
+            StringBuilder fieldsToQueryStringBuilder = new StringBuilder();
+            foreach(var item in sageTableDataEntity.tableFieldsAlongTypes)
             {
-               for(int i = 0; i < sage50ProvidersDataTable.Rows.Count; i++)
+               fieldsToQueryStringBuilder.Append($"[{item.name}], ");
+            };
+
+            string getSage50EntitySQLQuery = $@"SELECT {fieldsToQueryStringBuilder.ToString().TrimEnd(' ').TrimEnd(',')} FROM {DB.SQLDatabase(
+                  sageTableDataEntity.dispatcherAndName.sageDispactcherMechanismRoute,
+                  sageTableDataEntity.dispatcherAndName.tableName
+               )};";
+
+            //MessageBox.Show(getSage50EntitySQLQuery);
+
+            DataTable sage50EntityDataTable = new DataTable();
+
+            DB.SQLExec(getSage50EntitySQLQuery, ref sage50EntityDataTable);
+
+            if(sage50EntityDataTable.Rows.Count > 0)
+            {
+               for(int i = 0; i < sage50EntityDataTable.Rows.Count; i++)
                {
-                  Sage50ProjectModel sage50Provider = new Sage50ProjectModel();
+                  Sage50ProjectModel entity = new Sage50ProjectModel();
+                  PropertyInfo[] entityPropertyInfoArray = entity.GetType().GetProperties();
 
-                  sage50Provider.CODIGO = sage50ProvidersDataTable.Rows[i].ItemArray[0].ToString().Trim();
-                  sage50Provider.NOMBRE = sage50ProvidersDataTable.Rows[i].ItemArray[2].ToString().Trim();
-                  sage50Provider.DIRECCION = sage50ProvidersDataTable.Rows[i].ItemArray[3].ToString().Trim();
-                  sage50Provider.CODPOST = sage50ProvidersDataTable.Rows[i].ItemArray[4].ToString().Trim();
-                  sage50Provider.POBLACION = sage50ProvidersDataTable.Rows[i].ItemArray[5].ToString().Trim();
-                  sage50Provider.PROVINCIA = sage50ProvidersDataTable.Rows[i].ItemArray[6].ToString().Trim();
-                  sage50Provider.GUID_ID = sage50ProvidersDataTable.Rows[i].ItemArray[8].ToString().Trim();
-
-                  Entities.Add(sage50Provider);
-                  Codes.Add(sage50Provider.CODIGO);
-                  Guids.Add(sage50Provider.GUID_ID);
-               };
-
-               int Sage50HigestCodeNumber = Entities.First().CODIGO_NUMERO;
-               for(int i = 0; i < Entities.Count; i++)
-               {
-                  if(Entities[i].CODIGO_NUMERO > Sage50HigestCodeNumber)
+                  for(global::System.Int32 j = 0; j < entityPropertyInfoArray.Length; j++)
                   {
-                     Sage50HigestCodeNumber = Entities[i].CODIGO_NUMERO;
+                     PropertyInfo property = entityPropertyInfoArray[j];
+                     Type entityType = sageTableDataEntity.tableFieldsAlongTypes[j].type;
+                     property.SetValue(
+                        entity,
+                        sage50EntityDataTable.Rows[i].ItemArray[j].ToString().Trim() ?? ""
+                     );
                   };
+
+                  //entity.CODIGO = sage50EntityDataTable.Rows[i].ItemArray[0].ToString().Trim();
+                  //entity.NOMBRE = sage50EntityDataTable.Rows[i].ItemArray[1].ToString().Trim();
+                  //entity.DIRECCION = sage50EntityDataTable.Rows[i].ItemArray[2].ToString().Trim();
+                  //entity.CODPOST = sage50EntityDataTable.Rows[i].ItemArray[3].ToString().Trim();
+                  //entity.POBLACION = sage50EntityDataTable.Rows[i].ItemArray[4].ToString().Trim();
+                  //entity.PROVINCIA = sage50EntityDataTable.Rows[i].ItemArray[5].ToString().Trim();
+                  //entity.GUID_ID = sage50EntityDataTable.Rows[i].ItemArray[6].ToString().Trim();
+
+                  Entities.Add(entity);
+                  Codes.Add(entity.CODIGO);
+                  Guids.Add(entity.GUID_ID);
                };
+
+               int Sage50HigestCodeNumber = int.Parse(Entities.Last().CODIGO);
+               Sage50HigestCodeNumber++;
 
                if(Entities.Count > 0)
                {

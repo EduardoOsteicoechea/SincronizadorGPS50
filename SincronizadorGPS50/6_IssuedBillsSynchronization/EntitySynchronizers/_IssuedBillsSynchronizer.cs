@@ -67,6 +67,7 @@ namespace SincronizadorGPS50
 
             StoreSage50EntityList
             (
+               tableSchema.SageTableData.dispatcherAndName.sageDispactcherMechanismRoute,
                tableSchema.SageTableData.dispatcherAndName.tableName,
                tableSchema.SageTableData.tableFieldsAlongTypes
             );
@@ -121,13 +122,15 @@ namespace SincronizadorGPS50
 
       public void StoreSage50EntityList
       (
-         string tableName, 
-         List<(string, System.Type)> fieldsToBeRetrieved
+         string sageDispactcherMechanismRoute,
+         string tableName,
+         List<(string, System.Type)> tableFieldsAlongTypes
       )
       {
          Sage50EntityList = new Sage50Entities<Sage50IssuedBillModel>().GetAll(
+            sageDispactcherMechanismRoute,
             tableName,
-            fieldsToBeRetrieved
+            tableFieldsAlongTypes
          );
       }
       

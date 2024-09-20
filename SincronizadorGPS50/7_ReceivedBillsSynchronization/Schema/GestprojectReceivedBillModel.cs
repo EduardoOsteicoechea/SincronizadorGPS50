@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Data.SqlClient;
-using System.Reflection;
-using System.Text;
 
 namespace SincronizadorGPS50
 {

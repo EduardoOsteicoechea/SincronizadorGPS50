@@ -7,7 +7,7 @@
       public string GUID_ID { get; set; }
       public string NOMBRE { get; set; }
 
-      public decimal IVA { get; set; }
+      public string IVA { get; set; }
       public string CTA_IV_REP { get; set; }
       public string CTA_IV_SOP { get; set; }
       public decimal RETENCION { get; set; }

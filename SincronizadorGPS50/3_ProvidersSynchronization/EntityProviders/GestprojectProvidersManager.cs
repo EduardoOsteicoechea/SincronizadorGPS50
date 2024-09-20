@@ -7,7 +7,7 @@ namespace SincronizadorGPS50
    public class GestprojectProvidersManager
    {
       public List<GestprojectProviderModel> GestprojectProvidersList { get; set; } = new List<GestprojectProviderModel>();
-      public List<GestprojectProviderModel> GetProviders(System.Data.SqlClient.SqlConnection connection, List<int> IdList = null)
+      public List<GestprojectProviderModel> GetAll(System.Data.SqlClient.SqlConnection connection, List<int> IdList = null)
       {
          try
          {

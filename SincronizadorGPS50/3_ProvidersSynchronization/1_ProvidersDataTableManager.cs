@@ -77,7 +77,7 @@ namespace SincronizadorGPS50
          ISynchronizationTableSchemaProvider tableSchemaProvider
       )
       {
-         GestprojectEntities = new GestprojectProvidersManager().GetProviders(gestprojectConnectionManager.GestprojectSqlConnection);
+         GestprojectEntities = new GestprojectProvidersManager().GetAll(gestprojectConnectionManager.GestprojectSqlConnection);
       }
 
       public void GetAndStoreSage50Entities

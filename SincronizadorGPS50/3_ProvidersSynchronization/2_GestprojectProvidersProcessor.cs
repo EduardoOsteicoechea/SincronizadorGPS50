@@ -157,7 +157,10 @@ namespace SincronizadorGPS50
                new List<(string, dynamic)>(){
                   (tableSchema.SynchronizationStatus.ColumnDatabaseName, SynchronizationStatusOptions.Desincronizado),
                   (tableSchema.GestprojectId.ColumnDatabaseName, entity.PAR_ID),
-                  (tableSchema.Name.ColumnDatabaseName, entity.NOMBRE_COMPLETO),
+                  (tableSchema.GestprojectName.ColumnDatabaseName, entity.PAR_NOMBRE),
+                  (tableSchema.GestprojectLastName1.ColumnDatabaseName, entity.PAR_APELLIDO_1),
+                  (tableSchema.GestprojectLastName2.ColumnDatabaseName, entity.PAR_APELLIDO_2),
+                  (tableSchema.FullName.ColumnDatabaseName, entity.NOMBRE_COMPLETO),
                   (tableSchema.Cif.ColumnDatabaseName, entity.PAR_CIF_NIF),
                   (tableSchema.Address.ColumnDatabaseName, entity.PAR_DIRECCION_1),
                   (tableSchema.PostalCode.ColumnDatabaseName, entity.PAR_CP_1),
@@ -190,7 +193,10 @@ namespace SincronizadorGPS50
                new List<(string, dynamic)>(){
                   (tableSchema.SynchronizationStatus.ColumnDatabaseName, entity.SYNC_STATUS),
                   (tableSchema.GestprojectId.ColumnDatabaseName, entity.PAR_ID),
-                  (tableSchema.Name.ColumnDatabaseName, entity.NOMBRE_COMPLETO),
+                  (tableSchema.GestprojectName.ColumnDatabaseName, entity.PAR_NOMBRE),
+                  (tableSchema.GestprojectLastName1.ColumnDatabaseName, entity.PAR_APELLIDO_1),
+                  (tableSchema.GestprojectLastName2.ColumnDatabaseName, entity.PAR_APELLIDO_2),
+                  (tableSchema.FullName.ColumnDatabaseName, entity.NOMBRE_COMPLETO),
                   (tableSchema.Cif.ColumnDatabaseName, entity.PAR_CIF_NIF),
                   (tableSchema.Address.ColumnDatabaseName, entity.PAR_DIRECCION_1),
                   (tableSchema.PostalCode.ColumnDatabaseName, entity.PAR_CP_1),
@@ -218,7 +224,7 @@ namespace SincronizadorGPS50
             ValidateProviderSyncronizationStatus ProviderSyncronizationStatusValidator = new ValidateProviderSyncronizationStatus(
                entity,
                sage50Entities,
-               tableSchema.Name.ColumnDatabaseName,
+               tableSchema.FullName.ColumnDatabaseName,
                tableSchema.Cif.ColumnDatabaseName,
                tableSchema.Address.ColumnDatabaseName,
                tableSchema.PostalCode.ColumnDatabaseName,

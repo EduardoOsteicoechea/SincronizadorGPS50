@@ -69,7 +69,8 @@ namespace SincronizadorGPS50
                {sqlCondition.ToString()}
             ;";
 
-            //MessageBox.Show(sqlString);
+            //if(tableName == "INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_TAXES")
+            //   MessageBox.Show(sqlString);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {
@@ -95,6 +96,9 @@ namespace SincronizadorGPS50
                   };
                };
             };
+
+            //if(Entity.GetType() == typeof(GestprojectTaxModel))
+            //   new VisualizePropertiesAndValues<GestprojectTaxModel>("Populated GestprojectTaxModel", Entity as GestprojectTaxModel);
 
             return Entity;
          }

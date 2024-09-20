@@ -1,4 +1,4 @@
-﻿using SincronizadorGPS50.Workflows.Sage50Connection;
+﻿ using SincronizadorGPS50.Workflows.Sage50Connection;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Reflection;
@@ -27,13 +27,26 @@ namespace SincronizadorGPS50
       {
          try
          {
+            //MessageBox.Show(
+            //   "At: GestprojectTaxesProcessor\n.ProcessEntityList" + "\n\n" +
+            //   "gestprojectEntites.Count: " + gestprojectEntites.Count + "\n" +
+            //   "sage50Entities.Count: " + sage50Entities.Count
+            //);
+
+            //////////////////////////////////////
+            // Here get's changed
+            //////////////////////////////////////
+
             ProcessedEntities = new List<GestprojectTaxModel>();
 
             for(int i = 0; i < gestprojectEntites.Count; i++)
             {
                GestprojectTaxModel entity = gestprojectEntites[i];
 
+               //MessageBox.Show("Before\n\nAppendSynchronizationTableDataToEntity(connection, tableSchema, entity);");
                AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
+
+               //MessageBox.Show("Before\n\nDetermineEntityWorkflow(connection, sage50ConnectionManager, tableSchema, entity);");
                DetermineEntityWorkflow(connection, sage50ConnectionManager, tableSchema, entity);
 
                if(MustBeSkipped)
@@ -52,14 +65,17 @@ namespace SincronizadorGPS50
                   UpdateEntity(connection, tableSchema, entity);
                };
 
+               //MessageBox.Show("Before\n\nValidateEntitySynchronizationStatus(connection, tableSchema, sage50Entities, entity);");
                ValidateEntitySynchronizationStatus(connection, tableSchema, sage50Entities, entity);
 
                if(MustBeDeleted)
                {
+                  //MessageBox.Show("Before\n\n DeleteEntity(connection, tableSchema, gestprojectEntites, entity);");
                   DeleteEntity(connection, tableSchema, gestprojectEntites, entity);
                   RegisterEntity(connection, tableSchema, entity);
                };
 
+               //MessageBox.Show("Before\n\nUpdateEntity(connection, tableSchema, entity);");
                UpdateEntity(connection, tableSchema, entity);
 
                ProcessedEntities.Add(entity);
@@ -114,18 +130,28 @@ namespace SincronizadorGPS50
       {
          try
          {
+            //new VisualizePropertiesAndValues<GestprojectTaxModel>(entity.IMP_NOMBRE, entity);
+
             MustBeRegistered = !new WasTaxRegistered(
                connection,
                tableSchema.TableName,
                tableSchema.GestprojectId.ColumnDatabaseName,
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
-               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
+               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
+               //(tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
             ).ItWas;
+            //).ItWas && entity.S50_GUID_ID == "";
 
             bool registeredInDifferentCompanyGroup =
-            entity.S50_COMPANY_GROUP_GUID_ID != ""
+            entity.S50_COMPANY_GROUP_GUID_ID.Trim() != ""
             &&
-            sage50ConnectionManager.CompanyGroupData.CompanyGuidId != entity.S50_COMPANY_GROUP_GUID_ID;
+            sage50ConnectionManager.CompanyGroupData.CompanyGuidId.Trim() != entity.S50_COMPANY_GROUP_GUID_ID.Trim();
+
+            //MessageBox.Show(
+            //"entity.S50_COMPANY_GROUP_GUID_ID: " + entity.S50_COMPANY_GROUP_GUID_ID + "\n\n" +
+            //"sage50ConnectionManager.CompanyGroupData.CompanyGuidId: " + sage50ConnectionManager.CompanyGroupData.CompanyGuidId + "\n\n" +
+            //"registeredInDifferentCompanyGroup: " + registeredInDifferentCompanyGroup
+            //);
 
             MustBeSkipped = registeredInDifferentCompanyGroup;
 
@@ -137,7 +163,7 @@ namespace SincronizadorGPS50
             &&
             sage50ConnectionManager.CompanyGroupData.CompanyGuidId == entity.S50_COMPANY_GROUP_GUID_ID;
 
-            MustBeUpdated = neverSynchronized || synchronizedInThePast;
+            MustBeUpdated = neverSynchronized || synchronizedInThePast || entity.IMP_SUBCTA_CONTABLE != "";
 
             //MessageBox.Show(
             //   "MustBeRegistered: " + MustBeRegistered + "\n" +
@@ -227,7 +253,13 @@ namespace SincronizadorGPS50
                   (tableSchema.GestprojectName.ColumnDatabaseName, entity.IMP_NOMBRE),
                   (tableSchema.GestprojectValue.ColumnDatabaseName, entity.IMP_VALOR),
                   (tableSchema.AccountableSubaccount.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE),
-                  (tableSchema.AccountableSubaccount2.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE_2)
+                  //(tableSchema.Sage50Code.ColumnDatabaseName, entity.S50_CODE),
+                  //(tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
+                  //(tableSchema.CompanyGroupName.ColumnDatabaseName, entity.S50_COMPANY_GROUP_NAME),
+                  //(tableSchema.CompanyGroupCode.ColumnDatabaseName, entity.S50_COMPANY_GROUP_CODE),
+                  //(tableSchema.CompanyGroupMainCode.ColumnDatabaseName, entity.S50_COMPANY_GROUP_MAIN_CODE),
+                  //(tableSchema.CompanyGroupGuidId.ColumnDatabaseName, entity.S50_COMPANY_GROUP_GUID_ID),
+                  //(tableSchema.ParentUserId.ColumnDatabaseName, entity.GP_USU_ID),
                },
                (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
                (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
@@ -290,7 +322,7 @@ namespace SincronizadorGPS50
             //   (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
             //);
 
-            ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
+            //ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
          }
          catch(System.Exception exception)
          {

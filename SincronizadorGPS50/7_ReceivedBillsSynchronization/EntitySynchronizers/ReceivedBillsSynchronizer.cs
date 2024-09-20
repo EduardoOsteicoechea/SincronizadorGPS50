@@ -69,19 +69,9 @@ namespace SincronizadorGPS50
 
             //StoreSage50EntityList
             //(
-            //   "proveed",
-            //   new List<(string, System.Type)>()
-            //   {
-            //      ("CODIGO", typeof(string)),
-            //      ("CIF", typeof(string)),
-            //      ("NOMBRE", typeof(string)),
-            //      ("DIRECCION", typeof(string)),
-            //      ("CODPOST", typeof(string)),
-            //      ("POBLACION", typeof(string)),
-            //      ("PROVINCIA", typeof(string)),
-            //      ("PAIS", typeof(string)),
-            //      ("GUID_ID", typeof(string))
-            //   }
+               //tableSchema.SageTableData.dispatcherAndName.sageDispactcherMechanismRoute,
+               //tableSchema.SageTableData.dispatcherAndName.tableName,
+               //tableSchema.SageTableData.tableFieldsAlongTypes
             //);
 
             //StoreBreakDownGestprojectEntityListByStatus(GestprojectEntityList, Sage50EntityList);
@@ -134,13 +124,15 @@ namespace SincronizadorGPS50
 
       public void StoreSage50EntityList
       (
-         string tableName, 
-         List<(string, System.Type)> fieldsToBeRetrieved
+         string sageDispactcherMechanismRoute,
+         string tableName,
+         List<(string, System.Type)> tableFieldsAlongTypes
       )
       {
          //Sage50EntityList = new Sage50Entities<Sage50ReceivedBillModel>().GetAll(
-         //   tableName,
-         //   fieldsToBeRetrieved
+            //sageDispactcherMechanismRoute,
+            //tableName,
+            //tableFieldsAlongTypes
          //);
       }
       

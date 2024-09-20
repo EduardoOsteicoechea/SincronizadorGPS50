@@ -348,8 +348,9 @@ namespace SincronizadorGPS50.Sage50Connector
         public decimal dto2 { get; set; } = 0;
         public int linea { get; set; } = 0;
         public string tipoiva { get; set; } = "";
-        public List<clsAlbavenLineasLotes> lotes { get; set; } = null;
-        public List<clsAlbavenLineasSeries> series { get; set; } = null;
+        // this were null before
+        public List<clsAlbavenLineasLotes> lotes { get; set; } = new List<clsAlbavenLineasLotes>();
+        public List<clsAlbavenLineasSeries> series { get; set; } = new List<clsAlbavenLineasSeries>();
     }
 
     public class clsAlbavenLineasLotes

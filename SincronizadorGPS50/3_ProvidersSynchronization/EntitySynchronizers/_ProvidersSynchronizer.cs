@@ -1,6 +1,7 @@
 ﻿using SincronizadorGPS50.GestprojectDataManager;
 using SincronizadorGPS50.Sage50Connector;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -35,72 +36,46 @@ namespace SincronizadorGPS50
             Sage50ConnectionManager = sage50ConnectionManager;
             SynchronizationTableSchemaProvider = tableSchema;
 
-            StoreGestprojectEntityList
-            (
+            StoreGestprojectEntityList(
                GestprojectConnectionManager,
                selectedIdList,
                SynchronizationTableSchemaProvider.TableName,
-               new List<(string, System.Type)>()
-               {
-                  (tableSchema.Name.ColumnDatabaseName, tableSchema.Name.ColumnValueType),
-                  (tableSchema.Cif.ColumnDatabaseName, tableSchema.Cif.ColumnValueType),
-                  (tableSchema.Address.ColumnDatabaseName, tableSchema.Address.ColumnValueType),
-                  (tableSchema.PostalCode.ColumnDatabaseName, tableSchema.PostalCode.ColumnValueType),
-                  (tableSchema.Locality.ColumnDatabaseName, tableSchema.Locality.ColumnValueType),
-                  (tableSchema.Province.ColumnDatabaseName, tableSchema.Province.ColumnValueType),
-                  (tableSchema.Country.ColumnDatabaseName, tableSchema.Country.ColumnValueType),
-                  (tableSchema.SynchronizationStatus.ColumnDatabaseName, tableSchema.SynchronizationStatus.ColumnValueType),
-                  (tableSchema.CompanyGroupName.ColumnDatabaseName, tableSchema.CompanyGroupName.ColumnValueType),
-                  (tableSchema.CompanyGroupCode.ColumnDatabaseName, tableSchema.CompanyGroupCode.ColumnValueType),
-                  (tableSchema.CompanyGroupMainCode.ColumnDatabaseName, tableSchema.CompanyGroupMainCode.ColumnValueType),
-                  (tableSchema.CompanyGroupGuidId.ColumnDatabaseName, tableSchema.CompanyGroupGuidId.ColumnValueType),
-                  (tableSchema.GestprojectId.ColumnDatabaseName, tableSchema.GestprojectId.ColumnValueType),
-                  (tableSchema.Sage50Code.ColumnDatabaseName, tableSchema.Sage50Code.ColumnValueType),
-                  (tableSchema.Sage50GuidId.ColumnDatabaseName, tableSchema.Sage50GuidId.ColumnValueType),
-                  (tableSchema.Comments.ColumnDatabaseName, tableSchema.Comments.ColumnValueType)
-               },
-               (
-                  tableSchema.GestprojectId.ColumnDatabaseName,
-                  string.Join(",", selectedIdList)
-               )
+			   SynchronizationTableSchemaProvider.ColumnsTuplesList.Select(x=>(x.columnName,x.columnType)).ToList(),
+               (tableSchema.GestprojectId.ColumnDatabaseName, string.Join(",", selectedIdList))
             );
 
-            StoreSage50EntityList
-            (
-               "proveed",
-               new List<(string, System.Type)>()
-               {
-                  ("CODIGO", typeof(string)),
-                  ("CIF", typeof(string)),
-                  ("NOMBRE", typeof(string)),
-                  ("DIRECCION", typeof(string)),
-                  ("CODPOST", typeof(string)),
-                  ("POBLACION", typeof(string)),
-                  ("PROVINCIA", typeof(string)),
-                  ("PAIS", typeof(string)),
-                  ("GUID_ID", typeof(string))
-               }
+            StoreSage50EntityList(
+               tableSchema.SageTableData.dispatcherAndName.sageDispactcherMechanismRoute,
+               tableSchema.SageTableData.dispatcherAndName.tableName,
+               tableSchema.SageTableData.tableFieldsAlongTypes
             );
 
-            StoreBreakDownGestprojectEntityListByStatus(GestprojectEntityList, Sage50EntityList);
+            StoreBreakDownGestprojectEntityListByStatus(
+				GestprojectEntityList,
+				Sage50EntityList
+			);
 
-            DetermineEntitySincronizationWorkflow(UnexistingGestprojectEntityList, ExistingGestprojectEntityList, UnsynchronizedGestprojectEntityList, GestprojectEntityList);
+            DetermineEntitySincronizationWorkflow(
+				UnexistingGestprojectEntityList,
+				ExistingGestprojectEntityList, 
+				UnsynchronizedGestprojectEntityList, 
+				GestprojectEntityList
+			);
 
-            ExecuteSyncronizationWorkflow
-            (
-               SomeEntitiesExistsInSage50,
-               AllEntitiesExistsInSage50,
-               NoEntitiesExistsInSage50,
-               UnsynchronizedEntityExists,
-               GestprojectConnectionManager,
-               Sage50ConnectionManager,
-               SynchronizationTableSchemaProvider,
-               UnexistingGestprojectEntityList,
-               ExistingGestprojectEntityList,
-               UnsynchronizedGestprojectEntityList,
-               GestprojectEntityList
-            );
-         }
+			ExecuteSyncronizationWorkflow(
+				SomeEntitiesExistsInSage50,
+				AllEntitiesExistsInSage50,
+				NoEntitiesExistsInSage50,
+				UnsynchronizedEntityExists,
+				GestprojectConnectionManager,
+				Sage50ConnectionManager,
+				SynchronizationTableSchemaProvider,
+				UnexistingGestprojectEntityList,
+				ExistingGestprojectEntityList,
+				UnsynchronizedGestprojectEntityList,
+				GestprojectEntityList
+			);
+		}
          catch(System.Exception exception)
          {
             throw ApplicationLogger.ReportError(
@@ -132,14 +107,18 @@ namespace SincronizadorGPS50
 
       public void StoreSage50EntityList
       (
-         string tableName, 
-         List<(string, System.Type)> fieldsToBeRetrieved
+         string sageDispactcherMechanismRoute,
+         string tableName,
+         List<(string, System.Type)> tableFieldsAlongTypes
       )
       {
          Sage50EntityList = new Sage50Entities<Sage50ProviderModel>().GetAll(
+            sageDispactcherMechanismRoute,
             tableName,
-            fieldsToBeRetrieved
+            tableFieldsAlongTypes
          );
+
+		 //MessageBox.Show($"Sage50EntityList: {Sage50EntityList.Count}");
       }
       
       public void StoreBreakDownGestprojectEntityListByStatus

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
@@ -10,6 +11,7 @@ namespace SincronizadorGPS50
       public List<T> EntityList { get; set; } = new List<T>();
       public List<T> GetAll
       (
+         string sageDispactcherMechanismRoute,
          string tableName,
          List<(string columName, System.Type columnType)> fieldsToBeRetrieved
       ) 
@@ -27,7 +29,7 @@ namespace SincronizadorGPS50
             SELECT 
                {fieldNamesForSqlStatement}
             FROM 
-               {DB.SQLDatabase("gestion",tableName)}";
+               {DB.SQLDatabase(sageDispactcherMechanismRoute,tableName)}";
 
             DataTable entityDataTable = new DataTable();
 
@@ -41,8 +43,25 @@ namespace SincronizadorGPS50
 
                   for(global::System.Int32 j = 0; j < fieldsToBeRetrieved.Count; j++)
                   {
-                     var entityColumnValue = entityDataTable.Rows[i].ItemArray[j].ToString().Trim();
-                     typeof(T).GetProperty(fieldsToBeRetrieved[j].columName).SetValue(entity, entityColumnValue);
+                     try
+                     {
+                        var entityColumnValue = entityDataTable.Rows[i].ItemArray[j].ToString().Trim();
+                        typeof(T).GetProperty(fieldsToBeRetrieved[j].columName).SetValue(entity, entityColumnValue);
+                     }
+                     catch(System.Exception exception)
+                     {
+                        MessageBox.Show(
+                           "entityColumnValue: " + entityDataTable.Rows[i].ItemArray[j].ToString().Trim() + "\n" +
+                           "fieldsToBeRetrieved[j].columName: " + fieldsToBeRetrieved[j].columName + "\n" +
+                           "entity: " + entity + "\n"
+                        );
+                        throw ApplicationLogger.ReportError(
+                           MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+                           MethodBase.GetCurrentMethod().DeclaringType.Name,
+                           MethodBase.GetCurrentMethod().Name,
+                           exception
+                        );
+                     };
                   };
 
                   EntityList.Add(entity);

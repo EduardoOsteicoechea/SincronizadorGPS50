@@ -41,21 +41,45 @@ namespace SincronizadorGPS50
             toAlbaven.Cabecera.letra = toAlbaven.Cabecera.letra.Trim().PadLeft(2, ' ');
             toAlbaven.Cabecera.numero = toAlbaven.Cabecera.numero.Trim().PadLeft(10, ' ');
 
-            // Validamos que existe código de cliente
-            if(toAlbaven.Direccion != null)
+            try
             {
-               // Usamos el CIF, para ubicar el primer registro que coincida en la tabla de cliente
-               if(string.IsNullOrEmpty(toAlbaven.Cabecera.cliente) && !string.IsNullOrEmpty(toAlbaven.Direccion.cif))
-                  toAlbaven.Cabecera.cliente = DB.SQLValor("CLIENTES", "CIF", toAlbaven.Direccion.cif, "CODIGO").ToString();
             }
+            catch(System.Exception exception)
+            {
+               throw ApplicationLogger.ReportError(
+                  MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+                  MethodBase.GetCurrentMethod().DeclaringType.Name,
+                  MethodBase.GetCurrentMethod().Name,
+                  exception
+               );
+            };
 
-            // Aplicamos el codigo de clientes varios si es necesario
-            toAlbaven.Cabecera.cliente = (string.IsNullOrEmpty(toAlbaven.Cabecera.cliente)) ? this._CliVarios : toAlbaven.Cabecera.cliente;
+            try
+            {
+               // Validamos que existe código de cliente
+               if(toAlbaven.Direccion != null)
+               {
+                  // Usamos el CIF, para ubicar el primer registro que coincida en la tabla de cliente
+                  if(string.IsNullOrEmpty(toAlbaven.Cabecera.cliente) && !string.IsNullOrEmpty(toAlbaven.Direccion.cif))
+                     toAlbaven.Cabecera.cliente = DB.SQLValor("CLIENTES", "CIF", toAlbaven.Direccion.cif, "CODIGO").ToString();
+               }
 
-            // Abrimos el objeto de cliente
-            loCliente = new Cliente();
-            loCliente._Codigo = toAlbaven.Cabecera.cliente;
+               // Aplicamos el codigo de clientes varios si es necesario
+               toAlbaven.Cabecera.cliente = (string.IsNullOrEmpty(toAlbaven.Cabecera.cliente)) ? this._CliVarios : toAlbaven.Cabecera.cliente;
 
+               // Abrimos el objeto de cliente
+               loCliente = new Cliente();
+               loCliente._Codigo = toAlbaven.Cabecera.cliente;
+            }
+            catch(System.Exception exception)
+            {
+               throw ApplicationLogger.ReportError(
+                  MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+                  MethodBase.GetCurrentMethod().DeclaringType.Name,
+                  MethodBase.GetCurrentMethod().Name,
+                  exception
+               );
+            };
 
             // comprobamos que exista el cliente para poder crear el pedido
             if(loCliente._Existe_Registro())
@@ -74,7 +98,14 @@ namespace SincronizadorGPS50
                   }
                   else
                   {
-                     // no existe, lo creamos
+                     MessageBox.Show("before\n\n _oDocVenta._New(toAlbaven.Cabecera.empresa, toAlbaven.Cabecera.letra, toAlbaven.Cabecera.numero);");
+
+					 MessageBox.Show(
+					 "toAlbaven.Cabecera.empresa: " + toAlbaven.Cabecera.empresa + "\n" + 
+					 "toAlbaven.Cabecera.letra: " + toAlbaven.Cabecera.letra  + "\n" +  
+					 "toAlbaven.Cabecera.numero: " + toAlbaven.Cabecera.numero
+					 );
+
                      _oDocVenta._New(toAlbaven.Cabecera.empresa, toAlbaven.Cabecera.letra, toAlbaven.Cabecera.numero);
                      _oDocVenta._Cabecera._Cliente = toAlbaven.Cabecera.cliente;
                      llContinue = true;
@@ -89,6 +120,10 @@ namespace SincronizadorGPS50
                      exception
                   );
                };
+
+               
+				MessageBox.Show("Line 120");
+
 
                try
                {
@@ -165,6 +200,9 @@ namespace SincronizadorGPS50
                            exception
                         );
                      };
+
+                     
+				MessageBox.Show("Line 200");
 
                      try
                      {
@@ -258,7 +296,10 @@ namespace SincronizadorGPS50
                               if(_oLinia._Save())
                               {
                                  if(_oLinVenDetLotes != null)
+								 {
                                     _oLinVenDetLotes._Save();
+									MessageBox.Show("Lines saved");
+								 };
                               }
                               _oLinVenDetLotes = null;
                            }
@@ -302,7 +343,8 @@ namespace SincronizadorGPS50
             }
             else
             {
-               this._Error_Message += "El Código de cliente " + toAlbaven.Cabecera.cliente + ", no existe\r\n";
+				this._Error_Message += "El Código de cliente " + toAlbaven.Cabecera.cliente + ", no existe\r\n";
+				MessageBox.Show(_Error_Message);
             }
          }
          else
@@ -311,6 +353,8 @@ namespace SincronizadorGPS50
                this._Error_Message += "Los datos de la cabecera albarán son obligatorios\r\n";
             else
                this._Error_Message += "Es obligatorio insertar un artículo para poder generar el albarán\r\n";
+
+			MessageBox.Show(_Error_Message);
          }
          return llOk;
       }

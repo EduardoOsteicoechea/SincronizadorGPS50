@@ -9056,3 +9056,3097 @@ No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
 
 
 --------------------------------------------------
+Date: 2024-09-14 03:13:03.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-14 03:13:14.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-14 03:18:16.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-14 03:18:18.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-14 03:18:19.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-14 03:21:00.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-14 03:21:38.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-14 03:22:28.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-14 03:24:50.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-14 04:12:10.
+Location: At:
+
+SincronizadorGPS50
+.SyncrhonizationDataTableGenerator
+.CreateDataTable:
+
+La columna 'Id de Sincronización' ya pertenece a DataTable..
+Short Description: Failed to end the methods execution successfully..
+Message: La columna 'Id de Sincronización' ya pertenece a DataTable.
+
+
+--------------------------------------------------
+Date: 2024-09-14 11:24:51.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.UpdateEntity:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-14 11:25:00.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.UpdateEntity:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.UpdateEntity:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-16 07:36:58.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-16 07:42:31.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-16 07:42:32.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-16 07:43:44.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-16 07:43:50.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-16 07:50:24.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-16 07:50:33.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-16 07:50:35.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-16 07:57:24.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-16 07:57:26.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-16 07:57:27.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 04:03:22.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 04:06:55.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 04:07:34.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 04:07:36.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 04:12:23.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 04:12:29.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 04:12:31.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 04:17:36.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 04:17:37.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 04:17:38.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 09:07:40.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 09:07:41.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 09:07:42.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateSage50ReceivedBills
+._CrearEjemploAlbaran:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-17 09:10:32.
+Location: At:
+
+SincronizadorGPS50.Sage50Connector
+.CreateSage50Provider
+..ctor:
+
+No hay ninguna fila en la posición 0..
+Short Description: Failed to end the methods execution successfully..
+Message: No hay ninguna fila en la posición 0.
+
+
+--------------------------------------------------
+Date: 2024-09-17 09:10:37.
+Location: At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50.Sage50Connector
+.CreateSage50Provider
+..ctor:
+
+No hay ninguna fila en la posición 0..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50.Sage50Connector
+.CreateSage50Provider
+..ctor:
+
+No hay ninguna fila en la posición 0.
+
+
+--------------------------------------------------
+Date: 2024-09-17 09:10:38.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50.Sage50Connector
+.CreateSage50Provider
+..ctor:
+
+No hay ninguna fila en la posición 0..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50.Sage50Connector
+.CreateSage50Provider
+..ctor:
+
+No hay ninguna fila en la posición 0.
+
+
+--------------------------------------------------
+Date: 2024-09-17 09:10:40.
+Location: At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50.Sage50Connector
+.CreateSage50Provider
+..ctor:
+
+No hay ninguna fila en la posición 0..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50
+.CreateProviderWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50.Sage50Connector
+.CreateSage50Provider
+..ctor:
+
+No hay ninguna fila en la posición 0.
+
+
+--------------------------------------------------
+Date: 2024-09-17 17:56:25.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.RegisterEntity:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-17 17:56:37.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.RegisterEntity:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.RegisterEntity:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-17 17:58:08.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ValidateEntitySynchronizationStatus:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-17 17:58:43.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ValidateEntitySynchronizationStatus:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ValidateEntitySynchronizationStatus:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:10:28.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:11:47.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:11:49.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:13:02.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:13:03.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:13:05.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:13:06.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:13:07.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:23:48.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+El valor no puede ser nulo.
+Nombre del parámetro: String.
+Short Description: Failed to end the methods execution successfully..
+Message: El valor no puede ser nulo.
+Nombre del parámetro: String
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:32:03.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:32:06.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:32:07.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:32:08.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:32:09.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:34:12.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:34:52.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:34:55.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:34:57.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:34:58.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:35:00.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:37:15.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:37:51.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:37:53.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:37:54.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:38:44.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:39:21.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:39:23.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:39:25.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:39:26.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:39:28.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:40:00.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:40:09.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:40:10.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:40:11.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:40:11.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:44:19.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:44:55.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:44:58.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:44:59.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:45:03.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:45:04.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:47:49.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 04:47:51.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-18 09:20:16.
+Location: At:
+
+SincronizadorGPS50
+.Sage50Entities`1
+.GetAll:
+
+El objeto de tipo 'System.String' no puede convertirse en el tipo 'System.Decimal'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.String' no puede convertirse en el tipo 'System.Decimal'.
+
+
+--------------------------------------------------
+Date: 2024-09-18 09:23:34.
+Location: At:
+
+SincronizadorGPS50
+.Sage50Entities`1
+.GetAll:
+
+El objeto de tipo 'System.String' no puede convertirse en el tipo 'System.Decimal'..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto de tipo 'System.String' no puede convertirse en el tipo 'System.Decimal'.
+
+
+--------------------------------------------------
+Date: 2024-09-18 10:40:21.
+Location: At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (0).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (0).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-09-18 10:40:21.
+Location: At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (0).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (0).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-09-18 10:40:22.
+Location: At:
+
+SincronizadorGPS50
+.TaxesSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (0).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (0).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-09-18 10:42:22.
+Location: At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (0).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (0).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-09-18 11:57:11.
+Location: At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+Invalid column name 'ID'.
+Invalid column name 'SYNC_STATUS'.
+Invalid column name 'S50_CODE'.
+Invalid column name 'S50_GUID_ID'.
+Invalid column name 'S50_COMPANY_GROUP_NAME'.
+Invalid column name 'S50_COMPANY_GROUP_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_MAIN_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_GUID_ID'.
+Invalid column name 'LAST_UPDATE'.
+Invalid column name 'GP_USU_ID'.
+Invalid column name 'COMMENTS'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'ID'.
+Invalid column name 'SYNC_STATUS'.
+Invalid column name 'S50_CODE'.
+Invalid column name 'S50_GUID_ID'.
+Invalid column name 'S50_COMPANY_GROUP_NAME'.
+Invalid column name 'S50_COMPANY_GROUP_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_MAIN_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_GUID_ID'.
+Invalid column name 'LAST_UPDATE'.
+Invalid column name 'GP_USU_ID'.
+Invalid column name 'COMMENTS'.
+
+
+--------------------------------------------------
+Date: 2024-09-18 12:19:52.
+Location: At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+Invalid column name 'ID'.
+Invalid column name 'SYNC_STATUS'.
+Invalid column name 'S50_CODE'.
+Invalid column name 'S50_GUID_ID'.
+Invalid column name 'S50_COMPANY_GROUP_NAME'.
+Invalid column name 'S50_COMPANY_GROUP_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_MAIN_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_GUID_ID'.
+Invalid column name 'LAST_UPDATE'.
+Invalid column name 'GP_USU_ID'.
+Invalid column name 'COMMENTS'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+Invalid column name 'ID'.
+Invalid column name 'SYNC_STATUS'.
+Invalid column name 'S50_CODE'.
+Invalid column name 'S50_GUID_ID'.
+Invalid column name 'S50_COMPANY_GROUP_NAME'.
+Invalid column name 'S50_COMPANY_GROUP_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_MAIN_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_GUID_ID'.
+Invalid column name 'LAST_UPDATE'.
+Invalid column name 'GP_USU_ID'.
+Invalid column name 'COMMENTS'.
+
+
+--------------------------------------------------
+Date: 2024-09-18 12:19:53.
+Location: At:
+
+SincronizadorGPS50
+.TaxesSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+Invalid column name 'ID'.
+Invalid column name 'SYNC_STATUS'.
+Invalid column name 'S50_CODE'.
+Invalid column name 'S50_GUID_ID'.
+Invalid column name 'S50_COMPANY_GROUP_NAME'.
+Invalid column name 'S50_COMPANY_GROUP_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_MAIN_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_GUID_ID'.
+Invalid column name 'LAST_UPDATE'.
+Invalid column name 'GP_USU_ID'.
+Invalid column name 'COMMENTS'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ExsistingTaxListWorkflow
+..ctor:
+
+Invalid column name 'ID'.
+Invalid column name 'SYNC_STATUS'.
+Invalid column name 'S50_CODE'.
+Invalid column name 'S50_GUID_ID'.
+Invalid column name 'S50_COMPANY_GROUP_NAME'.
+Invalid column name 'S50_COMPANY_GROUP_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_MAIN_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_GUID_ID'.
+Invalid column name 'LAST_UPDATE'.
+Invalid column name 'GP_USU_ID'.
+Invalid column name 'COMMENTS'.
+
+
+--------------------------------------------------
+Date: 2024-09-20 02:53:28.
+Location: At:
+
+SincronizadorGPS50
+.AppendSynchronizationDataToEntityRegistry
+..ctor:
+
+Incorrect syntax near '('..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near '('.
+
+
+--------------------------------------------------
+Date: 2024-09-20 02:53:32.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.AppendSynchronizationDataToEntityRegistry
+..ctor:
+
+Incorrect syntax near '('..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AppendSynchronizationDataToEntityRegistry
+..ctor:
+
+Incorrect syntax near '('.
+
+
+--------------------------------------------------
+Date: 2024-09-20 02:53:33.
+Location: At:
+
+SincronizadorGPS50
+.TaxesSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.AppendSynchronizationDataToEntityRegistry
+..ctor:
+
+Incorrect syntax near '('..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.AppendSynchronizationDataToEntityRegistry
+..ctor:
+
+Incorrect syntax near '('.
+
+
+--------------------------------------------------
+Date: 2024-09-20 02:57:32.
+Location: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Incorrect syntax near 'IMP_TIPO'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near 'IMP_TIPO'.
+
+
+--------------------------------------------------
+Date: 2024-09-20 02:57:38.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Incorrect syntax near 'IMP_TIPO'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Incorrect syntax near 'IMP_TIPO'.
+
+
+--------------------------------------------------
+Date: 2024-09-20 03:02:11.
+Location: At:
+
+SincronizadorGPS50
+.TaxesSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Incorrect syntax near 'IMP_TIPO'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Incorrect syntax near 'IMP_TIPO'.
+
+
+--------------------------------------------------
+Date: 2024-09-20 03:06:15.
+Location: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-20 03:28:18.
+Location: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Cannot insert the value NULL into column 'IMP_ID', table 'GESTPROJECT2020.dbo.IMPUESTO_CONFIG'; column does not allow nulls. INSERT fails.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Cannot insert the value NULL into column 'IMP_ID', table 'GESTPROJECT2020.dbo.IMPUESTO_CONFIG'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-09-20 03:35:42.
+Location: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Invalid column name 'ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-20 03:38:44.
+Location: At:
+
+SincronizadorGPS50
+.AppendGestprojectTaxTableIdToSynchronizationTable
+..ctor:
+
+Incorrect syntax near '('..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near '('.
+
+
+--------------------------------------------------
+Date: 2024-09-20 03:38:48.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.AppendGestprojectTaxTableIdToSynchronizationTable
+..ctor:
+
+Incorrect syntax near '('..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AppendGestprojectTaxTableIdToSynchronizationTable
+..ctor:
+
+Incorrect syntax near '('.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:04:11.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:06:40.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:14:12.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:22:00.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:25:19.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:26:15.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:30:05.
+Location: At:
+
+SincronizadorGPS50
+.AppendGestprojectTaxTableIdToSynchronizationTable
+..ctor:
+
+Incorrect syntax near '('..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near '('.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:30:48.
+Location: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:30:54.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:36:19.
+Location: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectTaxTable
+..ctor:
+
+Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK_IMPUESTO_CONFIG'. Cannot insert duplicate key in object 'dbo.IMPUESTO_CONFIG'. The duplicate key value is (1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:44:26.
+Location: At:
+
+SincronizadorGPS50
+.AppendGestprojectTaxTableIdToSynchronizationTable
+..ctor:
+
+Incorrect syntax near '('..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near '('.
+
+
+--------------------------------------------------
+Date: 2024-09-20 04:44:27.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.AppendGestprojectTaxTableIdToSynchronizationTable
+..ctor:
+
+Incorrect syntax near '('..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AppendGestprojectTaxTableIdToSynchronizationTable
+..ctor:
+
+Incorrect syntax near '('.
+
+
+--------------------------------------------------
+Date: 2024-09-20 05:00:59.
+Location: At:
+
+SincronizadorGPS50
+.AppendSynchronizationDataToEntityRegistry
+..ctor:
+
+Incorrect syntax near 'FEA78F6'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near 'FEA78F6'.
+
+
+--------------------------------------------------
+Date: 2024-09-20 05:10:46.
+Location: At:
+
+SincronizadorGPS50
+.AppendSynchronizationDataToEntityRegistry
+..ctor:
+
+Incorrect syntax near 'FEA78F6'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near 'FEA78F6'.
+
+
+--------------------------------------------------
+Date: 2024-09-20 05:10:48.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.AppendSynchronizationDataToEntityRegistry
+..ctor:
+
+Incorrect syntax near 'FEA78F6'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AppendSynchronizationDataToEntityRegistry
+..ctor:
+
+Incorrect syntax near 'FEA78F6'.
+
+
+--------------------------------------------------
+Date: 2024-09-20 07:20:11.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectEntities`1
+.GetAll:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ')'.
+
+
+--------------------------------------------------
+Date: 2024-09-20 07:20:11.
+Location: At:
+
+SincronizadorGPS50
+.TaxesSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.GestprojectEntities`1
+.GetAll:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectEntities`1
+.GetAll:
+
+Incorrect syntax near ')'.
+
+
+--------------------------------------------------

@@ -47,7 +47,8 @@ namespace SincronizadorGPS50
                   Sage50TaxModel sage50Entity = new Sage50TaxModel();
 
                   sage50Entity.GUID_ID = table1.Rows[i].ItemArray[0].ToString().Trim();
-                  sage50Entity.IVA = Convert.ToDecimal(table1.Rows[i].ItemArray[1]);
+                  //sage50Entity.IVA = Convert.ToDecimal(table1.Rows[i].ItemArray[1]);
+                  sage50Entity.IVA = Convert.ToString(table1.Rows[i].ItemArray[1]);
                   sage50Entity.NOMBRE = table1.Rows[i].ItemArray[2].ToString().Trim();
                   sage50Entity.CTA_IV_REP = table1.Rows[i].ItemArray[3].ToString().Trim();
                   sage50Entity.CTA_IV_SOP = table1.Rows[i].ItemArray[4].ToString().Trim();

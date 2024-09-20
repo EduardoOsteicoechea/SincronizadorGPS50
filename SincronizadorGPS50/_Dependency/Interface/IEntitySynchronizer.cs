@@ -30,6 +30,7 @@ namespace SincronizadorGPS50
       List<T2> Sage50EntityList { get; set; }
       void StoreSage50EntityList
       (
+         string dispatcherMechanismRoute,
          string tableName,
          List<(string, System.Type)> fieldsToBeRetrieved
       );

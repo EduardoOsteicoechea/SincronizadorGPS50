@@ -2,11 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Windows.Forms;
-using static sage.ew.docsven.FirmaElectronica;
 
 namespace SincronizadorGPS50
 {
@@ -86,65 +83,81 @@ namespace SincronizadorGPS50
             tableSchemaProvider.GestprojectFieldsTupleList
          );
 
-         //MessageBox.Show(GestprojectEntities.Count + "");
-
-         List<Sage50TaxModel> sage50Entities = new GetSage50Taxes().Entities;
-
-         foreach(var item in sage50Entities)
-         {
-            GestprojectTaxModel gestprojectTaxModel = new GestprojectTaxModel();
-            
-            gestprojectTaxModel.IMP_ID = 0;
-            gestprojectTaxModel.IMP_TIPO = item.IMP_TIPO;
-            gestprojectTaxModel.IMP_DESCRIPCION = item.NOMBRE.Trim();
-
-            if(item.IMP_TIPO == "IVA")
-            {
-               gestprojectTaxModel.IMP_NOMBRE = $"{item.IMP_TIPO} {item.IVA.ToString().Split(',')[0]}";
-               gestprojectTaxModel.IMP_VALOR = item.IVA;
-               gestprojectTaxModel.IMP_SUBCTA_CONTABLE = item.CTA_IV_REP;
-               gestprojectTaxModel.IMP_SUBCTA_CONTABLE_2 = item.CTA_IV_SOP;
-            }
-            else
-            {
-               gestprojectTaxModel.IMP_NOMBRE = $"{item.IMP_TIPO} {item.RETENCION.ToString().Split(',')[0]}";
-               gestprojectTaxModel.IMP_VALOR = item.RETENCION;
-               gestprojectTaxModel.IMP_SUBCTA_CONTABLE = item.CTA_RE_REP;
-               gestprojectTaxModel.IMP_SUBCTA_CONTABLE_2 = item.CTA_RE_SOP;
-            };
-
-            gestprojectTaxModel.S50_CODE = item.CODIGO;
-            gestprojectTaxModel.S50_GUID_ID = item.GUID_ID;
-
-            GestprojectEntities.Add(gestprojectTaxModel);
-         };
+         var subaccountableAccountList = GestprojectEntities.Select(x=>x.IMP_SUBCTA_CONTABLE);
+         var subaccountableAccount2List = GestprojectEntities.Select(x=>x.IMP_SUBCTA_CONTABLE_2);
+         var taxValueList = GestprojectEntities.Select(x=>x.IMP_VALOR);
+         var taxNameList = GestprojectEntities.Select(x=>x.IMP_DESCRIPCION);
 
          //MessageBox.Show(GestprojectEntities.Count + "");
 
-         //foreach(var item in GestprojectEntities)
+         //if(GestprojectEntities.Count < 1)
          //{
-         //   string message = "Gestproject Tax:\n\n";
-         //   foreach(var propertyInfo in item.GetType().GetProperties())
-         //   {
-         //      message += $"{propertyInfo.Name}: {propertyInfo.GetValue(item)}\n";
-         //   };
-         //   MessageBox.Show(message, "Object Properties");
+            List<Sage50TaxModel> sage50Entities = new GetSage50Taxes().Entities;
+            
+            bool itemExists = true;
+            foreach(var item in sage50Entities)
+            {
+               if(item.IMP_TIPO == "IVA")
+               {
+                  itemExists = 
+                     subaccountableAccountList.Contains(item.CTA_IV_REP) 
+                     && 
+                     subaccountableAccount2List.Contains(item.CTA_IV_SOP) 
+                     &&
+                     taxValueList.Contains(Convert.ToDecimal(item.IVA))
+                     && 
+                     taxNameList.Contains(item.NOMBRE);
+               }
+               else
+               {
+                  itemExists = 
+                     subaccountableAccountList.Contains(item.CTA_RE_REP) 
+                     && 
+                     subaccountableAccount2List.Contains(item.CTA_RE_SOP) 
+                     && 
+                     taxValueList.Contains(Convert.ToDecimal(item.RETENCION))
+                     && 
+                     taxNameList.Contains(item.NOMBRE);
+               };
+
+               if(!itemExists)
+               {
+                  GestprojectTaxModel gestprojectTaxModel = new GestprojectTaxModel();
+
+                  gestprojectTaxModel.IMP_ID = 0;
+                  gestprojectTaxModel.IMP_TIPO = item.IMP_TIPO;
+                  gestprojectTaxModel.IMP_DESCRIPCION = item.NOMBRE.Trim();
+
+                  if(item.IMP_TIPO == "IVA")
+                  {
+                     gestprojectTaxModel.IMP_NOMBRE = $"{item.IMP_TIPO} {item.IVA.ToString().Split(',')[0]}";
+                     gestprojectTaxModel.IMP_VALOR = Convert.ToDecimal(item.IVA);
+                     gestprojectTaxModel.IMP_SUBCTA_CONTABLE = item.CTA_IV_REP;
+                     gestprojectTaxModel.IMP_SUBCTA_CONTABLE_2 = item.CTA_IV_SOP;
+                  }
+                  else
+                  {
+                     gestprojectTaxModel.IMP_NOMBRE = $"{item.IMP_TIPO} {item.RETENCION.ToString().Split(',')[0]}";
+                     gestprojectTaxModel.IMP_VALOR = item.RETENCION;
+                     gestprojectTaxModel.IMP_SUBCTA_CONTABLE = item.CTA_RE_REP;
+                     gestprojectTaxModel.IMP_SUBCTA_CONTABLE_2 = item.CTA_RE_SOP;
+                  };
+
+                  gestprojectTaxModel.S50_CODE = item.CODIGO;
+                  gestprojectTaxModel.S50_GUID_ID = item.GUID_ID;
+
+                  GestprojectEntities.Add(gestprojectTaxModel);
+               };               
+            };
+            //new VisualizePropertiesAndValues<Sage50TaxModel>("sage50Entities", sage50Entities);
          //};
+         //new VisualizePropertiesAndValues<GestprojectTaxModel>("GestprojectEntities", GestprojectEntities);
       }
 
       public void GetAndStoreSage50Entities ( ISynchronizationTableSchemaProvider tableSchemaProvider )
       {
          Sage50Entities = new GetSage50Taxes().Entities;
-
-         //foreach(var item in Sage50Entities)
-         //{
-         //   string message = "Sage50 Tax:\n\n";
-         //   foreach(var propertyInfo in item.GetType().GetRuntimeProperties())
-         //   {
-         //      message += $"{propertyInfo.Name}: {propertyInfo.GetValue(item)}\n";
-         //   };
-         //   MessageBox.Show(message, "Object Properties");
-         //};
+         //new VisualizePropertiesAndValues<Sage50TaxModel>("Sage50Entities", Sage50Entities);
       }
 
       public void ProccessAndStoreGestprojectEntities
@@ -183,16 +196,6 @@ namespace SincronizadorGPS50
          DataTable dataTable
       )
       {
-         //foreach(var entity in ProcessedGestprojectEntities)
-         //{
-         //   StringBuilder stringBuilder = new StringBuilder();
-         //   foreach(var item in entity.GetType().GetProperties())
-         //   {
-         //      stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
-         //   };
-         //   MessageBox.Show(stringBuilder.ToString());
-         //};
-
          ISynchronizableEntityPainter<GestprojectTaxModel> entityPainter = new EntityPainter<GestprojectTaxModel>();
          entityPainter.PaintEntityListOnDataTable(
             ProcessedGestprojectEntities,

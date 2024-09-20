@@ -18,7 +18,7 @@ namespace SincronizadorGPS50.Sage50Connector
       #region propiedades
 
       private LinkFuncSage50 _oLinkFuncs = new LinkFuncSage50();
-      private Cliente _oCliente = null;
+      private Cliente _oProveedor = null;
       private int _nDigitos = Convert.ToInt32(EW_GLOBAL._GetLenCampo(KeyDiccionarioLenCampos.wn_digitos));
       //private int _nDigitos = 8;
 
@@ -42,29 +42,29 @@ namespace SincronizadorGPS50.Sage50Connector
             {
                if(FUNCTIONS._Es_Cliente(toeCustomer.codigo))
                {
-                  _oCliente = new Cliente();
-                  _oCliente._Codigo = toeCustomer.codigo;
+                  _oProveedor = new Cliente();
+                  _oProveedor._Codigo = toeCustomer.codigo;
 
-                  toeCustomer.nombre = _oCliente._Nombre;
-                  toeCustomer.razoncomercial = _oCliente._RazonComercial;
-                  toeCustomer.pais = _oCliente._Pais;
-                  toeCustomer.cif = _oCliente._NIF;
-                  toeCustomer.direccion = _oCliente._Direccion;
-                  toeCustomer.poblacion = _oCliente._Poblacion;
-                  toeCustomer.provincia = _oCliente._Provincia;
-                  toeCustomer.telefono = _oCliente._Telefono;
-                  toeCustomer.recargo = _oCliente._Recargo;
-                  toeCustomer.codpos = _oCliente._CodPost;
-                  toeCustomer.contado = _oCliente._ClienteContado;
-                  toeCustomer.tipo_iva = _oCliente._TipoIVA;
-                  toeCustomer.tipo_ret = _oCliente._RetencionTipo;
-                  toeCustomer.modoret = (_oCliente._RetencionBaseFactura == Cliente.TipoRetencion.SobreFactura) ? 2 : 1;
-                  toeCustomer.existeregistro = _oCliente._Existe_Registro();
+                  toeCustomer.nombre = _oProveedor._Nombre;
+                  toeCustomer.razoncomercial = _oProveedor._RazonComercial;
+                  toeCustomer.pais = _oProveedor._Pais;
+                  toeCustomer.cif = _oProveedor._NIF;
+                  toeCustomer.direccion = _oProveedor._Direccion;
+                  toeCustomer.poblacion = _oProveedor._Poblacion;
+                  toeCustomer.provincia = _oProveedor._Provincia;
+                  toeCustomer.telefono = _oProveedor._Telefono;
+                  toeCustomer.recargo = _oProveedor._Recargo;
+                  toeCustomer.codpos = _oProveedor._CodPost;
+                  toeCustomer.contado = _oProveedor._ClienteContado;
+                  toeCustomer.tipo_iva = _oProveedor._TipoIVA;
+                  toeCustomer.tipo_ret = _oProveedor._RetencionTipo;
+                  toeCustomer.modoret = (_oProveedor._RetencionBaseFactura == Cliente.TipoRetencion.SobreFactura) ? 2 : 1;
+                  toeCustomer.existeregistro = _oProveedor._Existe_Registro();
 
                   llOk = true;
                }
                else
-               { this._Error_Message += _oCliente._Error_Message + "\r\n"; }
+               { this._Error_Message += _oProveedor._Error_Message + "\r\n"; }
             }
             else
             { this._Error_Message += "No se a indicado el códgo del cliente o la longitud del codigo es diferente a " + _nDigitos + " digitos \r\n"; }
@@ -95,55 +95,55 @@ namespace SincronizadorGPS50.Sage50Connector
                // comprobamos que el codigo ingresado sea del tipo valido para cliente.
                if(FUNCTIONS._Es_Cliente(toeCustomer.codigo))
                {
-                  _oCliente = new Cliente();
-                  _oCliente._Codigo = toeCustomer.codigo;
+                  _oProveedor = new Cliente();
+                  _oProveedor._Codigo = toeCustomer.codigo;
 
-                  if(!_oCliente._Existe_Registro())
+                  if(!_oProveedor._Existe_Registro())
                   {
-                     _oCliente._New(toeCustomer.codigo);
+                     _oProveedor._New(toeCustomer.codigo);
 
                      if(Convert.ToBoolean(toeCustomer.contado) == true)
                      {
                         // si es una cuenta de cliente contado (creamos la cuenta con valores fijos.. previsionalmente)
-                        _oCliente._ClienteContado = toeCustomer.contado;
-                        _oCliente._Nombre = "CLIENTE CONTADO";
-                        _oCliente._Pais = _oLinkFuncs._CountryCompany();
-                        _oCliente._NIF = "";
+                        _oProveedor._ClienteContado = toeCustomer.contado;
+                        _oProveedor._Nombre = "CLIENTE CONTADO";
+                        _oProveedor._Pais = _oLinkFuncs._CountryCompany();
+                        _oProveedor._NIF = "";
                      }
                      else
                      {
-                        _oCliente._Nombre = toeCustomer.nombre;
+                        _oProveedor._Nombre = toeCustomer.nombre;
 
                         // Tratamiento de codigo de país
-                        _ConvertData("pais", toeCustomer, ref _oCliente);
+                        _ConvertData("pais", toeCustomer, ref _oProveedor);
 
                         if(!string.IsNullOrWhiteSpace(toeCustomer.cif))
-                           _oCliente._NIF = toeCustomer.cif;
+                           _oProveedor._NIF = toeCustomer.cif;
                         if(!string.IsNullOrWhiteSpace(toeCustomer.fpago))
-                           _oCliente._FormaPago = toeCustomer.fpago;
+                           _oProveedor._FormaPago = toeCustomer.fpago;
                      }
 
-                     _oCliente._RazonComercial = toeCustomer.razoncomercial;
-                     _oCliente._Direccion = toeCustomer.direccion;
-                     _oCliente._Poblacion = toeCustomer.poblacion;
-                     _oCliente._Provincia = toeCustomer.provincia;
-                     _oCliente._Telefono = toeCustomer.telefono;
-                     _oCliente._Recargo = toeCustomer.recargo;
+                     _oProveedor._RazonComercial = toeCustomer.razoncomercial;
+                     _oProveedor._Direccion = toeCustomer.direccion;
+                     _oProveedor._Poblacion = toeCustomer.poblacion;
+                     _oProveedor._Provincia = toeCustomer.provincia;
+                     _oProveedor._Telefono = toeCustomer.telefono;
+                     _oProveedor._Recargo = toeCustomer.recargo;
 
                      // Tratamiento códigos postales
-                     _ConvertData("codpos", toeCustomer, ref _oCliente);
+                     _ConvertData("codpos", toeCustomer, ref _oProveedor);
 
                      // Tratamiento tipo Iva
-                     _ConvertData("tipo_iva", toeCustomer, ref _oCliente);
+                     _ConvertData("tipo_iva", toeCustomer, ref _oProveedor);
 
                      //Tratamiento tipo Retencion
-                     _ConvertData("tipo_ret", toeCustomer, ref _oCliente);
+                     _ConvertData("tipo_ret", toeCustomer, ref _oProveedor);
 
                      //Tratamiento IBAN
-                     _ConvertData("iban", toeCustomer, ref _oCliente);
+                     _ConvertData("iban", toeCustomer, ref _oProveedor);
 
                      // Grabamos el cliente
-                     llOk = _oCliente._Save();
+                     llOk = _oProveedor._Save();
                      if(llOk)
                      {
                         // Si le enviamos la coleccion del mandato del cliente, la agregamos
@@ -155,18 +155,18 @@ namespace SincronizadorGPS50.Sage50Connector
                            this._MandateCustomer(toeCustomer.mandato);
                            //    clsEntityMandate loMandato = new clsEntityMandate();
                            //    loMandato = (clsEntityMandate)toeCustomer.mandato;
-                           //    loMandato.cliente = _oCliente._Codigo;
+                           //    loMandato.cliente = _oProveedor._Codigo;
                            //    loMandato = null;
                         }
                      }
                      else
-                     { this._Error_Message += _oCliente._Error_Message + "\r\n"; }
+                     { this._Error_Message += _oProveedor._Error_Message + "\r\n"; }
                   }
                   else
                   { this._Error_Message += "El código de cliente ya existe\r\n"; }
                }
             }
-            _oCliente = null;
+            _oProveedor = null;
          }
 
          return llOk;
@@ -180,36 +180,36 @@ namespace SincronizadorGPS50.Sage50Connector
 
          if(toeCustomer != null)
          {
-            _oCliente = new Cliente();
-            _oCliente._Codigo = toeCustomer.codigo;
-            _oCliente._Nombre = toeCustomer.nombre;
+            _oProveedor = new Cliente();
+            _oProveedor._Codigo = toeCustomer.codigo;
+            _oProveedor._Nombre = toeCustomer.nombre;
 
-            _oCliente._ClienteContado = toeCustomer.contado;
+            _oProveedor._ClienteContado = toeCustomer.contado;
 
-            _oCliente._NIF = toeCustomer.cif;
-            _oCliente._FormaPago = toeCustomer.fpago;
+            _oProveedor._NIF = toeCustomer.cif;
+            _oProveedor._FormaPago = toeCustomer.fpago;
 
-            _oCliente._RazonComercial = toeCustomer.razoncomercial;
-            _oCliente._Direccion = toeCustomer.direccion;
-            _oCliente._Poblacion = toeCustomer.poblacion;
-            _oCliente._Provincia = toeCustomer.provincia;
-            _oCliente._Telefono = toeCustomer.telefono;
-            _oCliente._Recargo = toeCustomer.recargo;
+            _oProveedor._RazonComercial = toeCustomer.razoncomercial;
+            _oProveedor._Direccion = toeCustomer.direccion;
+            _oProveedor._Poblacion = toeCustomer.poblacion;
+            _oProveedor._Provincia = toeCustomer.provincia;
+            _oProveedor._Telefono = toeCustomer.telefono;
+            _oProveedor._Recargo = toeCustomer.recargo;
 
             // Tratamiento códigos postales
-            _ConvertData("codpos", toeCustomer, ref _oCliente);
+            _ConvertData("codpos", toeCustomer, ref _oProveedor);
 
             // Tratamiento tipo Iva
-            _ConvertData("tipo_iva", toeCustomer, ref _oCliente);
+            _ConvertData("tipo_iva", toeCustomer, ref _oProveedor);
 
             //Tratamiento tipo Retencion
-            _ConvertData("tipo_ret", toeCustomer, ref _oCliente);
+            _ConvertData("tipo_ret", toeCustomer, ref _oProveedor);
 
             //Tratamiento IBAN
-            _ConvertData("iban", toeCustomer, ref _oCliente);
+            _ConvertData("iban", toeCustomer, ref _oProveedor);
 
             // Grabamos el cliente
-            llOk = _oCliente._Save();
+            llOk = _oProveedor._Save();
             if(llOk)
             {
                // Si le enviamos la coleccion del mandato del cliente, la agregamos
@@ -221,12 +221,12 @@ namespace SincronizadorGPS50.Sage50Connector
                   this._MandateCustomer(toeCustomer.mandato);
                   //    clsEntityMandate loMandato = new clsEntityMandate();
                   //    loMandato = (clsEntityMandate)toeCustomer.mandato;
-                  //    loMandato.cliente = _oCliente._Codigo;
+                  //    loMandato.cliente = _oProveedor._Codigo;
                   //    loMandato = null;
                }
             }
             else
-            { this._Error_Message += _oCliente._Error_Message + "\r\n"; }
+            { this._Error_Message += _oProveedor._Error_Message + "\r\n"; }
          }
 
          return llOk;
@@ -239,12 +239,12 @@ namespace SincronizadorGPS50.Sage50Connector
 
          if(toeCustomer != null)
          {
-            _oCliente = new Cliente(toeCustomer.codigo);
+            _oProveedor = new Cliente(toeCustomer.codigo);
 
-            llOk = _oCliente._Delete();
+            llOk = _oProveedor._Delete();
 
             if(!llOk)
-               this._Error_Message += _oCliente._Error_Message + "\r\n";
+               this._Error_Message += _oProveedor._Error_Message + "\r\n";
          }
 
          return llOk;
@@ -342,8 +342,8 @@ namespace SincronizadorGPS50.Sage50Connector
 
          if(!string.IsNullOrEmpty(tsCliente.Trim()))
          {
-            _oCliente = new Cliente(tsCliente);
-            clsLimiteCredito loLimiteCredito = _oCliente._LimiteCredito;
+            _oProveedor = new Cliente(tsCliente);
+            clsLimiteCredito loLimiteCredito = _oProveedor._LimiteCredito;
             // posiblemente se tenga que recargar
             loLimiteCredito._Load();
 
@@ -359,7 +359,7 @@ namespace SincronizadorGPS50.Sage50Connector
             //decimal lnTotal1 = loLimiteCredito._Total;
             loLimiteCredito._Calcular();
 
-            lnTotal = _oCliente.LimiteCredito() - loLimiteCredito._Total;
+            lnTotal = _oProveedor.LimiteCredito() - loLimiteCredito._Total;
 
          }
 
@@ -374,12 +374,12 @@ namespace SincronizadorGPS50.Sage50Connector
 
          if(!string.IsNullOrEmpty(tsCliente.Trim()))
          {
-            _oCliente = new Cliente(tsCliente);
-            lnCredito = _oCliente._Credito;
+            _oProveedor = new Cliente(tsCliente);
+            lnCredito = _oProveedor._Credito;
             if(lnCredito > 0)
             {
 
-               clsLimiteCredito loLimiteCredito = _oCliente._LimiteCredito;
+               clsLimiteCredito loLimiteCredito = _oProveedor._LimiteCredito;
                // posiblemente se tenga que recargar
                loLimiteCredito._Load();
 
