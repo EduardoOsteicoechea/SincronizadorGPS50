@@ -13656,3 +13656,268 @@ Message: No se puede implementar el método o la operación.
 
 
 --------------------------------------------------
+Date: 2024-09-24 04:09:01.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-24 04:09:08.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-24 04:09:09.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-24 04:19:11.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-24 04:27:53.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-24 05:59:14.
+Location: At:
+
+SincronizadorGPS50
+.WasSubaccountableAccountRegistered
+..ctor:
+
+Invalid object name 'COS_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid object name 'COS_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-24 06:00:46.
+Location: At:
+
+SincronizadorGPS50
+.WasSubaccountableAccountRegistered
+..ctor:
+
+Invalid object name 'COS_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid object name 'COS_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-24 06:00:49.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+At:
+
+SincronizadorGPS50
+.WasSubaccountableAccountRegistered
+..ctor:
+
+Invalid object name 'COS_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.WasSubaccountableAccountRegistered
+..ctor:
+
+Invalid object name 'COS_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-24 06:02:53.
+Location: At:
+
+SincronizadorGPS50
+.WasSubaccountableAccountRegistered
+.ExecuteQuery:
+
+Invalid object name 'COS_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid object name 'COS_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-24 06:03:01.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+At:
+
+SincronizadorGPS50
+.WasSubaccountableAccountRegistered
+.ExecuteQuery:
+
+Invalid object name 'COS_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.WasSubaccountableAccountRegistered
+.ExecuteQuery:
+
+Invalid object name 'COS_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-24 06:03:03.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+At:
+
+SincronizadorGPS50
+.WasSubaccountableAccountRegistered
+.ExecuteQuery:
+
+Invalid object name 'COS_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+At:
+
+SincronizadorGPS50
+.WasSubaccountableAccountRegistered
+.ExecuteQuery:
+
+Invalid object name 'COS_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-24 07:02:59.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+El operador '!=' no se puede aplicar a operandos del tipo 'string' y 'int'.
+Short Description: Failed to end the methods execution successfully..
+Message: El operador '!=' no se puede aplicar a operandos del tipo 'string' y 'int'
+
+
+--------------------------------------------------
+Date: 2024-09-24 07:03:05.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+El operador '!=' no se puede aplicar a operandos del tipo 'string' y 'int'.
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+El operador '!=' no se puede aplicar a operandos del tipo 'string' y 'int'
+
+
+--------------------------------------------------

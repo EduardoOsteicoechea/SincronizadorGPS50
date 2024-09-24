@@ -9,28 +9,54 @@ namespace SincronizadorGPS50
 {
    internal class VisualizePropertiesAndValues<T>
    {
-      public VisualizePropertiesAndValues(string title, T entity)
+      public VisualizePropertiesAndValues(string location, string title, T entity)
       {
-         StringBuilder stringBuilder = new StringBuilder();
-         stringBuilder.Append($"{title}\n\n");
+         string content = "";
+         content += location;
+         content += "\n\n";
+         content += "-----------------------------";
+         content += "\n\n";
+
          foreach(var item in entity.GetType().GetProperties())
          {
-            stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
+            content += item.Name + ": " + item.GetValue(entity) + "\n";
          };
-         MessageBox.Show(stringBuilder.ToString());
+
+         content += "\n";
+         content += "-----------------------------";
+         content += "\n";
+
+         new VisualizationForm(title, content);
       }
-      public VisualizePropertiesAndValues(string title, List<T> entityList)
+      public VisualizePropertiesAndValues(string location, string title, List<T> entityList)
       {
+         int counter = 1;
+
+         string content = "";
+         content += location;
+         content += "\n\n";
+         content += "-----------------------------";
+         content += "\n\n";
+         content += "Total Count: " + entityList.Count;
+         content += "\n\n";
+         content += "-----------------------------";
+         content += "\n";
+
          foreach(T entity in entityList)
          {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append($"{title}\n\n");
+            content += counter + "." + "\n\n";
             foreach(var item in entity.GetType().GetProperties())
             {
-               stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
+               content += item.Name + ": " + item.GetValue(entity) + "\n";
             };
-            MessageBox.Show(stringBuilder.ToString());
+            content += "\n";
+            content += "-----------------------------";
+            content += "\n";
+
+            counter++;
          };
+
+         new VisualizationForm(title, content);
       }
    }
 }

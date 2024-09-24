@@ -31,35 +31,61 @@ namespace SincronizadorGPS50
             {
                if(condition1.value == "")
                {
+                  if(condition2.value != null && condition2.value != -1)
+                  {
                   sqlCondition.Append($"{condition2.columnName}={DynamicValuesFormatters.Formatters[condition2.value.GetType()](condition2.value)}");
+                  ExecuteQuery(connection, tableName, columnName, sqlCondition.ToString());          
+                  };
                }
                else
                {
-                  sqlCondition.Append($"{condition1.columnName}={DynamicValuesFormatters.Formatters[condition1.value.GetType()](condition1.value)}");            
+                  sqlCondition.Append($"{condition1.columnName}={DynamicValuesFormatters.Formatters[condition1.value.GetType()](condition1.value)}");
+                  ExecuteQuery(connection, tableName, columnName, sqlCondition.ToString());           
                };
             }
             else
             {
-               if(condition1.value == null || condition1.value == 0)
+               if(condition1.value == null || condition1.value == -1)
                {
                   sqlCondition.Append($"{condition2.columnName}={DynamicValuesFormatters.Formatters[condition2.value.GetType()](condition2.value)}");
+                  ExecuteQuery(connection, tableName, columnName, sqlCondition.ToString());
                }
                else
                {
-                  sqlCondition.Append($"{condition1.columnName}={DynamicValuesFormatters.Formatters[condition1.value.GetType()](condition1.value)}");            
+                  sqlCondition.Append($"{condition1.columnName}={DynamicValuesFormatters.Formatters[condition1.value.GetType()](condition1.value)}");
+                  ExecuteQuery(connection, tableName, columnName, sqlCondition.ToString());
                };
             };
-
+         }
+         catch(SqlException exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            connection.Close();
+         };
+      }
+      public void ExecuteQuery(SqlConnection connection, string tableName, string columnName, string sqlCondition)
+      {         
+         try
+         {
             string sqlString = $@"
                SELECT 
                   {columnName}
                FROM 
                   {tableName}
                WHERE 
-                  {sqlCondition.ToString()}
+                  {sqlCondition}
             ";
 
-            //MessageBox.Show(sqlString);
+            //if(tableName == "INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_SUBACCOUNTABLE_ACCOUNTS")
+            //   MessageBox.Show(sqlString);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {
@@ -85,10 +111,6 @@ namespace SincronizadorGPS50
                exception
             );
          }
-         finally
-         {
-            connection.Close();
-         };
       }
    }
 }

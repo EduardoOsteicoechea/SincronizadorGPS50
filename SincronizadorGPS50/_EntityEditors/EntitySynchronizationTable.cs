@@ -25,6 +25,13 @@ namespace SincronizadorGPS50
          {
             connection.Open();
 
+            //if(tableName == "INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_SUBACCOUNTABLE_ACCOUNTS")
+            //   new VisualizePropertiesAndValues<T>(
+            //       "At: " + MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //       "SUBACCOUNTABLE_ACCOUNTS entity:",
+            //       entity
+            //   );
+
             string fieldNamesForSqlStatement = string.Empty;
             for(global::System.Int32 i = 0; i < fieldsToBeRetrieved.Count; i++)
             {
@@ -34,9 +41,9 @@ namespace SincronizadorGPS50
             fieldNamesForSqlStatement = fieldNamesForSqlStatement.TrimEnd(',');
 
             // generate a conditional condition for the sql. This might be necessary if some items come from sage and other from Gestproject at this point of the process. This would imply that some have a Gestproject Id but no Guid_id, and others the reverse. Therefore, it's necessary to generate the sql condition according to which id item has the entity.
-            
+
             StringBuilder sqlCondition = new StringBuilder();
-            
+
             if(condition1Data.conditionValue.GetType() == typeof(string))
             {
                if(condition1Data.conditionValue == "")
@@ -45,7 +52,7 @@ namespace SincronizadorGPS50
                }
                else
                {
-                  sqlCondition.Append($"{condition1Data.conditionColumnName}={DynamicValuesFormatters.Formatters[condition1Data.conditionValue.GetType()](condition1Data.conditionValue)}");            
+                  sqlCondition.Append($"{condition1Data.conditionColumnName}={DynamicValuesFormatters.Formatters[condition1Data.conditionValue.GetType()](condition1Data.conditionValue)}");
                };
             }
             else
@@ -56,7 +63,7 @@ namespace SincronizadorGPS50
                }
                else
                {
-                  sqlCondition.Append($"{condition1Data.conditionColumnName}={DynamicValuesFormatters.Formatters[condition1Data.conditionValue.GetType()](condition1Data.conditionValue)}");            
+                  sqlCondition.Append($"{condition1Data.conditionColumnName}={DynamicValuesFormatters.Formatters[condition1Data.conditionValue.GetType()](condition1Data.conditionValue)}");
                };
             };
 
@@ -69,8 +76,12 @@ namespace SincronizadorGPS50
                {sqlCondition.ToString()}
             ;";
 
-            //if(tableName == "INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_TAXES")
-            //   MessageBox.Show(sqlString);
+            //if(tableName == "INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_SUBACCOUNTABLE_ACCOUNTS")
+            //  new VisualizeData<string>(
+            //      "At: " + MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name, 
+            //      "SQL STRING:", 
+            //      sqlString
+            //  );
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {
@@ -78,7 +89,7 @@ namespace SincronizadorGPS50
                {
                   while(reader.Read())
                   {
-                     Entity = entity; 
+                     Entity = entity;
 
                      PropertyInfo[] properties = Entity.GetType().GetProperties();
 

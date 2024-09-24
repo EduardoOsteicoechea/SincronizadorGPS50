@@ -1,4 +1,4 @@
-﻿﻿ using SincronizadorGPS50.Workflows.Sage50Connection;
+﻿using SincronizadorGPS50.Workflows.Sage50Connection;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Reflection;
@@ -27,15 +27,11 @@ namespace SincronizadorGPS50
       {
          try
          {
-            //MessageBox.Show(
-            //   "At: GestprojectSubaccountableAccountsProcessor\n.ProcessEntityList" + "\n\n" +
-            //   "gestprojectEntites.Count: " + gestprojectEntites.Count + "\n" +
-            //   "sage50Entities.Count: " + sage50Entities.Count
+            //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
+            //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
+            //    "GestprojectEntities",
+            //    gestprojectEntites
             //);
-
-            //////////////////////////////////////
-            // Here get's changed
-            //////////////////////////////////////
 
             ProcessedEntities = new List<GestprojectSubaccountableAccountModel>();
 
@@ -99,25 +95,46 @@ namespace SincronizadorGPS50
       {
          try
          {
-            new EntitySynchronizationTable<GestprojectSubaccountableAccountModel>().AppendTableDataToEntity
-            (
-               connection,
-               tableSchema.TableName,
-               tableSchema.SynchronizationFieldsTupleList,
-               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
-               entity,               
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.COS_ID)
-            );
-            
-            //StringBuilder stringBuilder = new StringBuilder();
-            //foreach(var item in entity.GetType().GetProperties())
-            //{
-            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
-            //};
-            //MessageBox.Show(stringBuilder.ToString());
+            if (entity.COS_ID != null && entity.COS_ID != -1) 
+            {
+               new EntitySynchronizationTable<GestprojectSubaccountableAccountModel>().AppendTableDataToEntity
+               (
+                  connection,
+                  tableSchema.TableName,
+                  tableSchema.SynchronizationFieldsTupleList,
+                  (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
+                  entity,
+                  (tableSchema.GestprojectId.ColumnDatabaseName, entity.COS_ID)
+               );
+            }
+            else if(entity.S50_GUID_ID != "")
+            {
+               new EntitySynchronizationTable<GestprojectSubaccountableAccountModel>().AppendTableDataToEntity
+               (
+                  connection,
+                  tableSchema.TableName,
+                  tableSchema.SynchronizationFieldsTupleList,
+                  (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.COS_ID),
+                  entity,
+                  (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
+               );
+            }
+            else if(entity.COS_ID == -1)
+            {
+               new EntitySynchronizationTable<GestprojectSubaccountableAccountModel>().AppendTableDataToEntity
+               (
+                  connection,
+                  tableSchema.TableName,
+                  tableSchema.SynchronizationFieldsTupleList,
+                  (tableSchema.GestprojectGroup.ColumnDatabaseName, entity.COS_GRUPO),
+                  entity
+                  //(tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
+               );
+            };
          }
          catch(System.Exception exception)
          {
+            //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>("Error with: " + entity.COS_NOMBRE,entity);
             throw ApplicationLogger.ReportError(
                MethodBase.GetCurrentMethod().DeclaringType.Namespace,
                MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -138,9 +155,7 @@ namespace SincronizadorGPS50
                tableSchema.GestprojectId.ColumnDatabaseName,
                (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
                (tableSchema.GestprojectId.ColumnDatabaseName, entity.COS_ID)
-               //(tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
             ).ItWas;
-            //).ItWas && entity.S50_GUID_ID == "";
 
             bool registeredInDifferentCompanyGroup =
             entity.S50_COMPANY_GROUP_GUID_ID.Trim() != ""
@@ -166,6 +181,7 @@ namespace SincronizadorGPS50
             MustBeUpdated = neverSynchronized || synchronizedInThePast;
 
             //MessageBox.Show(
+            //   "entity.COS_NOMBRE: " + entity.COS_NOMBRE + "\n" +
             //   "MustBeRegistered: " + MustBeRegistered + "\n" +
             //   "MustBeSkipped: " + MustBeSkipped + "\n" +
             //   "MustBeUpdated: " + MustBeUpdated + "\n"
@@ -207,7 +223,7 @@ namespace SincronizadorGPS50
                   (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID ?? ""),
                }
             );
-            
+
             //StringBuilder stringBuilder = new StringBuilder();
             //foreach(var item in entity.GetType().GetProperties())
             //{
@@ -238,21 +254,41 @@ namespace SincronizadorGPS50
             //}
             //MessageBox.Show(stringBuilder.ToString());
 
-            new UpdateEntity
-            (
-               connection,
-               tableSchema.TableName,
-               new List<(string, dynamic)>()
-               {
-                  (tableSchema.SynchronizationStatus.ColumnDatabaseName, entity.SYNC_STATUS),
+            if(entity.COS_ID == -1)
+            {
+               new UpdateEntity
+               (
+                  connection,
+                  tableSchema.TableName,
+                  new List<(string, dynamic)>()
+                  {
+                     (tableSchema.SynchronizationStatus.ColumnDatabaseName, entity.SYNC_STATUS),
+                     (tableSchema.GestprojectId.ColumnDatabaseName, entity.COS_ID),
+                     (tableSchema.GestprojectCode.ColumnDatabaseName, entity.COS_CODIGO),
+                     (tableSchema.GestprojectName.ColumnDatabaseName, entity.COS_NOMBRE),
+                     (tableSchema.GestprojectGroup.ColumnDatabaseName, entity.COS_GRUPO),
+                  },
+                  (tableSchema.GestprojectGroup.ColumnDatabaseName, entity.COS_GRUPO)
+               );
+            }
+            else
+            {
+               new UpdateEntity
+               (
+                  connection,
+                  tableSchema.TableName,
+                  new List<(string, dynamic)>()
+                  {
+                     (tableSchema.SynchronizationStatus.ColumnDatabaseName, entity.SYNC_STATUS),
+                     (tableSchema.GestprojectId.ColumnDatabaseName, entity.COS_ID),
+                     (tableSchema.GestprojectCode.ColumnDatabaseName, entity.COS_CODIGO),
+                     (tableSchema.GestprojectName.ColumnDatabaseName, entity.COS_NOMBRE),
+                     (tableSchema.GestprojectGroup.ColumnDatabaseName, entity.COS_GRUPO),
+                  },
                   (tableSchema.GestprojectId.ColumnDatabaseName, entity.COS_ID),
-                  (tableSchema.GestprojectCode.ColumnDatabaseName, entity.COS_CODIGO),
-                  (tableSchema.GestprojectName.ColumnDatabaseName, entity.COS_NOMBRE),
-                  (tableSchema.GestprojectGroup.ColumnDatabaseName, entity.COS_GRUPO),
-               },
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.COS_ID),
-               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
-            );
+                  (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
+               );
+            }
          }
          catch(System.Exception exception)
          {

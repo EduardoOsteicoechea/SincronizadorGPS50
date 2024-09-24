@@ -84,35 +84,34 @@ namespace SincronizadorGPS50
             var subaccountableAccountList = GestprojectEntities.Select(x=>x.COS_CODIGO);
             var subaccountableAccount2List = GestprojectEntities.Select(x=>x.COS_NOMBRE);
 
-            //MessageBox.Show(GestprojectEntities.Count + "");
+            List<Sage50SubaccountableAccountModel> sage50Entities = new GetSage50SubaccountableAccounts(tableSchema).Entities;
 
-            if(GestprojectEntities.Count < 1)
+            bool itemExists = true;
+            foreach(var item in sage50Entities)
             {
-                List<Sage50SubaccountableAccountModel> sage50Entities = new GetSage50SubaccountableAccounts(tableSchema).Entities;
+                itemExists =
+                    subaccountableAccountList.Contains(item.CODIGO)
+                    &&
+                    subaccountableAccount2List.Contains(item.NOMBRE);
 
-                bool itemExists = true;
-                foreach(var item in sage50Entities)
+                if(!itemExists)
                 {
-                    itemExists =
-                       subaccountableAccountList.Contains(item.CODIGO)
-                       &&
-                       subaccountableAccount2List.Contains(item.NOMBRE);
+                    GestprojectSubaccountableAccountModel gestprojectSubaccountableAccountModel = new GestprojectSubaccountableAccountModel();
 
-                    if(!itemExists)
-                    {
-                        GestprojectSubaccountableAccountModel gestprojectSubaccountableAccountModel = new GestprojectSubaccountableAccountModel();
+                    gestprojectSubaccountableAccountModel.COS_ID = -1;
+                    gestprojectSubaccountableAccountModel.COS_CODIGO = item.CODIGO.Trim();
+                    gestprojectSubaccountableAccountModel.COS_NOMBRE = item.NOMBRE.Trim();
+                    gestprojectSubaccountableAccountModel.COS_GRUPO = item.CODIGO.Trim();
 
-                        gestprojectSubaccountableAccountModel.ID = 0;
-                        gestprojectSubaccountableAccountModel.COS_CODIGO = item.CODIGO.Trim();
-                        gestprojectSubaccountableAccountModel.COS_NOMBRE = item.NOMBRE.Trim();
-                        gestprojectSubaccountableAccountModel.COS_GRUPO = item.CODIGO.Trim();
-
-                        GestprojectEntities.Add(gestprojectSubaccountableAccountModel);
-                    };
+                    GestprojectEntities.Add(gestprojectSubaccountableAccountModel);
                 };
-                //new VisualizePropertiesAndValues<Sage50SubaccountableAccountModel>("Sage50Entities", sage50Entities);
             };
-            //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>("GestprojectEntities", GestprojectEntities);
+
+            //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
+            //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
+            //    "GestprojectEntities", 
+            //    GestprojectEntities
+            //);
         }
 
         public void GetAndStoreSage50Entities(ISynchronizationTableSchemaProvider tableSchema)
