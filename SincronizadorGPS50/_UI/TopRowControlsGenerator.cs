@@ -121,23 +121,30 @@ namespace SincronizadorGPS50
       }
       public void SynchronizeButtonClickEventHandler(object sender, EventArgs e)
       {
-         List<int> selectedIdList = ManageUserInteractionWithUI.GetSelectedIfAnyOrAll(MiddleRowGrid);
+         try
+         {
+            List<int> selectedIdList = ManageUserInteractionWithUI.GetSelectedIfAnyOrAll(MiddleRowGrid);
 
-         EntitySynchronizer.Synchronize
-         (
-            GestprojectConnectionManager,
-            Sage50ConnectionManager,
-            SynchronizationTableSchemaProvider,
-            selectedIdList
-         );
+            EntitySynchronizer.Synchronize
+            (
+               GestprojectConnectionManager,
+               Sage50ConnectionManager,
+               SynchronizationTableSchemaProvider,
+               selectedIdList
+            );
 
-         System.Data.DataTable dataTable = DataSourceGenerator.GenerateDataTable(
-            GestprojectConnectionManager,
-            Sage50ConnectionManager,
-            SynchronizationTableSchemaProvider
-         );
+            System.Data.DataTable dataTable = DataSourceGenerator.GenerateDataTable(
+               GestprojectConnectionManager,
+               Sage50ConnectionManager,
+               SynchronizationTableSchemaProvider
+            );
 
-         ManageUserInteractionWithUI.RefreshTable(MiddleRowGrid, dataTable);
+            ManageUserInteractionWithUI.RefreshTable(MiddleRowGrid, dataTable);
+         }
+         catch (System.Exception exception)
+         {
+            new DeadEndException(exception);
+         };
       }
       public void AddButtonsToRowTableLayoutPanel()
       {

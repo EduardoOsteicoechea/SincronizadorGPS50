@@ -1,4 +1,5 @@
 ﻿using Infragistics.Win.Misc;
+using SincronizadorGPS50.Workflows.Sage50Connection;
 using System;
 using System.Reflection;
 using System.Windows.Forms;
@@ -105,16 +106,28 @@ namespace SincronizadorGPS50
          IGridDataSourceGenerator<T1, T2> gridDataSourceGenerator
       )
       {
-         tabPageUItopRowControlsGenerator.GenerateControls
-         (
-            topRow,
-            middleRowGrid,
-            GestprojectConnectionManager,
-            Sage50ConnectionManager,
-            SynchronizationTableSchemaProvider,
-            gridDataSourceGenerator,
-            EntitySynchronizer
-         );
+         try
+         {
+            tabPageUItopRowControlsGenerator.GenerateControls
+            (
+               topRow,
+               middleRowGrid,
+               GestprojectConnectionManager,
+               Sage50ConnectionManager,
+               SynchronizationTableSchemaProvider,
+               gridDataSourceGenerator,
+               EntitySynchronizer
+            );
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
 
       public UltraPanel CreateMiddleRow(ITabPageLayoutPanelRowGenerator rowGenerator)

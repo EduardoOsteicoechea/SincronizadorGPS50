@@ -1,4 +1,4 @@
-﻿using Infragistics.Designers.SqlEditor;
+﻿﻿using Infragistics.Designers.SqlEditor;
 using System;
 using System.Collections.Generic;
 using System.Data;

@@ -36,6 +36,7 @@ namespace SincronizadorGPS50
             MainWindowUIHolder.ProvidersTab = MainWindowUIHolder.MainTabControl.Tabs.Add("ProvidersTab", "Proveedores");
             MainWindowUIHolder.ProjectsTab = MainWindowUIHolder.MainTabControl.Tabs.Add("ProjecsTab", "Proyectos");
             MainWindowUIHolder.TaxesTab = MainWindowUIHolder.MainTabControl.Tabs.Add("TaxesTab", "Impuestos");
+            MainWindowUIHolder.SubaccountableAccountsTab = MainWindowUIHolder.MainTabControl.Tabs.Add("SubaccountableAccountsTab", "Cuentas Contables");
             MainWindowUIHolder.IssuedBillsTab = MainWindowUIHolder.MainTabControl.Tabs.Add("IssuedBillsTab", "Facturas Emitidas");
             MainWindowUIHolder.ReceivedBillsTab = MainWindowUIHolder.MainTabControl.Tabs.Add("ReceivedBillsTab", "Facturas Recibidas");
 

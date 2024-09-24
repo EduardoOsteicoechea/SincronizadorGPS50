@@ -9,6 +9,7 @@ namespace SincronizadorGPS50
    public interface ISynchronizationTableSchemaProvider
    {
       string TableName { get; set; }
+      string GestprojectEntityTableName { get; set; }
       List<(string columnName, string friendlyName, Type columnType, string columnDefinition, dynamic defaultValue)> ColumnsTuplesList { get; set; }
       List<(string columnName, Type columnType)> SynchronizationFieldsTupleList { get; set; }
       List<(string columnName, Type columnType)> GestprojectFieldsTupleList { get; set; }
@@ -19,7 +20,9 @@ namespace SincronizadorGPS50
 
 
 
-
+      
+      (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectCode { get; set; }
+      (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectGroup { get; set; }
       (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectProId { get; set; }
       (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectDaoId { get; set; }
       (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectReference { get; set; }

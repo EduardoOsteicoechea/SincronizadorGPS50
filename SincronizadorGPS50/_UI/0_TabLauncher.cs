@@ -13,12 +13,13 @@ namespace SincronizadorGPS50
 			IGestprojectConnectionManager gestprojectConnectionManager = new GestprojectConnectionManager();
 			ISage50ConnectionManager sage50ConnectionManager = new Sage50ConnectionManager(selectedCompanyGroupName);
 
-			new ClientSynchronizationManager         ().Launch( GestprojectDataHolder.GestprojectDatabaseConnection, sage50ConnectionManager.CompanyGroupData, MainWindowUIHolder.CustomersTab );
-			new ProviderSynchronizationManager       ().Launch( gestprojectConnectionManager, sage50ConnectionManager, MainWindowUIHolder.ProvidersTab );
-         new ProjectsSynchronizationManager       ().Launch( gestprojectConnectionManager, sage50ConnectionManager, MainWindowUIHolder.ProjectsTab );
-         new TaxesSynchronizationManager          ().Launch( gestprojectConnectionManager, sage50ConnectionManager, MainWindowUIHolder.TaxesTab );
-         new IssuedBillsSynchronizationManager    ().Launch( gestprojectConnectionManager, sage50ConnectionManager, MainWindowUIHolder.IssuedBillsTab );
-         new ReceivedBillsSynchronizationManager  ().Launch(gestprojectConnectionManager, sage50ConnectionManager, MainWindowUIHolder.ReceivedBillsTab);
+			new ClientSynchronizationManager                  ().Launch( GestprojectDataHolder.GestprojectDatabaseConnection, sage50ConnectionManager.CompanyGroupData, MainWindowUIHolder.CustomersTab );
+			new ProviderSynchronizationManager                ().Launch( gestprojectConnectionManager, sage50ConnectionManager, MainWindowUIHolder.ProvidersTab );
+         new ProjectsSynchronizationManager                ().Launch( gestprojectConnectionManager, sage50ConnectionManager, MainWindowUIHolder.ProjectsTab );
+         new TaxesSynchronizationManager                   ().Launch( gestprojectConnectionManager, sage50ConnectionManager, MainWindowUIHolder.TaxesTab );
+         new SubaccountableAccountsSynchronizationManager  ().Launch( gestprojectConnectionManager, sage50ConnectionManager, MainWindowUIHolder.SubaccountableAccountsTab );
+         new IssuedBillsSynchronizationManager             ().Launch( gestprojectConnectionManager, sage50ConnectionManager, MainWindowUIHolder.IssuedBillsTab );
+         new ReceivedBillsSynchronizationManager           ().Launch(gestprojectConnectionManager, sage50ConnectionManager, MainWindowUIHolder.ReceivedBillsTab);
       }
 	}
 }

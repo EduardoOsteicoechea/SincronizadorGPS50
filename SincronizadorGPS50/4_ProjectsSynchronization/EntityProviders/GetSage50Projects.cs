@@ -63,14 +63,6 @@ namespace SincronizadorGPS50
                      );
                   };
 
-                  //entity.CODIGO = sage50EntityDataTable.Rows[i].ItemArray[0].ToString().Trim();
-                  //entity.NOMBRE = sage50EntityDataTable.Rows[i].ItemArray[1].ToString().Trim();
-                  //entity.DIRECCION = sage50EntityDataTable.Rows[i].ItemArray[2].ToString().Trim();
-                  //entity.CODPOST = sage50EntityDataTable.Rows[i].ItemArray[3].ToString().Trim();
-                  //entity.POBLACION = sage50EntityDataTable.Rows[i].ItemArray[4].ToString().Trim();
-                  //entity.PROVINCIA = sage50EntityDataTable.Rows[i].ItemArray[5].ToString().Trim();
-                  //entity.GUID_ID = sage50EntityDataTable.Rows[i].ItemArray[6].ToString().Trim();
-
                   Entities.Add(entity);
                   Codes.Add(entity.CODIGO);
                   Guids.Add(entity.GUID_ID);

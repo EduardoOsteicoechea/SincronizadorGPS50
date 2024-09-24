@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\sincronizadorgps50\\5_taxessynchronization\\entitysynchronizers\\taxsynchronizationworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\5_taxessynchronization\\entitysynchronizers\\taxsynchronizationworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\5_taxessynchronization\\entitysynchronizers\\taxessynchronizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\5_taxessynchronization\\entitysynchronizers\\taxessynchronizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\5_taxessynchronization\\1_taxesdatatablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\5_taxessynchronization\\1_taxesdatatablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\5_taxessynchronization\\2_gestprojecttaxesprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\5_taxessynchronization\\2_gestprojecttaxesprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\_entityeditors\\entitysynchronizationtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\_entityeditors\\entitysynchronizationtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\sincronizadorgps50\\6_subaccountableaccountssynchronization\\1_subaccountableaccountsdatatablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\6_subaccountableaccountssynchronization\\1_subaccountableaccountsdatatablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,80 +14,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 240,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:891126805:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "1_TaxesDataTableManager.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\5_TaxesSynchronization\\1_TaxesDataTableManager.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\5_TaxesSynchronization\\1_TaxesDataTableManager.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\5_TaxesSynchronization\\1_TaxesDataTableManager.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\5_TaxesSynchronization\\1_TaxesDataTableManager.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAmwFEAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T12:52:58.77Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "2_GestprojectTaxesProcessor.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\5_TaxesSynchronization\\2_GestprojectTaxesProcessor.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\5_TaxesSynchronization\\2_GestprojectTaxesProcessor.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\5_TaxesSynchronization\\2_GestprojectTaxesProcessor.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\5_TaxesSynchronization\\2_GestprojectTaxesProcessor.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAewDUAAABKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T12:53:07.615Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TaxesSynchronizer.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\5_TaxesSynchronization\\EntitySynchronizers\\TaxesSynchronizer.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\5_TaxesSynchronization\\EntitySynchronizers\\TaxesSynchronizer.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\5_TaxesSynchronization\\EntitySynchronizers\\TaxesSynchronizer.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\5_TaxesSynchronization\\EntitySynchronizers\\TaxesSynchronizer.cs",
-              "ViewState": "AQIAAHEAAAAAAAAAAAAqwJ8AAABcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T15:44:16.508Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TaxSynchronizationWorkflow.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\5_TaxesSynchronization\\EntitySynchronizers\\TaxSynchronizationWorkflow.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\5_TaxesSynchronization\\EntitySynchronizers\\TaxSynchronizationWorkflow.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\5_TaxesSynchronization\\EntitySynchronizers\\TaxSynchronizationWorkflow.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\5_TaxesSynchronization\\EntitySynchronizers\\TaxSynchronizationWorkflow.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAjwCkAAAAAAAAA",
+              "Title": "1_SubaccountableAccountsDataTableManager.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\6_SubaccountableAccountsSynchronization\\1_SubaccountableAccountsDataTableManager.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\6_SubaccountableAccountsSynchronization\\1_SubaccountableAccountsDataTableManager.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\6_SubaccountableAccountsSynchronization\\1_SubaccountableAccountsDataTableManager.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\6_SubaccountableAccountsSynchronization\\1_SubaccountableAccountsDataTableManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T13:52:17.935Z",
+              "WhenOpened": "2024-09-23T20:31:40.614Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EntitySynchronizationTable.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\_EntityEditors\\EntitySynchronizationTable.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\_EntityEditors\\EntitySynchronizationTable.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\_EntityEditors\\EntitySynchronizationTable.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\_EntityEditors\\EntitySynchronizationTable.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAowEcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T17:20:22.436Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:891126805:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
             }
           ]
         }

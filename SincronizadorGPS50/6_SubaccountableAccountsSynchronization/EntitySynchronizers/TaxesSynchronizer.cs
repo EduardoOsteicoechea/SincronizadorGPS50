@@ -7,13 +7,13 @@ using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
-   public class ProjectsSynchronizer : IEntitySynchronizer<GestprojectProjectModel, Sage50ProjectModel>
+   public class SubaccountableAccountsSynchronizer : IEntitySynchronizer<GestprojectSubaccountableAccountModel, Sage50SubaccountableAccountModel>
    {
-      public List<GestprojectProjectModel> GestprojectEntityList {get;set;} = new List<GestprojectProjectModel>();
-      public List<Sage50ProjectModel> Sage50EntityList {get;set;} = new List<Sage50ProjectModel> { };
-      public List<GestprojectProjectModel> UnexistingGestprojectEntityList {get;set;} = new List<GestprojectProjectModel>();
-      public List<GestprojectProjectModel> ExistingGestprojectEntityList {get;set; } = new List<GestprojectProjectModel>();
-      public List<GestprojectProjectModel> UnsynchronizedGestprojectEntityList {get;set; } = new List<GestprojectProjectModel>();
+      public List<GestprojectSubaccountableAccountModel> GestprojectEntityList {get;set;} = new List<GestprojectSubaccountableAccountModel>();
+      public List<Sage50SubaccountableAccountModel> Sage50EntityList {get;set;} = new List<Sage50SubaccountableAccountModel> { };
+      public List<GestprojectSubaccountableAccountModel> UnexistingGestprojectEntityList {get;set;} = new List<GestprojectSubaccountableAccountModel>();
+      public List<GestprojectSubaccountableAccountModel> ExistingGestprojectEntityList {get;set; } = new List<GestprojectSubaccountableAccountModel>();
+      public List<GestprojectSubaccountableAccountModel> UnsynchronizedGestprojectEntityList {get;set; } = new List<GestprojectSubaccountableAccountModel>();
       public bool SomeEntitiesExistsInSage50 {get;set;}
       public bool AllEntitiesExistsInSage50 {get;set;}
       public bool NoEntitiesExistsInSage50 {get;set;}
@@ -41,8 +41,11 @@ namespace SincronizadorGPS50
                GestprojectConnectionManager,
                selectedIdList,
                SynchronizationTableSchemaProvider.TableName,
-               tableSchema.ColumnsTuplesList.Select(x=> (x.columnName,x.columnType)).ToList(),
-               ( tableSchema.GestprojectId.ColumnDatabaseName, string.Join(",", selectedIdList) )
+               SynchronizationTableSchemaProvider.ColumnsTuplesList.Select(x=>(x.columnName,x.columnType)).ToList(),
+               (
+                  tableSchema.GestprojectId.ColumnDatabaseName,
+                  string.Join(",", selectedIdList)
+               )
             );
 
             StoreSage50EntityList
@@ -91,7 +94,7 @@ namespace SincronizadorGPS50
          (string condition1ColumnName, string condition1Value) condition1Data
       )
       {
-         GestprojectEntityList = new GestprojectEntities<GestprojectProjectModel>().GetAll(
+         GestprojectEntityList = new GestprojectEntities<GestprojectSubaccountableAccountModel>().GetAll(
             gestprojectConnectionManager.GestprojectSqlConnection,
             selectedIdList,
             tableName,
@@ -107,17 +110,21 @@ namespace SincronizadorGPS50
          List<(string, System.Type)> tableFieldsAlongTypes
       )
       {
-         Sage50EntityList = new Sage50Entities<Sage50ProjectModel>().GetAll(
-            sageDispactcherMechanismRoute,
-            tableName,
-            tableFieldsAlongTypes
-         );
+         //Sage50EntityList = new Sage50Entities<Sage50SubaccountableAccountModel>().GetAll(
+         //   sageDispactcherMechanismRoute,
+         //   tableName,
+         //   tableFieldsAlongTypes
+         //);
+         
+         //Sage50EntityList = new GetSage50SubaccountableAccounts().Entities;
+         
+         //MessageBox.Show("Sage50EntityList.Count: " + Sage50EntityList.Count);
       }
       
       public void StoreBreakDownGestprojectEntityListByStatus
       (
-         List<GestprojectProjectModel> GestprojectEntityList, 
-         List<Sage50ProjectModel> Sage50EntityList
+         List<GestprojectSubaccountableAccountModel> GestprojectEntityList, 
+         List<Sage50SubaccountableAccountModel> Sage50EntityList
       )
       {
          for(int i = 0; i < GestprojectEntityList.Count; i++)
@@ -128,34 +135,48 @@ namespace SincronizadorGPS50
             for(global::System.Int32 j = 0; j < Sage50EntityList.Count; j++)
             {
                var sage50Entity = Sage50EntityList[j];
-               if(
-                  gestprojectEntity.S50_CODE == sage50Entity.GUID_ID
-               )
+               if( gestprojectEntity.S50_GUID_ID == sage50Entity.GUID_ID && gestprojectEntity.S50_CODE != "")
                {
-               ExistingGestprojectEntityList.Add(gestprojectEntity);
+                  ExistingGestprojectEntityList.Add(gestprojectEntity);
                   found = true;
                   break;
                };
             };
 
-            if(!found)
+            if(!found && gestprojectEntity.S50_CODE != "")
             {
-            UnexistingGestprojectEntityList.Add(gestprojectEntity);
+               UnexistingGestprojectEntityList.Add(gestprojectEntity);
+            };
+            
+
+            //MessageBox.Show(
+            //"gestprojectEntity.SYNC_STATUS: " + gestprojectEntity.SYNC_STATUS + "\n\n" +
+            //"gestprojectEntity.S50_CODE: " + gestprojectEntity.S50_CODE + "\n\n" +
+            //"gestprojectEntity.IMP_SUBCTA_CONTABLE: " + gestprojectEntity.IMP_SUBCTA_CONTABLE
+            //);
+
+            //if(gestprojectEntity.SYNC_STATUS != "Sincronizado" && gestprojectEntity.S50_CODE == "" && gestprojectEntity.IMP_SUBCTA_CONTABLE != "")
+            //if(gestprojectEntity.SYNC_STATUS != "Sincronizado" && gestprojectEntity.S50_CODE == "" && gestprojectEntity.S50_GUID_ID != "")
+            if(gestprojectEntity.SYNC_STATUS != "Sincronizado" && gestprojectEntity.S50_CODE != "")
+            //if(gestprojectEntity.SYNC_STATUS != "Sincronizado" && gestprojectEntity.S50_CODE != "")
+            {
+               UnsynchronizedGestprojectEntityList.Add(gestprojectEntity);
             };
 
-            if(gestprojectEntity.SYNC_STATUS != "Sincronizado" && gestprojectEntity.S50_CODE != "")
-            {
-            UnsynchronizedGestprojectEntityList.Add(gestprojectEntity);
-            };
+            //MessageBox.Show(
+            //"UnsynchronizedGestprojectEntityList.Count: " + UnsynchronizedGestprojectEntityList.Count
+            //);
+
+            //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(gestprojectEntity.IMP_DESCRIPCION, gestprojectEntity);
          };
       }
 
       public void DetermineEntitySincronizationWorkflow
       (
-         List<GestprojectProjectModel> UnexistingGestprojectEntityList, 
-         List<GestprojectProjectModel> ExistingGestprojectEntityList, 
-         List<GestprojectProjectModel> UnsynchronizedGestprojectEntityList,
-         List<GestprojectProjectModel> GestprojectEntityList
+         List<GestprojectSubaccountableAccountModel> UnexistingGestprojectEntityList, 
+         List<GestprojectSubaccountableAccountModel> ExistingGestprojectEntityList, 
+         List<GestprojectSubaccountableAccountModel> UnsynchronizedGestprojectEntityList,
+         List<GestprojectSubaccountableAccountModel> GestprojectEntityList
       )
       {
          SomeEntitiesExistsInSage50 = ExistingGestprojectEntityList.Count > 0;
@@ -170,66 +191,31 @@ namespace SincronizadorGPS50
          bool AllEntitiesExistsInSage50, 
          bool NoEntitiesExistsInSage50, 
          bool UnsynchronizedEntityExists, 
-         IGestprojectConnectionManager GestprojectConnectionManager, 
-         ISage50ConnectionManager Sage50ConnectionManager, 
-         ISynchronizationTableSchemaProvider tableSchemaProvider, 
-         List<GestprojectProjectModel> UnexistingGestprojectEntityList, 
-         List<GestprojectProjectModel> ExistingGestprojectEntityList, 
-         List<GestprojectProjectModel> UnsynchronizedGestprojectEntityList,
-         List<GestprojectProjectModel> GestprojectEntityList
+         IGestprojectConnectionManager gestprojectConnectionManager, 
+         ISage50ConnectionManager sage50ConnectionManager, 
+         ISynchronizationTableSchemaProvider tableSchema, 
+         List<GestprojectSubaccountableAccountModel> unexistingGestprojectEntityList, 
+         List<GestprojectSubaccountableAccountModel> existingGestprojectEntityList, 
+         List<GestprojectSubaccountableAccountModel> unsynchronizedGestprojectEntityList,
+         List<GestprojectSubaccountableAccountModel> gestprojectEntityList
       )
       {
-         //var aa = "";
-         //foreach (var item in GestprojectEntityList)
-         //{
-         //   aa += $"{item.NOMBRE_COMPLETO}\n";
-         //};
-         //MessageBox.Show(aa);
+         //new SubaccountableAccountsSynchronizationWorkflow(
+         //   gestprojectConnectionManager,
+         //   sage50ConnectionManager.CompanyGroupData,
+         //   tableSchema,
+         //   gestprojectEntityList,
+         //   unsynchronizedGestprojectEntityList,
+         //   Sage50EntityList
+         //);
 
-         if (NoEntitiesExistsInSage50)
-         {
-            //new UnexsistingProjectsSynchronizationWorkflow().Execute
-            //(
-            //   GestprojectConnectionManager,
-            //   Sage50ConnectionManager,
-            //   UnexistingGestprojectEntityList,
-            //   tableSchemaProvider
-            //);
-         }
+         /////////////////////////////////////////
+         // Clear Lists to avoid repetition
+         /////////////////////////////////////////
 
-         if(AllEntitiesExistsInSage50)
-         {
-            //new ExsistingProviderListWorkflow
-            //(
-            //   GestprojectDataHolder.GestprojectDatabaseConnection,
-            //   gestProjectProviderList,
-            //   unsynchronizedProviderList,
-            //   unsynchronizedProvidersExists,
-            //   tableSchema
-            //);
-         }
-
-         if(SomeEntitiesExistsInSage50 && !AllEntitiesExistsInSage50)
-         {
-            if(UnsynchronizedEntityExists)
-            {
-               //new ExsistingProviderListWorkflow
-               //(
-               //   GestprojectDataHolder.GestprojectDatabaseConnection,
-               //   existingProvidersList,
-               //   unsynchronizedProviderList,
-               //   unsynchronizedProvidersExists,
-               //   tableSchema
-               //);
-            };
-
-            //new UnexsistingProviderListWorkflow
-            //(
-            //   GestprojectDataHolder.GestprojectDatabaseConnection,
-            //   nonExistingProvidersList,
-            //   tableSchema
-            //);
-         };
+         gestprojectEntityList.Clear();
+         unsynchronizedGestprojectEntityList.Clear();
+         Sage50EntityList.Clear();
       }
    }
 }

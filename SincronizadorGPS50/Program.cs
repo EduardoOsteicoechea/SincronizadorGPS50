@@ -11,9 +11,7 @@
          }
          catch (System.Exception exception)
          {
-            System.Windows.Forms.MessageBox.Show($"Error detectado:\n\n{exception.Message}\n\n{exception.InnerException}");
-            System.Windows.Forms.MessageBox.Show($"Procederemos a cerrar la aplicación.");
-            MainWindowActions.CloseCompletellyAndAbruptly();
+            new DeadEndException(exception);
          };
       }
    }

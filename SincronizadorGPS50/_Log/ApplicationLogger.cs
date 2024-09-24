@@ -26,7 +26,7 @@ namespace SincronizadorGPS50
          }
          catch(Exception errorLogException)
          {
-            MessageBox.Show($"Error {errorLogException.Message}");
+            new VisualizationForm(exceptionShortDescription, $"Error {errorLogException.Message}");
             throw new Exception($"{exceptionLocation}");
          };
       }

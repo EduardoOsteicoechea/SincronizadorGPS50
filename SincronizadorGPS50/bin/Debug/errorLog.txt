@@ -12150,3 +12150,1509 @@ Incorrect syntax near ')'.
 
 
 --------------------------------------------------
+Date: 2024-09-21 10:22:02.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:16:23.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:23:10.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:24:45.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:24:47.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:27:44.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:27:46.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:29:31.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:29:33.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:29:34.
+Location: At:
+
+SincronizadorGPS50
+.TopRowControlsGenerator`2
+.SynchronizeButtonClickEventHandler:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:30:54.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:30:56.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:30:57.
+Location: At:
+
+SincronizadorGPS50
+.TopRowControlsGenerator`2
+.SynchronizeButtonClickEventHandler:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:32:05.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:32:07.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:32:07.
+Location: At:
+
+SincronizadorGPS50
+.TopRowControlsGenerator`2
+.SynchronizeButtonClickEventHandler:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:33:15.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:33:17.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:33:18.
+Location: At:
+
+SincronizadorGPS50
+.TopRowControlsGenerator`2
+.SynchronizeButtonClickEventHandler:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:38:40.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:38:41.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:39:50.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:39:51.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:39:52.
+Location: At:
+
+SincronizadorGPS50
+.TopRowControlsGenerator`2
+.SynchronizeButtonClickEventHandler:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:42:45.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:42:47.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 06:42:48.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+El objeto no coincide con el tipo de destino.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:29:23.
+Location: At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:29:28.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:29:33.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:30:40.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:30:43.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:31:13.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:36:43.
+Location: At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:36:49.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:36:51.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:36:52.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:36:53.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:47:33.
+Location: At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:47:46.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:47:48.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:47:49.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:47:50.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:50:51.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:56:22.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:56:23.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:56:23.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:56:25.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-23 14:56:26.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ProjectsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-09-23 17:41:08.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Invalid column name 'COS_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'COS_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-23 17:41:37.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Invalid column name 'COS_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+Invalid column name 'COS_ID'.
+
+
+--------------------------------------------------
+Date: 2024-09-23 17:44:12.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.RegisterEntity:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 17:44:58.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.RegisterEntity:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-23 17:48:08.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ValidateEntitySynchronizationStatus:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------

@@ -1,4 +1,5 @@
-﻿using sage.ew.cliente;
+﻿using Infragistics.Designers.SqlEditor;
+using sage.ew.cliente;
 using sage.ew.db;
 using SincronizadorGPS50.Sage50Connector;
 using System;
@@ -16,23 +17,20 @@ namespace SincronizadorGPS50.Sage50Connector
       public string GUID_ID { get; set; } = "";
       public CreateSage50Project
       (
-         string country,
          string name,
-         string cif,
-         string postalCode,
          string address,
+         string postalCode,
+         string locality,
          string province,
-         string ivaType = "03",
-         ((string sageDispactcherMechanismRoute, string tableName) dispatcherAndName, List<(string name, Type type)> tableFieldsAlongTypes) sageTableDataProvider = default
+         ISynchronizationTableSchemaProvider tableSchema
       )
       {
          try
          {
-            int nextCodeAvailable = new GetSage50Projects(sageTableDataProvider).NextCodeAvailable;
-            //int nextCodeAvailable = new GetSage50Projects().NextCodeAvailable;
+            int nextCodeAvailable = new GetSage50Projects(tableSchema.SageTableData).NextCodeAvailable;
 
             StringBuilder fieldsToQueryStringBuilder = new StringBuilder();
-            foreach(var item in sageTableDataProvider.tableFieldsAlongTypes)
+            foreach(var item in tableSchema.SageTableData.tableFieldsAlongTypes)
             {
                fieldsToQueryStringBuilder.Append($"{item.name},");
             };
@@ -40,37 +38,12 @@ namespace SincronizadorGPS50.Sage50Connector
 
             Obra entity = new Obra();
 
-            //if(nextCodeAvailable < 10000)
-            //{
-            //   if(nextCodeAvailable < 10)
-            //   {
-            //      entity._Codigo = "4300000" + nextCodeAvailable;
-            //      EntityCode = entity._Codigo;
-            //   }
-            //   else if(nextCodeAvailable < 100)
-            //   {
-            //      entity._Codigo = "430000" + nextCodeAvailable;
-            //      EntityCode = entity._Codigo;
-            //   }
-            //   else if(nextCodeAvailable < 1000)
-            //   {
-            //      entity._Codigo = "43000" + nextCodeAvailable;
-            //      EntityCode = entity._Codigo;
-            //   }
-            //   else
-            //   {
-            //      entity._Codigo = "4300" + nextCodeAvailable;
-            //      EntityCode = entity._Codigo;
-            //   };
-
-
-            // Combinar codigo de Gestproject con nombre de proyecto separado por un espacio
-            // El código sencillamente consecutivo
-            entity._Codigo = nextCodeAvailable++.ToString();
+            entity._Codigo = (nextCodeAvailable++).ToString();
             entity._Nombre = name.Trim();
+            entity._Direccion = address.Trim();
             entity._Codpost = postalCode.Trim();
-            entity._Poblacion = cif.Trim();
-            entity._Provincia = address.Trim();
+            entity._Poblacion = locality.Trim();
+            entity._Provincia = province.Trim();
 
             if(entity._Save())
             {
@@ -78,10 +51,12 @@ namespace SincronizadorGPS50.Sage50Connector
                   SELECT 
                      guid_id 
                   FROM 
-                     {DB.SQLDatabase("gestion","proveed")}
+                     {DB.SQLDatabase(tableSchema.SageTableData.dispatcherAndName.sageDispactcherMechanismRoute,tableSchema.SageTableData.dispatcherAndName.tableName)}
                   WHERE 
-                     codigo='{EntityCode}'
+                     codigo='{entity._Codigo}'
                   ;";
+
+               new VisualizationForm("S50 Project Creating SQL Qeury",getSage50EntitySQLQuery);
 
                DataTable sage50EntityDataTable = new DataTable();
 
@@ -89,21 +64,19 @@ namespace SincronizadorGPS50.Sage50Connector
 
                GUID_ID = sage50EntityDataTable.Rows[0].ItemArray[0].ToString().Trim();
             }
-            //else
-            //{
-            //   MessageBox.Show(
-            //       "Error en la creación del cliente empleando estos datos: " + "\n\n" +
-            //       "EntityCode: " + clsEntityCustomerInstance.codigo + "\n" +
-            //       "country: " + clsEntityCustomerInstance.pais + "\n" +
-            //       "name: " + clsEntityCustomerInstance.nombre + "\n" +
-            //       "postalCode: " + clsEntityCustomerInstance.codpos + "\n" +
-            //       "cif: " + clsEntityCustomerInstance.cif + "\n" +
-            //       "address: " + clsEntityCustomerInstance.direccion + "\n" +
-            //       "province: " + clsEntityCustomerInstance.provincia + "\n" +
-            //       "ivaType: " + clsEntityCustomerInstance.tipo_iva + "\n"
-            //   );
-            //};
-         //}
+            else
+            {
+               new VisualizationForm("S50 Project Creating SQL Qeury",$@"
+                   Error en la la entidad empleando estos datos:
+                   EntityCode: {entity._Codigo}
+                   name: {entity._Nombre}
+                   address: {entity._Direccion}
+                   postalCode: {entity._Codpost}
+                   poblacion: {entity._Poblacion}
+                   province: {entity._Provincia}
+               ");
+            };
+            //}
             //else
             //{
             //   MessageBox.Show("Sage50 admite un máximo de 9999 clientes por grupo de empresas y su base de clientes de Gestproject supera éste límite.");

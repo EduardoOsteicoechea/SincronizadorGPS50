@@ -1,4 +1,4 @@
-﻿ using SincronizadorGPS50.Workflows.Sage50Connection;
+﻿﻿ using SincronizadorGPS50.Workflows.Sage50Connection;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Reflection;
