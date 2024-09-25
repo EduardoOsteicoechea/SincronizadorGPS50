@@ -95,7 +95,9 @@ namespace SincronizadorGPS50
       {
          try
          {
-            if (entity.COS_ID != null && entity.COS_ID != -1) 
+            bool isAGestprojectEntity = entity.COS_ID != null && entity.COS_ID != -1;
+            bool isASage50Entity = entity.COS_ID == -1;
+            if (isAGestprojectEntity) 
             {
                new EntitySynchronizationTable<GestprojectSubaccountableAccountModel>().AppendTableDataToEntity
                (
@@ -107,19 +109,19 @@ namespace SincronizadorGPS50
                   (tableSchema.GestprojectId.ColumnDatabaseName, entity.COS_ID)
                );
             }
-            else if(entity.S50_GUID_ID != "")
-            {
-               new EntitySynchronizationTable<GestprojectSubaccountableAccountModel>().AppendTableDataToEntity
-               (
-                  connection,
-                  tableSchema.TableName,
-                  tableSchema.SynchronizationFieldsTupleList,
-                  (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.COS_ID),
-                  entity,
-                  (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
-               );
-            }
-            else if(entity.COS_ID == -1)
+            //else if(entity.S50_GUID_ID != "")
+            //{
+            //   new EntitySynchronizationTable<GestprojectSubaccountableAccountModel>().AppendTableDataToEntity
+            //   (
+            //      connection,
+            //      tableSchema.TableName,
+            //      tableSchema.SynchronizationFieldsTupleList,
+            //      (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.COS_ID),
+            //      entity,
+            //      (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
+            //   );
+            //}
+            else if(isASage50Entity)
             {
                new EntitySynchronizationTable<GestprojectSubaccountableAccountModel>().AppendTableDataToEntity
                (
@@ -143,6 +145,7 @@ namespace SincronizadorGPS50
             );
          };
       }
+
       public void DetermineEntityWorkflow(SqlConnection connection, ISage50ConnectionManager sage50ConnectionManager, ISynchronizationTableSchemaProvider tableSchema, GestprojectSubaccountableAccountModel entity)
       {
          try
@@ -152,15 +155,15 @@ namespace SincronizadorGPS50
             MustBeRegistered = !new WasSubaccountableAccountRegistered(
                connection,
                tableSchema.TableName,
-               tableSchema.GestprojectId.ColumnDatabaseName,
-               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
+               tableSchema.Id.ColumnDatabaseName,
+               (tableSchema.Id.ColumnDatabaseName, entity.ID),
                (tableSchema.GestprojectId.ColumnDatabaseName, entity.COS_ID)
             ).ItWas;
 
             bool registeredInDifferentCompanyGroup =
-            entity.S50_COMPANY_GROUP_GUID_ID.Trim() != ""
-            &&
-            sage50ConnectionManager.CompanyGroupData.CompanyGuidId.Trim() != entity.S50_COMPANY_GROUP_GUID_ID.Trim();
+               entity.S50_COMPANY_GROUP_GUID_ID.Trim() != ""
+               &&
+               sage50ConnectionManager.CompanyGroupData.CompanyGuidId.Trim() != entity.S50_COMPANY_GROUP_GUID_ID.Trim();
 
             //MessageBox.Show(
             //"entity.S50_COMPANY_GROUP_GUID_ID: " + entity.S50_COMPANY_GROUP_GUID_ID + "\n\n" +
@@ -182,6 +185,9 @@ namespace SincronizadorGPS50
 
             //MessageBox.Show(
             //   "entity.COS_NOMBRE: " + entity.COS_NOMBRE + "\n" +
+            //   "entity.ID: " + entity.ID + "\n" +
+            //   "entity.COS_ID: " + entity.COS_ID + "\n" +
+            //   "entity.S50_GUID_ID: " + entity.S50_GUID_ID + "\n\n" +
             //   "MustBeRegistered: " + MustBeRegistered + "\n" +
             //   "MustBeSkipped: " + MustBeSkipped + "\n" +
             //   "MustBeUpdated: " + MustBeUpdated + "\n"
@@ -189,6 +195,12 @@ namespace SincronizadorGPS50
          }
          catch(System.Exception exception)
          {
+            new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
+                "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
+                "Error in entity",
+                entity
+            );
+
             throw ApplicationLogger.ReportError(
                MethodBase.GetCurrentMethod().DeclaringType.Namespace,
                MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -201,13 +213,6 @@ namespace SincronizadorGPS50
       {
          try
          {
-            //StringBuilder stringBuilder = new StringBuilder();
-            //foreach(var item in entity.GetType().GetProperties())
-            //{
-            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
-            //};
-            //MessageBox.Show(stringBuilder.ToString());
-
             new RegisterEntity
             (
                connection,
@@ -223,13 +228,6 @@ namespace SincronizadorGPS50
                   (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID ?? ""),
                }
             );
-
-            //StringBuilder stringBuilder = new StringBuilder();
-            //foreach(var item in entity.GetType().GetProperties())
-            //{
-            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
-            //};
-            //MessageBox.Show(stringBuilder.ToString());
 
             AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
          }
@@ -247,13 +245,6 @@ namespace SincronizadorGPS50
       {
          try
          {
-            //StringBuilder stringBuilder = new StringBuilder();
-            //foreach(var item in entity.GetType().GetProperties())
-            //{
-            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
-            //}
-            //MessageBox.Show(stringBuilder.ToString());
-
             if(entity.COS_ID == -1)
             {
                new UpdateEntity

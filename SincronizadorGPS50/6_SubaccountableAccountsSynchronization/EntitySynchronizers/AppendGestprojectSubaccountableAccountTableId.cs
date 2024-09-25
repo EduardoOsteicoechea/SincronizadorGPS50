@@ -17,9 +17,9 @@ namespace SincronizadorGPS50
       public AppendGestprojectSubaccountableAccountTableId
       (
          System.Data.SqlClient.SqlConnection connection,
+         ISynchronizationTableSchemaProvider tableSchema,
          string tableName,
-         GestprojectSubaccountableAccountModel entity,
-         ISynchronizationTableSchemaProvider tableSchema
+         GestprojectSubaccountableAccountModel entity
       )
       {
          try
@@ -32,7 +32,7 @@ namespace SincronizadorGPS50
             FROM
                {tableName}
             WHERE
-               COS_SUBCTA_CONTABLE='{entity.COS_GRUPO}'
+               COS_GRUPO='{entity.COS_GRUPO}'
             ;";
 
             //MessageBox.Show("At: AppendGestprojectSubaccountableAccountTableIdToSynchronizationTable" + sqlString);
@@ -48,13 +48,22 @@ namespace SincronizadorGPS50
                };
             };
 
+            //string sqlString2 = $@"
+            //UPDATE 
+            //   {tableSchema.TableName} 
+            //SET
+            //   {tableSchema.GestprojectId.ColumnDatabaseName}={entity.COS_ID}
+            //WHERE
+            //   {tableSchema.Sage50GuidId.ColumnDatabaseName}='{entity.S50_GUID_ID}'
+            //;";
+
             string sqlString2 = $@"
             UPDATE 
                {tableSchema.TableName} 
             SET
                {tableSchema.GestprojectId.ColumnDatabaseName}={entity.COS_ID}
             WHERE
-               {tableSchema.Sage50GuidId.ColumnDatabaseName}='{entity.S50_GUID_ID}'
+               COS_ID='{entity.COS_ID}'
             ;";
 
             //MessageBox.Show("At: AppendGestprojectSubaccountableAccountTableIdToSynchronizationTable" + sqlString2);

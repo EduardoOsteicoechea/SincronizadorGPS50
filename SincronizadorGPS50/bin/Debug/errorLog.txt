@@ -13921,3 +13921,532 @@ El operador '!=' no se puede aplicar a operandos del tipo 'string' y 'int'
 
 
 --------------------------------------------------
+Date: 2024-09-25 05:29:03.
+Location: At:
+
+SincronizadorGPS50
+.AppendGestprojectSubaccountableAccountTableId
+..ctor:
+
+Invalid column name 'COS_SUBCTA_CONTABLE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'COS_SUBCTA_CONTABLE'.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:29:09.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.AppendGestprojectSubaccountableAccountTableId
+..ctor:
+
+Invalid column name 'COS_SUBCTA_CONTABLE'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AppendGestprojectSubaccountableAccountTableId
+..ctor:
+
+Invalid column name 'COS_SUBCTA_CONTABLE'.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:29:43.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:29:50.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:29:51.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:29:51.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:33:00.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:33:31.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:34:10.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:37:10.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:37:56.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:41:36.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:41:40.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:41:42.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:44:01.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 05:44:03.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 08:02:24.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 08:02:28.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 08:02:48.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 08:02:53.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DetermineEntityWorkflow:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-25 10:49:33.
+Location: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectSubaccountableAccountTable
+..ctor:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-25 10:51:06.
+Location: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectSubaccountableAccountTable
+..ctor:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-25 10:58:12.
+Location: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectSubaccountableAccountTable
+..ctor:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-25 11:11:35.
+Location: At:
+
+SincronizadorGPS50
+.InsertSageEntityIntoGestprojectSubaccountableAccountTable
+..ctor:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-25 11:42:05.
+Location: At:
+
+SincronizadorGPS50
+.DeleteSubaccountableAccountTemporalRegistry
+..ctor:
+
+Must declare the table variable "@tableName"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the table variable "@tableName".
+
+
+--------------------------------------------------

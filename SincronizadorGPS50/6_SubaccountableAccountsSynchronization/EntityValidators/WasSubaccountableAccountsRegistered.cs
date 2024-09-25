@@ -26,19 +26,27 @@ namespace SincronizadorGPS50
             connection.Open();
                  
             StringBuilder sqlCondition = new StringBuilder();
-            
-            if(condition1.value.GetType() == typeof(string))
+
+            //MessageBox.Show(
+            //   "At: " + MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name + "\n" +
+            //   "condition1: " + condition1 + "\n" +
+            //   "condition2: " + condition2 + "\n"
+            //);
+
+            if(condition1.value != null && condition1.value.GetType() == typeof(string))
             {
-               if(condition1.value == "")
+               if( condition1.value == "" || condition1.value == -1 )
                {
                   if(condition2.value != null && condition2.value != -1)
                   {
-                  sqlCondition.Append($"{condition2.columnName}={DynamicValuesFormatters.Formatters[condition2.value.GetType()](condition2.value)}");
-                  ExecuteQuery(connection, tableName, columnName, sqlCondition.ToString());          
+                     //MessageBox.Show("entered\n condition1");
+                     sqlCondition.Append($"{condition2.columnName}={DynamicValuesFormatters.Formatters[condition2.value.GetType()](condition2.value)}");
+                     ExecuteQuery(connection, tableName, columnName, sqlCondition.ToString());          
                   };
                }
                else
                {
+                     //MessageBox.Show("entered\n condition2");
                   sqlCondition.Append($"{condition1.columnName}={DynamicValuesFormatters.Formatters[condition1.value.GetType()](condition1.value)}");
                   ExecuteQuery(connection, tableName, columnName, sqlCondition.ToString());           
                };
@@ -47,11 +55,16 @@ namespace SincronizadorGPS50
             {
                if(condition1.value == null || condition1.value == -1)
                {
-                  sqlCondition.Append($"{condition2.columnName}={DynamicValuesFormatters.Formatters[condition2.value.GetType()](condition2.value)}");
-                  ExecuteQuery(connection, tableName, columnName, sqlCondition.ToString());
+                  if(condition2.value != -1)
+                  {
+                        //MessageBox.Show("entered\n condition3");
+                     sqlCondition.Append($"{condition2.columnName}={DynamicValuesFormatters.Formatters[condition2.value.GetType()](condition2.value)}");
+                     ExecuteQuery(connection, tableName, columnName, sqlCondition.ToString());
+                  }
                }
                else
                {
+                     //MessageBox.Show("entered\n condition4");
                   sqlCondition.Append($"{condition1.columnName}={DynamicValuesFormatters.Formatters[condition1.value.GetType()](condition1.value)}");
                   ExecuteQuery(connection, tableName, columnName, sqlCondition.ToString());
                };
@@ -71,6 +84,7 @@ namespace SincronizadorGPS50
             connection.Close();
          };
       }
+
       public void ExecuteQuery(SqlConnection connection, string tableName, string columnName, string sqlCondition)
       {         
          try

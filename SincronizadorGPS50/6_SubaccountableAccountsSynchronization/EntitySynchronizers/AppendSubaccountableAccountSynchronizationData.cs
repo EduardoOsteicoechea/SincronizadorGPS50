@@ -19,23 +19,32 @@ namespace SincronizadorGPS50
          System.Data.SqlClient.SqlConnection connection,
          ISynchronizationTableSchemaProvider tableSchema,
          GestprojectSubaccountableAccountModel entity,
-         string gestprojectSubaccountableAccountesTableColumnsAndValues
+         string ColumnsAndValues
       )
       {
          try
          {
             connection.Open();
 
+            //string sqlString = $@"
+            //UPDATE 
+            //   {tableSchema.TableName} 
+            //SET
+            //   {ColumnsAndValues}
+            //WHERE
+            //   S50_GUID_ID='{entity.S50_GUID_ID}'
+            //;";
+
             string sqlString = $@"
             UPDATE 
                {tableSchema.TableName} 
             SET
-               {gestprojectSubaccountableAccountesTableColumnsAndValues}
+               {ColumnsAndValues}
             WHERE
-               S50_GUID_ID='{entity.S50_GUID_ID}'
+               COS_GRUPO='{entity.COS_GRUPO}'
             ;";
 
-            //MessageBox.Show("At: AppendSynchronizationDataToEntityRegistry\n\n" + sqlString);
+            MessageBox.Show("At: AppendSynchronizationDataToEntityRegistry\n\n" + sqlString);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {

@@ -147,27 +147,11 @@ namespace SincronizadorGPS50
             {
                UnexistingGestprojectEntityList.Add(gestprojectEntity);
             };
-            
 
-            //MessageBox.Show(
-            //"gestprojectEntity.SYNC_STATUS: " + gestprojectEntity.SYNC_STATUS + "\n\n" +
-            //"gestprojectEntity.S50_CODE: " + gestprojectEntity.S50_CODE + "\n\n" +
-            //"gestprojectEntity.IMP_SUBCTA_CONTABLE: " + gestprojectEntity.IMP_SUBCTA_CONTABLE
-            //);
-
-            //if(gestprojectEntity.SYNC_STATUS != "Sincronizado" && gestprojectEntity.S50_CODE == "" && gestprojectEntity.IMP_SUBCTA_CONTABLE != "")
-            //if(gestprojectEntity.SYNC_STATUS != "Sincronizado" && gestprojectEntity.S50_CODE == "" && gestprojectEntity.S50_GUID_ID != "")
             if(gestprojectEntity.SYNC_STATUS != "Sincronizado" && gestprojectEntity.S50_CODE != "")
-            //if(gestprojectEntity.SYNC_STATUS != "Sincronizado" && gestprojectEntity.S50_CODE != "")
             {
                UnsynchronizedGestprojectEntityList.Add(gestprojectEntity);
             };
-
-            //MessageBox.Show(
-            //"UnsynchronizedGestprojectEntityList.Count: " + UnsynchronizedGestprojectEntityList.Count
-            //);
-
-            //new VisualizePropertiesAndValues<GestprojectTaxModel>(gestprojectEntity.IMP_DESCRIPCION, gestprojectEntity);
          };
       }
 

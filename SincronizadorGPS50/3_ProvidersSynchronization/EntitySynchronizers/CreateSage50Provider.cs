@@ -31,34 +31,34 @@ namespace SincronizadorGPS50.Sage50Connector
 
 				if(nextCodeAvailable < 10000)
 				{
-					if(nextCodeAvailable < 10)
-					{
-						entityInstance.codigo = "4300000" + nextCodeAvailable;
-						EntityCode = entityInstance.codigo;
-					}
-					else if(nextCodeAvailable < 100)
-					{
-						entityInstance.codigo = "430000" + nextCodeAvailable;
-						EntityCode = entityInstance.codigo;
-					}
-					else if(nextCodeAvailable < 1000)
-					{
-						entityInstance.codigo = "43000" + nextCodeAvailable;
-						EntityCode = entityInstance.codigo;
-					}
-					else
-					{
-						entityInstance.codigo = "4300" + nextCodeAvailable;
-						EntityCode = entityInstance.codigo;
-					};
+     //          if(nextCodeAvailable < 10)
+     //          {
+     //             entityInstance.codigo = "4000000" + nextCodeAvailable;
+     //             EntityCode = entityInstance.codigo;
+     //          }
+     //          else if(nextCodeAvailable < 100)
+     //          {
+     //             entityInstance.codigo = "400000" + nextCodeAvailable;
+     //             EntityCode = entityInstance.codigo;
+     //          }
+     //          else if(nextCodeAvailable < 1000)
+     //          {
+     //             entityInstance.codigo = "40000" + nextCodeAvailable;
+     //             EntityCode = entityInstance.codigo;
+     //          }
+     //          else
+     //          {
+     //             entityInstance.codigo = "4000" + nextCodeAvailable;
+     //             EntityCode = entityInstance.codigo;
+     //          };
 
-					entityInstance.pais = country.Trim();
-					entityInstance.nombre = name.Trim();
-					entityInstance.codpos = postalCode.Trim();
-					entityInstance.cif = cif.Trim();
-					entityInstance.direccion = address.Trim();
-					entityInstance.provincia = province.Trim();
-					entityInstance.tipo_iva = ivaType.Trim();
+     //          entityInstance.pais = country.Trim();
+					//entityInstance.nombre = name.Trim();
+					//entityInstance.codpos = postalCode.Trim();
+					//entityInstance.cif = cif.Trim();
+					//entityInstance.direccion = address.Trim();
+					//entityInstance.provincia = province.Trim();
+					//entityInstance.tipo_iva = ivaType.Trim();
 
 					if(entity._Create(entityInstance))
 					{
