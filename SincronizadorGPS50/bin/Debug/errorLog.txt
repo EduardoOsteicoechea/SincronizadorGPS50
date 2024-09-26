@@ -14450,3 +14450,243 @@ Message: Must declare the table variable "@tableName".
 
 
 --------------------------------------------------
+Date: 2024-09-25 16:52:40.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-25 16:52:47.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-25 16:52:50.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-25 16:54:21.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-25 16:54:25.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-09-26 07:46:21.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Must declare the scalar variable "@COS_GRUPO"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@COS_GRUPO".
+
+
+--------------------------------------------------
+Date: 2024-09-26 07:49:10.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Must declare the scalar variable "@COS_GRUPO"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@COS_GRUPO".
+
+
+--------------------------------------------------
+Date: 2024-09-26 07:49:14.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.CreateNonexistentEntity:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Must declare the scalar variable "@COS_GRUPO"..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Must declare the scalar variable "@COS_GRUPO".
+
+
+--------------------------------------------------
+Date: 2024-09-26 07:49:16.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.SynchronizeEntities:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.CreateNonexistentEntity:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Must declare the scalar variable "@COS_GRUPO"..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.CreateNonexistentEntity:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Must declare the scalar variable "@COS_GRUPO".
+
+
+--------------------------------------------------
+Date: 2024-09-26 07:50:56.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Must declare the scalar variable "@COS_GRUPO"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@COS_GRUPO".
+
+
+--------------------------------------------------
+Date: 2024-09-26 07:58:27.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Must declare the scalar variable "@COS_GRUPO"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@COS_GRUPO".
+
+
+--------------------------------------------------
+Date: 2024-09-26 08:04:31.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Must declare the scalar variable "@COS_GRUPO"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@COS_GRUPO".
+
+
+--------------------------------------------------

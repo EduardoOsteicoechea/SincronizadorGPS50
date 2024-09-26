@@ -44,7 +44,7 @@ namespace SincronizadorGPS50
                COS_GRUPO='{entity.COS_GRUPO}'
             ;";
 
-            MessageBox.Show("At: AppendSynchronizationDataToEntityRegistry\n\n" + sqlString);
+            //MessageBox.Show("At: AppendSubaccountableAccountSynchronizationData\n\n" + sqlString);
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
             {

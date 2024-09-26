@@ -94,6 +94,15 @@ namespace SincronizadorGPS50
                 &&
                 subaccountableAccountList2.Contains(item.NOMBRE);
 
+            if( itemExists )
+            {
+               GestprojectSubaccountableAccountModel existingEntity = GestprojectEntities.FirstOrDefault(
+                  x => (x.COS_CODIGO == item.CODIGO && x.COS_NOMBRE == item.NOMBRE) 
+               );
+
+               itemExists = existingEntity != null;
+            }; 
+               
             if(!itemExists)
             {
                GestprojectSubaccountableAccountModel gestprojectSubaccountableAccountModel = new GestprojectSubaccountableAccountModel();
@@ -109,15 +118,23 @@ namespace SincronizadorGPS50
 
          //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
          //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
-         //    "GestprojectEntities", 
+         //    "GestprojectEntities",
          //    GestprojectEntities
          //);
       }
 
-      public void GetAndStoreSage50Entities(ISynchronizationTableSchemaProvider tableSchema)
+      public void GetAndStoreSage50Entities
+      (
+         ISynchronizationTableSchemaProvider tableSchema
+      )
       {
          Sage50Entities = new GetSage50SubaccountableAccounts(tableSchema).Entities;
-         //new VisualizePropertiesAndValues<Sage50SubaccountableAccountModel>("Sage50Entities", Sage50Entities);
+
+         //new VisualizePropertiesAndValues<Sage50SubaccountableAccountModel>(
+         //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
+         //    "Sage50Entities",
+         //    Sage50Entities
+         //);
       }
 
       public void ProccessAndStoreGestprojectEntities
@@ -130,6 +147,7 @@ namespace SincronizadorGPS50
       )
       {
          ISynchronizableEntityProcessor<GestprojectSubaccountableAccountModel, Sage50SubaccountableAccountModel> gestprojectProvidersProcessor = new GestprojectSubaccountableAccountsProcessor();
+
          ProcessedGestprojectEntities = gestprojectProvidersProcessor.ProcessEntityList(
             gestprojectConnectionManager.GestprojectSqlConnection,
             sage50ConnectionManager,
@@ -137,6 +155,12 @@ namespace SincronizadorGPS50
             GestprojectEntities,
             Sage50Entities
          );
+
+         //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
+         //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
+         //    "ProcessedGestprojectEntities",
+         //    ProcessedGestprojectEntities
+         //);
       }
 
       public void CreateAndDefineDataSource

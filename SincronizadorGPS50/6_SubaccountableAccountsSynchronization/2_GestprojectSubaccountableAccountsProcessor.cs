@@ -27,22 +27,14 @@ namespace SincronizadorGPS50
       {
          try
          {
-            //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
-            //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
-            //    "GestprojectEntities",
-            //    gestprojectEntites
-            //);
-
             ProcessedEntities = new List<GestprojectSubaccountableAccountModel>();
 
             for(int i = 0; i < gestprojectEntites.Count; i++)
             {
                GestprojectSubaccountableAccountModel entity = gestprojectEntites[i];
 
-               //MessageBox.Show("Before\n\nAppendSynchronizationTableDataToEntity(connection, tableSchema, entity);");
                AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
 
-               //MessageBox.Show("Before\n\nDetermineEntityWorkflow(connection, sage50ConnectionManager, tableSchema, entity);");
                DetermineEntityWorkflow(connection, sage50ConnectionManager, tableSchema, entity);
 
                if(MustBeSkipped)
@@ -61,17 +53,14 @@ namespace SincronizadorGPS50
                   UpdateEntity(connection, tableSchema, entity);
                };
 
-               //MessageBox.Show("Before\n\nValidateEntitySynchronizationStatus(connection, tableSchema, sage50Entities, entity);");
                ValidateEntitySynchronizationStatus(connection, tableSchema, sage50Entities, entity);
 
                if(MustBeDeleted)
                {
-                  //MessageBox.Show("Before\n\n DeleteEntity(connection, tableSchema, gestprojectEntites, entity);");
-                  DeleteEntity(connection, tableSchema, gestprojectEntites, entity);
-                  RegisterEntity(connection, tableSchema, entity);
+                  //DeleteEntity(connection, tableSchema, gestprojectEntites, entity);
+                  //RegisterEntity(connection, tableSchema, entity);
                };
 
-               //MessageBox.Show("Before\n\nUpdateEntity(connection, tableSchema, entity);");
                UpdateEntity(connection, tableSchema, entity);
 
                ProcessedEntities.Add(entity);
@@ -95,8 +84,9 @@ namespace SincronizadorGPS50
       {
          try
          {
-            bool isAGestprojectEntity = entity.COS_ID != null && entity.COS_ID != -1;
             bool isASage50Entity = entity.COS_ID == -1;
+            bool isAGestprojectEntity = !isASage50Entity;
+
             if (isAGestprojectEntity) 
             {
                new EntitySynchronizationTable<GestprojectSubaccountableAccountModel>().AppendTableDataToEntity
@@ -109,18 +99,6 @@ namespace SincronizadorGPS50
                   (tableSchema.GestprojectId.ColumnDatabaseName, entity.COS_ID)
                );
             }
-            //else if(entity.S50_GUID_ID != "")
-            //{
-            //   new EntitySynchronizationTable<GestprojectSubaccountableAccountModel>().AppendTableDataToEntity
-            //   (
-            //      connection,
-            //      tableSchema.TableName,
-            //      tableSchema.SynchronizationFieldsTupleList,
-            //      (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.COS_ID),
-            //      entity,
-            //      (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
-            //   );
-            //}
             else if(isASage50Entity)
             {
                new EntitySynchronizationTable<GestprojectSubaccountableAccountModel>().AppendTableDataToEntity
@@ -295,16 +273,14 @@ namespace SincronizadorGPS50
       {
          try
          {
-            ValidateSubaccountableAccountSyncronizationStatus ProviderSyncronizationStatusValidator = new ValidateSubaccountableAccountSyncronizationStatus(
+            MustBeDeleted = new ValidateSubaccountableAccountSyncronizationStatus(
                entity,
                sage50Entities,
                tableSchema.GestprojectCode.ColumnDatabaseName,
                tableSchema.GestprojectName.ColumnDatabaseName,
                tableSchema.GestprojectGroup.ColumnDatabaseName,
                NevesWasSynchronized
-            );
-
-            MustBeDeleted = ProviderSyncronizationStatusValidator.MustBeDeleted;
+            ).MustBeDeleted;
          }
          catch(System.Exception exception)
          {
@@ -316,10 +292,15 @@ namespace SincronizadorGPS50
             );
          };
       }
+
       public void DeleteEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, List<GestprojectSubaccountableAccountModel> gestprojectEntites, GestprojectSubaccountableAccountModel entity)
       {
          try
          {
+            MessageBox.Show(
+               "Deleting"
+            );
+
             //new DeleteEntityFromSynchronizationTable(
             //   connection,
             //   tableSchema.TableName,
@@ -337,7 +318,7 @@ namespace SincronizadorGPS50
             //   (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
             //);
 
-            //ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
+            ClearEntitySynchronizationData(entity, tableSchema.SynchronizationFieldsDefaultValuesTupleList);
          }
          catch(System.Exception exception)
          {
@@ -354,9 +335,11 @@ namespace SincronizadorGPS50
       {
          try
          {
-            for(global::System.Int32 i = 0; i < entityPropertiesValuesTupleList.Count; i++)
+            for(int i = 0; i < entityPropertiesValuesTupleList.Count; i++)
             {
-               typeof(GestprojectSubaccountableAccountModel).GetProperty(entityPropertiesValuesTupleList[i].propertyName).SetValue(entity, entityPropertiesValuesTupleList[i].defaultValue);
+               typeof(GestprojectSubaccountableAccountModel)
+               .GetProperty(entityPropertiesValuesTupleList[i].propertyName)
+               .SetValue(entity, entityPropertiesValuesTupleList[i].defaultValue);
             };
          }
          catch(System.Exception exception)

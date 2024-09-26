@@ -396,6 +396,7 @@
     <Compile Include="6_SubaccountableAccountsSynchronization\EntityProviders\GestprojectSubaccountableAccountsManager.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\EntityProviders\GestprojectSubaccountableAccountsProvider.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\EntityProviders\GetSage50SubaccountableAccounts.cs" />
+    <Compile Include="6_SubaccountableAccountsSynchronization\EntitySynchronizers\AppendSynchronizationIdToEntity.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\EntitySynchronizers\AppendGestprojectSubaccountableAccountTableId.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\EntitySynchronizers\AppendSubaccountableAccountSynchronizationData.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\EntitySynchronizers\GetGestprojectSubaccountableAccountTableSubaccountableAccounts.cs" />
@@ -406,6 +407,7 @@
     <Compile Include="6_SubaccountableAccountsSynchronization\EntitySynchronizers\SubaccountableAccountSynchronizationWorkflow.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\EntitySynchronizers\UpdateGestprojectSubaccountableAccountDataWithSageData.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\EntitySynchronizers\UpdateSubaccountableAccount.cs" />
+    <Compile Include="6_SubaccountableAccountsSynchronization\EntityValidators\ValidateSubaccountableAccountsSyncronizationStatus - Copy.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\EntityValidators\ValidateSubaccountableAccountsSyncronizationStatus.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\EntityValidators\WasSubaccountableAccountsRegistered.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\Schema\GestprojectSubaccountableAccountModel.cs" />
