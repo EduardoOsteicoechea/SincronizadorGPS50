@@ -184,27 +184,6 @@ namespace SincronizadorGPS50
          List<GestprojectSubaccountableAccountModel> gestprojectEntityList
       )
       {
-         //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
-         //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
-         //    "unexistingGestprojectEntityList",
-         //    unexistingGestprojectEntityList
-         //);
-         //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
-         //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
-         //    "existingGestprojectEntityList",
-         //    existingGestprojectEntityList
-         //);
-         //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
-         //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
-         //    "unsynchronizedGestprojectEntityList",
-         //    unsynchronizedGestprojectEntityList
-         //);
-         //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
-         //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
-         //    "gestprojectEntityList",
-         //    gestprojectEntityList
-         //);
-
          new SubaccountableAccountsSynchronizationWorkflow(
             gestprojectConnectionManager,
             sage50ConnectionManager.CompanyGroupData,

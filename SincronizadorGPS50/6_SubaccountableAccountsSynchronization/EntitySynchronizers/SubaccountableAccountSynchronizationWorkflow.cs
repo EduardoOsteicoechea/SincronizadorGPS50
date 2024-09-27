@@ -1,4 +1,5 @@
-﻿using SincronizadorGPS50.Sage50Connector;
+﻿using Infragistics.Designers.SqlEditor;
+using SincronizadorGPS50.Sage50Connector;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -80,7 +81,7 @@ namespace SincronizadorGPS50
          {
             if(unsynchronizedEntityList.Count > 0)
             {
-               DialogResult result = MessageBox.Show($"Partiendo de la selección encontramos {unsynchronizedEntityList.Count} {_EntityTypeName} desactualizad{_FemenineOrMasculine}s.\n\n¿Desea sincronizarl{femenineOrMasculine}(s)?", "Confirmación de actualización", MessageBoxButtons.OKCancel);
+               DialogResult result = MessageBox.Show($"Partiendo de la selección encontramos {unsynchronizedEntityList.Count} {_EntityTypeName} desactualizad{_FemenineOrMasculine}(s).\n\n¿Desea sincronizarl{femenineOrMasculine}(s)?", "Confirmación de actualización", MessageBoxButtons.OKCancel);
 
                if(result == DialogResult.OK)
                {
@@ -117,6 +118,12 @@ namespace SincronizadorGPS50
          List<Sage50SubaccountableAccountModel> Sage50Entities
       )
       {
+         //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
+         //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
+         //    "unsynchronizedEntityList",
+         //    unsynchronizedEntityList
+         //);
+
          try
          {
             foreach (Sage50SubaccountableAccountModel currentSageEntity in Sage50Entities)
@@ -130,12 +137,23 @@ namespace SincronizadorGPS50
 
                if(gestprojectEntity == null)
                {
-                  gestprojectEntity = CreateNonexistentEntity(
-                     gestprojectConnectionManager,
-                     Sage50CompanyGroupData,
-                     tableSchema,
-                     currentSageEntity
+                  GestprojectSubaccountableAccountModel foundSageEntity = unsynchronizedEntityList.FirstOrDefault( x =>
+                     x.COS_NOMBRE == currentSageEntity.NOMBRE
+                     &&
+                     x.COS_CODIGO == currentSageEntity.CODIGO
                   );
+
+                  if( foundSageEntity != null )
+                  {
+                     gestprojectEntity = CreateNonexistentEntity(
+                        gestprojectConnectionManager,
+                        Sage50CompanyGroupData,
+                        tableSchema,
+                        //SynchronizationTableEntities,
+                        unsynchronizedEntityList,
+                        currentSageEntity
+                     );
+                  }
                }
                else
                {
@@ -185,9 +203,9 @@ namespace SincronizadorGPS50
             .FirstOrDefault(
                entity => entity.COS_GRUPO == Sage50Entity.CODIGO
                &&
-               gestprojectEntitiesIds.Contains(entity.COS_ID)
+               entity.COS_NOMBRE == Sage50Entity.NOMBRE
                &&
-               entity.S50_COMPANY_GROUP_GUID_ID != ""
+               gestprojectEntitiesIds.Contains(entity.COS_ID)
             );
 
             return gestprojectEntity;
@@ -209,62 +227,37 @@ namespace SincronizadorGPS50
          IGestprojectConnectionManager gestprojectConnectionManager,
          CompanyGroup Sage50CompanyGroupData,
          ISynchronizationTableSchemaProvider tableSchema,
+         List<GestprojectSubaccountableAccountModel> SynchronizationTableEntities,
          Sage50SubaccountableAccountModel sage50Entity
       )
       {
          try
          {
-            GestprojectSubaccountableAccountModel entity = new GestprojectSubaccountableAccountModel();
-
-            entity.COS_NOMBRE = sage50Entity.NOMBRE;
-            entity.COS_CODIGO = sage50Entity.CODIGO;
-            entity.COS_GRUPO = sage50Entity.CODIGO;
+            GestprojectSubaccountableAccountModel entity = SynchronizationTableEntities.FirstOrDefault(
+               x => 
+               x.COS_NOMBRE == sage50Entity.NOMBRE
+               &&
+               x.COS_CODIGO == sage50Entity.CODIGO
+               //&&
+               //x.COS_GRUPO == sage50Entity.CODIGO
+            );
 
             entity.S50_CODE = sage50Entity.CODIGO;
             entity.S50_GUID_ID = sage50Entity.GUID_ID;
 
-            string sqlStatementColumns = "";
-            string sqlStatementValues = "";
-
-            for(int j = 0; j < tableSchema.GestprojectFieldsTupleList.Count; j++)
-            {
-               string currentColumnName = tableSchema.GestprojectFieldsTupleList[j].columnName;
-               Type currentColumnType = tableSchema.GestprojectFieldsTupleList[j].columnType;
-               dynamic value = entity.GetType().GetProperty(currentColumnName).GetValue(entity, null);
-
-               if(currentColumnName != "COS_ID")
-               {
-                  sqlStatementColumns += currentColumnName + ",";
-                  sqlStatementValues += DynamicValuesFormatters.Formatters[currentColumnType](value) + ",";
-               };
-            };
-
-            this.DeleteSubaccountableAccountTemporalSynchronizationRegistry(
-               gestprojectConnectionManager.GestprojectSqlConnection,
-               tableSchema.TableName,
-               entity
-            ); 
-
             this.InsertEntityIntoGestprojectSubaccountableAccountTable(
                gestprojectConnectionManager.GestprojectSqlConnection,
                tableSchema.GestprojectEntityTableName,
-               sqlStatementColumns.TrimEnd(','),
-               sqlStatementValues.TrimEnd(',')
+               entity
             );
 
             this.AppendGestprojectSubaccountableAccountTableIdToEntity(
                gestprojectConnectionManager.GestprojectSqlConnection,
                tableSchema,
                entity
-            );           
-
-            this.AppendSynchronizationTableIdToEntity(
-               gestprojectConnectionManager.GestprojectSqlConnection,
-               tableSchema,
-               entity
             );
 
-            this.RegisterEntityIntoSynchronizationTable(
+            this.UpdateEntityInSynchronizationTable(
                   gestprojectConnectionManager,
                   Sage50CompanyGroupData,
                   tableSchema,
@@ -302,14 +295,6 @@ namespace SincronizadorGPS50
                sageEntity,
                entity
             );
-
-            //this.RegisterEntityIntoSynchronizationTable(
-            //   gestprojectConnectionManager,
-            //   Sage50CompanyGroupData,
-            //   tableSchema,
-            //   sageEntity,
-            //   entity
-            //);
          }
          catch(System.Exception exception)
          {
@@ -377,8 +362,7 @@ namespace SincronizadorGPS50
       private void InsertEntityIntoGestprojectSubaccountableAccountTable(
          SqlConnection connection,
          string tableName,
-         string gestprojectSubaccountableAccountsTableColumns, 
-         string gestprojectSubaccountableAccountsTableValues
+         GestprojectSubaccountableAccountModel entity
       )
       {
          try
@@ -406,21 +390,32 @@ namespace SincronizadorGPS50
                   };
                };
             };
-            
-            //MessageBox.Show("At: " + MethodBase.GetCurrentMethod().Name + "\n\n" + sqlString);
 
             string sqlString2 = $@"            
-            INSERT INTO 
+            INSERT INTO
                {tableName} 
-               (COS_ID,{gestprojectSubaccountableAccountsTableColumns})
+            (
+               COS_ID
+               ,COS_CODIGO
+               ,COS_NOMBRE
+               ,COS_GRUPO
+            )
             VALUES
-               ({entityId},{gestprojectSubaccountableAccountsTableValues})
+            (
+               @COS_ID
+               ,@COS_CODIGO
+               ,@COS_NOMBRE
+               ,@COS_GRUPO
+            )
             ;";
-            
-            //MessageBox.Show("At: " + MethodBase.GetCurrentMethod().Name + "\n\n" + sqlString2);
 
             using(SqlCommand command = new SqlCommand(sqlString2, connection))
             {
+               command.Parameters.AddWithValue("@COS_ID", entityId);
+               command.Parameters.AddWithValue("@COS_CODIGO", entity.COS_CODIGO);
+               command.Parameters.AddWithValue("@COS_NOMBRE", entity.COS_NOMBRE);
+               command.Parameters.AddWithValue("@COS_GRUPO", entity.COS_GRUPO);
+
                command.ExecuteNonQuery();
             };
          }
@@ -458,9 +453,7 @@ namespace SincronizadorGPS50
                   {tableSchema.GestprojectEntityTableName}
                WHERE
                   COS_GRUPO=@COS_GRUPO
-               ;";
-
-            //MessageBox.Show("At: " + MethodBase.GetCurrentMethod().Name + "\n\n" + sqlString);
+            ;";
 
             using(SqlCommand command = new SqlCommand(sqlString, connection))
             {
@@ -479,19 +472,21 @@ namespace SincronizadorGPS50
                UPDATE 
                   {tableSchema.TableName} 
                SET
-                  {tableSchema.GestprojectId.ColumnDatabaseName}={entity.COS_ID}
+                  COS_ID=@COS_ID
                WHERE
                   COS_GRUPO=@COS_GRUPO
                AND
                   COS_NOMBRE=@COS_NOMBRE
-               ;";
-
-            //MessageBox.Show("At: AppendGestprojectSubaccountableAccountTableIdToSynchronizationTable" + sqlString2);
+            ;";
 
             using(SqlCommand command = new SqlCommand(sqlString2, connection))
             {
+               SqlParameter idSqlParameter = new SqlParameter("@COS_ID", SqlDbType.Int);
+               idSqlParameter.SqlValue = entity.COS_ID;
+               command.Parameters.Add(idSqlParameter);
                command.Parameters.AddWithValue("@COS_GRUPO", entity.COS_GRUPO);
                command.Parameters.AddWithValue("@COS_NOMBRE", entity.COS_NOMBRE);
+
                command.ExecuteNonQuery();
             };
          }
@@ -563,7 +558,7 @@ namespace SincronizadorGPS50
       }
 
 
-      private void RegisterEntityIntoSynchronizationTable
+      private void UpdateEntityInSynchronizationTable
       (
          IGestprojectConnectionManager gestprojectConnectionManager,
          CompanyGroup Sage50CompanyGroupData,
@@ -587,38 +582,23 @@ namespace SincronizadorGPS50
             entity.GP_USU_ID = gestprojectConnectionManager.GestprojectUserRememberableData.GP_CNX_ID;
 
             string sqlString = $@"
-            INSERT INTO 
-            {tableSchema.TableName}
-               (      
-                  COS_ID
-                  ,COS_CODIGO
-                  ,COS_NOMBRE
-                  ,COS_GRUPO
-                  ,S50_CODE
-                  ,S50_GUID_ID
-                  ,S50_COMPANY_GROUP_NAME
-                  ,S50_COMPANY_GROUP_CODE
-                  ,S50_COMPANY_GROUP_MAIN_CODE
-                  ,S50_COMPANY_GROUP_GUID_ID
-                  ,GP_USU_ID
-               ) 
-            VALUES
-               (      
-                  @COS_ID
-                  ,@COS_CODIGO
-                  ,@COS_NOMBRE
-                  ,@COS_GRUPO
-                  ,@S50_CODE
-                  ,@S50_GUID_ID
-                  ,@S50_COMPANY_GROUP_NAME
-                  ,@S50_COMPANY_GROUP_CODE
-                  ,@S50_COMPANY_GROUP_MAIN_CODE
-                  ,@S50_COMPANY_GROUP_GUID_ID
-                  ,@GP_USU_ID
-               )
+            UPDATE 
+               {tableSchema.TableName}
+            SET
+               COS_ID=@COS_ID
+              ,COS_CODIGO=@COS_CODIGO
+              ,COS_NOMBRE=@COS_NOMBRE
+              ,COS_GRUPO=@COS_GRUPO
+              ,S50_CODE=@S50_CODE
+              ,S50_GUID_ID=@S50_GUID_ID
+              ,S50_COMPANY_GROUP_NAME=@S50_COMPANY_GROUP_NAME
+              ,S50_COMPANY_GROUP_CODE=@S50_COMPANY_GROUP_CODE
+              ,S50_COMPANY_GROUP_MAIN_CODE=@S50_COMPANY_GROUP_MAIN_CODE
+              ,S50_COMPANY_GROUP_GUID_ID=@S50_COMPANY_GROUP_GUID_ID
+              ,GP_USU_ID=@GP_USU_ID
+            WHERE
+               ID=@ID
             ;";
-
-            //MessageBox.Show("At: " + MethodBase.GetCurrentMethod().Name + "\n\n" + sqlString);
 
             using(SqlCommand command = new SqlCommand(sqlString, connection))
             {
@@ -633,6 +613,7 @@ namespace SincronizadorGPS50
                command.Parameters.AddWithValue("@S50_COMPANY_GROUP_MAIN_CODE", entity.S50_COMPANY_GROUP_MAIN_CODE);
                command.Parameters.AddWithValue("@S50_COMPANY_GROUP_GUID_ID", entity.S50_COMPANY_GROUP_GUID_ID);
                command.Parameters.AddWithValue("@GP_USU_ID", entity.GP_USU_ID);
+               command.Parameters.AddWithValue("@ID", entity.ID);
 
                command.ExecuteNonQuery();
             };

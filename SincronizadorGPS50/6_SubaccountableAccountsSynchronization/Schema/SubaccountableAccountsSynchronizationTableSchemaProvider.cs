@@ -94,9 +94,9 @@ namespace SincronizadorGPS50
          # region entityGestprojectDataProperties
             public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectId { get; set; } = 
             GestprojectDataTuples.ElementAt(0);
-            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectName { get; set; } = 
-            GestprojectDataTuples.ElementAt(1);
             public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectCode { get; set; } =
+            GestprojectDataTuples.ElementAt(1);
+            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectName { get; set; } = 
             GestprojectDataTuples.ElementAt(2);
             public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectGroup { get; set; } = 
             GestprojectDataTuples.ElementAt(3);

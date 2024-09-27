@@ -21,13 +21,14 @@ namespace SincronizadorGPS50
          {
             string sqlString1DatabaseName = DB.SQLDatabase(tableSchema.SageTableData.dispatcherAndName.sageDispactcherMechanismRoute,tableSchema.SageTableData.dispatcherAndName.tableName).ToString();
 
-            string sqlString1 = $@"SELECT 
-               CODIGO, 
-               NOMBRE, 
-               GUID_ID
-            FROM {sqlString1DatabaseName};";
-
-            //MessageBox.Show(sqlString1);
+            string sqlString1 = $@"
+               SELECT 
+                  CODIGO, 
+                  NOMBRE, 
+                  GUID_ID
+               FROM 
+                  {sqlString1DatabaseName}  
+            ;";
 
             DataTable table1 = new DataTable();
 
@@ -37,13 +38,22 @@ namespace SincronizadorGPS50
             {
                for(int i = 0; i < table1.Rows.Count; i++)
                {
-                  Sage50SubaccountableAccountModel sage50Entity = new Sage50SubaccountableAccountModel();
+                  if(
+                     table1.Rows[i].ItemArray[0].ToString().Substring(0,1) == "6"
+                     ||
+                     table1.Rows[i].ItemArray[0].ToString().Substring(0,1) == "7"
+                     ||
+                     table1.Rows[i].ItemArray[0].ToString().Substring(0,3) == "553"
+                  )
+                  {
+                     Sage50SubaccountableAccountModel sage50Entity = new Sage50SubaccountableAccountModel();
 
-                  sage50Entity.CODIGO = table1.Rows[i].ItemArray[0].ToString().Trim();
-                  sage50Entity.NOMBRE = table1.Rows[i].ItemArray[1].ToString().Trim();
-                  sage50Entity.GUID_ID = table1.Rows[i].ItemArray[2].ToString().Trim();
+                     sage50Entity.CODIGO = table1.Rows[i].ItemArray[0].ToString().Trim();
+                     sage50Entity.NOMBRE = table1.Rows[i].ItemArray[1].ToString().Trim();
+                     sage50Entity.GUID_ID = table1.Rows[i].ItemArray[2].ToString().Trim();
 
-                  Entities.Add(sage50Entity);
+                     Entities.Add(sage50Entity);
+                  };
                };
             };
          }

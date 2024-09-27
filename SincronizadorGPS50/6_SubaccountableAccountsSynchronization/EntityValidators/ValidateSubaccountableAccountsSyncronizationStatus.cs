@@ -26,10 +26,25 @@ namespace SincronizadorGPS50
       {
          try
          {
-            bool doesntExistInGestproject = gestprojectEntity.COS_ID != -1;
+            bool existsInGestproject = gestprojectEntity.COS_ID != -1;
+            bool hasSage50GuidId = gestprojectEntity.S50_CODE != "";
+            bool hasSage50CompanyGroupGuidId = gestprojectEntity.S50_COMPANY_GROUP_GUID_ID != "";
 
-            if(doesntExistInGestproject)
-            //if((gestprojectEntity.S50_CODE != null && gestprojectEntity.S50_CODE != "") || gestprojectEntity.COS_ID == -1)
+            if( !existsInGestproject && hasSage50GuidId && hasSage50CompanyGroupGuidId )
+            {
+               NeverWasSynchronized = true;
+               IsSynchronized = false;
+               MustBeDeleted = true;
+               gestprojectEntity.SYNC_STATUS = SynchronizationStatusOptions.Desincronizado;   
+            }
+            //else if(!existsInGestproject)
+            //{
+            //   NeverWasSynchronized = false;
+            //   IsSynchronized = false;
+            //   MustBeDeleted = false;
+            //   gestprojectEntity.SYNC_STATUS = SynchronizationStatusOptions.Desincronizado;
+            //}
+            else
             {
                for(int i = 0; i < sage50EntityList.Count; i++)
                {
@@ -52,21 +67,11 @@ namespace SincronizadorGPS50
                         gestprojectEntity.COMMENTS += this.CreateErrorMesage(code, (sage50EntityList[i].CODIGO ?? "").ToString());
                      };
 
-                     if((sage50EntityList[i].CODIGO ?? "").ToString() != (gestprojectEntity.COS_GRUPO ?? "").ToString())
-                     {
-                        NeverWasSynchronized = false;
-                        IsSynchronized = false;
-                        MustBeDeleted = false;
-                        gestprojectEntity.COMMENTS += this.CreateErrorMesage(group, (sage50EntityList[i].CODIGO ?? "").ToString());
-                     };
-
                      if
                      (
                         sage50EntityList[i].NOMBRE.Trim() == gestprojectEntity.COS_NOMBRE.Trim()
                         &&
                         sage50EntityList[i].CODIGO.Trim() == gestprojectEntity.COS_CODIGO.Trim()
-                        &&
-                        sage50EntityList[i].CODIGO.Trim() == gestprojectEntity.COS_GRUPO.Trim()
                      )
                      {
                         //MessageBox.Show("Sincronizado");
@@ -82,22 +87,11 @@ namespace SincronizadorGPS50
                   {
                      //MessageBox.Show("Eliminado en Sage");
                      NeverWasSynchronized = true;
-                     MustBeDeleted = true;
+                     IsSynchronized = false;
+                     MustBeDeleted = false;
                      gestprojectEntity.SYNC_STATUS = SynchronizationStatusOptions.Desincronizado;
                   };
-               };                
-            }
-            else
-            {
-               //MessageBox.Show(
-               //   gestprojectEntity.COS_NOMBRE + "\n\n" +
-               //   gestprojectEntity.COS_ID + "\n\n" +
-               //   "Nunca sincronizado"
-               //);
-               NeverWasSynchronized = true;
-               IsSynchronized = false;
-               MustBeDeleted = true;
-               gestprojectEntity.SYNC_STATUS = SynchronizationStatusOptions.Desincronizado;
+               };      
             };
          }
          catch(System.Exception exception)

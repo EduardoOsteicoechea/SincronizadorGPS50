@@ -14690,3 +14690,504 @@ Message: Must declare the scalar variable "@COS_GRUPO".
 
 
 --------------------------------------------------
+Date: 2024-09-27 04:51:07.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.InsertEntityIntoGestprojectSubaccountableAccountTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-27 04:51:57.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-27 04:54:44.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-27 04:56:45.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-27 04:56:49.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.CreateNonexistentEntity:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-27 04:57:43.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-27 05:00:36.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-27 05:02:50.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+Incorrect syntax near the keyword 'WHERE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'WHERE'.
+
+
+--------------------------------------------------
+Date: 2024-09-27 05:05:50.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+The parameterized query '(@COS_ID nvarchar(4000),@COS_GRUPO nvarchar(8),@COS_NOMBRE nvarc' expects the parameter '@COS_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@COS_ID nvarchar(4000),@COS_GRUPO nvarchar(8),@COS_NOMBRE nvarc' expects the parameter '@COS_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-09-27 05:08:08.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+The parameterized query '(@COS_ID nvarchar(4000),@COS_GRUPO nvarchar(8),@COS_NOMBRE nvarc' expects the parameter '@COS_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@COS_ID nvarchar(4000),@COS_GRUPO nvarchar(8),@COS_NOMBRE nvarc' expects the parameter '@COS_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-09-27 05:09:50.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+The parameterized query '(@COS_ID nvarchar(4000),@COS_GRUPO nvarchar(8),@COS_NOMBRE nvarc' expects the parameter '@COS_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@COS_ID nvarchar(4000),@COS_GRUPO nvarchar(8),@COS_NOMBRE nvarc' expects the parameter '@COS_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-09-27 05:10:23.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+The parameterized query '(@COS_GRUPO nvarchar(8),@COS_NOMBRE nvarchar(20),@COS_ID nvarcha' expects the parameter '@COS_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@COS_GRUPO nvarchar(8),@COS_NOMBRE nvarchar(20),@COS_ID nvarcha' expects the parameter '@COS_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-09-27 05:11:23.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+The parameterized query '(@COS_ID nvarchar(4000),@COS_GRUPO nvarchar(8),@COS_NOMBRE nvarc' expects the parameter '@COS_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@COS_ID nvarchar(4000),@COS_GRUPO nvarchar(8),@COS_NOMBRE nvarc' expects the parameter '@COS_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-09-27 05:13:20.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+SqlParameterCollection sólo acepta objetos de tipo no null SqlParameter.
+Nombre del parámetro: value.
+Short Description: Failed to end the methods execution successfully..
+Message: SqlParameterCollection sólo acepta objetos de tipo no null SqlParameter.
+Nombre del parámetro: value
+
+
+--------------------------------------------------
+Date: 2024-09-27 05:36:33.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.InsertEntityIntoGestprojectSubaccountableAccountTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-09-27 05:38:46.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.AppendGestprojectSubaccountableAccountTableIdToEntity:
+
+SqlParameterCollection sólo acepta objetos de tipo no null SqlParameter, no objetos Int32..
+Short Description: Failed to end the methods execution successfully..
+Message: SqlParameterCollection sólo acepta objetos de tipo no null SqlParameter, no objetos Int32.
+
+
+--------------------------------------------------
+Date: 2024-09-27 08:50:33.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.RegisterEntity:
+
+El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length.
+Short Description: Failed to end the methods execution successfully..
+Message: El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length
+
+
+--------------------------------------------------
+Date: 2024-09-27 08:51:47.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.RegisterEntity:
+
+El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length.
+Short Description: Failed to end the methods execution successfully..
+Message: El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length
+
+
+--------------------------------------------------
+Date: 2024-09-27 08:51:54.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.RegisterEntity:
+
+El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length.
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.RegisterEntity:
+
+El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length
+
+
+--------------------------------------------------
+Date: 2024-09-27 08:53:51.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.RegisterEntity:
+
+El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length.
+Short Description: Failed to end the methods execution successfully..
+Message: El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length
+
+
+--------------------------------------------------
+Date: 2024-09-27 11:34:37.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.RegisterEntity:
+
+El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length.
+Short Description: Failed to end the methods execution successfully..
+Message: El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length
+
+
+--------------------------------------------------
+Date: 2024-09-27 11:34:41.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.RegisterEntity:
+
+El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length.
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.RegisterEntity:
+
+El índice y la longitud deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: length
+
+
+--------------------------------------------------
+Date: 2024-09-27 11:49:21.
+Location: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-27 11:49:26.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.EntitySynchronizationTable`1
+.AppendTableDataToEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-09-27 12:21:48.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+La conexión no se cerró. El estado actual de la conexión es abierta..
+Short Description: Failed to end the methods execution successfully..
+Message: La conexión no se cerró. El estado actual de la conexión es abierta.
+
+
+--------------------------------------------------
+Date: 2024-09-27 12:21:52.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.RegisterEntity:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+La conexión no se cerró. El estado actual de la conexión es abierta..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+La conexión no se cerró. El estado actual de la conexión es abierta.
+
+
+--------------------------------------------------
+Date: 2024-09-27 13:13:06.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.UpdateEntity:
+
+Incorrect syntax near 'COS_CODIGO'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near 'COS_CODIGO'.
+
+
+--------------------------------------------------
+Date: 2024-09-27 13:13:09.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.UpdateEntity:
+
+Incorrect syntax near 'COS_CODIGO'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.UpdateEntity:
+
+Incorrect syntax near 'COS_CODIGO'.
+
+
+--------------------------------------------------
+Date: 2024-09-27 13:17:18.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.UpdateEntity:
+
+La conexión no se cerró. El estado actual de la conexión es abierta..
+Short Description: Failed to end the methods execution successfully..
+Message: La conexión no se cerró. El estado actual de la conexión es abierta.
+
+
+--------------------------------------------------
+Date: 2024-09-27 13:17:30.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.UpdateEntity:
+
+La conexión no se cerró. El estado actual de la conexión es abierta..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.UpdateEntity:
+
+La conexión no se cerró. El estado actual de la conexión es abierta.
+
+
+--------------------------------------------------
+Date: 2024-09-27 14:22:50.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.CreateNonexistentEntity:
+
+Referencia a objeto no establecida como instancia de un objeto..
+Short Description: Failed to end the methods execution successfully..
+Message: Referencia a objeto no establecida como instancia de un objeto.
+
+
+--------------------------------------------------

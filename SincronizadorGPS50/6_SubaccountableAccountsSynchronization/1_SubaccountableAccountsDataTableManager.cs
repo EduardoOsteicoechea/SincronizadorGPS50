@@ -75,11 +75,12 @@ namespace SincronizadorGPS50
          ISynchronizationTableSchemaProvider tableSchema
       )
       {
-         GestprojectEntities = new GestprojectSubaccountableAccountsManager().GetEntities(
+         GestprojectEntities = new List<GestprojectSubaccountableAccountModel> ();
+
+         GestprojectEntities = new GetGestprojectSubaccountableAccounts(
             gestprojectConnectionManager.GestprojectSqlConnection,
-            tableSchema.GestprojectEntityTableName,
-            tableSchema.GestprojectFieldsTupleList
-         );
+            tableSchema
+         ).Entities;
 
          var subaccountableAccountList = GestprojectEntities.Select(x=>x.COS_CODIGO);
          var subaccountableAccountList2 = GestprojectEntities.Select(x=>x.COS_NOMBRE);
@@ -110,17 +111,27 @@ namespace SincronizadorGPS50
                gestprojectSubaccountableAccountModel.COS_ID = -1;
                gestprojectSubaccountableAccountModel.COS_CODIGO = item.CODIGO.Trim();
                gestprojectSubaccountableAccountModel.COS_NOMBRE = item.NOMBRE.Trim();
-               gestprojectSubaccountableAccountModel.COS_GRUPO = item.CODIGO.Trim();
+               gestprojectSubaccountableAccountModel.COS_NOMBRE = item.NOMBRE.Trim();
+               if(item.CODIGO.StartsWith("6"))
+               {
+                  gestprojectSubaccountableAccountModel.COS_GRUPO = "FR";
+               };
+               if(item.CODIGO.StartsWith("7"))
+               {
+                  gestprojectSubaccountableAccountModel.COS_GRUPO = "FE";
+               };
+               if(item.CODIGO.StartsWith("553"))
+               {
+                  gestprojectSubaccountableAccountModel.COS_GRUPO = "SU";
+               };
+
+               
+               //gestprojectSubaccountableAccountModel.S50_CODE = item.CODIGO.Trim();
+               //gestprojectSubaccountableAccountModel.S50_GUID_ID = item.GUID_ID.Trim();
 
                GestprojectEntities.Add(gestprojectSubaccountableAccountModel);
             };
          };
-
-         //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
-         //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
-         //    "GestprojectEntities",
-         //    GestprojectEntities
-         //);
       }
 
       public void GetAndStoreSage50Entities
@@ -128,13 +139,8 @@ namespace SincronizadorGPS50
          ISynchronizationTableSchemaProvider tableSchema
       )
       {
+         Sage50Entities = new List<Sage50SubaccountableAccountModel>();
          Sage50Entities = new GetSage50SubaccountableAccounts(tableSchema).Entities;
-
-         //new VisualizePropertiesAndValues<Sage50SubaccountableAccountModel>(
-         //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
-         //    "Sage50Entities",
-         //    Sage50Entities
-         //);
       }
 
       public void ProccessAndStoreGestprojectEntities
@@ -155,12 +161,6 @@ namespace SincronizadorGPS50
             GestprojectEntities,
             Sage50Entities
          );
-
-         //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
-         //    "At: " + System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "." + System.Reflection.MethodBase.GetCurrentMethod().Name,
-         //    "ProcessedGestprojectEntities",
-         //    ProcessedGestprojectEntities
-         //);
       }
 
       public void CreateAndDefineDataSource

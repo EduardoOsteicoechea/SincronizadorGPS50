@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
@@ -8,7 +9,7 @@ namespace SincronizadorGPS50
 		public int? COS_ID { get; set; }
 		public string COS_CODIGO { get; set; }
 		public string COS_NOMBRE { get; set; }
-		public string COS_GRUPO { get; set; }
+		public string COS_GRUPO  { get; set; }
 
 
       // Syncronization fields
