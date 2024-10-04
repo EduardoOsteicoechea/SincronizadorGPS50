@@ -86,8 +86,8 @@ namespace SincronizadorGPS50
          ISynchronizationTableSchemaProvider tableSchemaProvider
       )
       {
-         Sage50Entities = new GetSage50Projects(tableSchemaProvider.SageTableData).Entities;
-         //Sage50Entities = new GetSage50Projects().Entities;
+         //Sage50Entities = new GetSage50Projects(tableSchemaProvider.SageTableData).Entities;
+         Sage50Entities = new GetSage50Projects().Entities;
       }
 
       public void ProccessAndStoreGestprojectEntities

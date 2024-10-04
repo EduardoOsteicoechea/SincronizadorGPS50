@@ -31,65 +31,67 @@ namespace SincronizadorGPS50
       {
          try
          {
-            GestprojectConnectionManager = gestprojectConnectionManager;
-            Sage50ConnectionManager = sage50ConnectionManager;
-            SynchronizationTableSchemaProvider = tableSchema;
+            new CreateSalesAlbaran()._CrearEjemploAlbaran();
 
-            StoreGestprojectEntityList
-            (
-               GestprojectConnectionManager,
-               selectedIdList,
-               SynchronizationTableSchemaProvider.TableName,
-               new List<(string, System.Type)>()
-               {
-                  (tableSchema.Name.ColumnDatabaseName, tableSchema.Name.ColumnValueType),
-                  (tableSchema.Cif.ColumnDatabaseName, tableSchema.Cif.ColumnValueType),
-                  (tableSchema.Address.ColumnDatabaseName, tableSchema.Address.ColumnValueType),
-                  (tableSchema.PostalCode.ColumnDatabaseName, tableSchema.PostalCode.ColumnValueType),
-                  (tableSchema.Locality.ColumnDatabaseName, tableSchema.Locality.ColumnValueType),
-                  (tableSchema.Province.ColumnDatabaseName, tableSchema.Province.ColumnValueType),
-                  (tableSchema.Country.ColumnDatabaseName, tableSchema.Country.ColumnValueType),
-                  (tableSchema.SynchronizationStatus.ColumnDatabaseName, tableSchema.SynchronizationStatus.ColumnValueType),
-                  (tableSchema.CompanyGroupName.ColumnDatabaseName, tableSchema.CompanyGroupName.ColumnValueType),
-                  (tableSchema.CompanyGroupCode.ColumnDatabaseName, tableSchema.CompanyGroupCode.ColumnValueType),
-                  (tableSchema.CompanyGroupMainCode.ColumnDatabaseName, tableSchema.CompanyGroupMainCode.ColumnValueType),
-                  (tableSchema.CompanyGroupGuidId.ColumnDatabaseName, tableSchema.CompanyGroupGuidId.ColumnValueType),
-                  (tableSchema.GestprojectId.ColumnDatabaseName, tableSchema.GestprojectId.ColumnValueType),
-                  (tableSchema.Sage50Code.ColumnDatabaseName, tableSchema.Sage50Code.ColumnValueType),
-                  (tableSchema.Sage50GuidId.ColumnDatabaseName, tableSchema.Sage50GuidId.ColumnValueType),
-                  (tableSchema.Comments.ColumnDatabaseName, tableSchema.Comments.ColumnValueType)
-               },
-               (
-                  tableSchema.GestprojectId.ColumnDatabaseName,
-                  string.Join(",", selectedIdList)
-               )
-            );
+            //GestprojectConnectionManager = gestprojectConnectionManager;
+            //Sage50ConnectionManager = sage50ConnectionManager;
+            //SynchronizationTableSchemaProvider = tableSchema;
 
-            StoreSage50EntityList
-            (
-               tableSchema.SageTableData.dispatcherAndName.sageDispactcherMechanismRoute,
-               tableSchema.SageTableData.dispatcherAndName.tableName,
-               tableSchema.SageTableData.tableFieldsAlongTypes
-            );
+            //StoreGestprojectEntityList
+            //(
+            //   GestprojectConnectionManager,
+            //   selectedIdList,
+            //   SynchronizationTableSchemaProvider.TableName,
+            //   new List<(string, System.Type)>()
+            //   {
+            //      (tableSchema.Name.ColumnDatabaseName, tableSchema.Name.ColumnValueType),
+            //      (tableSchema.Cif.ColumnDatabaseName, tableSchema.Cif.ColumnValueType),
+            //      (tableSchema.Address.ColumnDatabaseName, tableSchema.Address.ColumnValueType),
+            //      (tableSchema.PostalCode.ColumnDatabaseName, tableSchema.PostalCode.ColumnValueType),
+            //      (tableSchema.Locality.ColumnDatabaseName, tableSchema.Locality.ColumnValueType),
+            //      (tableSchema.Province.ColumnDatabaseName, tableSchema.Province.ColumnValueType),
+            //      (tableSchema.Country.ColumnDatabaseName, tableSchema.Country.ColumnValueType),
+            //      (tableSchema.SynchronizationStatus.ColumnDatabaseName, tableSchema.SynchronizationStatus.ColumnValueType),
+            //      (tableSchema.CompanyGroupName.ColumnDatabaseName, tableSchema.CompanyGroupName.ColumnValueType),
+            //      (tableSchema.CompanyGroupCode.ColumnDatabaseName, tableSchema.CompanyGroupCode.ColumnValueType),
+            //      (tableSchema.CompanyGroupMainCode.ColumnDatabaseName, tableSchema.CompanyGroupMainCode.ColumnValueType),
+            //      (tableSchema.CompanyGroupGuidId.ColumnDatabaseName, tableSchema.CompanyGroupGuidId.ColumnValueType),
+            //      (tableSchema.GestprojectId.ColumnDatabaseName, tableSchema.GestprojectId.ColumnValueType),
+            //      (tableSchema.Sage50Code.ColumnDatabaseName, tableSchema.Sage50Code.ColumnValueType),
+            //      (tableSchema.Sage50GuidId.ColumnDatabaseName, tableSchema.Sage50GuidId.ColumnValueType),
+            //      (tableSchema.Comments.ColumnDatabaseName, tableSchema.Comments.ColumnValueType)
+            //   },
+            //   (
+            //      tableSchema.GestprojectId.ColumnDatabaseName,
+            //      string.Join(",", selectedIdList)
+            //   )
+            //);
 
-            StoreBreakDownGestprojectEntityListByStatus(GestprojectEntityList, Sage50EntityList);
+            //StoreSage50EntityList
+            //(
+            //   tableSchema.SageTableData.dispatcherAndName.sageDispactcherMechanismRoute,
+            //   tableSchema.SageTableData.dispatcherAndName.tableName,
+            //   tableSchema.SageTableData.tableFieldsAlongTypes
+            //);
 
-            DetermineEntitySincronizationWorkflow(UnexistingGestprojectEntityList, ExistingGestprojectEntityList, UnsynchronizedGestprojectEntityList, GestprojectEntityList);
+            //StoreBreakDownGestprojectEntityListByStatus(GestprojectEntityList, Sage50EntityList);
 
-            ExecuteSyncronizationWorkflow
-            (
-               SomeEntitiesExistsInSage50,
-               AllEntitiesExistsInSage50,
-               NoEntitiesExistsInSage50,
-               UnsynchronizedEntityExists,
-               GestprojectConnectionManager,
-               Sage50ConnectionManager,
-               SynchronizationTableSchemaProvider,
-               UnexistingGestprojectEntityList,
-               ExistingGestprojectEntityList,
-               UnsynchronizedGestprojectEntityList,
-               GestprojectEntityList
-            );
+            //DetermineEntitySincronizationWorkflow(UnexistingGestprojectEntityList, ExistingGestprojectEntityList, UnsynchronizedGestprojectEntityList, GestprojectEntityList);
+
+            //ExecuteSyncronizationWorkflow
+            //(
+            //   SomeEntitiesExistsInSage50,
+            //   AllEntitiesExistsInSage50,
+            //   NoEntitiesExistsInSage50,
+            //   UnsynchronizedEntityExists,
+            //   GestprojectConnectionManager,
+            //   Sage50ConnectionManager,
+            //   SynchronizationTableSchemaProvider,
+            //   UnexistingGestprojectEntityList,
+            //   ExistingGestprojectEntityList,
+            //   UnsynchronizedGestprojectEntityList,
+            //   GestprojectEntityList
+            //);
          }
          catch(System.Exception exception)
          {

@@ -109,7 +109,13 @@ namespace SincronizadorGPS50
 		   List<GestprojectProviderModel> existingEntities
 		)
 		{
-			if(synchronizationDialogResult == DialogResult.OK)
+         //new VisualizePropertiesAndValues<GestprojectProviderModel>(
+         //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+         //   "existingEntities",
+         //   existingEntities
+         //);
+
+         if(synchronizationDialogResult == DialogResult.OK)
 			{
 				for(global::System.Int32 i = 0; i < existingEntities.Count; i++)
 				{
@@ -127,7 +133,14 @@ namespace SincronizadorGPS50
 		   List<GestprojectProviderModel> unexistingEntities
 		)
 		{
-			MessageBox.Show("unexistingEntities: " + unexistingEntities.Count);
+         //new VisualizePropertiesAndValues<GestprojectProviderModel>(
+         //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+         //   "unexistingEntities",
+         //   unexistingEntities
+         //);
+
+			//MessageBox.Show("unexistingEntities: " + unexistingEntities.Count);
+
 			if(synchronizationDialogResult == DialogResult.OK)
 			{
 				for(global::System.Int32 i = 0; i < unexistingEntities.Count; i++)

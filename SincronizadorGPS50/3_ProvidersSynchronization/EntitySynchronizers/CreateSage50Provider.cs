@@ -5,7 +5,7 @@ using System.Data;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace SincronizadorGPS50.Sage50Connector
+namespace SincronizadorGPS50
 {
 	public class CreateSage50Provider
 	{
@@ -26,41 +26,41 @@ namespace SincronizadorGPS50.Sage50Connector
 			{
 				int nextCodeAvailable = new SincronizadorGPS50.Sage50Connector.GetSage50Providers().NextProviderCodeAvailable;
 
-				Provider entity = new Provider();
+				ProviderBussinessClass entity = new ProviderBussinessClass();
 				clsEntityProvider entityInstance = new clsEntityProvider();
 
 				if(nextCodeAvailable < 10000)
 				{
-     //          if(nextCodeAvailable < 10)
-     //          {
-     //             entityInstance.codigo = "4000000" + nextCodeAvailable;
-     //             EntityCode = entityInstance.codigo;
-     //          }
-     //          else if(nextCodeAvailable < 100)
-     //          {
-     //             entityInstance.codigo = "400000" + nextCodeAvailable;
-     //             EntityCode = entityInstance.codigo;
-     //          }
-     //          else if(nextCodeAvailable < 1000)
-     //          {
-     //             entityInstance.codigo = "40000" + nextCodeAvailable;
-     //             EntityCode = entityInstance.codigo;
-     //          }
-     //          else
-     //          {
-     //             entityInstance.codigo = "4000" + nextCodeAvailable;
-     //             EntityCode = entityInstance.codigo;
-     //          };
+               if(nextCodeAvailable < 10)
+               {
+                  entityInstance.codigo = "4000000" + nextCodeAvailable;
+                  EntityCode = entityInstance.codigo;
+               }
+               else if(nextCodeAvailable < 100)
+               {
+                  entityInstance.codigo = "400000" + nextCodeAvailable;
+                  EntityCode = entityInstance.codigo;
+               }
+               else if(nextCodeAvailable < 1000)
+               {
+                  entityInstance.codigo = "40000" + nextCodeAvailable;
+                  EntityCode = entityInstance.codigo;
+               }
+               else
+               {
+                  entityInstance.codigo = "4000" + nextCodeAvailable;
+                  EntityCode = entityInstance.codigo;
+               };
 
-     //          entityInstance.pais = country.Trim();
-					//entityInstance.nombre = name.Trim();
-					//entityInstance.codpos = postalCode.Trim();
-					//entityInstance.cif = cif.Trim();
-					//entityInstance.direccion = address.Trim();
-					//entityInstance.provincia = province.Trim();
-					//entityInstance.tipo_iva = ivaType.Trim();
+               entityInstance.pais = country.Trim();
+               entityInstance.nombre = name.Trim();
+               entityInstance.codpos = postalCode.Trim();
+               entityInstance.cif = cif.Trim();
+               entityInstance.direccion = address.Trim();
+               entityInstance.provincia = province.Trim();
+               entityInstance.tipo_iva = ivaType.Trim();
 
-					if(entity._Create(entityInstance))
+               if(entity._Create(entityInstance))
 					{
 						string getSage50EntitySQLQuery = $@"
 						SELECT 

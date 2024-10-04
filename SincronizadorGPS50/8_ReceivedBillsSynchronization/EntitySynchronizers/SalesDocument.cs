@@ -100,11 +100,11 @@ namespace SincronizadorGPS50
                   {
                      MessageBox.Show("before\n\n _oDocVenta._New(toAlbaven.Cabecera.empresa, toAlbaven.Cabecera.letra, toAlbaven.Cabecera.numero);");
 
-					 MessageBox.Show(
-					 "toAlbaven.Cabecera.empresa: " + toAlbaven.Cabecera.empresa + "\n" + 
-					 "toAlbaven.Cabecera.letra: " + toAlbaven.Cabecera.letra  + "\n" +  
-					 "toAlbaven.Cabecera.numero: " + toAlbaven.Cabecera.numero
-					 );
+					       MessageBox.Show(
+					       "toAlbaven.Cabecera.empresa: " + toAlbaven.Cabecera.empresa + "\n" + 
+					       "toAlbaven.Cabecera.letra: " + toAlbaven.Cabecera.letra  + "\n" +  
+					       "toAlbaven.Cabecera.numero: " + toAlbaven.Cabecera.numero
+					       );
 
                      _oDocVenta._New(toAlbaven.Cabecera.empresa, toAlbaven.Cabecera.letra, toAlbaven.Cabecera.numero);
                      _oDocVenta._Cabecera._Cliente = toAlbaven.Cabecera.cliente;

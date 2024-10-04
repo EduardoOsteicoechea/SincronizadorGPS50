@@ -1,9 +1,5 @@
 ﻿using SincronizadorGPS50._Dependency.Interface;
-using SincronizadorGPS50.GestprojectDataManager;
-using SincronizadorGPS50.Sage50Connector;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
 using System.Reflection;
 
 namespace SincronizadorGPS50
@@ -20,7 +16,7 @@ namespace SincronizadorGPS50
       {
          try
          {
-            SincronizadorGPS50.Sage50Connector.CreateSage50Provider newSage50Entity = new SincronizadorGPS50.Sage50Connector.CreateSage50Provider(
+            SincronizadorGPS50.CreateSage50Provider newSage50Entity = new SincronizadorGPS50.CreateSage50Provider(
                entity.PAR_PAIS_1,
                entity.PAR_NOMBRE ,
                entity.PAR_CIF_NIF,

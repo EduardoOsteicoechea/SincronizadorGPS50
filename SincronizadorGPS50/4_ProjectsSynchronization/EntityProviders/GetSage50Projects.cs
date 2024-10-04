@@ -29,16 +29,24 @@ namespace SincronizadorGPS50
       {
          try
          {
-            StringBuilder fieldsToQueryStringBuilder = new StringBuilder();
-            foreach(var item in sageTableDataEntity.tableFieldsAlongTypes)
-            {
-               fieldsToQueryStringBuilder.Append($"[{item.name}], ");
-            };
+            //StringBuilder fieldsToQueryStringBuilder = new StringBuilder();
+            //foreach(var item in sageTableDataEntity.tableFieldsAlongTypes)
+            //{
+            //   fieldsToQueryStringBuilder.Append($"[{item.name}], ");
+            //};
 
-            string getSage50EntitySQLQuery = $@"SELECT {fieldsToQueryStringBuilder.ToString().TrimEnd(' ').TrimEnd(',')} FROM {DB.SQLDatabase(
-                  sageTableDataEntity.dispatcherAndName.sageDispactcherMechanismRoute,
-                  sageTableDataEntity.dispatcherAndName.tableName
-               )};";
+            string getSage50EntitySQLQuery = $@"
+            SELECT 
+               CODIGO
+               ,NOMBRE
+               ,DIRECCION
+               ,CODPOST
+               ,POBLACION
+               ,PROVINCIA
+               ,GUID_ID
+            FROM 
+               {DB.SQLDatabase("comunes","obra")}
+            ;";
 
             //MessageBox.Show(getSage50EntitySQLQuery);
 
@@ -51,17 +59,28 @@ namespace SincronizadorGPS50
                for(int i = 0; i < sage50EntityDataTable.Rows.Count; i++)
                {
                   Sage50ProjectModel entity = new Sage50ProjectModel();
-                  PropertyInfo[] entityPropertyInfoArray = entity.GetType().GetProperties();
+                  DataRow dataRow = sage50EntityDataTable.Rows[i];
 
-                  for(global::System.Int32 j = 0; j < entityPropertyInfoArray.Length; j++)
-                  {
-                     PropertyInfo property = entityPropertyInfoArray[j];
-                     Type entityType = sageTableDataEntity.tableFieldsAlongTypes[j].type;
-                     property.SetValue(
-                        entity,
-                        sage50EntityDataTable.Rows[i].ItemArray[j].ToString().Trim() ?? ""
-                     );
-                  };
+                  entity.CODIGO = dataRow.ItemArray[0].ToString().Trim();
+                  entity.NOMBRE = dataRow.ItemArray[1].ToString().Trim();
+                  entity.DIRECCION = dataRow.ItemArray[2].ToString().Trim();
+                  entity.CODPOST = dataRow.ItemArray[3].ToString().Trim();
+                  entity.POBLACION = dataRow.ItemArray[4].ToString().Trim();
+                  entity.PROVINCIA = dataRow.ItemArray[5].ToString().Trim();
+                  entity.GUID_ID = dataRow.ItemArray[6].ToString().Trim();
+
+
+                  //PropertyInfo[] entityPropertyInfoArray = entity.GetType().GetProperties();
+
+                  //for(global::System.Int32 j = 0; j < entityPropertyInfoArray.Length; j++)
+                  //{
+                  //   PropertyInfo property = entityPropertyInfoArray[j];
+                  //   Type entityType = sageTableDataEntity.tableFieldsAlongTypes[j].type;
+                  //   property.SetValue(
+                  //      entity,
+                  //      sage50EntityDataTable.Rows[i].ItemArray[j].ToString().Trim() ?? ""
+                  //   );
+                  //};
 
                   Entities.Add(entity);
                   Codes.Add(entity.CODIGO);

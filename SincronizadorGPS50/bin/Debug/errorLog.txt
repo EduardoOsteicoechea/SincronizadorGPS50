@@ -15191,3 +15191,382 @@ Message: Referencia a objeto no establecida como instancia de un objeto.
 
 
 --------------------------------------------------
+Date: 2024-10-03 05:57:36.
+Location: At:
+
+SincronizadorGPS50.Sage50Connector
+.CreateSage50Provider
+..ctor:
+
+'SincronizadorGPS50.Sage50Connector.clsEntityProvider' no contiene una definición para 'contado'..
+Short Description: Failed to end the methods execution successfully..
+Message: 'SincronizadorGPS50.Sage50Connector.clsEntityProvider' no contiene una definición para 'contado'.
+
+
+--------------------------------------------------
+Date: 2024-10-03 08:09:00.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50Provider
+..ctor:
+
+'SincronizadorGPS50.Sage50Connector.clsEntityProvider' no contiene una definición para 'contado'..
+Short Description: Failed to end the methods execution successfully..
+Message: 'SincronizadorGPS50.Sage50Connector.clsEntityProvider' no contiene una definición para 'contado'.
+
+
+--------------------------------------------------
+Date: 2024-10-03 08:10:44.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50Provider
+..ctor:
+
+'SincronizadorGPS50.Sage50Connector.clsEntityProvider' no contiene una definición para 'telefono'..
+Short Description: Failed to end the methods execution successfully..
+Message: 'SincronizadorGPS50.Sage50Connector.clsEntityProvider' no contiene una definición para 'telefono'.
+
+
+--------------------------------------------------
+Date: 2024-10-03 08:11:41.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50Provider
+..ctor:
+
+'SincronizadorGPS50.Sage50Connector.clsEntityProvider' no contiene una definición para 'iban'..
+Short Description: Failed to end the methods execution successfully..
+Message: 'SincronizadorGPS50.Sage50Connector.clsEntityProvider' no contiene una definición para 'iban'.
+
+
+--------------------------------------------------
+Date: 2024-10-03 08:12:47.
+Location: At:
+
+SincronizadorGPS50
+.CreateSage50Provider
+..ctor:
+
+'SincronizadorGPS50.Sage50Connector.clsEntityProvider' no contiene una definición para 'mandato'..
+Short Description: Failed to end the methods execution successfully..
+Message: 'SincronizadorGPS50.Sage50Connector.clsEntityProvider' no contiene una definición para 'mandato'.
+
+
+--------------------------------------------------
+Date: 2024-10-03 10:34:15.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-10-03 10:35:20.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50Projects
+..ctor:
+
+La cadena de entrada no tiene el formato correcto.
+
+
+--------------------------------------------------
+Date: 2024-10-03 10:41:39.
+Location: At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-03 10:45:18.
+Location: At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-03 10:45:22.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-03 10:45:26.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-03 10:48:58.
+Location: At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-03 10:49:29.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProjectListWorkflow
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CreateProjectWorkflow
+..ctor:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-03 11:31:01.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-03 11:31:08.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-03 11:33:56.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-03 11:42:34.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-03 11:42:38.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-03 11:42:40.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------

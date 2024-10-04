@@ -29,16 +29,9 @@ namespace SincronizadorGPS50.Sage50Connector
          {
             int nextCodeAvailable = new GetSage50Projects(tableSchema.SageTableData).NextCodeAvailable;
 
-            StringBuilder fieldsToQueryStringBuilder = new StringBuilder();
-            foreach(var item in tableSchema.SageTableData.tableFieldsAlongTypes)
-            {
-               fieldsToQueryStringBuilder.Append($"{item.name},");
-            };
-            fieldsToQueryStringBuilder.ToString().TrimEnd(',');
-
-            Obra entity = new Obra();
-
-            entity._Codigo = (nextCodeAvailable++).ToString();
+            Obra entity = new sage.ew.cliente.Obra();
+            //entity._Codigo = ((Convert.ToInt32(nextCodeAvailable)) + 1).ToString();
+            entity._Codigo = nextCodeAvailable.ToString();
             entity._Nombre = name.Trim();
             entity._Direccion = address.Trim();
             entity._Codpost = postalCode.Trim();
@@ -48,19 +41,32 @@ namespace SincronizadorGPS50.Sage50Connector
             if(entity._Save())
             {
                string getSage50EntitySQLQuery = $@"
-                  SELECT 
-                     guid_id 
-                  FROM 
-                     {DB.SQLDatabase(tableSchema.SageTableData.dispatcherAndName.sageDispactcherMechanismRoute,tableSchema.SageTableData.dispatcherAndName.tableName)}
-                  WHERE 
+                  SELECT
+                     guid_id
+                  FROM
+                     {DB.SQLDatabase("comunes","obra")}
+                  WHERE
                      codigo='{entity._Codigo}'
                   ;";
 
-               new VisualizationForm("S50 Project Creating SQL Qeury",getSage50EntitySQLQuery);
+               //new VisualizationForm("S50 Project Creating SQL Query",getSage50EntitySQLQuery);
 
                DataTable sage50EntityDataTable = new DataTable();
 
-               DB.SQLExec(getSage50EntitySQLQuery, ref sage50EntityDataTable);
+               try
+               {               
+                  DB.SQLExec(getSage50EntitySQLQuery, ref sage50EntityDataTable);
+               }
+               catch(System.Exception exception)
+               {
+                  MessageBox.Show("Error at DB.SQLExec(getSage50EntitySQLQuery, ref sage50EntityDataTable);");
+                  throw ApplicationLogger.ReportError(
+                     MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+                     MethodBase.GetCurrentMethod().DeclaringType.Name,
+                     MethodBase.GetCurrentMethod().Name,
+                     exception
+                  );
+               }
 
                GUID_ID = sage50EntityDataTable.Rows[0].ItemArray[0].ToString().Trim();
             }

@@ -20,14 +20,14 @@ namespace SincronizadorGPS50
       {
          try
          {
-            SincronizadorGPS50.Sage50Connector.CreateSage50Provider newSage50Entity = new SincronizadorGPS50.Sage50Connector.CreateSage50Provider(
-               entity.PAR_PAIS_1,
-               entity.PAR_NOMBRE ,
-               entity.PAR_CIF_NIF,
-               entity.PAR_CP_1,
-               entity.PAR_DIRECCION_1,
-               entity.PAR_PROVINCIA_1
-            );
+            //SincronizadorGPS50.Sage50Connector.CreateSage50Provider newSage50Entity = new SincronizadorGPS50.Sage50Connector.CreateSage50Provider(
+            //   entity.PAR_PAIS_1,
+            //   entity.PAR_NOMBRE ,
+            //   entity.PAR_CIF_NIF,
+            //   entity.PAR_CP_1,
+            //   entity.PAR_DIRECCION_1,
+            //   entity.PAR_PROVINCIA_1
+            //);
 
             new RegisterNewSage50EntityData(
                GestprojectConnectionManager.GestprojectSqlConnection,

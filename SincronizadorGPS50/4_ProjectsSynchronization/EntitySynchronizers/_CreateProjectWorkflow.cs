@@ -27,25 +27,25 @@ namespace SincronizadorGPS50
                tableSchema
             );
 
-            new RegisterNewSage50EntityData(
-               GestprojectConnectionManager.GestprojectSqlConnection,
-               tableSchema.TableName,
-               new List<(string, dynamic)>()
-               {
-                  (tableSchema.SynchronizationStatus.ColumnDatabaseName, SynchronizationStatusOptions.Desincronizado),
-                  (tableSchema.Sage50Code.ColumnDatabaseName, entity.S50_CODE),
-                  (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
-                  (tableSchema.CompanyGroupName.ColumnDatabaseName, entity.S50_COMPANY_GROUP_NAME),
-                  (tableSchema.CompanyGroupCode.ColumnDatabaseName, entity.S50_COMPANY_GROUP_CODE),
-                  (tableSchema.CompanyGroupMainCode.ColumnDatabaseName, entity.S50_COMPANY_GROUP_MAIN_CODE),
-                  (tableSchema.CompanyGroupGuidId.ColumnDatabaseName, entity.S50_COMPANY_GROUP_GUID_ID),
-                  (tableSchema.ParentUserId.ColumnDatabaseName, entity.GP_USU_ID)
-               },
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID),
-               "PROYECTO",
-               (tableSchema.AccountableSubaccount.ColumnDatabaseName, entity.S50_CODE),
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID)
-            );
+            //new RegisterNewSage50EntityData(
+            //   GestprojectConnectionManager.GestprojectSqlConnection,
+            //   tableSchema.TableName,
+            //   new List<(string, dynamic)>()
+            //   {
+            //      (tableSchema.SynchronizationStatus.ColumnDatabaseName, SynchronizationStatusOptions.Desincronizado),
+            //      (tableSchema.Sage50Code.ColumnDatabaseName, entity.S50_CODE),
+            //      (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
+            //      (tableSchema.CompanyGroupName.ColumnDatabaseName, entity.S50_COMPANY_GROUP_NAME),
+            //      (tableSchema.CompanyGroupCode.ColumnDatabaseName, entity.S50_COMPANY_GROUP_CODE),
+            //      (tableSchema.CompanyGroupMainCode.ColumnDatabaseName, entity.S50_COMPANY_GROUP_MAIN_CODE),
+            //      (tableSchema.CompanyGroupGuidId.ColumnDatabaseName, entity.S50_COMPANY_GROUP_GUID_ID),
+            //      (tableSchema.ParentUserId.ColumnDatabaseName, entity.GP_USU_ID)
+            //   },
+            //   (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID),
+            //   "PROYECTO",
+            //   (tableSchema.AccountableSubaccount.ColumnDatabaseName, entity.S50_CODE),
+            //   (tableSchema.GestprojectId.ColumnDatabaseName, entity.PRY_ID)
+            //);
          }
          catch(System.Exception exception)
          {

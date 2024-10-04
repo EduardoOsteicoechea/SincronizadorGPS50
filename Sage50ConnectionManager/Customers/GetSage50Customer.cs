@@ -31,19 +31,19 @@ namespace SincronizadorGPS50.Sage50Connector
          try
          {
             string getSage50CustomerSQLQuery = @"
-                SELECT 
-                    codigo, 
-                    cif, 
-                    nombre, 
-                    nombre2, 
-                    direccion, 
-                    codpost, 
-                    poblacion, 
-                    provincia, 
-                    pais, 
-                    email, 
-                    http, 
-                    guid_id 
+                SELECT
+                    codigo,
+                    cif,
+                    nombre,
+                    nombre2,
+                    direccion,
+                    codpost,
+                    poblacion,
+                    provincia,
+                    pais,
+                    email,
+                    http,
+                    guid_id
                 FROM " + $"{DB.SQLDatabase("gestion","clientes")}";
 
             DataTable sage50CustomersDataTable = new DataTable();
