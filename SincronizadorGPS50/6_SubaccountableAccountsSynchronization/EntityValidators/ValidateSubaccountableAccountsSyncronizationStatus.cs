@@ -37,13 +37,6 @@ namespace SincronizadorGPS50
                MustBeDeleted = true;
                gestprojectEntity.SYNC_STATUS = SynchronizationStatusOptions.Desincronizado;   
             }
-            //else if(!existsInGestproject)
-            //{
-            //   NeverWasSynchronized = false;
-            //   IsSynchronized = false;
-            //   MustBeDeleted = false;
-            //   gestprojectEntity.SYNC_STATUS = SynchronizationStatusOptions.Desincronizado;
-            //}
             else
             {
                for(int i = 0; i < sage50EntityList.Count; i++)
@@ -72,6 +65,8 @@ namespace SincronizadorGPS50
                         sage50EntityList[i].NOMBRE.Trim() == gestprojectEntity.COS_NOMBRE.Trim()
                         &&
                         sage50EntityList[i].CODIGO.Trim() == gestprojectEntity.COS_CODIGO.Trim()
+                        //&&
+                        //hasSage50GuidId
                      )
                      {
                         //MessageBox.Show("Sincronizado");

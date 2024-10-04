@@ -28,6 +28,22 @@ namespace SincronizadorGPS50
          List<Sage50SubaccountableAccountModel> Sage50Entities
       )
       {
+         //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
+         //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+         //   "SynchronizationTableEntities",
+         //   SynchronizationTableEntities
+         //);  
+         //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
+         //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+         //   "unsynchronizedEntityList",
+         //   unsynchronizedEntityList
+         //);  
+         //new VisualizePropertiesAndValues<Sage50SubaccountableAccountModel>(
+         //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+         //   "Sage50Entities",
+         //   Sage50Entities
+         //);   
+
          try
          {
             DetermineEntityNameAndGrammaticalGender();

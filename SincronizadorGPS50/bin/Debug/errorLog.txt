@@ -15570,3 +15570,256 @@ No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
 
 
 --------------------------------------------------
+Date: 2024-10-04 04:54:32.
+Location: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-04 04:54:38.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-04 04:54:39.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.AlbaranVenta
+._Create:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-04 06:05:48.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-04 06:05:54.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-04 06:05:56.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-04 07:39:09.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-04 07:40:03.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-04 07:40:08.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.ProcessEntityList:
+
+At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-04 07:42:00.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-04 07:43:19.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-04 07:44:04.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.AppendSynchronizationTableDataToEntity:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-04 08:53:43.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectSubaccountableAccountsProcessor
+.DeleteEntity:
+
+Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_SUBACCOUNTABLE_ACCOUNTS'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_SUBACCOUNTABLE_ACCOUNTS'.
+
+
+--------------------------------------------------
