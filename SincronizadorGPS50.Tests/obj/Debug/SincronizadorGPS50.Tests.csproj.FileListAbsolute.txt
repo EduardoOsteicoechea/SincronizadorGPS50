@@ -1,0 +1,130 @@
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\obj\Debug\SincronizadorGPS50.Tests.csproj.AssemblyReference.cache
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\obj\Debug\SincronizadorGPS50.Tests.csproj.SuggestedBindingRedirects.cache
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\obj\Debug\SincronizadorGPS50.Tests.dll.config
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\obj\Debug\SincronizadorGPS50.Tests.csproj.CoreCompileInputs.cache
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\xunit.abstractions.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\xunit.runner.reporters.net452.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Aero.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Chameleon.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Claymation.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Excel2013 - Dark Gray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Excel2013 - Light Gray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Excel2013 - White.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\GrapeTomato.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\IG.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\LucidDream.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Metro.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\ModClay.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Nautilus.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\NoirModerne.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Office2007Black.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Office2007Blue.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Office2007Silver.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Office2010Black.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Office2010Blue.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Office2010Silver.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Office2013 - Dark Gray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Office2013 - Light Gray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Office2013 - White.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Outlook2013 - Dark Gray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Outlook2013 - LightGray.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Outlook2013 - White.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Pear.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\RedPlanet.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\RubberBlack.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Trendy.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\VS2008.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\VS2010.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\VS2013 - Blue.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\VS2013 - Dark.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\VS2013 - Light.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Windows7.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Windows8-DarkGray-Blue.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Windows8-DarkGray-Green.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Windows8-DarkGray-Pink.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Resources\Styles\Windows8-DarkGray-Yellow.isl
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\SincronizadorGPS50.Tests.dll.config
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\SincronizadorGPS50.Tests.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\SincronizadorGPS50.Tests.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Microsoft.TestPlatform.CoreUtilities.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Microsoft.TestPlatform.PlatformAbstractions.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\SincronizadorGPS50.1.0.3.exe
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\System.Collections.Immutable.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\System.Reflection.Metadata.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\xunit.assert.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\xunit.core.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\xunit.execution.desktop.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Sage50ConnectionManager.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinTabControl.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinGrid.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\GestprojectDataManager.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.Misc.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinEditors.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\GestprojectConnector.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.SupportDialogs.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Shared.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\FuzzySharp.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinToolbars.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinListView.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinTree.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinCalcManager.v18.2.FormulaBuilder.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinStatusBar.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinCalcManager.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinDataSource.v18.2.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\SincronizadorGPS50.1.0.3.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\SincronizadorGPS50.1.0.3.exe.config
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\System.Collections.Immutable.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\System.Reflection.Metadata.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\xunit.assert.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\xunit.core.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\xunit.execution.desktop.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Sage50ConnectionManager.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinTabControl.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinGrid.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\GestprojectDataManager.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.Misc.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinEditors.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\GestprojectConnector.pdb
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.SupportDialogs.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Shared.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinToolbars.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinListView.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinTree.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinCalcManager.v18.2.FormulaBuilder.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinStatusBar.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinCalcManager.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\Infragistics4.Win.UltraWinDataSource.v18.2.xml
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\fr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\it\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\ja\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\ko\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\pl\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\pt-BR\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\ru\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\zh-Hans\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\de\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\it\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\ja\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\ko\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\pl\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\pt-BR\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\tr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\zh-Hans\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\bin\Debug\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\obj\Debug\Sincroni.FD2E81E9.Up2Date
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\obj\Debug\SincronizadorGPS50.Tests.dll
+C:\Users\eduar\Documents\work\external\avantleap\berrilan\SincronizadorGPS50\SincronizadorGPS50.Tests\obj\Debug\SincronizadorGPS50.Tests.pdb

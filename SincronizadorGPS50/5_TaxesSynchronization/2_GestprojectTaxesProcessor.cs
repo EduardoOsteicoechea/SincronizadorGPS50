@@ -58,6 +58,7 @@ namespace SincronizadorGPS50
                {
                   //MessageBox.Show(entity.IMP_NOMBRE + " MustBeRegistered");
                   RegisterEntity(connection, tableSchema, entity);
+                  AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
                }
                else if(MustBeUpdated)
                {
@@ -184,41 +185,51 @@ namespace SincronizadorGPS50
       public void RegisterEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, GestprojectTaxModel entity)
       {
          try
-         {
-            //StringBuilder stringBuilder = new StringBuilder();
-            //foreach(var item in entity.GetType().GetProperties())
-            //{
-            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
-            //};
-            //MessageBox.Show(stringBuilder.ToString());
+         { 
+            connection.Open();
 
-            new RegisterEntity
-            (
-               connection,
-               tableSchema.TableName,
-               new List<(string, dynamic)>()
-               {
-                  (tableSchema.SynchronizationStatus.ColumnDatabaseName, SynchronizationStatusOptions.Desincronizado),
-                  (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
-                  (tableSchema.GestprojectType.ColumnDatabaseName, entity.IMP_TIPO),
-                  (tableSchema.GestprojectName.ColumnDatabaseName, entity.IMP_NOMBRE),
-                  (tableSchema.GestprojectDescription.ColumnDatabaseName, entity.IMP_DESCRIPCION),
-                  (tableSchema.GestprojectValue.ColumnDatabaseName, entity.IMP_VALOR),
-                  (tableSchema.AccountableSubaccount.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE),
-                  (tableSchema.AccountableSubaccount2.ColumnDatabaseName, entity.IMP_SUBCTA_CONTABLE_2),
-                  (tableSchema.Sage50Code.ColumnDatabaseName, entity.S50_CODE ?? ""),
-                  (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID ?? ""),
-               }
-            );
-            
-            //StringBuilder stringBuilder = new StringBuilder();
-            //foreach(var item in entity.GetType().GetProperties())
-            //{
-            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
-            //};
-            //MessageBox.Show(stringBuilder.ToString());
+            string sqlString2 = $@"
+            INSERT INTO 
+               {tableSchema.TableName} 
+               (
+                  IMP_ID
+                  ,IMP_TIPO
+                  ,IMP_NOMBRE
+                  ,IMP_DESCRIPCION
+                  ,IMP_VALOR
+                  ,IMP_SUBCTA_CONTABLE
+                  ,IMP_SUBCTA_CONTABLE_2
+                  ,S50_CODE
+                  ,S50_GUID_ID
+               ) 
+            VALUES 
+               (
+                  @IMP_ID
+                  ,@IMP_TIPO
+                  ,@IMP_NOMBRE
+                  ,@IMP_DESCRIPCION
+                  ,@IMP_VALOR
+                  ,@IMP_SUBCTA_CONTABLE
+                  ,@IMP_SUBCTA_CONTABLE_2
+                  ,@S50_CODE
+                  ,@S50_GUID_ID
+               )
+            ;";
 
-            AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
+            using(SqlCommand command = new SqlCommand(sqlString2, connection))
+            {  
+               command.Parameters.AddWithValue("@IMP_ID", entity.IMP_ID);
+               command.Parameters.AddWithValue("@IMP_TIPO", entity.IMP_TIPO);
+               command.Parameters.AddWithValue("@IMP_NOMBRE", entity.IMP_NOMBRE);
+               command.Parameters.AddWithValue("@IMP_DESCRIPCION", entity.IMP_DESCRIPCION);
+               command.Parameters.AddWithValue("@IMP_VALOR", entity.IMP_VALOR);
+               command.Parameters.AddWithValue("@IMP_SUBCTA_CONTABLE", entity.IMP_SUBCTA_CONTABLE);
+               command.Parameters.AddWithValue("@IMP_SUBCTA_CONTABLE_2", entity.IMP_SUBCTA_CONTABLE_2);
+               command.Parameters.AddWithValue("@S50_CODE", entity.S50_CODE ?? "");
+               command.Parameters.AddWithValue("@S50_GUID_ID", entity.S50_GUID_ID ?? "");
+
+               command.ExecuteNonQuery();
+            };
          }
          catch(System.Exception exception)
          {
@@ -228,19 +239,18 @@ namespace SincronizadorGPS50
                MethodBase.GetCurrentMethod().Name,
                exception
             );
+         }
+         finally
+         {
+            connection.Close();
          };
       }
+
+
       public void UpdateEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, GestprojectTaxModel entity)
       {
          try
          {
-            //StringBuilder stringBuilder = new StringBuilder();
-            //foreach(var item in entity.GetType().GetProperties())
-            //{
-            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
-            //}
-            //MessageBox.Show(stringBuilder.ToString());
-
             new UpdateEntity
             (
                connection,

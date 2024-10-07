@@ -15823,3 +15823,68 @@ Message: Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_SUBACCOUNTABL
 
 
 --------------------------------------------------
+Date: 2024-10-04 11:47:27.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectTaxesProcessor
+.RegisterEntity:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-07 06:07:35.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.DeleteFromSynchronizationTable:
+
+Must declare the scalar variable "@ID"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@ID".
+
+
+--------------------------------------------------
+Date: 2024-10-07 06:15:43.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.DeleteFromSynchronizationTable:
+
+Ya hay un DataReader abierto asociado a este Command, debe cerrarlo primero..
+Short Description: Failed to end the methods execution successfully..
+Message: Ya hay un DataReader abierto asociado a este Command, debe cerrarlo primero.
+
+
+--------------------------------------------------
+Date: 2024-10-07 06:17:25.
+Location: At:
+
+SincronizadorGPS50
+.TaxesDataTableManager
+.DeleteFromSynchronizationTable:
+
+Ya hay un DataReader abierto asociado a este Command, debe cerrarlo primero..
+Short Description: Failed to end the methods execution successfully..
+Message: Ya hay un DataReader abierto asociado a este Command, debe cerrarlo primero.
+
+
+--------------------------------------------------
+Date: 2024-10-07 15:16:31.
+Location: At:
+
+SincronizadorGPS50
+.TaxSynchronizationWorkflow
+._GetGestprojectTaxTableTaxesData:
+
+Incorrect syntax near '}'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near '}'.
+
+
+--------------------------------------------------

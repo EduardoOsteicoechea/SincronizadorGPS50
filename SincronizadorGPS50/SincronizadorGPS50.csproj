@@ -395,6 +395,8 @@
     <Compile Include="4_ProjectsSynchronization\EntitySynchronizers\ProjectComparer.cs" />
     <Compile Include="4_ProjectsSynchronization\EntitySynchronizers\UpdateSage50Project.cs" />
     <Compile Include="4_ProjectsSynchronization\EntitySynchronizers\_UnexsistingProjectListWorkflow.cs" />
+    <Compile Include="5_TaxesSynchronization\1_TaxesDataTableManager - Copy.cs" />
+    <Compile Include="5_TaxesSynchronization\EntitySynchronizers\TaxSynchronizationWorkflow - Copy.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\1_SubaccountableAccountsDataTableManager.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\2_GestprojectSubaccountableAccountsProcessor.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\EntityProviders\GestprojectSubaccountableAccountsManager - Copy.cs" />
@@ -418,8 +420,6 @@
     <Compile Include="6_SubaccountableAccountsSynchronization\Schema\Sage50SubaccountableAccountModel.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\Schema\SubaccountableAccountsSynchronizationTableSchemaProvider.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\_SubaccountableAccountsSynchronizationManager.cs" />
-    <Compile Include="5_TaxesSynchronization\1_TaxesDataTableManager - Copy.cs" />
-    <Compile Include="5_TaxesSynchronization\2_GestprojectTaxesProcessor - Copy.cs" />
     <Compile Include="7_IssuedBillsSynchronization\EntitySynchronizers\CreateSalesAlbaran.cs" />
     <Compile Include="7_IssuedBillsSynchronization\EntitySynchronizers\_IssuedBillsSynchronizer - Copy.cs" />
     <Compile Include="ConfirmationDialog.cs" />
@@ -431,7 +431,6 @@
     <Compile Include="5_TaxesSynchronization\EntitySynchronizers\InsertSageEntityIntoGestprojectTaxTable.cs" />
     <Compile Include="5_TaxesSynchronization\EntitySynchronizers\UpdateGestprojectTaxDataWithSageTaxData.cs" />
     <Compile Include="5_TaxesSynchronization\EntitySynchronizers\UpdateTax.cs" />
-    <Compile Include="5_TaxesSynchronization\EntityValidators\ValidateTaxSyncronizationStatus - Copy.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\EntitySynchronizers\BaseDocument.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\EntitySynchronizers\BuyDocument.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\EntitySynchronizers\CreateSage50ReceivedBills - Copy %282%29.cs" />
@@ -498,7 +497,7 @@
     <Compile Include="5_TaxesSynchronization\EntityProviders\GestprojectTaxesProvider.cs" />
     <Compile Include="5_TaxesSynchronization\EntityProviders\GetSage50Taxes.cs" />
     <Compile Include="5_TaxesSynchronization\EntitySynchronizers\TaxSynchronizationWorkflow.cs" />
-    <Compile Include="5_TaxesSynchronization\EntitySynchronizers\TaxesSynchronizer.cs" />
+    <Compile Include="5_TaxesSynchronization\EntitySynchronizers\_TaxesSynchronizer.cs" />
     <Compile Include="5_TaxesSynchronization\EntityValidators\ValidateTaxSyncronizationStatus.cs" />
     <Compile Include="5_TaxesSynchronization\EntityValidators\WasTaxRegistered.cs" />
     <Compile Include="5_TaxesSynchronization\Schema\GestprojectTaxModel.cs" />

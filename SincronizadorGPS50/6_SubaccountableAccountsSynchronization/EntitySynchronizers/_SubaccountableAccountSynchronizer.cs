@@ -101,6 +101,12 @@ namespace SincronizadorGPS50
             fieldsToBeRetrieved,
             condition1Data
          );
+
+         //new VisualizePropertiesAndValues<GestprojectSubaccountableAccountModel>(
+         //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+         //   "GestprojectEntityList",
+         //   GestprojectEntityList
+         //);
       }
 
       public void StoreSage50EntityList
