@@ -281,10 +281,26 @@ namespace SincronizadorGPS50
                               else
                               {
                                  // Es una linea de comentario
-                                 if(!string.IsNullOrEmpty(LineaAlbaran.definicion))
+                                 if(!string.IsNullOrEmpty(LineaAlbaran.definicion) && !string.IsNullOrEmpty(LineaAlbaran.cuentaContable) && !string.IsNullOrEmpty(LineaAlbaran.tipoiva))
+                                 {
+                                    _oLinia._Definicion = LineaAlbaran.definicion;
+                                    _oLinia._TipoIva = LineaAlbaran.tipoiva;
+                                    _oLinia._Cuenta = LineaAlbaran.cuentaContable;
+                                    _oLinia._Unidades = LineaAlbaran.unidades;
+
+                                    if(toAlbaven.Cabecera.precios)
+                                    {
+                                       _oLinia._Precio = LineaAlbaran.precio;
+                                       _oLinia._Dto1 = LineaAlbaran.dto1;
+                                       _oLinia._Dto2 = LineaAlbaran.dto2;
+                                       _oLinia._Recalcular_Importe();
+                                    };
+                                 }
+                                 else if(!string.IsNullOrEmpty(LineaAlbaran.definicion))
                                  {
                                     _oLinia._Definicion = LineaAlbaran.definicion;
                                     _oLinia._TipoIva = "";
+                                    _oLinia._Cuenta = "";
                                  }
                                  else
                                  {
@@ -296,10 +312,10 @@ namespace SincronizadorGPS50
                               if(_oLinia._Save())
                               {
                                  if(_oLinVenDetLotes != null)
-								 {
-                                    _oLinVenDetLotes._Save();
-									MessageBox.Show("Lines saved");
-								 };
+								          {
+                                             _oLinVenDetLotes._Save();
+									         MessageBox.Show("Lines saved");
+								          };
                               }
                               _oLinVenDetLotes = null;
                            }

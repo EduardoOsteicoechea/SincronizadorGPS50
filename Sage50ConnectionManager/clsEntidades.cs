@@ -337,7 +337,7 @@ namespace SincronizadorGPS50.Sage50Connector
     public class clsAlbavenLineas
     {
         public string articulo { get; set; } = "";
-        public string definicion { get; set; } = "";
+         public string definicion { get; set; } = "";
         public string talla { get; set; } = "";
         public string color { get; set; } = "";
         public decimal unidades { get; set; } = 0;
@@ -347,7 +347,8 @@ namespace SincronizadorGPS50.Sage50Connector
         public decimal dto1 { get; set; } = 0;
         public decimal dto2 { get; set; } = 0;
         public int linea { get; set; } = 0;
-        public string tipoiva { get; set; } = "";
+         public string tipoiva { get; set; } = "";
+         public string cuentaContable { get; set; } = "";
         // this were null before
         public List<clsAlbavenLineasLotes> lotes { get; set; } = new List<clsAlbavenLineasLotes>();
         public List<clsAlbavenLineasSeries> series { get; set; } = new List<clsAlbavenLineasSeries>();

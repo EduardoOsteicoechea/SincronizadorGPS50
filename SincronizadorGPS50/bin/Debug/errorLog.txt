@@ -15888,3 +15888,372 @@ Message: Incorrect syntax near '}'.
 
 
 --------------------------------------------------
+Date: 2024-10-10 05:48:46.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'.
+
+
+--------------------------------------------------
+Date: 2024-10-10 05:49:14.
+Location: At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'.
+
+
+--------------------------------------------------
+Date: 2024-10-10 05:49:16.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'.
+
+
+--------------------------------------------------
+Date: 2024-10-10 05:49:18.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'.
+
+
+--------------------------------------------------
+Date: 2024-10-10 05:49:19.
+Location: At:
+
+SincronizadorGPS50
+.ProviderSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'.
+
+
+--------------------------------------------------
+Date: 2024-10-10 05:49:20.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ProviderSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProviderSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'.
+
+
+--------------------------------------------------
+Date: 2024-10-10 07:53:39.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersManager
+.GetAll:
+
+At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50.GestprojectDataManager
+.GestprojectParticipants
+.Get
+:
+
+Incorrect syntax near ')'.
+
+
+--------------------------------------------------

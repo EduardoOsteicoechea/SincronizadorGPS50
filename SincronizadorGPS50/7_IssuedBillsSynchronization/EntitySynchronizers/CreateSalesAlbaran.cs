@@ -135,8 +135,16 @@ namespace SincronizadorGPS50
          _LinAlbaran.series = null;
          _AddObjetoLinea();
 
-         llOk = this._oAlbaranVenta._Create(this._oEntidad);
+         // Linea5, artículo sin código
+         _CrearObjetoLinea();
+         _LinAlbaran.definicion = "Perico";
+         _LinAlbaran.unidades = 1;
+         _LinAlbaran.precio = 19;
+         _LinAlbaran.tipoiva = "03";
+         _LinAlbaran.cuentaContable = "70000001";
+         _AddObjetoLinea();
 
+         llOk = this._oAlbaranVenta._Create(this._oEntidad);
       }
 
       private void _CrearEntidad()

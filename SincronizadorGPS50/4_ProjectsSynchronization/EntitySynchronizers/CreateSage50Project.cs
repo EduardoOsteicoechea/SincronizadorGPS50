@@ -30,7 +30,6 @@ namespace SincronizadorGPS50.Sage50Connector
             int nextCodeAvailable = new GetSage50Projects(tableSchema.SageTableData).NextCodeAvailable;
 
             Obra entity = new sage.ew.cliente.Obra();
-            //entity._Codigo = ((Convert.ToInt32(nextCodeAvailable)) + 1).ToString();
             entity._Codigo = nextCodeAvailable.ToString();
             entity._Nombre = name.Trim();
             entity._Direccion = address.Trim();
@@ -41,15 +40,13 @@ namespace SincronizadorGPS50.Sage50Connector
             if(entity._Save())
             {
                string getSage50EntitySQLQuery = $@"
-                  SELECT
-                     guid_id
-                  FROM
-                     {DB.SQLDatabase("comunes","obra")}
-                  WHERE
-                     codigo='{entity._Codigo}'
-                  ;";
-
-               //new VisualizationForm("S50 Project Creating SQL Query",getSage50EntitySQLQuery);
+               SELECT
+                  guid_id
+               FROM
+                  {DB.SQLDatabase("comunes","obra")}
+               WHERE
+                  codigo='{entity._Codigo}'
+               ;";
 
                DataTable sage50EntityDataTable = new DataTable();
 
@@ -82,11 +79,6 @@ namespace SincronizadorGPS50.Sage50Connector
                    province: {entity._Provincia}
                ");
             };
-            //}
-            //else
-            //{
-            //   MessageBox.Show("Sage50 admite un máximo de 9999 clientes por grupo de empresas y su base de clientes de Gestproject supera éste límite.");
-            //};
          }
          catch(System.Exception exception)
          {

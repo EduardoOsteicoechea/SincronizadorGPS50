@@ -20,7 +20,6 @@ namespace SincronizadorGPS50
       {
          bool CustomerSincronizationTableExists = new GestprojectDataManager.CheckIfTableExistsOnGestproject(
             connection,
-            //"INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_CUSTOMERS"
             tableSchema.TableName
          ).Exists;
 
