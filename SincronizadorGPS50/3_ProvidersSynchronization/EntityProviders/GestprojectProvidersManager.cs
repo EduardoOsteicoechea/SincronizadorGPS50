@@ -13,9 +13,21 @@ namespace SincronizadorGPS50
          {
             List<int> gestProjectProviderIdList = new GestprojectPAR_TPA().Get(connection, "12");
 
+               //new VisualizePropertiesAndValues<int>(
+               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               //   "gestProjectProviderIdList",
+               //   gestProjectProviderIdList
+               //);
+
             if(gestProjectProviderIdList.Count > 0)
             {
                List<GestprojectParticipantModel> gestprojectProviderParticipantList = new GestprojectParticipants().Get(connection, gestProjectProviderIdList);
+               
+               //new VisualizePropertiesAndValues<GestprojectParticipantModel>(
+               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               //   "gestprojectProviderParticipantList",
+               //   gestprojectProviderParticipantList
+               //);
 
                for(global::System.Int32 i = 0; i < gestprojectProviderParticipantList.Count; i++)
                {
@@ -23,7 +35,7 @@ namespace SincronizadorGPS50
                   GestprojectProviderModel gestprojectProvider = new GestprojectProviderModel();
 
                   gestprojectProvider.PAR_ID = gestprojectProviderParticipant.PAR_ID;
-                  gestprojectProvider.PAR_SUBCTA_CONTABLE_2 = gestprojectProviderParticipant.PAR_SUBCTA_CONTABLE;
+                  gestprojectProvider.PAR_SUBCTA_CONTABLE_2 = gestprojectProviderParticipant.PAR_SUBCTA_CONTABLE_2;
                   gestprojectProvider.PAR_NOMBRE = gestprojectProviderParticipant.PAR_NOMBRE;
                   gestprojectProvider.PAR_NOMBRE_COMERCIAL = gestprojectProviderParticipant.PAR_NOMBRE_COMERCIAL;
                   gestprojectProvider.PAR_CIF_NIF = gestprojectProviderParticipant.PAR_CIF_NIF;

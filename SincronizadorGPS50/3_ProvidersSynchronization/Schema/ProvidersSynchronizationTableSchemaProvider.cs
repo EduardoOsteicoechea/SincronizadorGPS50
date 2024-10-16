@@ -8,6 +8,7 @@ namespace SincronizadorGPS50
    {
       # region entityStaticDataProviders
       public static string EntitySynchronizationTableName { get; set; } = "INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROVIDERS";
+      public static string EntityGestprojectTableName { get; set; } = "PARTICIPANTE";
       public static List<(string columnName, string friendlyName, Type columnType, string columnDefinition, dynamic defaultValue)> MainSynchronizationTuples { get; set; } = new List<(string, string, Type, string, dynamic)>()
       {
          /*0*/("ID", "Id de Sincronización", typeof(int), "INT PRIMARY KEY IDENTITY(1,1)", null),
@@ -67,6 +68,8 @@ namespace SincronizadorGPS50
 
          # region entitySynchronizationTableName
             public string TableName { get; set; } = EntitySynchronizationTableName;
+            
+            public string GestprojectEntityTableName { get; set; } = EntityGestprojectTableName;
          # endregion entitySynchronizationTableName
 
          # region entityRequiredDataTuples
@@ -182,7 +185,6 @@ namespace SincronizadorGPS50
          public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) TaxType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
          public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectProId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
       public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-      public string GestprojectEntityTableName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
       public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectCode { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
       public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectGroup { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 

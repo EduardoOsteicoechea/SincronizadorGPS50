@@ -58,5 +58,33 @@ namespace SincronizadorGPS50
 
          new VisualizationForm(title, content);
       }
+
+      public VisualizePropertiesAndValues(string location, string title, List<int> entityList)
+      {
+         int counter = 1;
+
+         string content = "";
+         content += location;
+         content += "\n\n";
+         content += "-----------------------------";
+         content += "\n\n";
+         content += "Total Count: " + entityList.Count;
+         content += "\n\n";
+         content += "-----------------------------";
+         content += "\n";
+
+         foreach(int entity in entityList)
+         {
+            content += counter + "." + "\n\n";
+            content += "value: " + entity + "\n";
+            content += "\n";
+            content += "-----------------------------";
+            content += "\n";
+
+            counter++;
+         };
+
+         new VisualizationForm(title, content);
+      }
    }
 }

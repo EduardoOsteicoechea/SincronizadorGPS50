@@ -229,7 +229,8 @@ namespace SincronizadorGPS50
             {
                GestprojectTaxModel gestprojectTaxModel = new GestprojectTaxModel();
 
-               gestprojectTaxModel.IMP_ID = 0;
+               gestprojectTaxModel.IMP_ID = -1;
+               //gestprojectTaxModel.IMP_ID = 0;
                gestprojectTaxModel.IMP_TIPO = sageEntity.IMP_TIPO;
                gestprojectTaxModel.IMP_DESCRIPCION = sageEntity.NOMBRE.Trim();
 
@@ -305,7 +306,7 @@ namespace SincronizadorGPS50
                      int IMP_SUBCTA_CONTABLE_2_ordinal = 6;
 
                      entity.IMP_ID = Convert.ToInt32(
-                        reader.GetValue(IMP_ID_ordinal).GetType() != typeof(DBNull) ? reader.GetValue(IMP_ID_ordinal) : 0
+                        reader.GetValue(IMP_ID_ordinal).GetType() != typeof(DBNull) ? reader.GetValue(IMP_ID_ordinal) : -1
                      );
                      entity.IMP_TIPO = Convert.ToString(
                         reader.GetValue(IMP_TIPO_ordinal).GetType() != typeof(DBNull) ? reader.GetValue(IMP_TIPO_ordinal) : ""
@@ -486,7 +487,6 @@ namespace SincronizadorGPS50
          List<Sage50TaxModel> Sage50Entities
       )
       {
-
          ISynchronizableEntityProcessor<GestprojectTaxModel, Sage50TaxModel> gestprojectProvidersProcessor = new GestprojectTaxesProcessor();
          ProcessedGestprojectEntities = gestprojectProvidersProcessor.ProcessEntityList(
             gestprojectConnectionManager.GestprojectSqlConnection,

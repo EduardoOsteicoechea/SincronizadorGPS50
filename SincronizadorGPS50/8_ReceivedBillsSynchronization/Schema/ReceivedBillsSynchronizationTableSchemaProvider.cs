@@ -19,13 +19,14 @@ namespace SincronizadorGPS50
          /*2*/("FCP_NUM_FACTURA", "FCP_NUM_FACTURA", typeof(string), "VARCHAR(MAX)", string.Empty), // Corresponde a NUMERO en "c_factucom" y FCE_REFERENCIA en facturas emitidas
          /*3*/("FCP_FECHA", "FCP_FECHA", typeof(DateTime), "DATETIME", null),
          /*4*/("PAR_PRO_ID", "PAR_PRO_ID", typeof(int), "INT", null),
-         /*5*/("FCP_BASE_IMPONIBLE", "FCP_BASE_IMPONIBLE", typeof(decimal), "DECIMAL(18,2)", null),
-         /*6*/("FCP_VALOR_IVA", "FCP_VALOR_IVA", typeof(decimal), "DECIMAL(18,2)", null),
-         /*7*/("FCP_IVA", "FCP_IVA", typeof(decimal), "DECIMAL(18,2)", null),
-         /*8*/("FCP_VALOR_IRPF", "FCP_VALOR_IRPF", typeof(decimal), "DECIMAL(18,2)", null),
-         /*9*/("FCP_IRPF", "FCP_IRPF", typeof(decimal), "DECIMAL(18,2)", null),
-         /*10*/("FCP_TOTAL_FACTURA", "FCP_TOTAL_FACTURA", typeof(decimal), "DECIMAL(18,2)", null),
-         /*11*/("FCP_OBSERVACIONES", "FCP_OBSERVACIONES", typeof(string), "VARCHAR(MAX)", string.Empty),
+         /*5*/("FCP_SUBCTA_CONTABLE", "FCP_SUBCTA_CONTABLE", typeof(string), "VARCHAR(MAX)", string.Empty),
+         /*6*/("FCP_BASE_IMPONIBLE", "FCP_BASE_IMPONIBLE", typeof(decimal), "DECIMAL(18,2)", null),
+         /*7*/("FCP_VALOR_IVA", "FCP_VALOR_IVA", typeof(decimal), "DECIMAL(18,2)", null),
+         /*8*/("FCP_IVA", "FCP_IVA", typeof(decimal), "DECIMAL(18,2)", null),
+         /*9*/("FCP_VALOR_IRPF", "FCP_VALOR_IRPF", typeof(decimal), "DECIMAL(18,2)", null),
+         /*10*/("FCP_IRPF", "FCP_IRPF", typeof(decimal), "DECIMAL(18,2)", null),
+         /*11*/("FCP_TOTAL_FACTURA", "FCP_TOTAL_FACTURA", typeof(decimal), "DECIMAL(18,2)", null),
+         /*12*/("FCP_OBSERVACIONES", "FCP_OBSERVACIONES", typeof(string), "VARCHAR(MAX)", string.Empty),
       };
       public static List<(string columnName, string friendlyName, Type columnType, string columnDefinition, dynamic defaultValue)> SageDataTuples { get; set; } = new List<(string, string, Type, string, dynamic)>()
       {
@@ -143,12 +144,13 @@ namespace SincronizadorGPS50
             public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectDate { get; set; } =  GestprojectDataTuples.ElementAt(3);
             public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectProId { get; set; } =  GestprojectDataTuples.ElementAt(4);      
             public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectTaxableBase { get; set; } =  GestprojectDataTuples.ElementAt(5);
-            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectIvaValue { get; set; } =  GestprojectDataTuples.ElementAt(6);
-            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectIvaValueInEuros { get; set; } =  GestprojectDataTuples.ElementAt(7);
-            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectIrpfValue { get; set; } =  GestprojectDataTuples.ElementAt(8);
-            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectIrpfValueInEuros { get; set; } =  GestprojectDataTuples.ElementAt(9);
-            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectTotalInvoiced { get; set; } = GestprojectDataTuples.ElementAt(10);
-            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectBillTotal { get; set; } =  GestprojectDataTuples.ElementAt(11);
+            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectProviderSubaccountableAccount { get; set; } =  GestprojectDataTuples.ElementAt(6);
+            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectIvaValue { get; set; } =  GestprojectDataTuples.ElementAt(7);
+            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectIvaValueInEuros { get; set; } =  GestprojectDataTuples.ElementAt(8);
+            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectIrpfValue { get; set; } =  GestprojectDataTuples.ElementAt(9);
+            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectIrpfValueInEuros { get; set; } =  GestprojectDataTuples.ElementAt(10);
+            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectTotalInvoiced { get; set; } = GestprojectDataTuples.ElementAt(11);
+            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectBillTotal { get; set; } =  GestprojectDataTuples.ElementAt(12);
          # endregion entityGestprojectDataProperties
 
          # region entitySageDataProperties               

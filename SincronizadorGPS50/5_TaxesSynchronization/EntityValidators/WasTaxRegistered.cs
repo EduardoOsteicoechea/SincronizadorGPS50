@@ -40,7 +40,8 @@ namespace SincronizadorGPS50
             }
             else
             {
-               if(condition1.value == null || condition1.value == 0)
+               //if(condition1.value == null || condition1.value == 0)
+               if(condition1.value == null || condition1.value == -1)
                {
                   sqlCondition.Append($"{condition2.columnName}={DynamicValuesFormatters.Formatters[condition2.value.GetType()](condition2.value)}");
                }

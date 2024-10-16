@@ -13,36 +13,36 @@ namespace SincronizadorGPS50
          ISynchronizationTableSchemaProvider tableSchemaProvider
       );
 
-      void ManageSynchronizationTableStatus
-      (
-         IGestprojectConnectionManager gestprojectConnectionManager,
-         ISynchronizationTableSchemaProvider tableSchemaProvider
-      );     
-      
-      List<T1> GestprojectEntities { get; set; }      
-      void GetAndStoreGestprojectEntities
-      (
-         IGestprojectConnectionManager gestprojectConnectionManager,
-         ISynchronizationTableSchemaProvider tableSchemaProvider
-      );
+      //void ManageSynchronizationTableStatus
+      //(
+      //   IGestprojectConnectionManager gestprojectConnectionManager,
+      //   ISynchronizationTableSchemaProvider tableSchemaProvider
+      //);     
 
-      List<T2> Sage50Entities { get; set; }
-      void GetAndStoreSage50Entities
-      (
-         ISynchronizationTableSchemaProvider tableSchemaProvider
-      );
+      //List<T1> GestprojectEntities { get; set; }      
+      //void GetAndStoreGestprojectEntities
+      //(
+      //   IGestprojectConnectionManager gestprojectConnectionManager,
+      //   ISynchronizationTableSchemaProvider tableSchemaProvider
+      //);
 
-      List<T1> ProcessedGestprojectEntities { get; set; }
-      void ProccessAndStoreGestprojectEntities
-      (
-         IGestprojectConnectionManager gestprojectConnectionManager,
-         ISage50ConnectionManager sage50ConnectionManager,
-         ISynchronizationTableSchemaProvider tableSchemaProvider,
-         List<T1> GestprojectEntities,
-         List<T2> Sage50Entities
-      );
+      //List<T2> Sage50Entities { get; set; }
+      //void GetAndStoreSage50Entities
+      //(
+      //   ISynchronizationTableSchemaProvider tableSchemaProvider
+      //);
 
-      System.Data.DataTable DataTable { get; set; }   
+      //List<T1> ProcessedGestprojectEntities { get; set; }
+      //void ProccessAndStoreGestprojectEntities
+      //(
+      //   IGestprojectConnectionManager gestprojectConnectionManager,
+      //   ISage50ConnectionManager sage50ConnectionManager,
+      //   ISynchronizationTableSchemaProvider tableSchemaProvider,
+      //   List<T1> GestprojectEntities,
+      //   List<T2> Sage50Entities
+      //);
+
+      //System.Data.DataTable DataTable { get; set; }   
 
    }
 }

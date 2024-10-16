@@ -1,0 +1,6 @@
+- Registrar una factura recibida en Gestproject
+- Registrar los detalles de dicha factura en Gestproject
+
+
+
+1. Consultar a Walter sobre cómo obtener el código de obra o guid_id de una obra desde un documento de factura recibida. Revisamos la base de datos de facturas, y notamos que el dato está en el albarán de la factura, no obstante cuando instanciamos las clases "ewDocCompraALBARAN" y "ewDocCompraFACTURA", no vemos la propiedad de obra al menos por ahora.

@@ -21,15 +21,18 @@ namespace SincronizadorGPS50
          {
             string sqlString1DatabaseName = DB.SQLDatabase("gestion","c_factucom").ToString();
           
-            string sqlString1 = $@"SELECT 
-               GUID_ID,
-               EMPRESA,
-               NUMERO,
-               CREATED,
-               PROVEEDOR,
-               IMPORTE,
-               TOTALDOC
-            FROM {sqlString1DatabaseName};";
+            string sqlString1 = $@"
+               SELECT 
+                  GUID_ID
+                  ,EMPRESA
+                  ,NUMERO
+                  ,CREATED
+                  ,PROVEEDOR
+                  ,IMPORTE
+                  ,TOTALDOC
+               FROM
+                  {DB.SQLDatabase("gestion","c_factucom")}
+            ;";
 
             //MessageBox.Show(sqlString1);
 

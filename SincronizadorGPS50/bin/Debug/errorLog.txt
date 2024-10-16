@@ -16257,3 +16257,1841 @@ Incorrect syntax near ')'.
 
 
 --------------------------------------------------
+Date: 2024-10-10 11:30:40.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.AppendSynchronizationTableDataToEntity:
+
+Invalid column name 'S50_GUID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'S50_GUID'.
+
+
+--------------------------------------------------
+Date: 2024-10-10 11:31:54.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.AppendSynchronizationTableDataToEntity:
+
+Invalid column name 'S50_GUID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'S50_GUID'.
+
+
+--------------------------------------------------
+Date: 2024-10-10 13:53:04.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.WasEntityRegistered:
+
+The parameterized query '(@ID nvarchar(4000))
+               SELECT 
+                  ' expects the parameter '@ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@ID nvarchar(4000))
+               SELECT 
+                  ' expects the parameter '@ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-10 13:54:38.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.WasEntityRegistered:
+
+The parameterized query '(@ID nvarchar(4000))
+               SELECT 
+                  ' expects the parameter '@ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@ID nvarchar(4000))
+               SELECT 
+                  ' expects the parameter '@ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:08:48.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:10:29.
+Location: At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:11:02.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:11:52.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:11:57.
+Location: At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:11:59.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:14:37.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:15:42.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:16:25.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:16:58.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+No se puede implementar el método o la operación..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede implementar el método o la operación.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:20:11.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.RegisterEntity:
+
+Incorrect syntax near the keyword 'INTO'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near the keyword 'INTO'.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:21:24.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.RegisterEntity:
+
+Invalid column name 'NOMBRE_COMPLETO'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'NOMBRE_COMPLETO'.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:24:43.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.RegisterEntity:
+
+Violation of PRIMARY KEY constraint 'PK__PARTICIPANTE__2AD55B43'. Cannot insert duplicate key in object 'dbo.PARTICIPANTE'. The duplicate key value is (-1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__PARTICIPANTE__2AD55B43'. Cannot insert duplicate key in object 'dbo.PARTICIPANTE'. The duplicate key value is (-1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:25:57.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.RegisterEntity:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:26:37.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.RegisterEntity:
+
+Cannot insert the value NULL into column 'PAR_ID', table 'GESTPROJECT2020.dbo.PARTICIPANTE'; column does not allow nulls. INSERT fails.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Cannot insert the value NULL into column 'PAR_ID', table 'GESTPROJECT2020.dbo.PARTICIPANTE'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:32:11.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.ProcessEntityList:
+
+La conexión no se cerró. El estado actual de la conexión es abierta..
+Short Description: Failed to end the methods execution successfully..
+Message: La conexión no se cerró. El estado actual de la conexión es abierta.
+
+
+--------------------------------------------------
+Date: 2024-10-10 14:33:50.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.RegisterEntity:
+
+Violation of PRIMARY KEY constraint 'PK__PARTICIPANTE__2AD55B43'. Cannot insert duplicate key in object 'dbo.PARTICIPANTE'. The duplicate key value is (1346).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__PARTICIPANTE__2AD55B43'. Cannot insert duplicate key in object 'dbo.PARTICIPANTE'. The duplicate key value is (1346).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-10 18:18:59.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.UpdateEntity:
+
+The parameterized query '(@ID nvarchar(4000),@SYNC_STATUS nvarchar(12),@S50_CODE nvarchar' expects the parameter '@ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@ID nvarchar(4000),@SYNC_STATUS nvarchar(12),@S50_CODE nvarchar' expects the parameter '@ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-10 18:23:14.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type..
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type.
+
+
+--------------------------------------------------
+Date: 2024-10-10 18:23:35.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.AppendSynchronizationTableDataToEntity:
+
+At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type.
+
+
+--------------------------------------------------
+Date: 2024-10-10 18:25:19.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type: 1.
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type: 1
+
+
+--------------------------------------------------
+Date: 2024-10-10 18:30:04.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type at: ID.
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type at: ID
+
+
+--------------------------------------------------
+Date: 2024-10-10 18:31:09.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type at: ID. It's value as: 1.
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type at: ID. It's value as: 1
+
+
+--------------------------------------------------
+Date: 2024-10-11 03:48:58.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type at: ID. It's value was: 1.
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type at: ID. It's value was: 1
+
+
+--------------------------------------------------
+Date: 2024-10-11 03:51:21.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type at: ID. It's value was: 1.
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type at: ID. It's value was: 1
+
+
+--------------------------------------------------
+Date: 2024-10-11 03:53:34.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type at: ID. It's value was: 1.
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type at: ID. It's value was: 1
+
+
+--------------------------------------------------
+Date: 2024-10-11 03:56:13.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type at: SYNC_STATUS. It's value was: .
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type at: SYNC_STATUS. It's value was: 
+
+
+--------------------------------------------------
+Date: 2024-10-11 03:58:02.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type at: SYNC_STATUS. It's value was: .
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type at: SYNC_STATUS. It's value was: 
+
+
+--------------------------------------------------
+Date: 2024-10-11 04:02:45.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type at: ID. It's value was: 1.
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type at: ID. It's value was: 1
+
+
+--------------------------------------------------
+Date: 2024-10-11 04:03:57.
+Location: At:
+
+SincronizadorGPS50
+.GestprojectProvidersProcessor
+.FilterSelectQueryResult:
+
+You supplied an invalid type at: ID. It's value was: 1.
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type at: ID. It's value was: 1
+
+
+--------------------------------------------------
+Date: 2024-10-11 05:55:49.
+Location: At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.DeleteEntityFromSynchronizationTable:
+
+The parameterized query '(@ID nvarchar(4000))
+               DELETE FROM
+              ' expects the parameter '@ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@ID nvarchar(4000))
+               DELETE FROM
+              ' expects the parameter '@ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-11 10:52:23.
+Location: At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.GetSelectedGestprojectEntities:
+
+Incorrect syntax near '@IDS'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near '@IDS'.
+
+
+--------------------------------------------------
+Date: 2024-10-14 05:44:55.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSageEntityIntoGestprojectTaxTable:
+
+Invalid column name 'NOMBRE_COMPLETO'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'NOMBRE_COMPLETO'.
+
+
+--------------------------------------------------
+Date: 2024-10-14 05:46:05.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._AppendGestprojectTaxTableIdToSynchronizationTable:
+
+Must declare the scalar variable "@PAR_ID"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@PAR_ID".
+
+
+--------------------------------------------------
+Date: 2024-10-14 05:53:00.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-14 05:54:23.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-14 05:55:08.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._CreateEntities:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-14 05:58:13.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-14 05:58:54.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._CreateEntities:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-14 05:58:56.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._CreateEntities:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._CreateEntities:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-14 05:58:57.
+Location: At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._CreateEntities:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._CreateEntities:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-14 05:58:58.
+Location: At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._CreateEntities:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._CreateEntities:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-14 05:58:59.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._CreateEntities:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.ExecuteSyncronizationWorkflow:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+.Execute:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._CreateEntities:
+
+At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-14 07:45:57.
+Location: At:
+
+SincronizadorGPS50
+.UnexsistingProvidersSynchronizationWorkflow
+._InsertSynchronizationTableEntityIntoGestprojectEntityTable:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__PAR_TPA__TPA_ID__729BEF18". The conflict occurred in database "GESTPROJECT2020", table "dbo.TIPO_PARTICIPANTE", column 'TPA_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-14 08:22:09.
+Location: At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.GetSelectedGestprojectEntities:
+
+Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROVIDERS'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROVIDERS'.
+
+
+--------------------------------------------------
+Date: 2024-10-14 08:22:13.
+Location: At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.GetSelectedGestprojectEntities:
+
+Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROVIDERS'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.GetSelectedGestprojectEntities:
+
+Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROVIDERS'.
+
+
+--------------------------------------------------
+Date: 2024-10-14 08:22:16.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.GetSelectedGestprojectEntities:
+
+Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROVIDERS'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.Synchronize:
+
+At:
+
+SincronizadorGPS50
+.ProvidersSynchronizer
+.GetSelectedGestprojectEntities:
+
+Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROVIDERS'.
+
+
+--------------------------------------------------
+Date: 2024-10-14 12:59:21.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-14 12:59:28.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-14 12:59:29.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-14 12:59:33.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-14 12:59:41.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-14 12:59:42.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-14 13:10:10.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-14 13:12:30.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-14 14:28:54.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-14 14:29:23.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-15 05:05:53.
+Location: At:
+
+SincronizadorGPS50
+.FilterSelectQueryResult
+.Filter:
+
+You supplied an invalid type at: COS_ID. It's value was: -1.
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type at: COS_ID. It's value was: -1
+
+
+--------------------------------------------------
+Date: 2024-10-15 05:10:59.
+Location: At:
+
+SincronizadorGPS50
+.FilterSelectQueryResult
+.Filter:
+
+You supplied an invalid type at: COS_ID. It's value was: -1.
+Short Description: Failed to end the methods execution successfully..
+Message: You supplied an invalid type at: COS_ID. It's value was: -1
+
+
+--------------------------------------------------
+Date: 2024-10-15 05:11:56.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.InsertEntityIntoGestprojectSubaccountableAccountTable:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-15 05:14:04.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.InsertEntityIntoGestprojectSubaccountableAccountTable:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-15 05:18:02.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.InsertEntityIntoGestprojectSubaccountableAccountTable:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-15 05:18:19.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.CreateNonexistentEntity:
+
+At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.InsertEntityIntoGestprojectSubaccountableAccountTable:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.InsertEntityIntoGestprojectSubaccountableAccountTable:
+
+No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-15 05:19:42.
+Location: At:
+
+SincronizadorGPS50
+.SubaccountableAccountsSynchronizationWorkflow
+.InsertEntityIntoGestprojectSubaccountableAccountTable:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-15 05:53:46.
+Location: At:
+
+SincronizadorGPS50
+.TaxesSynchronizer
+.StoreGestprojectEntityList:
+
+No se puede convertir implícitamente el tipo 'string' en 'decimal'..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir implícitamente el tipo 'string' en 'decimal'.
+
+
+--------------------------------------------------
+Date: 2024-10-15 11:04:47.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-15 11:23:27.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetAndAddEntityDetails:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-15 11:44:25.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-15 11:44:28.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-15 11:44:31.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-15 11:44:32.
+Location: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-15 11:44:33.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-15 11:44:34.
+Location: At:
+
+SincronizadorGPS50
+.DeadEndException
+..ctor:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizationManager
+.Launch:
+
+At:
+
+SincronizadorGPS50
+.UIFactory`2
+.GenerateTabPage:
+
+At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------
+Date: 2024-10-15 16:28:13.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetAndAddEntityDetails:
+
+El recuento de parámetros no coincide..
+Short Description: Failed to end the methods execution successfully..
+Message: El recuento de parámetros no coincide.
+
+
+--------------------------------------------------
+Date: 2024-10-15 16:30:48.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetAndAddEntityDetails:
+
+El recuento de parámetros no coincide..
+Short Description: Failed to end the methods execution successfully..
+Message: El recuento de parámetros no coincide.
+
+
+--------------------------------------------------
+Date: 2024-10-15 16:31:22.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetAndAddEntityDetails:
+
+El recuento de parámetros no coincide..
+Short Description: Failed to end the methods execution successfully..
+Message: El recuento de parámetros no coincide.
+
+
+--------------------------------------------------
+Date: 2024-10-15 16:52:17.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetAndAddEntityDetails:
+
+No hay ninguna fila en la posición 0..
+Short Description: Failed to end the methods execution successfully..
+Message: No hay ninguna fila en la posición 0.
+
+
+--------------------------------------------------
+Date: 2024-10-15 16:52:21.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetSageReceivedInvoiceCodesAndProvidersCodes:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetAndAddEntityDetails:
+
+No hay ninguna fila en la posición 0..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetAndAddEntityDetails:
+
+No hay ninguna fila en la posición 0.
+
+
+--------------------------------------------------
+Date: 2024-10-15 16:52:23.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetAndStoreGestprojectEntities:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetSageReceivedInvoiceCodesAndProvidersCodes:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetAndAddEntityDetails:
+
+No hay ninguna fila en la posición 0..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetSageReceivedInvoiceCodesAndProvidersCodes:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetAndAddEntityDetails:
+
+No hay ninguna fila en la posición 0.
+
+
+--------------------------------------------------
+Date: 2024-10-15 16:55:25.
+Location: At:
+
+SincronizadorGPS50
+.GetSage50ReceivedBills
+..ctor:
+
+No hay ninguna fila en la posición 3..
+Short Description: Failed to end the methods execution successfully..
+Message: No hay ninguna fila en la posición 3.
+
+
+--------------------------------------------------

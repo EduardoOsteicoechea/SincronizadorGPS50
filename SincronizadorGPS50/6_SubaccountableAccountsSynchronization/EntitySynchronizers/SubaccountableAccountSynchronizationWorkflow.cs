@@ -401,7 +401,8 @@ namespace SincronizadorGPS50
                {
                   while(reader.Read())
                   {
-                     int maxIdValue = Convert.ToInt32(reader.GetValue(0) ?? 1);
+                     int maxIdValue = FilterSelectQueryResult.Filter(typeof(int), reader.GetValue(0), "COS_ID", 1);
+                     //int maxIdValue = Convert.ToInt32(reader.GetValue(0) ?? 1);
                      entityId = ++maxIdValue;
                   };
                };
