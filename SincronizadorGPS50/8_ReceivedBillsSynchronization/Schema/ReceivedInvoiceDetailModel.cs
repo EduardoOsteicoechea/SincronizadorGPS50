@@ -29,14 +29,4 @@ namespace SincronizadorGPS50
       public decimal CurrencyImport { get; set; } = 0;
       public string GuidId { get; set; } = ""; // DETALLE_FACTURA_PROVEEDOR -> DFP_ID
    }
-   
-   public class GestprojectReceivedInvoiceDetailModel
-   {
-      public string FCP_ID { get; set; } = ""; // Obtener el id de la factura en GP
-      public string DFP_CONCEPTO { get; set; } = ""; // Definition
-      public string DFP_UNIDADES { get; set; } = ""; // Units
-      public string DFP_PRECIO_UNIDAD { get; set; } = ""; // Price
-      public string DFP_SUBTOTAL { get; set; } = ""; // Import
-      public decimal DFP_ID { get; set; } = 0; // Lo asigna GP automático
-   }
 }                     

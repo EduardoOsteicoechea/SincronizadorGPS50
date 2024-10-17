@@ -385,6 +385,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="0_CompaniesSynchronization\1_CompaniesDataTableManager.cs" />
+    <Compile Include="0_CompaniesSynchronization\2_CompaniesSynchronizer.cs" />
+    <Compile Include="0_CompaniesSynchronization\Schema\SincronizadorGP50CompanyModel.cs" />
+    <Compile Include="0_CompaniesSynchronization\Schema\GestprojectCompanyModel.cs" />
+    <Compile Include="0_CompaniesSynchronization\0_CompaniesSynchronizationManager.cs" />
     <Compile Include="3_ProvidersSynchronization\EntitySynchronizers\UnexsistingProvidersSynchronizationWorkflow - Copy.cs" />
     <Compile Include="3_ProvidersSynchronization\_prev\3_ProvidersSynchronizer - Copy 20241011.cs" />
     <Compile Include="3_ProvidersSynchronization\_prev\1_ProvidersDataTableManager - Copy.cs" />
@@ -427,8 +432,15 @@
     <Compile Include="6_SubaccountableAccountsSynchronization\_SubaccountableAccountsSynchronizationManager.cs" />
     <Compile Include="7_IssuedBillsSynchronization\EntitySynchronizers\CreateSalesAlbaran.cs" />
     <Compile Include="7_IssuedBillsSynchronization\_prev\_IssuedBillsSynchronizer - Copy.cs" />
-    <Compile Include="8_ReceivedBillsSynchronization\1_ReceivedBillsDataTableManager - Copy %282%29.cs" />
-    <Compile Include="8_ReceivedBillsSynchronization\1_ReceivedBillsDataTableManager - Copy.cs" />
+    <Compile Include="8_ReceivedBillsSynchronization\Schema\SincronizadorGP50ReceivedInvoiceModel.cs" />
+    <Compile Include="8_ReceivedBillsSynchronization\Schema\ReceivedBillsSynchronizationTableSchemaProvider.cs" />
+    <Compile Include="8_ReceivedBillsSynchronization\Schema\ReceivedBillsDetailsSynchronizationTableSchemaProvider.cs" />
+    <Compile Include="8_ReceivedBillsSynchronization\Schema\SincronizadorGP50ReceivedInvoiceDetailModel.cs" />
+    <Compile Include="0_CompaniesSynchronization\Schema\SageCompanyModel.cs" />
+    <Compile Include="8_ReceivedBillsSynchronization\_prev\1_ReceivedBillsDataTableManager - Copy %282%29.cs" />
+    <Compile Include="8_ReceivedBillsSynchronization\_prev\1_ReceivedBillsDataTableManager - 20241016.cs" />
+    <Compile Include="8_ReceivedBillsSynchronization\_prev\1_ReceivedBillsDataTableManager - 20241017.cs" />
+    <Compile Include="8_ReceivedBillsSynchronization\_prev\1_ReceivedBillsDataTableManager - Copy.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\Schema\ReceivedInvoiceDetailModel.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\Schema\ReceivedInvoiceModel.cs" />
     <Compile Include="ConfirmationDialog.cs" />
@@ -481,7 +493,7 @@
     <Compile Include="8_ReceivedBillsSynchronization\EntityValidators\ValidateReceivedBillSyncronizationStatus.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\EntityValidators\WasReceivedBillRegistered.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\Schema\GestprojectReceivedBillModel.cs" />
-    <Compile Include="8_ReceivedBillsSynchronization\Schema\ReceivedBillsSynchronizationTableSchemaProvider.cs" />
+    <Compile Include="0_CompaniesSynchronization\Schema\CompaniesSynchronizationTableSchemaProvider.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\Schema\Sage50ReceivedBillModel.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\_ReceivedBillsSynchronizationManager.cs" />
     <Compile Include="7_IssuedBillsSynchronization\1_IssuedBillsDataTableManager.cs" />

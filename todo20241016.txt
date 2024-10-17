@@ -3,4 +3,6 @@
 
 
 
-1. Consultar a Walter sobre cómo obtener el código de obra o guid_id de una obra desde un documento de factura recibida. Revisamos la base de datos de facturas, y notamos que el dato está en el albarán de la factura, no obstante cuando instanciamos las clases "ewDocCompraALBARAN" y "ewDocCompraFACTURA", no vemos la propiedad de obra al menos por ahora.
+1. ¿Cuál es la clase de negocio que me permite obtener todos los registros de la tabla c_factucom?
+
+2. ¿Cómo obtener el valor de la suma de los ivas de una factura recibida?

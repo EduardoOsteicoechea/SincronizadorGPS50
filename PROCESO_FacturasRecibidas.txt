@@ -1,0 +1,87 @@
+Diseño del proceso para extraer de Sage 50, las facturas recibidas junto con sus detalles, para luego procesar y estructurar sus datos, con la finalidad de registrar tanto los datos de las facturas como de sus detalles en las tablas correspondientes de Gestproject.
+
+Eduardo Osteicoechea, 17 de Octubre del 2024.
+
+-----------------------------------------------------------
+
+[Objetivos finales]
+
+Registrar los datos procesados de las facturas recibidas de Sage50 en la tabla "FACTURA_PROVEEDOR".
+
+Registrar los datos procesados de los detalles de cada factura recibida en la tabla "DETALLE_FACTURA_PROVEEDOR", vinculando cada detalle a su factura correspondiente.
+
+---------------------------------------------------------
+[4 Pasos globales del proceso]
+---------------------------------------------------------
+
+1.  Obtener datos de Sage50: Extraer de Sage 50, y estructurar en c#, todos los datos requeridos para completar la operación.
+
+	- Obtener Facturas (sage.ew.docscompra.ewDocCompraFACTURA).
+	- Obtener Detalles de cada factura (sage.ew.docscompra.ewDocCompraLinFACTURA).
+	- Obtener Guid de proveedor de cada factura (sage.ew.docscompra.Proveedor._Load()).
+	- Obtener Guid de empresa de cada factura (c_factucom.empresa -> tabla de sincronización de empresas). // Revisar si puede hacerse con clase de negocio de sage.
+	- Obtener Guid de proyecto de cada factura (sage.ew.cliente.Obra._Load()).
+
+	- Generar una lista de "modelos enriquecidos de datos de factura de Sage50" (una única entidad que contiene y vincula los datos mencionados anteriormente) que podrá ser iterada para procesar y generar los datos requeridos para registrar y sincronizar facturas con sus detalles.
+
+------------------------
+
+2. Procesar datos de Sage 50: Formatear o procesar los datos extraídos de Sage50 para generar todos los datos requeridos por Gestproject.
+
+	- Datos a transferir bajo formateado simple:
+		Todas las propiedades de:
+			- Modelo base de Factura recibida de Gestproject
+			- Modelo base de Detalle de Factura Recibida
+
+	- Datos a transferir bajo procesamiento y complementado:
+		Todas las propiedades de:
+			- Modelo de procesamiento de Factura recibida de Gestproject
+				- FCP_SUBCTA_CONTABLE (factura._Lineas.FirstOrDefault()._Cuenta).
+				- FCP_VALOR_IVA (Suma de los "_ImpIva" de la consulta SQL a "c_factucom.IVA").
+				- FCP_IVA (Primer campo de "_PrcIva" de la consulta SQL a "c_factucom.IVA").
+				- Guid de factura (GUID_ID de la consulta SQL a "c_factucom").
+				- PAR_PRO_ID (Id de proveedor en Gestproject).
+				- PAR_DAO_ID (Id de empresa en Gestproject).
+				- PRY_ID (Id de proyecto en Gestproject).
+			- Modelo de procesamiento de Detalles de Factura recibida de Gestproject
+				- FCP_ID (dejar nulo hasta la transferencia de datos).
+				- GUID_ID del detalle de factura de la consulta SQL a "d_albcom".
+				- PRY_ID (Determinar si el proyecto es nulo).
+				- DFP_ESTRUCTURAL (Determinar si el detalle es estructural).
+
+	- Generar una lista de "modelos enriquecidos de factura" (que contiene los detalles, proveedor, obra y empresa), empleando los 4 modelos descritos anteriormente en este segmento (cada modelo enriquecido de factura tiene (aunque carentes de su estructura final) todos los datos requeridos por Gestproject).
+
+-------------------------
+
+3. Estructurar de datos procesados: Organizar todos los datos procesados en un modelo único y final que será registrado en su tabla de sincronización correspondiente.
+
+	- Generar modelo de Factura recibida del SincronizadorGPS50
+		- Transferir los valores correspondientes del Modelo Enriquecido de Factura
+
+	- Generar modelo de Detalle de Factura recibida del SincronizadorGPS50
+		- Transferir los valores correspondientes del Modelo Enriquecido de Factura
+
+-------------------------
+
+4. Registrar datos estructurados en tabla de sincronización: Validando si la entidad fue registrada anteriormente, registrar los datos estructurados.
+
+		- Registrar modelo de Factura recibida del SincronizadorGPS50 en tabla de sincronización correspondiente.
+		- Registrar modelo de Detalle de Factura recibida del SincronizadorGPS50 en tabla de sincronización correspondiente.
+
+
+-------------------------
+
+5. Registrar datos de tabla de sincronización en tablas correspondientes de Gestproject:
+
+
+
+
+
+
+
+
+
+
+
+
+

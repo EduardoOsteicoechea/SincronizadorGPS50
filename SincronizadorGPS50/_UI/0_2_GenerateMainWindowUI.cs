@@ -32,6 +32,7 @@ namespace SincronizadorGPS50
             MainWindowUIHolder.MainTabControl.SelectedTab = MainWindowUIHolder.Sage50ConnectionTab;
 
             MainWindowUIHolder.Sage50ConnectionTab = MainWindowUIHolder.MainTabControl.Tabs.Add("Sage50ConnectionTab", "Conexión con Sage50");
+            MainWindowUIHolder.CompaniesTab = MainWindowUIHolder.MainTabControl.Tabs.Add("CompaniesTab", "Empresas");
             MainWindowUIHolder.CustomersTab = MainWindowUIHolder.MainTabControl.Tabs.Add("CustomersTab", "Clientes");
             MainWindowUIHolder.ProvidersTab = MainWindowUIHolder.MainTabControl.Tabs.Add("ProvidersTab", "Proveedores");
             MainWindowUIHolder.ProjectsTab = MainWindowUIHolder.MainTabControl.Tabs.Add("ProjecsTab", "Proyectos");

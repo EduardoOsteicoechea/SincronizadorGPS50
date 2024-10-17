@@ -18095,3 +18095,232 @@ Message: No hay ninguna fila en la posición 3.
 
 
 --------------------------------------------------
+Date: 2024-10-16 15:50:26.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetSageReceivedInvoiceCodesAndProvidersCodes:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-17 18:27:08.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-17 18:27:18.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.LinkEndpointsModels:
+
+At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-17 18:29:19.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-17 18:29:24.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.LinkEndpointsModels:
+
+At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-17 18:32:55.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-17 18:32:58.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.LinkEndpointsModels:
+
+At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-17 18:34:31.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-17 18:35:06.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-17 18:35:09.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.LinkEndpointsModels:
+
+At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-17 19:07:59.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetGestprojectCompanies:
+
+Índice fuera de los límites de la matriz..
+Short Description: Failed to end the methods execution successfully..
+Message: Índice fuera de los límites de la matriz.
+
+
+--------------------------------------------------
+Date: 2024-10-17 19:10:35.
+Location: At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+La conexión no se cerró. El estado actual de la conexión es abierta..
+Short Description: Failed to end the methods execution successfully..
+Message: La conexión no se cerró. El estado actual de la conexión es abierta.
+
+
+--------------------------------------------------
+Date: 2024-10-17 19:10:38.
+Location: At:
+
+SincronizadorGPS50
+.SynchronizationTabGenerator`2
+.Build:
+
+At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+La conexión no se cerró. El estado actual de la conexión es abierta..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ProvidersDataTableManager
+.GenerateDataTable:
+
+La conexión no se cerró. El estado actual de la conexión es abierta.
+
+
+--------------------------------------------------

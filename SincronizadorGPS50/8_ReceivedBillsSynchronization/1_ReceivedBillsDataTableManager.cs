@@ -2,9 +2,12 @@
 using Infragistics.Win.UltraWinGrid;
 using Infragistics.Win.UltraWinSchedule;
 using sage.ew.articulo;
+using sage.ew.cliente;
 using sage.ew.contabilidad;
 using sage.ew.db;
 using sage.ew.docscompra;
+using sage.ew.docscompra.Forms;
+using sage.ew.docscompra.UserControls;
 using sage.ew.empresa;
 using sage.ew.interficies;
 using sage.ew.listados.Listados;
@@ -16,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -49,12 +53,14 @@ namespace SincronizadorGPS50
             SageConnectionManager = sage50ConnectionManager;
             TableSchema = tableSchemaProvider;
 
-            ManageSynchronizationTableStatus();
-            GetAndStoreGestprojectEntities();
-            //GetAndStoreSage50Entities();
-            //ProccessAndStoreGestprojectEntities();
-            CreateAndDefineDataSource();
-            PaintEntitiesOnDataSource();
+            ManageReceivedBillsSynchronizationTableStatus(TableSchema);
+            ManageReceivedBillsDetailsSynchronizationTableStatus(new ReceivedBillsDetailsSynchronizationTableSchemaProvider());
+
+            //GetAndStoreGestprojectEntities();
+            ////GetAndStoreSage50Entities();
+            ////ProccessAndStoreGestprojectEntities();
+            //CreateAndDefineDataSource();
+            //PaintEntitiesOnDataSource();
 
             return DataTable;
          }
@@ -69,21 +75,64 @@ namespace SincronizadorGPS50
          };
       }
 
-      public void ManageSynchronizationTableStatus()
+      public void ManageReceivedBillsSynchronizationTableStatus(ISynchronizationTableSchemaProvider tableSchema)
       {
-         ISynchronizationDatabaseTableManager entitySyncronizationTableStatusManager = new EntitySyncronizationTableStatusManager();
-
-         bool tableExists = entitySyncronizationTableStatusManager.TableExists(
-            GestprojectConnectionManager.GestprojectSqlConnection,
-            TableSchema.TableName
-         );
-
-         if(tableExists == false)
+         try
          {
-            entitySyncronizationTableStatusManager.CreateTable
-            (
+            ISynchronizationDatabaseTableManager entitySyncronizationTableStatusManager = new EntitySyncronizationTableStatusManager();
+
+            bool tableExists = entitySyncronizationTableStatusManager.TableExists(
                GestprojectConnectionManager.GestprojectSqlConnection,
-               TableSchema
+               tableSchema.TableName
+            );
+
+            if(tableExists == false)
+            {
+               entitySyncronizationTableStatusManager.CreateTable
+               (
+                  GestprojectConnectionManager.GestprojectSqlConnection,
+                  tableSchema
+               );
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
+      }
+
+      public void ManageReceivedBillsDetailsSynchronizationTableStatus(ISynchronizationTableSchemaProvider tableSchema)
+      {         
+         try
+         {
+            ISynchronizationDatabaseTableManager entitySyncronizationTableStatusManager = new EntitySyncronizationTableStatusManager();
+
+            bool tableExists = entitySyncronizationTableStatusManager.TableExists(
+               GestprojectConnectionManager.GestprojectSqlConnection,
+               tableSchema.TableName
+            );
+
+            if(tableExists == false)
+            {
+               entitySyncronizationTableStatusManager.CreateTable
+               (
+                  GestprojectConnectionManager.GestprojectSqlConnection,
+                  tableSchema
+               );
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
             );
          };
       }
@@ -92,13 +141,13 @@ namespace SincronizadorGPS50
       {
          try
          {
-            List<ReceivedInvoiceModel> receivedInvoiceCodesAndProvidersCodes = GetSageReceivedInvoiceCodesAndProvidersCodes();
+            List<SageReceivedInvoiceModel> receivedInvoiceCodesAndProvidersCodes = GetSageReceivedInvoiceCodesAndProvidersCodes();
 
-            new VisualizePropertiesAndValues<ReceivedInvoiceModel>(
-              MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-              "receivedInvoiceCodesAndProvidersCodes",
-              receivedInvoiceCodesAndProvidersCodes
-            );
+            //new VisualizePropertiesAndValues<SageReceivedInvoiceModel>(
+            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //  "receivedInvoiceCodesAndProvidersCodes",
+            //  receivedInvoiceCodesAndProvidersCodes
+            //);
 
             GestprojectEntities = GenerateGestprojectEntitiesFromReceivedInvoiceModels(receivedInvoiceCodesAndProvidersCodes);
          }
@@ -113,11 +162,11 @@ namespace SincronizadorGPS50
          };
       }
 
-      public List<ReceivedInvoiceModel> GetSageReceivedInvoiceCodesAndProvidersCodes()
+      public List<SageReceivedInvoiceModel> GetSageReceivedInvoiceCodesAndProvidersCodes()
       {
          try
          {
-            List<ReceivedInvoiceModel> receivedInvoiceCodesAndProvidersCodes = new List<ReceivedInvoiceModel>();
+            List<SageReceivedInvoiceModel> receivedInvoiceCodesAndProvidersCodes = new List<SageReceivedInvoiceModel>();
 
             string sqlString = $@"
             SELECT 
@@ -139,7 +188,7 @@ namespace SincronizadorGPS50
                {
                   DataRow row = enentiesDataTable.Rows[i];
 
-                  ReceivedInvoiceModel entity = new ReceivedInvoiceModel();
+                  SageReceivedInvoiceModel entity = new SageReceivedInvoiceModel();
 
                   entity.CompanyNumber = row.ItemArray[0].ToString().Trim();
                   entity.Number = row.ItemArray[1].ToString().Trim();
@@ -167,145 +216,139 @@ namespace SincronizadorGPS50
 
       public void GetAndAddEntityDetails
       (
-         ReceivedInvoiceModel entity
+         SageReceivedInvoiceModel entity
       )
       {
          try
          {
+            //////////////////////////////////
             // Use the instance that created the connection
+            //////////////////////////////////
 
             ConnectionActions.Sage50ConnectionManager._LoadGlobalVariables();
             ConnectionActions.Sage50ConnectionManager._LoadEnvironmentCompany();
 
-            //ewDocCompraALBARAN albaranDeCompra = new ewDocCompraALBARAN();
-            //ewDocCompraCabALBARAN cabeceraAlbaran = new ewDocCompraCabALBARAN();
-
-            //cabeceraAlbaran.
-
-            //albaranDeCompra._Cabecera._Load
-            ////albaranDeCompra.obra
-
-            //sage.ew.cliente.Obra obra = new sage.ew.cliente.Obra();
-            //obra.al
-
-            //ewDocCompraCabFACTURA cabeceraFactura = new ewDocCompraCabFACTURA();
-            ////cabeceraFactura.prov
-
-            //ew
-
-
-
             ewDocCompraFACTURA purchaseInvoice = new ewDocCompraFACTURA();
-            //if(
-            //   loFraComp._Existe(
-            //   entity.CompanyNumber,  
-            //   entity.Number, 
-            //   entity.ProviderCode
-            //   )
-            //)
-            //{
             purchaseInvoice._Load(
                entity.CompanyNumber,
                entity.Number,
                entity.ProviderCode
             );
 
-            new VisualizePropertiesAndValues<ewDocCompraCabFACTURA>(
-              MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-              "purchaseInvoice._Cabecera",
-              purchaseInvoice._Cabecera
-            );
+            //////////////////////////////////
+            // Generate the received invoice model to be synchronized (or transferred)
+            //////////////////////////////////
 
-            new VisualizePropertiesAndValues<ewDocCompraPieFACTURA>(
-              MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-              "purchaseInvoice._Pie",
-              purchaseInvoice._Pie
-            );
+            SincronizadorGP50ReceivedInvoiceModel gestprojectReceivedBillModel = new SincronizadorGP50ReceivedInvoiceModel();
+            //gestprojectReceivedBillModel.FCP_ID = ;
+            
+            sage.ew.cliente.Obra obra = new sage.ew.cliente.Obra();
+            obra._Codigo = purchaseInvoice._Cabecera._Obra;
+            obra._Load();
 
-            //sage.ew.docscompra.Proveedor currentReceivedInvoiceProvider = new Proveedor();
-            //currentReceivedInvoiceProvider._Codigo = entity.ProviderCode;
-            //currentReceivedInvoiceProvider._Load();
-            //string providerGuidId = currentReceivedInvoiceProvider._Guid_Id;
+            //gestprojectReceivedBillModel.PAR_DAO_ID = GetSynchronizationTableProjectIdByGuidId(obra._Guid_Id); /////////!!!!!!!!!!!!ERROR esta es la empresa, creo que ID de empresa
+            gestprojectReceivedBillModel.FCP_NUM_FACTURA = purchaseInvoice._Cabecera._Factura;
+            gestprojectReceivedBillModel.FCP_FECHA = purchaseInvoice._Cabecera._FechaFac;
+            //gestprojectReceivedBillModel.PAR_PRO_ID =  ; purchaseInvoice._Cabecera._Proveedor -> Obtener PAR_ID de la tabla de sincronización de proveedores usando éste valor (subctacontable)
+            gestprojectReceivedBillModel.FCP_SUBCTA_CONTABLE = purchaseInvoice._Lineas.FirstOrDefault()._Cuenta;
+            gestprojectReceivedBillModel.FCP_BASE_IMPONIBLE = purchaseInvoice._Pie._TotalBase;
+            //gestprojectReceivedBillModel.FCP_VALOR_IVA = ; // De la consulta a la tabla c_factucom, en el campo IVA, sumar los valores del campo "_ImpIva" de todos los elementos
+            //gestprojectReceivedBillModel.FCP_IVA = ; // De la consulta a la tabla c_factucom, en el campo IVA, seleccionar el campo "_PrcIva" del primer objeto del array
+            gestprojectReceivedBillModel.FCP_VALOR_IRPF = purchaseInvoice._Pie._RetencionDoc;
+            gestprojectReceivedBillModel.FCP_IRPF = purchaseInvoice._Pie._RetencionDocPorcen;
+            gestprojectReceivedBillModel.FCP_TOTAL_FACTURA = purchaseInvoice._Pie._TotalDocumento;
+            gestprojectReceivedBillModel.FCP_OBSERVACIONES = purchaseInvoice._Cabecera._Observacio;
+            //gestprojectReceivedBillModel.PROYECTO = purchaseInvoice._Cabecera._Obra; ?? Name or id
+            //gestprojectReceivedBillModel.TIPO = ; // Excluded in this version
+            gestprojectReceivedBillModel.S50_GUID_ID = entity.GuidId;
 
-            List<ReceivedInvoiceDetailModel> invoiceDetailList = new List<ReceivedInvoiceDetailModel>();
+            //////////////////////////////////
+            // Load the invoice's provider
+            //////////////////////////////////
 
-            if(!string.IsNullOrWhiteSpace(purchaseInvoice._Cabecera._Obra))
+            sage.ew.docscompra.Proveedor currentReceivedInvoiceProvider = new Proveedor();
+            currentReceivedInvoiceProvider._Codigo = entity.ProviderCode;
+            currentReceivedInvoiceProvider._Load();
+
+            //new VisualizePropertiesAndValues<ewDocCompraFACTURA>(
+            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //  "purchaseInvoice",
+            //  purchaseInvoice
+            //);
+
+            //new VisualizePropertiesAndValues<ewDocCompraCabFACTURA>(
+            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //  "purchaseInvoice._Cabecera",
+            //  purchaseInvoice._Cabecera
+            //);
+
+            //new VisualizePropertiesAndValues<ewDocCompraPieFACTURA>(
+            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //  "purchaseInvoice._Pie",
+            //  purchaseInvoice._Pie
+            //);
+
+            //new VisualizePropertiesAndValues<sage.ew.docscompra.Proveedor>(
+            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //  "currentReceivedInvoiceProvider",
+            //  currentReceivedInvoiceProvider
+            //);
+
+            //new VisualizePropertiesAndValues<SageReceivedInvoiceModel>(
+            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //  "entity",
+            //  entity
+            //);
+
+            List<SincronizadorGPS50ReceivedInvoiceDetailModel> invoiceDetailList = new List<SincronizadorGPS50ReceivedInvoiceDetailModel>();
+
+            foreach(sage.ew.docscompra.ewDocCompraLinFACTURA invoiceDetail in purchaseInvoice._Lineas)
             {
-               foreach(sage.ew.docscompra.ewDocCompraLinFACTURA invoiceDetail in purchaseInvoice._Lineas)
+               SincronizadorGPS50ReceivedInvoiceDetailModel gestprojectEntityDetail = new SincronizadorGPS50ReceivedInvoiceDetailModel();
+
+               //gestprojectEntityDetail.FCP_ID = ; // Obtener el id de la factura en GP
+               gestprojectEntityDetail.DFP_CONCEPTO = invoiceDetail._Definicion.ToString().Trim();
+               gestprojectEntityDetail.DFP_PRECIO_UNIDAD = invoiceDetail.ToString().Trim();
+               gestprojectEntityDetail.DFP_UNIDADES = invoiceDetail._Unidades.ToString().Trim();
+               gestprojectEntityDetail.DFP_SUBTOTAL = invoiceDetail.ToString().Trim();
+               if(string.IsNullOrWhiteSpace(purchaseInvoice._Cabecera._Obra) == true)
                {
-                  ReceivedInvoiceDetailModel entityDetail = new ReceivedInvoiceDetailModel();
-
-                  //entityDetail.User = invoiceDetail.;
-                  entityDetail.CompanyNumber = invoiceDetail._Empresa.Trim();
-                  entityDetail.InvoiceNumber = invoiceDetail._Numero.Trim();
-                  entityDetail.Article = invoiceDetail._Articulo.Trim();
-                  entityDetail.Definition = invoiceDetail._Definicion.Trim();
-                  entityDetail.Units = invoiceDetail._Unidades;
-                  entityDetail.Price = invoiceDetail._Precio;
-                  entityDetail.Discount1 = invoiceDetail._Dto1;
-                  entityDetail.Discount2 = invoiceDetail._Dto2;
-                  entityDetail.Import = invoiceDetail._Importe;
-                  entityDetail.IvaType = invoiceDetail._TipoIva;
-                  entityDetail.Cost = invoiceDetail._Coste;
-                  entityDetail.Account = invoiceDetail._Cuenta.Trim();
-                  entityDetail.Date = invoiceDetail._Fecha;
-                  entityDetail.LineNumber = invoiceDetail._Linea;
-                  entityDetail.ProviderCode = invoiceDetail._Proveedor.Trim();
-                  entityDetail.CurrencyPrice = invoiceDetail._PrecioDivisa;
-                  entityDetail.CurrencyImport = invoiceDetail._ImporteDivisa;
-
-                  
-               // DFP_ESTRUCTURAL = 0 (falso, porque sí tiene proyecto)
-               // PRY_ID = id de obra (obtener obra (cabecera de factura recibida -> codigoDeObra -> id de Gestproject de obra en la tabla de sincronizacion) -> obtener id de obra)
-
-                  string sqlString2 = $@"
-                     SELECT
-                        guid_id
-                     FROM 
-                        {DB.SQLDatabase("gestion","d_albcom")}
-                     WHERE
-                        empresa='{entityDetail.CompanyNumber}'
-                     AND
-                        definicion='{entityDetail.Definition}'
-                  ;";
-
-                  DataTable entiesDataTable2 = new DataTable();
-                  DB.SQLExec(sqlString2, ref entiesDataTable2);
-
-                  entityDetail.GuidId = entiesDataTable2.Rows[0].ItemArray[0].ToString().Trim();
-
-                  new VisualizePropertiesAndValues<ReceivedInvoiceDetailModel>(
-                     MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-                     "entityDetail",
-                     entityDetail
-                  );
-
-                  invoiceDetailList.Add(entityDetail);
+                  gestprojectEntityDetail.PRY_ID = null;
+                  gestprojectEntityDetail.DFP_ESTRUCTURAL = "1";
                }
-            }
-            else
-            {
-               // DFP_ESTRUCTURAL = 1 (verdadero, porque no tiene proyecto)
-               // PRY_ID = null
+               else
+               {
+                  //gestprojectEntityDetail.PRY_ID = null; // id de obra (obtener obra (cabecera de factura recibida -> codigoDeObra -> id de Gestproject de obra en la tabla de sincronizacion) -> obtener id de obra)
+                  gestprojectEntityDetail.DFP_ESTRUCTURAL = "0";
+               };                  
+
+               string sqlString2 = $@"
+                  SELECT
+                     guid_id
+                  FROM 
+                     {DB.SQLDatabase("gestion","d_albcom")}
+                  WHERE
+                     empresa='{invoiceDetail._Empresa}'
+                  AND
+                     definicion='{invoiceDetail._Definicion}'
+               ;";
+
+               DataTable entiesDataTable2 = new DataTable();
+               DB.SQLExec(sqlString2, ref entiesDataTable2);
+
+               gestprojectEntityDetail.S50_CODE = "";
+               gestprojectEntityDetail.S50_GUID_ID = entiesDataTable2.Rows[0].ItemArray[0].ToString().Trim();
+
+               //new VisualizePropertiesAndValues<GestprojectReceivedInvoiceDetailModel>(
+               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               //   "gestprojectEntityDetail",
+               //   gestprojectEntityDetail
+               //);
+
+               invoiceDetailList.Add(gestprojectEntityDetail);
             };
 
             entity.Details = invoiceDetailList;
-
-            //new VisualizePropertiesAndValues<ReceivedInvoiceDetailModel>(
-            //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-            //   "invoiceDetailList",
-            //   invoiceDetailList
-            //);
-            //}
-            //else
-            //{
-            //   MessageBox.Show($@"
-            //      The entity wasn't found
-            //         entity.CompanyNumber: {entity.CompanyNumber}  
-            //         entity.Number: {entity.Number}
-            //         entity.ProviderCode: {entity.ProviderCode}
-            //   ");
-            //}
          }
          catch(System.Exception exception)
          {
@@ -318,13 +361,13 @@ namespace SincronizadorGPS50
          };
       }
 
-      public List<GestprojectReceivedBillModel> GenerateGestprojectEntitiesFromReceivedInvoiceModels(List<ReceivedInvoiceModel> receivedInvoiceCodesAndProvidersCodes)
+      public List<GestprojectReceivedBillModel> GenerateGestprojectEntitiesFromReceivedInvoiceModels(List<SageReceivedInvoiceModel> receivedInvoiceCodesAndProvidersCodes)
       {
          try
          {
             List<GestprojectReceivedBillModel> gestprojectEntities = new List<GestprojectReceivedBillModel>();
 
-            foreach(ReceivedInvoiceModel item in receivedInvoiceCodesAndProvidersCodes)
+            foreach(SageReceivedInvoiceModel item in receivedInvoiceCodesAndProvidersCodes)
             {
                GetReceivedInvoiceModelProvider(item.ProviderCode);
 
