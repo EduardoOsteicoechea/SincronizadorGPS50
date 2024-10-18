@@ -27,7 +27,7 @@ namespace SincronizadorGPS50
                new TabPageMainPanelTableLayoutPanelGenerator(),
                new TabPageLayoutPanelRowGenerator(),
                new MiddleRowControlsGenerator<SincronizadorGP50CompanyModel, SageCompanyModel>(),
-               new TopRowControlsGenerator<SincronizadorGP50CompanyModel, SageCompanyModel>(),
+               new TopRowControlsGenerator<SincronizadorGP50CompanyModel, SageCompanyModel>(false),
                new BottomRowControlsGenerator<SincronizadorGP50CompanyModel, SageCompanyModel>(),
 
                // Connectors

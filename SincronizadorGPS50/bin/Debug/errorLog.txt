@@ -18363,3 +18363,46 @@ Message: COMMENTS
 
 
 --------------------------------------------------
+Date: 2024-10-18 11:08:33.
+Location: At:
+
+SincronizadorGPS50
+.EntityPainter`1
+.PaintEntityListOnDataTable:
+
+Referencia a objeto no establecida como instancia de un objeto..
+Short Description: Failed to end the methods execution successfully..
+Message: Referencia a objeto no establecida como instancia de un objeto.
+
+
+--------------------------------------------------
+Date: 2024-10-18 13:14:28.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.ExtractSageReceivedBillBaseModelTaxModel:
+
+Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'SincronizadorGPS50.SageReceivedInvoiceBaseModelTaxModel' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path '', line 1, position 1..
+Short Description: Failed to end the methods execution successfully..
+Message: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'SincronizadorGPS50.SageReceivedInvoiceBaseModelTaxModel' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path '', line 1, position 1.
+
+
+--------------------------------------------------
+Date: 2024-10-18 17:00:12.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetReceivedBillProviderSynchronizationRegistry:
+
+Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROVIDERS'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROVIDERS'.
+
+
+--------------------------------------------------

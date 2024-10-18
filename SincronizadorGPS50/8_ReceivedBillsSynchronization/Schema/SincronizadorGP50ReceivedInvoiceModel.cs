@@ -19,7 +19,7 @@ namespace SincronizadorGPS50
       public decimal? FCP_TOTAL_FACTURA { get; set; } = null; // doc._Pie._TotalDocumento
       public string FCP_OBSERVACIONES { get; set; } = ""; // doc._Cabecera._Observacio
       public string PRY_ID { get; set; } = ""; // doc._Cabecera._Obra
-      public string TIPO { get; set; } = ""; // remover campo !!!!!!!!!!!!!!!!!
+
 
       // Syncronization fields
       public int? ID { get; set; } = null;

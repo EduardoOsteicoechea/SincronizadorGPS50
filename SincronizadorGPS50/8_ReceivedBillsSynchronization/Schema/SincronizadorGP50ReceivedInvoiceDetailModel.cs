@@ -4,14 +4,14 @@ namespace SincronizadorGPS50
 {
    public class SincronizadorGPS50ReceivedInvoiceDetailModel
    {   
+      public int? DFP_ID { get; set; } = null; // Lo asigna GP automático
       public string DFP_CONCEPTO { get; set; } = ""; // Definition
-      public int? DFP_ID { get; set; } = 0; // Lo asigna GP automático
-      public string DFP_PRECIO_UNIDAD { get; set; } = ""; // Price
-      public string DFP_UNIDADES { get; set; } = ""; // Units
-      public string DFP_SUBTOTAL { get; set; } = ""; // Import
-      public int? PRY_ID { get; set; } = 0; // Lo asigna GP automático
-      public string FCP_ID { get; set; } = ""; // Obtener el id de la factura en GP
-      public string DFP_ESTRUCTURAL { get; set; } = ""; // Import
+      public decimal DFP_PRECIO_UNIDAD { get; set; } = 0; // Price
+      public decimal DFP_UNIDADES { get; set; } = 0; // Units
+      public decimal DFP_SUBTOTAL { get; set; } = 0; // Import
+      public int? PRY_ID { get; set; } = null; // Lo asigna GP automático
+      public int? FCP_ID { get; set; } = null; // Obtener el id de la factura en GP
+      public string DFP_ESTRUCTURAL { get; set; } = "0"; // Import
 
       // Syncronization fields
       public int? ID { get; set; } = null;

@@ -21,6 +21,12 @@ namespace SincronizadorGPS50
       public ISynchronizationTableSchemaProvider SynchronizationTableSchemaProvider { get; set; }
       public IGridDataSourceGenerator<T1, T2> DataSourceGenerator { get; set; }
       public IEntitySynchronizer<T1, T2> EntitySynchronizer { get; set; }
+      public bool SincronizationButtonDisabled { get; set; } = true;
+
+      public TopRowControlsGenerator(bool sincronizationButtonDisabled = true)
+      {
+         SincronizationButtonDisabled = sincronizationButtonDisabled;
+      }
 
       public void GenerateControls
       (
@@ -91,6 +97,7 @@ namespace SincronizadorGPS50
          SynchronizeButton = new UltraButton();
          SynchronizeButton.Text = "Sincronizar";
          SynchronizeButton.Dock = DockStyle.Fill;
+         SynchronizeButton.Enabled = SincronizationButtonDisabled;
       }
       public void SetRefreshButtonClickEventHandler()
       {

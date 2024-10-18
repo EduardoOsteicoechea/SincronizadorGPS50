@@ -1,30 +1,12 @@
-﻿using Infragistics.Designers.SqlEditor;
-using Infragistics.Win.UltraWinGrid;
-using Infragistics.Win.UltraWinSchedule;
-using sage.ew.articulo;
-using sage.ew.cliente;
-using sage.ew.contabilidad;
-using sage.ew.db;
+﻿using sage.ew.db;
 using sage.ew.docscompra;
-using sage.ew.docscompra.Forms;
-using sage.ew.docscompra.UserControls;
-using sage.ew.empresa;
-using sage.ew.interficies;
-using sage.ew.listados.Listados;
-using sage.ew.txtbox.UserControls;
-using sage.ew.usuario;
 using SincronizadorGPS50.Sage50Connector;
-using SincronizadorGPS50.Workflows.Sage50Connection;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Windows.Forms;
-using static sage.ew.articulo.Articulo.Precios;
-using static sage.ew.docsven.FirmaElectronica;
+using Newtonsoft.Json;
 
 namespace SincronizadorGPS50
 {
@@ -32,6 +14,7 @@ namespace SincronizadorGPS50
    {
       public List<GestprojectReceivedBillModel> GestprojectEntities { get; set; }
       public List<Sage50ReceivedBillModel> Sage50Entities { get; set; }
+      public List<SageReceivedInvoiceEnrichedModel> SageReceivedInvoicesEnrichedModels { get; set; }
       public List<GestprojectReceivedBillModel> ProcessedGestprojectEntities { get; set; }
       public IGestprojectConnectionManager GestprojectConnectionManager { get; set; }
       public SqlConnection Connection { get; set; }
@@ -52,15 +35,18 @@ namespace SincronizadorGPS50
             Connection = GestprojectConnectionManager.GestprojectSqlConnection;
             SageConnectionManager = sage50ConnectionManager;
             TableSchema = tableSchemaProvider;
+            GestprojectEntities = new List<GestprojectReceivedBillModel>();
+            Sage50Entities = new List<Sage50ReceivedBillModel>();
 
             ManageReceivedBillsSynchronizationTableStatus(TableSchema);
             ManageReceivedBillsDetailsSynchronizationTableStatus(new ReceivedBillsDetailsSynchronizationTableSchemaProvider());
 
+            GetAllSage50Data();
             //GetAndStoreGestprojectEntities();
             ////GetAndStoreSage50Entities();
             ////ProccessAndStoreGestprojectEntities();
-            //CreateAndDefineDataSource();
-            //PaintEntitiesOnDataSource();
+            CreateAndDefineDataSource();
+            PaintEntitiesOnDataSource();
 
             return DataTable;
          }
@@ -136,6 +122,396 @@ namespace SincronizadorGPS50
             );
          };
       }
+
+      public void GetAllSage50Data()
+      {
+         try
+         {
+            SageReceivedInvoicesEnrichedModels = new List<SageReceivedInvoiceEnrichedModel>();
+            List<SageReceivedInvoiceModel> sageReceivedInvoicesBaseModels = GetSageReceivedBillsBaseModels();
+
+            foreach(SageReceivedInvoiceModel baseReceivedInvoiceModel in sageReceivedInvoicesBaseModels)
+            {
+               List<SageReceivedInvoiceBaseModelTaxModel> sageReceivedInvoiceBaseModelTaxModelList = ExtractSageReceivedBillBaseModelTaxModel(baseReceivedInvoiceModel);
+
+               ewDocCompraFACTURA sageReceivedInvoice = GetSageReceivedBill(baseReceivedInvoiceModel);
+
+               SincronizadorGP50CompanyModel sageReceivedBillCompany = GetReceivedBillCompanySynchronizationRegistry(baseReceivedInvoiceModel);
+
+               GestprojectProviderModel sageReceivedBillProvider = GetReceivedBillProviderSynchronizationRegistry(baseReceivedInvoiceModel);
+
+               GestprojectProjectModel sageReceivedBillProject = GetReceivedBillProjectSynchronizationRegistry(sageReceivedInvoice);
+
+               //new VisualizePropertiesAndValues<SageReceivedInvoiceModel>(
+               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               //   "baseReceivedInvoiceModel",
+               //   baseReceivedInvoiceModel
+               //);
+
+               //new VisualizePropertiesAndValues<SageReceivedInvoiceBaseModelTaxModel>(
+               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               //   "sageReceivedInvoiceBaseModelTaxModelList",
+               //   sageReceivedInvoiceBaseModelTaxModelList
+               //);
+
+               //new VisualizePropertiesAndValues<ewDocCompraFACTURA>(
+               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               //   "sageReceivedInvoice",
+               //   sageReceivedInvoice
+               //);
+
+               //new VisualizePropertiesAndValues<SincronizadorGP50CompanyModel>(
+               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               //   "sageReceivedBillCompany",
+               //   sageReceivedBillCompany
+               //);
+
+               //new VisualizePropertiesAndValues<GestprojectProviderModel>(
+               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               //   "sageReceivedBillProvider",
+               //   sageReceivedBillProvider
+               //);
+
+               //new VisualizePropertiesAndValues<GestprojectProjectModel>(
+               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               //   "sageReceivedBillProject",
+               //   sageReceivedBillProject
+               //);
+
+               SageReceivedInvoiceEnrichedModel sageReceivedBillsEnrichedModel = GenerateSageReceivedBillEnrichedModel(
+                  sageReceivedInvoiceBaseModelTaxModelList,
+                  baseReceivedInvoiceModel,
+                  sageReceivedInvoice,
+                  sageReceivedBillCompany,
+                  sageReceivedBillProvider,
+                  sageReceivedBillProject
+               );
+               SageReceivedInvoicesEnrichedModels.Add(sageReceivedBillsEnrichedModel);
+            };
+
+            new VisualizePropertiesAndValues<SageReceivedInvoiceEnrichedModel>(
+               MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               "SageReceivedInvoicesEnrichedModels",
+               SageReceivedInvoicesEnrichedModels
+            );
+         }
+         catch(System.Exception exception) 
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
+      }
+
+
+      public List<SageReceivedInvoiceModel> GetSageReceivedBillsBaseModels()
+      {
+         try
+         {
+            List<SageReceivedInvoiceModel> entities = new List<SageReceivedInvoiceModel>();
+
+            string sqlString = $@"
+            SELECT 
+               empresa
+               ,numero
+               ,proveedor
+               ,guid_id
+               ,iva
+            FROM 
+               {DB.SQLDatabase("gestion","c_factucom")}
+            ;";
+
+            DataTable enentiesDataTable = new DataTable();
+            DB.SQLExec(sqlString, ref enentiesDataTable);
+
+            if(enentiesDataTable.Rows.Count > 0)
+            {
+               for(int i = 0; i < enentiesDataTable.Rows.Count; i++)
+               {
+                  DataRow row = enentiesDataTable.Rows[i];
+
+                  SageReceivedInvoiceModel entity = new SageReceivedInvoiceModel();
+
+                  entity.CompanyNumber = row.ItemArray[0].ToString().Trim();
+                  entity.Number = row.ItemArray[1].ToString().Trim();
+                  entity.ProviderCode = row.ItemArray[2].ToString().Trim();
+                  entity.GuidId = row.ItemArray[3].ToString().Trim();
+                  entity.IvaObject = row.ItemArray[4].ToString().Trim();
+
+                  GetAndAddEntityDetails(entity);
+                  entities.Add(entity);
+               };
+            };
+
+            return entities;
+         }
+         catch(System.Exception exception) 
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
+      }
+      public List<SageReceivedInvoiceBaseModelTaxModel> ExtractSageReceivedBillBaseModelTaxModel
+      (
+         SageReceivedInvoiceModel sage50ReceivedInvoiceModel
+      )
+      {
+         try
+         {
+            List<SageReceivedInvoiceBaseModelTaxModel> entities = JsonConvert.DeserializeObject<List<SageReceivedInvoiceBaseModelTaxModel>>(sage50ReceivedInvoiceModel.IvaObject);
+
+            //new VisualizePropertiesAndValues<SageReceivedInvoiceBaseModelTaxModel>(
+            //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //   "List<SageReceivedInvoiceBaseModelTaxModel>",
+            //   entities
+            //);
+
+            return entities;
+         }
+         catch(System.Exception exception) 
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
+      }
+
+      public ewDocCompraFACTURA GetSageReceivedBill
+      (
+         SageReceivedInvoiceModel sage50ReceivedInvoiceModel
+      )
+      {
+         try
+         {
+            ConnectionActions.Sage50ConnectionManager._LoadGlobalVariables();
+            ConnectionActions.Sage50ConnectionManager._LoadEnvironmentCompany();
+
+            ewDocCompraFACTURA entity = new ewDocCompraFACTURA();
+
+            entity._Load(
+               sage50ReceivedInvoiceModel.CompanyNumber,
+               sage50ReceivedInvoiceModel.Number,
+               sage50ReceivedInvoiceModel.ProviderCode
+            );
+
+            return entity;
+         }
+         catch(System.Exception exception) 
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
+      }
+
+      public SincronizadorGP50CompanyModel GetReceivedBillCompanySynchronizationRegistry
+      (
+         SageReceivedInvoiceModel sage50ReceivedInvoiceModel
+      )
+      {
+         try
+         {
+            Connection.Open();
+            
+            SincronizadorGP50CompanyModel entity = new SincronizadorGP50CompanyModel();
+
+            string sqlString = $@"
+               SELECT
+                  PAR_ID
+                  ,PAR_NOMBRE
+                  ,PAR_CIF_NIF
+                  ,SageCompanyNumber
+                  ,S50_GUID_ID
+               FROM
+                  INT_SAGE_SINC_EMPRESAS
+               WHERE
+                  SageCompanyNumber=@SageCompanyNumber
+            ";
+
+            using(SqlCommand command = new SqlCommand(sqlString, Connection))
+            {
+               command.Parameters.AddWithValue("@SageCompanyNumber",sage50ReceivedInvoiceModel.CompanyNumber);
+
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
+                     entity.PAR_ID = reader["PAR_ID"] as int?;
+                     entity.PAR_NOMBRE = reader["PAR_NOMBRE"] as string;
+                     entity.PAR_CIF_NIF = reader["PAR_CIF_NIF"] as string;
+                     entity.SageCompanyNumber = reader["SageCompanyNumber"] as string;
+                     entity.S50_GUID_ID = reader["S50_GUID_ID"] as string;
+                  };
+               };
+            };
+
+            return entity;
+         }
+         catch(System.Exception exception) 
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+      public GestprojectProviderModel GetReceivedBillProviderSynchronizationRegistry
+      (
+         SageReceivedInvoiceModel sage50ReceivedInvoiceModel
+      )
+      {
+         try
+         {
+            Connection.Open();
+            
+            GestprojectProviderModel entity = new GestprojectProviderModel();
+
+            string sqlString = $@"
+               SELECT
+                  PAR_ID
+                  ,S50_GUID_ID
+               FROM
+                  INT_SAGE_SINC_PROVEEDORES
+               WHERE
+                  PAR_SUBCTA_CONTABLE_2=@PAR_SUBCTA_CONTABLE_2
+            ";
+
+            using(SqlCommand command = new SqlCommand(sqlString, Connection))
+            {
+               command.Parameters.AddWithValue("@PAR_SUBCTA_CONTABLE_2",sage50ReceivedInvoiceModel.ProviderCode);
+
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
+                     entity.PAR_ID = reader["PAR_ID"] as int?;
+                     entity.S50_GUID_ID = reader["S50_GUID_ID"] as string;
+                  };
+               };
+            };
+
+            return entity;
+         }
+         catch(System.Exception exception) 
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+      public GestprojectProjectModel GetReceivedBillProjectSynchronizationRegistry
+      (
+         ewDocCompraFACTURA sageReceivedInvoiceModel
+      )
+      {
+         try
+         {
+            Connection.Open();
+            
+            GestprojectProjectModel entity = new GestprojectProjectModel();
+            
+            sage.ew.cliente.Obra InvocesProject = new sage.ew.cliente.Obra();
+            InvocesProject._Codigo = sageReceivedInvoiceModel._Cabecera._Obra;
+            InvocesProject._Load();
+
+            string sqlString = $@"
+               SELECT
+                  PRY_ID
+                  ,S50_GUID_ID
+               FROM
+                  INT_SAGE_SINC_PROYECTOS
+               WHERE
+                  PRY_NOMBRE=@PRY_NOMBRE
+            ";
+
+            using(SqlCommand command = new SqlCommand(sqlString, Connection))
+            {
+               command.Parameters.AddWithValue("@PRY_NOMBRE",InvocesProject._Nombre.Trim());
+
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
+                     entity.PRY_ID = reader["PRY_ID"] as int?;
+                     entity.S50_GUID_ID = reader["S50_GUID_ID"] as string;
+                  };
+               };
+            };
+
+            return entity;
+         }
+         catch(System.Exception exception) 
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+      public SageReceivedInvoiceEnrichedModel GenerateSageReceivedBillEnrichedModel
+      (
+         List<SageReceivedInvoiceBaseModelTaxModel> sageReceivedInvoiceBaseModelTaxModelList,
+         SageReceivedInvoiceModel baseReceivedInvoiceModel,
+         ewDocCompraFACTURA sageReceivedInvoice,
+         SincronizadorGP50CompanyModel sageReceivedBillCompany,
+         GestprojectProviderModel sageReceivedBillProvider,
+         GestprojectProjectModel sageReceivedBillProject
+      )
+      {
+         try
+         {
+            SageReceivedInvoiceEnrichedModel entity = new SageReceivedInvoiceEnrichedModel();
+
+            return entity;
+         }
+         catch(System.Exception exception) 
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
+      }
+
+
+
 
       public void GetAndStoreGestprojectEntities()
       {
@@ -308,9 +684,9 @@ namespace SincronizadorGPS50
 
                //gestprojectEntityDetail.FCP_ID = ; // Obtener el id de la factura en GP
                gestprojectEntityDetail.DFP_CONCEPTO = invoiceDetail._Definicion.ToString().Trim();
-               gestprojectEntityDetail.DFP_PRECIO_UNIDAD = invoiceDetail.ToString().Trim();
-               gestprojectEntityDetail.DFP_UNIDADES = invoiceDetail._Unidades.ToString().Trim();
-               gestprojectEntityDetail.DFP_SUBTOTAL = invoiceDetail.ToString().Trim();
+               gestprojectEntityDetail.DFP_PRECIO_UNIDAD = invoiceDetail._Precio;
+               gestprojectEntityDetail.DFP_UNIDADES = invoiceDetail._Unidades;
+               //gestprojectEntityDetail.DFP_SUBTOTAL = invoiceDetail.;
                if(string.IsNullOrWhiteSpace(purchaseInvoice._Cabecera._Obra) == true)
                {
                   gestprojectEntityDetail.PRY_ID = null;
@@ -449,13 +825,6 @@ namespace SincronizadorGPS50
 
 
 
-
-
-      //public void GetAndStoreSage50Entities()
-      //{
-      //   Sage50Entities = new GetSage50ReceivedBills().Entities;
-      //}
-
       public void ProccessAndStoreGestprojectEntities()
       {
          ISynchronizableEntityProcessor<GestprojectReceivedBillModel, Sage50ReceivedBillModel> gestprojectProvidersProcessor = new GestprojectReceivedBillsProcessor();
@@ -469,19 +838,46 @@ namespace SincronizadorGPS50
       }
 
       public void CreateAndDefineDataSource()
-      {
-         IDataTableGenerator entityDataTableGenerator = new SyncrhonizationDataTableGenerator();
-         DataTable = entityDataTableGenerator.CreateDataTable(TableSchema.ColumnsTuplesList);
+      {                  
+         try
+         {
+            IDataTableGenerator entityDataTableGenerator = new SyncrhonizationDataTableGenerator();
+            DataTable = entityDataTableGenerator.CreateDataTable(TableSchema.ColumnsTuplesList);
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
 
       public void PaintEntitiesOnDataSource()
-      {
-         ISynchronizableEntityPainter<GestprojectReceivedBillModel> entityPainter = new EntityPainter<GestprojectReceivedBillModel>();
-         entityPainter.PaintEntityListOnDataTable(
-            GestprojectEntities,
-            DataTable,
-            TableSchema.ColumnsTuplesList
-         );
+      {         
+         try
+         {
+            if(GestprojectEntities.Count > 0)
+            {
+               ISynchronizableEntityPainter<GestprojectReceivedBillModel> entityPainter = new EntityPainter<GestprojectReceivedBillModel>();
+               entityPainter.PaintEntityListOnDataTable(
+                  GestprojectEntities,
+                  DataTable,
+                  TableSchema.ColumnsTuplesList
+               );
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
       }
    }
 }
