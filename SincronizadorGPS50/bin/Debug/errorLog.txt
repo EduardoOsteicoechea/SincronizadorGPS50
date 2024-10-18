@@ -18324,3 +18324,42 @@ La conexión no se cerró. El estado actual de la conexión es abierta.
 
 
 --------------------------------------------------
+Date: 2024-10-18 09:32:21.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.RegisterSynchronizedEntitiesOnSynchronizationTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-10-18 09:33:06.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.RegisterSynchronizedEntitiesOnSynchronizationTable:
+
+Must declare the scalar variable "@PAR_CIF_NIF"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@PAR_CIF_NIF".
+
+
+--------------------------------------------------
+Date: 2024-10-18 09:40:25.
+Location: At:
+
+SincronizadorGPS50
+.CompaniesDataTableManager
+.GetAndAppendRegisteredEntitySynchronizationTableData:
+
+COMMENTS.
+Short Description: Failed to end the methods execution successfully..
+Message: COMMENTS
+
+
+--------------------------------------------------

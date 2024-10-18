@@ -1,5 +1,6 @@
-﻿﻿using Infragistics.Designers.SqlEditor;
+﻿using Infragistics.Designers.SqlEditor;
 using sage.ew.db;
+using Sage.ES.S50.Addons;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,6 +14,8 @@ namespace SincronizadorGPS50
    public class CompaniesDataTableManager : IGridDataSourceGenerator<SincronizadorGP50CompanyModel, SageCompanyModel>
    {
       public List<SincronizadorGP50CompanyModel> GestprojectEntities { get; set; }
+      public List<SageCompanyModel> SageEntities { get; set; }
+      public List<SincronizadorGP50CompanyModel> SynchronizableEntities { get; set; }
       public List<SincronizadorGP50CompanyModel> ProcessedGestprojectEntities { get; set; }
       public IGestprojectConnectionManager GestprojectConnectionManager { get; set; }
       public SqlConnection Connection { get; set; }
@@ -36,8 +39,11 @@ namespace SincronizadorGPS50
 
             ManageSynchronizationTableStatus();
             LinkEndpointsModels();
+            RegisterSynchronizedEntitiesOnSynchronizationTable();
+            PrepareAllGestprojectEntitiesForRegistry();
             CreateAndDefineDataSource();
             PaintEntitiesOnDataSource();
+
             return DataTable;
          }
          catch(System.Exception exception)
@@ -50,6 +56,7 @@ namespace SincronizadorGPS50
             );
          };
       }
+
 
       public void ManageSynchronizationTableStatus()
       {
@@ -69,14 +76,15 @@ namespace SincronizadorGPS50
             );
          };
       }
-      
+
+
       public void LinkEndpointsModels()
       {
          try
-         {            
-            List<SincronizadorGP50CompanyModel> gestprojectCompaniesData = GetGestprojectCompanies();
-            List<SageCompanyModel> sageCompaniesData = GetSageCompanies();
-            GestprojectEntities = MatchMatchingCompanies(gestprojectCompaniesData,sageCompaniesData);
+         {
+            GestprojectEntities = GetGestprojectCompanies();
+            SageEntities = GetSageCompanies();
+            SynchronizableEntities = MatchMatchingCompanies();
          }
          catch(System.Exception exception)
          {
@@ -88,6 +96,8 @@ namespace SincronizadorGPS50
             );
          };
       }
+
+
       public List<SincronizadorGP50CompanyModel> GetGestprojectCompanies()
       {
          try
@@ -100,11 +110,11 @@ namespace SincronizadorGPS50
 
             string companiesIds = "";
 
-            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            using(SqlCommand command = new SqlCommand(sqlString, Connection))
             {
                using(SqlDataReader reader = command.ExecuteReader())
                {
-                  while (reader.Read())
+                  while(reader.Read())
                   {
                      companiesIds += "'" + Convert.ToInt32(reader.GetValue(0)) + "',";
                   };
@@ -115,13 +125,11 @@ namespace SincronizadorGPS50
 
             string sqlString2 = $@"SELECT PAR_ID,PAR_NOMBRE,PAR_CIF_NIF FROM [GESTPROJECT2020].[dbo].[PARTICIPANTE] WHERE PAR_ID IN ({companiesIds});";
 
-            new VisualizationForm(sqlString2, sqlString2);
-
-            using(SqlCommand command = new SqlCommand(sqlString2,Connection))
+            using(SqlCommand command = new SqlCommand(sqlString2, Connection))
             {
                using(SqlDataReader reader = command.ExecuteReader())
                {
-                  while (reader.Read())
+                  while(reader.Read())
                   {
                      SincronizadorGP50CompanyModel sincronizadorGP50CompanyModel = new SincronizadorGP50CompanyModel();
 
@@ -150,6 +158,8 @@ namespace SincronizadorGPS50
             Connection.Close();
          };
       }
+
+
       public List<SageCompanyModel> GetSageCompanies()
       {
          try
@@ -193,26 +203,25 @@ namespace SincronizadorGPS50
             );
          };
       }
-      public List<SincronizadorGP50CompanyModel> MatchMatchingCompanies
-      (
-         List<SincronizadorGP50CompanyModel> gestprojectCompaniesData,
-         List<SageCompanyModel> sageCompaniesData
-      )
+
+
+      public List<SincronizadorGP50CompanyModel> MatchMatchingCompanies()
       {
          try
          {
             List<SincronizadorGP50CompanyModel> matchingCompaniesList = new List<SincronizadorGP50CompanyModel>();
 
-            foreach (SincronizadorGP50CompanyModel gestprojectCompany in gestprojectCompaniesData)
+            foreach(SincronizadorGP50CompanyModel gestprojectCompany in GestprojectEntities)
             {
-               SageCompanyModel sageMatchingCompany = sageCompaniesData.FirstOrDefault(
-                  sageCompany => sageCompany.SageCifNif == gestprojectCompany.PAR_CIF_NIF
+               SageCompanyModel sageMatchingCompany = SageEntities.FirstOrDefault(
+                  sageCompany => sageCompany.SageCifNif.Trim() == gestprojectCompany.PAR_CIF_NIF.Trim()
                );
 
                if(sageMatchingCompany != null)
                {
                   gestprojectCompany.SageCompanyNumber = sageMatchingCompany.SageCompanyNumber;
                   gestprojectCompany.S50_GUID_ID = sageMatchingCompany.SageGuidId;
+                  gestprojectCompany.SYNC_STATUS = SynchronizationStatusOptions.Sincronizado;
                   matchingCompaniesList.Add(gestprojectCompany);
                };
             };
@@ -230,17 +239,186 @@ namespace SincronizadorGPS50
          };
       }
 
+
+      public void PrepareAllGestprojectEntitiesForRegistry()
+      {
+         try
+         {
+            if(GestprojectEntities.Count > SynchronizableEntities.Count)
+            {
+               foreach(SincronizadorGP50CompanyModel item in GestprojectEntities)
+               {
+                  if(SynchronizableEntities.Any(
+                     entity => entity.PAR_CIF_NIF == item.PAR_CIF_NIF
+                  ) == false)
+                  {
+                     item.SYNC_STATUS = SynchronizationStatusOptions.Desincronizado;
+                     SynchronizableEntities.Add(item);
+                  };
+               };
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
+      }
+
+
+      public void RegisterSynchronizedEntitiesOnSynchronizationTable()
+      {
+         try
+         {
+            Connection.Open();
+
+            foreach(SincronizadorGP50CompanyModel entity in SynchronizableEntities)
+            {
+               string sqlString = $@"
+                  INSERT INTO
+                     {TableSchema.TableName}
+                  (
+                     SYNC_STATUS
+                     ,PAR_ID
+                     ,PAR_NOMBRE
+                     ,PAR_CIF_NIF
+                     ,SageCompanyNumber
+                     ,S50_GUID_ID
+                     ,S50_COMPANY_GROUP_NAME
+                     ,S50_COMPANY_GROUP_CODE
+                     ,S50_COMPANY_GROUP_MAIN_CODE
+                     ,S50_COMPANY_GROUP_GUID_ID
+                     ,GP_USU_ID
+                     ,COMMENTS
+                  )
+                  Values
+                  (
+                     @SYNC_STATUS
+                     ,@PAR_ID
+                     ,@PAR_NOMBRE
+                     ,@PAR_CIF_NIF
+                     ,@SageCompanyNumber
+                     ,@S50_GUID_ID
+                     ,@S50_COMPANY_GROUP_NAME
+                     ,@S50_COMPANY_GROUP_CODE
+                     ,@S50_COMPANY_GROUP_MAIN_CODE
+                     ,@S50_COMPANY_GROUP_GUID_ID
+                     ,@GP_USU_ID
+                     ,@COMMENTS               
+                  )
+               ;";
+
+               using(SqlCommand command = new SqlCommand(sqlString, Connection))
+               {
+                  command.Parameters.AddWithValue("@SYNC_STATUS", entity.SYNC_STATUS);
+                  command.Parameters.AddWithValue("@PAR_ID", entity.PAR_ID);
+                  command.Parameters.AddWithValue("@PAR_NOMBRE", entity.PAR_NOMBRE);
+                  command.Parameters.AddWithValue("@PAR_CIF_NIF", entity.PAR_CIF_NIF);
+                  command.Parameters.AddWithValue("@SageCompanyNumber", entity.SageCompanyNumber);
+                  command.Parameters.AddWithValue("@S50_GUID_ID", entity.S50_GUID_ID);
+                  command.Parameters.AddWithValue("@S50_COMPANY_GROUP_NAME", SageConnectionManager.CompanyGroupData.CompanyName);
+                  command.Parameters.AddWithValue("@S50_COMPANY_GROUP_CODE", SageConnectionManager.CompanyGroupData.CompanyCode);
+                  command.Parameters.AddWithValue("@S50_COMPANY_GROUP_MAIN_CODE", SageConnectionManager.CompanyGroupData.CompanyMainCode);
+                  command.Parameters.AddWithValue("@S50_COMPANY_GROUP_GUID_ID", SageConnectionManager.CompanyGroupData.CompanyGuidId);
+                  command.Parameters.AddWithValue("@GP_USU_ID", GestprojectConnectionManager.GestprojectUserRememberableData.GP_USU_ID);
+                  command.Parameters.AddWithValue("@COMMENTS", entity.COMMENTS);
+
+                  if(command.ExecuteNonQuery() > 0)
+                  {
+                     GetAndAppendRegisteredEntitySynchronizationTableData(entity);
+                  };
+               };
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+      public void GetAndAppendRegisteredEntitySynchronizationTableData(SincronizadorGP50CompanyModel entity)
+      {
+         try
+         {
+            string sqlString2 = $@"
+            SELECT 
+               ID,
+               LAST_UPDATE,
+               COMMENTS 
+            FROM 
+               {TableSchema.TableName} 
+            WHERE 
+               S50_GUID_ID=@S50_GUID_ID
+            ;";
+
+            using(SqlCommand command2 = new SqlCommand(sqlString2, Connection))
+            {
+               command2.Parameters.AddWithValue("@S50_GUID_ID", entity.S50_GUID_ID);
+
+               using(SqlDataReader reader = command2.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
+                     int? id = reader["ID"] as int?;
+                     DateTime? lastUpdate = reader["LAST_UPDATE"] as DateTime? ?? DateTime.Now;
+                     string comments = reader["COMMENTS"] as string ?? "";
+
+                     if(id.HasValue)
+                     {
+                        entity.ID = id.Value;
+                        entity.S50_COMPANY_GROUP_NAME = SageConnectionManager.CompanyGroupData.CompanyName;
+                        entity.S50_COMPANY_GROUP_CODE = SageConnectionManager.CompanyGroupData.CompanyCode;
+                        entity.S50_COMPANY_GROUP_MAIN_CODE = SageConnectionManager.CompanyGroupData.CompanyMainCode;
+                        entity.S50_COMPANY_GROUP_GUID_ID = SageConnectionManager.CompanyGroupData.CompanyGuidId;
+                        entity.GP_USU_ID = GestprojectConnectionManager.GestprojectUserRememberableData.GP_USU_ID;
+                        entity.LAST_UPDATE = lastUpdate.Value;
+                        entity.COMMENTS = comments;
+                     }
+                     else
+                     {
+                        throw new NullReferenceException();
+                     };
+                  };
+               };
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
+      }
+
+
       public void CreateAndDefineDataSource()
       {
          IDataTableGenerator entityDataTableGenerator = new SyncrhonizationDataTableGenerator();
          DataTable = entityDataTableGenerator.CreateDataTable(TableSchema.ColumnsTuplesList);
       }
 
+
       public void PaintEntitiesOnDataSource()
       {
          ISynchronizableEntityPainter<SincronizadorGP50CompanyModel> entityPainter = new EntityPainter<SincronizadorGP50CompanyModel>();
          entityPainter.PaintEntityListOnDataTable(
-            GestprojectEntities,
+            SynchronizableEntities,
             DataTable,
             TableSchema.ColumnsTuplesList
          );
