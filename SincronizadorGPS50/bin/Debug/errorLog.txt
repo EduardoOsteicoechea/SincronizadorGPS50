@@ -18406,3 +18406,232 @@ Message: Invalid object name 'INT_SAGE_SYNCHRONIZATION_ENTITY_DATA_PROVIDERS'.
 
 
 --------------------------------------------------
+Date: 2024-10-19 04:52:44.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetDetailGuid:
+
+No hay ninguna fila en la posición 0..
+Short Description: Failed to end the methods execution successfully..
+Message: No hay ninguna fila en la posición 0.
+
+
+--------------------------------------------------
+Date: 2024-10-19 04:52:52.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.StructureSynchronizationData:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetDetailGuid:
+
+No hay ninguna fila en la posición 0..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetDetailGuid:
+
+No hay ninguna fila en la posición 0.
+
+
+--------------------------------------------------
+Date: 2024-10-19 04:52:54.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GenerateDataTable:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.StructureSynchronizationData:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetDetailGuid:
+
+No hay ninguna fila en la posición 0..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.StructureSynchronizationData:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetDetailGuid:
+
+No hay ninguna fila en la posición 0.
+
+
+--------------------------------------------------
+Date: 2024-10-19 05:46:39.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.ValidateIfSynchornizationEntityExist:
+
+Invalid column name 'S50_GUID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'S50_GUID'.
+
+
+--------------------------------------------------
+Date: 2024-10-19 05:46:47.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchronizationData:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.ValidateIfSynchornizationEntityExist:
+
+Invalid column name 'S50_GUID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.ValidateIfSynchornizationEntityExist:
+
+Invalid column name 'S50_GUID'.
+
+
+--------------------------------------------------
+Date: 2024-10-19 05:47:46.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchornizationEntity:
+
+The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID nvarchar(4000),@PAR_DAO_ID ' expects the parameter '@FCP_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID nvarchar(4000),@PAR_DAO_ID ' expects the parameter '@FCP_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-19 05:49:38.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchornizationEntityDetail:
+
+The parameterized query '(@SYNC_STATUS nvarchar(4000),@DFP_ID nvarchar(4000),@DFP_CONCEPT' expects the parameter '@DFP_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@SYNC_STATUS nvarchar(4000),@DFP_ID nvarchar(4000),@DFP_CONCEPT' expects the parameter '@DFP_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-19 05:51:42.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchornizationEntityDetail:
+
+The parameterized query '(@SYNC_STATUS nvarchar(4000),@DFP_ID int,@DFP_CONCEPTO nvarchar(' expects the parameter '@FCP_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@SYNC_STATUS nvarchar(4000),@DFP_ID int,@DFP_CONCEPTO nvarchar(' expects the parameter '@FCP_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-19 05:57:41.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchornizationEntity:
+
+The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID int,@PAR_DAO_ID int,@FCP_NU' expects the parameter '@PRY_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID int,@PAR_DAO_ID int,@FCP_NU' expects the parameter '@PRY_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-19 05:58:28.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchornizationEntity:
+
+The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID int,@PAR_DAO_ID int,@FCP_NU' expects the parameter '@PRY_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID int,@PAR_DAO_ID int,@FCP_NU' expects the parameter '@PRY_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-19 05:58:33.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchronizationData:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchornizationEntity:
+
+The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID int,@PAR_DAO_ID int,@FCP_NU' expects the parameter '@PRY_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchornizationEntity:
+
+The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID int,@PAR_DAO_ID int,@FCP_NU' expects the parameter '@PRY_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-19 05:59:22.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchornizationEntity:
+
+The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID int,@PAR_DAO_ID int,@FCP_NU' expects the parameter '@PRY_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID int,@PAR_DAO_ID int,@FCP_NU' expects the parameter '@PRY_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-19 06:01:28.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchornizationEntity:
+
+The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID int,@PAR_DAO_ID int,@FCP_NU' expects the parameter '@PRY_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID int,@PAR_DAO_ID int,@FCP_NU' expects the parameter '@PRY_ID', which was not supplied.
+
+
+--------------------------------------------------

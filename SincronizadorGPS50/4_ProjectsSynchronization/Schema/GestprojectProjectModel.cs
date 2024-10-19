@@ -5,13 +5,13 @@ namespace SincronizadorGPS50
 	public class GestprojectProjectModel : ISynchronizationModel
 	{
 		// Gestproject fields
-		public int? PRY_ID { get; set; }
-		public string PRY_CODIGO { get; set; }
-		public string PRY_NOMBRE { get; set; }
-		public string PRY_DIRECCION { get; set; }
-		public string PRY_LOCALIDAD { get; set; }
-		public string PRY_PROVINCIA { get; set; }
-		public string PRY_CP { get; set; }
+		public int? PRY_ID { get; set; } = -1;
+		public string PRY_CODIGO { get; set; } = "";
+		public string PRY_NOMBRE { get; set; } = "";
+		public string PRY_DIRECCION { get; set; } = "";
+		public string PRY_LOCALIDAD { get; set; } = "";
+		public string PRY_PROVINCIA { get; set; } = "";
+		public string PRY_CP { get; set; } = "";
 
 		// Syncronization fields
 		public int? ID { get; set; } = null;

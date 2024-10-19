@@ -22,6 +22,7 @@ namespace SincronizadorGPS50
          /*5*/("PRY_ID", "PRY_ID", typeof(int), "INT", null),
          /*6*/("FCP_ID", "FCP_ID", typeof(int), "INT", null),
          /*7*/("DFP_ESTRUCTURAL", "DFP_ESTRUCTURAL", typeof(string), "VARCHAR(MAX)", string.Empty),
+         /*8*/("INVOICE_GUID_ID", "INVOICE_GUID_ID", typeof(string), "VARCHAR(MAX)", string.Empty),
       };
       public static List<(string columnName, string friendlyName, Type columnType, string columnDefinition, dynamic defaultValue)> SageDataTuples { get; set; } = new List<(string, string, Type, string, dynamic)>()
       {
@@ -108,6 +109,8 @@ namespace SincronizadorGPS50
              GestprojectDataTuples.ElementAt(6);
             public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) GestprojectInvoiceDetailIsStructural { get; set; } =  
             GestprojectDataTuples.ElementAt(7);
+            public (string ColumnDatabaseName, string ColumnUserFriendlyNane, Type ColumnValueType, string columnDefinition, dynamic defaultValue) InvoiceGuid { get; set; } =  
+            GestprojectDataTuples.ElementAt(8);
 
          # endregion entityGestprojectDataProperties
 

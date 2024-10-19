@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
+using Infragistics.Designers.SqlEditor;
 
 namespace SincronizadorGPS50
 {
@@ -15,6 +16,8 @@ namespace SincronizadorGPS50
       public List<GestprojectReceivedBillModel> GestprojectEntities { get; set; }
       public List<Sage50ReceivedBillModel> Sage50Entities { get; set; }
       public List<SageReceivedInvoiceEnrichedModel> SageReceivedInvoicesEnrichedModels { get; set; }
+      public List<SincronizadorGP50ReceivedInvoiceModel> SynchronizadorGPS50ReceivedInvoices { get; set; }
+      public List<SincronizadorGPS50ReceivedInvoiceDetailModel> SynchronizadorGPS50ReceivedInvoicesDetails { get; set; }
       public List<GestprojectReceivedBillModel> ProcessedGestprojectEntities { get; set; }
       public IGestprojectConnectionManager GestprojectConnectionManager { get; set; }
       public SqlConnection Connection { get; set; }
@@ -36,17 +39,32 @@ namespace SincronizadorGPS50
             SageConnectionManager = sage50ConnectionManager;
             TableSchema = tableSchemaProvider;
             GestprojectEntities = new List<GestprojectReceivedBillModel>();
-            Sage50Entities = new List<Sage50ReceivedBillModel>();
+            SynchronizadorGPS50ReceivedInvoices = new List<SincronizadorGP50ReceivedInvoiceModel>();
+            SynchronizadorGPS50ReceivedInvoicesDetails = new List<SincronizadorGPS50ReceivedInvoiceDetailModel>();
 
             ManageReceivedBillsSynchronizationTableStatus(TableSchema);
             ManageReceivedBillsDetailsSynchronizationTableStatus(new ReceivedBillsDetailsSynchronizationTableSchemaProvider());
 
-            GetAllSage50Data();
-            //GetAndStoreGestprojectEntities();
-            ////GetAndStoreSage50Entities();
-            ////ProccessAndStoreGestprojectEntities();
+            GetSageData();
+            StructureSynchronizationData();
+
+            //new VisualizePropertiesAndValues<SincronizadorGP50ReceivedInvoiceModel>(
+            //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //   "SynchronizadorGPS50ReceivedInvoices",
+            //   SynchronizadorGPS50ReceivedInvoices
+            //);
+
+            //new VisualizePropertiesAndValues<SincronizadorGPS50ReceivedInvoiceDetailModel>(
+            //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //   "SynchronizadorGPS50ReceivedInvoicesDetails",
+            //   SynchronizadorGPS50ReceivedInvoicesDetails
+            //);
+
+            RegisterSynchronizationData();
+            TransferSynchronizationData();
+
             CreateAndDefineDataSource();
-            PaintEntitiesOnDataSource();
+            PaintEntitiesOnDataSource(SynchronizadorGPS50ReceivedInvoices);
 
             return DataTable;
          }
@@ -123,7 +141,7 @@ namespace SincronizadorGPS50
          };
       }
 
-      public void GetAllSage50Data()
+      public void GetSageData()
       {
          try
          {
@@ -160,6 +178,12 @@ namespace SincronizadorGPS50
                //   sageReceivedInvoice
                //);
 
+               //new VisualizePropertiesAndValues<ewDocCompraLinFACTURA>(
+               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               //   "sageReceivedInvoice._Lineas",
+               //   sageReceivedInvoice._Lineas.ToList<ewDocCompraLinFACTURA>()
+               //);
+
                //new VisualizePropertiesAndValues<SincronizadorGP50CompanyModel>(
                //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
                //   "sageReceivedBillCompany",
@@ -179,8 +203,8 @@ namespace SincronizadorGPS50
                //);
 
                SageReceivedInvoiceEnrichedModel sageReceivedBillsEnrichedModel = GenerateSageReceivedBillEnrichedModel(
-                  sageReceivedInvoiceBaseModelTaxModelList,
                   baseReceivedInvoiceModel,
+                  sageReceivedInvoiceBaseModelTaxModelList,
                   sageReceivedInvoice,
                   sageReceivedBillCompany,
                   sageReceivedBillProvider,
@@ -189,11 +213,11 @@ namespace SincronizadorGPS50
                SageReceivedInvoicesEnrichedModels.Add(sageReceivedBillsEnrichedModel);
             };
 
-            new VisualizePropertiesAndValues<SageReceivedInvoiceEnrichedModel>(
-               MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-               "SageReceivedInvoicesEnrichedModels",
-               SageReceivedInvoicesEnrichedModels
-            );
+            //new VisualizePropertiesAndValues<SageReceivedInvoiceEnrichedModel>(
+            //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //   "SageReceivedInvoicesEnrichedModels",
+            //   SageReceivedInvoicesEnrichedModels
+            //);
          }
          catch(System.Exception exception) 
          {
@@ -241,7 +265,6 @@ namespace SincronizadorGPS50
                   entity.GuidId = row.ItemArray[3].ToString().Trim();
                   entity.IvaObject = row.ItemArray[4].ToString().Trim();
 
-                  GetAndAddEntityDetails(entity);
                   entities.Add(entity);
                };
             };
@@ -485,8 +508,8 @@ namespace SincronizadorGPS50
 
       public SageReceivedInvoiceEnrichedModel GenerateSageReceivedBillEnrichedModel
       (
-         List<SageReceivedInvoiceBaseModelTaxModel> sageReceivedInvoiceBaseModelTaxModelList,
          SageReceivedInvoiceModel baseReceivedInvoiceModel,
+         List<SageReceivedInvoiceBaseModelTaxModel> sageReceivedInvoiceBaseModelTaxModelList,
          ewDocCompraFACTURA sageReceivedInvoice,
          SincronizadorGP50CompanyModel sageReceivedBillCompany,
          GestprojectProviderModel sageReceivedBillProvider,
@@ -496,6 +519,13 @@ namespace SincronizadorGPS50
          try
          {
             SageReceivedInvoiceEnrichedModel entity = new SageReceivedInvoiceEnrichedModel();
+
+            entity.BaseReceivedInvoiceModel = baseReceivedInvoiceModel;
+            entity.SageReceivedInvoiceBaseModelTaxModelList = sageReceivedInvoiceBaseModelTaxModelList;
+            entity.SageReceivedInvoice = sageReceivedInvoice;
+            entity.SageReceivedInvoiceCompany = sageReceivedBillCompany;
+            entity.SageReceivedInvoiceProvider = sageReceivedBillProvider;
+            entity.SageReceivedInvoiceProject = sageReceivedBillProject;
 
             return entity;
          }
@@ -510,74 +540,31 @@ namespace SincronizadorGPS50
          };
       }
 
-
-
-
-      public void GetAndStoreGestprojectEntities()
+      public void StructureSynchronizationData()
       {
          try
          {
-            List<SageReceivedInvoiceModel> receivedInvoiceCodesAndProvidersCodes = GetSageReceivedInvoiceCodesAndProvidersCodes();
-
-            //new VisualizePropertiesAndValues<SageReceivedInvoiceModel>(
-            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-            //  "receivedInvoiceCodesAndProvidersCodes",
-            //  receivedInvoiceCodesAndProvidersCodes
-            //);
-
-            GestprojectEntities = GenerateGestprojectEntitiesFromReceivedInvoiceModels(receivedInvoiceCodesAndProvidersCodes);
-         }
-         catch(System.Exception exception)
-         {
-            throw ApplicationLogger.ReportError(
-               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
-               MethodBase.GetCurrentMethod().DeclaringType.Name,
-               MethodBase.GetCurrentMethod().Name,
-               exception
-            );
-         };
-      }
-
-      public List<SageReceivedInvoiceModel> GetSageReceivedInvoiceCodesAndProvidersCodes()
-      {
-         try
-         {
-            List<SageReceivedInvoiceModel> receivedInvoiceCodesAndProvidersCodes = new List<SageReceivedInvoiceModel>();
-
-            string sqlString = $@"
-            SELECT 
-               empresa
-               ,numero
-               ,proveedor
-               ,guid_id
-               ,iva
-            FROM 
-               {DB.SQLDatabase("gestion","c_factucom")}
-            ;";
-
-            DataTable enentiesDataTable = new DataTable();
-            DB.SQLExec(sqlString, ref enentiesDataTable);
-
-            if(enentiesDataTable.Rows.Count > 0)
+            foreach (SageReceivedInvoiceEnrichedModel sageEnrichedModel in SageReceivedInvoicesEnrichedModels)
             {
-               for(int i = 0; i < enentiesDataTable.Rows.Count; i++)
+               SincronizadorGP50ReceivedInvoiceModel entity = new SincronizadorGP50ReceivedInvoiceModel(sageEnrichedModel, SageConnectionManager, GestprojectConnectionManager);
+
+               SynchronizadorGPS50ReceivedInvoices.Add(entity);
+
+               //new VisualizePropertiesAndValues<SageReceivedInvoiceEnrichedModel>(
+               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+               //   "sageEnrichedModel",
+               //   sageEnrichedModel
+               //);
+
+               foreach (ewDocCompraLinFACTURA receivedInvoiceLine in sageEnrichedModel.SageReceivedInvoice._Lineas)
                {
-                  DataRow row = enentiesDataTable.Rows[i];
+                  SincronizadorGPS50ReceivedInvoiceDetailModel detailEntity = new SincronizadorGPS50ReceivedInvoiceDetailModel(sageEnrichedModel, receivedInvoiceLine, SageConnectionManager, GestprojectConnectionManager);
 
-                  SageReceivedInvoiceModel entity = new SageReceivedInvoiceModel();
+                  GetDetailGuid(receivedInvoiceLine, detailEntity);
 
-                  entity.CompanyNumber = row.ItemArray[0].ToString().Trim();
-                  entity.Number = row.ItemArray[1].ToString().Trim();
-                  entity.ProviderCode = row.ItemArray[2].ToString().Trim();
-                  entity.GuidId = row.ItemArray[3].ToString().Trim();
-                  entity.IvaObject = row.ItemArray[4].ToString().Trim();
-
-                  GetAndAddEntityDetails(entity);
-                  receivedInvoiceCodesAndProvidersCodes.Add(entity);
+                  SynchronizadorGPS50ReceivedInvoicesDetails.Add(detailEntity);
                };
             };
-
-            return receivedInvoiceCodesAndProvidersCodes;
          }
          catch(System.Exception exception)
          {
@@ -587,144 +574,37 @@ namespace SincronizadorGPS50
                MethodBase.GetCurrentMethod().Name,
                exception
             );
-         };
+         }
       }
 
-      public void GetAndAddEntityDetails
+
+      public void GetDetailGuid
       (
-         SageReceivedInvoiceModel entity
+         ewDocCompraLinFACTURA receivedInvoiceLine, 
+         SincronizadorGPS50ReceivedInvoiceDetailModel detailEntity
       )
       {
          try
          {
-            //////////////////////////////////
-            // Use the instance that created the connection
-            //////////////////////////////////
+            string sqlString = $@"
+            SELECT
+               guid_id
+            FROM 
+               {DB.SQLDatabase("gestion","d_albcom")}
+            WHERE
+               EMPRESA='{receivedInvoiceLine._Empresa}'
+            AND
+               DOC_NUM='{receivedInvoiceLine._Doc_Num}'
+            AND
+               NUMERO='{receivedInvoiceLine._Numero}'
+            AND
+               DEFINICION='{receivedInvoiceLine._Definicion}'
+            ;";
 
-            ConnectionActions.Sage50ConnectionManager._LoadGlobalVariables();
-            ConnectionActions.Sage50ConnectionManager._LoadEnvironmentCompany();
+            DataTable entiesDataTable = new DataTable();
+            DB.SQLExec(sqlString, ref entiesDataTable);
 
-            ewDocCompraFACTURA purchaseInvoice = new ewDocCompraFACTURA();
-            purchaseInvoice._Load(
-               entity.CompanyNumber,
-               entity.Number,
-               entity.ProviderCode
-            );
-
-            //////////////////////////////////
-            // Generate the received invoice model to be synchronized (or transferred)
-            //////////////////////////////////
-
-            SincronizadorGP50ReceivedInvoiceModel gestprojectReceivedBillModel = new SincronizadorGP50ReceivedInvoiceModel();
-            //gestprojectReceivedBillModel.FCP_ID = ;
-            
-            sage.ew.cliente.Obra obra = new sage.ew.cliente.Obra();
-            obra._Codigo = purchaseInvoice._Cabecera._Obra;
-            obra._Load();
-
-            //gestprojectReceivedBillModel.PAR_DAO_ID = GetSynchronizationTableProjectIdByGuidId(obra._Guid_Id); /////////!!!!!!!!!!!!ERROR esta es la empresa, creo que ID de empresa
-            gestprojectReceivedBillModel.FCP_NUM_FACTURA = purchaseInvoice._Cabecera._Factura;
-            gestprojectReceivedBillModel.FCP_FECHA = purchaseInvoice._Cabecera._FechaFac;
-            //gestprojectReceivedBillModel.PAR_PRO_ID =  ; purchaseInvoice._Cabecera._Proveedor -> Obtener PAR_ID de la tabla de sincronización de proveedores usando éste valor (subctacontable)
-            gestprojectReceivedBillModel.FCP_SUBCTA_CONTABLE = purchaseInvoice._Lineas.FirstOrDefault()._Cuenta;
-            gestprojectReceivedBillModel.FCP_BASE_IMPONIBLE = purchaseInvoice._Pie._TotalBase;
-            //gestprojectReceivedBillModel.FCP_VALOR_IVA = ; // De la consulta a la tabla c_factucom, en el campo IVA, sumar los valores del campo "_ImpIva" de todos los elementos
-            //gestprojectReceivedBillModel.FCP_IVA = ; // De la consulta a la tabla c_factucom, en el campo IVA, seleccionar el campo "_PrcIva" del primer objeto del array
-            gestprojectReceivedBillModel.FCP_VALOR_IRPF = purchaseInvoice._Pie._RetencionDoc;
-            gestprojectReceivedBillModel.FCP_IRPF = purchaseInvoice._Pie._RetencionDocPorcen;
-            gestprojectReceivedBillModel.FCP_TOTAL_FACTURA = purchaseInvoice._Pie._TotalDocumento;
-            gestprojectReceivedBillModel.FCP_OBSERVACIONES = purchaseInvoice._Cabecera._Observacio;
-            //gestprojectReceivedBillModel.PROYECTO = purchaseInvoice._Cabecera._Obra; ?? Name or id
-            //gestprojectReceivedBillModel.TIPO = ; // Excluded in this version
-            gestprojectReceivedBillModel.S50_GUID_ID = entity.GuidId;
-
-            //////////////////////////////////
-            // Load the invoice's provider
-            //////////////////////////////////
-
-            sage.ew.docscompra.Proveedor currentReceivedInvoiceProvider = new Proveedor();
-            currentReceivedInvoiceProvider._Codigo = entity.ProviderCode;
-            currentReceivedInvoiceProvider._Load();
-
-            //new VisualizePropertiesAndValues<ewDocCompraFACTURA>(
-            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-            //  "purchaseInvoice",
-            //  purchaseInvoice
-            //);
-
-            //new VisualizePropertiesAndValues<ewDocCompraCabFACTURA>(
-            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-            //  "purchaseInvoice._Cabecera",
-            //  purchaseInvoice._Cabecera
-            //);
-
-            //new VisualizePropertiesAndValues<ewDocCompraPieFACTURA>(
-            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-            //  "purchaseInvoice._Pie",
-            //  purchaseInvoice._Pie
-            //);
-
-            //new VisualizePropertiesAndValues<sage.ew.docscompra.Proveedor>(
-            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-            //  "currentReceivedInvoiceProvider",
-            //  currentReceivedInvoiceProvider
-            //);
-
-            //new VisualizePropertiesAndValues<SageReceivedInvoiceModel>(
-            //  MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-            //  "entity",
-            //  entity
-            //);
-
-            List<SincronizadorGPS50ReceivedInvoiceDetailModel> invoiceDetailList = new List<SincronizadorGPS50ReceivedInvoiceDetailModel>();
-
-            foreach(sage.ew.docscompra.ewDocCompraLinFACTURA invoiceDetail in purchaseInvoice._Lineas)
-            {
-               SincronizadorGPS50ReceivedInvoiceDetailModel gestprojectEntityDetail = new SincronizadorGPS50ReceivedInvoiceDetailModel();
-
-               //gestprojectEntityDetail.FCP_ID = ; // Obtener el id de la factura en GP
-               gestprojectEntityDetail.DFP_CONCEPTO = invoiceDetail._Definicion.ToString().Trim();
-               gestprojectEntityDetail.DFP_PRECIO_UNIDAD = invoiceDetail._Precio;
-               gestprojectEntityDetail.DFP_UNIDADES = invoiceDetail._Unidades;
-               //gestprojectEntityDetail.DFP_SUBTOTAL = invoiceDetail.;
-               if(string.IsNullOrWhiteSpace(purchaseInvoice._Cabecera._Obra) == true)
-               {
-                  gestprojectEntityDetail.PRY_ID = null;
-                  gestprojectEntityDetail.DFP_ESTRUCTURAL = "1";
-               }
-               else
-               {
-                  //gestprojectEntityDetail.PRY_ID = null; // id de obra (obtener obra (cabecera de factura recibida -> codigoDeObra -> id de Gestproject de obra en la tabla de sincronizacion) -> obtener id de obra)
-                  gestprojectEntityDetail.DFP_ESTRUCTURAL = "0";
-               };                  
-
-               string sqlString2 = $@"
-                  SELECT
-                     guid_id
-                  FROM 
-                     {DB.SQLDatabase("gestion","d_albcom")}
-                  WHERE
-                     empresa='{invoiceDetail._Empresa}'
-                  AND
-                     definicion='{invoiceDetail._Definicion}'
-               ;";
-
-               DataTable entiesDataTable2 = new DataTable();
-               DB.SQLExec(sqlString2, ref entiesDataTable2);
-
-               gestprojectEntityDetail.S50_CODE = "";
-               gestprojectEntityDetail.S50_GUID_ID = entiesDataTable2.Rows[0].ItemArray[0].ToString().Trim();
-
-               //new VisualizePropertiesAndValues<GestprojectReceivedInvoiceDetailModel>(
-               //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-               //   "gestprojectEntityDetail",
-               //   gestprojectEntityDetail
-               //);
-
-               invoiceDetailList.Add(gestprojectEntityDetail);
-            };
-
-            entity.Details = invoiceDetailList;
+            detailEntity.S50_GUID_ID = entiesDataTable.Rows[0].ItemArray[0].ToString().Trim();
          }
          catch(System.Exception exception)
          {
@@ -734,40 +614,35 @@ namespace SincronizadorGPS50
                MethodBase.GetCurrentMethod().Name,
                exception
             );
-         };
+         }
       }
-
-      public List<GestprojectReceivedBillModel> GenerateGestprojectEntitiesFromReceivedInvoiceModels(List<SageReceivedInvoiceModel> receivedInvoiceCodesAndProvidersCodes)
+      
+      public void RegisterSynchronizationData()
       {
          try
          {
-            List<GestprojectReceivedBillModel> gestprojectEntities = new List<GestprojectReceivedBillModel>();
-
-            foreach(SageReceivedInvoiceModel item in receivedInvoiceCodesAndProvidersCodes)
+               //public List<SincronizadorGPS50ReceivedInvoiceDetailModel> SynchronizadorGPS50ReceivedInvoicesDetails { get; set; }
+            foreach(SincronizadorGP50ReceivedInvoiceModel entity in SynchronizadorGPS50ReceivedInvoices)
             {
-               GetReceivedInvoiceModelProvider(item.ProviderCode);
+               if(ValidateIfSynchornizationEntityExist(entity, "INT_SAGE_SINC_FACTURA_RECIBIDA") == false)
+               {
+                  RegisterSynchornizationEntity(entity, "INT_SAGE_SINC_FACTURA_RECIBIDA");
+                  GetEntitySynchronizationId(entity, "INT_SAGE_SINC_FACTURA_RECIBIDA");
 
-               //   GestprojectReceivedBillModel entity = new GestprojectReceivedBillModel();
-
-               //   entity.FCP_ID = -1;
-               //   entity.PAR_DAO_ID = -1;
-               //   entity.FCP_NUM_FACTURA = item.Number;
-               //   entity.FCP_FECHA = item.;
-               //   entity.PAR_PRO_ID = -1;
-               //   entity.FCP_BASE_IMPONIBLE = item.;
-               //   entity.FCP_VALOR_IVA = item.;
-               //   entity.FCP_IVA = item.;
-               //   entity.FCP_VALOR_IRPF = item.;
-               //   entity.FCP_IRPF = item.;
-               //   entity.FCP_TOTAL_FACTURA = item.tota;
-               //   entity.FCP_OBSERVACIONES = "";
-               //   entity.PROYECTO = item.;
-               //   entity.TIPO = item.;
-
-               //   gestprojectEntities.Add(entity);
-            }
-
-            return gestprojectEntities;
+                  foreach(
+                     SincronizadorGPS50ReceivedInvoiceDetailModel entityDetail in SynchronizadorGPS50ReceivedInvoicesDetails
+                     .Where(entityDetail => entityDetail.INVOICE_GUID_ID == entity.S50_GUID_ID)
+                  )
+                  {
+                     RegisterSynchornizationEntityDetail(entityDetail, "INT_SAGE_SINC_FACTURA_RECIBIDA_DETALLES");
+                     GetEntityDetailSynchronizationId(entityDetail, "INT_SAGE_SINC_FACTURA_RECIBIDA_DETALLES");
+                  };
+               }
+               else
+               {
+                  GetEntitySynchronizationId(entity, "INT_SAGE_SINC_FACTURA_RECIBIDA");
+               };
+            };
          }
          catch(System.Exception exception)
          {
@@ -777,36 +652,912 @@ namespace SincronizadorGPS50
                MethodBase.GetCurrentMethod().Name,
                exception
             );
+         }
+         finally
+         {
+            Connection.Close();
          };
       }
 
-      
-      public GestprojectProviderModel GetReceivedInvoiceModelProvider(string providerCode)
+      public bool ValidateIfSynchornizationEntityExist(SincronizadorGP50ReceivedInvoiceModel entity, string tableName)
       {
          try
          {
             Connection.Open();
 
-            GestprojectProviderModel entity = new GestprojectProviderModel();
+            string sqlString = $@"
+            SELECT
+               ID
+            FROM
+               {tableName}
+            WHERE
+               S50_GUID_ID=@S50_GUID_ID
+            ;";
 
-            //string sqlString = "";
-            //sqlString = "SELECT" + " ";
-            // FCP_ID
-            // ,PAR_DAO_ID
-            // ,FCP_NUM_FACTURA
-            // ,FCP_FECHA
-            // ,PAR_PRO_ID
-            // ,FCP_BASE_IMPONIBLE
-            // ,FCP_VALOR_IVA
-            // ,FCP_IVA
-            // ,FCP_VALOR_IRPF
-            // ,FCP_IRPF
-            // ,FCP_TOTAL_FACTURA
-            // ,FCP_OBSERVACIONES
-            // ,PROYECTO
-            // ,TIPO
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@S50_GUID_ID",entity.S50_GUID_ID);
 
-            return entity;
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
+                     return true;
+                  };
+               };
+            };
+
+            return false;
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+      public void RegisterSynchornizationEntity(SincronizadorGP50ReceivedInvoiceModel entity, string tableName)
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            INSERT INTO
+               {tableName}
+            (
+               SYNC_STATUS
+               ,FCP_ID
+               ,PAR_DAO_ID
+               ,FCP_NUM_FACTURA
+               ,FCP_FECHA
+               ,PAR_PRO_ID
+               ,FCP_SUBCTA_CONTABLE
+               ,FCP_BASE_IMPONIBLE
+               ,FCP_VALOR_IVA
+               ,FCP_IVA
+               ,FCP_VALOR_IRPF
+               ,FCP_IRPF
+               ,FCP_TOTAL_FACTURA
+               ,FCP_OBSERVACIONES
+               ,PRY_ID
+               ,S50_GUID_ID
+               ,S50_COMPANY_GROUP_NAME
+               ,S50_COMPANY_GROUP_CODE
+               ,S50_COMPANY_GROUP_MAIN_CODE
+               ,S50_COMPANY_GROUP_GUID_ID
+               ,GP_USU_ID
+               ,COMMENTS
+            )
+            VALUES
+            (
+               @SYNC_STATUS
+               ,@FCP_ID
+               ,@PAR_DAO_ID
+               ,@FCP_NUM_FACTURA
+               ,@FCP_FECHA
+               ,@PAR_PRO_ID
+               ,@FCP_SUBCTA_CONTABLE
+               ,@FCP_BASE_IMPONIBLE
+               ,@FCP_VALOR_IVA
+               ,@FCP_IVA
+               ,@FCP_VALOR_IRPF
+               ,@FCP_IRPF
+               ,@FCP_TOTAL_FACTURA
+               ,@FCP_OBSERVACIONES
+               ,@PRY_ID
+               ,@S50_GUID_ID
+               ,@S50_COMPANY_GROUP_NAME
+               ,@S50_COMPANY_GROUP_CODE
+               ,@S50_COMPANY_GROUP_MAIN_CODE
+               ,@S50_COMPANY_GROUP_GUID_ID
+               ,@GP_USU_ID
+               ,@COMMENTS
+            )
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@SYNC_STATUS", entity.SYNC_STATUS);
+               command.Parameters.AddWithValue("@FCP_ID", entity.FCP_ID);
+               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
+               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
+               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
+               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
+               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
+               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
+               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
+               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
+               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
+               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
+               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
+               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
+               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+               command.Parameters.AddWithValue("@S50_GUID_ID", entity.S50_GUID_ID);
+               command.Parameters.AddWithValue("@S50_COMPANY_GROUP_NAME", entity.S50_COMPANY_GROUP_NAME);
+               command.Parameters.AddWithValue("@S50_COMPANY_GROUP_CODE", entity.S50_COMPANY_GROUP_CODE);
+               command.Parameters.AddWithValue("@S50_COMPANY_GROUP_MAIN_CODE", entity.S50_COMPANY_GROUP_MAIN_CODE);
+               command.Parameters.AddWithValue("@S50_COMPANY_GROUP_GUID_ID", entity.S50_COMPANY_GROUP_GUID_ID);
+               command.Parameters.AddWithValue("@GP_USU_ID", entity.GP_USU_ID);
+               command.Parameters.AddWithValue("@COMMENTS", entity.COMMENTS);
+
+               command.ExecuteNonQuery();
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+      public void GetEntitySynchronizationId(SincronizadorGP50ReceivedInvoiceModel entity, string tableName)
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            SELECT
+               ID
+            FROM
+               {tableName}
+            WHERE
+               S50_GUID_ID=@S50_GUID_ID
+            ";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@S50_GUID_ID",entity.S50_GUID_ID);
+
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
+                     entity.ID = reader["ID"] as int?;
+                     break;
+                  };
+               };
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+      public void RegisterSynchornizationEntityDetail(SincronizadorGPS50ReceivedInvoiceDetailModel entityDetail, string tableName)
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            INSERT INTO
+               {tableName}
+            (
+               SYNC_STATUS
+               ,DFP_ID
+               ,DFP_CONCEPTO
+               ,DFP_PRECIO_UNIDAD
+               ,DFP_UNIDADES
+               ,DFP_SUBTOTAL
+               ,PRY_ID
+               ,FCP_ID
+               ,DFP_ESTRUCTURAL
+               ,INVOICE_GUID_ID
+               ,S50_GUID_ID
+               ,S50_COMPANY_GROUP_NAME
+               ,S50_COMPANY_GROUP_CODE
+               ,S50_COMPANY_GROUP_MAIN_CODE
+               ,S50_COMPANY_GROUP_GUID_ID
+               ,GP_USU_ID
+               ,COMMENTS
+            )
+            VALUES
+            (
+               @SYNC_STATUS
+               ,@DFP_ID
+               ,@DFP_CONCEPTO
+               ,@DFP_PRECIO_UNIDAD
+               ,@DFP_UNIDADES
+               ,@DFP_SUBTOTAL
+               ,@PRY_ID
+               ,@FCP_ID
+               ,@DFP_ESTRUCTURAL
+               ,@INVOICE_GUID_ID
+               ,@S50_GUID_ID
+               ,@S50_COMPANY_GROUP_NAME
+               ,@S50_COMPANY_GROUP_CODE
+               ,@S50_COMPANY_GROUP_MAIN_CODE
+               ,@S50_COMPANY_GROUP_GUID_ID
+               ,@GP_USU_ID
+               ,@COMMENTS
+            )
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@SYNC_STATUS", entityDetail.SYNC_STATUS);
+               command.Parameters.AddWithValue("@DFP_ID", entityDetail.DFP_ID);
+               command.Parameters.AddWithValue("@DFP_CONCEPTO", entityDetail.DFP_CONCEPTO);
+               command.Parameters.AddWithValue("@DFP_PRECIO_UNIDAD", entityDetail.DFP_PRECIO_UNIDAD);
+               command.Parameters.AddWithValue("@DFP_UNIDADES", entityDetail.DFP_UNIDADES);
+               command.Parameters.AddWithValue("@DFP_SUBTOTAL", entityDetail.DFP_SUBTOTAL);
+               command.Parameters.AddWithValue("@PRY_ID", entityDetail.PRY_ID);
+               command.Parameters.AddWithValue("@FCP_ID", entityDetail.FCP_ID);
+               command.Parameters.AddWithValue("@DFP_ESTRUCTURAL", entityDetail.DFP_ESTRUCTURAL);
+               command.Parameters.AddWithValue("@INVOICE_GUID_ID", entityDetail.INVOICE_GUID_ID);
+               command.Parameters.AddWithValue("@S50_GUID_ID", entityDetail.S50_GUID_ID);
+               command.Parameters.AddWithValue("@S50_COMPANY_GROUP_NAME", entityDetail.S50_COMPANY_GROUP_NAME);
+               command.Parameters.AddWithValue("@S50_COMPANY_GROUP_CODE", entityDetail.S50_COMPANY_GROUP_CODE);
+               command.Parameters.AddWithValue("@S50_COMPANY_GROUP_MAIN_CODE", entityDetail.S50_COMPANY_GROUP_MAIN_CODE);
+               command.Parameters.AddWithValue("@S50_COMPANY_GROUP_GUID_ID", entityDetail.S50_COMPANY_GROUP_GUID_ID);
+               command.Parameters.AddWithValue("@GP_USU_ID", entityDetail.GP_USU_ID);
+               command.Parameters.AddWithValue("@COMMENTS", entityDetail.COMMENTS);
+
+               command.ExecuteNonQuery();
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+      public void GetEntityDetailSynchronizationId(SincronizadorGPS50ReceivedInvoiceDetailModel entityDetail, string tableName)
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            SELECT
+               ID
+            FROM
+               {tableName}
+            WHERE
+               S50_GUID_ID=@S50_GUID_ID
+            ";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@S50_GUID_ID",entityDetail.S50_GUID_ID);
+
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
+                     entityDetail.ID = reader["ID"] as int?;
+                     break;
+                  };
+               };
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+
+      public void TransferSynchronizationData()
+      {
+         try
+         {
+            foreach(SincronizadorGP50ReceivedInvoiceModel entity in SynchronizadorGPS50ReceivedInvoices)
+            {
+               if(ValidateIfSynchronizableEntityExistOnGestproject(entity) == false)
+               {
+                  RecordSynchronizableEntityOnGestproject(entity);
+                  GetRecordedSynchronizableEntityGestprojectId(entity);
+                  RegisterSynchronizableEntityGestprojectId(entity);
+
+                  foreach(
+                     SincronizadorGPS50ReceivedInvoiceDetailModel entityDetail in SynchronizadorGPS50ReceivedInvoicesDetails
+                     .Where(entityDetail => entityDetail.INVOICE_GUID_ID == entity.S50_GUID_ID)
+                  )
+                  {
+                     AppendSynchronizableEntityGestprojectIdToDetails(entityDetail);
+                     RegisterSynchronizableEntityDetailsOnGestproject(entityDetail);
+                     GetRecordedSynchronizableEntityDetailsGestprojectIds(entityDetail);
+                  };
+               };
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
+      }
+
+      public bool ValidateIfSynchronizableEntityExistOnGestproject
+      (
+         SincronizadorGP50ReceivedInvoiceModel entity
+      )
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            INSERT INTO
+               FACTURA_PROVEEDOR
+            (
+               PAR_DAO_ID
+               ,FCP_NUM_FACTURA
+               ,FCP_FECHA
+               ,PAR_PRO_ID
+               ,FCP_SUBCTA_CONTABLE
+               ,FCP_BASE_IMPONIBLE
+               ,FCP_VALOR_IVA
+               ,FCP_IVA
+               ,FCP_VALOR_IRPF
+               ,FCP_IRPF
+               ,FCP_TOTAL_FACTURA
+               ,FCP_OBSERVACIONES
+               ,PRY_ID
+            )
+            VALUES
+            (
+               @PAR_DAO_ID
+               ,@FCP_NUM_FACTURA
+               ,@FCP_FECHA
+               ,@PAR_PRO_ID
+               ,@FCP_SUBCTA_CONTABLE
+               ,@FCP_BASE_IMPONIBLE
+               ,@FCP_VALOR_IVA
+               ,@FCP_IVA
+               ,@FCP_VALOR_IRPF
+               ,@FCP_IRPF
+               ,@FCP_TOTAL_FACTURA
+               ,@FCP_OBSERVACIONES
+               ,@PRY_ID
+            )
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
+               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
+               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
+               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
+               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
+               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
+               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
+               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
+               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
+               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
+               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
+               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
+               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+
+               command.ExecuteNonQuery();
+            };
+
+            return true;
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+      
+      public void RecordSynchronizableEntityOnGestproject
+      (
+         SincronizadorGP50ReceivedInvoiceModel entity
+      )
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            INSERT INTO
+               FACTURA_PROVEEDOR
+            (
+               PAR_DAO_ID
+               ,FCP_NUM_FACTURA
+               ,FCP_FECHA
+               ,PAR_PRO_ID
+               ,FCP_SUBCTA_CONTABLE
+               ,FCP_BASE_IMPONIBLE
+               ,FCP_VALOR_IVA
+               ,FCP_IVA
+               ,FCP_VALOR_IRPF
+               ,FCP_IRPF
+               ,FCP_TOTAL_FACTURA
+               ,FCP_OBSERVACIONES
+               ,PRY_ID
+            )
+            VALUES
+            (
+               @PAR_DAO_ID
+               ,@FCP_NUM_FACTURA
+               ,@FCP_FECHA
+               ,@PAR_PRO_ID
+               ,@FCP_SUBCTA_CONTABLE
+               ,@FCP_BASE_IMPONIBLE
+               ,@FCP_VALOR_IVA
+               ,@FCP_IVA
+               ,@FCP_VALOR_IRPF
+               ,@FCP_IRPF
+               ,@FCP_TOTAL_FACTURA
+               ,@FCP_OBSERVACIONES
+               ,@PRY_ID
+            )
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
+               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
+               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
+               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
+               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
+               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
+               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
+               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
+               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
+               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
+               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
+               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
+               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+
+               command.ExecuteNonQuery();
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+      
+      public void GetRecordedSynchronizableEntityGestprojectId
+      (
+         SincronizadorGP50ReceivedInvoiceModel entity
+      )
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            INSERT INTO
+               FACTURA_PROVEEDOR
+            (
+               PAR_DAO_ID
+               ,FCP_NUM_FACTURA
+               ,FCP_FECHA
+               ,PAR_PRO_ID
+               ,FCP_SUBCTA_CONTABLE
+               ,FCP_BASE_IMPONIBLE
+               ,FCP_VALOR_IVA
+               ,FCP_IVA
+               ,FCP_VALOR_IRPF
+               ,FCP_IRPF
+               ,FCP_TOTAL_FACTURA
+               ,FCP_OBSERVACIONES
+               ,PRY_ID
+            )
+            VALUES
+            (
+               @PAR_DAO_ID
+               ,@FCP_NUM_FACTURA
+               ,@FCP_FECHA
+               ,@PAR_PRO_ID
+               ,@FCP_SUBCTA_CONTABLE
+               ,@FCP_BASE_IMPONIBLE
+               ,@FCP_VALOR_IVA
+               ,@FCP_IVA
+               ,@FCP_VALOR_IRPF
+               ,@FCP_IRPF
+               ,@FCP_TOTAL_FACTURA
+               ,@FCP_OBSERVACIONES
+               ,@PRY_ID
+            )
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
+               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
+               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
+               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
+               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
+               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
+               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
+               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
+               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
+               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
+               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
+               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
+               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+
+               command.ExecuteNonQuery();
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+      
+      public void RegisterSynchronizableEntityGestprojectId
+      (
+         SincronizadorGP50ReceivedInvoiceModel entity
+      )
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            INSERT INTO
+               FACTURA_PROVEEDOR
+            (
+               PAR_DAO_ID
+               ,FCP_NUM_FACTURA
+               ,FCP_FECHA
+               ,PAR_PRO_ID
+               ,FCP_SUBCTA_CONTABLE
+               ,FCP_BASE_IMPONIBLE
+               ,FCP_VALOR_IVA
+               ,FCP_IVA
+               ,FCP_VALOR_IRPF
+               ,FCP_IRPF
+               ,FCP_TOTAL_FACTURA
+               ,FCP_OBSERVACIONES
+               ,PRY_ID
+            )
+            VALUES
+            (
+               @PAR_DAO_ID
+               ,@FCP_NUM_FACTURA
+               ,@FCP_FECHA
+               ,@PAR_PRO_ID
+               ,@FCP_SUBCTA_CONTABLE
+               ,@FCP_BASE_IMPONIBLE
+               ,@FCP_VALOR_IVA
+               ,@FCP_IVA
+               ,@FCP_VALOR_IRPF
+               ,@FCP_IRPF
+               ,@FCP_TOTAL_FACTURA
+               ,@FCP_OBSERVACIONES
+               ,@PRY_ID
+            )
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
+               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
+               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
+               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
+               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
+               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
+               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
+               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
+               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
+               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
+               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
+               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
+               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+
+               command.ExecuteNonQuery();
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+      
+      public void AppendSynchronizableEntityGestprojectIdToDetails
+      (
+         SincronizadorGPS50ReceivedInvoiceDetailModel entity
+      )
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            INSERT INTO
+               FACTURA_PROVEEDOR
+            (
+               PAR_DAO_ID
+               ,FCP_NUM_FACTURA
+               ,FCP_FECHA
+               ,PAR_PRO_ID
+               ,FCP_SUBCTA_CONTABLE
+               ,FCP_BASE_IMPONIBLE
+               ,FCP_VALOR_IVA
+               ,FCP_IVA
+               ,FCP_VALOR_IRPF
+               ,FCP_IRPF
+               ,FCP_TOTAL_FACTURA
+               ,FCP_OBSERVACIONES
+               ,PRY_ID
+            )
+            VALUES
+            (
+               @PAR_DAO_ID
+               ,@FCP_NUM_FACTURA
+               ,@FCP_FECHA
+               ,@PAR_PRO_ID
+               ,@FCP_SUBCTA_CONTABLE
+               ,@FCP_BASE_IMPONIBLE
+               ,@FCP_VALOR_IVA
+               ,@FCP_IVA
+               ,@FCP_VALOR_IRPF
+               ,@FCP_IRPF
+               ,@FCP_TOTAL_FACTURA
+               ,@FCP_OBSERVACIONES
+               ,@PRY_ID
+            )
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
+               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
+               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
+               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
+               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
+               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
+               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
+               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
+               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
+               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
+               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
+               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
+               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+
+               command.ExecuteNonQuery();
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+      
+      public void RegisterSynchronizableEntityDetailsOnGestproject
+      (
+         SincronizadorGPS50ReceivedInvoiceDetailModel entity
+      )
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            INSERT INTO
+               FACTURA_PROVEEDOR
+            (
+               PAR_DAO_ID
+               ,FCP_NUM_FACTURA
+               ,FCP_FECHA
+               ,PAR_PRO_ID
+               ,FCP_SUBCTA_CONTABLE
+               ,FCP_BASE_IMPONIBLE
+               ,FCP_VALOR_IVA
+               ,FCP_IVA
+               ,FCP_VALOR_IRPF
+               ,FCP_IRPF
+               ,FCP_TOTAL_FACTURA
+               ,FCP_OBSERVACIONES
+               ,PRY_ID
+            )
+            VALUES
+            (
+               @PAR_DAO_ID
+               ,@FCP_NUM_FACTURA
+               ,@FCP_FECHA
+               ,@PAR_PRO_ID
+               ,@FCP_SUBCTA_CONTABLE
+               ,@FCP_BASE_IMPONIBLE
+               ,@FCP_VALOR_IVA
+               ,@FCP_IVA
+               ,@FCP_VALOR_IRPF
+               ,@FCP_IRPF
+               ,@FCP_TOTAL_FACTURA
+               ,@FCP_OBSERVACIONES
+               ,@PRY_ID
+            )
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
+               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
+               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
+               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
+               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
+               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
+               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
+               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
+               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
+               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
+               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
+               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
+               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+
+               command.ExecuteNonQuery();
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+      
+      public void GetRecordedSynchronizableEntityDetailsGestprojectIds
+      (
+         SincronizadorGPS50ReceivedInvoiceDetailModel entity
+      )
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            INSERT INTO
+               FACTURA_PROVEEDOR
+            (
+               PAR_DAO_ID
+               ,FCP_NUM_FACTURA
+               ,FCP_FECHA
+               ,PAR_PRO_ID
+               ,FCP_SUBCTA_CONTABLE
+               ,FCP_BASE_IMPONIBLE
+               ,FCP_VALOR_IVA
+               ,FCP_IVA
+               ,FCP_VALOR_IRPF
+               ,FCP_IRPF
+               ,FCP_TOTAL_FACTURA
+               ,FCP_OBSERVACIONES
+               ,PRY_ID
+            )
+            VALUES
+            (
+               @PAR_DAO_ID
+               ,@FCP_NUM_FACTURA
+               ,@FCP_FECHA
+               ,@PAR_PRO_ID
+               ,@FCP_SUBCTA_CONTABLE
+               ,@FCP_BASE_IMPONIBLE
+               ,@FCP_VALOR_IVA
+               ,@FCP_IVA
+               ,@FCP_VALOR_IRPF
+               ,@FCP_IRPF
+               ,@FCP_TOTAL_FACTURA
+               ,@FCP_OBSERVACIONES
+               ,@PRY_ID
+            )
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
+               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
+               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
+               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
+               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
+               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
+               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
+               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
+               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
+               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
+               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
+               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
+               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+
+               command.ExecuteNonQuery();
+            };
          }
          catch(System.Exception exception)
          {
@@ -825,17 +1576,15 @@ namespace SincronizadorGPS50
 
 
 
-      public void ProccessAndStoreGestprojectEntities()
-      {
-         ISynchronizableEntityProcessor<GestprojectReceivedBillModel, Sage50ReceivedBillModel> gestprojectProvidersProcessor = new GestprojectReceivedBillsProcessor();
-         ProcessedGestprojectEntities = gestprojectProvidersProcessor.ProcessEntityList(
-            GestprojectConnectionManager.GestprojectSqlConnection,
-            SageConnectionManager,
-            TableSchema,
-            GestprojectEntities,
-            Sage50Entities
-         );
-      }
+
+
+
+
+
+
+
+
+
 
       public void CreateAndDefineDataSource()
       {                  
@@ -855,15 +1604,15 @@ namespace SincronizadorGPS50
          };
       }
 
-      public void PaintEntitiesOnDataSource()
+      public void PaintEntitiesOnDataSource(dynamic finalEntity)
       {         
          try
          {
-            if(GestprojectEntities.Count > 0)
+            if(finalEntity.Count > 0)
             {
-               ISynchronizableEntityPainter<GestprojectReceivedBillModel> entityPainter = new EntityPainter<GestprojectReceivedBillModel>();
+               ISynchronizableEntityPainter<SincronizadorGP50ReceivedInvoiceModel> entityPainter = new EntityPainter<SincronizadorGP50ReceivedInvoiceModel>();
                entityPainter.PaintEntityListOnDataTable(
-                  GestprojectEntities,
+                  finalEntity,
                   DataTable,
                   TableSchema.ColumnsTuplesList
                );
