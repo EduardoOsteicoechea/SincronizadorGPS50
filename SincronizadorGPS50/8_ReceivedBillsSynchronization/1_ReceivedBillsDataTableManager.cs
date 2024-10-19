@@ -8,6 +8,8 @@ using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
 using Infragistics.Designers.SqlEditor;
+using System.Windows.Forms;
+using System;
 
 namespace SincronizadorGPS50
 {
@@ -659,7 +661,11 @@ namespace SincronizadorGPS50
          };
       }
 
-      public bool ValidateIfSynchornizationEntityExist(SincronizadorGP50ReceivedInvoiceModel entity, string tableName)
+      public bool ValidateIfSynchornizationEntityExist
+      (
+         SincronizadorGP50ReceivedInvoiceModel entity, 
+         string tableName
+      )
       {
          try
          {
@@ -992,7 +998,7 @@ namespace SincronizadorGPS50
             {
                if(ValidateIfSynchronizableEntityExistOnGestproject(entity) == false)
                {
-                  RecordSynchronizableEntityOnGestproject(entity);
+                  RecordSynchronizableEntityOnGestproject(entity, GetNextAvailableEntityId());
                   GetRecordedSynchronizableEntityGestprojectId(entity);
                   RegisterSynchronizableEntityGestprojectId(entity);
 
@@ -1001,9 +1007,10 @@ namespace SincronizadorGPS50
                      .Where(entityDetail => entityDetail.INVOICE_GUID_ID == entity.S50_GUID_ID)
                   )
                   {
-                     AppendSynchronizableEntityGestprojectIdToDetails(entityDetail);
-                     RegisterSynchronizableEntityDetailsOnGestproject(entityDetail);
-                     GetRecordedSynchronizableEntityDetailsGestprojectIds(entityDetail);
+                     AppendSynchronizableEntityGestprojectIdToDetails(entityDetail, entity);
+                     RecordSynchronizableEntityDetailsOnGestproject(entityDetail, GetNextAvailableEntityDetailId());
+                     GetRecordedSynchronizableEntityDetailsGestprojectId(entityDetail);
+                     RegisterSynchronizableEntityDetailsGestprojectId(entityDetail);
                   };
                };
             };
@@ -1019,6 +1026,88 @@ namespace SincronizadorGPS50
          };
       }
 
+      public int? GetNextAvailableEntityId()
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            SELECT
+               MAX(FCP_ID)
+            FROM
+               FACTURA_PROVEEDOR
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
+                     return (Convert.ToInt32(reader.GetValue(0)) + 1);
+                  };
+               };
+            };
+
+            return 1;
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+      public int? GetNextAvailableEntityDetailId()
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            SELECT
+               MAX(DFP_ID)
+            FROM
+               DETALLE_FACTURA_PROVEEDOR
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
+                     return (Convert.ToInt32(reader.GetValue(0)) + 1);
+                  };
+               };
+            };
+
+            return 1;
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
       public bool ValidateIfSynchronizableEntityExistOnGestproject
       (
          SincronizadorGP50ReceivedInvoiceModel entity
@@ -1029,61 +1118,28 @@ namespace SincronizadorGPS50
             Connection.Open();
 
             string sqlString = $@"
-            INSERT INTO
+            SELECT
+               *
+            FROM
                FACTURA_PROVEEDOR
-            (
-               PAR_DAO_ID
-               ,FCP_NUM_FACTURA
-               ,FCP_FECHA
-               ,PAR_PRO_ID
-               ,FCP_SUBCTA_CONTABLE
-               ,FCP_BASE_IMPONIBLE
-               ,FCP_VALOR_IVA
-               ,FCP_IVA
-               ,FCP_VALOR_IRPF
-               ,FCP_IRPF
-               ,FCP_TOTAL_FACTURA
-               ,FCP_OBSERVACIONES
-               ,PRY_ID
-            )
-            VALUES
-            (
-               @PAR_DAO_ID
-               ,@FCP_NUM_FACTURA
-               ,@FCP_FECHA
-               ,@PAR_PRO_ID
-               ,@FCP_SUBCTA_CONTABLE
-               ,@FCP_BASE_IMPONIBLE
-               ,@FCP_VALOR_IVA
-               ,@FCP_IVA
-               ,@FCP_VALOR_IRPF
-               ,@FCP_IRPF
-               ,@FCP_TOTAL_FACTURA
-               ,@FCP_OBSERVACIONES
-               ,@PRY_ID
-            )
+            WHERE
+               FCP_ID=@FCP_ID
             ;";
 
             using(SqlCommand command = new SqlCommand(sqlString,Connection))
             {
-               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
-               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
-               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
-               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
-               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
-               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
-               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
-               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
-               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
-               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
-               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
-               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
-               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+               command.Parameters.AddWithValue("@FCP_ID",entity.FCP_ID);
 
-               command.ExecuteNonQuery();
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while(reader.Read())
+                  {
+                     return true;
+                  };
+               };
             };
 
-            return true;
+            return false;
          }
          catch(System.Exception exception)
          {
@@ -1102,7 +1158,8 @@ namespace SincronizadorGPS50
       
       public void RecordSynchronizableEntityOnGestproject
       (
-         SincronizadorGP50ReceivedInvoiceModel entity
+         SincronizadorGP50ReceivedInvoiceModel entity,
+         int? fcpId
       )
       {
          try
@@ -1113,7 +1170,8 @@ namespace SincronizadorGPS50
             INSERT INTO
                FACTURA_PROVEEDOR
             (
-               PAR_DAO_ID
+               FCP_ID
+               ,PAR_DAO_ID
                ,FCP_NUM_FACTURA
                ,FCP_FECHA
                ,PAR_PRO_ID
@@ -1125,11 +1183,11 @@ namespace SincronizadorGPS50
                ,FCP_IRPF
                ,FCP_TOTAL_FACTURA
                ,FCP_OBSERVACIONES
-               ,PRY_ID
             )
             VALUES
             (
-               @PAR_DAO_ID
+               @FCP_ID
+               ,@PAR_DAO_ID
                ,@FCP_NUM_FACTURA
                ,@FCP_FECHA
                ,@PAR_PRO_ID
@@ -1141,12 +1199,12 @@ namespace SincronizadorGPS50
                ,@FCP_IRPF
                ,@FCP_TOTAL_FACTURA
                ,@FCP_OBSERVACIONES
-               ,@PRY_ID
             )
             ;";
 
             using(SqlCommand command = new SqlCommand(sqlString,Connection))
             {
+               command.Parameters.AddWithValue("@FCP_ID", fcpId);
                command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
                command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
                command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
@@ -1159,7 +1217,6 @@ namespace SincronizadorGPS50
                command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
                command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
                command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
-               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
 
                command.ExecuteNonQuery();
             };
@@ -1189,39 +1246,28 @@ namespace SincronizadorGPS50
             Connection.Open();
 
             string sqlString = $@"
-            INSERT INTO
+            SELECT
+               FCP_ID
+            FROM
                FACTURA_PROVEEDOR
-            (
-               PAR_DAO_ID
-               ,FCP_NUM_FACTURA
-               ,FCP_FECHA
-               ,PAR_PRO_ID
-               ,FCP_SUBCTA_CONTABLE
-               ,FCP_BASE_IMPONIBLE
-               ,FCP_VALOR_IVA
-               ,FCP_IVA
-               ,FCP_VALOR_IRPF
-               ,FCP_IRPF
-               ,FCP_TOTAL_FACTURA
-               ,FCP_OBSERVACIONES
-               ,PRY_ID
-            )
-            VALUES
-            (
-               @PAR_DAO_ID
-               ,@FCP_NUM_FACTURA
-               ,@FCP_FECHA
-               ,@PAR_PRO_ID
-               ,@FCP_SUBCTA_CONTABLE
-               ,@FCP_BASE_IMPONIBLE
-               ,@FCP_VALOR_IVA
-               ,@FCP_IVA
-               ,@FCP_VALOR_IRPF
-               ,@FCP_IRPF
-               ,@FCP_TOTAL_FACTURA
-               ,@FCP_OBSERVACIONES
-               ,@PRY_ID
-            )
+            WHERE
+               PAR_DAO_ID=@PAR_DAO_ID
+            AND
+               FCP_NUM_FACTURA=@FCP_NUM_FACTURA
+            AND
+               FCP_FECHA=@FCP_FECHA
+            AND
+               PAR_PRO_ID=@PAR_PRO_ID
+            AND
+               FCP_SUBCTA_CONTABLE=@FCP_SUBCTA_CONTABLE
+            AND
+               FCP_BASE_IMPONIBLE=@FCP_BASE_IMPONIBLE
+            AND
+               FCP_VALOR_IVA=@FCP_VALOR_IVA
+            AND
+               FCP_IVA=@FCP_IVA
+            AND
+               FCP_TOTAL_FACTURA=@FCP_TOTAL_FACTURA
             ;";
 
             using(SqlCommand command = new SqlCommand(sqlString,Connection))
@@ -1234,13 +1280,16 @@ namespace SincronizadorGPS50
                command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
                command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
                command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
-               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
-               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
                command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
-               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
-               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
 
-               command.ExecuteNonQuery();
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while (reader.Read()) 
+                  {
+                     entity.FCP_ID = reader["FCP_ID"] as int?;
+                     break;
+                  };
+               };
             };
          }
          catch(System.Exception exception)
@@ -1268,56 +1317,18 @@ namespace SincronizadorGPS50
             Connection.Open();
 
             string sqlString = $@"
-            INSERT INTO
-               FACTURA_PROVEEDOR
-            (
-               PAR_DAO_ID
-               ,FCP_NUM_FACTURA
-               ,FCP_FECHA
-               ,PAR_PRO_ID
-               ,FCP_SUBCTA_CONTABLE
-               ,FCP_BASE_IMPONIBLE
-               ,FCP_VALOR_IVA
-               ,FCP_IVA
-               ,FCP_VALOR_IRPF
-               ,FCP_IRPF
-               ,FCP_TOTAL_FACTURA
-               ,FCP_OBSERVACIONES
-               ,PRY_ID
-            )
-            VALUES
-            (
-               @PAR_DAO_ID
-               ,@FCP_NUM_FACTURA
-               ,@FCP_FECHA
-               ,@PAR_PRO_ID
-               ,@FCP_SUBCTA_CONTABLE
-               ,@FCP_BASE_IMPONIBLE
-               ,@FCP_VALOR_IVA
-               ,@FCP_IVA
-               ,@FCP_VALOR_IRPF
-               ,@FCP_IRPF
-               ,@FCP_TOTAL_FACTURA
-               ,@FCP_OBSERVACIONES
-               ,@PRY_ID
-            )
+            UPDATE
+               {TableSchema.TableName}
+            SET
+               FCP_ID=@FCP_ID
+            WHERE
+               S50_GUID_ID=@S50_GUID_ID
             ;";
 
             using(SqlCommand command = new SqlCommand(sqlString,Connection))
             {
-               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
-               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
-               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
-               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
-               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
-               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
-               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
-               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
-               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
-               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
-               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
-               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
-               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+               command.Parameters.AddWithValue("@FCP_ID", entity.FCP_ID);
+               command.Parameters.AddWithValue("@S50_GUID_ID", entity.S50_GUID_ID);
 
                command.ExecuteNonQuery();
             };
@@ -1339,7 +1350,29 @@ namespace SincronizadorGPS50
       
       public void AppendSynchronizableEntityGestprojectIdToDetails
       (
-         SincronizadorGPS50ReceivedInvoiceDetailModel entity
+         SincronizadorGPS50ReceivedInvoiceDetailModel detailEntity,
+         SincronizadorGP50ReceivedInvoiceModel entity
+      )
+      {
+         try
+         {
+            detailEntity.FCP_ID = entity.FCP_ID;
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         };
+      }
+      
+      public void RecordSynchronizableEntityDetailsOnGestproject
+      (
+         SincronizadorGPS50ReceivedInvoiceDetailModel entityDetail,
+         int? dfpId
       )
       {
          try
@@ -1348,55 +1381,38 @@ namespace SincronizadorGPS50
 
             string sqlString = $@"
             INSERT INTO
-               FACTURA_PROVEEDOR
+               DETALLE_FACTURA_PROVEEDOR
             (
-               PAR_DAO_ID
-               ,FCP_NUM_FACTURA
-               ,FCP_FECHA
-               ,PAR_PRO_ID
-               ,FCP_SUBCTA_CONTABLE
-               ,FCP_BASE_IMPONIBLE
-               ,FCP_VALOR_IVA
-               ,FCP_IVA
-               ,FCP_VALOR_IRPF
-               ,FCP_IRPF
-               ,FCP_TOTAL_FACTURA
-               ,FCP_OBSERVACIONES
-               ,PRY_ID
+               DFP_ID
+               ,DFP_CONCEPTO
+               ,DFP_PRECIO_UNIDAD
+               ,DFP_UNIDADES
+               ,DFP_SUBTOTAL
+               ,FCP_ID
+               ,DFP_ESTRUCTURAL
             )
             VALUES
             (
-               @PAR_DAO_ID
-               ,@FCP_NUM_FACTURA
-               ,@FCP_FECHA
-               ,@PAR_PRO_ID
-               ,@FCP_SUBCTA_CONTABLE
-               ,@FCP_BASE_IMPONIBLE
-               ,@FCP_VALOR_IVA
-               ,@FCP_IVA
-               ,@FCP_VALOR_IRPF
-               ,@FCP_IRPF
-               ,@FCP_TOTAL_FACTURA
-               ,@FCP_OBSERVACIONES
-               ,@PRY_ID
+               @DFP_ID
+               ,@DFP_CONCEPTO
+               ,@DFP_PRECIO_UNIDAD
+               ,@DFP_UNIDADES
+               ,@DFP_SUBTOTAL
+               ,@FCP_ID
+               ,@DFP_ESTRUCTURAL
             )
             ;";
 
             using(SqlCommand command = new SqlCommand(sqlString,Connection))
             {
-               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
-               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
-               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
-               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
-               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
-               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
-               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
-               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
-               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
-               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
-               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
-               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
-               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+               command.Parameters.AddWithValue("@DFP_ID", dfpId);
+               command.Parameters.AddWithValue("@DFP_CONCEPTO", entityDetail.DFP_CONCEPTO);
+               command.Parameters.AddWithValue("@DFP_PRECIO_UNIDAD", entityDetail.DFP_PRECIO_UNIDAD);
+               command.Parameters.AddWithValue("@DFP_UNIDADES", entityDetail.DFP_UNIDADES);
+               command.Parameters.AddWithValue("@DFP_SUBTOTAL", entityDetail.DFP_SUBTOTAL);
+               //command.Parameters.AddWithValue("@PRY_ID", entityDetail.PRY_ID);
+               command.Parameters.AddWithValue("@FCP_ID", entityDetail.FCP_ID);
+               command.Parameters.AddWithValue("@DFP_ESTRUCTURAL", entityDetail.DFP_ESTRUCTURAL);
 
                command.ExecuteNonQuery();
             };
@@ -1416,7 +1432,7 @@ namespace SincronizadorGPS50
          };
       }
       
-      public void RegisterSynchronizableEntityDetailsOnGestproject
+      public void GetRecordedSynchronizableEntityDetailsGestprojectId
       (
          SincronizadorGPS50ReceivedInvoiceDetailModel entity
       )
@@ -1426,56 +1442,83 @@ namespace SincronizadorGPS50
             Connection.Open();
 
             string sqlString = $@"
-            INSERT INTO
-               FACTURA_PROVEEDOR
-            (
-               PAR_DAO_ID
-               ,FCP_NUM_FACTURA
-               ,FCP_FECHA
-               ,PAR_PRO_ID
-               ,FCP_SUBCTA_CONTABLE
-               ,FCP_BASE_IMPONIBLE
-               ,FCP_VALOR_IVA
-               ,FCP_IVA
-               ,FCP_VALOR_IRPF
-               ,FCP_IRPF
-               ,FCP_TOTAL_FACTURA
-               ,FCP_OBSERVACIONES
-               ,PRY_ID
-            )
-            VALUES
-            (
-               @PAR_DAO_ID
-               ,@FCP_NUM_FACTURA
-               ,@FCP_FECHA
-               ,@PAR_PRO_ID
-               ,@FCP_SUBCTA_CONTABLE
-               ,@FCP_BASE_IMPONIBLE
-               ,@FCP_VALOR_IVA
-               ,@FCP_IVA
-               ,@FCP_VALOR_IRPF
-               ,@FCP_IRPF
-               ,@FCP_TOTAL_FACTURA
-               ,@FCP_OBSERVACIONES
-               ,@PRY_ID
-            )
+            SELECT
+               DFP_ID
+            FROM
+               DETALLE_FACTURA_PROVEEDOR
+            WHERE
+               DFP_CONCEPTO=@DFP_CONCEPTO
+            AND
+               DFP_PRECIO_UNIDAD=@DFP_PRECIO_UNIDAD
+            AND
+               DFP_UNIDADES=@DFP_UNIDADES
+            AND
+               DFP_SUBTOTAL=@DFP_SUBTOTAL
+            AND
+               PRY_ID=@PRY_ID
+            AND
+               FCP_ID=@FCP_ID
+            AND
+               DFP_ESTRUCTURAL=@DFP_ESTRUCTURAL
             ;";
 
             using(SqlCommand command = new SqlCommand(sqlString,Connection))
             {
-               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
-               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
-               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
-               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
-               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
-               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
-               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
-               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
-               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
-               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
-               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
-               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
+               command.Parameters.AddWithValue("@DFP_CONCEPTO", entity.DFP_CONCEPTO);
+               command.Parameters.AddWithValue("@DFP_PRECIO_UNIDAD", entity.DFP_PRECIO_UNIDAD);
+               command.Parameters.AddWithValue("@DFP_UNIDADES", entity.DFP_UNIDADES);
+               command.Parameters.AddWithValue("@DFP_SUBTOTAL", entity.DFP_SUBTOTAL);
                command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+               command.Parameters.AddWithValue("@FCP_ID", entity.FCP_ID);
+               command.Parameters.AddWithValue("@DFP_ESTRUCTURAL", entity.DFP_ESTRUCTURAL);
+
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while (reader.Read()) 
+                  {
+                     entity.DFP_ID = reader["DFP_ID"] as int?;
+                     break;
+                  };
+               };
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+      public void RegisterSynchronizableEntityDetailsGestprojectId
+      (
+         SincronizadorGPS50ReceivedInvoiceDetailModel entity
+      )
+      {
+         try
+         {
+            Connection.Open();
+
+            string sqlString = $@"
+            UPDATE
+               INT_SAGE_SINC_FACTURA_RECIBIDA_DETALLES
+            SET
+               DFP_ID=@DFP_ID
+            WHERE
+               S50_GUID_ID=@INVOICE_GUID_ID
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               command.Parameters.AddWithValue("@DFP_ID", entity.DFP_ID);
+               command.Parameters.AddWithValue("@INVOICE_GUID_ID", entity.INVOICE_GUID_ID);
 
                command.ExecuteNonQuery();
             };
@@ -1494,87 +1537,6 @@ namespace SincronizadorGPS50
             Connection.Close();
          };
       }
-      
-      public void GetRecordedSynchronizableEntityDetailsGestprojectIds
-      (
-         SincronizadorGPS50ReceivedInvoiceDetailModel entity
-      )
-      {
-         try
-         {
-            Connection.Open();
-
-            string sqlString = $@"
-            INSERT INTO
-               FACTURA_PROVEEDOR
-            (
-               PAR_DAO_ID
-               ,FCP_NUM_FACTURA
-               ,FCP_FECHA
-               ,PAR_PRO_ID
-               ,FCP_SUBCTA_CONTABLE
-               ,FCP_BASE_IMPONIBLE
-               ,FCP_VALOR_IVA
-               ,FCP_IVA
-               ,FCP_VALOR_IRPF
-               ,FCP_IRPF
-               ,FCP_TOTAL_FACTURA
-               ,FCP_OBSERVACIONES
-               ,PRY_ID
-            )
-            VALUES
-            (
-               @PAR_DAO_ID
-               ,@FCP_NUM_FACTURA
-               ,@FCP_FECHA
-               ,@PAR_PRO_ID
-               ,@FCP_SUBCTA_CONTABLE
-               ,@FCP_BASE_IMPONIBLE
-               ,@FCP_VALOR_IVA
-               ,@FCP_IVA
-               ,@FCP_VALOR_IRPF
-               ,@FCP_IRPF
-               ,@FCP_TOTAL_FACTURA
-               ,@FCP_OBSERVACIONES
-               ,@PRY_ID
-            )
-            ;";
-
-            using(SqlCommand command = new SqlCommand(sqlString,Connection))
-            {
-               command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
-               command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
-               command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
-               command.Parameters.AddWithValue("@PAR_PRO_ID", entity.PAR_PRO_ID);
-               command.Parameters.AddWithValue("@FCP_SUBCTA_CONTABLE", entity.FCP_SUBCTA_CONTABLE);
-               command.Parameters.AddWithValue("@FCP_BASE_IMPONIBLE", entity.FCP_BASE_IMPONIBLE);
-               command.Parameters.AddWithValue("@FCP_VALOR_IVA", entity.FCP_VALOR_IVA);
-               command.Parameters.AddWithValue("@FCP_IVA", entity.FCP_IVA);
-               command.Parameters.AddWithValue("@FCP_VALOR_IRPF", entity.FCP_VALOR_IRPF);
-               command.Parameters.AddWithValue("@FCP_IRPF", entity.FCP_IRPF);
-               command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
-               command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
-               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
-
-               command.ExecuteNonQuery();
-            };
-         }
-         catch(System.Exception exception)
-         {
-            throw ApplicationLogger.ReportError(
-               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
-               MethodBase.GetCurrentMethod().DeclaringType.Name,
-               MethodBase.GetCurrentMethod().Name,
-               exception
-            );
-         }
-         finally
-         {
-            Connection.Close();
-         };
-      }
-
-
 
 
 

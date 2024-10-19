@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\8_receivedbillssynchronization\\1_receivedbillsdatatablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\8_receivedbillssynchronization\\1_receivedbillsdatatablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\8_receivedbillssynchronization\\schema\\sincronizadorgp50receivedinvoicemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\8_receivedbillssynchronization\\schema\\sincronizadorgp50receivedinvoicemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\8_receivedbillssynchronization\\schema\\sincronizadorgp50receivedinvoicedetailmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\8_receivedbillssynchronization\\schema\\sincronizadorgp50receivedinvoicedetailmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 299,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:891126805:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,15 +36,39 @@
               "RelativeDocumentMoniker": "SincronizadorGPS50\\8_ReceivedBillsSynchronization\\1_ReceivedBillsDataTableManager.cs",
               "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\8_ReceivedBillsSynchronization\\1_ReceivedBillsDataTableManager.cs",
               "RelativeToolTip": "SincronizadorGPS50\\8_ReceivedBillsSynchronization\\1_ReceivedBillsDataTableManager.cs",
-              "ViewState": "AQIAAOADAAAAAAAAAAAAANsFAAA1AAAA",
+              "ViewState": "AQIAAF8FAAAAAAAAAAAIwG0FAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-18T13:49:12.941Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:891126805:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SincronizadorGP50ReceivedInvoiceModel.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\8_ReceivedBillsSynchronization\\Schema\\SincronizadorGP50ReceivedInvoiceModel.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\8_ReceivedBillsSynchronization\\Schema\\SincronizadorGP50ReceivedInvoiceModel.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\8_ReceivedBillsSynchronization\\Schema\\SincronizadorGP50ReceivedInvoiceModel.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\8_ReceivedBillsSynchronization\\Schema\\SincronizadorGP50ReceivedInvoiceModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T11:35:55.381Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SincronizadorGP50ReceivedInvoiceDetailModel.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\8_ReceivedBillsSynchronization\\Schema\\SincronizadorGP50ReceivedInvoiceDetailModel.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\8_ReceivedBillsSynchronization\\Schema\\SincronizadorGP50ReceivedInvoiceDetailModel.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\8_ReceivedBillsSynchronization\\Schema\\SincronizadorGP50ReceivedInvoiceDetailModel.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\8_ReceivedBillsSynchronization\\Schema\\SincronizadorGP50ReceivedInvoiceDetailModel.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T11:18:40.388Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             }
           ]
         }

@@ -18635,3 +18635,195 @@ Message: The parameterized query '(@SYNC_STATUS nvarchar(4000),@FCP_ID int,@PAR_
 
 
 --------------------------------------------------
+Date: 2024-10-19 07:31:04.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.ValidateIfSynchronizableEntityExistOnGestproject:
+
+Invalid column name 'PRY_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'PRY_ID'.
+
+
+--------------------------------------------------
+Date: 2024-10-19 07:31:46.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.TransferSynchronizationData:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.ValidateIfSynchronizableEntityExistOnGestproject:
+
+Invalid column name 'PRY_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.ValidateIfSynchronizableEntityExistOnGestproject:
+
+Invalid column name 'PRY_ID'.
+
+
+--------------------------------------------------
+Date: 2024-10-19 07:35:31.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityOnGestproject:
+
+Invalid column name 'PRY_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'PRY_ID'.
+
+
+--------------------------------------------------
+Date: 2024-10-19 07:36:35.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityOnGestproject:
+
+Cannot insert the value NULL into column 'FCP_ID', table 'GESTPROJECT2020.dbo.FACTURA_PROVEEDOR'; column does not allow nulls. INSERT fails.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Cannot insert the value NULL into column 'FCP_ID', table 'GESTPROJECT2020.dbo.FACTURA_PROVEEDOR'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-19 07:45:18.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetNextAvailableEntityId:
+
+FCP_ID.
+Short Description: Failed to end the methods execution successfully..
+Message: FCP_ID
+
+
+--------------------------------------------------
+Date: 2024-10-19 07:46:54.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetNextAvailableEntityId:
+
+FCP_ID.
+Short Description: Failed to end the methods execution successfully..
+Message: FCP_ID
+
+
+--------------------------------------------------
+Date: 2024-10-19 07:48:44.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (3).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (3).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-19 07:49:31.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchronizableEntityDetailsOnGestproject:
+
+Invalid column name 'S50_CODE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'S50_CODE'.
+
+
+--------------------------------------------------
+Date: 2024-10-19 07:56:00.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+Invalid column name 'INVOICE_GUID_ID'.
+Invalid column name 'SYNC_STATUS'.
+Invalid column name 'S50_CODE'.
+Invalid column name 'S50_GUID_ID'.
+Invalid column name 'S50_COMPANY_GROUP_NAME'.
+Invalid column name 'S50_COMPANY_GROUP_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_MAIN_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_GUID_ID'.
+Invalid column name 'GP_USU_ID'.
+Invalid column name 'COMMENTS'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'INVOICE_GUID_ID'.
+Invalid column name 'SYNC_STATUS'.
+Invalid column name 'S50_CODE'.
+Invalid column name 'S50_GUID_ID'.
+Invalid column name 'S50_COMPANY_GROUP_NAME'.
+Invalid column name 'S50_COMPANY_GROUP_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_MAIN_CODE'.
+Invalid column name 'S50_COMPANY_GROUP_GUID_ID'.
+Invalid column name 'GP_USU_ID'.
+Invalid column name 'COMMENTS'.
+
+
+--------------------------------------------------
+Date: 2024-10-19 07:59:30.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetRecordedSynchronizableEntityDetailsGestprojectId:
+
+Incorrect syntax near ')'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ')'.
+
+
+--------------------------------------------------
+Date: 2024-10-19 08:01:58.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchronizableEntityDetailsGestprojectId:
+
+Must declare the scalar variable "@S50_GUID_ID"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@S50_GUID_ID".
+
+
+--------------------------------------------------
+Date: 2024-10-19 08:05:14.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__DETALLE_F__PRY_I__1C1D2798". The conflict occurred in database "GESTPROJECT2020", table "dbo.PROYECTO", column 'PRY_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__DETALLE_F__PRY_I__1C1D2798". The conflict occurred in database "GESTPROJECT2020", table "dbo.PROYECTO", column 'PRY_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
