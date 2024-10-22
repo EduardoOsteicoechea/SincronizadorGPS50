@@ -23,6 +23,7 @@ namespace SincronizadorGPS50
       public decimal? FCP_TOTAL_FACTURA { get; set; } = null; // doc._Pie._TotalDocumento
       public string FCP_OBSERVACIONES { get; set; } = ""; // doc._Cabecera._Observacio
       public int? PRY_ID { get; set; } = -1; // doc._Cabecera._Obra
+      public string FCP_EJERCICIO { get; set; } = DateTime.Now.Year.ToString();
 
 
       // Syncronization fields
@@ -54,14 +55,18 @@ namespace SincronizadorGPS50
          PAR_PRO_ID = sageEnrichedModel.SageReceivedInvoiceProvider.PAR_ID;
          
          FCP_BASE_IMPONIBLE = sageEnrichedModel.SageReceivedInvoice._Pie._TotalBase;
-         FCP_VALOR_IRPF = sageEnrichedModel.SageReceivedInvoice._Pie._RetencionDoc;
-         FCP_IRPF = sageEnrichedModel.SageReceivedInvoice._Pie._RetencionDocPorcen;
+         FCP_VALOR_IRPF = sageEnrichedModel.SageReceivedInvoice._Pie._RetencionDocPorcen;
+         //FCP_VALOR_IRPF = sageEnrichedModel.SageReceivedInvoice._Pie._RetencionDoc;
+         FCP_IRPF = sageEnrichedModel.SageReceivedInvoice._Pie._RetencionDoc;
+         //FCP_IRPF = sageEnrichedModel.SageReceivedInvoice._Pie._RetencionDocPorcen;
          FCP_TOTAL_FACTURA = sageEnrichedModel.SageReceivedInvoice._Pie._TotalDocumento;
          FCP_OBSERVACIONES = sageEnrichedModel.SageReceivedInvoice._Cabecera._Observacio;
 
          FCP_SUBCTA_CONTABLE = sageEnrichedModel.SageReceivedInvoice._Lineas.FirstOrDefault()._Cuenta;
-         FCP_VALOR_IVA = sageEnrichedModel.SageReceivedInvoiceBaseModelTaxModelList.Select(taxObject => taxObject._ImpIva).ToList().Sum(); 
-			FCP_IVA = sageEnrichedModel.SageReceivedInvoiceBaseModelTaxModelList.FirstOrDefault()._PrcIva;
+         FCP_VALOR_IVA = sageEnrichedModel.SageReceivedInvoiceBaseModelTaxModelList.FirstOrDefault()._PrcIva; 
+         //FCP_VALOR_IVA = sageEnrichedModel.SageReceivedInvoiceBaseModelTaxModelList.Select(taxObject => taxObject._ImpIva).ToList().Sum(); 
+			FCP_IVA = sageEnrichedModel.SageReceivedInvoiceBaseModelTaxModelList.Select(taxObject => taxObject._ImpIva).ToList().Sum();
+			//FCP_IVA = sageEnrichedModel.SageReceivedInvoiceBaseModelTaxModelList.FirstOrDefault()._PrcIva;
 
          PRY_ID = sageEnrichedModel.SageReceivedInvoiceProject.PRY_ID;
 

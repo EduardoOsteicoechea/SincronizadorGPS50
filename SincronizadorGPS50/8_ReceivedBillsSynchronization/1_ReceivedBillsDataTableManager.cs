@@ -45,27 +45,19 @@ namespace SincronizadorGPS50
             SynchronizadorGPS50ReceivedInvoicesDetails = new List<SincronizadorGPS50ReceivedInvoiceDetailModel>();
 
             ManageReceivedBillsSynchronizationTableStatus(TableSchema);
+
             ManageReceivedBillsDetailsSynchronizationTableStatus(new ReceivedBillsDetailsSynchronizationTableSchemaProvider());
 
             GetSageData();
+
             StructureSynchronizationData();
 
-            //new VisualizePropertiesAndValues<SincronizadorGP50ReceivedInvoiceModel>(
-            //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-            //   "SynchronizadorGPS50ReceivedInvoices",
-            //   SynchronizadorGPS50ReceivedInvoices
-            //);
-
-            //new VisualizePropertiesAndValues<SincronizadorGPS50ReceivedInvoiceDetailModel>(
-            //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-            //   "SynchronizadorGPS50ReceivedInvoicesDetails",
-            //   SynchronizadorGPS50ReceivedInvoicesDetails
-            //);
-
             RegisterSynchronizationData();
+
             TransferSynchronizationData();
 
             CreateAndDefineDataSource();
+
             PaintEntitiesOnDataSource(SynchronizadorGPS50ReceivedInvoices);
 
             return DataTable;
@@ -735,6 +727,7 @@ namespace SincronizadorGPS50
                ,FCP_TOTAL_FACTURA
                ,FCP_OBSERVACIONES
                ,PRY_ID
+               ,FCP_EJERCICIO
                ,S50_GUID_ID
                ,S50_COMPANY_GROUP_NAME
                ,S50_COMPANY_GROUP_CODE
@@ -760,6 +753,7 @@ namespace SincronizadorGPS50
                ,@FCP_TOTAL_FACTURA
                ,@FCP_OBSERVACIONES
                ,@PRY_ID
+               ,@FCP_EJERCICIO
                ,@S50_GUID_ID
                ,@S50_COMPANY_GROUP_NAME
                ,@S50_COMPANY_GROUP_CODE
@@ -787,6 +781,7 @@ namespace SincronizadorGPS50
                command.Parameters.AddWithValue("@FCP_TOTAL_FACTURA", entity.FCP_TOTAL_FACTURA);
                command.Parameters.AddWithValue("@FCP_OBSERVACIONES", entity.FCP_OBSERVACIONES);
                command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+               command.Parameters.AddWithValue("@FCP_EJERCICIO", entity.FCP_EJERCICIO);
                command.Parameters.AddWithValue("@S50_GUID_ID", entity.S50_GUID_ID);
                command.Parameters.AddWithValue("@S50_COMPANY_GROUP_NAME", entity.S50_COMPANY_GROUP_NAME);
                command.Parameters.AddWithValue("@S50_COMPANY_GROUP_CODE", entity.S50_COMPANY_GROUP_CODE);
@@ -1171,6 +1166,7 @@ namespace SincronizadorGPS50
                FACTURA_PROVEEDOR
             (
                FCP_ID
+               ,FCP_EJERCICIO
                ,PAR_DAO_ID
                ,FCP_NUM_FACTURA
                ,FCP_FECHA
@@ -1187,6 +1183,7 @@ namespace SincronizadorGPS50
             VALUES
             (
                @FCP_ID
+               ,@FCP_EJERCICIO
                ,@PAR_DAO_ID
                ,@FCP_NUM_FACTURA
                ,@FCP_FECHA
@@ -1205,6 +1202,7 @@ namespace SincronizadorGPS50
             using(SqlCommand command = new SqlCommand(sqlString,Connection))
             {
                command.Parameters.AddWithValue("@FCP_ID", fcpId);
+               command.Parameters.AddWithValue("@FCP_EJERCICIO", entity.FCP_EJERCICIO);
                command.Parameters.AddWithValue("@PAR_DAO_ID", entity.PAR_DAO_ID);
                command.Parameters.AddWithValue("@FCP_NUM_FACTURA", entity.FCP_NUM_FACTURA);
                command.Parameters.AddWithValue("@FCP_FECHA", entity.FCP_FECHA);
@@ -1410,6 +1408,7 @@ namespace SincronizadorGPS50
                command.Parameters.AddWithValue("@DFP_PRECIO_UNIDAD", entityDetail.DFP_PRECIO_UNIDAD);
                command.Parameters.AddWithValue("@DFP_UNIDADES", entityDetail.DFP_UNIDADES);
                command.Parameters.AddWithValue("@DFP_SUBTOTAL", entityDetail.DFP_SUBTOTAL);
+               // When uncommenting add the field in the statement above (both in the first parenthesys as in the second)
                //command.Parameters.AddWithValue("@PRY_ID", entityDetail.PRY_ID);
                command.Parameters.AddWithValue("@FCP_ID", entityDetail.FCP_ID);
                command.Parameters.AddWithValue("@DFP_ESTRUCTURAL", entityDetail.DFP_ESTRUCTURAL);

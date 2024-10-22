@@ -1,0 +1,1 @@
+Corregir problemática de ausencia de registro de FCP_ID en tabla de synchonización de detalles

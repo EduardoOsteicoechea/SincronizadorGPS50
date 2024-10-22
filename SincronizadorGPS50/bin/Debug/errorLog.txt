@@ -18827,3 +18827,44 @@ The statement has been terminated.
 
 
 --------------------------------------------------
+Date: 2024-10-21 06:57:17.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK__DETALLE_F__PRY_I__1C1D2798". The conflict occurred in database "GESTPROJECT2020", table "dbo.PROYECTO", column 'PRY_ID'.
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__DETALLE_F__PRY_I__1C1D2798". The conflict occurred in database "GESTPROJECT2020", table "dbo.PROYECTO", column 'PRY_ID'.
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-21 07:26:30.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchornizationEntity:
+
+Invalid column name 'FCP_EJERCICIO'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'FCP_EJERCICIO'.
+
+
+--------------------------------------------------
+Date: 2024-10-22 04:54:43.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.CreateDocument:
+
+The detail wasn't registered.
+Short Description: Failed to end the methods execution successfully..
+Message: The detail wasn't registered
+
+
+--------------------------------------------------
