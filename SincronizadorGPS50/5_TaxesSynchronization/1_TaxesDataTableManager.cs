@@ -28,7 +28,9 @@ namespace SincronizadorGPS50
             //MessageBox.Show("This is an application stopper to verify workflow results after synchronization and before table regeneration.");
             ManageSynchronizationTableStatus(gestprojectConnectionManager, tableSchemaProvider);
             GetAndStoreGestprojectEntities(gestprojectConnectionManager, tableSchemaProvider);
+
             GetAndStoreSage50Entities(tableSchemaProvider);
+
             ProccessAndStoreGestprojectEntities(
                gestprojectConnectionManager,
                sage50ConnectionManager,
@@ -236,7 +238,7 @@ namespace SincronizadorGPS50
 
                if(sageEntity.IMP_TIPO == "IVA")
                {
-                  gestprojectTaxModel.IMP_NOMBRE = $"{sageEntity.IMP_TIPO} {sageEntity.IVA.ToString().Split(',')[0]}";
+                  gestprojectTaxModel.IMP_NOMBRE = $"{sageEntity.IMP_TIPO} {sageEntity.IVA.ToString().Split(',')[0]} {((gestprojectTaxModel.IMP_DESCRIPCION.Split(' ').Select(parte => parte[0]).Aggregate("", (acc, cur) => acc + cur)).ToUpper()).Substring(1)}";
                   gestprojectTaxModel.IMP_VALOR = Convert.ToDecimal(sageEntity.IVA);
                   gestprojectTaxModel.IMP_SUBCTA_CONTABLE = sageEntity.CTA_IV_REP;
                   gestprojectTaxModel.IMP_SUBCTA_CONTABLE_2 = sageEntity.CTA_IV_SOP;
@@ -495,6 +497,12 @@ namespace SincronizadorGPS50
             GestprojectEntities,
             Sage50Entities
          );
+
+         //new VisualizePropertiesAndValues<GestprojectTaxModel>(
+         //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+         //   "ProcessedGestprojectEntities",
+         //   ProcessedGestprojectEntities
+         //);
       }
 
       public void CreateAndDefineDataSource

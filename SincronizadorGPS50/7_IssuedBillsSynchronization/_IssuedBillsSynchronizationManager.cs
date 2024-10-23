@@ -17,18 +17,18 @@ namespace SincronizadorGPS50
             hostTab.Enabled = true;
             MainWindowUIHolder.MainTabControl.SelectedTab = hostTab;
 
-            UIFactory<GestprojectIssuedBillModel, Sage50IssuedBillModel>.GenerateTabPage
+            UIFactory<SynchronizableIssuedInvoiceModel, Sage50IssuedBillModel>.GenerateTabPage
             (
                // Application Constructor
-               new SynchronizationTabGenerator<GestprojectIssuedBillModel, Sage50IssuedBillModel>(),
+               new SynchronizationTabGenerator<SynchronizableIssuedInvoiceModel, Sage50IssuedBillModel>(),
 
                // UI comon
                hostTab.TabPage.Controls,
                new TabPageMainPanelTableLayoutPanelGenerator(),
                new TabPageLayoutPanelRowGenerator(),
-               new MiddleRowControlsGenerator<GestprojectIssuedBillModel, Sage50IssuedBillModel>(),
-               new TopRowControlsGenerator<GestprojectIssuedBillModel, Sage50IssuedBillModel>(true),
-               new BottomRowControlsGenerator<GestprojectIssuedBillModel, Sage50IssuedBillModel>(),
+               new MiddleRowControlsGenerator<SynchronizableIssuedInvoiceModel, Sage50IssuedBillModel>(),
+               new TopRowControlsGenerator<SynchronizableIssuedInvoiceModel, Sage50IssuedBillModel>(true),
+               new BottomRowControlsGenerator<SynchronizableIssuedInvoiceModel, Sage50IssuedBillModel>(),
 
                // Connectors
                gestprojectConnectionManager,

@@ -1,6 +1,7 @@
-﻿﻿ using SincronizadorGPS50.Workflows.Sage50Connection;
+﻿using SincronizadorGPS50.Workflows.Sage50Connection;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -43,40 +44,32 @@ namespace SincronizadorGPS50
             {
                GestprojectTaxModel entity = gestprojectEntites[i];
 
-               //MessageBox.Show("Before\n\nAppendSynchronizationTableDataToEntity(connection, tableSchema, entity);");
                AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
 
-               //MessageBox.Show("Before\n\nDetermineEntityWorkflow(connection, sage50ConnectionManager, tableSchema, entity);");
                DetermineEntityWorkflow(connection, sage50ConnectionManager, tableSchema, entity);
 
                if(MustBeSkipped)
                {
-                  //MessageBox.Show(entity.IMP_NOMBRE + " MustBeSkipped");
                   continue;
                }
                else if(MustBeRegistered)
                {
-                  //MessageBox.Show(entity.IMP_NOMBRE + " MustBeRegistered");
                   RegisterEntity(connection, tableSchema, entity);
                   AppendSynchronizationTableDataToEntity(connection, tableSchema, entity);
                }
                else if(MustBeUpdated)
                {
-                  //MessageBox.Show(entity.IMP_NOMBRE + " MustBeUpdated");
                   UpdateEntity(connection, tableSchema, entity);
                };
 
-               //MessageBox.Show("Before\n\nValidateEntitySynchronizationStatus(connection, tableSchema, sage50Entities, entity);");
                ValidateEntitySynchronizationStatus(connection, tableSchema, sage50Entities, entity);
 
                if(MustBeDeleted)
                {
-                  //MessageBox.Show("Before\n\n DeleteEntity(connection, tableSchema, gestprojectEntites, entity);");
                   DeleteEntity(connection, tableSchema, gestprojectEntites, entity);
                   RegisterEntity(connection, tableSchema, entity);
                };
 
-               //MessageBox.Show("Before\n\nUpdateEntity(connection, tableSchema, entity);");
                UpdateEntity(connection, tableSchema, entity);
 
                ProcessedEntities.Add(entity);
@@ -100,22 +93,43 @@ namespace SincronizadorGPS50
       {
          try
          {
-            new EntitySynchronizationTable<GestprojectTaxModel>().AppendTableDataToEntity
-            (
-               connection,
-               tableSchema.TableName,
-               tableSchema.SynchronizationFieldsTupleList,
-               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
-               entity,               
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
-            );
-            
-            //StringBuilder stringBuilder = new StringBuilder();
-            //foreach(var item in entity.GetType().GetProperties())
-            //{
-            //   stringBuilder.Append($"{item.Name}: {item.GetValue(entity)}\n");
-            //};
-            //MessageBox.Show(stringBuilder.ToString());
+            connection.Open();
+
+            string sqlString = $@"
+            SELECT 
+               * 
+            FROM 
+               {tableSchema.TableName} 
+            WHERE
+               IMP_DESCRIPCION=@IMP_DESCRIPCION
+   
+            ";
+               //      AND
+               //S50_GUID_ID=@S50_GUID_ID
+
+            using(SqlCommand command = new SqlCommand(sqlString, connection))
+            {
+               command.Parameters.AddWithValue("@IMP_DESCRIPCION", entity.IMP_DESCRIPCION);
+               command.Parameters.AddWithValue("@S50_GUID_ID", entity.S50_GUID_ID);
+
+               using(SqlDataReader reader = command.ExecuteReader())
+               {
+                  while (reader.Read()) 
+                  {
+                     entity.ID = reader["ID"] as int?;
+                     entity.SYNC_STATUS = reader["SYNC_STATUS"] as string;
+                     entity.S50_CODE = reader["S50_CODE"] as string;
+                     entity.S50_GUID_ID = reader["S50_GUID_ID"] as string;
+                     entity.S50_COMPANY_GROUP_NAME = reader["S50_COMPANY_GROUP_NAME"] as string;
+                     entity.S50_COMPANY_GROUP_CODE = reader["S50_COMPANY_GROUP_CODE"] as string;
+                     entity.S50_COMPANY_GROUP_MAIN_CODE = reader["S50_COMPANY_GROUP_MAIN_CODE"] as string;
+                     entity.S50_COMPANY_GROUP_GUID_ID = reader["S50_COMPANY_GROUP_GUID_ID"] as string;
+                     entity.LAST_UPDATE = reader["LAST_UPDATE"] as System.DateTime?;
+                     entity.GP_USU_ID = reader["GP_USU_ID"] as int?;
+                     entity.COMMENTS = reader["COMMENTS"] as string;
+                  };
+               };
+            };
          }
          catch(System.Exception exception)
          {
@@ -125,6 +139,10 @@ namespace SincronizadorGPS50
                MethodBase.GetCurrentMethod().Name,
                exception
             );
+         }
+         finally
+         {
+            connection.Close();
          };
       }
       public void DetermineEntityWorkflow(SqlConnection connection, ISage50ConnectionManager sage50ConnectionManager, ISynchronizationTableSchemaProvider tableSchema, GestprojectTaxModel entity)
@@ -139,7 +157,7 @@ namespace SincronizadorGPS50
                tableSchema.GestprojectId.ColumnDatabaseName,
                (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
                (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
-               //(tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
+            //(tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
             ).ItWas;
             //).ItWas && entity.S50_GUID_ID == "";
 
@@ -185,7 +203,7 @@ namespace SincronizadorGPS50
       public void RegisterEntity(SqlConnection connection, ISynchronizationTableSchemaProvider tableSchema, GestprojectTaxModel entity)
       {
          try
-         { 
+         {
             connection.Open();
 
             string sqlString2 = $@"
@@ -217,7 +235,7 @@ namespace SincronizadorGPS50
             ;";
 
             using(SqlCommand command = new SqlCommand(sqlString2, connection))
-            {  
+            {
                command.Parameters.AddWithValue("@IMP_ID", entity.IMP_ID);
                command.Parameters.AddWithValue("@IMP_TIPO", entity.IMP_TIPO);
                command.Parameters.AddWithValue("@IMP_NOMBRE", entity.IMP_NOMBRE);
@@ -271,8 +289,8 @@ namespace SincronizadorGPS50
                   //(tableSchema.CompanyGroupGuidId.ColumnDatabaseName, entity.S50_COMPANY_GROUP_GUID_ID),
                   //(tableSchema.ParentUserId.ColumnDatabaseName, entity.GP_USU_ID),
                },
-               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID),
-               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID)
+               (tableSchema.Sage50GuidId.ColumnDatabaseName, entity.S50_GUID_ID),
+               (tableSchema.GestprojectId.ColumnDatabaseName, entity.IMP_ID)
             );
          }
          catch(System.Exception exception)

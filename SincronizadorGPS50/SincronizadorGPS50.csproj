@@ -407,8 +407,10 @@
     <Compile Include="4_ProjectsSynchronization\EntitySynchronizers\ProjectComparer.cs" />
     <Compile Include="4_ProjectsSynchronization\EntitySynchronizers\UpdateSage50Project.cs" />
     <Compile Include="4_ProjectsSynchronization\EntitySynchronizers\_UnexsistingProjectListWorkflow.cs" />
-    <Compile Include="5_TaxesSynchronization\1_TaxesDataTableManager - Copy %282%29.cs" />
-    <Compile Include="5_TaxesSynchronization\1_TaxesDataTableManager - Copy.cs" />
+    <Compile Include="5_TaxesSynchronization\_prev\2_GestprojectTaxesProcessor - Copy.cs" />
+    <Compile Include="5_TaxesSynchronization\_prev\3_TaxesSynchronizer - Copy.cs" />
+    <Compile Include="5_TaxesSynchronization\_prev\1_TaxesDataTableManager - Copy %282%29.cs" />
+    <Compile Include="5_TaxesSynchronization\_prev\1_TaxesDataTableManager - Copy.cs" />
     <Compile Include="5_TaxesSynchronization\EntitySynchronizers\TaxSynchronizationWorkflow - Copy.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\1_SubaccountableAccountsDataTableManager.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\2_GestprojectSubaccountableAccountsProcessor.cs" />
@@ -433,11 +435,14 @@
     <Compile Include="6_SubaccountableAccountsSynchronization\Schema\Sage50SubaccountableAccountModel.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\Schema\SubaccountableAccountsSynchronizationTableSchemaProvider.cs" />
     <Compile Include="6_SubaccountableAccountsSynchronization\_SubaccountableAccountsSynchronizationManager.cs" />
+    <Compile Include="7_IssuedBillsSynchronization\Schema\SynchronizableIssuedInvoiceDetailModel.cs" />
+    <Compile Include="7_IssuedBillsSynchronization\Schema\IssuedInvoicesDetailsSynchronizationTableSchemaProvider.cs" />
+    <Compile Include="7_IssuedBillsSynchronization\_prev\1_IssuedBillsDataTableManager - Copy %282%29.cs" />
     <Compile Include="7_IssuedBillsSynchronization\EntitySynchronizers\CreateSalesAlbaran.cs" />
     <Compile Include="7_IssuedBillsSynchronization\EntitySynchronizers\_IssuedBillsSynchronizer - Copy.cs" />
     <Compile Include="7_IssuedBillsSynchronization\_prev\_IssuedBillsSynchronizer - Copy.cs" />
-    <Compile Include="8_ReceivedBillsSynchronization\1_ReceivedBillsDataTableManager - Copy %282%29.cs" />
-    <Compile Include="8_ReceivedBillsSynchronization\1_ReceivedBillsDataTableManager - Copy.cs" />
+    <Compile Include="8_ReceivedBillsSynchronization\_prev\1_ReceivedBillsDataTableManager - Copy %284%29.cs" />
+    <Compile Include="8_ReceivedBillsSynchronization\_prev\1_ReceivedBillsDataTableManager - Copy %283%29.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\Schema\SageReceivedInvoiceEnrichedModel.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\Schema\SageReceivedInvoiceBaseModelTaxModel.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\Schema\SincronizadorGP50ReceivedInvoiceModel.cs" />
@@ -467,6 +472,7 @@
     <Compile Include="8_ReceivedBillsSynchronization\EntitySynchronizers\SalesDocument - Copy.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\EntitySynchronizers\SalesDocument.cs" />
     <Compile Include="_Dependency\Interface\IEntitySynchronizer - Copy.cs" />
+    <Compile Include="_Dependency\Interface\IGridDataSourceGenerator - Copy.cs" />
     <Compile Include="_DevelopmentHelpers\VisualizationForm.cs" />
     <Compile Include="_DevelopmentHelpers\VisualizeData.cs" />
     <Compile Include="_DevelopmentHelpers\VisualizePropertiesAndValues.cs" />
@@ -489,7 +495,7 @@
     <Compile Include="2_ClientsSynchronization\2_4_AddClientToUITable.cs" />
     <Compile Include="2_ClientsSynchronization\2_3_ValidateClientSyncronizationStatus.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\1_ReceivedBillsDataTableManager.cs" />
-    <Compile Include="8_ReceivedBillsSynchronization\2_GestprojectReceivedBillsProcessor.cs" />
+    <Compile Include="8_ReceivedBillsSynchronization\_prev\2_GestprojectReceivedBillsProcessor.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\EntityProviders\GestprojectReceivedBillsManager.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\EntityProviders\GestprojectReceivedBillsProvider.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\EntityProviders\GetSage50ReceivedBills.cs" />
@@ -506,7 +512,7 @@
     <Compile Include="8_ReceivedBillsSynchronization\Schema\Sage50ReceivedBillModel.cs" />
     <Compile Include="8_ReceivedBillsSynchronization\_ReceivedBillsSynchronizationManager.cs" />
     <Compile Include="7_IssuedBillsSynchronization\1_IssuedBillsDataTableManager.cs" />
-    <Compile Include="7_IssuedBillsSynchronization\2_GestprojectIssuedBillsProcessor.cs" />
+    <Compile Include="7_IssuedBillsSynchronization\_prev\2_GestprojectIssuedBillsProcessor.cs" />
     <Compile Include="7_IssuedBillsSynchronization\EntityProviders\GestprojectIssuedBillsManager.cs" />
     <Compile Include="7_IssuedBillsSynchronization\EntityProviders\GestprojectIssuedBillsProvider.cs" />
     <Compile Include="7_IssuedBillsSynchronization\EntityProviders\GetSage50IssuedBills.cs" />
@@ -518,7 +524,7 @@
     <Compile Include="7_IssuedBillsSynchronization\3_IssuedBillsSynchronizer.cs" />
     <Compile Include="7_IssuedBillsSynchronization\EntityValidators\ValidateIssuedBillSyncronizationStatus.cs" />
     <Compile Include="7_IssuedBillsSynchronization\EntityValidators\WasIssuedBillRegistered.cs" />
-    <Compile Include="7_IssuedBillsSynchronization\Schema\GestprojectIssuedBillModel.cs" />
+    <Compile Include="7_IssuedBillsSynchronization\Schema\SynchronizableIssuedInvoiceModel.cs" />
     <Compile Include="7_IssuedBillsSynchronization\Schema\Sage50IssuedBillModel.cs" />
     <Compile Include="7_IssuedBillsSynchronization\Schema\IssuedBillsSynchronizationTableSchemaProvider.cs" />
     <Compile Include="7_IssuedBillsSynchronization\_IssuedBillsSynchronizationManager.cs" />

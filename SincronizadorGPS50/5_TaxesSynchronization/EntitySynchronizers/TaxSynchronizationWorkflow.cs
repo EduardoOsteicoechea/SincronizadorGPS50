@@ -41,25 +41,25 @@ namespace SincronizadorGPS50
       {
          try
          {
-            this._GestprojectConnectionManager = gestprojectConnectionManager;
-            this._Sage50CompanyGroupData = sage50CompanyGroupData;
-            this._TableSchema = tableSchema;
-            this._SynchronizationTableEntities = synchronizationTableEntities;
-            this._DesynchronizedEntities = unsynchronizedEntityList;
-            this._Sage50Entities = sage50Entities;
-            this._EntitiesToBeCreated= new List<Sage50TaxModel>();
-            this._SageEntitiesToBeSynchronized= new List<Sage50TaxModel>();
-            this._GestprojectTaxTableTaxes = new List<GestprojectTaxModel>();
-            this._GestprojectDatabaseEntityTableName = "IMPUESTO_CONFIG";
+            _GestprojectConnectionManager = gestprojectConnectionManager;
+            _Sage50CompanyGroupData = sage50CompanyGroupData;
+            _TableSchema = tableSchema;
+            _SynchronizationTableEntities = synchronizationTableEntities;
+            _DesynchronizedEntities = unsynchronizedEntityList;
+            _Sage50Entities = sage50Entities;
+            _EntitiesToBeCreated= new List<Sage50TaxModel>();
+            _SageEntitiesToBeSynchronized= new List<Sage50TaxModel>();
+            _GestprojectTaxTableTaxes = new List<GestprojectTaxModel>();
+            _GestprojectDatabaseEntityTableName = "IMPUESTO_CONFIG";
 
-            this._DetermineEntityGenderAndPluralFormat();
-            this._DisplaySynchronizationAutorizationDialog();
-            if(this._DialogResult == DialogResult.OK)
+            _DetermineEntityGenderAndPluralFormat();
+            _DisplaySynchronizationAutorizationDialog();
+            if(_DialogResult == DialogResult.OK)
             {
-               this._GetGestprojectTaxTableTaxesData();
-               this._PopulateEntitiesToBeCreatedAndUpdatedLists();
-               this._CreateEntities();
-               this._UpdateEntities();
+               _GetGestprojectTaxTableTaxesData();
+               _PopulateEntitiesToBeCreatedAndUpdatedLists();
+               _CreateEntities();
+               _UpdateEntities();
             };
          }
          catch(System.Exception exception)
@@ -76,9 +76,9 @@ namespace SincronizadorGPS50
       {
          try
          {
-            this._EntityTypeNameRoot = "impuest";
-            this._EntityTypeNameGender = "o";
-            this._EntityTypePlural = "(s)";
+            _EntityTypeNameRoot = "impuest";
+            _EntityTypeNameGender = "o";
+            _EntityTypePlural = "(s)";
          }
          catch(System.Exception exception)
          {
@@ -94,13 +94,13 @@ namespace SincronizadorGPS50
       {
          try
          {
-            if(this._DesynchronizedEntities.Count > 0)
+            if(_DesynchronizedEntities.Count > 0)
             {
-               this._DialogResult = MessageBox.Show($"Partiendo de la selección encontramos {this._DesynchronizedEntities.Count} {this._EntityTypeNameRoot + this._EntityTypeNameGender + this. _EntityTypePlural} desactualizad{this._EntityTypeNameGender + this._EntityTypePlural}.\n\n¿Desea sincronizarl{this._EntityTypeNameGender + this._EntityTypePlural}?", "Confirmación de actualización", MessageBoxButtons.OKCancel);
+               _DialogResult = MessageBox.Show($"Partiendo de la selección encontramos {_DesynchronizedEntities.Count} {_EntityTypeNameRoot + _EntityTypeNameGender +  _EntityTypePlural} desactualizad{_EntityTypeNameGender + _EntityTypePlural}.\n\n¿Desea sincronizarl{_EntityTypeNameGender + _EntityTypePlural}?", "Confirmación de actualización", MessageBoxButtons.OKCancel);
             }
             else
             {
-               MessageBox.Show($"Los {this._SynchronizationTableEntities.Count - (this._SynchronizationTableEntities.Count - _Sage50Entities.Count)} {this._EntityTypeNameRoot + this._EntityTypeNameGender + this. _EntityTypePlural} están sincronizad{this._EntityTypeNameGender + this._EntityTypePlural}.");
+               MessageBox.Show($"Los {_SynchronizationTableEntities.Count - (_SynchronizationTableEntities.Count - _Sage50Entities.Count)} {_EntityTypeNameRoot + _EntityTypeNameGender +  _EntityTypePlural} están sincronizad{_EntityTypeNameGender + _EntityTypePlural}.");
             };
          }
          catch(System.Exception exception)
@@ -116,10 +116,10 @@ namespace SincronizadorGPS50
 
       public void _GetGestprojectTaxTableTaxesData()
       {
-         SqlConnection connection = this._GestprojectConnectionManager.GestprojectSqlConnection;
+         SqlConnection connection = _GestprojectConnectionManager.GestprojectSqlConnection;
          try
          {                     
-            this._GestprojectTaxTableTaxes = new List<GestprojectTaxModel>();
+            _GestprojectTaxTableTaxes = new List<GestprojectTaxModel>();
             
             connection.Open();
 
@@ -128,7 +128,7 @@ namespace SincronizadorGPS50
                IMP_ID,
                IMP_SUBCTA_CONTABLE
             FROM
-               {this._GestprojectDatabaseEntityTableName}
+               {_GestprojectDatabaseEntityTableName}
             ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
@@ -140,13 +140,13 @@ namespace SincronizadorGPS50
                      GestprojectTaxModel entity = new GestprojectTaxModel();
                      entity.IMP_ID = Convert.ToInt32(reader.GetValue(0));
                      entity.IMP_SUBCTA_CONTABLE = Convert.ToString(reader.GetValue(1));
-                     this._GestprojectTaxTableTaxes.Add(entity);
+                     _GestprojectTaxTableTaxes.Add(entity);
                   };
                };
             };
 
-            this._GestprojectTaxTableTaxesIds = this._GestprojectTaxTableTaxes.Select(entity => entity.IMP_ID).ToList();
-            this._GestprojectTaxTableTaxesDescriptions = this._GestprojectTaxTableTaxes.Select(entity => entity.IMP_DESCRIPCION).ToList();
+            _GestprojectTaxTableTaxesIds = _GestprojectTaxTableTaxes.Select(entity => entity.IMP_ID).ToList();
+            _GestprojectTaxTableTaxesDescriptions = _GestprojectTaxTableTaxes.Select(entity => entity.IMP_DESCRIPCION).ToList();
          }
          catch(System.Exception exception)
          {
@@ -166,53 +166,51 @@ namespace SincronizadorGPS50
       { 
          try
          {
-            foreach (Sage50TaxModel sageEntity in this._Sage50Entities)
+            foreach (Sage50TaxModel sageEntity in _Sage50Entities)
             {
                GestprojectTaxModel entity = null;
                bool sageEntityExistInGestproject = true;
                if(sageEntity.NOMBRE.Contains("IVA"))
                {
-                  entity = this._DesynchronizedEntities.FirstOrDefault(
+                  entity = _DesynchronizedEntities.FirstOrDefault(
                      desynchronizedEntity => desynchronizedEntity.IMP_SUBCTA_CONTABLE == sageEntity.CTA_IV_REP 
                      &&
-                     this._GestprojectTaxTableTaxesIds.Contains(desynchronizedEntity.IMP_ID)
+                     _GestprojectTaxTableTaxesIds.Contains(desynchronizedEntity.IMP_ID)
                      && 
                      desynchronizedEntity.S50_COMPANY_GROUP_GUID_ID != ""
                   );
 
-                  sageEntityExistInGestproject = this._SynchronizationTableEntities.FirstOrDefault(
+                  sageEntityExistInGestproject = _SynchronizationTableEntities.FirstOrDefault(
                      syncronizationTableEntity => syncronizationTableEntity.IMP_SUBCTA_CONTABLE == sageEntity.CTA_IV_REP 
                      &&
-                     this._GestprojectTaxTableTaxesIds.Contains(syncronizationTableEntity.IMP_ID)
+                     _GestprojectTaxTableTaxesIds.Contains(syncronizationTableEntity.IMP_ID)
                      && 
                      syncronizationTableEntity.S50_COMPANY_GROUP_GUID_ID != ""
                   ) != null;
                }
                else
                {
-                  entity = this._DesynchronizedEntities.FirstOrDefault(
+                  entity = _DesynchronizedEntities.FirstOrDefault(
                      desynchronizedEntity => desynchronizedEntity.IMP_SUBCTA_CONTABLE == sageEntity.CTA_RE_REP 
                      && 
-                     this._GestprojectTaxTableTaxesIds.Contains(desynchronizedEntity.IMP_ID)
+                     _GestprojectTaxTableTaxesIds.Contains(desynchronizedEntity.IMP_ID)
                      && 
                      desynchronizedEntity.S50_COMPANY_GROUP_GUID_ID != ""
                   );
 
-                  sageEntityExistInGestproject = this._SynchronizationTableEntities.FirstOrDefault(
+                  sageEntityExistInGestproject = _SynchronizationTableEntities.FirstOrDefault(
                      syncronizationTableEntity => syncronizationTableEntity.IMP_SUBCTA_CONTABLE == sageEntity.CTA_RE_REP 
                      &&
-                     this._GestprojectTaxTableTaxesIds.Contains(syncronizationTableEntity.IMP_ID)
+                     _GestprojectTaxTableTaxesIds.Contains(syncronizationTableEntity.IMP_ID)
                      && 
                      syncronizationTableEntity.S50_COMPANY_GROUP_GUID_ID != ""
                   ) != null;
                };
                   
-               //if(entity == null && sageEntityExistInGestproject == false)
                if(sageEntityExistInGestproject == false)
-                  this._EntitiesToBeCreated.Add( sageEntity );
-               //else if(entity != null && sageEntityExistInGestproject)
+                  _EntitiesToBeCreated.Add( sageEntity );
                else if(entity != null)
-                  this._SageEntitiesToBeSynchronized.Add( sageEntity );
+                  _SageEntitiesToBeSynchronized.Add( sageEntity );
             };
          }
          catch(System.Exception exception)
@@ -230,16 +228,16 @@ namespace SincronizadorGPS50
       {
          try
          {
-            if(this._EntitiesToBeCreated.Count > 0)
+            if(_EntitiesToBeCreated.Count > 0)
             {
-               foreach (Sage50TaxModel sageEntity in this._EntitiesToBeCreated)
+               foreach (Sage50TaxModel sageEntity in _EntitiesToBeCreated)
                {
                   GestprojectTaxModel entity = new GestprojectTaxModel();
 
                   entity.IMP_TIPO = sageEntity.IMP_TIPO;                           
                   if(sageEntity.IMP_TIPO == "IVA")
                   {
-                     entity.IMP_NOMBRE = $"{sageEntity.IMP_TIPO} {sageEntity.IVA.ToString().Split(',')[0]}";
+                     entity.IMP_NOMBRE = $"{sageEntity.IMP_TIPO} {sageEntity.IVA.ToString().Split(',')[0]}  {((sageEntity.NOMBRE.Split(' ').Select(parte => parte[0]).Aggregate("", (acc, cur) => acc + cur)).ToUpper()).Substring(1)}";
                      entity.IMP_VALOR = Convert.ToDecimal(sageEntity.IVA);
                      entity.IMP_SUBCTA_CONTABLE = sageEntity.CTA_IV_REP;
                      entity.IMP_SUBCTA_CONTABLE_2 = sageEntity.CTA_IV_SOP;
@@ -255,15 +253,15 @@ namespace SincronizadorGPS50
                   
                   entity.S50_CODE = sageEntity.CODIGO;
                   entity.S50_GUID_ID = sageEntity.GUID_ID;
-                  entity.S50_COMPANY_GROUP_NAME = this._Sage50CompanyGroupData.CompanyName;
-                  entity.S50_COMPANY_GROUP_CODE = this._Sage50CompanyGroupData.CompanyCode;
-                  entity.S50_COMPANY_GROUP_MAIN_CODE = this._Sage50CompanyGroupData.CompanyMainCode;
-                  entity.S50_COMPANY_GROUP_GUID_ID = this._Sage50CompanyGroupData.CompanyGuidId;
-                  entity.GP_USU_ID = this._GestprojectConnectionManager.GestprojectUserRememberableData.GP_CNX_ID;
+                  entity.S50_COMPANY_GROUP_NAME = _Sage50CompanyGroupData.CompanyName;
+                  entity.S50_COMPANY_GROUP_CODE = _Sage50CompanyGroupData.CompanyCode;
+                  entity.S50_COMPANY_GROUP_MAIN_CODE = _Sage50CompanyGroupData.CompanyMainCode;
+                  entity.S50_COMPANY_GROUP_GUID_ID = _Sage50CompanyGroupData.CompanyGuidId;
+                  entity.GP_USU_ID = _GestprojectConnectionManager.GestprojectUserRememberableData.GP_CNX_ID;
 
-                  this._InsertSageEntityIntoGestprojectTaxTable(ref entity);
-                  this._AppendGestprojectTaxTableIdToSynchronizationTable(ref entity);
-                  this._AppendSynchronizationDataToEntityRegistry(ref entity);
+                  _InsertSageEntityIntoGestprojectTaxTable(ref entity);
+                  _AppendGestprojectTaxTableIdToSynchronizationTable(ref entity);
+                  _AppendSynchronizationDataToEntityRegistry(ref entity);
                };
             };
          }
@@ -282,28 +280,28 @@ namespace SincronizadorGPS50
       {
          try
          {
-            if(this._SageEntitiesToBeSynchronized.Count > 0)
+            if(_SageEntitiesToBeSynchronized.Count > 0)
             {
-               foreach (Sage50TaxModel sageEntity in this._SageEntitiesToBeSynchronized)
+               foreach (Sage50TaxModel sageEntity in _SageEntitiesToBeSynchronized)
                {
-                  GestprojectTaxModel entity = this._DesynchronizedEntities.FirstOrDefault(
+                  GestprojectTaxModel entity = _DesynchronizedEntities.FirstOrDefault(
                      desynchronizedEntity => desynchronizedEntity.IMP_SUBCTA_CONTABLE == sageEntity.CTA_RE_REP 
                      && 
-                     this._GestprojectTaxTableTaxesIds.Contains(desynchronizedEntity.IMP_ID)
+                     _GestprojectTaxTableTaxesIds.Contains(desynchronizedEntity.IMP_ID)
                      && 
                      desynchronizedEntity.S50_COMPANY_GROUP_GUID_ID != ""
                   );
                   
                   entity.S50_CODE = sageEntity.CODIGO;
                   entity.S50_GUID_ID = sageEntity.GUID_ID;
-                  entity.S50_COMPANY_GROUP_NAME = this._Sage50CompanyGroupData.CompanyName;
-                  entity.S50_COMPANY_GROUP_CODE = this._Sage50CompanyGroupData.CompanyCode;
-                  entity.S50_COMPANY_GROUP_MAIN_CODE = this._Sage50CompanyGroupData.CompanyMainCode;
-                  entity.S50_COMPANY_GROUP_GUID_ID = this._Sage50CompanyGroupData.CompanyGuidId;
-                  entity.GP_USU_ID = this._GestprojectConnectionManager.GestprojectUserRememberableData.GP_CNX_ID;
+                  entity.S50_COMPANY_GROUP_NAME = _Sage50CompanyGroupData.CompanyName;
+                  entity.S50_COMPANY_GROUP_CODE = _Sage50CompanyGroupData.CompanyCode;
+                  entity.S50_COMPANY_GROUP_MAIN_CODE = _Sage50CompanyGroupData.CompanyMainCode;
+                  entity.S50_COMPANY_GROUP_GUID_ID = _Sage50CompanyGroupData.CompanyGuidId;
+                  entity.GP_USU_ID = _GestprojectConnectionManager.GestprojectUserRememberableData.GP_CNX_ID;
 
-                  this._UpdateGestprojectTaxDataWithSageTaxData(ref entity);
-                  this._AppendSynchronizationDataToEntityRegistry(ref entity);
+                  _UpdateGestprojectTaxDataWithSageTaxData(ref entity);
+                  _AppendSynchronizationDataToEntityRegistry(ref entity);
                };
             };
          }
@@ -320,7 +318,7 @@ namespace SincronizadorGPS50
 
       private void _InsertSageEntityIntoGestprojectTaxTable(ref GestprojectTaxModel entity)
       {
-         SqlConnection connection = this._GestprojectConnectionManager.GestprojectSqlConnection;
+         SqlConnection connection = _GestprojectConnectionManager.GestprojectSqlConnection;
          try
          {
             connection.Open();
@@ -328,7 +326,7 @@ namespace SincronizadorGPS50
             SELECT 
                MAX(IMP_ID)
             FROM
-               {this._GestprojectDatabaseEntityTableName}
+               {_GestprojectDatabaseEntityTableName}
             ;";
 
             using(SqlCommand sqlCommand = new SqlCommand(sqlString, connection))
@@ -345,7 +343,7 @@ namespace SincronizadorGPS50
 
             string sqlString2 = $@"
             INSERT INTO 
-               {this._GestprojectDatabaseEntityTableName} 
+               {_GestprojectDatabaseEntityTableName} 
                (
                   IMP_ID
                   ,IMP_TIPO
@@ -397,7 +395,7 @@ namespace SincronizadorGPS50
       }
       private void _AppendGestprojectTaxTableIdToSynchronizationTable(ref GestprojectTaxModel entity)
       {      
-         SqlConnection connection = this._GestprojectConnectionManager.GestprojectSqlConnection;
+         SqlConnection connection = _GestprojectConnectionManager.GestprojectSqlConnection;
          try
          {
             connection.Open();
@@ -406,7 +404,7 @@ namespace SincronizadorGPS50
             SELECT 
                IMP_ID
             FROM
-               {this._GestprojectDatabaseEntityTableName}
+               {_GestprojectDatabaseEntityTableName}
             WHERE
                IMP_SUBCTA_CONTABLE=@IMP_SUBCTA_CONTABLE
             ;";
@@ -427,7 +425,7 @@ namespace SincronizadorGPS50
 
             string sqlString2 = $@"
             UPDATE 
-               {this._TableSchema.TableName} 
+               {_TableSchema.TableName} 
             SET
                IMP_ID=@IMP_ID
             WHERE
@@ -458,14 +456,14 @@ namespace SincronizadorGPS50
       }
       private void _AppendSynchronizationDataToEntityRegistry(ref GestprojectTaxModel entity)
       {
-         SqlConnection connection = this._GestprojectConnectionManager.GestprojectSqlConnection;
+         SqlConnection connection = _GestprojectConnectionManager.GestprojectSqlConnection;
          try
          {
             connection.Open();
 
             string sqlString = $@"
             UPDATE 
-               {this._TableSchema.TableName} 
+               {_TableSchema.TableName} 
             SET
                S50_CODE=@S50_CODE
                ,S50_COMPANY_GROUP_NAME=@S50_COMPANY_GROUP_NAME
@@ -507,14 +505,14 @@ namespace SincronizadorGPS50
 
       private void _UpdateGestprojectTaxDataWithSageTaxData(ref GestprojectTaxModel entity)
       {
-         SqlConnection connection = this._GestprojectConnectionManager.GestprojectSqlConnection;
+         SqlConnection connection = _GestprojectConnectionManager.GestprojectSqlConnection;
          try
          {
             connection.Open();
 
             string sqlString = $@"
             UPDATE 
-               {this._GestprojectDatabaseEntityTableName} 
+               {_GestprojectDatabaseEntityTableName} 
             SET
                ,IMP_TIPO=@IMP_TIPO
                ,IMP_NOMBRE=@IMP_NOMBRE

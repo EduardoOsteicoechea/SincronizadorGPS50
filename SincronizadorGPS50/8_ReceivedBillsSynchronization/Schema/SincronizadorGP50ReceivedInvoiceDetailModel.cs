@@ -8,9 +8,9 @@ namespace SincronizadorGPS50
    {   
       public int? DFP_ID { get; set; } = -1;
       public string DFP_CONCEPTO { get; set; } = "";
-      public decimal DFP_PRECIO_UNIDAD { get; set; } = 0;
-      public decimal DFP_UNIDADES { get; set; } = 0;
-      public decimal DFP_SUBTOTAL { get; set; } = 0;
+      public decimal? DFP_PRECIO_UNIDAD { get; set; } = 0;
+      public decimal? DFP_UNIDADES { get; set; } = 0;
+      public decimal? DFP_SUBTOTAL { get; set; } = 0;
       public int? PRY_ID { get; set; } = -1;
       public int? FCP_ID { get; set; } = -1;
       public string DFP_ESTRUCTURAL { get; set; } = "0";

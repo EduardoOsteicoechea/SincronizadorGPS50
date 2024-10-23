@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\7_issuedbillssynchronization\\3_issuedbillssynchronizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\7_issuedbillssynchronization\\3_issuedbillssynchronizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\7_issuedbillssynchronization\\1_issuedbillsdatatablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\7_issuedbillssynchronization\\1_issuedbillsdatatablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\7_issuedbillssynchronization\\_issuedbillssynchronizationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\7_issuedbillssynchronization\\_issuedbillssynchronizationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|c:\\users\\eduar\\documents\\work\\external\\avantleap\\berrilan\\sincronizadorgps50\\sincronizadorgps50\\8_receivedbillssynchronization\\_receivedbillssynchronizationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E8A40E-2713-403A-AE3C-762BAB892663}|SincronizadorGPS50\\SincronizadorGPS50.csproj|solutionrelative:sincronizadorgps50\\8_receivedbillssynchronization\\_receivedbillssynchronizationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "3_IssuedBillsSynchronizer.cs",
-              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\7_IssuedBillsSynchronization\\3_IssuedBillsSynchronizer.cs",
-              "RelativeDocumentMoniker": "SincronizadorGPS50\\7_IssuedBillsSynchronization\\3_IssuedBillsSynchronizer.cs",
-              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\7_IssuedBillsSynchronization\\3_IssuedBillsSynchronizer.cs",
-              "RelativeToolTip": "SincronizadorGPS50\\7_IssuedBillsSynchronization\\3_IssuedBillsSynchronizer.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAuwFYAAAAwAAAA",
+              "Title": "1_IssuedBillsDataTableManager.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\7_IssuedBillsSynchronization\\1_IssuedBillsDataTableManager.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\7_IssuedBillsSynchronization\\1_IssuedBillsDataTableManager.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\7_IssuedBillsSynchronization\\1_IssuedBillsDataTableManager.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\7_IssuedBillsSynchronization\\1_IssuedBillsDataTableManager.cs",
+              "ViewState": "AQIAAIQBAAAAAAAAAAAswJcBAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T08:10:19.75Z",
+              "WhenOpened": "2024-10-23T15:25:00.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_IssuedBillsSynchronizationManager.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\7_IssuedBillsSynchronization\\_IssuedBillsSynchronizationManager.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\7_IssuedBillsSynchronization\\_IssuedBillsSynchronizationManager.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\7_IssuedBillsSynchronization\\_IssuedBillsSynchronizationManager.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\7_IssuedBillsSynchronization\\_IssuedBillsSynchronizationManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T15:23:24.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_ReceivedBillsSynchronizationManager.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\8_ReceivedBillsSynchronization\\_ReceivedBillsSynchronizationManager.cs",
+              "RelativeDocumentMoniker": "SincronizadorGPS50\\8_ReceivedBillsSynchronization\\_ReceivedBillsSynchronizationManager.cs",
+              "ToolTip": "C:\\Users\\eduar\\Documents\\work\\external\\avantleap\\berrilan\\SincronizadorGPS50\\SincronizadorGPS50\\8_ReceivedBillsSynchronization\\_ReceivedBillsSynchronizationManager.cs",
+              "RelativeToolTip": "SincronizadorGPS50\\8_ReceivedBillsSynchronization\\_ReceivedBillsSynchronizationManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAABmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T15:22:14.47Z",
               "EditorCaption": ""
             }
           ]

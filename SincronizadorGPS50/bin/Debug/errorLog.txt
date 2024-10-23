@@ -18868,3 +18868,524 @@ Message: The detail wasn't registered
 
 
 --------------------------------------------------
+Date: 2024-10-22 12:33:57.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateSageInvoice:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 12:34:38.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateSageInvoice:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 12:35:56.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GetGestprojectIssuedBillsDetails:
+
+Invalid column name 'FCE_SUBCTA_CONTABLE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'FCE_SUBCTA_CONTABLE'.
+
+
+--------------------------------------------------
+Date: 2024-10-22 12:37:19.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateSageInvoice:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 12:37:23.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.TransferIssuedInvoiceDataToSage:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateSageInvoice:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateSageInvoice:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 12:40:11.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateSageInvoice:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 16:17:43.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateSageInvoice:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 16:17:46.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.TransferIssuedInvoiceDataToSage:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateSageInvoice:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GenerateSageInvoice:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 16:31:03.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__48
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 16:31:03.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__48
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 16:36:42.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__48
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 16:37:46.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__48
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 16:38:59.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__48
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-22 16:46:18.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__48
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 03:57:51.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:15:25.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:15:25.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:17:02.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:21:29.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+Ya se agregó un elemento con la misma clave..
+Short Description: Failed to end the methods execution successfully..
+Message: Ya se agregó un elemento con la misma clave.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:23:44.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+Ya se agregó un elemento con la misma clave..
+Short Description: Failed to end the methods execution successfully..
+Message: Ya se agregó un elemento con la misma clave.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:39:54.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:40:28.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:40:28.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:41:37.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:41:37.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:41:52.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:42:24.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 04:54:44.
+Location: At:
+
+SincronizadorGPS50
+.<GenerateSageInvoice>d__49
+.MoveNext:
+
+No se puede realizar enlace en tiempo de ejecución en una referencia NULL..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede realizar enlace en tiempo de ejecución en una referencia NULL.
+
+
+--------------------------------------------------
+Date: 2024-10-23 05:25:46.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.RegisterEntityOnSynchronizationTable:
+
+The parameterized query '(@FCE_ID int,@PAR_DAO_ID int,@FCE_REFERENCIA nvarchar(4000),@FCE' expects the parameter '@FCE_FECHA', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@FCE_ID int,@PAR_DAO_ID int,@FCE_REFERENCIA nvarchar(4000),@FCE' expects the parameter '@FCE_FECHA', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-23 05:29:39.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.RegisterEntityDetailsOnSynchronizationTable:
+
+Incorrect syntax near '@DFE_SUBTOTAL_BASE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near '@DFE_SUBTOTAL_BASE'.
+
+
+--------------------------------------------------
+Date: 2024-10-23 05:30:34.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.RegisterEntityDetailsOnSynchronizationTable:
+
+Invalid column name 'DFE_ID'.
+Invalid column name 'DFE_CONCEPTO'.
+Invalid column name 'DFE_PRECIO_UNIDAD'.
+Invalid column name 'DFE_UNIDADES'.
+Invalid column name 'DFE_SUBTOTAL'.
+Invalid column name 'PRY_ID'.
+Invalid column name 'DFE_SUBTOTAL_BASE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'DFE_ID'.
+Invalid column name 'DFE_CONCEPTO'.
+Invalid column name 'DFE_PRECIO_UNIDAD'.
+Invalid column name 'DFE_UNIDADES'.
+Invalid column name 'DFE_SUBTOTAL'.
+Invalid column name 'PRY_ID'.
+Invalid column name 'DFE_SUBTOTAL_BASE'.
+
+
+--------------------------------------------------
+Date: 2024-10-23 05:39:13.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.RegisterEntityOnSynchronizationTable:
+
+Invalid object name 'YourTableName'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid object name 'YourTableName'.
+
+
+--------------------------------------------------
+Date: 2024-10-23 09:33:04.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.GetSelectedInvoiceFromSynchronizationTable:
+
+Invalid object name 'SincronizadorGPS50.IssuedBillsSynchronizationTableSchemaProvider'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid object name 'SincronizadorGPS50.IssuedBillsSynchronizationTableSchemaProvider'.
+
+
+--------------------------------------------------
+Date: 2024-10-23 09:34:31.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.GetSelectedInvoiceDetailsFromSynchronizationTable:
+
+Must declare the scalar variable "@FCE_ID"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@FCE_ID".
+
+
+--------------------------------------------------
+Date: 2024-10-23 09:59:06.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.RegisterEntityGuid:
+
+Must declare the scalar variable "@S50_GUID_ID"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@S50_GUID_ID".
+
+
+--------------------------------------------------
+Date: 2024-10-23 10:05:26.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.RegisterEntityGuid:
+
+Incorrect syntax near 'SYNC_STATUS'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near 'SYNC_STATUS'.
+
+
+--------------------------------------------------
+Date: 2024-10-23 11:24:07.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsDataTableManager
+.GetSynchronizableIssuedBillClientSubaccountableAccount:
+
+The parameterized query '(@PAR_ID nvarchar(4000))
+               SELECT
+               ' expects the parameter '@PAR_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@PAR_ID nvarchar(4000))
+               SELECT
+               ' expects the parameter '@PAR_ID', which was not supplied.
+
+
+--------------------------------------------------

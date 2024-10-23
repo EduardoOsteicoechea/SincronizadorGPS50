@@ -60,6 +60,12 @@ namespace SincronizadorGPS50
                )
             );
 
+            //new VisualizePropertiesAndValues<GestprojectTaxModel>(
+            //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
+            //   "GestprojectEntityList",
+            //   GestprojectEntityList
+            //);
+
             StoreSage50EntityList
             (
                tableSchema.SageTableData.dispatcherAndName.sageDispactcherMechanismRoute,
@@ -85,6 +91,8 @@ namespace SincronizadorGPS50
                UnsynchronizedGestprojectEntityList,
                GestprojectEntityList
             );
+
+
          }
          catch(System.Exception exception)
          {

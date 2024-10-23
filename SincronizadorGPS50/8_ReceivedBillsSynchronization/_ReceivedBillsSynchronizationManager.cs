@@ -27,7 +27,7 @@ namespace SincronizadorGPS50
                new TabPageMainPanelTableLayoutPanelGenerator(),
                new TabPageLayoutPanelRowGenerator(),
                new MiddleRowControlsGenerator<GestprojectReceivedBillModel, Sage50ReceivedBillModel>(),
-               new TopRowControlsGenerator<GestprojectReceivedBillModel, Sage50ReceivedBillModel>(false),
+               new TopRowControlsGenerator<GestprojectReceivedBillModel, Sage50ReceivedBillModel>(true),
                new BottomRowControlsGenerator<GestprojectReceivedBillModel, Sage50ReceivedBillModel>(),
 
                // Connectors

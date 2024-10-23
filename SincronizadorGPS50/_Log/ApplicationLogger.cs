@@ -28,6 +28,7 @@ namespace SincronizadorGPS50
          {
             new VisualizationForm(exceptionShortDescription, $"Error {errorLogException.Message}");
             throw new Exception($"{exceptionLocation}");
+            //throw new Exception($"{exceptionLocation ?? ""}");
          };
       }
    }

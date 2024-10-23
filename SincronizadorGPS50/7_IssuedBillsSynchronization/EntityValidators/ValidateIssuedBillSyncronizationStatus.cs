@@ -23,7 +23,7 @@ namespace SincronizadorGPS50
       }
       public ValidateIssuedBillSyncronizationStatus
       (
-         GestprojectIssuedBillModel gestprojectEntity,
+         SynchronizableIssuedInvoiceModel gestprojectEntity,
          List<Sage50IssuedBillModel> sage50EntityList,
          string GestprojectDaoId,
          string GestprojectReference,
