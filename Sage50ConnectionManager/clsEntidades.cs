@@ -331,6 +331,7 @@ namespace SincronizadorGPS50.Sage50Connector
         public bool precios { get; set; } = false;
         public bool facturado { get; set; } = false;
         public bool esfacturable { get; set; } = false;
+        public string obra { get; set; } = "";
 
     }
 
@@ -349,9 +350,8 @@ namespace SincronizadorGPS50.Sage50Connector
         public int linea { get; set; } = 0;
          public string tipoiva { get; set; } = "";
          public string cuentaContable { get; set; } = "";
-        // this were null before
-        public List<clsAlbavenLineasLotes> lotes { get; set; } = new List<clsAlbavenLineasLotes>();
-        public List<clsAlbavenLineasSeries> series { get; set; } = new List<clsAlbavenLineasSeries>();
+        public List<clsAlbavenLineasLotes> lotes { get; set; } = null;
+        public List<clsAlbavenLineasSeries> series { get; set; } = null;
     }
 
     public class clsAlbavenLineasLotes

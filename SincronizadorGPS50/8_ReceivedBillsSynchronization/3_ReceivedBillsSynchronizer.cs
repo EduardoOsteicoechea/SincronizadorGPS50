@@ -1,9 +1,11 @@
-﻿using sage.ew.docventatpv;
+﻿using Infragistics.Designers.SqlEditor;
+using sage.ew.docventatpv;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
@@ -34,17 +36,13 @@ namespace SincronizadorGPS50
             SynchronizadorGPS50ReceivedInvoices = new List<SincronizadorGP50ReceivedInvoiceModel>();
             SynchronizadorGPS50ReceivedInvoicesDetails = new List<SincronizadorGPS50ReceivedInvoiceDetailModel>();
 
-            if(GetEntitiesFromSincronizationTable())
-            {
-               if(GetEntitiesDetailsFromSincronizationTable())
-               {
-                  if(TransferSynchronizationData())
-                  {
-                     //RegisterTransferredEntitiesGestprojectId();
-                     //RegisterTransferredEntitiesDetailsGestprojectId();
-                  };
-               };
-            };
+            GetEntitiesFromSincronizationTable();
+
+            GetEntitiesDetailsFromSincronizationTable();
+           
+            TransferSynchronizationData();
+           
+            SetEntitiesAsTransfered();
          }
          catch(System.Exception exception)
          {
@@ -58,7 +56,7 @@ namespace SincronizadorGPS50
       }
 
       
-      public bool GetEntitiesFromSincronizationTable()
+      public void GetEntitiesFromSincronizationTable()
       {
          try
          {
@@ -103,11 +101,9 @@ namespace SincronizadorGPS50
                      entity.COMMENTS = reader["COMMENTS"] as string;
 
                      SynchronizadorGPS50ReceivedInvoices.Add(entity);
-                  };               
+                  };
                };
             };
-
-            return false;
          }
          catch(System.Exception exception)
          {
@@ -125,7 +121,7 @@ namespace SincronizadorGPS50
       }
 
       
-      public bool GetEntitiesDetailsFromSincronizationTable()
+      public void GetEntitiesDetailsFromSincronizationTable()
       {
          try
          {
@@ -167,8 +163,6 @@ namespace SincronizadorGPS50
                   };
                };
             };
-
-            return false;
          }
          catch(System.Exception exception)
          {
@@ -186,7 +180,7 @@ namespace SincronizadorGPS50
       }
 
 
-      public bool TransferSynchronizationData()
+      public void TransferSynchronizationData()
       {
          try
          {
@@ -209,8 +203,7 @@ namespace SincronizadorGPS50
                      RegisterSynchronizableEntityDetailsGestprojectId(entityDetail);
                   };
                };
-            };            
-            return true;
+            };
          }
          catch(System.Exception exception)
          {
@@ -231,7 +224,7 @@ namespace SincronizadorGPS50
 
             string sqlString = $@"
             SELECT
-               MAX(FCP_ID)
+               ISNULL(MAX(FCP_ID),-1)
             FROM
                FACTURA_PROVEEDOR
             ;";
@@ -242,7 +235,7 @@ namespace SincronizadorGPS50
                {
                   while(reader.Read())
                   {
-                     return (Convert.ToInt32(reader.GetValue(0)) + 1);
+                     return Convert.ToInt32(reader.GetValue(0)) == -1 ? 1 : Convert.ToInt32(reader.GetValue(0)) + 1;
                   };
                };
             };
@@ -272,7 +265,7 @@ namespace SincronizadorGPS50
 
             string sqlString = $@"
             SELECT
-               MAX(DFP_ID)
+               ISNULL(MAX(DFP_ID),-1)
             FROM
                DETALLE_FACTURA_PROVEEDOR
             ;";
@@ -283,7 +276,7 @@ namespace SincronizadorGPS50
                {
                   while(reader.Read())
                   {
-                     return (Convert.ToInt32(reader.GetValue(0)) + 1);
+                     return Convert.ToInt32(reader.GetValue(0)) == -1 ? 1 : Convert.ToInt32(reader.GetValue(0)) + 1;
                   };
                };
             };
@@ -553,10 +546,28 @@ namespace SincronizadorGPS50
          SincronizadorGPS50ReceivedInvoiceDetailModel detailEntity,
          SincronizadorGP50ReceivedInvoiceModel entity
       )
-      {
+      {         
          try
          {
-            detailEntity.FCP_ID = entity.FCP_ID;
+            Connection.Open();
+
+            string sqlString = $@"
+            UPDATE
+               {SynchronizableEntityDetailsTable}
+            SET
+               FCP_ID=@FCP_ID
+            WHERE
+               S50_GUID_ID=@S50_GUID_ID
+            ;";
+
+            using(SqlCommand command = new SqlCommand(sqlString,Connection))
+            {
+               detailEntity.FCP_ID = entity.FCP_ID;
+               command.Parameters.AddWithValue("@FCP_ID", detailEntity.FCP_ID);
+               command.Parameters.AddWithValue("@S50_GUID_ID", detailEntity.S50_GUID_ID);
+
+               command.ExecuteNonQuery();
+            };
          }
          catch(System.Exception exception)
          {
@@ -566,6 +577,10 @@ namespace SincronizadorGPS50
                MethodBase.GetCurrentMethod().Name,
                exception
             );
+         }
+         finally
+         {
+            Connection.Close();
          };
       }
       
@@ -579,6 +594,9 @@ namespace SincronizadorGPS50
          {
             Connection.Open();
 
+            string condidtionalProjectIdColumn = entityDetail.PRY_ID != -1 ? ",PRY_ID" : "";   
+            string condidtionalProjectIdValue = entityDetail.PRY_ID != -1 ? ",@PRY_ID" : "";   
+
             string sqlString = $@"
             INSERT INTO
                DETALLE_FACTURA_PROVEEDOR
@@ -588,6 +606,7 @@ namespace SincronizadorGPS50
                ,DFP_PRECIO_UNIDAD
                ,DFP_UNIDADES
                ,DFP_SUBTOTAL
+               {condidtionalProjectIdColumn}
                ,FCP_ID
                ,DFP_ESTRUCTURAL
             )
@@ -598,6 +617,7 @@ namespace SincronizadorGPS50
                ,@DFP_PRECIO_UNIDAD
                ,@DFP_UNIDADES
                ,@DFP_SUBTOTAL
+               {condidtionalProjectIdValue}
                ,@FCP_ID
                ,@DFP_ESTRUCTURAL
             )
@@ -611,7 +631,7 @@ namespace SincronizadorGPS50
                command.Parameters.AddWithValue("@DFP_UNIDADES", entityDetail.DFP_UNIDADES);
                command.Parameters.AddWithValue("@DFP_SUBTOTAL", entityDetail.DFP_SUBTOTAL);
                // When uncommenting add the field in the statement above (both in the first parenthesys as in the second)
-               //command.Parameters.AddWithValue("@PRY_ID", entityDetail.PRY_ID);
+               command.Parameters.AddWithValue("@PRY_ID", entityDetail.PRY_ID);
                command.Parameters.AddWithValue("@FCP_ID", entityDetail.FCP_ID);
                command.Parameters.AddWithValue("@DFP_ESTRUCTURAL", entityDetail.DFP_ESTRUCTURAL);
 
@@ -642,6 +662,8 @@ namespace SincronizadorGPS50
          {
             Connection.Open();
 
+            string condidtionalProjectId = entity.PRY_ID != -1 ? "AND PRY_ID=@PRY_ID" : "";   
+
             string sqlString = $@"
             SELECT
                DFP_ID
@@ -655,8 +677,9 @@ namespace SincronizadorGPS50
                DFP_UNIDADES=@DFP_UNIDADES
             AND
                DFP_SUBTOTAL=@DFP_SUBTOTAL
-            AND
-               PRY_ID=@PRY_ID
+            {
+               condidtionalProjectId            
+            }
             AND
                FCP_ID=@FCP_ID
             AND
@@ -706,6 +729,8 @@ namespace SincronizadorGPS50
          try
          {
             Connection.Open();
+            string condidtionalProjectId = entity.PRY_ID != -1 ? "AND PRY_ID=@PRY_ID" : "";   
+
 
             string sqlString = $@"
             UPDATE
@@ -713,15 +738,97 @@ namespace SincronizadorGPS50
             SET
                DFP_ID=@DFP_ID
             WHERE
-               S50_GUID_ID=@INVOICE_GUID_ID
+               DFP_CONCEPTO=@DFP_CONCEPTO
+            AND
+               DFP_PRECIO_UNIDAD=@DFP_PRECIO_UNIDAD
+            AND
+               DFP_UNIDADES=@DFP_UNIDADES
+            AND
+               DFP_SUBTOTAL=@DFP_SUBTOTAL
+            {
+               condidtionalProjectId            
+            }
+            AND
+               FCP_ID=@FCP_ID
+            AND
+               DFP_ESTRUCTURAL=@DFP_ESTRUCTURAL
             ;";
 
             using(SqlCommand command = new SqlCommand(sqlString,Connection))
             {
                command.Parameters.AddWithValue("@DFP_ID", entity.DFP_ID);
-               command.Parameters.AddWithValue("@INVOICE_GUID_ID", entity.INVOICE_GUID_ID);
+               command.Parameters.AddWithValue("@DFP_CONCEPTO", entity.DFP_CONCEPTO);
+               command.Parameters.AddWithValue("@DFP_PRECIO_UNIDAD", entity.DFP_PRECIO_UNIDAD);
+               command.Parameters.AddWithValue("@DFP_UNIDADES", entity.DFP_UNIDADES);
+               command.Parameters.AddWithValue("@DFP_SUBTOTAL", entity.DFP_SUBTOTAL);
+               command.Parameters.AddWithValue("@PRY_ID", entity.PRY_ID);
+               command.Parameters.AddWithValue("@FCP_ID", entity.FCP_ID);
+               command.Parameters.AddWithValue("@DFP_ESTRUCTURAL", entity.DFP_ESTRUCTURAL);
 
                command.ExecuteNonQuery();
+            };
+         }
+         catch(System.Exception exception)
+         {
+            throw ApplicationLogger.ReportError(
+               MethodBase.GetCurrentMethod().DeclaringType.Namespace,
+               MethodBase.GetCurrentMethod().DeclaringType.Name,
+               MethodBase.GetCurrentMethod().Name,
+               exception
+            );
+         }
+         finally
+         {
+            Connection.Close();
+         };
+      }
+
+
+         
+      public void SetEntitiesAsTransfered()
+      {
+         try
+         {
+            Connection.Open();
+
+            foreach (SincronizadorGP50ReceivedInvoiceModel entity in SynchronizadorGPS50ReceivedInvoices)
+            {
+               string sqlString = $@"
+               UPDATE
+                  {TableSchema.TableName}
+               SET
+                  SYNC_STATUS=@SYNC_STATUS
+               WHERE
+                  S50_GUID_ID=@S50_GUID_ID
+               ;";
+
+               using(SqlCommand command = new SqlCommand(sqlString,Connection))
+               {
+                  command.Parameters.AddWithValue("@SYNC_STATUS", SynchronizationStatusOptions.Transferido);
+                  command.Parameters.AddWithValue("@S50_GUID_ID", entity.S50_GUID_ID);
+
+                  command.ExecuteNonQuery();
+               };
+
+               foreach (SincronizadorGPS50ReceivedInvoiceDetailModel entityDetail in SynchronizadorGPS50ReceivedInvoicesDetails)
+               {
+                  string sqlString2 = $@"
+                  UPDATE
+                     {SynchronizableEntityDetailsTable}
+                  SET
+                     SYNC_STATUS=@SYNC_STATUS
+                  WHERE
+                     S50_GUID_ID=@S50_GUID_ID
+                  ;";
+
+                  using(SqlCommand command = new SqlCommand(sqlString2,Connection))
+                  {
+                     command.Parameters.AddWithValue("@SYNC_STATUS", SynchronizationStatusOptions.Transferido);
+                     command.Parameters.AddWithValue("@S50_GUID_ID", entityDetail.S50_GUID_ID);
+
+                     command.ExecuteNonQuery();
+                  };
+               }
             };
          }
          catch(System.Exception exception)

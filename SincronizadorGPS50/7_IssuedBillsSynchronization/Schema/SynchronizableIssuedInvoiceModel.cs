@@ -29,6 +29,7 @@ namespace SincronizadorGPS50
       public string SageCompanyNumber { get; set; } = "";
       public string TaxCode { get; set; } = "";
       public string FCE_SUBCTA_CONTABLE { get; set; } = "";
+      public string SageProjectCode { get; set; } = "";
 
       
 

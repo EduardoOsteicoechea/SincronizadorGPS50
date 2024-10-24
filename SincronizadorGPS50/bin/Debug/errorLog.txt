@@ -19389,3 +19389,458 @@ Message: The parameterized query '(@PAR_ID nvarchar(4000))
 
 
 --------------------------------------------------
+Date: 2024-10-23 12:53:31.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetNextAvailableEntityId:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-23 12:54:40.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.TransferSynchronizationData:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetNextAvailableEntityId:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetNextAvailableEntityId:
+
+No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-23 12:56:20.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetNextAvailableEntityId:
+
+Error de lectura porque no hay datos..
+Short Description: Failed to end the methods execution successfully..
+Message: Error de lectura porque no hay datos.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:01:39.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetNextAvailableEntityDetailId:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:02:37.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:05:01.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (2).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (2).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:12:27.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetNextAvailableEntityId:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:12:41.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.TransferSynchronizationData:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetNextAvailableEntityId:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetNextAvailableEntityId:
+
+No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:13:42.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:14:01.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.TransferSynchronizationData:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:15:35.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:16:58.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (3).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (3).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:17:31.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (4).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (4).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:18:57.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.GetNextAvailableEntityId:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:19:42.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (4).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (4).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:21:26.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (4).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (4).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:21:31.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.TransferSynchronizationData:
+
+At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (4).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (4).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:22:05.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (4).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (4).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-23 13:41:31.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.RegisterSynchornizationEntityDetail:
+
+Invalid object name 'INT_SAGE_SINC_FACTURA_RECIBIDA_DETALLES'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid object name 'INT_SAGE_SINC_FACTURA_RECIBIDA_DETALLES'.
+
+
+--------------------------------------------------
+Date: 2024-10-24 10:00:25.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.GetNextAvailableEntityId:
+
+No se puede convertir un objeto DBNull en otros tipos..
+Short Description: Failed to end the methods execution successfully..
+Message: No se puede convertir un objeto DBNull en otros tipos.
+
+
+--------------------------------------------------
+Date: 2024-10-24 10:02:19.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.RecordSynchronizableEntityOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-24 10:05:58.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-24 10:07:39.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.RecordSynchronizableEntityDetailsOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__DETALLE_FACTURA___68487DD7'. Cannot insert duplicate key in object 'dbo.DETALLE_FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-24 10:08:51.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.RecordSynchronizableEntityOnGestproject:
+
+Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated..
+Short Description: Failed to end the methods execution successfully..
+Message: Violation of PRIMARY KEY constraint 'PK__FACTURA_PROVEEDO__2B0A656D'. Cannot insert duplicate key in object 'dbo.FACTURA_PROVEEDOR'. The duplicate key value is (1).
+The statement has been terminated.
+
+
+--------------------------------------------------
+Date: 2024-10-24 10:39:57.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.AppendMissingSynchronizationData:
+
+Invalid column name 'DFP_ID'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid column name 'DFP_ID'.
+
+
+--------------------------------------------------
+Date: 2024-10-24 10:46:36.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.ValidateIfSynchornizationEntityExist:
+
+La conexión no se cerró. El estado actual de la conexión es abierta..
+Short Description: Failed to end the methods execution successfully..
+Message: La conexión no se cerró. El estado actual de la conexión es abierta.
+
+
+--------------------------------------------------
+Date: 2024-10-24 10:54:28.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.ValidateIfSynchornizationEntityExist:
+
+Invalid object name 'INT_SAGE_SINC_FACTURA_RECIBIDA'..
+Short Description: Failed to end the methods execution successfully..
+Message: Invalid object name 'INT_SAGE_SINC_FACTURA_RECIBIDA'.
+
+
+--------------------------------------------------
+Date: 2024-10-24 11:11:29.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsSynchronizer
+.RegisterSynchronizableEntityDetailsGestprojectId:
+
+Must declare the scalar variable "@DFP_ID"..
+Short Description: Failed to end the methods execution successfully..
+Message: Must declare the scalar variable "@DFP_ID".
+
+
+--------------------------------------------------
+Date: 2024-10-24 11:28:37.
+Location: At:
+
+SincronizadorGPS50
+.ReceivedBillsDataTableManager
+.ValidateIfSynchornizationEntityExist:
+
+La conexión no se cerró. El estado actual de la conexión es abierta..
+Short Description: Failed to end the methods execution successfully..
+Message: La conexión no se cerró. El estado actual de la conexión es abierta.
+
+
+--------------------------------------------------
