@@ -332,6 +332,7 @@ namespace SincronizadorGPS50.Sage50Connector
         public bool facturado { get; set; } = false;
         public bool esfacturable { get; set; } = false;
         public string obra { get; set; } = "";
+        public string guid { get; set; } = "";
 
     }
 

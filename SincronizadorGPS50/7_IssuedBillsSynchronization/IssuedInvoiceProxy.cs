@@ -49,12 +49,12 @@ namespace SincronizadorGPS50
                _AddObjetoLinea();
             };
 
-            llOk = this._oAlbaranVenta._Create(this._oEntidad);
+            llOk = _oAlbaranVenta._Create(_oEntidad);
         }
 
         private void _CrearEntidad()
         {
-            _oEntidad = new clsAlbaven();
+            _oEntidad = new Sage50Connector.clsAlbaven();
             _oEntidad.Cabecera.letra = "";
             _oEntidad.Cabecera.almacen = _Almacen;
             //_oEntidad.Cabecera.formapago = "00";

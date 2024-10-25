@@ -648,12 +648,6 @@ namespace SincronizadorGPS50
                         };
                      };
                   };
-                  
-                  //new VisualizePropertiesAndValues<SincronizadorGP50ReceivedInvoiceModel>(
-                  //   MethodBase.GetCurrentMethod().DeclaringType.Name + "." + MethodBase.GetCurrentMethod().Name,
-                  //   "entity",
-                  //   entity
-                  //);
 
                   foreach(
                      SincronizadorGPS50ReceivedInvoiceDetailModel entityDetail in SynchronizadorGPS50ReceivedInvoicesDetails

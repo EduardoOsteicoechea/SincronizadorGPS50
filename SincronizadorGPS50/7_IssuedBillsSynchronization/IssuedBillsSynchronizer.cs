@@ -1,15 +1,10 @@
-﻿using Infragistics.Designers.SqlEditor;
-using Microsoft.Win32;
-using sage.ew.docventatpv;
-using SincronizadorGPS50.Workflows.Sage50Connection;
+﻿using sage.ew.docventatpv;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SincronizadorGPS50
 {
@@ -280,6 +275,7 @@ namespace SincronizadorGPS50
 
                IssuedInvoiceProxy issuedInvoiceProxy = new IssuedInvoiceProxy();
                issuedInvoiceProxy._CreateAlbaran(invoice, invoiceDetails);
+               invoice.S50_GUID_ID = issuedInvoiceProxy._oEntidad.Cabecera.guid;
             };
          }
          catch(System.Exception exception)

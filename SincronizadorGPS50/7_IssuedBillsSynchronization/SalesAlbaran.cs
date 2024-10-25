@@ -171,6 +171,7 @@ namespace SincronizadorGPS50
                   {
                      toAlbaven.Cabecera.numero = _oDocVenta._Numero;
                      toAlbaven.Cabecera.factura = _oDocVenta._Cabecera._Factura;
+                     toAlbaven.Cabecera.guid = _oDocVenta._Cabecera._Guid_Id;
                   }
                   else
                   {

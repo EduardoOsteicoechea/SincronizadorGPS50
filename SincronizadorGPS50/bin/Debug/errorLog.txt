@@ -19844,3 +19844,106 @@ Message: La conexión no se cerró. El estado actual de la conexión es abierta.
 
 
 --------------------------------------------------
+Date: 2024-10-24 13:12:32.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.RegisterEntityGuid:
+
+The parameterized query '(@S50_GUID_ID nvarchar(4000),@SYNC_STATUS nvarchar(11),@ID int)' expects the parameter '@S50_GUID_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@S50_GUID_ID nvarchar(4000),@SYNC_STATUS nvarchar(11),@ID int)' expects the parameter '@S50_GUID_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-24 13:13:56.
+Location: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.RegisterEntityGuid:
+
+The parameterized query '(@S50_GUID_ID nvarchar(4000),@SYNC_STATUS nvarchar(11),@ID int)' expects the parameter '@S50_GUID_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@S50_GUID_ID nvarchar(4000),@SYNC_STATUS nvarchar(11),@ID int)' expects the parameter '@S50_GUID_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-24 13:14:03.
+Location: At:
+
+SincronizadorGPS50
+.<Synchronize>d__40
+.MoveNext:
+
+At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.RegisterEntityGuid:
+
+The parameterized query '(@S50_GUID_ID nvarchar(4000),@SYNC_STATUS nvarchar(11),@ID int)' expects the parameter '@S50_GUID_ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: At:
+
+SincronizadorGPS50
+.IssuedBillsSynchronizer
+.RegisterEntityGuid:
+
+The parameterized query '(@S50_GUID_ID nvarchar(4000),@SYNC_STATUS nvarchar(11),@ID int)' expects the parameter '@S50_GUID_ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-25 04:53:21.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.RegisterEntityOnSynchronizationTable:
+
+The parameterized query '(@ID nvarchar(4000),@SYNC_STATUS nvarchar(4000),@PRY_ID int,@PRY' expects the parameter '@ID', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@ID nvarchar(4000),@SYNC_STATUS nvarchar(4000),@PRY_ID int,@PRY' expects the parameter '@ID', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-25 04:54:26.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.RegisterEntityOnSynchronizationTable:
+
+Incorrect syntax near ','..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near ','.
+
+
+--------------------------------------------------
+Date: 2024-10-25 04:54:52.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsDataTableManager
+.RegisterEntityOnSynchronizationTable:
+
+The parameterized query '(@SYNC_STATUS nvarchar(4000),@PRY_ID int,@PRY_CODIGO nvarchar(21' expects the parameter '@LAST_UPDATE', which was not supplied..
+Short Description: Failed to end the methods execution successfully..
+Message: The parameterized query '(@SYNC_STATUS nvarchar(4000),@PRY_ID int,@PRY_CODIGO nvarchar(21' expects the parameter '@LAST_UPDATE', which was not supplied.
+
+
+--------------------------------------------------
+Date: 2024-10-25 05:57:39.
+Location: At:
+
+SincronizadorGPS50
+.ProjectsSynchronizer
+.RegisterTransferredEntitySageData:
+
+Incorrect syntax near 'S50_CODE'..
+Short Description: Failed to end the methods execution successfully..
+Message: Incorrect syntax near 'S50_CODE'.
+
+
+--------------------------------------------------
